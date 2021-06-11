@@ -59,4 +59,6 @@ group :test do
   gem 'timecop'
   gem 'webdrivers'
   gem 'webmock'
+  gem 'axe-core-cucumber'
+  gem 'axe-core-capybara'
 end
