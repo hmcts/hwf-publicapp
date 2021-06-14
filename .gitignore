@@ -20,7 +20,11 @@ node_modules
 
 # Ignore IDE configurations
 .idea/
+<<<<<<< HEAD
 .vscode
+=======
+.vscode/settings.json           
+>>>>>>> 99db276 (updating ignore file)
 
 **/.DS_Store
 
