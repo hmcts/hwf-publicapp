@@ -64,3 +64,4 @@ Feature: Income range page
     And I am a single person with no children on income range page
     When I click continue
     Then I should see select your monthly income error message
+    Then the page should be axe clean

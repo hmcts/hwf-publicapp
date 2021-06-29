@@ -19,3 +19,4 @@ Feature: Savings and investment page
   Scenario: Help with savings and investments
     When I click on 'Help on what to include as savings and investments'
     Then I should see help with savings and investments copy
+    Then the page should be axe clean

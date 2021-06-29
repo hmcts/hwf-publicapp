@@ -18,3 +18,4 @@ Feature: Contact page
   Scenario: Continuing without supplying an email address
     When I click continue
     Then I should be taken to summary page
+    Then the page should be axe clean

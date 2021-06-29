@@ -15,3 +15,4 @@ Feature: Marital status page
   Scenario: Help with status
     When I click on 'Help with status'
     Then I should see help with status copy
+    Then the page should be axe clean

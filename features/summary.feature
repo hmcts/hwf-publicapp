@@ -62,3 +62,4 @@ Feature: Summary page
     Given I am on the summary page with probate enabled
     When I click submit application and continue
     Then I should be taken to confirmation page
+    Then the page should be axe clean

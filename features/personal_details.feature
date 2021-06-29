@@ -27,3 +27,4 @@ Feature: Personal details page
     When I enter my first name
     And I click continue
     Then I should see 'Enter your last name' error message
+    Then the page should be axe clean

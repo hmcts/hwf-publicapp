@@ -31,3 +31,4 @@ Feature: Fee page
     When I select yes to have you already paid the fee
     And I submit the form with a future date
     Then I should see this date can't be in the future error message
+    Then the page should be axe clean

@@ -29,3 +29,4 @@ Feature: Checklist page
 
   Scenario: Footer content
     Then I should see a list of seven links
+     Then the page should be axe clean

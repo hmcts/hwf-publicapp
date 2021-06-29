@@ -29,3 +29,4 @@ Feature: Probate page
   Scenario: Displays make a selection error message
     When I click continue
     Then I should see select whether you're paying a fee for a probate case error message
+    Then the page should be axe clean

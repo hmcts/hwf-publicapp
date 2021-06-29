@@ -44,3 +44,4 @@ Feature: Benefit page
     And I am on the benefit page
     When I click continue
     Then I should see select whether you're receiving one of the benefits listed error message
+    Then the page should be axe clean

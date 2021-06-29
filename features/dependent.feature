@@ -20,3 +20,4 @@ Feature: Dependent page
   Scenario: Help with benefits
     When I click on 'Help with financially dependent children'
     Then I should see help with financially dependent children copy
+    Then the page should be axe clean

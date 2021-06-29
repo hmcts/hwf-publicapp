@@ -19,3 +19,4 @@ Feature: Confirmation done page
   Scenario: Finish application
     When I click the finish application button
     Then I should be taken to the survey page
+     Then the page should be axe clean

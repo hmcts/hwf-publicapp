@@ -14,3 +14,4 @@ Feature: Confirmation page
   Scenario: Finish application
     When I click continue
     Then I should be taken to the confirmation done page
+    Then the page should be axe clean

@@ -25,3 +25,4 @@ Feature: Income amount page
     When I am a married person on income amount page
     When I click continue
     Then I should see enter how much income do you receive error message
+    Then the page should be axe clean

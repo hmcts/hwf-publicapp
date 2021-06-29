@@ -47,3 +47,4 @@ Feature: Income kind page
     And I am a single person on kind of income page
     When I click continue
     Then I should see select your kinds of income error message
+    Then the page should be axe clean

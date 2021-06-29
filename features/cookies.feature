@@ -18,3 +18,4 @@ Feature: Cookies
     When I click on the Cookies link
     Then I am on the Cookies page
     And I click save settings
+    Then the page should be axe clean

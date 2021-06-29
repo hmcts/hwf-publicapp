@@ -25,3 +25,4 @@ Feature: Claim page
   Scenario: Displays make a selection error message
     When I click continue
     Then I should see select whether you have a case, claim or ‘notice to pay’ error message
+    Then the page should be axe clean

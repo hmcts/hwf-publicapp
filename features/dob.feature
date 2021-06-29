@@ -19,3 +19,4 @@ Feature: Date of birth page
   Scenario: Displays error message enter the date in this format
     When I click continue
     Then I should see enter the date of birth in this format error message
+    Then the page should be axe clean

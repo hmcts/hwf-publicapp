@@ -20,5 +20,6 @@ Feature: Address page
   Scenario: Displays error message when no address is entered
     And I click continue
     Then I should see 'Enter your house number and street' error message
+    Then the page should be axe clean
 
     

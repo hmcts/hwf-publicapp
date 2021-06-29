@@ -28,4 +28,5 @@ Feature: Savings and investment extra page
     When I submit no to are you 61 years old or over
     And I click continue
     Then I should see enter how much you have in savings and investments error message
+    Then the page should be axe clean
     
