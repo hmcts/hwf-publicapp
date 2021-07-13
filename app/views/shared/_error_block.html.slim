@@ -2,7 +2,6 @@
   h2.govuk-error-summary__title id="error-summary-title" =t('error_block.heading')
   .govuk-error-summary__body
     ul.govuk-list.govuk-error-summary__list
-      - form.errors.each do |field, message|
+      - form.errors.each do |error|
         li
-          - message = message.is_a?(Array) ? message.first : message
-          = link_to message, "##{field}", class: 'error-link', data: { id: "##{field}" }
+          = link_to error.message, "##{form.id}_#{error.attribute}", class: 'error-link', data: { id: "##{error.attribute}" }
