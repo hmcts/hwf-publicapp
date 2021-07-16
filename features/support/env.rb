@@ -78,5 +78,5 @@ def add_screenshot
   page.driver.save_screenshot(file_path)
   image = open(file_path, 'rb', &:read)
   encoded_image = Base64.encode64(image)
-  embed(encoded_image, 'image/png;base64', 'SCREENSHOT')
+  attach(encoded_image, 'image/png;base64', 'SCREENSHOT')
 end
