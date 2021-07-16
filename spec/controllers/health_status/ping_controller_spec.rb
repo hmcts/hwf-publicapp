@@ -17,7 +17,7 @@ RSpec.describe HealthStatus::PingController, type: :controller do
     end
 
     it 'returns JSON content type' do
-      expect(response.content_type).to eq('application/json')
+      expect(response.content_type).to eq('application/json; charset=utf-8')
     end
 
     it 'returns the deployment json in the body' do

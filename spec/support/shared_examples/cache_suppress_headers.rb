@@ -8,7 +8,7 @@ RSpec.shared_examples 'cache suppress headers' do
       "X-Permitted-Cross-Domain-Policies" => "none",
       "Referrer-Policy" => "strict-origin-when-cross-origin",
       "Content-Type" => "text/html; charset=utf-8",
-      "Cache-Control" => "no-cache, no-store",
+      "Cache-Control" => "private, no-store",
       "Pragma" => "no-cache",
       "Expires" => "Fri, 01 Jan 1990 00:00:00 GMT"
     )
