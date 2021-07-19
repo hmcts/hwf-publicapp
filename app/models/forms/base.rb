@@ -19,7 +19,7 @@ module Forms
     end
 
     def clear_and_set_error(attribute, validation)
-      errors[attribute].clear
+      errors.delete(attribute)
       errors.add(attribute, validation)
     end
 

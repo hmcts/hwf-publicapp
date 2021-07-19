@@ -1,4 +1,4 @@
-FROM phusion/passenger-ruby27
+FROM ruby:2.7.4-buster
 
 # Adding argument support for ping.json
 ARG APPVERSION=unknown
@@ -27,7 +27,7 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN gem install bundler -v 2.2.8
+RUN gem install bundler -v 2.2.22
 RUN bundle install --without test development
 
 
