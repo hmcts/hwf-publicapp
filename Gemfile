@@ -60,5 +60,4 @@ group :test do
   gem 'webdrivers'
   gem 'webmock'
   gem 'axe-core-cucumber'
-  gem 'axe-core-capybara'
 end

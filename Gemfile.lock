@@ -80,9 +80,6 @@ GEM
       selenium-webdriver
       virtus
       watir
-    axe-core-capybara (4.2.0)
-      axe-core-api
-      dumb_delegator
     axe-core-cucumber (4.2.0)
       axe-core-api
       dumb_delegator
@@ -467,7 +464,6 @@ PLATFORMS
 DEPENDENCIES
   apparition
   application_insights (~> 0.5.6)
-  axe-core-capybara
   axe-core-cucumber
   azure_env_secrets!
   bootsnap
