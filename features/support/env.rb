@@ -73,6 +73,11 @@ After do |scenario|
   end
 end
 
+Before('@cross-service') do
+  Capybara.always_include_port = false
+  Capybara.app_host = 'https://public.demo.hwf.dsd.io'
+end
+
 def add_screenshot
   file_path = 'features/cucumber-report/screenshot.png'
   page.driver.save_screenshot(file_path)
