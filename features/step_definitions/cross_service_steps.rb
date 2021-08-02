@@ -7,5 +7,6 @@ When('I launch staff app') do
 end
 
 When('I process the application') do
-
+  fill_in('Email', :with => "claudia.rothmann1@hmcts.net")
+  sleep(15)
 end
