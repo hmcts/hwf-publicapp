@@ -7,8 +7,8 @@ When('I launch staff app') do
 end
 
 When('I process the application') do
-  fill_in('Email', :with => "claudia.rothmann+1@hmcts.net")
-  fill_in('Password', :with => "xLPKnobpuDrf4e")
+  fill_in('Email', :with => "")
+  fill_in('Password', :with => "")
   find('.govuk-button').click
   fill_in('Reference', :with => @ref_number)
   click_button('Look up')
