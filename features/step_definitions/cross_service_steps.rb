@@ -7,18 +7,18 @@ When('I launch staff app') do
 end
 
 When('I process the application') do
-  fill_in('Email', :with => "")
-  fill_in('Password', :with => "")
+  fill_in('Email', :with => ENV['DEMO_EMAIL'])
+  fill_in('Password', :with => ENV['DEMO_PASSWORD'])
   find('.govuk-button').click
   fill_in('Reference', :with => @ref_number)
   click_button('Look up')
   fill_in('How much is the court or tribunal fee?', :with => "200")
   choose('County' , visible: false, allow_label_click: true)
-  fill_in('Day', :with => date.day)
-  fill_in('Month', :with => date.month)
-  fill_in('Year', :with => date.year)
+  fill_in('Day', :with => Time.zone.now.day)
+  fill_in('Month', :with => Time.zone.now.month)
+  fill_in('Year', :with => Time.zone.now.year)
   click_button('Next')
   click_button('Complete processing')
-  expect(page).to have_content 'Eligible for help with fees'
+  expect(page).to have_content 'Application complete'
 end
 

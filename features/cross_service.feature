@@ -3,7 +3,7 @@
 Feature: Cross Service
   @cross-service
   Scenario: Finish application through staffapp
-    Given I am on the confirmation page with probate enabled
+    Given I am on the confirmation page
     When I copy the reference number
     When I click continue
     And I click the finish application button
