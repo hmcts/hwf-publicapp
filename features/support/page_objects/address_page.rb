@@ -7,16 +7,17 @@ class AddressPage < BasePage
   end
 
   def submit_full_address
-    if page.has_link?('Enter address manually')
-      page.click_link('Enter address manually')
-      address_page.street('102 Petty France')
-      address_page.town('London')
-      address_page.post_code('SW1H 9AJ')
-    else
-      address_page.street('102 Petty France')
-      address_page.town('London')
-      address_page.post_code('SW1H 9AJ')
-    end
+    address_page.street('102 Petty France')
+    address_page.town('London')
+    address_page.post_code('SW1H 9AJ')
+    continue
+  end
+
+  def submit_full_address_demo
+    click_link 'Enter address manually'
+    address_page.street('102 Petty France')
+    address_page.town('London')
+    address_page.post_code('SW1H 9AJ')
     continue
   end
 
