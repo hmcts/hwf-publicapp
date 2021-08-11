@@ -13,6 +13,14 @@ class AddressPage < BasePage
     continue
   end
 
+  def submit_full_address_demo
+    click_link 'Enter address manually'
+    address_page.street('102 Petty France')
+    address_page.town('London')
+    address_page.post_code('SW1H 9AJ')
+    continue
+  end
+
   def street(str)
     fill_in 'House number and street', with: str
   end

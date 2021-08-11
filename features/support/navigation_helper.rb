@@ -73,7 +73,11 @@ def to_confirmation_page
   claim_page.submit_claim_no
   dob_page.valid_dob
   personal_details_page.submit_full_name
-  address_page.submit_full_address
+  if Capybara.app_host == 'https://public.demo.hwf.dsd.io'
+    address_page.submit_full_address_demo
+  else
+    address_page.submit_full_address
+  end
   contact_page.valid_email
   summary_page.submit_application
 end

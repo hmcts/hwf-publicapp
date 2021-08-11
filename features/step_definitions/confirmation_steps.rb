@@ -7,6 +7,14 @@ Given(/^I am on the confirmation page with probate enabled$/) do
   expect(confirmation_page.content).to have_confirmation_header
 end
 
+Given(/^I am on the confirmation page$/) do
+  to_confirmation_page
+  expect(confirmation_page).to be_displayed
+  expect(confirmation_page.content).to have_step_info
+  expect(confirmation_page.content).to have_header
+  expect(confirmation_page.content).to have_confirmation_header
+end
+
 Then(/^I should see instruction points$/) do
   expect(confirmation_page.content.list).to have_one
   expect(confirmation_page.content.list).to have_two
