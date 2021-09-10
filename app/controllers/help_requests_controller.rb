@@ -7,7 +7,7 @@ class HelpRequestsController < ApplicationController
     form.update_attributes(help_request_params)
 
     if form.valid?
-      ZendeskSender.new.send_help_request(form)
+      ServiceNowMailer.ask_for_help_email(form).deliver_now
       flash[:info] = I18n.t('help_requests.success')
       redirect_to(root_path)
     else
