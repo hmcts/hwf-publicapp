@@ -31,4 +31,4 @@ sentry:
 maintenance:
   show: <%= ENV['SHOW_MAINTENANCE_BANNER'] || false %>
 mail:
-  service_now: <%= ENV['SERVICE_NOW_EMAIL'] %>
+  help_me: <%= ENV['HELP_ME_EMAIL'] %>
