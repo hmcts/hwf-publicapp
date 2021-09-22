@@ -17,7 +17,6 @@ Feature: Benefit page
     | Income-related Employment and Support Allowance (ESA)                                   | Contribution-based Employment and Support Allowance (ESA)                            |
     | Pension Credit (Guarantee Credit)                                                       | Pension Credit and Savings Credit                                                    |
     | Universal Credit (and you’re earning less than £6,000 a year)                           | Universal Credit (and you're earning £6,000 or more a year)                          |
-    | Scottish Civil Legal Aid (not Advice and Assistance or Advice by Way of Representation) | Scottish Legal Aid (Advice and Assistance or Advice by Way of Representation ABWOR)  |
     | Income Support                                                                          ||
 
 
