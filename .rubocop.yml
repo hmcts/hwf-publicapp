@@ -205,6 +205,9 @@ RSpec/VerifiedDoubles:
 Rails/ActiveRecordAliases:
   Enabled: false
 
+Rails/ApplicationMailer:
+  Enabled: false
+
 Metrics/ModuleLength:
   Exclude:
     - 'spec/support/feature_steps.rb'

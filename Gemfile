@@ -22,12 +22,13 @@ gem 'sentry-raven'
 gem 'slim-rails'
 gem 'uglifier'
 gem 'virtus'
-gem 'zendesk_api', '~> 1.24'
+
 
 group :development, :test do
   gem 'pry-rails'
   gem 'rubocop', '~> 1.15', require: false
   gem 'rubocop-rails'
+  gem 'letter_opener'
 end
 
 group :development do
