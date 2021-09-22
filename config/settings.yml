@@ -20,10 +20,10 @@ homepage:
 done_page:
   external_url: <%= ENV['DONE_PAGE_EXTERNAL_URL'] || nil %>
 income:
-  min_threshold_base: 1085
-  max_threshold_base: 5085
-  per_child_increment: 245
-  married_supplement: 160
+  min_threshold_base: 1170
+  max_threshold_base: 5170
+  per_child_increment: 265
+  married_supplement: 175
 probate_fees:
   release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2025-04-01' %>
 sentry:
