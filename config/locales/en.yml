@@ -369,8 +369,7 @@ en:
           item_2: <strong>Income</strong>-related Employment and Support Allowance (ESA)
           item_3: Pension Credit (<strong>Guarantee</strong> Credit)
           item_4: Universal Credit (and you’re earning <strong>less than £6,000</strong> a year)
-          item_5: Scottish <strong>Civil</strong> Legal Aid (<strong>not</strong> Advice and Assistance or Advice by Way of Representation)
-          item_6: Income Support
+          item_5: Income Support
         column_2:
           name: "Column 2:"
           header: "Select ‘No’ if you are receiving one of these benefits"
@@ -378,7 +377,6 @@ en:
           item_2: <strong>Contribution</strong>-based Employment and Support Allowance (ESA)
           item_3: Pension Credit and <strong>Savings</strong> Credit
           item_4: Universal Credit (and you're earning <strong>£6,000 or more</strong> a year)
-          item_5: Scottish Legal Aid (Advice and Assistance or Advice by Way of Representation <strong>ABWOR</strong>)
       on_benefits_false: 'No'
       on_benefits_true: Yes, I am receiving one of the benefits listed in Column 1
       text: Do you receive any of the following benefits?

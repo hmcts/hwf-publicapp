@@ -13,7 +13,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 0 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 1085
+        expect(subject).to eq 1170
       end
     end
 
@@ -22,7 +22,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 2 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 1575
+        expect(subject).to eq 1700
       end
     end
 
@@ -31,7 +31,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 0 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 1245
+        expect(subject).to eq 1345
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 2 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 1735
+        expect(subject).to eq 1875
       end
     end
   end
@@ -53,7 +53,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 0 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 5085
+        expect(subject).to eq 5170
       end
     end
 
@@ -62,7 +62,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 2 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 5575
+        expect(subject).to eq 5700
       end
     end
 
@@ -71,7 +71,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 0 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 5245
+        expect(subject).to eq 5345
       end
     end
 
@@ -80,7 +80,7 @@ RSpec.describe Views::IncomeThresholds do
       let(:children) { 2 }
 
       it 'calculates the right minimum threshold' do
-        expect(subject).to eq 5735
+        expect(subject).to eq 5875
       end
     end
   end

@@ -189,7 +189,7 @@ module FeatureSteps
   def then_they_can_proceed
     expect(page).to have_content 'Check details'
     expect(page).to have_content 'Not receiving eligible benefits'
-    expect(page).to have_content 'IncomeLess than £1,085'
+    expect(page).to have_content 'IncomeLess than £1,170'
     expect(page).to have_content 'Submit application and continue'
   end
 

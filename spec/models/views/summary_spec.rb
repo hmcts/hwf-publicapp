@@ -136,7 +136,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :income_below_thresholds, threshold_attributes }
 
       it 'returns copy saying the applicant earns less than the calculated threshold' do
-        expect(subject).to eql('Less than £1,980')
+        expect(subject).to eql('Less than £2,140')
       end
     end
 
@@ -144,7 +144,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :income_above_thresholds, threshold_attributes }
 
       it 'returns copy saying the applicant earns more than the calculated threshold' do
-        expect(subject).to eql('More than £5,980')
+        expect(subject).to eql('More than £6,140')
       end
     end
 

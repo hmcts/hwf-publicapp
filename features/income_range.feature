@@ -11,23 +11,23 @@ Feature: Income range page
   Scenario: Income range for single with no children
     Given probate is enabled
     And I am a single person with no children on income range page
-    Then I should see low income range 'Less than £1,085'
-    And I should see medium income range 'Between £1,085 and £5,085'
-    And I should see high income range 'More than £5,085'
+    Then I should see low income range 'Less than £1,170'
+    And I should see medium income range 'Between £1,170 and £5,170'
+    And I should see high income range 'More than £5,170'
 
   Scenario: Income range for married with three children
     Given probate is enabled
     And I am a married person with three children on income range page
-    Then I should see low income range 'Less than £1,980'
-    And I should see medium income range 'Between £1,980 and £5,980'
-    And I should see high income range 'More than £5,980'
+    Then I should see low income range 'Less than £2,140'
+    And I should see medium income range 'Between £2,140 and £6,140'
+    And I should see high income range 'More than £6,140'
 
   Scenario: Income range for single with three children
     Given probate is enabled
     And I am a single person with three children on income range page
-    Then I should see low income range 'Less than £1,820'
-    And I should see medium income range 'Between £1,820 and £5,820'
-    And I should see high income range 'More than £5,820'
+    Then I should see low income range 'Less than £1,965'
+    And I should see medium income range 'Between £1,965 and £5,965'
+    And I should see high income range 'More than £5,965'
 
   Scenario: Selecting the less than range - probate enabled
     Given probate is enabled
