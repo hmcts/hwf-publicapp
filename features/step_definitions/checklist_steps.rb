@@ -11,7 +11,7 @@ end
 
 Then(/^if I do not have a national insurance or home office number then I can use the paper form$/) do
   expect(checklist_page.content).to have_use_paper_form
-  expect(checklist_page.content.use_paper_form_link['href']).to end_with '/government/uploads/system/uploads/attachment_data/file/508760/ex160-eng-20160212.pdf'
+  expect(checklist_page.content.use_paper_form_link['href']).to end_with 'government/publications/apply-for-help-with-court-and-tribunal-fees'
 end
 
 When(/^I click on if you do not know your national insurance number$/) do
