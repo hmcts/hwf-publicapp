@@ -916,6 +916,9 @@ en:
       heading: What you will need
       sections:
       - parts:
+          - p: 'You should use this online service when you are ready to make your court or tribunal application. It will provide you with a Help with Fees reference number you can put on your court or tribunal application.'
+          - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
+
           - p: 'Before you continue, make sure you have:'
           - ul:
             - li: your National Insurance number or
