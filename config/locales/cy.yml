@@ -915,6 +915,9 @@ cy:
       heading: Beth fydd arnoch ei angen?
       sections:
       - parts:
+          - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i’r llys neu’r tribiwnlys. Bydd yn rhoi rhif cyfeirnod Help i Dalu Ffioedd i chi, y gallwch ei nodi ar eich cais i’r llys neu’r tribiwnlys.'
+          - p: 'Bydd y staff yn prosesu’r rhif cyfeirnod Help i Dalu Ffioedd ynghyd â’r cais i’r llys neu’r tribiwnlys, ac yn rhoi gwybod i chi os oes arnoch angen talu rhywfaint tuag at y ffi, neu os oes arnynt angen rhagor o wybodaeth gennych chi.'
+
           - p: 'Cyn i chi barhau, gwnewch yn siŵr fod gennych:'
           - ul:
             - li: eich rhif Yswiriant Gwladol neu
