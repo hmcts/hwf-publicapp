@@ -572,7 +572,7 @@ en:
       prompt: Home Office reference number
       example: For example, L1234567 or L1234567/1 (for family members) or 1111-2222-3333-4444 or 1111-2222-3333-4444/1 (for family members)
       paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
-            <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/880144/ex160-eng.pdf'
+            <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1021745/EX160_form.pdf'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
             target='_blank'>paper application form</a> and apply to the court or tribunal by post or email."
       details:
