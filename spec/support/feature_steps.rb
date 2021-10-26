@@ -1,7 +1,7 @@
 module FeatureSteps
   def given_user_answers_questions_up_to(question)
     visit '/'
-    click_link_or_button 'Apply now'
+    click_link_or_button 'Start now'
     click_link_or_button 'Continue'
 
     QuestionFormFactory::IDS.take_while { |id| id != question }.each do |id|
@@ -19,7 +19,7 @@ module FeatureSteps
 
   def given_user_provides_all_data_for_refund
     visit '/'
-    click_link_or_button 'Apply now'
+    click_link_or_button 'Start now'
     click_link_or_button 'Continue'
     fill_form_name
     fill_fee(true)
@@ -43,7 +43,7 @@ module FeatureSteps
 
   def given_user_provides_all_data_for_below_threshold_income
     visit '/'
-    click_link_or_button 'Apply now'
+    click_link_or_button 'Start now'
     click_link_or_button 'Continue'
     fill_form_name
     fill_fee(true)
@@ -66,7 +66,7 @@ module FeatureSteps
 
   def given_user_provides_all_data_for_benefit
     visit '/'
-    click_link_or_button 'Apply now'
+    click_link_or_button 'Start now'
     click_link_or_button 'Continue'
     fill_form_name
     fill_fee
@@ -101,7 +101,7 @@ module FeatureSteps
   end
 
   def when_they_start_new_application
-    click_link_or_button 'Apply now'
+    click_link_or_button 'Start now'
     click_link_or_button 'Continue'
   end
 
