@@ -654,6 +654,7 @@ cy:
       heading: Sylwch
       text: Os na fyddwch chi wedi rhoi gwybodaeth ers mwy na 10 munud, yna bydd eich sesiwn yn dod i ben a bydd angen i chi ailddechrau.
   start_application: Gwnewch gais nawr
+  start_now_button: Dechrau nawr
   submit_button: Parhau
   summary:
     applicant_on_benefits_false: Ddim yn derbyn budd-daliadau cymwys

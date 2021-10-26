@@ -653,6 +653,7 @@ en:
       heading: Please note
       text: If you don’t enter any information for more than 60 minutes, then your session will time out and you’ll need to start again.
   start_application: Apply now
+  start_now_button: Start now
   submit_button: Continue
   summary:
     applicant_on_benefits_false: Not receiving eligible benefits
