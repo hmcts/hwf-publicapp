@@ -171,7 +171,7 @@ module FeatureSteps
   alias then_their_data_is_deleted then_their_data_is_not_persisted
 
   def then_they_are_redirected_to_homepage_with_expiry_message
-    expect(page).to have_text 'Apply for help with court and tribunal fees'
+    expect(page).to have_text 'Get help paying court and tribunal fees'
     expect(page).to have_text "You didn't enter any information for more than 60 minutes so you need to start your application again."
   end
 

@@ -118,7 +118,7 @@ RSpec.feature 'As a user' do
         find_continue_button.click
         expect(page).to have_content I18n.t('confirmation.done.heading', form_name: 'N1', reference: 'HWF-123-KLM')
         find_finish_button.click
-        expect(page).to have_content 'Apply for help with court and tribunal fees'
+        expect(page).to have_content 'Get help paying court and tribunal fees'
       end
     end
   end
