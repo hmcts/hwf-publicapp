@@ -20,18 +20,18 @@ RSpec.feature 'As a user' do
 
     scenario "should not be go able to go to step 12 and fill ET number" do
       when_they_apply_for_help_with_et_case_up_to_step_12
-      expect(page).to have_text('Step 15 of 22')
+      expect(page).to have_text('Step 15 of 23')
       expect(page).not_to have_text('Enter your employment tribunal claim number')
 
       when_they_continue_from_step12_up_to_summary
-      expect(page).to have_text('Step 20 of 22')
+      expect(page).to have_text('Step 20 of 23')
       expect(page).to have_text('Check details')
 
       claim_link = page.find(:xpath, './/dl//div[10]//a')
       expect(claim_link.text).to eql('Change claim number')
       claim_link.click
 
-      expect(page).to have_text('Step 15 of 22')
+      expect(page).to have_text('Step 15 of 23')
       expect(page).not_to have_text('Enter your employment tribunal claim number')
       expect(page).to have_text('Do you have a case, claim, appeal or ‘notice to pay’ number?')
     end

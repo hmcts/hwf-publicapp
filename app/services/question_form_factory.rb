@@ -22,6 +22,7 @@ class QuestionFormFactory
     personal_detail
     applicant_address
     contact
+    apply_type
   ].freeze
 
   def self.position(id)

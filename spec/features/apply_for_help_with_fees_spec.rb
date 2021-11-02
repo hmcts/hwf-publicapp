@@ -97,6 +97,9 @@ RSpec.feature 'As a user' do
         expect(page).to have_content I18n.t('questions.contact.text')
         fill_in 'contact_email', with: 'foo@bar.com'
         find_continue_button.click
+        expect(page).to have_content I18n.t('questions.apply_type.text')
+        choose 'apply_type_applying_method_paper'
+        find_continue_button.click
         expect(page).to have_content I18n.t('summary.labels.title')
         expect(page).to have_content "#{I18n.t('summary.labels.form_name')}N1"
         expect(page).to have_content I18n.t('summary.marital_status_false')
@@ -113,6 +116,8 @@ RSpec.feature 'As a user' do
         expect(page).to have_content 'Bar'
         expect(page).to have_content I18n.t('summary.labels.contact_email')
         expect(page).to have_content 'foo@bar.com'
+        expect(page).to have_content I18n.t('summary.labels.apply_type')
+        expect(page).to have_content I18n.t('summary.applying_method_paper')
         find_summary_button.click
         expect(page).to have_content I18n.t('confirmation.default.heading')
         find_continue_button.click

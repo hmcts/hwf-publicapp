@@ -15,6 +15,7 @@ module FeatureSteps
   def given_user_provides_all_data
     given_user_answers_questions_up_to(:contact)
     fill_contact
+    fill_apply_type
   end
 
   def given_user_provides_all_data_for_refund
@@ -39,6 +40,7 @@ module FeatureSteps
     fill_personal_detail
     fill_applicant_address
     fill_contact
+    fill_apply_type
   end
 
   def given_user_provides_all_data_for_below_threshold_income
@@ -62,6 +64,7 @@ module FeatureSteps
     fill_personal_detail
     fill_applicant_address
     fill_contact
+    fill_apply_type
   end
 
   def given_user_provides_all_data_for_benefit
@@ -82,6 +85,7 @@ module FeatureSteps
     fill_personal_detail
     fill_applicant_address
     fill_contact
+    fill_apply_type
   end
 
   def given_user_starts_an_application
@@ -137,6 +141,7 @@ module FeatureSteps
     fill_personal_detail
     fill_applicant_address
     fill_contact
+    fill_apply_type
     when_they_submit_the_application
   end
 
@@ -161,6 +166,7 @@ module FeatureSteps
     fill_personal_detail
     fill_applicant_address
     fill_contact
+    fill_apply_type
   end
 
   def then_their_data_is_not_persisted
@@ -195,6 +201,11 @@ module FeatureSteps
 
   def fill_contact
     fill_in 'contact_email', with: 'foo@bar.com'
+    click_button 'Continue'
+  end
+
+  def fill_apply_type
+    choose 'apply_type_applying_method_paper'
     click_button 'Continue'
   end
 

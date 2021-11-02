@@ -10,6 +10,8 @@ RSpec.feature 'As a user' do
     context 'completing the form correctly' do
       before do
         click_button 'Continue'
+        choose 'apply_type_applying_method_paper'
+        click_button 'Continue'
       end
 
       scenario 'I expect to be routed to the "summary" page' do

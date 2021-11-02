@@ -1,0 +1,14 @@
+.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+  = f.hidden_field :applying_method, value: nil
+  - if @form.errors.any?
+    span.govuk-error-message#applying_method = @form.errors[:applying_method].join(' ')
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend.govuk-fieldset__legend--s.visuallyhidden
+      = t('text', scope: "#{@form.i18n_scope}")
+    .govuk-form-group.govuk-radios
+      .govuk-radios__item
+        = f.radio_button :applying_method, 'paper', class: 'govuk-radios__input'
+        = f.label :applying_method, t('applying_method_paper', scope: @form.i18n_scope), for: 'apply_type_applying_method_paper', class: 'govuk-label govuk-radios__label'
+      .govuk-radios__item
+        = f.radio_button :applying_method, 'online', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
+        = f.label :applying_method, t('applying_method_online', scope: @form.i18n_scope), for: 'apply_type_applying_method_online', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"

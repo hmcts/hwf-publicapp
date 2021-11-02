@@ -213,6 +213,11 @@ en:
               less_than: Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings
             over_61:
               inclusion: Select if you or your partner are over 61
+        forms/apply_type:
+          attributes:
+            applying_method:
+              inclusion: Select how will you be making your court or tribunal application
+
   application:
     name: 'Help with fees'
     title: 'Help with fees - MoJ'
@@ -231,7 +236,7 @@ en:
     back_to_start: Back to start
     default_form_name: claim
     default:
-      breadcrumb: Step 21 of 22
+      breadcrumb: Step 22 of 23
       continue: Continue
       heading: Your application for help with fees is not finished yet
       steps:
@@ -242,7 +247,7 @@ en:
       text: Reference number to add to your claim form
       title: Your application is not finished yet
     done:
-      breadcrumb: Step 22 of 22
+      breadcrumb: Step 23 of 23
       heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
       instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
       courtfinder_html: 'Find the court or tribunal information here: <a href="https://www.gov.uk/find-court-tribunal" target="_blank" title="Find a court or tribunal">https://www.gov.uk/find-court-tribunal</a> (opens in new tab).'
@@ -277,7 +282,7 @@ en:
             three: 215 Bothwell Street
             two: Eagle Building
           heading: Scotland
-      breadcrumb: Step 22 of 22
+      breadcrumb: Step 22 of 23
       heading: Your application for help with fees is not finished yet
       letter:
         five: "%{full_name}"
@@ -303,7 +308,7 @@ en:
     print: Save or print this page
     feedback_text: After you finish your application, you are directed to an optional feedback form.
     refund:
-      breadcrumb: Step 22 of 22
+      breadcrumb: Step 22 of 23
       heading: Send your reference number to the court or tribunal dealing with your case
       letter:
         five: "%{full_name}"
@@ -344,11 +349,11 @@ en:
   optional: "(Optional)"
   questions:
     applicant_address:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       text: What is your address?
       title: Your address
     benefit:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1:
           heading: If you’ve only recently started receiving one of these benefits,
@@ -383,7 +388,7 @@ en:
       text_refund: Did you receive any of the following benefits?
       title: Benefits
     claim/default:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, appeal or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
@@ -396,7 +401,7 @@ en:
       text: Do you have a case, claim, appeal or ‘notice to pay’ number?
       title: Claim or case number
     claim/et:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1: Your employment tribunal claim number is a unique reference to identify your employment tribunal claim.
         section_2: You will receive a claim number when you make an employment tribunal claim online.
@@ -406,14 +411,20 @@ en:
       text: Enter your employment tribunal claim number
       title: Claim number
     contact:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details: We will email you confirmation of your Help with Fees reference number.
       email_label: Email address
       feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
       text: What's your email address?
       title: Your email address
+    apply_type:
+      breadcrumb: Step %{page_number} of 23
+      title: Will you be making your court or tribunal application on paper or using an online service
+      text: Will you be making your court or tribunal application on paper or using an online service
+      applying_method_paper: 'Paper'
+      applying_method_online: 'Online service'
     dependent:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       children_false: 'No'
       children_number: Number of children
       children_true: 'Yes'
@@ -427,12 +438,12 @@ en:
       text: Do you have any children living with you, or who you support financially?
       title: Number of children living with you
     dob:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       hint_html: For example, 04 10 2018
       text: What is your date of birth?
       title: Date of birth
     fee:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       date_paid: Date fee paid
       fee_paid_false: 'No'
@@ -441,7 +452,7 @@ en:
       text: Have you already paid the fee?
       title: Refund
     form_name:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         item_1: Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Applying for help with hearing fees
@@ -456,7 +467,7 @@ en:
       amount:
         married: Enter the total monthly amount you and your partner receive in income.
         single: Enter the total monthly amount you receive in income.
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
@@ -470,7 +481,7 @@ en:
       text_single_refund: What was your total monthly income?
       title: Income amount
     income_kind:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details_married: Choose the different types of income you and your partner receive.
       details_married_refund: Choose the different types of income you and your partner received at the time you paid the fee.
       details_single: Select all that apply.
@@ -497,7 +508,7 @@ en:
       text_single_refund: What kind of income did you receive?
       title: Income kind
     income_range:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
@@ -516,7 +527,7 @@ en:
       title: Income range
       wages: Wages before tax and National Insurance are taken off
     marital_status:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1:
           heading: 'Choose ‘married or living with someone and sharing an income’ if you’re:'
@@ -538,7 +549,7 @@ en:
       text: Are you single, married or living with someone and sharing an income?
       title: Your marital status
     national_insurance_presence:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1:
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
@@ -551,7 +562,7 @@ en:
       text: Do you have a National Insurance number?
       title: Do you have a National Insurance number?
     national_insurance:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1:
           detail_html: "If you don't have a National Insurance number, you need to
@@ -566,7 +577,7 @@ en:
       text: Enter National Insurance number
       title: National Insurance number
     home_office:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       text: What is your Home Office reference number?
       title: What is your Home Office reference number?
       prompt: Home Office reference number
@@ -579,11 +590,11 @@ en:
         summary: "Where to find my Home Office reference number?"
         item_1: Your Home Office reference number can be found on any correspondence you have received from the Home Office
     personal_detail:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       text: What is your full name?
       title: Title
     probate:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details: These cases are usually about the property and belongings of someone who has died.
       hint_html: For example, 04 10 2018
       date_of_death: Date of death
@@ -593,7 +604,7 @@ en:
       title: Probate
     savings_and_investment:
       between: "£3,000 to £15,999"
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       details:
         section_1:
           heading: 'What to include in savings and investments:'
@@ -629,7 +640,7 @@ en:
       amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
       amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
       amount_hint: Rounded to the nearest £
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Step %{page_number} of 23
       over_61_false_single: *no
       over_61_true_single: *yes
       over_61_false_single_refund: *no
@@ -657,7 +668,7 @@ en:
   summary:
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
-    breadcrumb: Step 20 of 22
+    breadcrumb: Step 20 of 23
     change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'
@@ -690,6 +701,7 @@ en:
       probate: Probate case
       savings: Savings and investments
       title: Check details
+      apply_type: Court or tribunal application
     marital_status_false: Single
     marital_status_true: Married or living with someone and sharing an income
     missing_answer:
@@ -702,6 +714,8 @@ en:
       button: Submit application and continue
       heading: Declaration and statement of truth
       statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
+    applying_method_paper: 'Paper'
+    applying_method_online: 'Online service'
   switch:
     language: Cymraeg
     locale: cy
