@@ -27,3 +27,7 @@ end
 Then(/^I should be taken to apply type page$/) do
   expect(apply_type_page).to be_displayed
 end
+
+Then(/^I should be taken to contact page$/) do
+  expect(contact_page).to be_displayed
+end
