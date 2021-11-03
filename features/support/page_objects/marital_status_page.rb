@@ -2,7 +2,7 @@ class MaritalStatusPage < BasePage
   set_url '/questions/marital_status'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 6 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 6 of 23'
     element :header, 'h1', text: 'Are you single, married or living with someone and sharing an income?'
     element :single, 'label', text: 'Single'
     element :married, 'label', text: 'Married'

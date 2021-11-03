@@ -5,7 +5,7 @@ Feature: Contact page
 
   Scenario: Entering a valid email address
     When I enter a valid email address
-    Then I should be taken to summary page
+    Then I should be taken to apply type page
 
   Scenario: Entering a invalid email address
     When I enter a invalid email address
@@ -17,4 +17,4 @@ Feature: Contact page
 
   Scenario: Continuing without supplying an email address
     When I click continue
-    Then I should be taken to summary page
+    Then I should be taken to apply type page

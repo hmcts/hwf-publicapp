@@ -53,6 +53,7 @@ def to_confirmation_done_page
   personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
+  apply_type_page.applying_by_paper
   summary_page.submit_application
   continue
 end
@@ -79,6 +80,7 @@ def to_confirmation_page
     address_page.submit_full_address
   end
   contact_page.valid_email
+  apply_type_page.applying_by_paper
   summary_page.submit_application
 end
 
@@ -327,6 +329,7 @@ def to_summary_page_probate_enabled
   personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
+  apply_type_page.applying_by_paper
 end
 
 def to_summary_page_probate_disabled
@@ -343,6 +346,7 @@ def to_summary_page_probate_disabled
   personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
+  apply_type_page.applying_by_paper
 end
 
 def to_summary_page_with_ho_number
@@ -356,4 +360,5 @@ def to_summary_page_with_ho_number
   personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
+  apply_type_page.applying_by_paper
 end

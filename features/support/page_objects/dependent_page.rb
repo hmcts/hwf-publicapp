@@ -2,7 +2,7 @@ class DependentPage < BasePage
   set_url '/questions/dependent'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 10 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 10 of 23'
     element :header, 'h1', text: 'Do you have any children living with you, or who you support financially?'
     element :no, 'label', text: 'No'
     element :yes, 'label', text: 'Yes'

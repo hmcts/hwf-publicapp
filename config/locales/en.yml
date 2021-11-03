@@ -419,8 +419,8 @@ en:
       title: Your email address
     apply_type:
       breadcrumb: Step %{page_number} of 23
-      title: Will you be making your court or tribunal application on paper or using an online service
-      text: Will you be making your court or tribunal application on paper or using an online service
+      title: Will you be making your court or tribunal application on paper or using an online service?
+      text: Will you be making your court or tribunal application on paper or using an online service?
       applying_method_paper: 'Paper'
       applying_method_online: 'Online service'
     dependent:
