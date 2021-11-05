@@ -1,0 +1,24 @@
+
+
+.govuk-panel.govuk-panel--confirmation
+  h2
+    | Your application is not yet complete. You now need to take action.
+  h2
+    | Enter your help with fees reference number in the help with fees section of the online form.
+
+  .govuk-panel__body
+    h2 =@result['message']
+br
+
+.steps-panel-confirmation
+  .govuk-grid-row
+    .govuk-grid-column-one-half
+      p.govuk-body Enter your reference number in the help with fees section of the online form
+    .govuk-grid-column-one-half
+      p.online-image #{image_tag("hwf-online-service.png", alt:"HwF online reference", class: 'online-image')}
+
+
+
+h3.govuk-heading-m What happens next
+
+p.govuk-body We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.

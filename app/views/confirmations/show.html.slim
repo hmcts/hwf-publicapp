@@ -4,29 +4,12 @@
 
 =render('stylesheets')
 
-- form_name = @online_application.form_name ? @online_application.form_name : t('confirmation.default_form_name')
+= render(@online_application.applying_method, application: @online_application)
 
-.govuk-caption-l
-  =t('confirmation.default.breadcrumb')
-h1.govuk-heading-l
-  =t('confirmation.default.text')
+h3.govuk-heading-s =link_to("What did you think of this service?", 'https://www.smartsurvey.co.uk/s/HWFFeed20', class: 'external govuk-link', rel: 'external')
 
-.steps-panel
-  h2.govuk-heading-m =t('confirmation.default.heading', form_name: form_name)
-
-  ol.govuk-list.govuk-list--number.next-steps
-    li
-      =t('confirmation.default.steps.one_html', reference: @result['message'], form_name: form_name)
-      .hwf-ref =@result['message']
-    li =t('confirmation.default.steps.two', form_name: form_name)
-    li =t('confirmation.default.steps.three', form_name: form_name)
-    li =t('confirmation.default.steps.four')
-
-
-
-= form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
-  = hidden_field_tag :locale, params['locale']
-  = submit_tag(t('continue', scope: 'confirmation.default'), class: 'govuk-button no-print', role: 'button')
+= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
+  = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')
 
 .js-only.no-print
   p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')

@@ -236,15 +236,14 @@ en:
     back_to_start: Back to start
     default_form_name: claim
     default:
-      breadcrumb: Step 22 of 23
-      continue: Continue
+      breadcrumb: Step 22 of 22
       heading: Your application for help with fees is not finished yet
       steps:
         four: If you provided your email address, you'll get your application reference number by email. If you didn't provide an email, make a note of your reference number for your own records.
         one_html: You must write this reference number <strong>%{reference}</strong> on your <strong>%{form_name}</strong> form.
         three: You can also save or print this page and attach it to your %{form_name} form.
         two: Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your %{form_name} form.
-      text: Reference number to add to your claim form
+      text: Send your claim form
       title: Your application is not finished yet
     done:
       breadcrumb: Step 23 of 23

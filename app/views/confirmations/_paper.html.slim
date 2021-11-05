@@ -1,0 +1,38 @@
+- content_for :page_title
+  = t('confirmation.default.title')
+  = ' - '
+
+=render('stylesheets')
+
+.govuk-panel.govuk-panel--confirmation
+  h2
+    | Your application is not yet complete. You now need to take action.
+  h2
+    | You must provide the court or tribunal with your reference to proceed
+
+  .govuk-panel__body
+    h2 =@result['message']
+br
+
+
+p.govuk-body Fill in your reference number on the help with fees section of your court or tribunal application form.
+p.govuk-body If your form does not have a help with fees section, write the reference number at the top of the form.
+
+h3.govuk-heading-m Send your court or tribunal application form to the court or tribunal.
+
+p.govuk-body You can do this by post and in some cases email.
+p.govuk-body If you do not have an application form, use the template below.
+
+.steps-panel-confirmation
+  p.govuk-body Reference: #{@result['message']}
+  p.govuk-body I have completed on online application for help with fees [insert application type and case number if you have one].
+  p.govuk-body Yours sincerely,
+  p.govuk-body =application.full_name
+
+p.govuk-body Find the #{link_to("contact details of the court or tribunal", 'https://www.gov.uk/find-court-tribunal', class: 'external govuk-link', rel: 'external')} you need to send your application to.
+
+
+h3.govuk-heading-m What happens next
+
+p.govuk-body We will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+
