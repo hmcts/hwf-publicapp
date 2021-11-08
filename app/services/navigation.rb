@@ -9,6 +9,8 @@ class Navigation
   def next
     if @current_question == QuestionFormFactory::IDS.last
       summary_path(locale: I18n.locale)
+    elsif @current_question == :contact && skip_apply_type?
+      summary_path(locale: I18n.locale)
     else
       question_path(next_question_id, locale: I18n.locale)
     end
@@ -104,6 +106,10 @@ class Navigation
     when :national_insurance
       @ni_next_page = :marital_status
     end
+  end
+
+  def skip_apply_type?
+    @online_application.refund?
   end
 
 end
