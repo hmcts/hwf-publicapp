@@ -2,7 +2,7 @@ class SavingsInvestmentPage < BasePage
   set_url '/questions/savings_and_investment'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 7 of 23'
+    element :step_info, '.govuk-caption-l', text: 'Step 7 of 22'
     element :header, 'h1', text: 'How much do you have in savings and investments?'
     element :married_reminder, 'span.govuk-hint', text: 'Remember to include your partner’s savings and investments in your total. For more information on what to include in your total see the Help section below.'
     element :hint_text, 'span.govuk-hint', text: 'For more information on what to include in your total see the Help section below.'

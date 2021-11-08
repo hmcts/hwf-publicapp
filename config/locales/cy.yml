@@ -419,7 +419,7 @@ cy:
       text: Beth yw eich cyfeiriad e-bost?
       title: Eich cyfeiriad e-bost
     apply_type:
-      breadcrumb: Step %{page_number} of 23
+      breadcrumb: Step %{page_number} of 22
       title: Will you be making your court or tribunal application on paper or using an online service
       text: Will you be making your court or tribunal application on paper or using an online service
       applying_method_paper: 'Paper'

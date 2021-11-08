@@ -2,7 +2,7 @@ class IncomeKindPage < BasePage
   set_url '/questions/income_kind'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 11 of 23'
+    element :step_info, '.govuk-caption-l', text: 'Step 11 of 22'
     element :single_header, 'h1', text: 'What kind of income did you receive?'
     element :married_header, 'h1', text: 'What kind of income did you and your partner receive?'
     element :choose_income_single, 'span.govuk-hint', text: 'Choose the different types of income you received at the time you paid the fee.'

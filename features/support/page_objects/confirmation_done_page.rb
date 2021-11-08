@@ -2,7 +2,7 @@ class ConfirmationDonePage < BasePage
   set_url '/confirmation/done'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 23 of 23'
+    element :step_info, '.govuk-caption-l', text: 'Step 23 of 22'
     element :header, 'h1', text: 'Send your claim form'
     element :send_your_form, 'h2', text: 'Send your C100 form with your HWF-'
     element :post, '.post', text: 'Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.'
