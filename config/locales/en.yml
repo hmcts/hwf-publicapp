@@ -425,6 +425,12 @@ en:
       text: Will you be making your court or tribunal application on paper or using an online service?
       applying_method_paper: 'Paper'
       applying_method_online: 'Online service'
+      details:
+        header: Help with paper and online services
+        title_paper: Choose 'paper' if you are making this court or tribunal application using a paper form.
+        text_paper: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using a paper form, you should select paper. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you should put on your form when you send it to the court or tribunal.
+        title_online: Choose 'online service' if you are making this court or tribunal application using an online service.
+        text_online: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using an online service, you should select online. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you can enter when asked to do so on the court or tribunal online service.
     dependent:
       breadcrumb: Step %{page_number} of 22
       children_false: 'No'

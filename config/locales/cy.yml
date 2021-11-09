@@ -421,11 +421,18 @@ cy:
       text: Beth yw eich cyfeiriad e-bost?
       title: Eich cyfeiriad e-bost
     apply_type:
-      breadcrumb: Step %{page_number} of 22
+      breadcrumb: Cam %{page_number} of 22
       title: Will you be making your court or tribunal application on paper or using an online service
       text: Will you be making your court or tribunal application on paper or using an online service
-      applying_method_paper: 'Paper'
-      applying_method_online: 'Online service'
+      applying_method_paper: 'Bapur'
+      applying_method_online: Gwasanaeth ar-lein
+      details:
+        header: Help gyda gwasanaethau papur ac ar-lein
+        title_paper: Dewiswch 'bapur' os ydych chi'n gwneud y cais llys neu dribiwnlys hwn gan ddefnyddio ffurflen bapur.
+        text_paper: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio ffurflen bapur, dylech ddewis papur. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y dylech ei roi ar eich ffurflen pan fyddwch yn ei hanfon i'r llys neu'r tribiwnlys.
+        title_online: Dewiswch 'gwasanaeth ar-lein' os ydych chi'n gwneud y cais llys neu dribiwnlys hwn gan ddefnyddio gwasanaeth ar-lein.
+        text_online: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio gwasanaeth ar-lein, dylech ddewis ar-lein. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y gallwch ei nodi pan ofynnir i chi wneud hynny ar wasanaeth ar-lein y llys neu'r tribiwnlys.
+
     dependent:
       breadcrumb: Cam %{page_number} o 22
       children_false: Nac oes
