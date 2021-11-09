@@ -7,9 +7,7 @@ class Navigation
   end
 
   def next
-    if @current_question == QuestionFormFactory::IDS.last
-      summary_path(locale: I18n.locale)
-    elsif @current_question == :contact && skip_apply_type?
+    if last_question? || (@current_question == :contact && skip_apply_type?)
       summary_path(locale: I18n.locale)
     else
       question_path(next_question_id, locale: I18n.locale)
@@ -24,6 +22,10 @@ class Navigation
   end
 
   private
+
+  def last_question?
+    @current_question == QuestionFormFactory::IDS.last
+  end
 
   def next_question_id
     if skip_income_questions?
