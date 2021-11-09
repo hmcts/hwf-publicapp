@@ -67,16 +67,15 @@ RSpec.feature 'As a user' do
           click_link 'Cymraeg'
         end
 
-      #update after welsh version is provided
-      within(:xpath, ".//div[@class='steps-panel-confirmation']") do
-        expect(page.find(:xpath, './/p[1]').text).to eql "Reference: HWF-ABC123"
-        expect(page.find(:xpath, './/p[2]').text).to eql ""
-        expect(page.find(:xpath, './/p[3]').text).to eql ""
-        expect(page.find(:xpath, './/p[4]').text).to eql "Sir Bob Oliver"
-      end
+        within(:xpath, ".//div[@class='steps-panel-confirmation']") do
+          expect(page.find(:xpath, './/p[1]').text).to eql "Cyfeirnod: HWF-ABC123"
+          expect(page.find(:xpath, './/p[2]').text).to eql "Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un]."
+          expect(page.find(:xpath, './/p[3]').text).to eql "Yn gywir,"
+          expect(page.find(:xpath, './/p[4]').text).to eql "Sir Bob Oliver"
+        end
 
-      expect(page).to have_text ''
-      expect(page).to have_text ''
+        expect(page).to have_text 'Beth fydd yn digwydd nesaf'
+        expect(page).to have_text 'Byddwn yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.'
       end
     end
   end

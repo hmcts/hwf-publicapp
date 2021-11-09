@@ -422,8 +422,8 @@ cy:
       title: Eich cyfeiriad e-bost
     apply_type:
       breadcrumb: Cam %{page_number} of 22
-      title: Will you be making your court or tribunal application on paper or using an online service
-      text: Will you be making your court or tribunal application on paper or using an online service
+      title: A fyddwch yn gwneud eich cais i’r llys neu’r tribiwnlys ar bapur neu’n defnyddio gwasanaeth ar-lein?
+      text: A fyddwch yn gwneud eich cais i’r llys neu’r tribiwnlys ar bapur neu’n defnyddio gwasanaeth ar-lein?
       applying_method_paper: 'Bapur'
       applying_method_online: Gwasanaeth ar-lein
       details:

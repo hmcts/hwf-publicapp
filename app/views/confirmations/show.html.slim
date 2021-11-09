@@ -9,7 +9,7 @@ p.govuk-caption-l
 h1.govuk-heading-l
   =t('confirmation.default.title')
 
-= render('online', application: @online_application)
+= render(@online_application.applying_method, application: @online_application)
 
 h3.govuk-heading-s =t('confirmation.default.what_think_html')
 
