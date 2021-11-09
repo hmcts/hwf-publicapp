@@ -4,9 +4,14 @@
 
 =render('stylesheets')
 
-= render(@online_application.applying_method, application: @online_application)
+p.govuk-caption-l
+  =t('confirmation.default.breadcrumb')
+h1.govuk-heading-l
+  =t('confirmation.default.title')
 
-h3.govuk-heading-s =link_to("What did you think of this service?", 'https://www.smartsurvey.co.uk/s/HWFFeed20', class: 'external govuk-link', rel: 'external')
+= render('online', application: @online_application)
+
+h3.govuk-heading-s =t('confirmation.default.what_think_html')
 
 = form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
   = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')
