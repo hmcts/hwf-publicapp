@@ -208,15 +208,15 @@ dl.govuk-summary-list
             =t('summary.change')
             span.govuk-visually-hidden
               =t('contact', scope: 'summary.labels').downcase
-
-    div.govuk-summary-list__row
-      dt.govuk-summary-list__key =t('apply_type', scope: 'summary.labels')
-      dd.govuk-summary-list__value =t("applying_method_#{@summary.applying_method}", scope: 'summary')
-      dd.govuk-summary-list__actions
-        = link_to question_path(:apply_type), onclick: "dataLayer.push({'sectionName': 'apply_type', 'event': 'summary_page'});" do
-          =t('summary.change')
-          span.govuk-visually-hidden
-            =t('applying_method', scope: 'summary.labels').downcase
+    -if @summary.applying_method
+      div.govuk-summary-list__row
+        dt.govuk-summary-list__key =t('apply_type', scope: 'summary.labels')
+        dd.govuk-summary-list__value =t("applying_method_#{@summary.applying_method}", scope: 'summary')
+        dd.govuk-summary-list__actions
+          = link_to question_path(:apply_type), onclick: "dataLayer.push({'sectionName': 'apply_type', 'event': 'summary_page'});" do
+            =t('summary.change')
+            span.govuk-visually-hidden
+              =t('applying_method', scope: 'summary.labels').downcase
 
 
 - if @summary.income_validation_fails?

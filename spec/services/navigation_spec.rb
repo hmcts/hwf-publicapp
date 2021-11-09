@@ -98,6 +98,15 @@ RSpec.describe Navigation do
       end
     end
 
+    context 'for contact question when refund' do
+      let(:online_application) { build :online_application, :refund }
+      let(:current_question) { :contact }
+
+      it 'routes to the summary page' do
+        expect(subject).to eql(summary_path(locale: :en))
+      end
+    end
+
     context 'for apply_type question' do
       let(:current_question) { :apply_type }
 

@@ -25,3 +25,30 @@
   padding: 10px;
   font-size: 19px;
 }
+
+.govuk-panel--confirmation {
+  background: govuk-colour("orange");
+  h2 {
+    font-weight: normal;
+    color: #000
+  }
+}
+
+.steps-panel-confirmation {
+  background-color: govuk-colour("light-grey");
+  border: 1px solid govuk-colour("mid-grey");
+  padding: 20px 10px;
+  margin-bottom: 30px;
+
+  @media (min-width: 641px) {
+    padding: 30px;
+  }
+
+  .online-image {
+    text-align: right;
+    margin: 0 auto;
+    img {
+      border: 1px solid #000;
+    }
+  }
+}

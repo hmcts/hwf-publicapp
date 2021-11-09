@@ -119,9 +119,11 @@ RSpec.feature 'As a user' do
         expect(page).to have_content I18n.t('summary.labels.apply_type')
         expect(page).to have_content I18n.t('summary.applying_method_paper')
         find_summary_button.click
-        expect(page).to have_content I18n.t('confirmation.default.heading')
-        find_continue_button.click
-        expect(page).to have_content I18n.t('confirmation.done.heading', form_name: 'N1', reference: 'HWF-123-KLM')
+        expect(page).to have_content I18n.t('confirmation.default.title')
+        expect(page).to have_content I18n.t('confirmation.paper.heading')
+        expect(page).to have_content I18n.t('confirmation.paper.sub_heading')
+        expect(page).to have_content I18n.t('confirmation.paper.h3_two')
+        expect(page).to have_content I18n.t('confirmation.paper.p_six')
         find_finish_button.click
         expect(page).to have_content 'Get help paying court and tribunal fees'
       end

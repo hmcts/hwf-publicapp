@@ -40,7 +40,6 @@ module FeatureSteps
     fill_personal_detail
     fill_applicant_address
     fill_contact
-    fill_apply_type
   end
 
   def given_user_provides_all_data_for_below_threshold_income
@@ -48,7 +47,7 @@ module FeatureSteps
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
     fill_form_name
-    fill_fee(true)
+    fill_fee(false)
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status

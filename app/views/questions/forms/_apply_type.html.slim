@@ -12,3 +12,15 @@
       .govuk-radios__item
         = f.radio_button :applying_method, 'online', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
         = f.label :applying_method, t('applying_method_online', scope: @form.i18n_scope), for: 'apply_type_applying_method_online', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"
+
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary
+    span =t('details.header', scope: @form.i18n_scope)
+
+  .govuk-details__text
+    .text
+      ul.govuk-list.govuk-list--bullet
+        h3 =t('details.title_paper', scope: @form.i18n_scope)
+        p.govuk-body =t('details.text_paper', scope: @form.i18n_scope)
+        h3 =t('details.title_online', scope: @form.i18n_scope)
+        p.govuk-body =t('details.text_online', scope: @form.i18n_scope)
