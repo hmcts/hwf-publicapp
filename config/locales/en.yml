@@ -428,7 +428,7 @@ en:
       title: Number of children living with you
     dob:
       breadcrumb: Step %{page_number} of 22
-      hint_html: For example, 04 10 2018
+      hint_html: For example, 04 10 1990
       text: What is your date of birth?
       title: Date of birth
     fee:
