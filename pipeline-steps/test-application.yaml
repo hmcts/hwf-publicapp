@@ -32,6 +32,6 @@ steps:
     bundle exec rspec --fail-fast --format documentation --format RspecJunitFormatter --out test-rspec.xml
   displayName: 'rspec'
 
-- script: |
-    bundle exec cucumber features/*.feature --fail-fast
-  displayName: 'cucumber'
+# - script: |
+#     bundle exec cucumber features/*.feature --fail-fast
+#   displayName: 'cucumber'
