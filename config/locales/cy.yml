@@ -218,7 +218,7 @@ cy:
         forms/apply_type:
           attributes:
             applying_method:
-              inclusion: Select how will you be making your court or tribunal application
+              inclusion: Dewiswch sut y byddwch yn gwneud eich cais i’r llys neu’r tribiwnlys
 
   application:
     name: 'Help i dalu ffioedd'
@@ -711,7 +711,7 @@ cy:
       probate: Achos profiant
       savings: Cynilion a buddsoddiadau
       title: Gwiriwch y manylion
-      apply_type: Court or tribunal application
+      apply_type: Cais i’r llys neu’r tribiwnlys
     marital_status_false: Sengl
     marital_status_true: Priod neu'n byw gyda rhywun ac yn rhannu incwm
     applying_method_paper: 'Paper'
