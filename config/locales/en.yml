@@ -241,7 +241,7 @@ en:
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">What did you think of this service?</a>
     online:
       heading: Your application is not yet complete. You now need to take action.
-      sub_heading: Enter your help with fees reference number in the help with fees section of the online form.
+      sub_heading: Enter this help with fees reference number in the help with fees section of the online form.
       template:
         line_one: Enter your reference number in the help with fees section of the online form
       h3_one: What happens next
@@ -427,9 +427,9 @@ en:
       applying_method_online: 'Online service'
       details:
         header: Help with paper and online services
-        title_paper: Choose 'paper' if you are making this court or tribunal application using a paper form.
+        title_paper: Choose 'paper' if you are making your court or tribunal application using a paper form.
         text_paper: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using a paper form, you should select paper. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you should put on your form when you send it to the court or tribunal.
-        title_online: Choose 'online service' if you are making this court or tribunal application using an online service.
+        title_online: Choose 'online service' if you are making your court or tribunal application using an online service.
         text_online: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using an online service, you should select online. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you can enter when asked to do so on the court or tribunal online service.
     dependent:
       breadcrumb: Step %{page_number} of 22
