@@ -16,6 +16,11 @@ class ConfirmationPage < BasePage
     element :next_step, 'p', text: 'We will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
     element :feedback_text, 'p', text: 'After you finish your application, you are directed to an optional feedback form.'
     element :finish_application_button, 'input[value="Finish application"]'
+
+    element :confirmation_header_online_one, 'h2', text: 'Your application is not yet complete. You now need to take action.'
+    element :confirmation_header_online_two, 'h2', text: 'Enter this help with fees reference number in the help with fees section of the online form.'
+    element :confirmation_instruction_online, 'p', text: 'Enter your reference number in the help with fees section of the online form'
+    element :next_step_online, 'p', text: 'We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.'
   end
 
   def submit

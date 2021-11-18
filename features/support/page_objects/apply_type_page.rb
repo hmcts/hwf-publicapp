@@ -13,4 +13,9 @@ class ApplyTypePage < BasePage
     continue
   end
 
+  def applying_by_online_service
+    apply_type_page.content.online.click
+    continue
+  end
+
 end

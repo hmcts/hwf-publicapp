@@ -1,6 +1,6 @@
 @hwf_submit_application
 
-Feature: Confirmation page paper
+Feature: Paper confirmation page
 
   Background: Navigating to the confirmation page
     Given I am on the paper confirmation page with probate enabled
@@ -15,3 +15,4 @@ Feature: Confirmation page paper
   Scenario: Finish application
     When I click the finish application button
     Then I should be taken to the survey page
+
