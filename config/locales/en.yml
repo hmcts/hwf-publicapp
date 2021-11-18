@@ -248,8 +248,8 @@ en:
       contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
     paper:
       heading: Your application is not yet complete. You now need to take action.
-      sub_heading: You must provide the court or tribunal with your reference to proceed.
-      p_one: Fill in your reference number on the help with fees section of your court or tribunal application form.
+      sub_heading: You must provide the court or tribunal with this reference number to proceed.
+      p_one: Enter this reference number on the help with fees section of your court or tribunal application form.
       p_two: If your form does not have a help with fees section, write the reference number at the top of the form.
       h3_one: Send your court or tribunal application form to the court or tribunal.
       p_three: You can do this by post and in some cases email.

@@ -243,7 +243,7 @@ cy:
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">Beth yw eich barn am y gwasanaeth hwn?</a>
     online:
       heading: Nid yw eich cais wedi'i gwblhau eto. Mae angen i chi weithredu yn awr.
-      sub_heading: Nodwch eich cyfeirnod help i dalu ffioedd yn adran help i dalu ffioedd y ffurflen ar-lein.
+      sub_heading: Rhowch y cyfeirnod cymorth hwn gyda ffioedd yn adran cymorth gyda ffioedd y ffurflen ar-lein.
       template:
         line_one: Nodwch eich cyfeirnod yn adran help i dalu ffioedd y ffurflen ar-lein.
       h3_one: Beth fydd yn digwydd nesaf
@@ -307,9 +307,9 @@ cy:
     feedback:
       heading: Rhowch eich barn am y gwasanaeth i helpu i'w wella
       link: Rhowch eich adborth i ni
-    finish: Gorffen y cais
+    finish: Gorffen cais
     print: Cadw neu argraffu'r dudalen hon
-    feedback_text: Ar ôl llenwi eich cais, fe gewch eich cyfeirio i ffurflen adborth; mae llenwi’r ffurflen hon yn ddewisol.
+    feedback_text: Ar ôl i chi orffen eich cais, fe'ch cyfeirir at ffurflen adborth ddewisol.
     refund:
       breadcrumb: Cam 22 o 22
       heading: Anfonwch eich cyfeirnod i'r llys neu dribiwnlys sy'n delio â'ch achos
@@ -428,11 +428,10 @@ cy:
       applying_method_online: Gwasanaeth ar-lein
       details:
         header: Help gyda gwasanaethau papur ac ar-lein
-        title_paper: Dewiswch 'bapur' os ydych chi'n gwneud y cais llys neu dribiwnlys hwn gan ddefnyddio ffurflen bapur.
+        title_paper: Dewiswch 'bapur' os ydych chi'n gwneud eich cais llys neu dribiwnlys gan ddefnyddio ffurflen bapur.
         text_paper: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio ffurflen bapur, dylech ddewis papur. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y dylech ei roi ar eich ffurflen pan fyddwch yn ei hanfon i'r llys neu'r tribiwnlys.
-        title_online: Dewiswch 'gwasanaeth ar-lein' os ydych chi'n gwneud y cais llys neu dribiwnlys hwn gan ddefnyddio gwasanaeth ar-lein.
+        title_online: Dewiswch 'gwasanaeth ar-lein' os ydych chi'n gwneud eich cais llys neu dribiwnlys gan ddefnyddio gwasanaeth ar-lein.
         text_online: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio gwasanaeth ar-lein, dylech ddewis ar-lein. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y gallwch ei nodi pan ofynnir i chi wneud hynny ar wasanaeth ar-lein y llys neu'r tribiwnlys.
-
     dependent:
       breadcrumb: Cam %{page_number} o 22
       children_false: Nac oes

@@ -11,10 +11,11 @@ h1.govuk-heading-l
 
 = render(@online_application.applying_method, application: @online_application)
 
-h3.govuk-heading-s =t('confirmation.default.what_think_html')
-
-= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
-  = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')
-
 .js-only.no-print
   p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')
+
+= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
+  p.govuk-body =t('confirmation.feedback_text')
+  = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')
+
+
