@@ -46,7 +46,7 @@ RSpec.feature 'As a user' do
 
     scenario 'I expect to see instructions how to finish application' do
       expect(page).to have_content 'Your application is not yet complete. You now need to take action.'
-      expect(page).to have_content 'You must provide the court or tribunal with your reference to proceed'
+      expect(page).to have_content 'You must provide the court or tribunal with this reference number to proceed'
     end
 
     scenario 'I expect to "What happens next?" instructions and letter template' do
