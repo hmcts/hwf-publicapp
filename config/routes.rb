@@ -20,9 +20,7 @@ Rails.application.routes.draw do
   resource :submission, only: :create
 
   resource :confirmation, only: :show do
-    get :done
     get :refund
-    get :et
   end
 
   resource :session, only: :destroy do

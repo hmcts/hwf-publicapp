@@ -43,34 +43,6 @@ RSpec.describe ConfirmationsController, type: :controller do
     end
   end
 
-  describe 'GET #done' do
-    before do
-      get :done
-    end
-
-    it 'renders the show template' do
-      expect(response).to render_template(:done)
-    end
-
-    it 'assigns the online application model' do
-      expect(assigns(:online_application)).to eql(online_application)
-    end
-
-    it 'assigns the response object from the session' do
-      expect(assigns(:result)).to eql(result)
-    end
-
-    include_examples 'cache suppress headers'
-
-    context 'when storage has been cleared' do
-      let(:storage_started) { false }
-
-      it 'redirects to the home page' do
-        expect(response).to redirect_to(root_path)
-      end
-    end
-  end
-
   describe 'GET #refund' do
     before do
       get :refund
@@ -78,34 +50,6 @@ RSpec.describe ConfirmationsController, type: :controller do
 
     it 'renders the show template' do
       expect(response).to render_template(:refund)
-    end
-
-    it 'assigns the online application model' do
-      expect(assigns(:online_application)).to eql(online_application)
-    end
-
-    it 'assigns the response object from the session' do
-      expect(assigns(:result)).to eql(result)
-    end
-
-    include_examples 'cache suppress headers'
-
-    context 'when storage has been cleared' do
-      let(:storage_started) { false }
-
-      it 'redirects to the home page' do
-        expect(response).to redirect_to(root_path)
-      end
-    end
-  end
-
-  describe 'GET #et' do
-    before do
-      get :et
-    end
-
-    it 'renders the show template' do
-      expect(response).to render_template(:et)
     end
 
     it 'assigns the online application model' do
