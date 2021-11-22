@@ -6,5 +6,3 @@ ul.govuk-list.govuk-list--bullet
 
 - if @online_application.refund?
   p.govuk-body = t('details.average_note_refund', scope: @form.i18n_scope)
-- else
-  p.govuk-body = t('details.average_note', scope: @form.i18n_scope)

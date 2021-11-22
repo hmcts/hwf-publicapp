@@ -523,7 +523,7 @@ cy:
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
         kinds_list_married: "Dewiswch swm yr incwm misol rydych chi a'ch partner yn ei gael o'r canlynol:"
         kinds_list_married_refund: "Dewiswch swm yr incwm misol roeddech chi a'ch partner yn ei gael o'r canlynol:"
-        kinds_list_single: "Dewiswch swm yr incwm misol rydych chi'n ei gael o'r canlynol:"
+        kinds_list_single: "Mae angen i chi gynnwys incwm a dderbyniwyd yn ystod y mis calendr diwethaf o:"
         kinds_list_single_refund: "Dewiswch swm yr incwm misol roeddech chi'n ei gael o'r canlynol:"
       range:
         between: Rhwng %{min_threshold} a %{max_threshold}
@@ -531,7 +531,7 @@ cy:
         more: Mwy na %{max_threshold}
       text_married: Faint o incwm rydych chi a'ch partner yn ei gael bob mis?
       text_married_refund: Faint o incwm roeddech chi a'ch partner yn ei gael bob mis?
-      text_single: Faint o incwm rydych chi'n ei gael bob mis?
+      text_single: Faint o incwm wnaethoch chi ei dderbyn y mis diwethaf?
       text_single_refund: Faint o incwm roeddech chi'n ei gael bob mis?
       title: Ystod incwm
       wages: Cyflog cyn unrhyw ddidyniadau treth ac Yswiriant Gwladol
