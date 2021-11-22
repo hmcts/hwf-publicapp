@@ -92,6 +92,10 @@ def contact_page
   @contact_page ||= ContactPage.new
 end
 
+def apply_type_page
+  @apply_type_page ||= ApplyTypePage.new
+end
+
 def summary_page
   @summary_page ||= SummaryPage.new
 end

@@ -2,15 +2,29 @@ class ConfirmationPage < BasePage
   set_url '/confirmation'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 21 of 22'
-    element :header, 'h1', text: 'Reference number to add to your claim form'
-    element :confirmation_header, 'h2', text: 'Your application for help with fees is not finished yet'
-    section :list, '.govuk-list' do
-      element :one, 'li', text: 'You must write this reference number HWF-000-000 on your C100 form.'
-      element :two, 'li', text: 'Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your C100 form.'
-      element :three, 'li', text: 'You can also save or print this page and attach it to your C100 form.'
-      element :four, 'li', text: 'If you provided your email address, you\'ll get your application reference number by email.'
+    element :step_info, '.govuk-caption-l', text: 'Step 22 of 22'
+    element :header, 'h1', text: 'Send your claim form'
+    element :confirmation_header_paper_one, 'h2', text: 'Your application is not yet complete. You now need to take action.'
+    element :confirmation_header_paper_two, 'h2', text: 'You must provide the court or tribunal with this reference number to proceed.'
+    element :confirmation_instruction_line_one, 'p', text: 'Enter this reference number on the help with fees section of your court or tribunal application form'
+    element :confirmation_instruction_line_two, 'p', text: 'If your form does not have a help with fees section, write the reference number at the top of the form.'
+    section :list, '.steps-panel-confirmation' do
+      element :one, 'p', text: 'Reference: '
+      element :two, 'p', text: 'I have completed on online application for help with fees [insert application type and case number if you have one].'
+      element :three, 'p', text: 'Yours sincerely,'
     end
+    element :next_step, 'p', text: 'We will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
+    element :feedback_text, 'p', text: 'After you finish your application, you are directed to an optional feedback form.'
+    element :finish_application_button, 'input[value="Finish application"]'
+
+    element :confirmation_header_online_one, 'h2', text: 'Your application is not yet complete. You now need to take action.'
+    element :confirmation_header_online_two, 'h2', text: 'Enter this help with fees reference number in the help with fees section of the online form.'
+    element :confirmation_instruction_online, 'p', text: 'Enter your reference number in the help with fees section of the online form'
+    element :next_step_online, 'p', text: 'We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.'
   end
 
+  def submit
+    Rails.application.config.finish_page_redirect_url = '/'
+    content.finish_application_button.click
+  end
 end

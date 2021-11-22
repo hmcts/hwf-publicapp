@@ -26,7 +26,8 @@ RSpec.describe Navigation do
       claim: :dob,
       dob: :personal_detail,
       personal_detail: :applicant_address,
-      applicant_address: :contact
+      applicant_address: :contact,
+      contact: :apply_type
     }.each do |current_question, next_question|
       context "for #{current_question} question" do
         let(:current_question) { current_question }
@@ -91,6 +92,23 @@ RSpec.describe Navigation do
 
     context 'for contact question' do
       let(:current_question) { :contact }
+
+      it 'routes to the summary page' do
+        expect(subject).to eql(question_path(:apply_type, locale: :en))
+      end
+    end
+
+    context 'for contact question when refund' do
+      let(:online_application) { build :online_application, :refund }
+      let(:current_question) { :contact }
+
+      it 'routes to the summary page' do
+        expect(subject).to eql(summary_path(locale: :en))
+      end
+    end
+
+    context 'for apply_type question' do
+      let(:current_question) { :apply_type }
 
       it 'routes to the summary page' do
         expect(subject).to eql(summary_path(locale: :en))

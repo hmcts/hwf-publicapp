@@ -2,7 +2,7 @@ class SummaryPage < BasePage
   set_url '/summary'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 20 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 21 of 22'
     element :header, 'h1', text: 'Check details'
     element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     element :probate, '.govuk-summary-list__row', text: 'Probate case No'

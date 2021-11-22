@@ -84,6 +84,8 @@ RSpec.feature 'As a user' do
         check :contact_feedback_opt_in
         fill_in :contact_email, with: 'foo@bar.com'
         click_button 'Continue'
+        choose 'apply_type_applying_method_paper'
+        click_button 'Continue'
       end
 
       scenario 'I expect confirmation ' do
@@ -94,6 +96,8 @@ RSpec.feature 'As a user' do
     context 'after answering no to all of the contact options' do
       before do
         given_user_answers_questions_up_to(:contact)
+        click_button 'Continue'
+        choose 'apply_type_applying_method_paper'
         click_button 'Continue'
       end
 

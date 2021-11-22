@@ -215,6 +215,11 @@ cy:
               less_than: Rhowch swm rhwng £3,000 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
             over_61:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
+        forms/apply_type:
+          attributes:
+            applying_method:
+              inclusion: Dewiswch sut y byddwch yn gwneud eich cais i’r llys neu’r tribiwnlys
+
   application:
     name: 'Help i dalu ffioedd'
     title: 'Help i dalu ffioedd - MoJ'
@@ -233,29 +238,31 @@ cy:
     back_to_start: Yn ôl i'r dechrau
     default_form_name: hawlio
     default:
-      breadcrumb: Cam 21 o 22
-      continue: Parhau
-      heading: Nid yw eich cais am help i dalu ffioedd wedi'i orffen eto
-      steps:
-        four: Os ydych chi wedi rhoi'ch cyfeiriad e-bost, byddwch chi'n cael cyfeirnod eich cais drwy e-bost. Os nad oeddech chi wedi rhoi cyfeiriad e-bost, gwnewch nodyn o'ch cyfeirnod ar gyfer eich cofnodion.
-        one_html: Rhaid i chi ysgrifennu'r cyfeirnod hwn <strong>%{reference}</strong> ar eich ffurflen <strong>%{form_name}</strong>.
-        three: Gallwch chi hefyd gadw neu argraffu'r dudalen hon a'i hatodi i'ch ffurflen %{form_name}.
-        two: Ysgrifennwch y cyfeirnod yn y maes ‘cyfeirnod HWF’ os oes un. Os nad oes un, dylech chi ei ysgrifennu lle bynnag y mae lle ar eich ffurflen %{form_name}.
-      text: Y cyfeirnod i’w roi ar eich ffurflen hawlio
-      title: Nid yw'ch cais wedi'i orffen eto
-    done:
-      breadcrumb: Cam 22 o 22
-      heading: Anfonwch eich ffurflen %{form_name} gyda'ch cyfeirnod %{reference} arni i gwblhau'r broses
-      instructions: Anfonwch eich gwaith papur i'r llys neu dribiwnlys sy'n delio â'ch achos. Gallwch chi wneud hyn drwy'r post neu ei ddanfon eich hun.
-      courtfinder_html: 'Gallwch ddod o hyd i wybodaeth am lys neu dribiwnlys yma: <a href="https://www.gov.uk/chwilio-am-lys-neu-dribiwnlys" target="_blank" title="Chwilio am lys neu dribiwnlys">https://www.gov.uk/chwilio-am-lys-neu-dribiwnlys</a> (agor mewn tab newydd).'
-      next:
-        heading: Beth fydd yn digwydd nesaf?
-        steps:
-          one: Bydd eich cais yn cael ei asesu gan staff y llys neu dribiwnlys. Fel arfer ni fydd hyn yn cymryd mwy na 21 diwrnod.
-          three: Os bydd eich cais yn llwyddiannus, byddwch chi'n clywed yn uniongyrchol gan y llys neu dribiwnlys sy'n delio â'ch achos.
-          two: Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais yn llwyddiannus neu os oes angen i chi roi gwybodaeth ychwanegol iddynt.
-      text: Anfonwch eich ffurflen hawlio
-      title: Anfonwch eich ffurflen i gwblhau'r broses
+      breadcrumb: Cam 22 of 22
+      title: Anfonwch eich ffurflen hawlio
+      what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">Beth yw eich barn am y gwasanaeth hwn?</a>
+    online:
+      heading: Nid yw eich cais wedi'i gwblhau eto. Mae angen i chi weithredu yn awr.
+      sub_heading: Rhowch y cyfeirnod cymorth hwn gyda ffioedd yn adran cymorth gyda ffioedd y ffurflen ar-lein.
+      template:
+        line_one: Nodwch eich cyfeirnod yn adran help i dalu ffioedd y ffurflen ar-lein.
+      h3_one: Beth fydd yn digwydd nesaf
+      contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
+    paper:
+      heading: Nid yw eich cais wedi’i gwblhau eto. Mae angen i chi weithredu yn awr.
+      sub_heading: Rhaid i chi roi eich cyfeirnod i'r llys neu'r tribiwnlys i barhau
+      p_one: Nodwch eich cyfeirnod yn adran help i dalu ffioedd eich ffurflen gais i’r llys neu’r tribiwnlys.
+      p_two: Os nad oes gan eich ffurflen adran help i dalu ffioedd, ysgrifennwch y cyfeirnod ar frig y ffurflen.
+      h3_one: Anfonwch eich ffurflen gais llys neu dribiwnlys i'r llys neu'r tribiwnlys.
+      p_three: Gallwch wneud hyn drwy’r post ac weithiau drwy e-bost.
+      p_four: Os nad oes gennych ffurflen gais, defnyddiwch y templed isod.
+      template:
+        reference: 'Cyfeirnod: %{reference}'
+        line_one: Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un].
+        line_two: Yn gywir,
+      p_five_html: Dewch o hyd i <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">fanylion cyswllt y llys neu'r tribiwnlys y</a> mae angen i chi anfon eich cais iddo.
+      h3_two: Beth fydd yn digwydd nesaf
+      p_six: Byddwn yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
     et:
       address:
         email:
@@ -300,9 +307,9 @@ cy:
     feedback:
       heading: Rhowch eich barn am y gwasanaeth i helpu i'w wella
       link: Rhowch eich adborth i ni
-    finish: Gorffen y cais
+    finish: Gorffen cais
     print: Cadw neu argraffu'r dudalen hon
-    feedback_text: Ar ôl llenwi eich cais, fe gewch eich cyfeirio i ffurflen adborth; mae llenwi’r ffurflen hon yn ddewisol.
+    feedback_text: Ar ôl i chi orffen eich cais, fe'ch cyfeirir at ffurflen adborth ddewisol.
     refund:
       breadcrumb: Cam 22 o 22
       heading: Anfonwch eich cyfeirnod i'r llys neu dribiwnlys sy'n delio â'ch achos
@@ -413,6 +420,18 @@ cy:
       feedback_opt_in: Ticiwch y blwch hwn os ydych chi'n barod i rannu'ch profiad o'r gwasanaeth hwn. Efallai y bydd aelod o'r tîm yn cysylltu â chi. Ni fyddwn yn defnyddio'ch cyfeiriad e-bost at unrhyw bwrpas arall.
       text: Beth yw eich cyfeiriad e-bost?
       title: Eich cyfeiriad e-bost
+    apply_type:
+      breadcrumb: Cam %{page_number} of 22
+      title: A fyddwch yn gwneud eich cais i’r llys neu’r tribiwnlys ar bapur neu’n defnyddio gwasanaeth ar-lein?
+      text: A fyddwch yn gwneud eich cais i’r llys neu’r tribiwnlys ar bapur neu’n defnyddio gwasanaeth ar-lein?
+      applying_method_paper: 'Bapur'
+      applying_method_online: Gwasanaeth ar-lein
+      details:
+        header: Help gyda gwasanaethau papur ac ar-lein
+        title_paper: Dewiswch 'bapur' os ydych chi'n gwneud eich cais llys neu dribiwnlys gan ddefnyddio ffurflen bapur.
+        text_paper: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio ffurflen bapur, dylech ddewis papur. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y dylech ei roi ar eich ffurflen pan fyddwch yn ei hanfon i'r llys neu'r tribiwnlys.
+        title_online: Dewiswch 'gwasanaeth ar-lein' os ydych chi'n gwneud eich cais llys neu dribiwnlys gan ddefnyddio gwasanaeth ar-lein.
+        text_online: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio gwasanaeth ar-lein, dylech ddewis ar-lein. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y gallwch ei nodi pan ofynnir i chi wneud hynny ar wasanaeth ar-lein y llys neu'r tribiwnlys.
     dependent:
       breadcrumb: Cam %{page_number} o 22
       children_false: Nac oes
@@ -658,7 +677,7 @@ cy:
   summary:
     applicant_on_benefits_false: Ddim yn derbyn budd-daliadau cymwys
     applicant_on_benefits_true: Yn derbyn budd-daliadau cymwys
-    breadcrumb: Cam 20 o 22
+    breadcrumb: Cam 21 o 22
     change: Newid
     children_false: Nac oes
     claim_number_false: Nac oes
@@ -691,14 +710,18 @@ cy:
       probate: Achos profiant
       savings: Cynilion a buddsoddiadau
       title: Gwiriwch y manylion
+      apply_type: Cais i’r llys neu’r tribiwnlys
     marital_status_false: Sengl
     marital_status_true: Priod neu'n byw gyda rhywun ac yn rhannu incwm
+    applying_method_paper: 'Paper'
+    applying_method_online: 'Online service'
     missing_answer:
       dependents: "Rhowch fanylion unrhyw blant neu ddibynyddion"
       income: "Atebwch gwestiynau am eich incwm"
     probate_case_: ''
     probate_case_false: Nac ydw
     probate_case_true: Ydw
+
     truth:
       button: Cyflwyno cais a pharhau
       heading: Datganiad a datganiad gwirionedd

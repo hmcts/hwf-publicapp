@@ -213,6 +213,11 @@ en:
               less_than: Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings
             over_61:
               inclusion: Select if you or your partner are over 61
+        forms/apply_type:
+          attributes:
+            applying_method:
+              inclusion: Select how will you be making your court or tribunal application
+
   application:
     name: 'Help with fees'
     title: 'Help with fees - MoJ'
@@ -231,29 +236,31 @@ en:
     back_to_start: Back to start
     default_form_name: claim
     default:
-      breadcrumb: Step 21 of 22
-      continue: Continue
-      heading: Your application for help with fees is not finished yet
-      steps:
-        four: If you provided your email address, you'll get your application reference number by email. If you didn't provide an email, make a note of your reference number for your own records.
-        one_html: You must write this reference number <strong>%{reference}</strong> on your <strong>%{form_name}</strong> form.
-        three: You can also save or print this page and attach it to your %{form_name} form.
-        two: Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your %{form_name} form.
-      text: Reference number to add to your claim form
-      title: Your application is not finished yet
-    done:
       breadcrumb: Step 22 of 22
-      heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
-      instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
-      courtfinder_html: 'Find the court or tribunal information here: <a href="https://www.gov.uk/find-court-tribunal" target="_blank" title="Find a court or tribunal">https://www.gov.uk/find-court-tribunal</a> (opens in new tab).'
-      next:
-        heading: What happens next?
-        steps:
-          one: Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.
-          three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
-          two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
-      text: Send your claim form
-      title: Send your form to complete the process
+      title: Send your claim form
+      what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">What did you think of this service?</a>
+    online:
+      heading: Your application is not yet complete. You now need to take action.
+      sub_heading: Enter this help with fees reference number in the help with fees section of the online form.
+      template:
+        line_one: Enter your reference number in the help with fees section of the online form
+      h3_one: What happens next
+      contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
+    paper:
+      heading: Your application is not yet complete. You now need to take action.
+      sub_heading: You must provide the court or tribunal with this reference number to proceed.
+      p_one: Enter this reference number on the help with fees section of your court or tribunal application form.
+      p_two: If your form does not have a help with fees section, write the reference number at the top of the form.
+      h3_one: Send your court or tribunal application form to the court or tribunal.
+      p_three: You can do this by post and in some cases email.
+      p_four: If you do not have an application form, use the template below.
+      template:
+        reference: 'Reference: %{reference}'
+        line_one: I have completed on online application for help with fees [insert application type and case number if you have one].
+        line_two: Yours sincerely,
+      p_five_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
+      h3_two: What happens next
+      p_six: We will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
     et:
       address:
         email:
@@ -412,6 +419,18 @@ en:
       feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
       text: What's your email address?
       title: Your email address
+    apply_type:
+      breadcrumb: Step %{page_number} of 22
+      title: Will you be making your court or tribunal application on paper or using an online service?
+      text: Will you be making your court or tribunal application on paper or using an online service?
+      applying_method_paper: 'Paper'
+      applying_method_online: 'Online service'
+      details:
+        header: Help with paper and online services
+        title_paper: Choose 'paper' if you are making your court or tribunal application using a paper form.
+        text_paper: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using a paper form, you should select paper. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you should put on your form when you send it to the court or tribunal.
+        title_online: Choose 'online service' if you are making your court or tribunal application using an online service.
+        text_online: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using an online service, you should select online. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you can enter when asked to do so on the court or tribunal online service.
     dependent:
       breadcrumb: Step %{page_number} of 22
       children_false: 'No'
@@ -657,7 +676,7 @@ en:
   summary:
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
-    breadcrumb: Step 20 of 22
+    breadcrumb: Step 21 of 22
     change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'
@@ -690,6 +709,7 @@ en:
       probate: Probate case
       savings: Savings and investments
       title: Check details
+      apply_type: Court or tribunal application
     marital_status_false: Single
     marital_status_true: Married or living with someone and sharing an income
     missing_answer:
@@ -702,6 +722,8 @@ en:
       button: Submit application and continue
       heading: Declaration and statement of truth
       statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
+    applying_method_paper: 'Paper'
+    applying_method_online: 'Online service'
   switch:
     language: Cymraeg
     locale: cy

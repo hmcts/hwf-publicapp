@@ -24,7 +24,7 @@ RSpec.feature 'As a user' do
       expect(page).not_to have_text('Enter your employment tribunal claim number')
 
       when_they_continue_from_step12_up_to_summary
-      expect(page).to have_text('Step 20 of 22')
+      expect(page).to have_text('Step 21 of 22')
       expect(page).to have_text('Check details')
 
       claim_link = page.find(:xpath, './/dl//div[10]//a')
@@ -45,33 +45,37 @@ RSpec.feature 'As a user' do
     end
 
     scenario 'I expect to see instructions how to finish application' do
-      expect(page).to have_content 'Your application for help with fees is not finished yet'
-      expect(page).to have_content 'You must write this reference number HWF-ABC123 on your ET form'
+      expect(page).to have_content 'Your application is not yet complete. You now need to take action.'
+      expect(page).to have_content 'You must provide the court or tribunal with this reference number to proceed'
     end
 
-    scenario 'I expect to "What happens next?" instructions' do
-      click_button "Continue"
-      within(:xpath, ".//div[@class='steps-panel']") do
-        expect(page).to have_text 'What happens next?'
-        expect(page.find(:xpath, './/ol/li[1]').text).to eql 'Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.'
-        expect(page.find(:xpath, './/ol/li[2]').text).to eql "You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you."
-        expect(page.find(:xpath, './/ol/li[3]').text).to eql("If your application is successful you'll hear directly from the court or tribunal dealing with your case.")
+    scenario 'I expect to "What happens next?" instructions and letter template' do
+      within(:xpath, ".//div[@class='steps-panel-confirmation']") do
+        expect(page.find(:xpath, './/p[1]').text).to eql "Reference: HWF-ABC123"
+        expect(page.find(:xpath, './/p[2]').text).to eql "I have completed on online application for help with fees [insert application type and case number if you have one]."
+        expect(page.find(:xpath, './/p[3]').text).to eql "Yours sincerely,"
+        expect(page.find(:xpath, './/p[4]').text).to eql "Sir Bob Oliver"
       end
+
+      expect(page).to have_text 'What happens next'
+      expect(page).to have_text 'We will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
     end
 
     context 'Welsh' do
-      scenario 'I expect to "What happens next?" instructions' do
+      scenario 'I expect to "What happens next?" instructions amd letter template' do
         within(:xpath, ".//p[@class='govuk-phase-banner__content']") do
           click_link 'Cymraeg'
         end
 
-        click_button 'Parhau'
-        within(:xpath, ".//div[@class='steps-panel']") do
-          expect(page).to have_text 'Beth fydd yn digwydd nesaf?'
-          expect(page.find(:xpath, './/ol/li[1]').text).to eql "Bydd eich cais yn cael ei asesu gan staff y llys neu dribiwnlys. Fel arfer ni fydd hyn yn cymryd mwy na 21 diwrnod."
-          expect(page.find(:xpath, './/ol/li[2]').text).to eql "Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais yn llwyddiannus neu os oes angen i chi roi gwybodaeth ychwanegol iddynt."
-          expect(page.find(:xpath, './/ol/li[3]').text).to eql "Os bydd eich cais yn llwyddiannus, byddwch chi'n clywed yn uniongyrchol gan y llys neu dribiwnlys sy'n delio â'ch achos."
+        within(:xpath, ".//div[@class='steps-panel-confirmation']") do
+          expect(page.find(:xpath, './/p[1]').text).to eql "Cyfeirnod: HWF-ABC123"
+          expect(page.find(:xpath, './/p[2]').text).to eql "Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un]."
+          expect(page.find(:xpath, './/p[3]').text).to eql "Yn gywir,"
+          expect(page.find(:xpath, './/p[4]').text).to eql "Sir Bob Oliver"
         end
+
+        expect(page).to have_text 'Beth fydd yn digwydd nesaf'
+        expect(page).to have_text 'Byddwn yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.'
       end
     end
   end
