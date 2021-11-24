@@ -27,7 +27,7 @@ Then("I should see what to do if I do not have either a national insurance numbe
 end
 
 Then("there should be a link paper application form") do
-  expect(home_office_page.content.paper_form_link['href']).to end_with 'government/uploads/system/uploads/attachment_data/file/1021745/EX160_form.pdf'
+  expect(home_office_page.content.paper_form_link['href']).to end_with 'government/publications/apply-for-help-with-court-and-tribunal-fees'
 end
 
 Then("I should see further information about where to find my home office number") do
