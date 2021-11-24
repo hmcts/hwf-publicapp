@@ -592,7 +592,7 @@ cy:
       prompt: Cyfeirnod y Swyddfa Gartref
       example: Er enghraifft, L1234567 neu L1234567/1 (ar gyfer aelodau o’ch teulu) neu 1111-2222-3333-4444 neu 1111-2222-3333-4444/01 (ar gyfer aelodau o’ch teulu)
       paper_form_link_html: "Os nad oes gennych rif Yswiriant Gwladol, neu gyfeirnod Swyddfa Gartref, bydd angen i chi lenwi'r
-            <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634330/ex160-bil.pdf'
+            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
             target='_blank'>ffurflen gais bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
       details:
