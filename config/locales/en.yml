@@ -522,7 +522,7 @@ en:
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
         kinds_list_married: 'You need to include income you and your partner receive from:'
         kinds_list_married_refund: 'Select the monthly amount you and your partner received in income from:'
-        kinds_list_single: 'You need to include income from:'
+        kinds_list_single: 'You need to include income received in the last calendar month from:'
         kinds_list_single_refund: 'Select the monthly amount you received in income from:'
       range:
         between: Between %{min_threshold} and %{max_threshold}
@@ -530,7 +530,7 @@ en:
         more: More than %{max_threshold}
       text_married: How much income do you and your partner receive each month?
       text_married_refund: How much income did you and your partner receive each month?
-      text_single: How much income do you receive each month?
+      text_single: How much income did you receive last month?
       text_single_refund: How much income did you receive each month?
       title: Income range
       wages: Wages before tax and National Insurance are taken off

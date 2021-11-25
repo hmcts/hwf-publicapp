@@ -38,7 +38,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "income_range" page with error block' do
-        expect(page).to have_content 'How much income do you receive each month?'
+        expect(page).to have_content 'How much income did you receive last month?'
         expect(page).to have_content 'There is a problem'
         expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select your monthly income')
       end
@@ -103,7 +103,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect to be routed to the "income_range" page' do
-          expect(page).to have_content 'How much income do you receive each month?'
+          expect(page).to have_content 'How much income did you receive last month?'
         end
       end
     end
