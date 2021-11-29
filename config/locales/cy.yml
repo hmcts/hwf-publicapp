@@ -312,23 +312,20 @@ cy:
     feedback_text: Ar ôl i chi orffen eich cais, fe'ch cyfeirir at ffurflen adborth ddewisol.
     refund:
       breadcrumb: Cam 22 o 22
-      heading: Anfonwch eich cyfeirnod i'r llys neu dribiwnlys sy'n delio â'ch achos
-      letter:
-        five: "%{full_name}"
-        four: Yn gywir,
-        one: 'Cyfeirnod: %{reference}'
-        three: Talais ffi ar %{date_fee_paid}.
-        two: Rydw i wedi cwblhau cais ar-lein am help i dalu ffioedd i gael ad-daliad.
-      notice:
-        text: Ni fydd eich cais am ad-daliad yn mynd ymlaen nes byddwch chi wedi anfon eich cyfeirnod i'r llys neu dribiwnlys
-        warning: Rhybudd
-      steps:
-        one:
-          one: Anfonwch eich cyfeirnod i'r llys neu dribiwnlys sy'n delio â'ch achos (drwy'r post neu'n bersonol)
-          two: 'Gallwch chi ddefnyddio''r templed llythyr isod:'
-        three: Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais wedi llwyddo neu os oes angen i chi roi gwybodaeth ychwanegol iddynt
-        two: Bydd eich cais yn cael ei asesu gan staff y llys neu dribiwnlys
       title: Anfonwch eich cyfeirnod i gwblhau'r broses
+      heading: Nid yw eich cais wedi’i gwblhau eto. Mae angen i chi weithredu yn awr.
+      sub_heading: Rhaid i chi roi eich cyfeirnod i'r llys neu'r tribiwnlys i barhau
+      h3_one: Rhowch eich cyfeirnod help i dalu ffioedd i’r llys neu’r tribiwnlys.
+      p_one: Gallwch wneud hyn drwy’r post ac weithiau drwy e-bost. Defnyddiwch y templed isod.
+      template:
+        reference: 'Cyfeirnod: %{reference}'
+        one: 'Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd am ad-daliad.'
+        two: 'Talais y ffi ar %{fee_paid} ar gyfer achos %{reference}'
+        three: 'Yn gywir,'
+      p_two_html: Dewch o hyd i <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">fanylion cyswllt y llys neu'r tribiwnlys y</a> mae angen i chi anfon eich cais iddo.
+      h3_two: Beth fydd yn digwydd nesaf
+      p_three: Byddwn yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu i roi gwybod i chi am ganlyniad eich cais.
+
   error_block:
     heading: Mae problem wedi codi
     visuallyhidden: Mae'r gwallau wedi'u rhestru fel dolenni isod, cliciwch i ddewis y maes sydd angen ei gywiro.

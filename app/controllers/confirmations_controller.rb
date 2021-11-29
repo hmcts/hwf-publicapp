@@ -6,15 +6,7 @@ class ConfirmationsController < ApplicationController
     prepare_view
   end
 
-  def done
-    prepare_view
-  end
-
   def refund
-    prepare_view
-  end
-
-  def et
     prepare_view
   end
 

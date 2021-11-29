@@ -311,23 +311,20 @@ en:
     feedback_text: After you finish your application, you are directed to an optional feedback form.
     refund:
       breadcrumb: Step 22 of 22
-      heading: Send your reference number to the court or tribunal dealing with your case
-      letter:
-        five: "%{full_name}"
-        four: Yours sincerely,
-        one: 'Reference: %{reference}'
-        three: I paid a fee on %{date_fee_paid}.
-        two: I have completed an online application for help with fees for a refund.
-      notice:
-        text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
-        warning: Warning
-      steps:
-        one:
-          one: Deliver your reference number to the court or tribunal dealing with your case (by post or in person)
-          two: 'You can use the letter template below:'
-        three: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
-        two: Your application will be assessed by court or tribunal staff
       title: Send your reference number to complete the process
+      heading: Your application is not yet complete. You now need to take action.
+      sub_heading: You must provide the court or tribunal with your reference to proceed
+      h3_one: Provide your help with fees reference number to the court or tribunal.
+      p_one: You can do this by post and in some cases email. Use the template below.
+      template:
+        reference: 'Reference: %{reference}'
+        one: 'I have completed on online application for help with fees for a refund.'
+        two: 'I paid the fee on %{fee_paid} for case %{reference}'
+        three: 'Yours sincerely,'
+      p_two_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
+      h3_two: What happens next
+      p_three: We will contact you within 21 days to tell you if you need to provide more information or to inform you of the result of your application.
+
   error_block:
     heading: There is a problem
     visuallyhidden: Errors are listed as links below, click to select the field that needs correcting.

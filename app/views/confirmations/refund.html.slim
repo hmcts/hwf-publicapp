@@ -4,32 +4,37 @@
 
 =render('stylesheets')
 
-p.govuk-caption-l
-  =t('confirmation.refund.breadcrumb')
 h1.govuk-heading-l
-  =t('confirmation.refund.heading')
+  =t('confirmation.refund.title')
+
+.govuk-panel.govuk-panel--confirmation
+  h2 =t('confirmation.refund.heading')
+  h2 =t('confirmation.refund.sub_heading')
+
+  .govuk-panel__body
+    h2 =@result['message']
+br
 
 
-ol.govuk-list.govuk-list--number.next-steps
-  li
-    ul.govuk-list class='govuk-!-margin-top-4'
-      li = t('confirmation.refund.steps.one.one')
-      li
-        = t('confirmation.refund.steps.one.two')
-        .inset class='govuk-!-margin-top-4'
-          ul.govuk-list
-            li = t('confirmation.refund.letter.one', reference: @result['message'])
-            li = t('confirmation.refund.letter.two')
-            li = t('confirmation.refund.letter.three', date_fee_paid: @online_application.date_fee_paid)
-            li = t('confirmation.refund.letter.four')
-            li = t('confirmation.refund.letter.five', full_name: @online_application.full_name)
-  li = t('confirmation.refund.steps.two')
-  li = t('confirmation.refund.steps.three')
+h3.govuk-heading-m =t('confirmation.refund.h3_one')
+p.govuk-body =t('confirmation.refund.p_one')
 
-.govuk-warning-text
-  span.govuk-warning-text__icon.no-print aria-hidden="true" !
-  strong.govuk-warning-text__text
-    span.govuk-warning-text__assistive.no-print = t('confirmation.refund.notice.warning')
-    = t('confirmation.refund.notice.text')
+.steps-panel-confirmation
+  p.govuk-body =t('confirmation.refund.template.reference', reference: @result['message'])
+  p.govuk-body =t('confirmation.refund.template.one')
+  p.govuk-body =t('confirmation.refund.template.two', reference: @result['message'], fee_paid: @online_application.date_fee_paid)
+  p.govuk-body =t('confirmation.refund.template.three')
+  p.govuk-body = @online_application.full_name
 
-=render('footer')
+p.govuk-body =t('confirmation.refund.p_two_html')
+
+h3.govuk-heading-m =t('confirmation.refund.h3_two')
+
+p.govuk-body =t('confirmation.refund.p_three')
+
+.js-only.no-print
+  p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')
+
+= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
+  p.govuk-body =t('confirmation.feedback_text')
+  = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')
