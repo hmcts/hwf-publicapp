@@ -315,16 +315,16 @@ cy:
       title: Anfonwch eich cyfeirnod i gwblhau'r broses
       heading: Nid yw eich cais wedi’i gwblhau eto. Mae angen i chi weithredu yn awr.
       sub_heading: Rhaid i chi roi eich cyfeirnod i'r llys neu'r tribiwnlys i barhau
-      h3_one: Provide your help with fees reference number to the court or tribunal.
-      p_one: You can do this by post and in some cases email. Use the template below.
+      h3_one: Rhowch eich cyfeirnod help i dalu ffioedd i’r llys neu’r tribiwnlys.
+      p_one: Gallwch wneud hyn drwy’r post ac weithiau drwy e-bost. Defnyddiwch y templed isod.
       template:
-        reference: 'Reference: %{reference}'
-        one: 'I have completed on online application for help with fees for a refund.'
-        two: 'I paid the fee on %{fee_paid} for case %{reference}'
-        three: 'Yours sincerely,'
+        reference: 'Cyfeirnod: %{reference}'
+        one: 'Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd am ad-daliad.'
+        two: 'Talais y ffi ar %{fee_paid} ar gyfer achos %{reference}'
+        three: 'Yn gywir,'
       p_two_html: Dewch o hyd i <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">fanylion cyswllt y llys neu'r tribiwnlys y</a> mae angen i chi anfon eich cais iddo.
       h3_two: Beth fydd yn digwydd nesaf
-      p_three: We will contact you within 21 days to tell you if you need to provide more information or to inform you of the result of your application.
+      p_three: Byddwn yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu i roi gwybod i chi am ganlyniad eich cais.
 
   error_block:
     heading: Mae problem wedi codi
