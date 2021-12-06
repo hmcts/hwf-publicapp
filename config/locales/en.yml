@@ -520,7 +520,7 @@ en:
         kinds_list_married: 'You need to include income you and your partner receive from:'
         kinds_list_married_refund: 'Select the monthly amount you and your partner received in income from:'
         kinds_list_single: 'You need to include income received in the last calendar month from:'
-        kinds_list_single_refund: 'Select the monthly amount you received in income from:'
+        kinds_list_single_refund: 'You need to include income received in the last calendar month from:'
       range:
         between: Between %{min_threshold} and %{max_threshold}
         less: Less than %{min_threshold}
@@ -528,7 +528,7 @@ en:
       text_married: How much income do you and your partner receive each month?
       text_married_refund: How much income did you and your partner receive each month?
       text_single: How much income did you receive last month?
-      text_single_refund: How much income did you receive each month?
+      text_single_refund: How much income did you receive last month?
       title: Income range
       wages: Wages before tax and National Insurance are taken off
     marital_status:

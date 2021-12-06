@@ -3,9 +3,9 @@ class IncomeRangePage < BasePage
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 12 of 22'
-    element :single_header, 'h1', text: 'How much income did you receive each month?'
+    element :single_header, 'h1', text: 'How much income did you receive last month?'
     element :married_header, 'h1', text: 'How much income do you and your partner receive each month?'
-    element :select_single_income_hint, 'p', text: 'Select the monthly amount you received in income from:'
+    element :select_single_income_hint, 'p', text: 'You need to include income received in the last calendar month from:'
     element :select_married_income_hint, 'p', text: 'Select the monthly amount you and your partner receive in income from: Wages If your income varies from month to month, work out an average monthly income based on the last 3 months.'
     element :choose_income_single, 'p', text: 'Choose the different types of income you receive.'
     element :choose_income_married, 'p', text: 'Choose the different types of income you and your partner receive.'
