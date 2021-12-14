@@ -5,7 +5,3 @@ ul.govuk-list.govuk-list--bullet
   - Views::IncomeKinds.new(session).list.each do |kind|
     li = kinds_alternative_translation(kind)
 
-- if @online_application.refund?
-  p.govuk-body = t('details.average_note_refund', scope: @form.i18n_scope)
-- else
-  p.govuk-body = t('details.average_note', scope: @form.i18n_scope)
