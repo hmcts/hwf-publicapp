@@ -476,10 +476,10 @@ en:
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
-        kinds_list_married: 'Enter the total amount you and your partner receive each month from:'
-        kinds_list_married_refund: 'Enter the total monthly amount you and your partner received in income from:'
-        kinds_list_single: 'Enter the total amount you receive each month from:'
-        kinds_list_single_refund: 'Enter the total monthly amount you received in income from:'
+        kinds_list_married: 'Enter the total amount you and your partner received in the last calendar month from:'
+        kinds_list_married_refund: 'Enter the total amount you and your partner received in the last calendar month from:'
+        kinds_list_single: 'Enter the total amount you received in the last calendar month from:'
+        kinds_list_single_refund: 'Enter the total amount you received in the last calendar month from:'
       text_married: What’s your total monthly income?
       text_married_refund: What was your total monthly income?
       text_single: What’s your total monthly income?
