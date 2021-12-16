@@ -477,10 +477,10 @@ cy:
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: "Rhowch gyfanswm yr incwm misol rydych chi a'ch partner yn ei gael o'r canlynol:"
-        kinds_list_married_refund: "Rhowch gyfanswm yr incwm misol roeddech chi a'ch partner yn ei gael o'r canlynol:"
-        kinds_list_single: "Rhowch gyfanswm yr incwm misol rydych chi'n ei gael o'r canlynol:"
-        kinds_list_single_refund: "Rhowch gyfanswm yr incwm misol roeddech chi'n ei gael o'r canlynol:"
+        kinds_list_married: "Rhowch gyfanswm y swm a gawsoch chi a’ch partner yn y mis calendr diwethaf o:"
+        kinds_list_married_refund: "Rhowch gyfanswm y swm a gawsoch chi a’ch partner yn y mis calendr diwethaf o:"
+        kinds_list_single: "Rhowch gyfanswm y swm a gawsoch yn y mis calendr diwethaf o:"
+        kinds_list_single_refund: "Rhowch gyfanswm y swm a gawsoch yn y mis calendr diwethaf o:"
       text_married: Beth yw cyfanswm eich incwm misol?
       text_married_refund: Beth oedd cyfanswm eich incwm misol?
       text_single: Beth yw cyfanswm eich incwm misol?
