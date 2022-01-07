@@ -532,6 +532,7 @@ cy:
       text_single_refund: Faint o incwm wnaethoch chi ei dderbyn y mis diwethaf?
       title: Ystod incwm
       wages: Cyflog cyn unrhyw ddidyniadau treth ac Yswiriant Gwladol
+      contact_hm_revenue: Efallai y byddwn yn cysylltu â Chyllid a Thollau EM i ddilysu'r incwm rydych yn ei ddatgan. Efallai y byddwn hefyd yn cysylltu â chi os bydd angen i ni weld tystiolaeth ychwanegol.
     marital_status:
       breadcrumb: Cam %{page_number} o 22
       details:
