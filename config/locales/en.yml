@@ -531,6 +531,7 @@ en:
       text_single_refund: How much income did you receive last month?
       title: Income range
       wages: Wages before tax and National Insurance are taken off
+      contact_hm_revenue: We may contact HM Revenue & Customs to validate the income you declare. We may also contact you if we need to see additional evidence.
     marital_status:
       breadcrumb: Step %{page_number} of 22
       details:
