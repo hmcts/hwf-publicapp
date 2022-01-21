@@ -1,5 +1,5 @@
 - if @online_application.married?
-  span.govuk-hint =t('subtext_married', scope: @form.i18n_scope)
+  div.govuk-hint =t('subtext_married', scope: @form.i18n_scope)
 
 - else
-  span.govuk-hint =t('subtext_single', scope: @form.i18n_scope)
+  div.govuk-hint =t('subtext_single', scope: @form.i18n_scope)

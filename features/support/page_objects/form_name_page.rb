@@ -8,7 +8,7 @@ class FormNamePage < BasePage
     element :probate_link, 'a', text: 'Find further details and apply for probate.'
     element :form_label, '.govuk-label', text: 'Form number'
     element :form_name, '#form_name_identifier'
-    element :enter_court_hint, 'span.govuk-hint', text: 'You\'ll find a number at the bottom of paper forms, for example C100 or ADM1A.'
+    element :enter_court_hint, 'div.govuk-hint', text: 'You\'ll find a number at the bottom of paper forms, for example C100 or ADM1A.'
     element :error_link, 'a', text: "Enter a valid form number or select 'I don't have a form'"
     element :error_message, '.error-message', text: "Enter a valid form number or select 'I don't have a form'"
     element :invalid_link, 'a', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'

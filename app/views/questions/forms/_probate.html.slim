@@ -24,7 +24,7 @@
       fieldset.govuk-fieldset
         legend.govuk-fieldset__legend for='day_date_of_death' class='govuk-!-margin-bottom-1'
            = t('date_of_death', scope: @form.i18n_scope)
-        span.govuk-hint = t('hint_html', scope: @form.i18n_scope)
+        div.govuk-hint = t('hint_html', scope: @form.i18n_scope)
         - if @form.errors[:date_of_death].any?
           span.govuk-error-message#date_of_death = @form.errors[:date_of_death].join(' ')
 

@@ -4,7 +4,7 @@ class ProbatePage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 14 of 22'
     element :header, 'h1', text: 'Are you paying a fee for a probate case?'
-    element :probate_hint, 'span.govuk-hint', text: 'These cases are usually about the property and belongings of someone who has died.'
+    element :probate_hint, 'div.govuk-hint', text: 'These cases are usually about the property and belongings of someone who has died.'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
     element :name_of_deceased, '.govuk-label', text: 'Name of deceased'
@@ -16,7 +16,7 @@ class ProbatePage < BasePage
     element :future_date_error_link, 'a', text: 'This date can\'t be in the future'
     element :expired_date_error_link, 'a', text: 'The date of death must have been in the last 20 years'
     element :invalid_date_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'
-    element :date_of_death_example, 'span.govuk-hint', text: 'For example, 04 10 2018'
+    element :date_of_death_example, 'div.govuk-hint', text: 'For example, 04 10 2018'
     element :date_of_death_legend, '.govuk-fieldset__legend', text: 'Date of death'
   end
 
