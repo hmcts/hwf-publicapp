@@ -20,6 +20,6 @@
             =t('amount_married', scope: @form.i18n_scope)
           - else
             =t('amount_single', scope: @form.i18n_scope)
-        span#cost-hint.govuk-hint =t('amount_hint', scope: @form.i18n_scope)
+        div#cost-hint.govuk-hint =t('amount_hint', scope: @form.i18n_scope)
         span.govuk-body.currency £
         = f.text_field :amount, type: 'number', class: 'govuk-input govuk-!-width-one-quarter'

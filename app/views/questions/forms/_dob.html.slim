@@ -4,7 +4,7 @@
   - if @form.errors[:date_of_birth].any?
     span.govuk-error-message#date_of_birth = @form.errors[:date_of_birth].join(' ')
 
-  span.govuk-hint = t('hint_html', scope: @form.i18n_scope)
+  div.govuk-hint = t('hint_html', scope: @form.i18n_scope)
   .govuk-date-input class="#{'error_dates' if @form.errors[:date_of_birth].present?}"
     .govuk-date-input__item
       .govuk-form-group.govuk-form-group-day

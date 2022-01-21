@@ -4,7 +4,7 @@ class NationalInsurancePresencePage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 3 of 22'
     element :header, 'h1', text: 'Do you have a National Insurance number?'
-    element :hint, 'span.govuk-hint', text: 'Select one'
+    element :hint, 'div.govuk-hint', text: 'Select one'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
     element :where_to_find, 'summary', text: 'Where to find my National Insurance number?'

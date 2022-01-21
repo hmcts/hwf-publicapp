@@ -4,7 +4,7 @@ class NationalInsurancePage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 4 of 22'
     element :header, 'h1', text: 'Enter National Insurance number'
-    element :national_insurance_text, 'span.govuk-hint', text: 'For example, QQ123456C'
+    element :national_insurance_text, 'div.govuk-hint', text: 'For example, QQ123456C'
     element :national_insurance_number, '#national_insurance_number'
     element :help_with_ni_dropdown, 'summary', text: 'If you don’t know your National Insurance number'
     element :look_for_ni_text, 'li', text: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
