@@ -320,7 +320,7 @@ cy:
       template:
         reference: 'Cyfeirnod: %{reference}'
         one: 'Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd am ad-daliad.'
-        two: 'Talais y ffi ar %{fee_paid} ar gyfer achos %{reference}'
+        two: 'Talais y ffi ar %{fee_paid} ar gyfer achos %{claim_number}'
         three: 'Yn gywir,'
       p_two_html: Dewch o hyd i <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">fanylion cyswllt y llys neu'r tribiwnlys y</a> mae angen i chi anfon eich cais iddo.
       h3_two: Beth fydd yn digwydd nesaf
