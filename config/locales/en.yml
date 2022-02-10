@@ -319,7 +319,8 @@ en:
       template:
         reference: 'Reference: %{reference}'
         one: 'I have completed on online application for help with fees for a refund.'
-        two: 'I paid the fee on %{fee_paid} for case %{reference}'
+        two: 'I paid the fee on %{fee_paid} for case %{claim_number}.'
+        two_blank: 'I paid the fee on %{fee_paid}.'
         three: 'Yours sincerely,'
       p_two_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
       h3_two: What happens next
