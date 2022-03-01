@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :show_maintenance_page
 
   rescue_from Storage::Expired, with: :expired_redirect
 
@@ -42,6 +43,12 @@ class ApplicationController < ActionController::Base
   def expired_redirect
     flash[:error] = t('session.expired_message')
     redirect_to(root_path)
+  end
+
+  def show_maintenance_page(config = Rails.application.config)
+    return if !config.maintenance_enabled || config.maintenance_allowed_ips.include?(request.remote_ip)
+
+    render 'static/maintenance', status: :ok
   end
 
 end

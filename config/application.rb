@@ -62,5 +62,8 @@ module HwfPublicapp
     config.x.address_lookup.api_key = ENV['ADDRESS_LOOKUP_API_KEY']
     config.x.address_lookup.api_secret = ENV['ADDRESS_LOOKUP_API_SECRET']
 
+    config.maintenance_enabled = ENV.fetch('MAINTENANCE_ENABLED', 'false').downcase == 'true'
+    config.maintenance_allowed_ips = ENV.fetch('MAINTENANCE_ALLOWED_IPS', '').split(',').map(&:strip)
+    config.maintenance_end = ENV.fetch('MAINTENANCE_END', nil)
   end
 end
