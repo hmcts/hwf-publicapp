@@ -10,8 +10,21 @@ RSpec.describe ConfirmationsController, type: :controller do
 
   before do
     allow(controller).to receive(:session).and_return(session)
+    allow(session).to receive(:clear)
     allow(Storage).to receive(:new).with(session).and_return(storage)
     allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
+  end
+
+  describe 'storage' do
+    it 'clear for show' do
+      get :show
+      expect(session).to have_received(:clear)
+    end
+
+    it 'clear for refund' do
+      get :refund
+      expect(session).to have_received(:clear)
+    end
   end
 
   describe 'GET #show' do
