@@ -463,7 +463,7 @@ en:
         item_1: Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Applying for help with hearing fees
       et: I need help with an employment tribunal fee
-      example: You'll find a number at the bottom of paper forms, for example C100 or ADM1A.
+      example: You'll find a number at the bottom of paper forms, for example C100 or ADM1A. If you are applying for an online service, they will advise you which form number to use.
       probate_warning_html: Help with Fees is no longer available for probate applications. <a class="external govuk-link" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Find further details and apply for probate.</a>
       text: What number is on your court or tribunal form?
       title: Form number
@@ -535,21 +535,22 @@ en:
       contact_hm_revenue: We may contact HM Revenue & Customs to validate the income you declare. We may also contact you if we need to see additional evidence.
     marital_status:
       breadcrumb: Step %{page_number} of 22
+      example: 'If you’re applying for a divorce, dissolution or annulment select ‘Single’ unless you are living with a new partner. For more information click the help section below.'
       details:
         section_1:
-          heading: 'Choose ‘married or living with someone and sharing an income’ if you’re:'
+          heading: 'Select ‘Married or living with someone and sharing an income’ if you’re:'
           item_1: married
           item_2: civil partners
           item_3: living together as if you are married or in a civil partnership
           item_4: living at the same address with a joint income
           item_5: a couple forced to live apart, eg where one or both is serving in the armed forces, in prison or living in residential care
         section_2:
-          heading: 'Choose ‘single’ if you rely on your own income or your case involves your partner, for example:'
-          item_1: divorce, dissolution or annulment (unless you have married again or live with a new partner)
-          item_2: gender recognition
-          item_3: domestic violence
-          item_4: forced marriage
-          item_5: you and your partner are both part of a multiple fee group
+          heading: 'Select ‘Single’ if you rely on your own income or your case involves your partner, for example:'
+          item_1: divorced or applying for a divorce and you are not living with a new partner
+          item_2: dissolution or annulment and you are not living with a new partner
+          item_3: gender recognition
+          item_4: domestic violence
+          item_5: forced marriage
         summary: Help with status
       married_false: Single
       married_true: Married or living with someone and sharing an income
@@ -570,19 +571,15 @@ en:
       title: Do you have a National Insurance number?
     national_insurance:
       breadcrumb: Step %{page_number} of 22
-      details:
-        section_1:
-          detail_html: "If you don't have a National Insurance number, you need to
-            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-            target='_blank'>use the paper form</a>."
-          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
-          item_2: ask for a reminder through the post
-        summary: If you don’t know your National Insurance number
       example: For example, QQ123456C
       prompt: National Insurance number
       text: Enter National Insurance number
       title: National Insurance number
+      details:
+        section_1:
+          item_1: We ask for this information as we may contact the Department of Work and Pensions or HM Revenue & Customs to validate details declared in your application.
+        summary: Why do we ask for this?
+
     home_office:
       breadcrumb: Step %{page_number} of 22
       text: What is your Home Office reference number?
@@ -681,7 +678,7 @@ en:
     claim_number_false: 'No'
     claim_number_true: 'Yes'
     contact_none: Contact details not provided
-    details: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
+    details: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered. You may wish to print this page for your records.'
     fee_paid_false: 'No'
     fee_paid_true: 'Yes'
     invalid_footer: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
@@ -720,7 +717,7 @@ en:
     truth:
       button: Submit application and continue
       heading: Declaration and statement of truth
-      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
+      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my current financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
     applying_method_paper: 'Paper'
     applying_method_online: 'Online service'
   switch:
@@ -962,6 +959,16 @@ en:
           class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
           target='_blank'>use the paper form</a> and apply to the court or tribunal by post or email."
       accurate_information: The information you provide needs to be accurate as it will act as evidence for your application. We’ll contact you if we need to see proof of this information.
+      national_insurance:
+        details:
+          section_1:
+            detail_html: "If you don't have a National Insurance number, you need to
+              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+              class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+              target='_blank'>use the paper form</a>."
+            item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+            item_2: ask for a reminder through the post
+          summary: If you don’t know your National Insurance number
 
     cookies:
       title: Cookies
