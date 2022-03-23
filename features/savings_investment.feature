@@ -1,4 +1,4 @@
-Feature: Savings and investment page
+Feature: Savings and investment page refund
 
   Background: Navigating to the savings and investment page
     Given probate is enabled
