@@ -464,7 +464,7 @@ cy:
         item_1: "Yn hytrach na rhif y ffurflen nodwch ‘ffi gwrandawiad’ wedi ei ddilyn gan eglurhad byr, er enghraifft 'ffi gwrandawiad ar gyfer ‘hawliadau bychain’ neu ‘ffi gwrandawiad ar gyfer trac cyflym’."
         summary: Gwneud cais am gymorth gyda ffioedd gwrandawiad
       et: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
-      example: Fe ddowch o hyd i rif ar waelod ffurflenni papur, er enghraifft C100 neu ADM1A.
+      example: Bydd rhif wedi’i nodi ar waelod y ffurflenni papur, er enghraifft C100 neu ADM1A. Os ydych yn gwneud cais am wasanaeth ar-lein, byddant yn eich cynghori pa rif i’w ddefnyddio.
       probate_warning_html: Nid yw'r Gwasanaeth Help i Dalu Ffioedd ar gael i geisiadau am brofiant ddim mwy. <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Dod o hyd i fanylion pellach a gwneud cais am brofiant.</a>
       text: Pa rif sydd ar eich ffurflen llys neu dribiwnlys?
       title: Enw neu rif y ffurflen
@@ -478,10 +478,10 @@ cy:
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: "Rhowch gyfanswm y swm a gawsoch chi a’ch partner yn y mis calendr diwethaf o:"
-        kinds_list_married_refund: "Rhowch gyfanswm y swm a gawsoch chi a’ch partner yn y mis calendr diwethaf o:"
-        kinds_list_single: "Rhowch gyfanswm y swm a gawsoch yn y mis calendr diwethaf o:"
-        kinds_list_single_refund: "Rhowch gyfanswm y swm a gawsoch yn y mis calendr diwethaf o:"
+        kinds_list_married: "Nodwch gyfanswm yr incwm, i’r bunt agosaf, a gawsoch chi a’ch partner yn y mis calendr diwethaf gan:"
+        kinds_list_married_refund: "Nodwch gyfanswm yr incwm, i’r bunt agosaf, wnaethoch chi a’ch partner ei gael yn y mis calendr llawn cyn ichi dalu’r ffi."
+        kinds_list_single: "Nodwch gyfanswm yr incwm, i’r bunt agosaf, a gawsoch yn y mis calendr diwethaf gan:"
+        kinds_list_single_refund: "Nodwch gyfanswm yr incwm, i’r bunt agosaf, a gawsoch yn y mis calendr llawn cyn ichi dalu’r ffi."
       text_married: Beth yw cyfanswm eich incwm misol?
       text_married_refund: Beth oedd cyfanswm eich incwm misol?
       text_single: Beth yw cyfanswm eich incwm misol?
@@ -489,10 +489,10 @@ cy:
       title: Swm yr incwm
     income_kind:
       breadcrumb: Cam %{page_number} o 22
-      details_married: Dewiswch y gwahanol fathau o incwm rydych chi a'ch partner yn eu cael.
-      details_married_refund: Dewiswch y gwahanol fathau o incwm rydych chi a'ch partner yn eu cael.
-      details_single: Dewiswch bob un sy’n berthnasol.
-      details_single_refund: Dewiswch y gwahanol fathau o incwm rydych chi'n eu cael pan oeddech chi wedi talu'r ffi.
+      details_married: Dewiswch yr holl fathau gwahanol o incwm a gawsoch chi a’ch partner yn y mis calendr diwethaf.
+      details_married_refund: Dewiswch yr holl fathau gwahanol o incwm a gawsoch chi a’ch partner yn y mis calendr cyn ichi dalu eich ffi.
+      details_single: Dewiswch y mathau gwahanol o incwm a gawsoch yn y mis calendr diwethaf.
+      details_single_refund: Dewiswch yr holl fathau gwahanol o incwm a gawsoch chi yn y mis calendr cyn ichi dalu’r ffi.
       applicant_income: Eich incwm
       partner_income: Incwm eich partner
       kinds:
@@ -519,10 +519,10 @@ cy:
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: "Dewiswch swm yr incwm misol rydych chi a'ch partner yn ei gael o'r canlynol:"
-        kinds_list_married_refund: "Dewiswch swm yr incwm misol roeddech chi a'ch partner yn ei gael o'r canlynol:"
+        kinds_list_married: "Mae arnoch angen cynnwys incwm a gawsoch chi a’ch partner yn y mis calendr diwethaf:"
+        kinds_list_married_refund: "Mae arnoch angen cynnwys incwm a gawsoch chi a’ch partner yn y mis calendr llawn cyn i’r ffi gael ei thalu."
         kinds_list_single: "Mae angen i chi gynnwys incwm a dderbyniwyd yn ystod y mis calendr diwethaf o:"
-        kinds_list_single_refund: "Mae angen i chi gynnwys incwm a dderbyniwyd yn ystod y mis calendr diwethaf o:"
+        kinds_list_single_refund: "Mae arnoch angen cynnwys incwm a gawsoch yn y mis calendr llawn cyn i’r ffi gael ei thalu."
       range:
         between: Rhwng %{min_threshold} a %{max_threshold}
         less: Llai na %{min_threshold}
@@ -536,18 +536,19 @@ cy:
       contact_hm_revenue: Efallai y byddwn yn cysylltu â Chyllid a Thollau EM i ddilysu'r incwm rydych yn ei ddatgan. Efallai y byddwn hefyd yn cysylltu â chi os bydd angen i ni weld tystiolaeth ychwanegol.
     marital_status:
       breadcrumb: Cam %{page_number} o 22
+      example: 'Os ydych yn gwneud cais am ysgariad, diddymu neu ddirymu priodas, dewiswch ‘Sengl’ oni bai eich bod yn byw gyda phartner newydd.  Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth.'
       details:
         section_1:
-          heading: 'Dewiswch ''priod neu''n byw gyda rhywun ac yn rhannu incwm'' os ydych:'
+          heading: "Dewiswch ‘Wedi priodi neu’n byw â rhywun ac yn rhannu incwm’ os ydych:"
           item_1: yn briod
           item_2: yn bartneriaid sifil
           item_3: yn cyd-fyw fel pe baech chi'n briod neu mewn partneriaeth sifil
           item_4: yn byw yn yr un cyfeiriad gydag incwm ar y cyd
           item_5: yn gwpl sy'n gorfod byw ar wahân, ee un neu'r ddau'n gwasanaethu yn y lluoedd arfog, yn y carchar neu'n byw mewn gofal preswyl
         section_2:
-          heading: 'Dewiswch ''sengl'' os ydych chi''n dibynnu ar eich incwm eich hun neu os yw''ch achos yn ymwneud â''ch partner, er enghraifft:'
-          item_1: ysgaru, diddymu neu ddirymu priodas (oni bai eich bod chi wedi ailbriodi neu'n byw gyda phartner newydd)
-          item_2: cydnabod rhywedd
+          heading: "Dewiswch ‘Sengl’ os ydych yn dibynnu ar eich incwm eich hun neu mae eich achos yn ymwneud â’ch partner, er enghraifft:"
+          item_1: wedi ysgaru neu’n gwneud cais am ysgariad ac nid ydych yn byw gyda phartner newydd
+          item_2: diddymiad neu ddirymiad ac nid ydych yn byw gyda phartner newydd
           item_3: trais domestig
           item_4: priodas dan orfod
           item_5: chi a'ch partner ill dau'n rhan o grŵp ffi luosog
@@ -573,13 +574,8 @@ cy:
       breadcrumb: Cam %{page_number} o 22
       details:
         section_1:
-          detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
-            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
-            target='_blank'>ddefnyddio’r ffurflen bapur</a>."
-          item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
-          item_2: gofynnwch am nodyn atgoffa drwy'r post
-        summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
+          item_1: Rydym yn gofyn am yr wybodaeth hon oherwydd efallai y byddem yn cysylltu â’r Adran Gwaith a Phensiynau neu Gyllid a Thollau EM i ddilysu’r manylion sydd wedi’u datgan ar eich cais.
+        summary: Pam ein bod yn gofyn am hyn?
       example: Er enghraifft, QQ123456C
       prompt: rhif Yswiriant Gwladol
       text: Beth yw eich rhif Yswiriant Gwladol?
@@ -640,8 +636,10 @@ cy:
         summary: Help ar beth i'w gynnwys fel cynilion a buddsoddiadau
       less: "£0 i £2,999"
       more: "£16,000 neu fwy"
-      subtext_married: Cofiwch gynnwys cynilion a buddsoddiadau'ch partner yn eich cyfanswm. I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
-      subtext_single: I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
+      subtext_married: I’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi. I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
+      subtext_single: At y bunt agosaf, dewiswch o’r opsiynau isod faint o arian sydd gennych wedi’i gynilo a’i fuddsoddi.  Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth am yr hyn dylech ei gynnwys yn eich cyfanswm.
+      subtext_married_refund: ’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar yr adeg wnaethoch chi dalu’r ffi. I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
+      subtext_single_refund: I’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian roedd gennych wedi’i gynilo a’i fuddsoddi ar yr adeg wnaethoch chi dalu’r ffi. Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth am yr hyn dylech ei gynnwys yn eich cyfanswm.
       text: Beth yw swm eich cynilion a buddsoddiadau?
       title: Cynilion a buddsoddiadau
     savings_and_investment_extra:
@@ -682,7 +680,7 @@ cy:
     claim_number_false: Nac oes
     claim_number_true: Oes
     contact_none: Manylion cyswllt heb eu darparu
-    details: "Gwiriwch fod eich manylion yn gywir. Os ydych yn gwneud newidiadau, efallai y bydd yn rhaid i chi ateb cwestiynau newydd a chadarnhau gwybodaeth a gyflwynwyd gennych eisoes."
+    details: "Gwiriwch fod eich manylion yn gywir. Os ydych yn gwneud newidiadau, efallai y bydd yn rhaid i chi ateb cwestiynau newydd a chadarnhau gwybodaeth a gyflwynwyd gennych eisoes. Efallai yr hoffwch argraffu’r dudalen hon ar gyfer eich cofnodion."
     fee_paid_false: Naddo
     fee_paid_true: Do
     invalid_footer: "Rydych chi wedi gwneud newidiadau. Atebwch y cwestiynau sydd wedi'u amlygu i gwblhau eich cais"
@@ -962,7 +960,16 @@ cy:
           class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
           target='_blank'>ffurflen bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
       accurate_information: Rhaid i’r wybodaeth a ddarperir gennych fod yn gywir oherwydd dyma fydd y dystiolaeth ar gyfer eich cais. Byddwn yn cysylltu â chi os bydd arnom angen prawf o’r wybodaeth hon.
-
+      national_insurance:
+        details:
+          section_1:
+            detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
+              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+              class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+              target='_blank'>ddefnyddio’r ffurflen bapur</a>."
+            item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
+            item_2: gofynnwch am nodyn atgoffa drwy'r post
+          summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
     cookies:
       title: Cwcis
       heading: Cwcis
