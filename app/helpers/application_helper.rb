@@ -23,20 +23,15 @@ module ApplicationHelper
     record.send("street").present?
   end
 
-  def title_scope(scope)
-    return scope if (@online_application.blank?)
+  def title_scope(scope, online_application)
+    return scope if online_application.blank?
 
+    scope_postfix = []
     case scope
     when 'questions.savings_and_investment'
-      if @online_application.refund? && @online_application.married?
-        'questions.savings_and_investment_married_refund'
-      elsif @online_application.married?
-        'questions.savings_and_investment_married'
-      elsif @online_application.refund?
-        'questions.savings_and_investment_single_refund'
-      else
-        'questions.savings_and_investment_single'
-      end
+      scope_postfix << (online_application.married? ? 'married' : 'single')
+      scope_postfix << (online_application.refund? ? 'refund' : nil)
+      "questions.savings_and_investment_#{scope_postfix.compact.join('_')}"
     else
       scope
     end
