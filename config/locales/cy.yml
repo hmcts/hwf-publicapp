@@ -484,8 +484,8 @@ cy:
         kinds_list_single_refund: "Nodwch gyfanswm yr incwm, i’r bunt agosaf, a gawsoch yn y mis calendr llawn cyn ichi dalu’r ffi."
       text_married: Beth yw cyfanswm eich incwm misol?
       text_married_refund: Beth oedd cyfanswm eich incwm misol?
-      text_single: Beth yw cyfanswm eich incwm misol?
-      text_single_refund: Beth oedd cyfanswm eich incwm misol?
+      text_single: Beth yw cyfanswm eich incwm?
+      text_single_refund: Beth oedd cyfanswm eich incwm?
       title: Swm yr incwm
     income_kind:
       breadcrumb: Cam %{page_number} o 22
@@ -509,9 +509,9 @@ cy:
         '7': Lwfans Cyflogaeth a Chymorth yn Seiliedig ar Gyfraniadau (ESA)
         '8': Credyd Cynhwysol
         '9': Pensiynau (gwladwriaeth, gwaith, preifat)
-      text_married: Pa fath o incwm rydych chi a'ch partner yn ei gael?
+      text_married: Pa fath o incwm a gawsoch chi a’ch partner mis diwethaf?
       text_married_refund: Pa fath o incwm rydych chi a'ch partner yn ei gael?
-      text_single: Pa fath o incwm rydych chi'n ei gael?
+      text_single: Pa fath o incwm a gawsoch fis diwethaf?
       text_single_refund: Pa fath o incwm rydych chi'n ei gael?
       title: Math o incwm
     income_range:
@@ -528,7 +528,7 @@ cy:
         less: Llai na %{min_threshold}
         more: Mwy na %{max_threshold}
       text_married: Faint o incwm rydych chi a'ch partner yn ei gael bob mis?
-      text_married_refund: Faint o incwm roeddech chi a'ch partner yn ei gael bob mis?
+      text_married_refund: Faint o incwm a gawsoch chi a’ch partner?
       text_single: Faint o incwm wnaethoch chi ei dderbyn y mis diwethaf?
       text_single_refund: Faint o incwm wnaethoch chi ei dderbyn y mis diwethaf?
       title: Ystod incwm
@@ -642,6 +642,14 @@ cy:
       subtext_single_refund: I’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian roedd gennych wedi’i gynilo a’i fuddsoddi ar yr adeg wnaethoch chi dalu’r ffi. Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth am yr hyn dylech ei gynnwys yn eich cyfanswm.
       text: Beth yw swm eich cynilion a buddsoddiadau?
       title: Cynilion a buddsoddiadau
+    savings_and_investment_married:
+      text: Faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi?
+    savings_and_investment_single:
+      text: Beth yw swm eich cynilion a buddsoddiadau?
+    savings_and_investment_married_refund:
+      text: Faint o arian oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar y dyddiad wnaethoch chi dalu’r ffi?
+    savings_and_investment_single_refund:
+      text: Faint o arian oedd gennych wedi’i gynilo a’i fuddsoddi ar y dyddiad wnaethoch chi dalu’r ffi?
     savings_and_investment_extra:
       amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
       amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
