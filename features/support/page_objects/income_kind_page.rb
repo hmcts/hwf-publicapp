@@ -4,7 +4,7 @@ class IncomeKindPage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 11 of 22'
     element :single_header, 'h1', text: 'What kind of income did you receive?'
-    element :married_header, 'h1', text: 'What kind of income did you and your partner receive?'
+    element :married_header, 'h1', text: 'What kind of income do you and your partner receive?'
     element :choose_income_single, 'div.govuk-hint', text: 'Select all the different types of income you received in the full calendar month before you paid the fee.'
     element :choose_income_married, 'div.govuk-hint', text: 'Select all the different types of income you and your partner received in the full calendar month before you paid your fee.'
     element :your_income, 'h2', text: 'Your income'
