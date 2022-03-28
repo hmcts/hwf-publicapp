@@ -481,10 +481,10 @@ en:
         kinds_list_married_refund: 'Enter the total amount of income to the nearest pound you and your partner received in the full calendar month before you paid the fee.'
         kinds_list_single: 'Enter the total amount of income to the nearest pound you received in the last full calendar month from:'
         kinds_list_single_refund: 'Enter the total amount of income to the nearest pound you received in the full calendar month before you paid the fee.'
-      text_married: What’s your total monthly income?
-      text_married_refund: What was your total monthly income?
+      text_married: What is your total income?
+      text_married_refund: What was your total income?
       text_single: What is your total income?
-      text_single_refund: What was your total monthly income?
+      text_single_refund: What was your total income?
       title: Income amount
     income_kind:
       breadcrumb: Step %{page_number} of 22
@@ -509,7 +509,7 @@ en:
         '8': Universal Credit
         '9': Pensions (state, work, private)
       text_married: What kind of income did you and your partner receive last month?
-      text_married_refund: What kind of income did you and your partner receive?
+      text_married_refund: What kind of income do you and your partner receive?
       text_single: What kind of income did you receive last month?
       text_single_refund: What kind of income did you receive?
       title: Income kind
@@ -526,7 +526,7 @@ en:
         between: Between %{min_threshold} and %{max_threshold}
         less: Less than %{min_threshold}
         more: More than %{max_threshold}
-      text_married: How much income do you and your partner receive each month?
+      text_married: How much income did you and your partner receive last month?
       text_married_refund: How much income did you and your partner receive?
       text_single: How much income did you receive last month?
       text_single_refund: How much income did you receive last month?
