@@ -24,7 +24,7 @@ Then(/^I should see help with status copy$/) do
   expect(marital_status_page.content).to have_help_gender
   expect(marital_status_page.content).to have_help_domestic_violence
   expect(marital_status_page.content).to have_help_forced_marriage
-  expect(marital_status_page.content).to have_help_multiple_fee
+  expect(marital_status_page.content).to have_help_dissolution
 end
 
 Then(/^I should be taken to marital status page$/) do

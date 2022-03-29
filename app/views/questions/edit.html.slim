@@ -11,7 +11,7 @@
   fieldset.govuk-fieldset
     legend.govuk-fieldset__legend
       h1.govuk-heading-l
-        = t(@title_view.i18n_title, scope: @form.i18n_scope)
+        = t(@title_view.i18n_title, scope: title_scope(@form.i18n_scope, @online_application))
 
 
     = render("questions/headers/#{@form.id}")

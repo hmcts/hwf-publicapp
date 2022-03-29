@@ -22,4 +22,18 @@ module ApplicationHelper
   def address_lookup_details_filled?(record)
     record.send("street").present?
   end
+
+  def title_scope(scope, online_application)
+    return scope if online_application.blank?
+
+    scope_postfix = []
+    case scope
+    when 'questions.savings_and_investment'
+      scope_postfix << (online_application.married? ? 'married' : 'single')
+      scope_postfix << (online_application.refund? ? 'refund' : nil)
+      "questions.savings_and_investment_#{scope_postfix.compact.join('_')}"
+    else
+      scope
+    end
+  end
 end
