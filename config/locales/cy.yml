@@ -245,7 +245,7 @@ cy:
       heading: Nid yw eich cais wedi'i gwblhau eto. Mae angen i chi weithredu yn awr.
       sub_heading: Rhowch y cyfeirnod cymorth hwn gyda ffioedd yn adran cymorth gyda ffioedd y ffurflen ar-lein.
       template:
-        line_one: Nodwch eich cyfeirnod yn adran help i dalu ffioedd y ffurflen ar-lein.
+        line_one: "Nodwch eich cyfeirnod uchod yn yr adran help i dalu ffioedd ar y ffurflen ar-lein. Dylai eich ffurflen gais ar-lein i’r llys edrych rhywbeth fel hyn:"
       h3_one: Beth fydd yn digwydd nesaf
       contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
     paper:
