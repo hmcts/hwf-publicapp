@@ -19,7 +19,7 @@ class ConfirmationPage < BasePage
 
     element :confirmation_header_online_one, 'h2', text: 'Your application is not yet complete. You now need to take action.'
     element :confirmation_header_online_two, 'h2', text: 'Enter this help with fees reference number in the help with fees section of the online form.'
-    element :confirmation_instruction_online, 'p', text: 'Enter your reference number in the help with fees section of the online form'
+    element :confirmation_instruction_online, 'p', text: 'Enter your reference above into the help with fees section of the online form. Your online court application form should look something like this:'
     element :next_step_online, 'p', text: 'We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.'
   end
 
