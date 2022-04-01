@@ -243,7 +243,7 @@ en:
       heading: Your application is not yet complete. You now need to take action.
       sub_heading: Enter this help with fees reference number in the help with fees section of the online form.
       template:
-        line_one: Enter your reference number in the help with fees section of the online form
+        line_one: "Enter your reference above into the help with fees section of the online form. Your online court application form should look something like this:"
       h3_one: What happens next
       contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
     paper:
