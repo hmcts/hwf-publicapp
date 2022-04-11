@@ -156,6 +156,7 @@ cy:
               blank: Rhowch swm yr incwm rydych chi'n ei gael
               greater_than_or_equal_to: Rhowch swm rhwng £0 a £1,000,000
               less_than: Rhowch swm rhwng £0 a £1,000,000
+              not_within_range: 'Nodwch swm rhwng £%{min} a £%{max}'
         forms/income_kind:
           attributes:
             applicant:

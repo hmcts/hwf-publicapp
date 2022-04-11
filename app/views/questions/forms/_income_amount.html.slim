@@ -1,6 +1,11 @@
+- income_thresholds = Views::IncomeThresholds.new(@online_application)
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:amount].any?)
   - if @form.errors[:amount].any?
     span.govuk-error-message#amount = @form.errors[:amount].join(' ')
   = f.label :amount, class: 'govuk-label text visuallyhidden'
   span.govuk-body.currency £
   = f.text_field :amount, type: 'number', class: 'govuk-input govuk-!-width-one-quarter','aria-label': t('prompt', scope: @form.i18n_scope)
+  = f.text_field :children, type: 'number', class: 'visuallyhidden', value: @online_application.children
+  = f.text_field :married, type: 'boolean', class: 'visuallyhidden', value: @online_application.married
+  = f.text_field :min_threshold, type: 'boolean', class: 'visuallyhidden', value: income_thresholds.min_threshold
+  = f.text_field :max_threshold, type: 'boolean', class: 'visuallyhidden', value: income_thresholds.max_threshold

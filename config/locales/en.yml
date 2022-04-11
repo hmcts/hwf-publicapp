@@ -149,6 +149,7 @@ en:
               blank: Enter how much income do you receive
               greater_than_or_equal_to: Enter an amount between £0 and £1,000,000
               less_than: Enter an amount between £0 and £1,000,000
+              not_within_range: 'Please enter an amount between £%{min} and £%{max}'
         forms/income_kind:
           attributes:
             applicant:

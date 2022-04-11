@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Forms::IncomeAmount, type: :model do
-  subject(:form) { described_class.new(amount: amount) }
+  subject(:form) { described_class.new(amount: amount, min_threshold: min_threshold, max_threshold: max_threshold) }
+
+  let(:min_threshold) { -1000000 }
+  let(:max_threshold) { 10000000 }
 
   let(:amount) { nil }
 
@@ -31,6 +34,14 @@ RSpec.describe Forms::IncomeAmount, type: :model do
 
           it { is_expected.to be_valid }
         end
+      end
+
+      context 'when under min threshold' do
+        let(:amount) { 5 }
+        let(:min_threshold) { 1000 }
+        let(:max_threshold) { 3000 }
+
+        it { is_expected.to be_invalid }
       end
     end
   end
