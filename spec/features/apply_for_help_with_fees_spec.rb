@@ -71,7 +71,7 @@ RSpec.feature 'As a user' do
         choose 'income_range_choice_between'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.income_amount.text_single')
-        fill_in 'income_amount_amount', with: '100'
+        fill_in 'income_amount_amount', with: '1500'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.probate.text')
         choose 'probate_kase_false'
@@ -105,7 +105,7 @@ RSpec.feature 'As a user' do
         expect(page).to have_content I18n.t('summary.marital_status_false')
         expect(page).to have_content I18n.t('questions.savings_and_investment.less')
         expect(page).to have_content I18n.t('summary.applicant_on_benefits_false')
-        expect(page).to have_content "#{I18n.t('summary.labels.income')}£100"
+        expect(page).to have_content "#{I18n.t('summary.labels.income')}£1,500"
         expect(page).to have_content "#{I18n.t('summary.labels.fee')}#{I18n.t('summary.fee_paid_false')}"
         expect(page).to have_content "#{I18n.t('summary.labels.probate')}#{I18n.t('summary.probate_case_false')}"
         expect(page).to have_content "#{I18n.t('summary.labels.claim')}#{I18n.t('summary.claim_number_false')}"

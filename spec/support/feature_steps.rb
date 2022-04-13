@@ -292,7 +292,7 @@ module FeatureSteps
   end
 
   def fill_income_amount
-    fill_in :amount, with: 100.0
+    fill_in :amount, with: 1500.0
     click_button 'Continue'
   end
 

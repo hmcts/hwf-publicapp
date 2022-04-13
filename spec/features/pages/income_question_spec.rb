@@ -55,7 +55,7 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        fill_in :income_amount_amount, with: '750'
+        fill_in :income_amount_amount, with: '1500'
         click_button 'Continue'
       end
 

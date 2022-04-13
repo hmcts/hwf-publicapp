@@ -1,6 +1,10 @@
 module Forms
   class IncomeAmount < Base
     attribute :amount, Integer
+    attribute :children, Integer
+    attribute :married, Boolean
+    attribute :min_threshold, Integer
+    attribute :max_threshold, Integer
 
     validates :amount,
               presence: true, numericality: {
@@ -9,11 +13,23 @@ module Forms
                 greater_than_or_equal_to: 0
               }
 
+    validate :amount, :income_range
+
     private
 
     def export_params
       {}.tap do |export|
         export[:income] = amount if amount
+      end
+    end
+
+    def income_range
+      return unless amount
+
+      if amount < min_threshold || amount > max_threshold
+        message = I18n.t('.activemodel.errors.models.forms/income_amount.attributes.amount.not_within_range',
+                         min: min_threshold, max: max_threshold)
+        errors.add(:amount, message)
       end
     end
   end
