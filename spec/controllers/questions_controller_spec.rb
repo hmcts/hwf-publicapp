@@ -4,11 +4,12 @@ RSpec.describe QuestionsController, type: :controller do
   let(:online_application) { instance_double(OnlineApplication, :attributes= => nil) }
   let(:session) { double }
   let(:storage_started) { true }
-  let(:storage) { instance_double(Storage, load_form: nil, save_form: nil, started?: storage_started) }
+  let(:storage) { instance_double(Storage, load_form: nil, save_form: nil, started?: storage_started, load_step_back: step_back, store_page_path: true) }
   let(:valid_id) { :question }
   let(:invalid_id) { :invalid }
   let(:form) { double }
   let(:question_title_view) { double }
+  let(:step_back) { 'path' }
 
   before do
     allow(QuestionFormFactory).to receive(:get_form).with(valid_id).and_return(form)
@@ -34,6 +35,18 @@ RSpec.describe QuestionsController, type: :controller do
 
       it 'assigns the form' do
         expect(assigns(:form)).to eql(form)
+      end
+
+      it 'assigns the back link' do
+        expect(assigns(:previous_step)).to eql('path')
+      end
+
+      context 'no link back' do
+        let(:step_back) { nil }
+
+        it 'assigns checklist url' do
+          expect(assigns(:previous_step)).to eql(checklist_url)
+        end
       end
 
       it 'assigns the question title view' do

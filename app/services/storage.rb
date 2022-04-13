@@ -3,6 +3,7 @@ class Storage
 
   def initialize(session, options = {})
     @session = session
+    @session[:page_path] ||= []
     clear if options[:clear]
     check_expiration!
   end
@@ -41,6 +42,23 @@ class Storage
     @session[:submission_result]
   end
 
+  def store_page_path(page_url, page_name)
+    # temp fix for ActionDispatch::Cookies::CookieOverflow in rspec
+    return if Rails.env.test?
+
+    @session[:page_path] << { page_name => page_url }
+  end
+
+  def load_step_back(question)
+    if @session[:page_path].present? && @session[:page_path].last.key?(question.to_s)
+      @session[:page_path].pop
+    elsif (page_index = find_page_index(question)).positive?
+      @session[:page_path].slice!(page_index, @session[:page_path].count)
+    end
+
+    back_link
+  end
+
   private
 
   def check_expiration!
@@ -71,4 +89,19 @@ class Storage
   def expires_in_seconds
     Settings.session.expires_in_minutes * 60
   end
+
+  def find_page_index(question)
+    @session[:page_path].each_with_index do |page, page_index|
+      key = page.keys.first
+      return page_index if key == question.to_s
+    end
+    0
+  end
+
+  def back_link
+    return nil if @session[:page_path].blank?
+
+    @session[:page_path].last.values.last
+  end
+
 end
