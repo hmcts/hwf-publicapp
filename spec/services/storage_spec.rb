@@ -231,4 +231,33 @@ RSpec.describe Storage do
       it { is_expected.to be nil }
     end
   end
+
+  describe 'page_path' do
+    let(:session) { {} }
+
+    before { storage.store.write('page_path', []) }
+
+    context 'store page' do
+      it 'store path' do
+        storage.store_page_path('page_123', 'page1')
+        expect(storage.store.read('page_path')).to eq [{ "page1" => "page_123" }]
+      end
+    end
+
+    context 'step_back' do
+      it 'loads previous url' do
+        storage.store_page_path('page_1_url', 'page1')
+        storage.store_page_path('page_2_url', 'page2')
+        expect(storage.load_step_back('page2')).to eq 'page_1_url'
+      end
+
+      it 'loads url for previous page if we skip there directly' do
+        storage.store_page_path('page_1_url', 'page1')
+        storage.store_page_path('page_2_url', 'page2')
+        storage.store_page_path('page_3_url', 'page3')
+        storage.store_page_path('page_4_url', 'page4')
+        expect(storage.load_step_back('page2')).to eq 'page_1_url'
+      end
+    end
+  end
 end
