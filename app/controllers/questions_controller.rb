@@ -10,22 +10,32 @@ class QuestionsController < ApplicationController
     assign_title_view
     assign_page_number
     storage.load_form(form)
+    load_previous_step
   end
 
   def update
     form.update_attributes(form_params)
 
     if form.valid?
+      track_step
       process_form_and_online_application
       redirect_to(Navigation.new(online_application, question).next)
     else
-      assign_title_view
-      assign_page_number
+      reload_edit_page
       render :edit
     end
   end
 
   private
+
+  def track_step
+    @storage.store_page_path(question_path(question, locale: I18n.locale), question)
+  end
+
+  def load_previous_step
+    previous_step = @storage.load_step_back(question)
+    @previous_step = previous_step.nil? ? checklist_url : previous_step
+  end
 
   def question
     @question ||= params[:id].to_sym
@@ -64,6 +74,12 @@ class QuestionsController < ApplicationController
 
   def address_lookup_access_token
     AddressLookup.access_token(question)
+  end
+
+  def reload_edit_page
+    load_previous_step
+    assign_title_view
+    assign_page_number
   end
 
 end

@@ -1,5 +1,6 @@
 class Storage
   class Expired < StandardError; end
+  include PageNavigation
 
   def initialize(session, options = {})
     @session = session
@@ -9,6 +10,7 @@ class Storage
 
   def clear
     @session.destroy
+    store.write('page_path', [])
   end
 
   def start
@@ -71,4 +73,5 @@ class Storage
   def expires_in_seconds
     Settings.session.expires_in_minutes * 60
   end
+
 end
