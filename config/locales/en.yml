@@ -946,9 +946,10 @@ en:
       sections:
       - parts:
           - p: 'You should use this online service when you are ready to make your court or tribunal application. It will provide you with a Help with Fees reference number you can put on your court or tribunal application.'
+          - p: 'If you are making a multiple claim or application, both applicants will need to make a separate Help with Fees application and submit both online reference numbers to the court.'
           - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
 
-          - p: 'Before you continue, make sure you have:'
+          - p: '<h2 class="govuk-heading-m">Before you continue, make sure you have:</h2>'
           - ul:
             - li: your National Insurance number or
             - li: your Home Office reference number – you may have a Home Office reference number if you are subject to immigration control

@@ -945,9 +945,10 @@ cy:
       sections:
       - parts:
           - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i’r llys neu’r tribiwnlys. Bydd yn rhoi rhif cyfeirnod Help i Dalu Ffioedd i chi, y gallwch ei nodi ar eich cais i’r llys neu’r tribiwnlys.'
+          - p: 'Os ydych yn gwneud hawliad neu gais lluosog, bydd angen i’r ddau hawlydd wneud cais am Help i Dalu Ffioedd ar wahân a chyflwyno cyfeirnod ar-lein y ddau gais i’r llys.'
           - p: 'Bydd y staff yn prosesu’r rhif cyfeirnod Help i Dalu Ffioedd ynghyd â’r cais i’r llys neu’r tribiwnlys, ac yn rhoi gwybod i chi os oes arnoch angen talu rhywfaint tuag at y ffi, neu os oes arnynt angen rhagor o wybodaeth gennych chi.'
 
-          - p: 'Cyn i chi barhau, gwnewch yn siŵr fod gennych:'
+          - p: '<h2 class="govuk-heading-m">Cyn i chi barhau, gwnewch yn siŵr fod gennych:</h2>'
           - ul:
             - li: eich rhif Yswiriant Gwladol neu
             - li: eich cyfeirnod Swyddfa Gartref - efallai y bydd gennych gyfeirnod Swyddfa Gartref os ydych yn destun rheoliadau mewnfudo
