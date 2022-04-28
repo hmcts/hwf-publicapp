@@ -36,7 +36,7 @@ jobs:
       vmImage: 'Ubuntu-18.04'
 
     variables:
-      rubyVersion: '= 2.7.5'
+      rubyVersion: '= 2.7.6'
       bundlerVersion: '2.2.32'
 
     steps:
