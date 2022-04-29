@@ -33,7 +33,7 @@ module Forms
     end
 
     def validate_dob
-      if date_of_birth =~ /[a-zA-Z]/ || !date_of_birth.is_a?(Date)
+      unless date_of_birth.is_a?(Date)
         errors.add(:date_of_birth, :not_a_date)
       end
     end
