@@ -124,6 +124,31 @@ dl.govuk-summary-list
             span.govuk-visually-hidden
               =t('income', scope: 'summary.labels').downcase
 
+      div.govuk-summary-list__row
+        dt.govuk-summary-list__key =t('income_type', scope: 'summary.labels')
+        dd.govuk-summary-list__value
+          details.govuk-details.income-single data-module="govuk-details"
+            summary.govuk-details__summary
+              span =t('income_type_me', scope: 'summary.labels')
+
+            .govuk-details__text
+              p.govuk-body =@summary.income_kind[:applicant].join(', ')
+
+          - if @summary.income_kind.has_key?(:partner) && @summary.income_kind[:partner].present?
+            details.govuk-details data-module="govuk-details"
+              summary.govuk-details__summary
+                span=t('income_type_my_partner', scope: 'summary.labels')
+
+              .govuk-details__text
+                p.govuk-body =@summary.income_kind[:partner].join(', ')
+
+
+        dd.govuk-summary-list__actions
+          = link_to question_path(:income_kind), onclick: "dataLayer.push({'sectionName': 'income_type', 'event': 'summary_page'});" do
+            =t('summary.change')
+            span.govuk-visually-hidden
+              =t('income_type', scope: 'summary.labels').downcase
+
     -unless ProbateFeesSwitch.disable_probate_fees?
       -if @summary.probate
         div.govuk-summary-list__row

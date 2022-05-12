@@ -708,6 +708,9 @@ cy:
       fee: Ffi a dalwyd
       form_name: Rhif ffurflen
       income: Incwm
+      income_type: Math o incwm
+      income_type_me: Eich incwm
+      income_type_my_partner: Incwm eich partner
       married: Statws
       ni_number: Rhif Yswiriant Gwladol
       ni_number_no: Nac oes
