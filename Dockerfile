@@ -27,7 +27,7 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN gem install bundler -v 2.2.32
+RUN gem install bundler -v 2.3.13
 RUN bundle install --without test development
 
 
