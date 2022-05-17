@@ -119,7 +119,7 @@ dl.govuk-summary-list
         dt.govuk-summary-list__key =t('income', scope: 'summary.labels')
         dd.govuk-summary-list__value =@summary.income_text
         dd.govuk-summary-list__actions
-          = link_to question_path(:income_kind), onclick: "dataLayer.push({'sectionName': 'income_kind', 'event': 'summary_page'});" do
+          = link_to question_path(:income_range), onclick: "dataLayer.push({'sectionName': 'income_kind', 'event': 'summary_page'});" do
             =t('summary.change')
             span.govuk-visually-hidden
               =t('income', scope: 'summary.labels').downcase

@@ -709,8 +709,8 @@ en:
       form_name: Form name or number
       income: Income
       income_type: Income type
-      income_type_me: Your income
-      income_type_my_partner: Your partner's income
+      income_type_me: Your income type
+      income_type_my_partner: Your partner's income type
       married: Status
       ni_number: National Insurance number
       ni_number_no: 'No'
