@@ -47,7 +47,7 @@ Feature: Summary page
     | Savings and investments £0 to £2,999 Change savings and investments       |
     | Children No Change children                                               |
     | Income £0 Change income                                                   |
-    | Income type Your income Change income                                       |
+    | Income type Your income type Change income                                |
     | Claim number No Change claim number                                       |
     | Date of birth 23/07/1980 Change date of birth                             |
     | Full name Ms Sally Smith Change full name                                 |
