@@ -241,7 +241,7 @@ dl.govuk-summary-list
           = link_to question_path(:apply_type), onclick: "dataLayer.push({'sectionName': 'apply_type', 'event': 'summary_page'});" do
             =t('summary.change')
             span.govuk-visually-hidden
-              =t('applying_method', scope: 'summary.labels').downcase
+              =t('apply_type', scope: 'summary.labels').downcase
 
 
 - if @summary.income_validation_fails?
