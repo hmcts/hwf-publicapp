@@ -1,4 +1,4 @@
-FROM ruby:2.7.6-buster
+FROM ruby:3.1-buster
 
 # Adding argument support for ping.json
 ARG APPVERSION=unknown
@@ -27,8 +27,10 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN gem install bundler -v 2.3.13
-RUN bundle install --without test development
+RUN gem install bundler -v 2.3.16
+RUN bundle config set --local without 'test development'
+RUN bundle config set force_ruby_platform true
+RUN bundle install
 
 
 # running app as a service

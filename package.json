@@ -6,7 +6,7 @@
     "url": "https://github.com/ministryofjustice/hwf-publicapp"
   },
   "engines": {
-    "node": ">=0.12.x"
+    "node": ">=0.16.x"
   },
   "scripts": {},
   "engineStrict": true,
