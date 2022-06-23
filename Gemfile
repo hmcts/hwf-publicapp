@@ -25,7 +25,7 @@ gem 'virtus'
 
 
 group :development, :test do
-  gem 'pry-rails'
+  gem "debug", ">= 1.0.0"
   gem 'rubocop', '~> 1.15', require: false
   gem 'rubocop-rails'
   gem 'letter_opener'
