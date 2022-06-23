@@ -123,8 +123,8 @@ en:
         forms/fee:
           attributes:
             date_paid:
-              after_or_equal_to: The application must have been made in the last 3 months
-              before_or_equal_to: This date can't be in the future
+              date_after_or_equal_to: The application must have been made in the last 3 months
+              date_before_or_equal_to: This date can't be in the future
               blank: Enter the date in this format DD/MM/YYYY
               not_a_date: That date is not recognised
             paid:
@@ -193,8 +193,8 @@ en:
         forms/probate:
           attributes:
             date_of_death:
-              after_or_equal_to: The date of death must have been in the last 20 years
-              before: This date can't be in the future
+              date_after_or_equal_to: The date of death must have been in the last 20 years
+              date_before: This date can't be in the future
               blank: Enter the date of death
               not_a_date: Enter the date in this format DD/MM/YYYY
             deceased_name:

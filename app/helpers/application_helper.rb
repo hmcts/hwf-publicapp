@@ -36,4 +36,9 @@ module ApplicationHelper
       scope
     end
   end
+
+  def date_formatter(date_value)
+    return if date_value.blank?
+    date_value.to_fs(:default)
+  end
 end

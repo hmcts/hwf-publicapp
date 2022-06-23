@@ -125,8 +125,8 @@ cy:
         forms/fee:
           attributes:
             date_paid:
-              after_or_equal_to: Rhaid i'r cais fod wedi'i wneud yn y 3 mis diwethaf
-              before_or_equal_to: Ni all y dyddiad hwn fod yn y dyfodol
+              date_after_or_equal_to: Rhaid i'r cais fod wedi'i wneud yn y 3 mis diwethaf
+              date_before_or_equal_to: Ni all y dyddiad hwn fod yn y dyfodol
               blank: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
               not_a_date: Nid yw'r dyddiad hwnnw wedi'i adnabod
             paid:
@@ -195,8 +195,8 @@ cy:
         forms/probate:
           attributes:
             date_of_death:
-              after_or_equal_to: Rhaid i'r dyddiad marwolaeth fod yn yr 20 mlynedd diwethaf
-              before: Ni all y dyddiad hwn fod yn y dyfodol
+              date_after_or_equal_to: Rhaid i'r dyddiad marwolaeth fod yn yr 20 mlynedd diwethaf
+              date_before: Ni all y dyddiad hwn fod yn y dyfodol
               blank: Rhowch ddyddiad y farwolaeth
               not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
             deceased_name:
