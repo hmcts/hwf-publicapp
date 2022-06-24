@@ -25,7 +25,7 @@ p.govuk-body =t('confirmation.refund.p_one')
   - if @online_application.case_number
     p.govuk-body =t('confirmation.refund.template.two', claim_number: @online_application.case_number, fee_paid: @online_application.date_fee_paid)
   - else
-    p.govuk-body =t('confirmation.refund.template.two_blank', fee_paid: @online_application.date_fee_paid)
+    p.govuk-body =t('confirmation.refund.template.two_blank', fee_paid: @online_application.date_fee_paid.to_fs(:default))
   p.govuk-body =t('confirmation.refund.template.three')
   p.govuk-body = @online_application.full_name
 
