@@ -30,6 +30,18 @@ RSpec.describe Forms::Dependent, type: :model do
             it { is_expected.not_to be_valid }
           end
 
+          context 'when it is eql to 0' do
+            let(:children_number) { '0' }
+
+            it { is_expected.not_to be_valid }
+          end
+
+          context 'when it is lower then 0' do
+            let(:children_number) { '-1' }
+
+            it { is_expected.not_to be_valid }
+          end
+
           context 'when it is less or equal than 99' do
             let(:children_number) { '4' }
 
