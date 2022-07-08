@@ -113,7 +113,7 @@ en:
               blank: You must enter the number of financially dependent children
               less_than: You must enter number less than 100
               not_a_number: You must enter financially dependent children as a number
-              greater_than: You must enter number bigger then 0
+              greater_than: You must enter a number greater than 0
         forms/dob:
           attributes:
             date_of_birth:
