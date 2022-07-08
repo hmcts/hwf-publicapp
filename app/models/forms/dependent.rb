@@ -5,7 +5,7 @@ module Forms
 
     validates :children, inclusion: { in: [true, false] }
     validates :children_number,
-              presence: true, numericality: { allow_blank: true, less_than: 100 }, if: :children?
+              presence: true, numericality: { allow_blank: true, less_than: 100, greater_than: 0 }, if: :children?
 
     private
 

@@ -115,6 +115,7 @@ cy:
               blank: Rhaid i chi roi nifer y plant sy'n dibynnu'n ariannol arnoch chi
               less_than: Rhaid i chi roi rhif sy'n llai na 100
               not_a_number: Rhaid i chi roi nifer y plant sy'n dibynnu'n ariannol arnoch chi fel rhif
+              greater_than: Rhaid i chi nodi rhif sy'n fwy na 0
         forms/dob:
           attributes:
             date_of_birth:
