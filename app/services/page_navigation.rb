@@ -5,7 +5,7 @@ module PageNavigation
   end
 
   def load_step_back(question)
-    if page_path.present? && page_path.last.key?(question)
+    if page_path.is_a?(Array) && page_path.last && page_path.last.key?(question)
       page_path_pop
     elsif (page_index = find_page_index(question)).positive?
       page_path_slice(page_index, page_path.count)
