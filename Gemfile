@@ -7,7 +7,7 @@ end
 
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.0.3'
+gem 'rails', '~> 7.0.4'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
