@@ -28,6 +28,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'rubocop', '~> 1.15', require: false
   gem 'rubocop-rails'
+  gem 'parallel_tests'
 end
 
 group :development do
@@ -46,7 +47,6 @@ group :test do
   gem 'codeclimate-test-reporter'
   gem 'cucumber-rails', require: false
   gem 'factory_bot_rails'
-  gem 'parallel_tests'
   gem 'rails-controller-testing'
   gem 'regexp_parser'
   gem 'rspec_junit_formatter'

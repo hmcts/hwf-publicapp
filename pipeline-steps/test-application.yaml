@@ -29,9 +29,9 @@ steps:
   displayName: 'brakeman'
 
 - script: |
-    bundle exec rspec --fail-fast --format documentation --format RspecJunitFormatter --out test-rspec.xml
+    bundle exec rake parallel:spec RAILS_ENV=test
   displayName: 'rspec'
 
 - script: |
-    bundle exec cucumber features/*.feature --fail-fast
+    CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
   displayName: 'cucumber'
