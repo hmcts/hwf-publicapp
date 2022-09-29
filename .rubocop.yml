@@ -226,7 +226,7 @@ RSpec/ContextWording:
 
 # NEW COPS afer update to 1.15
 
-Gemspec/DateAssignment: # (new in 1.10)
+Gemspec/DeprecatedAttributeAssignment: # (new in 1.10)
   Enabled: true
 Layout/SpaceBeforeBrackets: # (new in 1.7)
   Enabled: true

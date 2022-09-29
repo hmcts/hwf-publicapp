@@ -7,7 +7,7 @@ end
 
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.0.3'
+gem 'rails', '~> 7.0.4'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
@@ -23,12 +23,11 @@ gem 'slim-rails'
 gem 'uglifier'
 gem 'virtus'
 
-
 group :development, :test do
   gem "debug", ">= 1.0.0"
+  gem 'letter_opener'
   gem 'rubocop', '~> 1.15', require: false
   gem 'rubocop-rails'
-  gem 'letter_opener'
 end
 
 group :development do
@@ -43,20 +42,20 @@ group :test do
   gem 'apparition'
   gem 'brakeman'
   gem 'capybara'
-  gem 'regexp_parser'
   gem 'capybara-screenshot'
   gem 'codeclimate-test-reporter'
   gem 'cucumber-rails', require: false
   gem 'factory_bot_rails'
   gem 'parallel_tests'
   gem 'rails-controller-testing'
-  gem 'report_builder'
-  gem 'rspec-rails'
+  gem 'regexp_parser'
   gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
   gem 'rubocop-rspec', '~> 2.3', require: false
   gem 'rubyzip'
   gem 'shoulda-matchers'
   gem 'site_prism'
+  gem "test-prof", "~> 1.0"
   gem 'timecop'
   gem 'webdrivers'
   gem 'webmock'
