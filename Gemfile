@@ -50,7 +50,6 @@ group :test do
   gem 'factory_bot_rails'
   gem 'parallel_tests'
   gem 'rails-controller-testing'
-  gem 'report_builder'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
   gem 'rubocop-rspec', '~> 2.3', require: false
