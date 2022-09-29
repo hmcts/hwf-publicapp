@@ -408,6 +408,7 @@ GEM
     sys-uname (1.2.2)
       ffi (~> 1.1)
     temple (0.8.2)
+    test-prof (1.0.10)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -489,6 +490,7 @@ DEPENDENCIES
   site_prism
   slim-rails
   spring
+  test-prof (~> 1.0)
   timecop
   uglifier
   virtus
