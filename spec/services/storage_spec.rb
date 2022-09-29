@@ -233,7 +233,7 @@ RSpec.describe Storage do
   end
 
   describe 'page_path' do
-    let(:session) { {'session_id'=> 123} }
+    let(:session) { { 'session_id' => 123 } }
 
     before { storage.store.write('page_path-123', []) }
 
