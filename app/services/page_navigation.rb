@@ -5,7 +5,7 @@ module PageNavigation
   end
 
   def load_step_back(question)
-    if page_path.is_a?(Array) && page_path.last && page_path.last.key?(question)
+    if page_path.is_a?(Array) && page_path.last.respond_to?(:key?) && page_path.last.key?(question)
       page_path_pop
     elsif (page_index = find_page_index(question)).positive?
       page_path_slice(page_index, page_path.count)
@@ -20,6 +20,10 @@ module PageNavigation
 
   private
 
+  def session_id
+    @session['session_id']
+  end
+
   def back_link
     return nil if page_path.blank?
 
@@ -27,25 +31,25 @@ module PageNavigation
   end
 
   def page_path
-    store.read('page_path') || []
+    store.read("page_path-#{session_id}") || []
   end
 
   def page_path_pop
     list = page_path
     list.pop
-    store.write('page_path', list)
+    store.write("page_path-#{session_id}", list)
   end
 
   def page_path_slice(from, to)
     list = page_path
     list.slice!(from, to)
-    store.write('page_path', list)
+    store.write("page_path-#{session_id}", list)
   end
 
   def page_path_add(page_hash)
     list = page_path
     list << page_hash
-    store.write('page_path', list)
+    store.write("page_path-#{session_id}", list)
   end
 
   def find_page_index(question)
