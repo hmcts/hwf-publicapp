@@ -49,8 +49,8 @@ group :test do
   gem 'parallel_tests'
   gem 'rails-controller-testing'
   gem 'regexp_parser'
-  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
   gem 'rubocop-rspec', '~> 2.3', require: false
   gem 'rubyzip'
   gem 'shoulda-matchers'
