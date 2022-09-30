@@ -233,14 +233,14 @@ RSpec.describe Storage do
   end
 
   describe 'page_path' do
-    let(:session) { {} }
+    let(:session) { { 'session_id' => 123 } }
 
-    before { storage.store.write('page_path', []) }
+    before { storage.store.write('page_path-123', []) }
 
     context 'store page' do
       it 'store path' do
         storage.store_page_path('page_123', 'page1')
-        expect(storage.store.read('page_path')).to eq [{ "page1" => "page_123" }]
+        expect(storage.store.read('page_path-123')).to eq [{ "page1" => "page_123" }]
       end
     end
 
