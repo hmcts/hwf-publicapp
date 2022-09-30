@@ -27,7 +27,7 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN gem install bundler -v 2.3.16
+RUN gem install bundler -v 2.3.22
 RUN bundle config set --local without 'test development'
 RUN bundle config set force_ruby_platform true
 RUN bundle install
