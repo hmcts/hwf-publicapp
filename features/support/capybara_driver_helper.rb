@@ -23,10 +23,6 @@ Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
-Capybara::Screenshot.register_driver(:chrome) do |driver, path|
-  driver.browser.save_screenshot(path)
-end
-
 Capybara.register_driver :firefox do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new
   Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
@@ -39,11 +35,6 @@ end
 
 if ENV.key?('CIRCLE_ARTIFACTS')
   Capybara.save_and_open_page_path = ENV['CIRCLE_ARTIFACTS']
-end
-
-Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|
-  title = scenario.name.tr(' ', '-').gsub(%r{/^.*/cucumber//}, '')
-  "screenshot_cucumber_#{title}"
 end
 
 Capybara.always_include_port = true
