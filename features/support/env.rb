@@ -60,28 +60,10 @@ end
 Capybara.raise_server_errors = false
 
 require 'capybara/cucumber'
-require 'capybara-screenshot/cucumber'
 require 'base64'
 require 'date'
-
-Capybara::Screenshot.autosave_on_failure = true
-Capybara::Screenshot.prune_strategy = :keep_last_run
-
-After do |scenario|
-  if scenario.failed?
-      add_screenshot
-  end
-end
 
 Before('@cross-service') do
   Capybara.always_include_port = false
   Capybara.app_host = 'https://public.demo.hwf.dsd.io'
-end
-
-def add_screenshot
-  file_path = 'features/cucumber-report/screenshot.png'
-  page.driver.save_screenshot(file_path)
-  image = open(file_path, 'rb', &:read)
-  encoded_image = Base64.encode64(image)
-  attach(encoded_image, 'image/png;base64')
 end
