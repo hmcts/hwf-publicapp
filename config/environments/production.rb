@@ -88,9 +88,6 @@ Rails.application.configure do
   end
 
   #### RAILS 6.1
-  Raven.configure do |config|
-    config.ssl_verification = Settings.sentry.ssl_verification == true
-  end
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true

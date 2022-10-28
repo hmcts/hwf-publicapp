@@ -27,7 +27,7 @@ income:
 probate_fees:
   release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2025-04-01' %>
 sentry:
-  ssl_verification: <%= ENV['SENTRY_SSL_VERIFICATION'] %>
+  dsn: <%= ENV['SENTRY_DSN'] %>
 maintenance:
   show: <%= ENV['SHOW_MAINTENANCE_BANNER'] || false %>
 mail:
