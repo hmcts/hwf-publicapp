@@ -330,6 +330,9 @@ Naming/VariableNumber:
 Style/OptionalBooleanParameter:
   Enabled: false
 
+Style/SymbolArray:
+  Enabled: false
+
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
