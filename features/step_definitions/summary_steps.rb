@@ -59,3 +59,13 @@ end
 Then(/^I should be taken to summary page$/) do
   expect(summary_page).to be_displayed
 end
+
+And(/^I visit the start session path$/) do
+  home_page.load_page
+  click_link_or_button 'Start now'
+  click_link_or_button 'Continue'
+end
+
+Then(/^I expect to have a blank form number$/) do
+  expect(form_name_page.content).to have_form_name
+end

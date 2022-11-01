@@ -63,3 +63,9 @@ Feature: Summary page
     Given I am on the summary page with probate enabled
     When I click submit application and continue
     Then I should be taken to confirmation page
+
+  Scenario: User details are not persisted
+    Given I am on the summary page with probate enabled
+    When I click submit application and continue
+    And I visit the start session path
+    Then I expect to have a blank form number
