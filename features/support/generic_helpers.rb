@@ -124,6 +124,10 @@ def cookie_page
   @cookie_page ||= CookiePage.new
 end
 
+def home_page
+  @home_page ||= HomePage.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end
