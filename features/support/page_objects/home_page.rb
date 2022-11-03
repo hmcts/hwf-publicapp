@@ -9,6 +9,6 @@ class HomePage < BasePage
     element :income, 'h3', text: 'Income'
     element :apply, 'h2', text: 'Apply online'
     element :other, 'h2', text: 'Other ways to apply'
-
+    element :error, 'h2', text: 'There is a problem'
   end
 end

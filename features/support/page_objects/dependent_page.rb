@@ -1,4 +1,5 @@
 class DependentPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/dependent'
 
   section :content, '#content' do
@@ -24,20 +25,9 @@ class DependentPage < BasePage
   end
 
   def slow_submit_dependent_no
-    time_started = Time.current
-    time_expired =  time_started + 61.minutes
-    p(Timecop.freeze(time_started))
-    p(Timecop.freeze(time_expired))
-    p(Timecop.travel(time_expired))
-    p(time_started)
-    p(time_expired)
-    Timecop.freeze(time_started) do
-      Timecop.return
-    end
-    Timecop.freeze(time_expired) do
+    travel 61.minutes do
       content.no.click
       continue
-      Timecop.return
     end
   end
 

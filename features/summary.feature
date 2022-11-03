@@ -69,3 +69,8 @@ Feature: Summary page
     When I click submit application and continue
     And I visit the start session path
     Then I expect to have a blank form number
+
+  Scenario: Refund enabled
+    Given I am on the summary page with probate enabled submit fee yes
+    When I click submit application and continue
+    Then I should be taken to confirmation page with a refund

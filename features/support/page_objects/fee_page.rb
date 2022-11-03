@@ -58,4 +58,5 @@ class FeePage < BasePage
     content.no.click
     continue
   end
+
 end
