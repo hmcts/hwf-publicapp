@@ -376,7 +376,6 @@ def to_summary_page_probate_enabled_fee_paid
   personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
-  apply_type_page.applying_by_paper
 end
 
 def to_summary_page_probate_disabled

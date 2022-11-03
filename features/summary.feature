@@ -70,7 +70,7 @@ Feature: Summary page
     And I visit the start session path
     Then I expect to have a blank form number
 
-  Scenario: User submits for s successful refund
+  Scenario: User submits for a successful refund
     Given I am on the summary page with probate enabled and paid a fee
     When I click submit application and continue
     Then I should be taken to confirmation page about refund
