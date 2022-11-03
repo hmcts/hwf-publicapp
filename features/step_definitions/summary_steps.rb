@@ -7,6 +7,13 @@ Given(/^I am on the summary page with probate enabled$/) do
   expect(summary_page.content).to have_check_details_hint
 end
 
+Given(/^I am on the summary page with probate enabled submit fee yes$/) do
+  probate_enabled
+  to_summary_page_probate_enabled_submit_fee_yes
+  expect(summary_page).to be_displayed
+  expect(summary_page.content).to have_check_details_hint
+end
+
 Given(/^I am on the summary page with probate disabled$/) do
   probate_disabled
   to_summary_page_probate_disabled
@@ -69,3 +76,4 @@ end
 Then(/^I expect to have a blank form number$/) do
   expect(form_name_page.content).to have_form_name
 end
+

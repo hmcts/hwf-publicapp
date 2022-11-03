@@ -18,4 +18,5 @@ class ApplyTypePage < BasePage
     continue
   end
 
+
 end

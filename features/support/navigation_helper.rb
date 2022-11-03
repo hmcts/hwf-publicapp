@@ -358,6 +358,26 @@ def to_summary_page_probate_enabled
   apply_type_page.applying_by_paper
 end
 
+def to_summary_page_probate_enabled_submit_fee_yes
+  to_form_name
+  form_name_page.submit_valid_form_number
+  fee_page.submit_fee_yes
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.static_dob
+  personal_details_page.submit_full_name
+  address_page.submit_full_address
+  contact_page.valid_email
+end
+
 def to_summary_page_probate_disabled
   to_form_name
   form_name_page.submit_valid_form_number
