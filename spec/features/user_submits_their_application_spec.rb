@@ -6,22 +6,6 @@ RSpec.feature 'User submits their application' do
 
   before { disable_postcode_lookup }
 
-  scenario 'User submits their non refund application and it is successfully processed' do
-    given_user_provides_all_data
-    and_the_submission_service_is_available(reference)
-    when_they_submit_the_application
-    then_they_are_presented_with_the_non_refund_confirmation_page_with_reference_number
-  end
-
-  scenario 'User submits their refund application and it is successfully processed' do
-    Timecop.freeze(current_time) do
-      given_user_provides_all_data_for_refund
-      and_the_submission_service_is_available(reference)
-      when_they_submit_the_application
-      then_they_are_presented_with_the_refund_confirmation_page_with_reference_number
-    end
-  end
-
   scenario 'User submits their application, but it is not processed' do
     given_user_provides_all_data
     and_the_submission_service_is_unavailable

@@ -7,11 +7,9 @@ Given(/^I am on the summary page with probate enabled$/) do
   expect(summary_page.content).to have_check_details_hint
 end
 
-Given(/^I am on the summary page with probate enabled submit fee yes$/) do
+Given(/^I am on the summary page with probate enabled and paid a fee$/) do
   probate_enabled
-  to_summary_page_probate_enabled_submit_fee_yes
-  expect(summary_page).to be_displayed
-  expect(summary_page.content).to have_check_details_hint
+  to_summary_page_probate_enabled_fee_paid
 end
 
 Given(/^I am on the summary page with probate disabled$/) do

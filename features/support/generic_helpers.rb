@@ -104,6 +104,10 @@ def confirmation_page
   @confirmation_page ||= ConfirmationPage.new
 end
 
+def confirmation_page_refund
+  @confirmation_page ||= ConfirmationPageRefund.new
+end
+
 def confirmation_done_page
   @confirmation_done_page ||= ConfirmationDonePage.new
 end

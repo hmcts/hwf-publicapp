@@ -1,9 +1,9 @@
-class ConfirmationPage < BasePage
-  set_url '/confirmation'
+class ConfirmationPageRefund < BasePage
+  set_url '/confirmation/refund'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 22 of 22'
-    element :header, 'h1', text: 'Send your claim form'
+    element :header, 'h1', text: 'Send your reference number to complete the process'
     element :confirmation_header_paper_one, 'h2', text: 'Your application is not yet complete. You now need to take action.'
     element :confirmation_header_paper_two, 'h2', text: 'You must provide the court or tribunal with this reference number to proceed.'
     element :confirmation_instruction_line_one, 'p', text: 'Enter this reference number on the help with fees section of your court or tribunal application form'
