@@ -23,6 +23,24 @@ class DependentPage < BasePage
     continue
   end
 
+  def slow_submit_dependent_no
+    time_started = Time.current
+    time_expired =  time_started + 61.minutes
+    p(Timecop.freeze(time_started))
+    p(Timecop.freeze(time_expired))
+    p(Timecop.travel(time_expired))
+    p(time_started)
+    p(time_expired)
+    Timecop.freeze(time_started) do
+      Timecop.return
+    end
+    Timecop.freeze(time_expired) do
+      content.no.click
+      continue
+      Timecop.return
+    end
+  end
+
   def dependent_yes
     content.yes.click
   end

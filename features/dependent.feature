@@ -20,3 +20,9 @@ Feature: Dependent page
   Scenario: Help with benefits
     When I click on 'Help with financially dependent children'
     Then I should see help with financially dependent children copy
+
+  Scenario: Timeout
+    Given probate is enabled
+    And I am on the dependent page
+    When I submit the form with no I do not have any children after a long time
+    Then I should see the home page
