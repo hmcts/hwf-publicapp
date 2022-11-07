@@ -13,8 +13,4 @@ RSpec.feature 'User completes their' do
     then_they_cannot_procced
   end
 
-  scenario 'below threshold income application up to the summary page' do
-    given_user_provides_all_data_for_below_threshold_income
-    then_they_can_proceed
-  end
 end
