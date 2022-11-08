@@ -75,3 +75,17 @@ Then(/^I expect to have a blank form number$/) do
   expect(form_name_page.content).to have_form_name
 end
 
+And(/^I change the benefit status$/) do
+  summary_page.benefits_change
+  expect(benefit_page).to be_displayed
+  benefit_page.submit_benefit_no
+end
+
+And(/^I navigate back to the summary page using the browser back button$/) do
+  page.go_back
+  page.go_back
+end
+
+Then(/^I should see a changes notification\.$/) do
+  expect(summary_page).to be_displayed
+end

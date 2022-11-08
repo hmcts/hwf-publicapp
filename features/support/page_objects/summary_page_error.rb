@@ -1,4 +1,4 @@
-class SummaryPage < BasePage
+class SummaryPageError < BasePage
   set_url '/summary'
 
   section :content, '#content' do
@@ -11,6 +11,8 @@ class SummaryPage < BasePage
       element :action, 'a', text: 'Change'
     end
     element :submit_application_button, 'input[value="Submit application and continue"]'
+    element :benefits_change_button, [href: "/questions/benefit"]
+    element :error, ["govuk-error-message", text: "You’ve made changes. Please answer the highlighted questions to complete your application."]
   end
 
   def home_office_number
@@ -21,10 +23,11 @@ class SummaryPage < BasePage
   end
 
   def benefits_change
-    content.summary_row[5].action.click
+    content.benefits_change_button.click
   end
 
   def submit_application
     content.submit_application_button.click
   end
 end
+

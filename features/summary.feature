@@ -74,3 +74,9 @@ Feature: Summary page
     Given I am on the summary page with probate enabled and paid a fee
     When I click submit application and continue
     Then I should be taken to confirmation page about refund
+
+  Scenario: User submits a benefit application and then changes benefit answer.
+    Given I am on the summary page with probate disabled
+    And I change the benefit status
+    And I navigate back to the summary page using the browser back button
+    Then I should see a changes notification.
