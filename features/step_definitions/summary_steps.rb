@@ -96,5 +96,5 @@ And(/^The submission service is down$/) do
 end
 
 Then(/^They are redirected to the summary page with error message\.$/) do
-  expect(summary_page).to be_displayed
+  expect(summary_page.content).to have_header
 end
