@@ -83,6 +83,5 @@ Feature: Summary page
 
   Scenario: User submits with the service down
     Given I am on the summary page with probate enabled and paid a fee
-    And The submission service is down
-    When I click submit application and continue
+    When The submission service is down and I click continue
     Then They are redirected to the summary page with error message.
