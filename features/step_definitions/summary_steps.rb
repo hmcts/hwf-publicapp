@@ -59,6 +59,7 @@ end
 
 When(/^I click submit application and continue$/) do
   summary_page.submit_application
+  sleep(5)
 end
 
 Then(/^I should be taken to summary page$/) do
@@ -87,5 +88,13 @@ And(/^I navigate back to the summary page using the browser back button$/) do
 end
 
 Then(/^I should see a changes notification\.$/) do
+  expect(summary_page).to be_displayed
+end
+
+And(/^The submission service is down$/) do
+  summary_page.stub_submission_request(200, result: false, message: '')
+end
+
+Then(/^They are redirected to the summary page with error message\.$/) do
   expect(summary_page).to be_displayed
 end

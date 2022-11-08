@@ -80,3 +80,9 @@ Feature: Summary page
     And I change the benefit status
     And I navigate back to the summary page using the browser back button
     Then I should see a changes notification.
+
+  Scenario: User submits with the service down
+    Given I am on the summary page with probate enabled and paid a fee
+    And The submission service is down
+    When I click submit application and continue
+    Then They are redirected to the summary page with error message.
