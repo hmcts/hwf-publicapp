@@ -30,7 +30,7 @@ class SummaryPage < BasePage
   end
 
   def stub_submission_request(response_status, response_body)
-    stub_request(:post, 'http://submit.to.this/api/submissions').
+    stub_request(:post, "#{ENV['SUBMISSION_URL']}/api/submissions").
       with(headers: { Authorization: 'Token token=SUBMISSION_TOKEN' }).
       to_return(status: response_status, body: response_body.to_json)
   end
