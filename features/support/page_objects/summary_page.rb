@@ -1,6 +1,5 @@
 class SummaryPage < BasePage
   set_url '/summary'
-  include WebMock
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 21 of 22'
@@ -31,8 +30,8 @@ class SummaryPage < BasePage
   end
 
   def stub_submission_request(response_status, response_body)
-    stub_request(:post, "#{ENV['SUBMISSION_URL']}/api/submissions").
-      with(headers: { Authorization: 'Token token=SUBMISSION_TOKEN' }).
+    WebMock.stub_request(:post, "#{ENV['SUBMISSION_URL']}/api/submissions").
+      with(headers: { Authorization: 'Token token=this_very_secret_token' }).
       to_return(status: response_status, body: response_body.to_json)
   end
 end

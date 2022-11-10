@@ -60,5 +60,3 @@ end
 Then(/^I should be taken to confirmation page about refund$/) do
   expect(confirmation_page.content).to have_header_refund
 end
-
-

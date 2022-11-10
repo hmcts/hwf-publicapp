@@ -36,6 +36,7 @@ class FormNamePage < BasePage
   def no_form
     content.form_name_unknown.click
   end
+
   def no_form_long_time
     travel 61.minutes do
       content.form_name_unknown.click

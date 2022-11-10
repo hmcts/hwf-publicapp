@@ -64,12 +64,14 @@ Feature: Summary page
     When I click submit application and continue
     Then I should be taken to confirmation page
 
+  @hwf_submit_application @zap
   Scenario: User details are not persisted
     Given I am on the summary page with probate enabled
     When I click submit application and continue
     And I visit the start session path
     Then I expect to have a blank form number
 
+  @hwf_submit_application
   Scenario: User submits for a successful refund
     Given I am on the summary page with probate enabled and paid a fee
     When I click submit application and continue
@@ -85,3 +87,4 @@ Feature: Summary page
     Given I am on the summary page with probate enabled and paid a fee
     When The submission service is down and I click continue
     Then They are redirected to the summary page with error message.
+
