@@ -66,9 +66,7 @@ Then(/^I should be taken to summary page$/) do
 end
 
 And(/^I visit the start session path$/) do
-  home_page.load_page
-  click_link_or_button 'Start now'
-  click_link_or_button 'Continue'
+  to_form_name
 end
 
 Then(/^I expect to have a blank form number$/) do
