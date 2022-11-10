@@ -56,3 +56,7 @@ Then(/^I should be taken to confirmation page$/) do
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
 end
+
+Then(/^I should be taken to confirmation page about refund$/) do
+  expect(confirmation_page.content).to have_header_refund
+end

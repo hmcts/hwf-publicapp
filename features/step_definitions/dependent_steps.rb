@@ -40,3 +40,7 @@ end
 Then(/^I should be taken to dependent page$/) do
   expect(dependent_page).to be_displayed
 end
+
+When(/^I submit the form with no I do not have any children after a long time$/) do
+  dependent_page.slow_submit_dependent_no
+end

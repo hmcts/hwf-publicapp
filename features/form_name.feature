@@ -41,3 +41,9 @@ Feature: Form name page
       And I am on the form number page
       When I click on 'Applying for help with hearing fees'
       Then I should see more information about what to put in the form number field
+
+    Scenario: Entering valid form number after a long time
+      Given probate is enabled
+      And I am on the form number page
+      When I submit the form with a valid form number after a long time
+      Then I should see the home page with error

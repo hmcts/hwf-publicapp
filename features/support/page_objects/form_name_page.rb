@@ -1,4 +1,5 @@
 class FormNamePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/form_name'
 
   section :content, '#content' do
@@ -8,6 +9,7 @@ class FormNamePage < BasePage
     element :probate_link, 'a', text: 'Find further details and apply for probate.'
     element :form_label, '.govuk-label', text: 'Form number'
     element :form_name, '#form_name_identifier'
+    element :form_text_box, 'form_name[identifier]'
     element :enter_court_hint, 'div.govuk-hint', text: 'You\'ll find a number at the bottom of paper forms, for example C100 or ADM1A.'
     element :error_link, 'a', text: "Enter a valid form number or select 'I don't have a form'"
     element :error_message, '.error-message', text: "Enter a valid form number or select 'I don't have a form'"
@@ -33,6 +35,19 @@ class FormNamePage < BasePage
 
   def no_form
     content.form_name_unknown.click
+  end
+
+  def no_form_long_time
+    travel 61.minutes do
+      content.form_name_unknown.click
+    end
+  end
+
+  def submit_valid_form_number_long_time
+    travel 61.minutes do
+      form_name('C100')
+      continue
+    end
   end
 
 end

@@ -56,3 +56,13 @@ Then(/^I should see you entered the help with fees form number error message$/) 
   expect(base_page.content).to have_there_is_a_problem
   expect(form_name_page.content).to have_invalid_link
 end
+
+When(/^I submit the form with I don’t have a form checked after a long time$/) do
+  form_name_page.no_form_long_time
+  continue
+end
+
+When(/^I submit the form with a valid form number after a long time$/) do
+  expect(form_name_page.content).to have_form_label
+  form_name_page.submit_valid_form_number_long_time
+end

@@ -1,4 +1,5 @@
 class DependentPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/dependent'
 
   section :content, '#content' do
@@ -21,6 +22,13 @@ class DependentPage < BasePage
   def submit_dependent_no
     content.no.click
     continue
+  end
+
+  def slow_submit_dependent_no
+    travel 61.minutes do
+      content.no.click
+      continue
+    end
   end
 
   def dependent_yes

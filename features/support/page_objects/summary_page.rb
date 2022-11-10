@@ -11,6 +11,7 @@ class SummaryPage < BasePage
       element :action, 'a', text: 'Change'
     end
     element :submit_application_button, 'input[value="Submit application and continue"]'
+    element :error, '.govuk-error-message', text: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
   end
 
   def home_office_number
@@ -20,7 +21,17 @@ class SummaryPage < BasePage
     national_insurance_presence_page.submit_no
   end
 
+  def benefits_change
+    content.summary_row[5].action.click
+  end
+
   def submit_application
     content.submit_application_button.click
+  end
+
+  def stub_submission_request(response_status, response_body)
+    WebMock.stub_request(:post, "#{ENV['SUBMISSION_URL']}/api/submissions").
+      with(headers: { Authorization: 'Token token=this_very_secret_token' }).
+      to_return(status: response_status, body: response_body.to_json)
   end
 end
