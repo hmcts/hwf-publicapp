@@ -70,7 +70,7 @@ And(/^I visit the start session path$/) do
 end
 
 Then(/^I expect to have a blank form number$/) do
-  expect(form_name_page.content).to have_form_name
+  form_name_page.should have_field("form_name[identifier]", text: "")
 end
 
 And(/^I change the benefit status$/) do
