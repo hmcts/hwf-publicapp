@@ -100,16 +100,8 @@ def summary_page
   @summary_page ||= SummaryPage.new
 end
 
-def summary_page_error
-  @summary_page ||= SummaryPageError.new
-end
-
 def confirmation_page
   @confirmation_page ||= ConfirmationPage.new
-end
-
-def confirmation_page_refund
-  @confirmation_page ||= ConfirmationPageRefund.new
 end
 
 def confirmation_done_page

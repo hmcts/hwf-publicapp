@@ -88,6 +88,7 @@ end
 
 Then(/^I should see a changes notification\.$/) do
   expect(summary_page).to be_displayed
+  expect(summary_page.content).to have_error
 end
 
 And(/^The submission service is down and I click continue$/) do

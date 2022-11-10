@@ -58,8 +58,7 @@ Then(/^I should be taken to confirmation page$/) do
 end
 
 Then(/^I should be taken to confirmation page about refund$/) do
-  expect(confirmation_page_refund).to be_displayed
-  expect(confirmation_page_refund.content).to have_header
+  expect(confirmation_page.content).to have_header_refund
 end
 
 
