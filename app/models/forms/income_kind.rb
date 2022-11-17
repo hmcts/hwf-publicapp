@@ -44,7 +44,7 @@ module Forms
           partner: income_kind_text_values(partner)
         }
       }
-      export.merge!(income: 0) if (applicant + partner).uniq == [self.class.no_income_index]
+      export[:income] = 0 if (applicant + partner).uniq == [self.class.no_income_index]
       export
     end
 
