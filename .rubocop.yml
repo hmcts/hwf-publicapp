@@ -339,4 +339,4 @@ RSpec/MultipleMemoizedHelpers:
 require:
   - rubocop-rspec
   - rubocop-rails
-
+  - rubocop-performance
