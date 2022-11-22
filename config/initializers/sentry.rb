@@ -2,6 +2,8 @@ Sentry.init do |config|
   config.dsn = Settings.sentry.dsn
   config.breadcrumbs_logger = [:active_support_logger, :http_logger]
 
+  config.release = ENV.fetch('APPVERSION', 'unknown')
+
   # Set traces_sample_rate to 1.0 to capture 100%
   # of transactions for performance monitoring.
   # We recommend adjusting this value in production.
