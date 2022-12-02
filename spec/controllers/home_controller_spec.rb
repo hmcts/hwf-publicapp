@@ -7,6 +7,18 @@ RSpec.describe HomeController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    context 'set locale' do
+      it 'to default if incorrect value' do
+        get :index, params: { locale: 'test' }
+        expect(I18n.locale).to be(:en)
+      end
+
+      it 'to approved value' do
+        get :index, params: { locale: 'cy' }
+        expect(I18n.locale).to be(:cy)
+      end
+    end
   end
 
   describe '#terms_and_conditions' do
