@@ -15,7 +15,13 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = sanitized_locale
+  end
+
+  def sanitized_locale
+    return params[:locale] if params[:locale] == 'en' || params[:locale] == 'cy'
+
+    I18n.default_locale
   end
 
   def online_application
