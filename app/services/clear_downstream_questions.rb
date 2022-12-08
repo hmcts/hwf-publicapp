@@ -7,13 +7,18 @@ class ClearDownstreamQuestions
   def for_changes(old_online_application, new_online_application)
     if dependent_change?(new_online_application, old_online_application) ||
        income_kind_change?(new_online_application, old_online_application)
-      @storage.clear_form(:income_range)
-      @storage.clear_form(:income_amount)
+      @storage.clear_forms([:income_range, :income_amount])
     elsif income_range_change?(new_online_application, old_online_application)
       @storage.clear_form(:income_amount)
+    elsif benefit_change?(new_online_application)
+      @storage.clear_forms([:income_range, :income_amount, :income_kind, :dependent])
     elsif !old_online_application.ni_number_present.nil?
       clear_ni_or_ho(old_online_application)
     end
+  end
+
+  def benefit_change?(new_online_application)
+    @question == :benefit && new_online_application.benefits == true
   end
 
   def income_kind_change?(new_online_application, old_online_application)
