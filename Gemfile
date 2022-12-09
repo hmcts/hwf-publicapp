@@ -28,6 +28,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'rubocop', '~> 1.15', require: false
   gem 'rubocop-rails'
+  gem 'rubocop-performance', require: false
   gem 'parallel_tests'
 end
 
