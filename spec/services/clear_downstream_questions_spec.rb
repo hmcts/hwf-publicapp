@@ -4,7 +4,7 @@ RSpec.describe ClearDownstreamQuestions do
   subject(:service) { described_class.new(storage, question) }
 
   describe '#for_changes' do
-    let(:storage) { instance_double(Storage, clear_form: nil) }
+    let(:storage) { instance_double(Storage, clear_form: nil, clear_forms: nil) }
 
     before do
       service.for_changes(old_online_application, new_online_application)
@@ -18,8 +18,7 @@ RSpec.describe ClearDownstreamQuestions do
         let(:new_online_application) { build :online_application, children: 1 }
 
         describe 'clears income_range and income_amount questions' do
-          it { expect(storage).to have_received(:clear_form).with(:income_range) }
-          it { expect(storage).to have_received(:clear_form).with(:income_amount) }
+          it { expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount]) }
         end
       end
 
@@ -40,8 +39,7 @@ RSpec.describe ClearDownstreamQuestions do
         let(:new_online_application) { build :online_application, income: 0 }
 
         describe 'clears income_range and income_amount questions' do
-          it { expect(storage).to have_received(:clear_form).with(:income_range) }
-          it { expect(storage).to have_received(:clear_form).with(:income_amount) }
+          it { expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount]) }
         end
       end
 
@@ -63,6 +61,28 @@ RSpec.describe ClearDownstreamQuestions do
 
         it 'clears income_amount questions' do
           expect(storage).to have_received(:clear_form).with(:income_amount)
+        end
+      end
+    end
+
+    context 'when the question is "benefit" and is set to true' do
+      let(:question) { :benefit }
+      let(:old_online_application) { build :online_application }
+      let(:new_online_application) { build :online_application, benefits: benefit_value }
+
+      context 'set to true' do
+        let(:benefit_value) { true }
+
+        it 'clears income_amount questions' do
+          expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount, :income_kind, :dependent])
+        end
+      end
+
+      context 'set to false' do
+        let(:benefit_value) { false }
+
+        it 'clears income_amount questions' do
+          expect(storage).not_to have_received(:clear_forms).with([:income_range, :income_amount, :income_kind, :dependent])
         end
       end
     end

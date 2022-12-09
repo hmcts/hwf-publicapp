@@ -35,6 +35,12 @@ class Storage
     @session['questions']&.delete(form_id.to_s)
   end
 
+  def clear_forms(form_ids)
+    form_ids.each do |form_id|
+      clear_form(form_id)
+    end
+  end
+
   def submission_result=(result)
     @session[:submission_result] = result
   end
