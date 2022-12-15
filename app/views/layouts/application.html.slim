@@ -29,13 +29,14 @@
   .container
     #content.cf
       - if flash.key?("error")
-        .govuk-error-summary aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary"
-          h2.govuk-error-summary__title id="error-summary-title" =t('error_block.heading')
-          .govuk-error-summary__body
-            ul.govuk-list.govuk-error-summary__list
-              - flash.each do |field, message|
-                li
-                  span.govuk-error-message = message
+        div role="alert"
+          .govuk-error-summary tabindex="-1" data-module="govuk-error-summary"
+            h2.govuk-error-summary__title =t('error_block.heading')
+            .govuk-error-summary__body
+              ul.govuk-list.govuk-error-summary__list
+                - flash.each do |field, message|
+                  li
+                    span.govuk-error-message = message
       - if flash.key?("cookie_notification")
         .govuk-notification-banner.govuk-notification-banner--success role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
           .govuk-notification-banner__header
