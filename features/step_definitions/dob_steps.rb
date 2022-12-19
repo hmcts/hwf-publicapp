@@ -22,17 +22,17 @@ Then(/^I should see this format hint$/) do
 end
 
 Then(/^I should see you must be over 15 to use this service error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(dob_page.content).to have_under_age_error_link
 end
 
 Then(/^I should see check this date of birth is correct error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(dob_page.content).to have_over_age_error_link
 end
 
 Then(/^I should see enter the date of birth in this format error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(dob_page.content).to have_blank_error_link
 end
 

@@ -21,7 +21,7 @@ Then(/^I should see if you don't know your national insurance number copy$/) do
 end
 
 Then(/^I should see enter a valid National Insurance number error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(national_insurance_page.content).to have_invalid_error_link
 end
 

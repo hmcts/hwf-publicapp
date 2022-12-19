@@ -10,7 +10,9 @@ class NationalInsurancePresencePage < BasePage
     element :where_to_find, 'summary', text: 'Where to find my National Insurance number?'
     element :look_for_ni_text, 'li', text: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
     element :ask_for_reminder_link, 'a', text: 'ask for a reminder through the post'
-    element :blank_error_link, '#error-summary-title', text: 'There is a problem'
+    section :alert, 'div[role="alert"]' do
+      element :blank_error_link, 'a.error-link'
+    end
     element :invalid_error_link, 'a', text: 'is not included in the list'
   end
 

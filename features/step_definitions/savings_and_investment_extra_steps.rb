@@ -30,12 +30,12 @@ When(/^I enter £1600 as our savings and investments$/) do
 end
 
 Then(/^I should see enter amount between error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(savings_investment_extra_page.content).to have_error_link
 end
 
 Then(/^I should see enter how much you have in savings and investments error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(savings_investment_extra_page.content).to have_blank_error_link
 end
 

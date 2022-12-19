@@ -33,7 +33,7 @@ Then(/^I should see an income list for myself and my partner$/) do
 end
 
 When(/^I should see select your kinds of income error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(income_kind_page.content).to have_blank_error_link
 end
 
