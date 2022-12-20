@@ -6,7 +6,7 @@ class SubmissionsController < ApplicationController
     if response[:result]
       redirect_to(confirmation_route(online_application))
     else
-      flash[:error] = "We couldn't process your application at this time. Please try again later."
+      flash[:error] = I18n.t('.confirmation.submission_error')
       redirect_to(summary_path)
     end
   end

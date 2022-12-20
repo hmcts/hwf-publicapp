@@ -239,6 +239,7 @@ cy:
   confirmation:
     back_to_start: Yn ôl i'r dechrau
     default_form_name: hawlio
+    submission_error: "We couldn't process your application at this time. Please try again later."
     default:
       breadcrumb: Cam 22 of 22
       title: Anfonwch eich ffurflen hawlio
