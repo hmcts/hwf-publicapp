@@ -39,7 +39,7 @@ class OnlineApplication
   attribute :applying_method, String
 
   def full_name
-    %i[title first_name last_name].map { |field| send(field) }.compact.join(' ')
+    %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
   end
 
   def savings_and_investment_extra_required?

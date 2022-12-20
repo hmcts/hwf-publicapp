@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def address_lookup_details_filled?(record)
-    record.send("street").present?
+    record.send(:street).present?
   end
 
   def title_scope(scope, online_application)

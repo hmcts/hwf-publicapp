@@ -30,7 +30,7 @@ class SummaryPage < BasePage
   end
 
   def stub_submission_request(response_status, response_body)
-    WebMock.stub_request(:post, "#{ENV['SUBMISSION_URL']}/api/submissions").
+    WebMock.stub_request(:post, "#{ENV.fetch('SUBMISSION_URL', nil)}/api/submissions").
       with(headers: { Authorization: 'Token token=this_very_secret_token' }).
       to_return(status: response_status, body: response_body.to_json)
   end
