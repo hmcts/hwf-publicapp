@@ -565,6 +565,10 @@ Performance/StringInclude: # new in 1.7
 Performance/Sum: # new in 1.8
   Enabled: true
 
+Style/ConcatArrayLiterals: # new in 1.41
+  Enabled: true
+Style/RedundantDoubleSplatHashBraces: # new in 1.41
+  Enabled: true
 
 require:
   - rubocop-rspec
