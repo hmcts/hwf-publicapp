@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OnlineApplication, type: :model do
+RSpec.describe OnlineApplication do
   describe '#full_name' do
     subject { model.full_name }
 

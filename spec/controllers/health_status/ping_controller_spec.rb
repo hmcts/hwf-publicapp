@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HealthStatus::PingController, type: :controller do
+RSpec.describe HealthStatus::PingController do
 
   describe 'GET #show' do
     let(:json) { { some_key: 'some value' } }

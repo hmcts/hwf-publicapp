@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::HelpRequest, type: :model do
+RSpec.describe Forms::HelpRequest do
   subject { described_class.new }
 
   it { is_expected.to validate_presence_of(:name) }

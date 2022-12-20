@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.feature 'As a user' do
   before { travel_to a_day_before_disable_probate_fees }
 
-  after { travel_back }
-
   context 'when accessing the "probate" page for "Help with fees"' do
     before { given_user_answers_questions_up_to(:probate) }
 

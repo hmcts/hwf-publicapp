@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SessionsController, type: :controller do
+RSpec.describe SessionsController do
   let(:session) { double }
   let(:storage) { instance_double(Storage, start: nil, clear: nil) }
 

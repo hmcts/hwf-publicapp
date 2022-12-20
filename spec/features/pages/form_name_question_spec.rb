@@ -32,8 +32,6 @@ RSpec.feature 'As a user' do
         given_user_answers_questions_up_to(:form_name)
       end
 
-      after { travel_back }
-
       scenario 'I do not expect the warning message to be displayed' do
         expect(page).not_to have_css('#probate-warning')
       end
@@ -44,8 +42,6 @@ RSpec.feature 'As a user' do
         travel_to(probate_fees_release_date)
         given_user_answers_questions_up_to(:form_name)
       end
-
-      after { travel_back }
 
       scenario 'I expect a warning message to be displayed' do
         expect(page).to have_css('#probate-warning')

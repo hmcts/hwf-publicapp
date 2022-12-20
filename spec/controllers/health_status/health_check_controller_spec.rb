@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HealthStatus::HealthCheckController, type: :controller do
+RSpec.describe HealthStatus::HealthCheckController do
   describe '#show' do
     let(:json) { { some_key: 'some_value' } }
     let(:health_check) { instance_double(HealthStatus::HealthCheck, as_json: json, healthy?: healthy?) }

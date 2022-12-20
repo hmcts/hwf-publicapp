@@ -20,7 +20,7 @@ RSpec.feature 'As a user' do
     end
 
     context 'not completing the page correctly' do
-      describe 'entering invalid email text ' do
+      describe 'entering invalid email text' do
         before do
           fill_in :contact_email, with: 'foobar.com'
           click_button 'Continue'

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ConfirmationsController, type: :controller do
+RSpec.describe ConfirmationsController do
   let(:session) { double }
   let(:online_application) { instance_double(OnlineApplication, benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }

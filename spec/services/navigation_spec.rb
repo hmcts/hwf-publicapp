@@ -3,11 +3,9 @@ require 'rails_helper'
 RSpec.describe Navigation do
   include Rails.application.routes.url_helpers
 
-  let(:online_application) { build :online_application }
+  let(:online_application) { build(:online_application) }
 
   before { travel_to a_day_before_disable_probate_fees }
-
-  after { travel_back }
 
   describe '#next' do
     subject { described_class.new(online_application, current_question).next }
@@ -39,7 +37,7 @@ RSpec.describe Navigation do
     end
 
     context 'for benefit question' do
-      let(:online_application) { build :online_application, benefits: benefits, form_name: form_name }
+      let(:online_application) { build(:online_application, benefits: benefits, form_name: form_name) }
       let(:current_question) { :benefit }
       let(:form_name) { nil }
 
@@ -74,7 +72,7 @@ RSpec.describe Navigation do
       let(:current_question) { :savings_and_investment }
 
       context 'when the extra question is required' do
-        let(:online_application) { build :online_application, :extra_savings_question_required }
+        let(:online_application) { build(:online_application, :extra_savings_question_required) }
 
         it 'routes to the extra question' do
           expect(subject).to eql(question_path(:savings_and_investment_extra, locale: :en))
@@ -82,7 +80,7 @@ RSpec.describe Navigation do
       end
 
       context 'when the extra question is not required' do
-        let(:online_application) { build :online_application, ho_number: nil }
+        let(:online_application) { build(:online_application, ho_number: nil) }
 
         it 'routes to the benefit question' do
           expect(subject).to eql(question_path(:benefit, locale: :en))
@@ -99,7 +97,7 @@ RSpec.describe Navigation do
     end
 
     context 'for contact question when refund' do
-      let(:online_application) { build :online_application, :refund }
+      let(:online_application) { build(:online_application, :refund) }
       let(:current_question) { :contact }
 
       it 'routes to the summary page' do
@@ -119,7 +117,7 @@ RSpec.describe Navigation do
       let(:current_question) { :income_kind }
 
       context 'when the application is 0 income - "no income" selected' do
-        let(:online_application) { build :online_application, :no_income }
+        let(:online_application) { build(:online_application, :no_income) }
 
         it 'routes to the probate question' do
           expect(subject).to eql(question_path(:probate, locale: :en))
@@ -137,7 +135,7 @@ RSpec.describe Navigation do
       let(:current_question) { :income_range }
 
       context 'when the application is between thresholds' do
-        let(:online_application) { build :online_application, :income_between_thresholds }
+        let(:online_application) { build(:online_application, :income_between_thresholds) }
 
         it 'routes to the income_amount question' do
           expect(subject).to eql(question_path(:income_amount, locale: :en))
@@ -145,7 +143,7 @@ RSpec.describe Navigation do
       end
 
       context 'when the application is below thresholds' do
-        let(:online_application) { build :online_application, :income_below_thresholds }
+        let(:online_application) { build(:online_application, :income_below_thresholds) }
 
         it 'routes to the probate question' do
           expect(subject).to eql(question_path(:probate, locale: :en))
@@ -153,7 +151,7 @@ RSpec.describe Navigation do
       end
 
       context 'when the application is above thresholds' do
-        let(:online_application) { build :online_application, :income_above_thresholds }
+        let(:online_application) { build(:online_application, :income_above_thresholds) }
 
         it 'routes to the probate question' do
           expect(subject).to eql(question_path(:probate, locale: :en))
@@ -163,7 +161,7 @@ RSpec.describe Navigation do
 
     context 'when the NI number is not present' do
       let(:current_question) { :national_insurance_presence }
-      let(:online_application) { build :online_application, ni_number_present: false }
+      let(:online_application) { build(:online_application, ni_number_present: false) }
 
       it 'routes to the home office question' do
         expect(subject).to eql(question_path(:home_office, locale: :en))
@@ -172,7 +170,7 @@ RSpec.describe Navigation do
 
     context 'when the NI number is present and page is NI number page' do
       let(:current_question) { :national_insurance }
-      let(:online_application) { build :online_application, ni_number_present: true }
+      let(:online_application) { build(:online_application, ni_number_present: true) }
 
       it 'routes to the marital_status question' do
         expect(subject).to eql(question_path(:marital_status, locale: :en))
@@ -181,7 +179,7 @@ RSpec.describe Navigation do
 
     context 'when the NI number is present and current page is home office' do
       let(:current_question) { :home_office }
-      let(:online_application) { build :online_application }
+      let(:online_application) { build(:online_application) }
 
       it 'routes to the marital_status question' do
         expect(subject).to eql(question_path(:marital_status, locale: :en))
@@ -189,7 +187,7 @@ RSpec.describe Navigation do
     end
 
     context 'when the home office number is present' do
-      let(:online_application) { build :online_application, ho_number: 'L1234567' }
+      let(:online_application) { build(:online_application, ho_number: 'L1234567') }
       let(:current_question) { :savings_and_investment_extra }
 
       it 'skips the benefit question' do

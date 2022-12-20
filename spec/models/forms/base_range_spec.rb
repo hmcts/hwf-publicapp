@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 module Forms
-  RSpec.describe BaseRange, type: :model do
+  RSpec.describe BaseRange do
     subject(:form) { described_class.new(choice: choice) }
 
     describe 'validations' do

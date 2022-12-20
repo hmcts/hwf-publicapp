@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::ApplicantAddress, type: :model do
+RSpec.describe Forms::ApplicantAddress do
   subject(:form) { described_class.new(street: street, town: town, postcode: postcode) }
 
   let(:town) { 'London' }

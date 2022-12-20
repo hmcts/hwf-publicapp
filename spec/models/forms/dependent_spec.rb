@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::Dependent, type: :model do
+RSpec.describe Forms::Dependent do
 
   subject(:form) { described_class.new(children: children, children_number: children_number) }
 

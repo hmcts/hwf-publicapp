@@ -13,13 +13,13 @@ RSpec.describe Views::QuestionTitle do
       let(:id) { 'benefit' }
 
       context 'when the online_application says it is a refund' do
-        let(:online_application) { build :online_application, :refund }
+        let(:online_application) { build(:online_application, :refund) }
 
         it { is_expected.to eql('text_refund') }
       end
 
       context 'when the online_application says it is not a refund' do
-        let(:online_application) { build :online_application }
+        let(:online_application) { build(:online_application) }
 
         it { is_expected.to eql('text') }
       end

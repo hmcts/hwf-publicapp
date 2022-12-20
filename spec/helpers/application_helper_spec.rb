@@ -1,8 +1,8 @@
-RSpec.describe ApplicationHelper, type: :helper do
+RSpec.describe ApplicationHelper do
   describe 'cookies_accepted?' do
     context 'when accepted analytics cookies' do
       before do
-        setting_form = instance_double('Forms::Cookie::SettingForm')
+        setting_form = instance_double(Forms::Cookie::SettingForm)
         allow(Forms::Cookie::SettingForm).to receive(:new).and_return setting_form
         allow(setting_form).to receive(:accepted?).and_return(true)
       end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::SavingsAndInvestment, type: :model do
+RSpec.describe Forms::SavingsAndInvestment do
   subject(:form) { described_class.new(choice: choice) }
 
   describe '#export' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe QuestionsController, type: :controller do
+RSpec.describe QuestionsController do
   let(:online_application) { instance_double(OnlineApplication, :attributes= => nil) }
   let(:session) { double }
   let(:storage_started) { true }

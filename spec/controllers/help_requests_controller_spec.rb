@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HelpRequestsController, type: :controller do
+RSpec.describe HelpRequestsController do
   before do
     allow(Forms::HelpRequest).to receive(:new).and_return(form)
   end

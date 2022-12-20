@@ -33,7 +33,7 @@ RSpec.describe Forms::Cookie::SettingForm do
 
     context 'when no value was set and cookie present' do
       let(:value) { nil }
-      let(:request) { instance_double('ActionDispatch::Request', cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => 'true' }) }
+      let(:request) { instance_double(ActionDispatch::Request, cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => 'true' }) }
 
       it 'returns value hold in cookie' do
         expect(subject.cookie_setting).to eq('true')
@@ -66,33 +66,33 @@ RSpec.describe Forms::Cookie::SettingForm do
   describe '.preference_set?' do
     context 'when cookie set to NO' do
       let(:cookie_value_no) { Forms::Cookie::SettingForm::COOKIES_VALUES[:no].to_s }
-      let(:request) { instance_double('ActionDispatch::Request', cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => cookie_value_no }) }
+      let(:request) { instance_double(ActionDispatch::Request, cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => cookie_value_no }) }
 
       specify { expect(subject).to be_preference_set }
     end
 
     context 'when cookie set to YES' do
       let(:cookie_value_yes) { Forms::Cookie::SettingForm::COOKIES_VALUES[:yes].to_s }
-      let(:request) { instance_double('ActionDispatch::Request', cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => cookie_value_yes }) }
+      let(:request) { instance_double(ActionDispatch::Request, cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => cookie_value_yes }) }
 
       specify { expect(subject).to be_preference_set }
     end
 
     context 'when cookie has wrong value' do
-      let(:request) { instance_double('ActionDispatch::Request', cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => '' }) }
+      let(:request) { instance_double(ActionDispatch::Request, cookies: { Forms::Cookie::SettingForm::COOKIE_NAME => '' }) }
 
       specify { expect(subject).not_to be_preference_set }
     end
 
     context 'when cookie missing' do
-      let(:request) { instance_double('ActionDispatch::Request', cookies: {}) }
+      let(:request) { instance_double(ActionDispatch::Request, cookies: {}) }
 
       specify { expect(subject).not_to be_preference_set }
     end
   end
 
   describe '#save' do
-    let(:response) { instance_double('ActionDispatch::Response') }
+    let(:response) { instance_double(ActionDispatch::Response) }
 
     before do
       allow(response).to receive(:delete_cookie).with(Forms::Cookie::SettingForm::COOKIE_NAME, {})
