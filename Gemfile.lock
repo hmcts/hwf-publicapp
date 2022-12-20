@@ -458,7 +458,7 @@ DEPENDENCIES
   config
   cucumber-rails
   date_validator
-  debug (>= 1.0.0)
+  debug (>= 1.7.0)
   dotenv-rails
   factory_bot_rails
   foreman
@@ -475,10 +475,10 @@ DEPENDENCIES
   rest-client
   rspec-rails
   rspec_junit_formatter
-  rubocop (~> 1.15)
+  rubocop (~> 1.40)
   rubocop-performance
   rubocop-rails
-  rubocop-rspec (~> 2.3)
+  rubocop-rspec (~> 2.16)
   rubyzip
   sass-rails
   sentry-rails
@@ -486,7 +486,7 @@ DEPENDENCIES
   site_prism
   slim-rails
   spring
-  test-prof (~> 1.0)
+  test-prof (~> 1.1)
   timecop
   uglifier
   virtus

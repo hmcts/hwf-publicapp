@@ -24,9 +24,9 @@ gem 'uglifier'
 gem 'virtus'
 
 group :development, :test do
-  gem "debug", ">= 1.0.0"
+  gem "debug", ">= 1.7.0"
   gem 'letter_opener'
-  gem 'rubocop', '~> 1.15', require: false
+  gem 'rubocop', '~> 1.40', require: false
   gem 'rubocop-rails'
   gem 'rubocop-performance', require: false
   gem 'parallel_tests'
@@ -51,11 +51,11 @@ group :test do
   gem 'regexp_parser'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
-  gem 'rubocop-rspec', '~> 2.3', require: false
+  gem 'rubocop-rspec', '~> 2.16', require: false
   gem 'rubyzip'
   gem 'shoulda-matchers'
   gem 'site_prism'
-  gem "test-prof", "~> 1.0"
+  gem "test-prof", "~> 1.1"
   gem 'timecop'
   gem 'webdrivers'
   gem 'webmock'
