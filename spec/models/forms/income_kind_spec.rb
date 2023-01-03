@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::IncomeKind, type: :model do
+RSpec.describe Forms::IncomeKind do
   subject(:form) { described_class.new(params) }
 
   let(:params) { {} }

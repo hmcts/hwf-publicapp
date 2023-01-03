@@ -51,8 +51,6 @@ RSpec.feature 'As a user' do
       given_user_answers_questions_up_to(:income_amount)
     end
 
-    after { travel_back }
-
     context 'completing the form correctly' do
       before do
         fill_in :income_amount_amount, with: '1500'
@@ -86,8 +84,6 @@ RSpec.feature 'As a user' do
           check :income_kind_applicant_13
           click_button 'Continue'
         end
-
-        after { travel_back }
 
         scenario 'I expect to be routed to the "probate" page' do
           expect(page).to have_content 'Are you paying a fee for a probate case?'

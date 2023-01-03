@@ -58,21 +58,21 @@ When(/^I enter a future date of death$/) do
 end
 
 Then(/^I should see error message this date can't be in the future$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(probate_page.content).to have_future_date_error_link
 end
 
 Then(/^I should see error message the date of death must have been in the last 20 years$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(probate_page.content).to have_expired_date_error_link
 end
 
 Then(/^I should see enter the date in this format error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(probate_page.content).to have_invalid_date_error_link
 end
 
 Then(/^I should see select whether you're paying a fee for a probate case error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(probate_page.content).to have_blank_error_link
 end

@@ -29,7 +29,7 @@ end
 def determine_os
   if !(/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM).nil?
     'windows'
-  elsif !(/darwin/ =~ RUBY_PLATFORM).nil?
+  elsif !RUBY_PLATFORM.include?('darwin').nil?
     'mac'
   else
     'linux'
@@ -37,7 +37,7 @@ def determine_os
 end
 
 def rest_client_url
-  "http://#{ENV['zap_proxy']}:#{ENV['zap_proxy_port']}/json/core/view/alerts"
+  "http://#{ENV.fetch('zap_proxy', nil)}:#{ENV.fetch('zap_proxy_port', nil)}/json/core/view/alerts"
 end
 
 def events

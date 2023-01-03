@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::Probate, type: :model do
+RSpec.describe Forms::Probate do
   subject(:form) { described_class.new(params) }
 
   let(:params) do

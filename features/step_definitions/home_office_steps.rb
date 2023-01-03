@@ -35,7 +35,7 @@ Then("I should see further information about where to find my home office number
 end
 
 Then("I should see enter your home office number error message") do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(home_office_page.content).to have_blank_error_message
   expect(home_office_page.content.blank_error_link['href']).to end_with '#home_office_ho_number'
 end

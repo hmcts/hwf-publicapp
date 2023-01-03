@@ -58,7 +58,7 @@ Then(/^I should see save or print this page$/) do
 end
 
 Then(/^I should see '([^"]*)' error message$/) do |error_message|
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   error_summary_group = base_page.error_summary
   expect(error_summary_group).to have_error_summary_heading
   expect(error_summary_group.link.text).to have_content error_message

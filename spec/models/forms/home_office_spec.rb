@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::HomeOffice, type: :model do
+RSpec.describe Forms::HomeOffice do
   subject(:form_ho) { described_class.new }
 
   describe 'validations' do

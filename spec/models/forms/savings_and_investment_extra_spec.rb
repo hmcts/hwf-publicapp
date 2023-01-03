@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::SavingsAndInvestmentExtra, type: :model do
+RSpec.describe Forms::SavingsAndInvestmentExtra do
   subject(:form) { described_class.new(over_61: over_61, amount: amount) }
 
   let(:over_61) { true }

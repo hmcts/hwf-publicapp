@@ -12,10 +12,10 @@ RSpec.describe ClearDownstreamQuestions do
 
     context 'when the question is "dependent"' do
       let(:question) { :dependent }
-      let(:old_online_application) { build :online_application, children: 2 }
+      let(:old_online_application) { build(:online_application, children: 2) }
 
       context 'when the amount of children has changed' do
-        let(:new_online_application) { build :online_application, children: 1 }
+        let(:new_online_application) { build(:online_application, children: 1) }
 
         describe 'clears income_range and income_amount questions' do
           it { expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount]) }
@@ -23,7 +23,7 @@ RSpec.describe ClearDownstreamQuestions do
       end
 
       context 'when the amount of children has not changed' do
-        let(:new_online_application) { build :online_application, children: 2 }
+        let(:new_online_application) { build(:online_application, children: 2) }
 
         it 'does not clear any questions' do
           expect(storage).not_to have_received(:clear_form)
@@ -33,10 +33,10 @@ RSpec.describe ClearDownstreamQuestions do
 
     context 'when the question is "income_kind"' do
       let(:question) { :income_kind }
-      let(:old_online_application) { build :online_application, income: 1400 }
+      let(:old_online_application) { build(:online_application, income: 1400) }
 
       context 'when the income has changed to 0' do
-        let(:new_online_application) { build :online_application, income: 0 }
+        let(:new_online_application) { build(:online_application, income: 0) }
 
         describe 'clears income_range and income_amount questions' do
           it { expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount]) }
@@ -44,7 +44,7 @@ RSpec.describe ClearDownstreamQuestions do
       end
 
       context 'when the income has not changed' do
-        let(:new_online_application) { build :online_application, income: 1400 }
+        let(:new_online_application) { build(:online_application, income: 1400) }
 
         it 'does not clear any questions' do
           expect(storage).not_to have_received(:clear_form)
@@ -54,10 +54,10 @@ RSpec.describe ClearDownstreamQuestions do
 
     context 'when the question is "income_range"' do
       let(:question) { :income_range }
-      let(:old_online_application) { build :online_application, :income_between_thresholds }
+      let(:old_online_application) { build(:online_application, :income_between_thresholds) }
 
       context 'when the range has changed' do
-        let(:new_online_application) { build :online_application, :income_below_thresholds }
+        let(:new_online_application) { build(:online_application, :income_below_thresholds) }
 
         it 'clears income_amount questions' do
           expect(storage).to have_received(:clear_form).with(:income_amount)
@@ -67,8 +67,8 @@ RSpec.describe ClearDownstreamQuestions do
 
     context 'when the question is "benefit" and is set to true' do
       let(:question) { :benefit }
-      let(:old_online_application) { build :online_application }
-      let(:new_online_application) { build :online_application, benefits: benefit_value }
+      let(:old_online_application) { build(:online_application) }
+      let(:new_online_application) { build(:online_application, benefits: benefit_value) }
 
       context 'set to true' do
         let(:benefit_value) { true }
@@ -90,9 +90,9 @@ RSpec.describe ClearDownstreamQuestions do
     context 'when the ni is present' do
       let(:question) { :dob }
       let(:old_online_application) {
-        build :online_application, ho_number: 'L1234567', ni_number: 'SN123456A'
+        build(:online_application, ho_number: 'L1234567', ni_number: 'SN123456A')
       }
-      let(:new_online_application) { build :online_application }
+      let(:new_online_application) { build(:online_application) }
 
       context 'and the HO number should be nil' do
         it 'clears home office questions' do
@@ -102,8 +102,8 @@ RSpec.describe ClearDownstreamQuestions do
 
       context 'and the HO number but the ni_number_present is false' do
         let(:old_online_application) {
-          build :online_application, ho_number: 'L1234567',
-                                     ni_number: 'SN123456A', ni_number_present: false
+          build(:online_application, ho_number: 'L1234567',
+                                     ni_number: 'SN123456A', ni_number_present: false)
         }
 
         it 'clears national insurance questions' do

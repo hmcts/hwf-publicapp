@@ -57,9 +57,9 @@ module HwfPublicapp
       html_tag
     }
 
-    config.x.address_lookup.endpoint = ENV['ADDRESS_LOOKUP_ENDPOINT']
-    config.x.address_lookup.api_key = ENV['ADDRESS_LOOKUP_API_KEY']
-    config.x.address_lookup.api_secret = ENV['ADDRESS_LOOKUP_API_SECRET']
+    config.x.address_lookup.endpoint = ENV.fetch('ADDRESS_LOOKUP_ENDPOINT', nil)
+    config.x.address_lookup.api_key = ENV.fetch('ADDRESS_LOOKUP_API_KEY', nil)
+    config.x.address_lookup.api_secret = ENV.fetch('ADDRESS_LOOKUP_API_SECRET', nil)
 
     config.maintenance_enabled = ENV.fetch('MAINTENANCE_ENABLED', 'false').casecmp('true').zero?
     config.maintenance_allowed_ips = ENV.fetch('MAINTENANCE_ALLOWED_IPS', '').split(',').map(&:strip)

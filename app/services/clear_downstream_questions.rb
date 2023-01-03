@@ -28,9 +28,9 @@ class ClearDownstreamQuestions
   end
 
   def income_range_change?(new_online_application, old_online_application)
-    @question == :income_range &&
+    (@question == :income_range &&
       old_online_application.income_min_threshold_exceeded !=
-        new_online_application.income_min_threshold_exceeded ||
+        new_online_application.income_min_threshold_exceeded) ||
       old_online_application.income_max_threshold_exceeded !=
         new_online_application.income_max_threshold_exceeded
   end

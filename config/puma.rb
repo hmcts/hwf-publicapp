@@ -22,7 +22,7 @@ port ENV.fetch("PORT", 3000)
 environment ENV.fetch("RAILS_ENV") { "development" }
 
 pids_dir = "tmp/pids"
-Dir.mkdir(pids_dir) unless File.exist?(pids_dir)
+FileUtils.mkdir_p(pids_dir)
 
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE", "#{pids_dir}/server.pid")

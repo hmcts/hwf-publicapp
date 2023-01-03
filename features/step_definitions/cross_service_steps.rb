@@ -7,8 +7,8 @@ When('I launch staff app') do
 end
 
 When('I process the application') do
-  fill_in('Email', with: ENV['DEMO_EMAIL'])
-  fill_in('Password', with: ENV['DEMO_PASSWORD'])
+  fill_in('Email', with: ENV.fetch('DEMO_EMAIL', nil))
+  fill_in('Password', with: ENV.fetch('DEMO_PASSWORD', nil))
   find('.govuk-button').click
   fill_in('Reference', with: @ref_number)
   click_button('Look up')

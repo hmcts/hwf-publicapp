@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::PersonalDetail, type: :model do
+RSpec.describe Forms::PersonalDetail do
   subject(:form) { described_class.new(title: title, first_name: first_name, last_name: last_name) }
 
   let(:title) { 'TITLE' }

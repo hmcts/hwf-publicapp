@@ -38,8 +38,6 @@ RSpec.feature 'As a user' do
     context 'when probate fess is still active' do
       before { travel_to a_day_before_disable_probate_fees }
 
-      after { travel_back }
-
       context 'after answering yes to the probate question' do
         let(:month_ago) { Time.zone.today - 1.month }
 
@@ -88,7 +86,7 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect confirmation ' do
+      scenario 'I expect confirmation' do
         expect(page).to have_content 'Emailfoo@bar.com'
       end
     end
@@ -101,7 +99,7 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect confirmation ' do
+      scenario 'I expect confirmation' do
         expect(page).to have_content 'ContactContact details not provided'
       end
     end

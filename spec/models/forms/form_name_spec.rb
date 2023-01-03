@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::FormName, type: :model do
+RSpec.describe Forms::FormName do
   subject(:form) { described_class.new(identifier: identifier, unknown: unknown) }
 
   let(:unknown) { false }

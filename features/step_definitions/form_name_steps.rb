@@ -43,7 +43,7 @@ Then(/^I should be taken to fee page$/) do
 end
 
 Then(/^I should see enter a number error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(form_name_page.content).to have_error_link
 end
 
@@ -53,7 +53,7 @@ When(/^I submit the form with a help with fees form number '(.+?)'$/) do |num|
 end
 
 Then(/^I should see you entered the help with fees form number error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(form_name_page.content).to have_invalid_link
 end
 

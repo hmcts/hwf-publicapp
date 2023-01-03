@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SubmissionsController, type: :controller do
+RSpec.describe SubmissionsController do
   let(:session) { double }
   let(:storage) { double }
   let(:online_application) { build(:online_application) }

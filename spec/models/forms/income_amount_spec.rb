@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::IncomeAmount, type: :model do
+RSpec.describe Forms::IncomeAmount do
   subject(:form) { described_class.new(amount: amount, min_threshold: min_threshold, max_threshold: max_threshold) }
 
   let(:min_threshold) { -1000000 }

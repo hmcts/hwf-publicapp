@@ -51,7 +51,7 @@ Then(/^I should see the income list on step nine page:$/) do |incomes|
 end
 
 Then(/^I should see select your monthly income error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(income_range_page.content).to have_blank_error_link
 end
 

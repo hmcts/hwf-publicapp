@@ -228,7 +228,7 @@ RSpec.describe Storage do
     context 'when there is no submission_result stored in the session' do
       let(:session) { {} }
 
-      it { is_expected.to be nil }
+      it { is_expected.to be_nil }
     end
   end
 

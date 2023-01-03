@@ -29,6 +29,6 @@ Then("I should see further information with a link to ask for a reminder") do
 end
 
 Then(/^I should see enter your national insurance number error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
-  expect(national_insurance_presence_page.content).to have_blank_error_link
+  expect(base_page.content.alert).to have_there_is_a_problem
+  expect(national_insurance_presence_page.content.alert).to have_blank_error_link
 end

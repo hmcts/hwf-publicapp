@@ -5,7 +5,7 @@ module Forms
     attribute :one, String
     attribute :two, Boolean
   end
-  RSpec.describe Base, type: :model do
+  RSpec.describe Base do
 
     # Because this is a base (abstract) class, I use a concrete model for testing the features
     subject(:model) { SomeQuestion.new }

@@ -33,7 +33,7 @@ Then(/^I should see help with financially dependent children copy$/) do
 end
 
 Then(/^I should see you need to say whether you have financially dependent children error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
+  expect(base_page.content.alert).to have_there_is_a_problem
   expect(dependent_page.content).to have_error_link
 end
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::ApplyType, type: :model do
+RSpec.describe Forms::ApplyType do
   subject(:form) { described_class.new(applying_method: applying_method) }
 
   let(:applying_method) { 'paper' }

@@ -7,8 +7,8 @@ module IncomeHelper
   end
 
   def kinds_alternative_translation(kind)
-    return kind if kind != I18n.t('1', scope: ['questions.income_kind.kinds'])
+    return kind if kind != I18n.t('questions.income_kind.kinds.1')
 
-    I18n.t('wages', scope: ['questions.income_range'])
+    I18n.t('questions.income_range.wages')
   end
 end

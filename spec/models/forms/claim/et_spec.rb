@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::Claim::Et, type: :model do
+RSpec.describe Forms::Claim::Et do
   subject(:form) { described_class.new(identifier: identifier) }
 
   describe 'validations' do

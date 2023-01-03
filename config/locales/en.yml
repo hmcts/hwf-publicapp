@@ -237,6 +237,7 @@ en:
   confirmation:
     back_to_start: Back to start
     default_form_name: claim
+    submission_error: "We couldn't process your application at this time. Please try again later."
     default:
       breadcrumb: Step 22 of 22
       title: Send your claim form

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::MaritalStatus, type: :model do
+RSpec.describe Forms::MaritalStatus do
   subject(:form_marital_status) { described_class.new }
 
   describe 'validations' do

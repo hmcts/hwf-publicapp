@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Forms::IncomeRange, type: :model do
+RSpec.describe Forms::IncomeRange do
   subject(:form) { described_class.new(choice: choice) }
 
   describe '#export' do
