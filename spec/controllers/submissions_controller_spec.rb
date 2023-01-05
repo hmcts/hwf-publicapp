@@ -64,7 +64,7 @@ RSpec.describe SubmissionsController do
       end
 
       it 'sets an flash error message' do
-        expect(flash[:error]).to eql('We couldn\'t process your application at this time. Please try again later.')
+        expect(flash[:error]).to eql(I18n.t('.confirmation.submission_error'))
       end
     end
   end
