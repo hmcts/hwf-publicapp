@@ -6,6 +6,7 @@ RSpec.describe Navigation do
   let(:online_application) { build(:online_application) }
 
   before { travel_to a_day_before_disable_probate_fees }
+  after { travel_back }
 
   describe '#next' do
     subject { described_class.new(online_application, current_question).next }
