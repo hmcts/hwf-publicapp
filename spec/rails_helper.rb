@@ -68,6 +68,11 @@ RSpec.configure do |config|
     stub_request(:any, 'https://dc.services.visualstudio.com/v2/track')
   end
 
+  # print the example name that is currently running
+  # config.before :example do |x|
+  #   puts ("=== #{x}")
+  # end
+
   config.before(:all) do
     I18n.locale = :en
   end

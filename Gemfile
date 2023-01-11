@@ -24,7 +24,7 @@ gem 'uglifier'
 gem 'virtus'
 
 group :development, :test do
-  gem "debug", ">= 1.7.0"
+  gem "pry-rails"
   gem 'letter_opener'
   gem 'rubocop', '~> 1.40', require: false
   gem 'rubocop-rails'

@@ -505,7 +505,7 @@ Rails/MigrationClassName: # new in 2.14
 Rails/RedundantPresenceValidationOnBelongsTo: # new in 2.13
   Enabled: true
 Rails/RedundantTravelBack: # new in 2.12
-  Enabled: true
+  Enabled: false
 Rails/RootJoinChain: # new in 2.13
   Enabled: true
 Rails/RootPathnameMethods: # new in 2.16
