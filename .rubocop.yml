@@ -2,7 +2,7 @@ inherit_from:
   - .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.1
   TargetRailsVersion: 6.0
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
@@ -23,6 +23,7 @@ AllCops:
     - 'config/routes.rb'
     - 'Gemfile'
 
+  NewCops: enable
 
 Rails:
   Enabled: true
@@ -569,6 +570,9 @@ Style/ConcatArrayLiterals: # new in 1.41
   Enabled: true
 Style/RedundantDoubleSplatHashBraces: # new in 1.41
   Enabled: true
+
+Style/HashSyntax:
+  Enabled: false
 
 require:
   - rubocop-rspec

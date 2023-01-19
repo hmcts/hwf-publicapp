@@ -5,7 +5,7 @@ module Forms
     attribute :number, String
     attribute :has_ni_number, Boolean
 
-    NI_NUMBER_REGEXP = /\A(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]\z/.freeze
+    NI_NUMBER_REGEXP = /\A(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]\z/
 
     validates :number, format: { with: NI_NUMBER_REGEXP }, allow_blank: true
     validates :number, presence: true, if: ->(form) { form.has_ni_number }

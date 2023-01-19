@@ -5,7 +5,7 @@ module Forms
     attribute :ho_number, String
     attribute :ni_number_present, Boolean
 
-    HO_NUMBER_REGEXP = %r{\A([a-zA-Z]\d{7}|\d{4}-\d{4}-\d{4}-\d{4})(/\d{1,})?\z}.freeze
+    HO_NUMBER_REGEXP = %r{\A([a-zA-Z]\d{7}|\d{4}-\d{4}-\d{4}-\d{4})(/\d{1,})?\z}
 
     validates :ho_number, presence: true, if: ->(form) { form.ni_number_present != true }
     validates :ho_number, format: { with: HO_NUMBER_REGEXP }, allow_blank: true
