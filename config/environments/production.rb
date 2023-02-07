@@ -44,7 +44,7 @@ Rails.application.configure do
   config.force_ssl = true
   config.ssl_options = {
     hsts: { expires: 0, preload: true },
-    redirect: { exclude: ->(request) { /ping/.match?(request.path) } }
+    redirect: { exclude: ->(request) { request.path.include?('ping') } }
   }
 
   # Include generic and useful information about system operation, but avoid logging too much
