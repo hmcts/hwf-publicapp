@@ -58,8 +58,11 @@ RSpec.describe Forms::Contact do
     subject { form.export }
 
     context 'when email is set' do
+      let(:email) { '  some@email.domain  ' }
+      let(:trimmed_email) { 'some@email.domain' }
+
       it 'the returned hash includes email_contact true and email_address' do
-        expect(subject).to include(email_contact: true, email_address: email)
+        expect(subject).to include(email_contact: true, email_address: trimmed_email)
       end
     end
 
