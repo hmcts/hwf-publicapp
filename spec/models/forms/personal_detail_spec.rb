@@ -70,8 +70,13 @@ RSpec.describe Forms::PersonalDetail do
   describe '#export' do
     subject { form.export }
 
+    let(:first_name) { " first name  " }
+    let(:trimmed_first_name) { "first name" }
+    let(:last_name) { " last name  " }
+    let(:trimmed_last_name) { "last name" }
+
     it 'returns hash with title, first_name and last_name' do
-      expect(subject).to eql(title: title, first_name: first_name, last_name: last_name)
+      expect(subject).to eql(title: title, first_name: trimmed_first_name, last_name: trimmed_last_name)
     end
   end
 

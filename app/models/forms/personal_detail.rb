@@ -11,11 +11,17 @@ module Forms
     private
 
     def export_params
+      trim_whitespace
       {
         title: title,
         first_name: first_name,
         last_name: last_name
       }
+    end
+
+    def trim_whitespace
+      self.first_name = first_name.strip if first_name
+      self.last_name = last_name.strip if last_name
     end
   end
 end

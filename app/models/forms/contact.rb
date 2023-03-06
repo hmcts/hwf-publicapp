@@ -12,6 +12,7 @@ module Forms
     private
 
     def export_params
+      trim_whitespace
       {
         email_contact: email.present?,
         email_address: email,
@@ -19,6 +20,10 @@ module Forms
         post_contact: false,
         feedback_opt_in: feedback_opt_in
       }
+    end
+
+    def trim_whitespace
+      self.email = email.strip if email
     end
   end
 end
