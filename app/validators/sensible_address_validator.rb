@@ -7,4 +7,3 @@ class SensibleAddressValidator < ActiveModel::EachValidator
     record.errors.add(attribute, :invalid_name) unless value.match(REGEX)
   end
 end
-
