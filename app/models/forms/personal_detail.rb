@@ -5,8 +5,8 @@ module Forms
     attribute :last_name, String
 
     validates :title, length: { maximum: 9 }
-    validates :first_name, presence: true, length: { maximum: 49 }
-    validates :last_name, presence: true, length: { maximum: 49 }
+    validates :first_name, presence: true, sensible_name: true, length: { maximum: 49 }
+    validates :last_name, presence: true, sensible_name: true, length: { maximum: 49 }
 
     private
 
