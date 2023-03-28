@@ -1,5 +1,5 @@
 class SensibleNameValidator < ActiveModel::EachValidator
-  REGEX = /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸåÅæÆœŒçÇøØ ,'-]+$/i.freeze
+  REGEX = /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸåÅæÆœŒçÇøØ ,'-]+$/i
 
   def validate_each(record, attribute, value)
     return if value.nil? || value == ''
