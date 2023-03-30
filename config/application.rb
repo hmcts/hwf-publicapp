@@ -45,6 +45,9 @@ module HwfPublicapp
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W[#{config.root}/lib]
 
+    # Custom directory with validators
+    config.autoload_paths += Dir["#{config.root}/app/validators"]
+
     # The following values are required by the phase banner
     config.phase = 'beta'
     config.feedback_url = 'https://www.smartsurvey.co.uk/s/HWFFeed20/'

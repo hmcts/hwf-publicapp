@@ -4,9 +4,9 @@ module Forms
     attribute :postcode, String
     attribute :town, String
 
-    validates :street, presence: true, length: { maximum: 99 }
-    validates :postcode, presence: true, length: { maximum: 8 }
-    validates :town, presence: true, length: { maximum: 30 }
+    validates :street, presence: true, sensible_address: true, length: { maximum: 99 }
+    validates :postcode, presence: true, sensible_address: true, length: { maximum: 8 }
+    validates :town, presence: true, sensible_address: true, length: { maximum: 30 }
 
     private
 

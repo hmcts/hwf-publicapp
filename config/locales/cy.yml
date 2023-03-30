@@ -76,12 +76,15 @@ cy:
             street:
               blank: Rhowch eich rhif tŷ a stryd
               too_long: Rhaid i'r rhif tŷ a stryd fod yn llai na 100 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             postcode:
               blank: Rhowch eich cod post
               too_long: Rhaid i'r cod post fod yn llai na 8 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             town:
               blank: Rhowch eich tref
               too_long: Rhaid i'r cod tref fod yn llai na 30 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
 
 
         forms/benefit:
@@ -188,9 +191,11 @@ cy:
             first_name:
               blank: Rhowch eich enw cyntaf
               too_long: Rhaid i'r enw cyntaf fod yn llai na 50 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             last_name:
               blank: Rhowch eich enw olaf
               too_long: Rhaid i'r enw olaf fod yn llai na 50 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             title:
               too_long: Rhaid i'r teitl fod yn llai na 10 o nodau
         forms/probate:
