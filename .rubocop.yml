@@ -22,6 +22,11 @@ AllCops:
     - 'lib/log_stuff.rb'
     - 'config/routes.rb'
     - 'Gemfile'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'vendor/**/*'
+    - 'public/**/*'
+    - 'node_modules/**/*'
 
   NewCops: enable
 
