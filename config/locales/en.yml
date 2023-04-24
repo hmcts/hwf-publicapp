@@ -243,27 +243,32 @@ en:
       title: Send your claim form
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">What did you think of this service?</a>
     online:
-      heading: Your application is not yet complete. You now need to take action.
-      sub_heading: Enter this help with fees reference number in the help with fees section of the online form.
+      heading: Your Help with Fees reference number is %{claim_number}
+      sub_heading: You have one more step to take below
+      h3_one: Final step
+      h3_two: What happens next
+      p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
+      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
+      p_three: If you are applying to the court online, put your Help with Fees reference number onto their system when prompted.
+      p_four_html: If you need to contact the court, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
+      p_five: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
       template:
         line_one: "Enter your reference above into the help with fees section of the online form. Your online court application form should look something like this:"
-      h3_one: What happens next
       contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
     paper:
-      heading: Your application is not yet complete. You now need to take action.
-      sub_heading: You must provide the court or tribunal with this reference number to proceed.
-      p_one: Enter this reference number on the help with fees section of your court or tribunal application form.
-      p_two: If your form does not have a help with fees section, write the reference number at the top of the form.
-      h3_one: Send your court or tribunal application form to the court or tribunal.
-      p_three: You can do this by post and in some cases email.
-      p_four: If you do not have an application form, use the template below.
+      heading: Your Help with Fees reference number is %{claim_number}
+      sub_heading: You have one more step to take below
+      h3_one: Final step
+      h3_two: What happens next
+      p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
+      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
+      p_three: Include the reference number in the help with fee section of the claim form. This is usually in the top right-hand corner. If the form does not have a Help with Fee section, write the reference number at the top of the claim form.
+      p_four_html: If you need to contact the court, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
+      p_five: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
       template:
         reference: 'Reference: %{reference}'
         line_one: I have completed on online application for help with fees [insert application type and case number if you have one].
         line_two: Yours sincerely,
-      p_five_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
-      h3_two: What happens next
-      p_six: We will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
     et:
       address:
         email:
@@ -315,20 +320,21 @@ en:
     refund:
       breadcrumb: Step 22 of 22
       title: Send your reference number to complete the process
-      heading: Your application is not yet complete. You now need to take action.
-      sub_heading: You must provide the court or tribunal with your reference to proceed
-      h3_one: Provide your help with fees reference number to the court or tribunal.
-      p_one: You can do this by post and in some cases email. Use the template below.
-      template:
-        reference: 'Reference: %{reference}'
-        one: 'I have completed on online application for help with fees for a refund.'
-        two: 'I paid the fee on %{fee_paid} for case %{claim_number}.'
-        two_blank: 'I paid the fee on %{fee_paid}.'
-        three: 'Yours sincerely,'
-      p_two_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
+      heading: Your Help with Fees reference number is %{claim_number}
+      sub_heading: You have one more step to take below
+      h3_one: Final step
       h3_two: What happens next
-      p_three: We will contact you within 21 days to tell you if you need to provide more information or to inform you of the result of your application.
-
+      p_one: You have completed an application online for a Help with Fees refund and you have been provided with the above reference number for your application.
+      p_two: You now need to provide this reference number to the office, court or tribunal to which you paid your fee who will process your application.
+      p_three_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
+      p_four: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+#      template:
+#        reference: 'Reference: %{reference}'
+#        one: 'I have completed on online application for help with fees for a refund.'
+#        two: 'I paid the fee on %{fee_paid} for case %{claim_number}.'
+#        two_blank: 'I paid the fee on %{fee_paid}.'
+#        three: 'Yours sincerely,'
+#      p_two_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
   error_block:
     heading: There is a problem
     visuallyhidden: Errors are listed as links below, click to select the field that needs correcting.
