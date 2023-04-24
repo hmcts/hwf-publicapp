@@ -328,13 +328,6 @@ en:
       p_two: You now need to provide this reference number to the office, court or tribunal to which you paid your fee who will process your application.
       p_three_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
       p_four: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
-#      template:
-#        reference: 'Reference: %{reference}'
-#        one: 'I have completed on online application for help with fees for a refund.'
-#        two: 'I paid the fee on %{fee_paid} for case %{claim_number}.'
-#        two_blank: 'I paid the fee on %{fee_paid}.'
-#        three: 'Yours sincerely,'
-#      p_two_html: Find the <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">contact details of the court or tribunal</a> you need to send your application to.
   error_block:
     heading: There is a problem
     visuallyhidden: Errors are listed as links below, click to select the field that needs correcting.
