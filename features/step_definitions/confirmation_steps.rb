@@ -22,9 +22,6 @@ Then(/^I should see instruction points$/) do
   expect(confirmation_page.content).to have_confirmation_instruction_line_one
   expect(confirmation_page.content).to have_confirmation_instruction_line_two
 
-  expect(confirmation_page.content.list).to have_one
-  expect(confirmation_page.content.list).to have_two
-  expect(confirmation_page.content.list).to have_three
 end
 
 Then('I should see online instruction points') do

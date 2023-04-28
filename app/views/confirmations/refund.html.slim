@@ -8,32 +8,16 @@ h1.govuk-heading-l
   =t('confirmation.refund.title')
 
 .govuk-panel.govuk-panel--confirmation
-  h2 =t('confirmation.refund.heading')
+  h2 =t('confirmation.refund.heading', claim_number: @result['message'])
   h2 =t('confirmation.refund.sub_heading')
-
-  .govuk-panel__body
-    h2 =@result['message']
 br
 
-
-h3.govuk-heading-m =t('confirmation.refund.h3_one')
 p.govuk-body =t('confirmation.refund.p_one')
-
-.steps-panel-confirmation
-  p.govuk-body =t('confirmation.refund.template.reference', reference: @result['message'])
-  p.govuk-body =t('confirmation.refund.template.one')
-  - if @online_application.case_number
-    p.govuk-body =t('confirmation.refund.template.two', claim_number: @online_application.case_number, fee_paid: @online_application.date_fee_paid)
-  - else
-    p.govuk-body =t('confirmation.refund.template.two_blank', fee_paid: @online_application.date_fee_paid.to_fs(:default))
-  p.govuk-body =t('confirmation.refund.template.three')
-  p.govuk-body = @online_application.full_name
-
-p.govuk-body =t('confirmation.refund.p_two_html')
-
+h3.govuk-heading-m =t('confirmation.refund.h3_one')
+p.govuk-body =t('confirmation.refund.p_two')
+p.govuk-body =t('confirmation.refund.p_three_html')
 h3.govuk-heading-m =t('confirmation.refund.h3_two')
-
-p.govuk-body =t('confirmation.refund.p_three')
+p.govuk-body =t('confirmation.refund.p_four')
 
 .js-only.no-print
   p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')
