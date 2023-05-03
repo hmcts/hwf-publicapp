@@ -42,3 +42,7 @@ end
 Then(/^I should be taken to savings and investment extra page$/) do
   expect(savings_investment_extra_page).to be_displayed
 end
+
+When(/^I slowly submit yes I am 61 years old or over$/) do
+  savings_investment_extra_page.slowly_submit_yes
+end

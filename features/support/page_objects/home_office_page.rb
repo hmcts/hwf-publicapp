@@ -1,4 +1,5 @@
 class HomeOfficePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/home_office?locale=en'
 
   section :content, '#content' do
@@ -22,5 +23,12 @@ class HomeOfficePage < BasePage
 
   def home_offce_number(str)
     content.home_offce_number.set str
+  end
+
+  def slow_home_offce_number(str)
+    travel 61.minutes do
+      home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
+      continue
+    end
   end
 end

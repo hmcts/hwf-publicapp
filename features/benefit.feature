@@ -43,3 +43,9 @@ Feature: Benefit page
     And I am on the benefit page
     When I click continue
     Then I should see select whether you're receiving one of the benefits listed error message
+
+  Scenario: Benefit page timeout
+    Given probate is disabled
+    And I am on the benefit page
+    When I slowly submit the form with yes I am receiving one of the benefits listed
+    Then I should see the home page

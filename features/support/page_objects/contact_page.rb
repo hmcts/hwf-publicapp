@@ -1,4 +1,5 @@
 class ContactPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/contact'
 
   section :content, '#content' do
@@ -23,5 +24,11 @@ class ContactPage < BasePage
 
   def click_share_experience
     content.share_experience.click
+  end
+
+  def slow_submit_email
+    travel 61.minutes do
+      contact_page.valid_email
+    end
   end
 end

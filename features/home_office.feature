@@ -23,3 +23,7 @@ Feature: Home office page
   Scenario: Where to find my home office reference number
     When I click on 'Where to find my Home Office reference number?'
     Then I should see further information about where to find my home office number
+
+  Scenario: Home office page timeout
+    When I slowly submit a valid home office number
+    Then I should see the home page

@@ -1,4 +1,5 @@
 class ConfirmationPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/confirmation'
 
   section :content, '#content' do
@@ -22,5 +23,12 @@ class ConfirmationPage < BasePage
   def submit
     Rails.application.config.finish_page_redirect_url = '/'
     content.finish_application_button.click
+  end
+
+  def slowly_submit
+    travel 61.minutes do
+      Rails.application.config.finish_page_redirect_url = '/'
+      content.finish_application_button.click
+    end
   end
 end

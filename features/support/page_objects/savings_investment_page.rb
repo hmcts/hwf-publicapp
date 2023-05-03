@@ -1,4 +1,5 @@
 class SavingsInvestmentPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/savings_and_investment'
 
   section :content, '#content' do
@@ -25,5 +26,12 @@ class SavingsInvestmentPage < BasePage
   def high_amount_checked
     savings_investment_page.content.high_amount.click
     continue
+  end
+
+  def slowly_high_amount_checked
+    travel 61.minutes do
+      savings_investment_page.content.high_amount.click
+      continue
+    end
   end
 end

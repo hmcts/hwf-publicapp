@@ -15,3 +15,7 @@ Feature: National insurance page
   Scenario: Displays error message enter your national insurance number
     When I click continue
     Then I should see enter your national insurance number error message
+
+  Scenario: National insurance page timeout
+    When I slowly submit a valid national insurance number
+    Then I should see the home page

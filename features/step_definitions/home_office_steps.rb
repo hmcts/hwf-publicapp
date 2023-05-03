@@ -39,3 +39,7 @@ Then("I should see enter your home office number error message") do
   expect(home_office_page.content).to have_blank_error_message
   expect(home_office_page.content.blank_error_link['href']).to end_with '#home_office_ho_number'
 end
+
+When(/^I slowly submit a valid home office number$/) do
+  home_office_page.slow_home_offce_number('1212-0001-0240-0490/01')
+end

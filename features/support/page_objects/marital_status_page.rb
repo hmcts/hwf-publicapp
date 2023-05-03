@@ -1,4 +1,5 @@
 class MaritalStatusPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/marital_status'
 
   section :content, '#content' do
@@ -30,4 +31,10 @@ class MaritalStatusPage < BasePage
     continue
   end
 
+  def slowly_submit_single
+    travel 61.minutes do
+      content.single.click
+      continue
+    end
+  end
 end

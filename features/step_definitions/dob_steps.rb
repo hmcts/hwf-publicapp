@@ -13,7 +13,7 @@ When(/^I enter a date of less than fifteen years$/) do
   dob_page.under_age_dob
 end
 
-And(/^I enter a invalid date of birth$/) do
+And(/^I enter an invalid date of birth$/) do
   dob_page.over_age_dob
 end
 
@@ -38,4 +38,8 @@ end
 
 Then(/^I should be taken to date of birth page$/) do
   expect(dob_page).to be_displayed
+end
+
+When(/^I slowly enter a valid date of birth$/) do
+  dob_page.slow_dob_entry
 end

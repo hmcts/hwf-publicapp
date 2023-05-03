@@ -28,4 +28,9 @@ Feature: Savings and investment extra page
     When I submit no to are you 61 years old or over
     And I click continue
     Then I should see enter how much you have in savings and investments error message
-    
+
+  Scenario: Savings and investments extra page timeout
+    Given probate is enabled
+    And I am single with £3,000 to £15,999 in savings
+    When I slowly submit yes I am 61 years old or over
+    Then I should see the home page

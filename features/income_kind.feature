@@ -16,7 +16,7 @@ Feature: Income kind page
       | Pensions (state, work, private)                           |
       | Rent from anyone living with you                          |
       | Rent from other properties you own                        |
-      | Other income                                      |
+      | Other income                                              |
       | No income                                                 |
 
   Scenario: Displays income lists for a couple
@@ -47,3 +47,14 @@ Feature: Income kind page
     And I am a single person on kind of income page
     When I click continue
     Then I should see select your kinds of income error message
+
+  Scenario: Displays couple error message
+    Given probate is enabled
+    And I am a married person on kind of income page
+    When I click continue
+    Then I should see select your kinds of income error message
+
+  Scenario: Income kind page timeout
+    When I am a single person on kind of income page
+    And I slowly submit the form with wages checked
+    Then I should see the home page

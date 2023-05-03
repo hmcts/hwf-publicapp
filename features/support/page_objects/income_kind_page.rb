@@ -1,4 +1,5 @@
 class IncomeKindPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/income_kind'
 
   section :content, '#content' do
@@ -31,5 +32,13 @@ class IncomeKindPage < BasePage
     content.wages.click
     content.working_tax_credit.click
     continue
+  end
+
+  def slowly_submit_single_income_wages_tax_credit
+    travel 61.minutes do
+      content.wages.click
+      content.working_tax_credit.click
+      continue
+    end
   end
 end

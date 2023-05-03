@@ -19,3 +19,7 @@ Feature: National insurance presence page
   Scenario: Displays error message enter your national insurance number
     When I click continue
     Then I should see enter your national insurance number error message
+
+  Scenario: National insurance presence page timeout
+    When I slowly select that I do have a national insurance number
+    Then I should see the home page

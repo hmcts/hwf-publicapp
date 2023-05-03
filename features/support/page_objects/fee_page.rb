@@ -1,4 +1,5 @@
 class FeePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/fee'
 
   section :content, '#content' do
@@ -59,4 +60,13 @@ class FeePage < BasePage
     continue
   end
 
+  def slow_valid_date
+    travel 61.minutes do
+      date = Time.zone.today - 1.month
+      content.fee_day_date_paid.set(date.day)
+      content.fee_month_date_paid.set(date.month)
+      content.fee_year_date_paid.set(date.year)
+      continue
+    end
+  end
 end

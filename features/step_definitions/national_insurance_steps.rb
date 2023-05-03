@@ -28,3 +28,7 @@ end
 Then(/^I should be taken to national insurance page$/) do
   expect(national_insurance_page).to be_displayed
 end
+
+When(/^I slowly submit a valid national insurance number$/) do
+  national_insurance_page.slowly_submit_valid_ni
+end

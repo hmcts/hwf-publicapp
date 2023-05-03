@@ -12,7 +12,7 @@ When(/^I enter a valid email address$/) do
   contact_page.valid_email
 end
 
-When(/^I enter a invalid email address$/) do
+When(/^I enter an invalid email address$/) do
   contact_page.invalid_email
 end
 
@@ -30,4 +30,8 @@ end
 
 Then(/^I should be taken to contact page$/) do
   expect(contact_page).to be_displayed
+end
+
+When(/^I enter a valid email address after a long time$/) do
+  contact_page.slow_submit_email
 end

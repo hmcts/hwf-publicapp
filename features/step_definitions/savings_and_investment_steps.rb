@@ -37,3 +37,7 @@ end
 Then(/^I should be taken to savings and investments page$/) do
   expect(savings_investment_page).to be_displayed
 end
+
+When(/^I slowly submit the form with £16,000 or more checked$/) do
+  savings_investment_page.slowly_high_amount_checked
+end

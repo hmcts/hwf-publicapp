@@ -1,4 +1,5 @@
 class IncomeRangePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/income_range'
 
   section :content, '#content' do
@@ -31,5 +32,12 @@ class IncomeRangePage < BasePage
   def submit_more
     content.income_range_more.click
     continue
+  end
+
+  def slowly_submit_less
+    travel 61.minutes do
+      content.income_range_less.click
+      continue
+    end
   end
 end

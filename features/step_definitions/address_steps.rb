@@ -21,3 +21,11 @@ end
 Then(/^I should be taken to address page$/) do
   expect(address_page).to be_displayed
 end
+
+When(/^I enter my postcode with special characters$/) do
+  address_page.post_code('¡€#¢∞§')
+end
+
+When(/^I enter my address with postcode after a long time$/) do
+  address_page.slow_submit_full_address
+end

@@ -1,4 +1,5 @@
 class ClaimPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/claim'
 
   section :content, '#content' do
@@ -30,4 +31,10 @@ class ClaimPage < BasePage
     content.claim_input_field.set(str)
   end
 
+  def slow_claim_number_entry
+    travel 61.minutes do
+      claim_page.input_field('012345678')
+      continue
+    end
+  end
 end

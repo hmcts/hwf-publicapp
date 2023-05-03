@@ -16,6 +16,14 @@ Feature: Savings and investment page refund
     When I submit the form with £16,000 or more checked
     Then I should be taken to benefits page
 
+  Scenario: Error when continuing without selection amount
+    When I click continue
+    Then I should see 'Select how much you have in savings and investments' error message
+
   Scenario: Help with savings and investments
     When I click on 'Help on what to include as savings and investments'
     Then I should see help with savings and investments copy
+
+  Scenario: Savings and investments page timeout
+    When I slowly submit the form with £16,000 or more checked
+    Then I should see the home page

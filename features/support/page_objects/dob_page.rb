@@ -1,4 +1,6 @@
 class DobPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/dob'
 
   section :content, '#content' do
@@ -43,5 +45,15 @@ class DobPage < BasePage
     content.dob_year.set(age.year)
 
     continue
+  end
+
+  def slow_dob_entry
+    travel 61.minutes do
+      age = Time.zone.today - 34.years
+      content.dob_day.set(age.day)
+      content.dob_month.set(age.month)
+      content.dob_year.set(age.year)
+      continue
+    end
   end
 end

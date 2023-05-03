@@ -27,3 +27,11 @@ end
 Then(/^I should be taken to personal details page$/) do
   expect(personal_details_page).to be_displayed
 end
+
+When(/^I enter my first name with special characters$/) do
+  personal_details_page.first_name('¡€#')
+end
+
+When(/^I enter my last name with special characters$/) do
+  personal_details_page.last_name('!@£')
+end

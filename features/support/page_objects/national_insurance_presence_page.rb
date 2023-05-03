@@ -1,4 +1,5 @@
 class NationalInsurancePresencePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/national_insurance_presence'
 
   section :content, '#content' do
@@ -24,5 +25,12 @@ class NationalInsurancePresencePage < BasePage
   def submit_no
     national_insurance_presence_page.content.no.click
     continue
+  end
+
+  def slowly_submit_yes
+    travel 61.minutes do
+      national_insurance_presence_page.content.yes.click
+      continue
+    end
   end
 end
