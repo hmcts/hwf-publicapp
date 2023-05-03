@@ -27,7 +27,7 @@ class HomeOfficePage < BasePage
 
   def slow_home_offce_number(str)
     travel 61.minutes do
-      home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
+      home_office_page.content.home_offce_number.set str
       continue
     end
   end
