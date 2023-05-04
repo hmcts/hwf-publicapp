@@ -13,9 +13,13 @@ Feature: Date of birth page
     Then I should see you must be over 15 to use this service error message
 
   Scenario: Displays check this date of birth is correct error message
-    When I enter a invalid date of birth
+    When I enter an invalid date of birth
     Then I should see check this date of birth is correct error message
 
   Scenario: Displays error message enter the date in this format
     When I click continue
     Then I should see enter the date of birth in this format error message
+
+  Scenario: DoB page timeout
+    When I slowly enter a valid date of birth
+    Then I should see the home page

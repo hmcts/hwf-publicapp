@@ -40,3 +40,7 @@ end
 Then(/^I should be taken to kind of income page$/) do
   expect(income_kind_page).to be_displayed
 end
+
+And(/^I slowly submit the form with wages checked$/) do
+  income_kind_page.slowly_submit_single_income_wages_tax_credit
+end

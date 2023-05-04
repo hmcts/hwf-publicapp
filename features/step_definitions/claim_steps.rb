@@ -35,3 +35,13 @@ Then(/^I should see select whether you have a case, claim or ‘notice to pay’
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(claim_page.content).to have_blank_error_link
 end
+
+And(/^I enter a long case, claim or notice to pay number$/) do
+  expect(claim_page.content).to have_claim_number_label
+  claim_page.input_field('abcdefghijklmnopqrstuvwxyz')
+  continue
+end
+
+And(/^I enter a case, claim or notice to pay number after a long time$/) do
+  claim_page.slow_claim_number_entry
+end

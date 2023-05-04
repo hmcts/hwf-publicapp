@@ -15,3 +15,7 @@ Feature: Online confirmation page
   Scenario: Finish application
     When I click the finish application button
     Then I should be taken to the survey page
+
+  Scenario: Finish page timeout
+    When I slowly click the finish application button
+    Then I should see the home page

@@ -21,4 +21,12 @@ Feature: Address page
     And I click continue
     Then I should see 'Enter your house number and street' error message
 
-    
+  Scenario: Displays error message when invalid postcode is entered
+    When I enter my address
+    And I enter my postcode with special characters
+    And I click continue
+    Then I should see 'Must not contain special characters' error message
+
+  Scenario: Address page timeout
+    When I enter my address with postcode after a long time
+    Then I should see the home page

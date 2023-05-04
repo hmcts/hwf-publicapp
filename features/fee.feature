@@ -19,7 +19,7 @@ Feature: Fee page
 
   Scenario: Date within the last 3 months
     When I select yes to have you already paid the fee
-    And I submit the form with a date thats within the last three months
+    And I submit the form with a date that is within the last three months
     Then I should be taken to national insurance presence page
 
   Scenario: Date exceeding 3 months
@@ -31,3 +31,8 @@ Feature: Fee page
     When I select yes to have you already paid the fee
     And I submit the form with a future date
     Then I should see this date can't be in the future error message
+
+  Scenario: Fee page timeout
+    When I select yes to have you already paid the fee
+    And I slowly submit the form with a date that is within the last three months
+    Then I should see the home page

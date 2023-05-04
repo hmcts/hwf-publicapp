@@ -16,3 +16,7 @@ Feature: Paper confirmation page
     When I click the finish application button
     Then I should be taken to the survey page
 
+  Scenario: Paper page timeout
+    When I slowly click the finish application button
+    Then I should see the home page
+

@@ -58,3 +58,7 @@ end
 When(/^I should be taken to income range page$/) do
   expect(income_range_page).to be_displayed
 end
+
+When(/^I slowly submit less than$/) do
+  income_range_page.slowly_submit_less
+end

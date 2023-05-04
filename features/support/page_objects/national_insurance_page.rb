@@ -1,4 +1,5 @@
 class NationalInsurancePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/national_insurance'
 
   section :content, '#content' do
@@ -21,7 +22,14 @@ class NationalInsurancePage < BasePage
   end
 
   def submit_invalid_ni
-    national_insurance_page.content.national_insurance_number.set('012345678')
+    national_insurance_page.content.national_insurance_number.set('01234%^&*')
     continue
+  end
+
+  def slowly_submit_valid_ni
+    travel 61.minutes do
+      national_insurance_page.content.national_insurance_number.set('JL806367D')
+      continue
+    end
   end
 end

@@ -13,6 +13,11 @@ Feature: Dependent page
     When I submit the form with no I do not have any children
     Then I should be taken to kind of income page
 
+  Scenario: Partial yes to do you have any children error
+    When I select yes to do you have any children
+    And I click continue
+    Then I should see 'You must enter the number of financially dependent children' error message
+
   Scenario: Displays error message
     When I click continue
     Then I should see you need to say whether you have financially dependent children error message
@@ -21,7 +26,7 @@ Feature: Dependent page
     When I click on 'Help with financially dependent children'
     Then I should see help with financially dependent children copy
 
-  Scenario: Timeout
+  Scenario: Dependent page timeout
     Given probate is enabled
     And I am on the dependent page
     When I submit the form with no I do not have any children after a long time

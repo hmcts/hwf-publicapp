@@ -56,3 +56,7 @@ Then(/^I should be taken to the claim page$/) do
   expect(claim_page).to be_displayed
   expect(claim_page.content).to have_header
 end
+
+When(/^I slowly submit the form with yes I am receiving one of the benefits listed$/) do
+  benefit_page.slowly_submit_benefit_yes
+end

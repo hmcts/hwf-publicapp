@@ -76,3 +76,7 @@ Then(/^I should see select whether you're paying a fee for a probate case error 
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(probate_page.content).to have_blank_error_link
 end
+
+When(/^I slowly select no to are you paying a fee for a probate case$/) do
+  probate_page.slowly_submit_probate_no
+end

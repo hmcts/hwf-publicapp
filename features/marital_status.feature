@@ -15,3 +15,11 @@ Feature: Marital status page
   Scenario: Help with status
     When I click on 'Help with status'
     Then I should see help with status copy
+
+  Scenario: Error message when trying to move on without selecting option
+    When I click continue
+    Then I should see 'Select whether you're single, married or living with someone and sharing an incom' error message
+
+  Scenario: Marital status page timeout
+    When I slowly submit the form as single
+    Then I should see the home page

@@ -1,4 +1,5 @@
 class BenefitPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/benefit'
 
   section :content, '#content' do
@@ -32,5 +33,12 @@ class BenefitPage < BasePage
   def submit_benefit_yes
     content.yes.click
     continue
+  end
+
+  def slowly_submit_benefit_yes
+    travel 61.minutes do
+      content.yes.click
+      continue
+    end
   end
 end

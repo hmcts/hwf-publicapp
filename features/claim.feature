@@ -22,6 +22,16 @@ Feature: Claim page
     When I click continue
     Then I should see enter a case, claim or ‘notice to pay’ number error message
 
+  Scenario: Displays a case number length error message
+    When I select yes to do you have a case, claim or notice to pay number
+    And I enter a long case, claim or notice to pay number
+    Then I should see 'The number must be less than 25 characters' error message
+
   Scenario: Displays make a selection error message
     When I click continue
     Then I should see select whether you have a case, claim or ‘notice to pay’ error message
+
+  Scenario: Claim page timeout
+    When I select yes to do you have a case, claim or notice to pay number
+    And I enter a case, claim or notice to pay number after a long time
+    Then I should see the home page

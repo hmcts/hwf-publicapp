@@ -64,3 +64,9 @@ Feature: Income range page
     And I am a single person with no children on income range page
     When I click continue
     Then I should see select your monthly income error message
+
+  Scenario: Income range page timeout
+    Given probate is enabled
+    And I am a single person with no children on income range page
+    When I slowly submit less than
+    Then I should see the home page

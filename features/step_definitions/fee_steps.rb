@@ -13,7 +13,7 @@ When(/^I select yes to have you already paid the fee$/) do
   fee_page.content.yes.click
 end
 
-And(/^I submit the form with a date thats within the last three months$/) do
+And(/^I submit the form with a date that is within the last three months$/) do
   fee_page.valid_date
 end
 
@@ -43,4 +43,8 @@ end
 Then(/^I should see the application must have been made in the last 3 months error message$/) do
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(fee_page.content).to have_expired_error_link
+end
+
+And(/^I slowly submit the form with a date that is within the last three months$/) do
+  fee_page.slow_valid_date
 end

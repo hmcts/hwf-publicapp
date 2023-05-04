@@ -1,4 +1,5 @@
 class SavingsInvestmentExtraPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/savings_and_investment_extra'
 
   section :content, '#content' do
@@ -22,5 +23,12 @@ class SavingsInvestmentExtraPage < BasePage
   def submit_no
     content.no.click
     continue
+  end
+
+  def slowly_submit_yes
+    travel 61.minutes do
+      content.yes.click
+      continue
+    end
   end
 end

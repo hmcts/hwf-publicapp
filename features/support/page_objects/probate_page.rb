@@ -1,4 +1,5 @@
 class ProbatePage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/probate'
 
   section :content, '#content' do
@@ -76,5 +77,12 @@ class ProbatePage < BasePage
     year(date.year)
 
     continue
+  end
+
+  def slowly_submit_probate_no
+    travel 61.minutes do
+      probate_page.content.no.click
+      continue
+    end
   end
 end

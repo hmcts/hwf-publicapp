@@ -30,3 +30,7 @@ end
 Then(/^I should be taken to marital status page$/) do
   expect(marital_status_page).to be_displayed
 end
+
+When(/^I slowly submit the form as single$/) do
+  marital_status_page.slowly_submit_single
+end

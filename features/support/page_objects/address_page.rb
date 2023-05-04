@@ -1,4 +1,5 @@
 class AddressPage < BasePage
+  include ActiveSupport::Testing::TimeHelpers
   set_url '/questions/applicant_address'
 
   section :content, '#content' do
@@ -31,5 +32,14 @@ class AddressPage < BasePage
 
   def post_code(str)
     fill_in 'Postcode', with: str
+  end
+
+  def slow_submit_full_address
+    travel 61.minutes do
+      address_page.street('102 Petty France')
+      address_page.town('London')
+      address_page.post_code('SW1H 9AJ')
+      continue
+    end
   end
 end
