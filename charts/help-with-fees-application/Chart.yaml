@@ -1,0 +1,9 @@
+apiVersion: v2
+name: help-with-fees-application
+home: https://github.com/hmcts/hwf-publicapp
+version: 2.7.14
+description: Help With Fees - public facing app
+dependencies:
+  - name: base
+    version: 0.2.3
+    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
