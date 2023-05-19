@@ -16,8 +16,12 @@ withPipeline(type, product, component) {
     env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
 
     before('build') {
-        yarnBuilder.runYarn("yarn")
-        yarnBuilder.runYarn("bundle install")
+        yarnBuilder.runYarn("--mutex network install --frozen-lockfile")
     }
+
+    // before('test') {
+    //   // sh "bundle install"
+    //   rubyBuilder.bundle("exec rspec/")
+    // }
 
 }
