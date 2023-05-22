@@ -16,9 +16,10 @@ withPipeline(type, product, component) {
     env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
 
     before('build') {
+        // yarnBuilder.runYarn("--mutex network install --frozen-lockfile")
+        rubyBuilder.build()
         sh "ruby -v"
-        yarnBuilder.runYarn("--mutex network install --frozen-lockfile")
-        rubyBuilder.bundle('install "ruby-3.1.4"')
+        // rubyBuilder.bundle('install "ruby-3.1.4"')
     }
 
     // before('test') {
