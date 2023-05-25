@@ -3,7 +3,7 @@ module Forms
     class Et < Forms::Base
       attribute :identifier, String
 
-      validates :identifier, presence: true, length: { maximum: 24 }
+      validates :identifier, presence: true, sensible_identifier: true, length: { maximum: 24 }
 
       private
 

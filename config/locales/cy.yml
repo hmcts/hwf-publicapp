@@ -96,6 +96,7 @@ cy:
             identifier:
               blank: Rhowch rif achos, hawliad, apêl neu 'hysbysiad talu'
               too_long: Rhaid i'r rhif fod yn llai na 25 o nodau
+              contains_special_chars: Rhaid peidio â chynnwys nodau arbennig
             number:
               inclusion: Dewiswch os oes gennych chi rif achos, hawliad, apêl neu 'hysbysiad talu'
         forms/claim/et:
@@ -103,6 +104,7 @@ cy:
             identifier:
               blank: Rhowch eich rhif hawliad tribiwnlys cyflogaeth
               too_long: Rhaid i'r rhif fod yn llai na 25 o nodau
+              contains_special_chars: Rhaid peidio â chynnwys nodau arbennig
         forms/contact:
           attributes:
             email:
