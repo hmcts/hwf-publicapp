@@ -4,7 +4,7 @@ RSpec.describe Forms::Contact do
   subject(:form) { described_class.new(email: email, feedback_opt_in: feedback_opt_in) }
 
   let(:email) { 'some@email.domain' }
-  let(:feedback_opt_in) { true }
+  let(:feedback_opt_in) { false }
 
   describe 'validations' do
     describe 'email' do
@@ -52,6 +52,28 @@ RSpec.describe Forms::Contact do
         it { is_expected.to be_valid }
       end
     end
+
+    describe 'email and feedback_opt_in' do
+      context 'when feedback_opt_in is true' do
+        let(:feedback_opt_in) { true }
+
+        context 'when email is nil' do
+          let(:email) { nil }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when email is empty string' do
+          let(:email) { '' }
+
+          it { is_expected.not_to be_valid }
+        end
+      end
+
+      context 'when 'do
+
+      end
+    end
   end
 
   describe '#export' do
@@ -83,6 +105,8 @@ RSpec.describe Forms::Contact do
     end
 
     context 'when feedback_opt_in is true' do
+      let(:feedback_opt_in) { true }
+
       it 'the returned hash includes feedback_opt_in true' do
         expect(subject).to include(feedback_opt_in: true)
       end

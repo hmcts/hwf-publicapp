@@ -9,7 +9,15 @@ module Forms
               length: { maximum: 99 }
     validates :feedback_opt_in, inclusion: { in: [true, false] }
 
+    validate :feedback_when_no_email
+
     private
+
+    def feedback_when_no_email
+      return if feedback_opt_in == false
+
+      errors.add(:email, :feedback_with_no_email) unless email.present?
+    end
 
     def export_params
       trim_whitespace

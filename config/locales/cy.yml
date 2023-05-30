@@ -108,6 +108,7 @@ cy:
             email:
               invalid: Rhowch gyfeiriad e-bost dilys
               too_long: Rhaid i'r e-bost fod yn llai na 100 o nodau
+              feedback_with_no_email: Rhowch gyfeiriad e-bost
             phone:
               blank: Rhowch eich rhif ffôn
         forms/dependent:
