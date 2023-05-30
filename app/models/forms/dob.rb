@@ -4,6 +4,8 @@ module Forms
 
     attr_reader :date_of_birth
 
+    attribute :over_61, Boolean
+    attribute :is_married, Boolean
     attribute :day, Integer
     attribute :month, Integer
     attribute :year, Integer
@@ -41,6 +43,7 @@ module Forms
     def validate_dob_ranges
       too_young_error if too_young?
       too_old_error if too_old?
+      not_over_61_error if not_over_61?
     end
 
     def too_young?
@@ -57,6 +60,17 @@ module Forms
 
     def too_old_error
       errors.add(:date_of_birth, :too_old)
+    end
+
+    def not_over_61?
+      return if is_married == true
+      return unless over_61 == true
+
+      date_of_birth > (Time.zone.today - 61.years)
+    end
+
+    def not_over_61_error
+      errors.add(:date_of_birth, :not_over_61)
     end
 
     def export_params
