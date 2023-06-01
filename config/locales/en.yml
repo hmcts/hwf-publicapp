@@ -124,6 +124,7 @@ en:
               not_a_number: Enter a valid date
               too_old: Check this date of birth is correct
               too_young: You must be over %{minimum_age} to use this service
+              not_over_61: Enter date of birth for age above 61 (as stated in step 8 of 22)
         forms/fee:
           attributes:
             date_paid:

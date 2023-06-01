@@ -1,4 +1,6 @@
 .govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+  = f.hidden_field :over_61, value: @online_application[:over_61]
+  = f.hidden_field :is_married, value: @online_application.married?
   legend.govuk-fieldset__legend for='dob_date_of_birth'
     span.visuallyhidden =t('text', scope: @form.i18n_scope)
   - if @form.errors[:date_of_birth].any?

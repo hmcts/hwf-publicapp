@@ -97,6 +97,57 @@ RSpec.describe Forms::Dob do
 
         it { expect(form_dob.valid?).to be false }
       end
+
+      context 'when the over_61 is checked and age is below 61' do
+        let(:over_61) { true }
+
+        before do
+          form_dob.day = '19'
+          form_dob.month = '11'
+          form_dob.year = '1999'
+          form_dob.over_61 = over_61
+          form_dob.is_married = is_married
+        end
+
+        context 'when is married' do
+          let(:is_married) { true }
+
+          it { expect(form_dob.valid?).to be true }
+        end
+
+        context 'when is not married' do
+          let(:is_married) { false }
+
+          it { expect(form_dob.valid?).not_to be true }
+
+          it 'returns an error message' do
+            form_dob.valid?
+            expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 61 (as stated in step 8 of 22)']
+          end
+        end
+      end
+
+      context 'when the over_61 is checked and age is above 61' do
+        let(:over_61) { true }
+
+        before do
+          form_dob.day = '23'
+          form_dob.month = '01'
+          form_dob.year = '1940'
+        end
+
+        context 'when is married' do
+          let(:is_married) { true }
+
+          it { expect(form_dob.valid?).to be true }
+        end
+
+        context 'when is not married' do
+          let(:is_married) { false }
+
+          it { expect(form_dob.valid?).to be true }
+        end
+      end
     end
   end
 
