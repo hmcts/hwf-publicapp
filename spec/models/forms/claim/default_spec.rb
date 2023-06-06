@@ -29,6 +29,7 @@ RSpec.describe Forms::Claim::Default do
             end
 
             context 'when contains invalid special characters' do
+
               let(:identifier) { '!@£$%^&*()+' }
 
               it { is_expected.not_to be_valid }
