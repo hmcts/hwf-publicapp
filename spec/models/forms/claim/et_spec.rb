@@ -18,6 +18,18 @@ RSpec.describe Forms::Claim::Et do
           it { is_expected.not_to be_valid }
         end
 
+        context 'when contains invalid special characters' do
+          let(:identifier) { '!@£$%^&*()+' }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when contains valid specials characters of /\-_' do
+          let(:identifier) { '123/\123-_123' }
+
+          it { is_expected.to be_valid }
+        end
+
         context 'when less than 25 characters provided' do
           let(:identifier) { 'I' * 24 }
 
