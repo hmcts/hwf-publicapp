@@ -106,6 +106,7 @@ en:
             email:
               invalid: Please enter a valid email address in the format yourname@example.com
               too_long: Email must be less than 100 characters
+              feedback_with_no_email: Enter an email address
             phone:
               blank: Enter your phone number
         forms/dependent:
