@@ -16,7 +16,7 @@ module Forms
     def feedback_when_no_email
       return if feedback_opt_in == false
 
-      errors.add(:email, :feedback_with_no_email) unless email.blank?
+      errors.add(:email, :feedback_with_no_email) if email.blank?
     end
 
     def export_params
