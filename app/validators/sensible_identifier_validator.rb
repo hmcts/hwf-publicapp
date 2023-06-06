@@ -1,5 +1,5 @@
 class SensibleIdentifierValidator < ActiveModel::EachValidator
-  REGEX = /^[a-zA-Z0-9 \/\\_-]+$/i
+  REGEX = %r{^[a-zA-Z0-9 \/\\_-]+$}
 
   def validate_each(record, attribute, value)
     return if value.nil? || value == ''
