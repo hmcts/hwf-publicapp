@@ -10,6 +10,7 @@ module Forms
     validates :feedback_opt_in, inclusion: { in: [true, false] }
 
     validate :feedback_when_no_email
+
     private
 
     def feedback_when_no_email
