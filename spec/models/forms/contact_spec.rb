@@ -69,10 +69,6 @@ RSpec.describe Forms::Contact do
           it { is_expected.not_to be_valid }
         end
       end
-
-      context 'when 'do
-
-      end
     end
   end
 
