@@ -12,8 +12,6 @@ steps:
     mv .dockerignore.backup .dockerignore
   displayName: 'Docker compose tests'
 
-
-steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '$(rubyVersion)'
