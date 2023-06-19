@@ -53,7 +53,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect to see my answers' do
-          expect(page).to have_no_content 'Probate case'
+          expect(page).not_to have_content 'Probate case'
           expect(page).to have_content 'Name of deceasedFooChange'
           expect(page).to have_content "Date of death#{month_ago.strftime(Date::DATE_FORMATS[:default])}Change"
         end
@@ -69,8 +69,8 @@ RSpec.feature 'As a user' do
 
         scenario 'I do not expect to see the probate sub headers' do
           expect(page).to have_content 'Probate case'
-          expect(page).to have_no_content 'Name of deceased'
-          expect(page).to have_no_content 'Date of death'
+          expect(page).not_to have_content 'Name of deceased'
+          expect(page).not_to have_content 'Date of death'
         end
       end
 
