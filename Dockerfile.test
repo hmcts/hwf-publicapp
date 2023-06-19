@@ -1,0 +1,52 @@
+FROM ruby:3.2-alpine
+ENV RAILS_ENV=test
+ENV ENV test
+
+ENV APPVERSION ${APPVERSION}
+ENV APP_BUILD_DATE ${APP_BUILD_DATE}
+ENV APP_GIT_COMMIT ${APP_GIT_COMMIT}
+ENV APP_BUILD_TAG ${APP_BUILD_TAG}
+
+ENV SUBMISSION_URL http://localhost:3000
+ENV SUBMISSION_TOKEN this_very_secret_token
+
+ENV SAUCE_USERNAME saucelabs_username
+ENV SAUCE_ACCESS_KEY saucelabs_auth_key
+ENV CAPYBARA_SERVER_PORT random
+
+ENV ADDRESS_LOOKUP_ENDPOINT https://api.os.uk
+ENV ADDRESS_LOOKUP_API_KEY api_key
+ENV ADDRESS_LOOKUP_API_SECRET api_secret
+ENV DEMO_EMAIL test
+ENV DEMO_PASSWORD test
+ENV HELP_ME_EMAIL email@example.com
+
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN mkdir -p /home/app
+WORKDIR /home/app
+
+COPY Gemfile /home/app
+COPY Gemfile.lock /home/app
+COPY .rubocop.yml /home/app
+
+# fix to address http://tzinfo.github.io/datasourcenotfound - PET ONLY
+
+RUN apk add --no-cache libc6-compat && ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2 && \
+    apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn npm libpq-dev tzdata && \
+    apk add --no-cache xvfb fluxbox x11vnc st chromium-chromedriver && \
+    cd /home/app/ && \
+    bundle install --no-cache --jobs=5 --retry=3
+
+
+COPY . /home/app
+
+RUN npm install
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait
+RUN chmod +x /wait
+
+CMD ["sh", "-c", "/wait && bundle exec rubocop --fail-fast && \
+     bundle exec brakeman && \
+     bundle exec bundle exec rake parallel:spec"]
+
