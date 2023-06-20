@@ -1,7 +1,7 @@
 module Forms
   class IncomeKind < Base
-    attribute :applicant, Array[Integer]
-    attribute :partner, Array[Integer]
+    attribute :applicant, [Integer]
+    attribute :partner, [Integer]
 
     validates_each :applicant do |record, attr, value|
       if value.blank?
