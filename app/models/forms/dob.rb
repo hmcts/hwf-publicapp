@@ -63,8 +63,8 @@ module Forms
     end
 
     def not_over_61?
-      return if is_married == true
-      return unless over_61 == true
+      return false if is_married == true
+      return false unless over_61 == true
 
       date_of_birth > (Time.zone.today - 61.years)
     end
