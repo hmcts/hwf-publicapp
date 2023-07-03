@@ -37,7 +37,7 @@ jobs:
 
     variables:
       rubyVersion: '= 3.1.4'
-      bundlerVersion: '2.4.14'
+      bundlerVersion: '2.4.15'
 
     steps:
     - template: ./pipeline-steps/test-application.yaml
