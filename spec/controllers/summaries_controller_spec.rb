@@ -9,8 +9,7 @@ RSpec.describe SummariesController do
     let(:summary_view) { double }
 
     before do
-      allow(controller).to receive(:storage).and_return(storage)
-      allow(controller).to receive(:online_application).and_return(online_application)
+      allow(controller).to receive_messages(storage: storage, online_application: online_application)
       allow(Views::Summary).to receive(:new).with(online_application).and_return(summary_view)
 
       get :show
