@@ -25,13 +25,13 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
       context 'when not set' do
         let(:over_61) { nil }
 
-        it { is_expected.to be_invalid }
+        it { is_expected.not_to be_valid }
       end
 
       context 'when something else than true or false' do
         let(:over_61) { 'something' }
 
-        it { is_expected.to be_invalid }
+        it { is_expected.not_to be_valid }
       end
     end
 
@@ -42,20 +42,20 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
         context 'when no amount set' do
           let(:amount) { nil }
 
-          it { is_expected.to be_invalid }
+          it { is_expected.not_to be_valid }
         end
 
         context 'when the amount is set' do
           context 'when below the minimum threshold' do
             let(:amount) { 2999 }
 
-            it { is_expected.to be_invalid }
+            it { is_expected.not_to be_valid }
           end
 
           context 'when above the maximum threshold' do
             let(:amount) { 16000 }
 
-            it { is_expected.to be_invalid }
+            it { is_expected.not_to be_valid }
           end
 
           context 'when within the thresholds' do
@@ -77,7 +77,7 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
         let(:over_61) { nil }
         let(:amount) { nil }
 
-        it { is_expected.to be_invalid }
+        it { is_expected.not_to be_valid }
       end
     end
   end

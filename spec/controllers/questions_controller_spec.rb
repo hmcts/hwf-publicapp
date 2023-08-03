@@ -14,8 +14,7 @@ RSpec.describe QuestionsController do
   before do
     allow(QuestionFormFactory).to receive(:get_form).with(valid_id).and_return(form)
     allow(QuestionFormFactory).to receive(:get_form).with(invalid_id).and_raise(QuestionFormFactory::QuestionDoesNotExist)
-    allow(controller).to receive(:session).and_return(session)
-    allow(controller).to receive(:online_application).and_return(online_application)
+    allow(controller).to receive_messages(session: session, online_application: online_application)
     allow(Storage).to receive(:new).with(session).and_return(storage)
     allow(Views::QuestionTitle).to receive(:new).with(form, online_application).and_return(question_title_view)
   end

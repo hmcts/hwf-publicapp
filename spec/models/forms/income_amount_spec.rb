@@ -13,20 +13,20 @@ RSpec.describe Forms::IncomeAmount do
       context 'when no amount set' do
         let(:amount) { nil }
 
-        it { is_expected.to be_invalid }
+        it { is_expected.not_to be_valid }
       end
 
       context 'when the amount is set' do
         context 'when less than 0' do
           let(:amount) { -1 }
 
-          it { is_expected.to be_invalid }
+          it { is_expected.not_to be_valid }
         end
 
         context 'when more than 1 000 000' do
           let(:amount) { 1000001 }
 
-          it { is_expected.to be_invalid }
+          it { is_expected.not_to be_valid }
         end
 
         context 'when within the thresholds' do
@@ -41,7 +41,7 @@ RSpec.describe Forms::IncomeAmount do
         let(:min_threshold) { 1000 }
         let(:max_threshold) { 3000 }
 
-        it { is_expected.to be_invalid }
+        it { is_expected.not_to be_valid }
       end
     end
   end
