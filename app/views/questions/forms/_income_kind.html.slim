@@ -1,7 +1,7 @@
 = hidden_field_tag 'income_kind[applicant][]', nil
 = hidden_field_tag 'income_kind[partner][]', nil
 
-.govuk-form-group
+.govuk-form-group id='income_kind_applicant'
   .govuk-grid-row
     .govuk-grid-column-one-half
       fieldset.govuk-fieldset.income-sources class=('govuk-form-group--error' if @form.errors[:applicant].any?)

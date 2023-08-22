@@ -1,4 +1,4 @@
-.govuk-form-group class=('govuk-form-group--error' if @form.errors[:over_61].any?)
+.govuk-form-group id='savings_and_investment_extra_over_61' class=('govuk-form-group--error' if @form.errors[:over_61].any?)
   = f.hidden_field :over_61, value: nil
   - if @form.errors[:over_61].any?
     span.govuk-error-message#over_61 = @form.errors[:over_61].join(' ')
