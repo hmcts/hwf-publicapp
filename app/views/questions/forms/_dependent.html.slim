@@ -1,4 +1,4 @@
-.govuk-form-group class=('govuk-form-group--error' if @form.errors[:children].any?)
+.govuk-form-group id='dependent_children' class=('govuk-form-group--error' if @form.errors[:children].any?)
   - if @form.errors[:children].any?
     span.govuk-error-message#dependents = @form.errors[:children].join(' ')
 

@@ -1,4 +1,4 @@
-.govuk-form-group class=('govuk-form-group--error' if @form.errors[:kase].any?)
+.govuk-form-group id='probate_kase' class=('govuk-form-group--error' if @form.errors[:kase].any?)
   = f.hidden_field :kase, value: nil
   - if @form.errors.any?
     span.govuk-error-message#kase = @form.errors[:kase].join(' ')
@@ -28,7 +28,7 @@
         - if @form.errors[:date_of_death].any?
           span.govuk-error-message#date_of_death = @form.errors[:date_of_death].join(' ')
 
-        .govuk-date-input class="#{'error_dates' if @form.errors[:date_paid].present?}"
+        .govuk-date-input id='probate_date_of_death' class="#{'error_dates' if @form.errors[:date_paid].present?}"
           .govuk-date-input__item
             .govuk-form-group.govuk-form-group-day
               = f.label :day_date_of_death, class: 'govuk-label'

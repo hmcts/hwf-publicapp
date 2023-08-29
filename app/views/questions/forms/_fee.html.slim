@@ -15,7 +15,7 @@
         = f.radio_button :paid, 'true', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
         = f.label t('fee_paid_true', scope: @form.i18n_scope), for: 'fee_paid_true', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"
     #date-fee-paid-panel.visuallyhidden
-      .govuk-form-group class=((@form.errors[:date_paid].any?) ? 'govuk-form-group--error' : 'panel-indent')
+      .govuk-form-group id='fee_date_paid' class=((@form.errors[:date_paid].any?) ? 'govuk-form-group--error' : 'panel-indent')
         fieldset.govuk-fieldset
           - if @form.errors[:date_paid].any?
             span.govuk-error-message = @form.errors[:date_paid].join(' ')
@@ -26,11 +26,11 @@
             .govuk-date-input__item
               .govuk-form-group.govuk-form-group-day
                 = f.label :day_date_paid, class: 'govuk-label'
-                = f.text_field :day_date_paid, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*", min: "0", max: "31"
+                = f.text_field :day_date_paid, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*"
             .govuk-date-input__item
               .govuk-form-group.govuk-form-group-month
                 = f.label :month_date_paid, class: 'govuk-label'
-                = f.text_field :month_date_paid, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*", min: "0", max: "12"
+                = f.text_field :month_date_paid, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*"
             .govuk-date-input__item
               .govuk-form-group.govuk-form-group-year
                 = f.label :year_date_paid, class: 'govuk-label'

@@ -1,4 +1,4 @@
-.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+.govuk-form-group id='apply_type_applying_method' class=('govuk-form-group--error' if @form.errors.any?)
   = f.hidden_field :applying_method, value: nil
   - if @form.errors.any?
     span.govuk-error-message#applying_method = @form.errors[:applying_method].join(' ')

@@ -3,7 +3,7 @@
 - max_threshold = number_to_currency(income_thresholds.max_threshold, precision: 0, unit: '£')
 
 p = t('questions.income_range.contact_hm_revenue')
-.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+.govuk-form-group id='income_range_choice' class=('govuk-form-group--error' if @form.errors.any?)
   = f.hidden_field :choice, value: nil
   - if @form.errors.any?
     span.govuk-error-message#choice = @form.errors[:choice].join(' ')
