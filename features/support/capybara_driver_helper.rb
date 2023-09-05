@@ -1,5 +1,8 @@
 Selenium::WebDriver.logger.level = :error
 
+# Temporary fix
+Webdrivers::Chromedriver.required_version = "116.0.5845.96"
+
 Capybara.configure do |config|
   driver = ENV['DRIVER']&.to_sym || :headless
   config.default_driver = driver
