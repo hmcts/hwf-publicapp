@@ -2,12 +2,14 @@ require Rails.root.join('spec/support/probate_fees_switchover_helper.rb')
 
 def probate_disabled
   disable_address_lookup
+  stub_google_chrome_labs
   travel_to probate_fees_release_date + 1.day
   log "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
 
 def probate_enabled
   disable_address_lookup
+  stub_google_chrome_labs
   travel_to a_day_before_disable_probate_fees
   print "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
@@ -149,4 +151,17 @@ def disable_address_lookup
       }
     ).
     to_return(status: 200, body: "", headers: {})
+end
+
+def stub_google_chrome_labs
+  stub_request(:get, "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json").
+    with(
+      headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'Host'=>'googlechromelabs.github.io',
+        'User-Agent'=>'Ruby'
+      }).
+    to_return(status: 200, body: "", headers: {})
+
 end
