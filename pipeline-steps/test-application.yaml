@@ -17,11 +17,8 @@ steps:
     versionSpec: '$(rubyVersion)'
 
 - script: |
-    gem install bundler -v $(bundlerVersion)
-    bundle install --retry=3 --jobs=4
-    npm install --production
-  displayName: 'cucumber setup'
-
-- script: |
+    gem install bundler -v $(bundlerVersion) && \
+    bundle install --retry=3 --jobs=4 && \
+    npm install --production && \
     CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
-  displayName: 'cucumber test'
+  displayName: 'cucumber tests'
