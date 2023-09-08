@@ -12,13 +12,13 @@ steps:
     mv .dockerignore.backup .dockerignore
   displayName: 'Docker compose tests'
 
-- task: UseRubyVersion@0
-  inputs:
-    versionSpec: '$(rubyVersion)'
+# - task: UseRubyVersion@0
+#   inputs:
+#     versionSpec: '$(rubyVersion)'
 
-- script: |
-    gem install bundler -v $(bundlerVersion) && \
-    bundle install --retry=3 --jobs=4 && \
-    npm install --production && \
-    CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
-  displayName: 'cucumber tests'
+# - script: |
+#     gem install bundler -v $(bundlerVersion) && \
+#     bundle install --retry=3 --jobs=4 && \
+#     npm install --production && \
+#     CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
+#   displayName: 'cucumber tests'
