@@ -3,7 +3,7 @@ base:
   readinessPath: /status
   livenessPath: /status
   startupPath: /status
-  image: 'sdshmctspublic.azurecr.io/hwf-publicapp/application:latest'
+  image: 'hmctspublic.azurecr.io/help-with-fees/hwf-publicapp:latest'
   ingressHost: hwf-publicapp.{{ .Values.global.environment }}.platform.hmcts.net
   aadIdentityName: help-with-fees
   environment:
