@@ -3,8 +3,8 @@
 @Library("Infrastructure")
 
 def type = "ruby"
-def product = "help-with-fees"
-def component = "hwf-publicapp"
+def product = "hwf"
+def component = "publicapp"
 
 def rubyBuilder = new uk.gov.hmcts.contino.RubyBuilder(this)
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
