@@ -1,0 +1,21 @@
+base:
+  # Don't modify below here
+  image: ${IMAGE_NAME}
+  ingressHost: ${SERVICE_FQDN}
+  environment:
+    DATABASE_URL: 'postgres://{{ .Values.postgresql.auth.username}}:{{ .Values.postgresql.auth.password}}@{{ .Release.Name }}-postgresql/{{ .Values.postgresql.auth.database}}'
+    RAILS_ENV: 'production'
+  postgresql:
+    enabled: true
+    debug: true
+    auth:
+      postgresPassword: postgres
+    primary:
+      initdb:
+        user: postgres
+        password: postgres
+        scripts:
+          my_init_script.sql: |
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
+            CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+            CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA public;
