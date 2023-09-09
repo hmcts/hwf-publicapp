@@ -1,10 +1,23 @@
 base:
-  applicationPort: 8080
-  readinessPath: /ping.json
-  livenessPath: /ping.json
-  startupPath: /ping.json
-  image: 'hmctspublic.azurecr.io/hwf/hwf-publicapp:latest'
+  applicationPort: 3000
+  readinessPath: /status
+  livenessPath: /status
+  startupPath: /status
+  image: 'sdshmctspublic.azurecr.io/hwf-publicapp/application:latest'
   ingressHost: hwf-publicapp.{{ .Values.global.environment }}.platform.hmcts.net
-  aadIdentityName: hwf-publicapp
+  aadIdentityName: help-with-fees
   environment:
     RAILS_ENV: 'production'
+  keyVaults:
+    help-with-fees:
+      secrets:
+        - name: hwf-fqdn
+          alias: DATABASE_HOST
+        - name: hwf-username
+          alias: DATABASE_USERNAME
+        - name: hwf-password
+          alias: DATABASE_PASSWORD
+
+
+
+
