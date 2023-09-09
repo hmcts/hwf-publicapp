@@ -89,6 +89,9 @@ GEM
       msgpack (~> 1.2)
     brakeman (6.0.1)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -462,6 +465,7 @@ DEPENDENCIES
   azure_env_secrets!
   bootsnap
   brakeman
+  bundler-audit
   capybara
   codeclimate-test-reporter
   config

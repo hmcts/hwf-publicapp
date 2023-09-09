@@ -1,0 +1,10 @@
+base:
+  applicationPort: 8080
+  readinessPath: /ping.json
+  livenessPath: /ping.json
+  startupPath: /ping.json
+  image: 'hmctspublic.azurecr.io/hwf/hwf-publicapp:latest'
+  ingressHost: hwf-publicapp.{{ .Values.global.environment }}.platform.hmcts.net
+  aadIdentityName: hwf-publicapp
+  environment:
+    RAILS_ENV: 'production'
