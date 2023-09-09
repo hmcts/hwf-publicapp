@@ -1,0 +1,28 @@
+#!groovy
+
+@Library("Infrastructure")
+
+def type = "ruby"
+def product = "help-with-fees"
+def component = "publicapp"
+
+def rubyBuilder = new uk.gov.hmcts.contino.RubyBuilder(this)
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
+
+withPipeline(type, product, component) {
+    env.RAILS_ENV = 'test'
+    env.RACK_ENV = 'test'
+    // random free port should probably be used instead
+    env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
+    env.ENABLE_COVERAGE='true'
+
+     before('test') {
+        sh script:"npm install", label: 'Start test'
+    }
+
+    // afterAlways('test') {
+    //     sh script: "docker stop pet-et-et1-test-postgres && docker rm pet-et-et1-test-postgres || echo 'Ignoring failure in stopping postgres'",
+    //         label: "docker stop pet-et-et1-test-postgres"
+    // }
+}
+

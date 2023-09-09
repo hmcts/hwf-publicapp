@@ -13,8 +13,9 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp
 
+/tmp/cache
+/tmp/parallel_runtime_cucumber.log
 # node
 node_modules
 

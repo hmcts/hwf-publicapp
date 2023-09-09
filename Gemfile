@@ -7,7 +7,7 @@ end
 
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.0.5'
+gem 'rails', '~> 7.0.7.1'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
@@ -30,6 +30,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-performance', require: false
   gem 'parallel_tests'
+  gem 'bundler-audit'
 end
 
 group :development do
