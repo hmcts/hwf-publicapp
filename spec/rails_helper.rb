@@ -1,10 +1,14 @@
-if ENV['CODECLIMATE_REPO_TOKEN']
-  require 'simplecov'
-  SimpleCov.start
-  # allow Code Climate Test coverage reports to be sent
-end
+require 'simplecov'
+require "simplecov_json_formatter"
 
 ENV['RAILS_ENV'] ||= 'test'
+
+SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
+SimpleCov.start if ENV.fetch('ENABLE_COVERAGE', 'false').downcase == 'true'
+# allow Code Climate Test coverage reports to be sent
+
+
+
 require File.expand_path('../config/environment', __dir__)
 
 require 'rspec/rails'

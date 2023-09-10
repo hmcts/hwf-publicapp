@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rubocop', '~> 1.40', require: false
   gem 'rubocop-rails'
   gem 'rubocop-performance', require: false
+  gem 'simplecov', '~> 0.21'
   gem 'parallel_tests'
   gem 'bundler-audit'
 end
