@@ -22,7 +22,7 @@ base:
         - name: hwf-password
           alias: DATABASE_PASSWORD
         - name: prod-hwf-public-secret-token
-          alias:
+          alias: prod-hwf-public-secret-token
 
 
 
