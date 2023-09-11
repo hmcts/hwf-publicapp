@@ -68,9 +68,10 @@ RSpec/DescribeClass:
     - spec/support/**/*
     - spec/views/**/*
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Exclude:
     - spec/routing/**/*
+# RSpec/SpecFilePathSuffix
 
 # private/protected/public
 Layout/AccessModifierIndentation:
