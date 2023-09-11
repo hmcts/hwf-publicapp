@@ -3,7 +3,7 @@
 
 [![Build Status](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_apis/build/status/Help%20with%20Fees/hwf-publicapp?branchName=develop)](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_build/latest?definitionId=25&branchName=develop)
 
-Help with fees app for public
+Help with fees app for public.
 
 ## Dependency
 Mimemagic gem has a dependency so you need to install this on your machine first
