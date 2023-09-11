@@ -8,6 +8,10 @@ base:
   aadIdentityName: help-with-fees
   environment:
     RAILS_ENV: 'production'
+    SECRET_KEY_BASE:
+      secretRef: "dev-hwf-public-secret-token"
+      key: "dev-hwf-public-secret-token"
+      disabled: false
   keyVaults:
     help-with-fees:
       secrets:
@@ -17,6 +21,8 @@ base:
           alias: DATABASE_USERNAME
         - name: hwf-password
           alias: DATABASE_PASSWORD
+        - name: prod-hwf-public-secret-token
+          alias:
 
 
 
