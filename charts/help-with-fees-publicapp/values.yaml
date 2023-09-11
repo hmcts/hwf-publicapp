@@ -8,10 +8,6 @@ base:
   aadIdentityName: help-with-fees
   environment:
     RAILS_ENV: 'production'
-    SECRET_KEY_BASE:
-      secretRef: "dev-hwf-public-secret-token"
-      key: "dev-hwf-public-secret-token"
-      disabled: false
   keyVaults:
     help-with-fees:
       secrets:
