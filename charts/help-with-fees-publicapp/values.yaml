@@ -8,6 +8,8 @@ base:
   aadIdentityName: help-with-fees
   environment:
     RAILS_ENV: 'production'
+    SECRETS_PATH: "/mnt/secrets/help-with-fees"
+    SERVICE_FQDN: ${SERVICE_FQDN}
   keyVaults:
     help-with-fees:
       secrets:
