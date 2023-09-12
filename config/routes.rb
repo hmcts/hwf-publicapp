@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   resource :help_request, only: %i[new create], path: 'ask-for-help'
   get 'ask-for-help' => 'help_requests#new'
 
-  get 'ping' => 'health_status/ping#show'
-  get 'healthcheck' => 'health_status/health_check#show'
+  # get 'ping' => 'health_status/ping#show'
+  # get 'healthcheck' => 'health_status/health_check#show'
+
+  get '/health' => 'health_status/health_check#show', defaults: { format: 'json' }
+  get '/health/readiness' => 'health_status/health_check#show', defaults: { format: 'json' }
+  get '/health/liveness' => 'health_status/health_check#show', defaults: { format: 'json' }
+
 end
