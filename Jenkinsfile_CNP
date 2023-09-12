@@ -4,7 +4,7 @@
 
 def type = "ruby"
 def product = "help-with-fees"
-def component = "publicapp"
+def component = "publicappp"
 
 def rubyBuilder = new uk.gov.hmcts.contino.RubyBuilder(this)
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
