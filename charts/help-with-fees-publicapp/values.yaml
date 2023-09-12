@@ -1,8 +1,5 @@
 base:
   applicationPort: 3000
-  readinessPath: /ping.json
-  livenessPath: /ping.json
-  startupPath: /ping.json
   image: 'hmctspublic.azurecr.io/help-with-fees/publicapp:latest'
   ingressHost: hwf-publicapp.{{ .Values.global.environment }}.platform.hmcts.net
   aadIdentityName: help-with-fees
