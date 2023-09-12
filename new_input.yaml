@@ -1,12 +1,5 @@
-base:
-  applicationPort: 3000
-  image: 'hmctspublic.azurecr.io/help-with-fees/publicapp:latest'
-  ingressHost: hwf-publicapp.{{ .Values.global.environment }}.platform.hmcts.net
-  aadIdentityName: help-with-fees
-  environment:
-    RAILS_ENV: 'production'
-    SECRETS_PATH: "/mnt/secrets/help-with-fees"
-    SERVICE_FQDN: ${SERVICE_FQDN}
+New keyvault name is help-with-fees-aat
+    SECRETS_PATH: "/kvmnt/"
     HELP_ME_EMAIL: "helpwithfees@justice.gov.uk"
     RAILS_SERVE_STATIC_FILES: true
     RAILS_ENV: "production"
@@ -21,12 +14,8 @@ base:
     SMTP_HOSTNAME: "smtp.sendgrid.net"
     SMTP_PORT: 587
   keyVaults:
-    help-with-fees:
+    help-with-fees-aat:
       secrets:
-        - name: prod-hwf-public-secret-token
-          alias: prod-hwf-public-secret-token
-        - name: dev-hwf-public-secret-token
-          alias: SECRET_KEY_BASE
         - name: hwf-public-secret-token
           alias: SECRET_TOKEN
         - name: hwf-public-appinsights-key
