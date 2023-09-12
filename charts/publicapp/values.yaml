@@ -9,7 +9,6 @@ base:
     SERVICE_FQDN: ${SERVICE_FQDN}
     HELP_ME_EMAIL: "helpwithfees@justice.gov.uk"
     RAILS_SERVE_STATIC_FILES: true
-    RAILS_ENV: "production"
     RACK_ENV: "production"
     WEB_CONCURRENCY: 1
     SUBMISSION_URL: "http://hwf-staff.helpwithfees:3000"
