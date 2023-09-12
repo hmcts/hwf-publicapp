@@ -18,11 +18,8 @@ withPipeline(type, product, component) {
 
      before('test') {
         sh script:"npm install", label: 'Start test'
+        rubyBuilder.bundle("exec rails assets:precompile")
     }
 
-    // afterAlways('test') {
-    //     sh script: "docker stop pet-et-et1-test-postgres && docker rm pet-et-et1-test-postgres || echo 'Ignoring failure in stopping postgres'",
-    //         label: "docker stop pet-et-et1-test-postgres"
-    // }
 }
 
