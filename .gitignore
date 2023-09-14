@@ -16,6 +16,7 @@
 
 /tmp/cache
 /tmp/parallel_runtime_cucumber.log
+/tmp/restart.txt
 # node
 node_modules
 
@@ -33,3 +34,5 @@ features/cucumber-report/screenshot.png
 
 # Ignore development env file
 .env.development
+
+input-secrets.rb

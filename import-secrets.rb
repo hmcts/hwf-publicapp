@@ -1,5 +1,5 @@
 # help-with-fees-aat
-# ruby import-secrets.rb input-aat.yaml map.yaml help-with-fees-aat
+# ruby import-secrets.rb input-bc-stg.yaml map.yaml help-with-fees-aat
 
 require 'yaml'
 require 'json'
