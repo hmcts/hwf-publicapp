@@ -11,7 +11,7 @@ class OnlineApplicationBuilder
   def build_application
     @online_application = OnlineApplication.new
 
-    QuestionFormFactory::IDS.each do |question|
+    QuestionFormFactory::page_list.each do |question|
       form = QuestionFormFactory.get_form(question)
       @storage.load_form(form)
       @online_application.attributes = form.export
