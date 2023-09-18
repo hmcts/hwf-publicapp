@@ -3,8 +3,8 @@ class QuestionFormFactory
 
   # These are ordered
   IDS = %i[
-    form_name
     fee
+    form_name
     national_insurance_presence
     national_insurance
     home_office

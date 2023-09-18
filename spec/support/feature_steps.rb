@@ -22,8 +22,8 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
-    fill_form_name
     fill_fee(true)
+    fill_form_name
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status
@@ -46,8 +46,8 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
-    fill_form_name
     fill_fee(false)
+    fill_form_name
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status
@@ -70,8 +70,8 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
-    fill_form_name
     fill_fee
+    fill_form_name
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status
@@ -273,7 +273,6 @@ module FeatureSteps
     else
       choose 'fee_paid_false'
     end
-
     click_button 'Continue'
   end
 
