@@ -19,8 +19,8 @@ RSpec.describe SessionsController do
       expect(storage).to have_received(:start)
     end
 
-    it 'redirects to the form_name question' do
-      expect(response).to redirect_to(question_path(:form_name))
+    it 'redirects to the fee question' do
+      expect(response).to redirect_to(question_path(:fee))
     end
   end
 

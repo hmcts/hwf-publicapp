@@ -12,8 +12,8 @@ RSpec.describe Navigation do
     subject { described_class.new(online_application, current_question).next }
 
     {
-      form_name: :fee,
-      fee: :national_insurance_presence,
+      fee: :form_name,
+      form_name: :national_insurance_presence,
       national_insurance_presence: :national_insurance,
       national_insurance: :marital_status,
       home_office: :marital_status,

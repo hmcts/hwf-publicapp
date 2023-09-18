@@ -17,7 +17,7 @@
 /tmp/cache
 /tmp/parallel_runtime_cucumber.log
 /tmp/restart.txt
-# node
+/tmp/capybara
 node_modules
 
 # Ignore IDE configurations
