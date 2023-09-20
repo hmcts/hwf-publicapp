@@ -3,14 +3,11 @@ module AddressLookup
     def access_token(question)
       return if question != :applicant_address
 
-      Rails.logger.debug "LOGGER: before address_lookup feetch"
-      token = Rails.cache.fetch('address_lookup', expires_in: 290) do
+      Rails.cache.fetch('address_lookup', expires_in: 290) do
         uri = URI(Rails.configuration.x.address_lookup.endpoint)
         set_authentication
         lookup_request(uri)
       end
-      Rails.logger.debug "LOGGER: token #{token}"
-      token
     end
 
     private
