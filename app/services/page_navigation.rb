@@ -31,6 +31,10 @@ module PageNavigation
   end
 
   def page_path
+    # binding.pry
+    Rails.logger.debug "LOGGER: Session cache #{Rails.cache.class}"
+    Rails.logger.debug "LOGGER: Session path #{Rails.cache.cache_path}"
+    Rails.logger.debug "LOGGER: Session pages: #{store.read("page_path-#{session_id}")}"
     store.read("page_path-#{session_id}") || []
   end
 
