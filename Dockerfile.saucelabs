@@ -1,4 +1,4 @@
-FROM ruby:2.5.3
+FROM ruby:2.7.8
 
 # Install runit, nodejs
 # phantomjs requires libfontconfig
