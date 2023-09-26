@@ -20,7 +20,6 @@ Bundler.require(*Rails.groups)
 
 ENV['RAILS_DISABLE_DEPRECATED_TO_S_CONVERSION'] = "true"
 
-
 module HwfPublicapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
