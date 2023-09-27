@@ -46,3 +46,7 @@ end
 When(/^I slowly submit yes I am 61 years old or over$/) do
   savings_investment_extra_page.slowly_submit_yes
 end
+
+When(/^I slowly submit no I am not 61 years old or over$/) do
+  savings_investment_extra_page.slowly_submit_no
+end

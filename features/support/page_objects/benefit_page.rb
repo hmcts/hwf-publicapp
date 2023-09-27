@@ -41,4 +41,11 @@ class BenefitPage < BasePage
       continue
     end
   end
+
+  def slowly_submit_benefit_no
+    travel 61.minutes do
+      content.no.click
+      continue
+    end
+  end
 end

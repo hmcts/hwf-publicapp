@@ -37,4 +37,11 @@ class MaritalStatusPage < BasePage
       continue
     end
   end
+
+  def slowly_submit_partnered
+    travel 61.minutes do
+      content.married.click
+      continue
+  end
+  end
 end

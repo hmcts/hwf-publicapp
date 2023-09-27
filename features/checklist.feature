@@ -23,6 +23,11 @@ Feature: Checklist page
   Scenario: Case number, claim number or notice to pay
     Then I see that I need to make sure that I have the case number, claim number or notice to pay
 
+  Scenario: Wealth details
+    Then I see that I need to make sure I have details of my income and wages
+    And I see that I need to make sure I have details of my savings and investments
+    And I see that I need to make sure I have details of my partner's details
+
   Scenario: Continue
     When I continue
     Then I should be taken to form number page

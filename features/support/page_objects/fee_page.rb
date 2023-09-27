@@ -69,4 +69,17 @@ class FeePage < BasePage
       continue
     end
   end
+
+  def invalid_date
+    content.fee_day_date_paid.set("ABC")
+    content.fee_month_date_paid.set("ABC")
+    content.fee_year_date_paid.set("ABC")
+    continue
+  end
+
+  def slow_no
+    travel 61.minutes do
+      submit_fee_no
+    end
+  end
 end

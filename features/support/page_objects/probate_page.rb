@@ -85,4 +85,11 @@ class ProbatePage < BasePage
       continue
     end
   end
+
+  def slowly_submit_probate_yes
+    travel 61.minutes do
+      probate_page.content.yes.click
+      continue
+    end
+  end
 end

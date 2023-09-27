@@ -35,3 +35,9 @@ end
 When(/^I enter my last name with special characters$/) do
   personal_details_page.last_name('!@£')
 end
+
+When(/^I slowly enter my name$/) do
+  travel 61.minutes do
+    personal_details_page.submit_full_name
+  end
+end

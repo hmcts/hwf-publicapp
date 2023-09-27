@@ -44,3 +44,7 @@ end
 When(/^I submit the form with no I do not have any children after a long time$/) do
   dependent_page.slow_submit_dependent_no
 end
+
+When(/^I submit the form with yes I do have children after a long time$/) do
+  dependent_page.slow_submit_dependent_yes
+end

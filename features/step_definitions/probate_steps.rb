@@ -80,3 +80,7 @@ end
 When(/^I slowly select no to are you paying a fee for a probate case$/) do
   probate_page.slowly_submit_probate_no
 end
+
+When(/^I slowly select yes to are you paying a fee for a probate case$/) do
+  probate_page.slowly_submit_probate_yes
+end

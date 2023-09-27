@@ -34,3 +34,7 @@ end
 When(/^I slowly submit the form as single$/) do
   marital_status_page.slowly_submit_single
 end
+
+When(/^I slowly submit the form as married or living with someone and sharing an income$/) do
+  marital_status_page.slowly_submit_partnered
+end

@@ -69,3 +69,7 @@ Then(/^I should see average monthly income copy$/) do
   average_income = base_page.content.text.p[1]
   expect(average_income.text).to have_content 'work out an average monthly income'
 end
+
+And(/^I click the '(.*)' link$/) do |string|
+  click_on(string)
+end
