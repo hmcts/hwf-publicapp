@@ -32,3 +32,8 @@ end
 Then(/^I should be taken to income amount page$/) do
   expect(income_amount_page).to be_displayed
 end
+
+When(/^I submit the form with my monthly income of £'(.*)'$/) do |string|
+  income_amount_page.income(string)
+  continue
+end

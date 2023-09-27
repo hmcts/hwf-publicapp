@@ -29,6 +29,11 @@ When(/^I enter £1600 as our savings and investments$/) do
   savings_investment_extra_page.content.extra_amount.set(1600)
 end
 
+When(/^I enter £5000 as our savings and investments$/) do
+  expect(savings_investment_extra_page.content).to have_how_much_label_married
+  savings_investment_extra_page.content.extra_amount.set(5000)
+end
+
 Then(/^I should see enter amount between error message$/) do
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(savings_investment_extra_page.content).to have_error_link
