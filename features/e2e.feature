@@ -8,11 +8,10 @@ Feature: End to end tests
     When I continue
     Then I am on the form number page
 
-  Scenario: End to end path one (refund, married, £3,000 to £15,999 savings, no to 61, less than £5000 in savings, no benefits, 4 dependents, wages & working tax credit, mid income, no fee for probate, yes claim number, dob=34 years before today,  )
+  Scenario: End to end path one (no refund, married, £3,000 to £15,999 savings, no to 61, less than £5000 in savings, no benefits, 4 dependents, wages & working tax credit, mid income, no fee for probate, yes claim number, dob=34 years before today,  )
     When I submit the form with a help with fees form number 'XX10'
     Then I should be taken to fee page
-    When I select yes to have you already paid the fee
-    And I submit the form with a date that is within the last three months
+    When I submit no to have you already paid the fee
     Then I should be taken to national insurance presence page
     When I have a national insurance number
     Then I should be taken to national insurance page
@@ -54,7 +53,26 @@ Feature: End to end tests
     When I enter my address with postcode
     Then I should be taken to contact page
     When I enter a valid email address
+    Then I should be taken to apply type page
+    When I select I will be completing via online service
     Then I should be taken to summary page
+    And I should see my details:
+      | scope                                                                     |
+      | Form name or number XX10 Change form name or number                       |
+      | Fee paid No Change fee paid                                               |
+      | National Insurance number JL806367D Change national insurance number      |
+      | Status Married or living with someone and sharing an income Change status |
+      | Savings and investments £5,000 Change savings and investments             |
+      | Benefits Not receiving eligible benefits Change benefits                  |
+      | Children 4 Change children                                                |
+      | Income £5,000 Change income                                               |
+      | Income type Your income type Change income type                           |
+      | Probate case No Change probate case                                       |
+      | Claim number Yes Change claim number                                      |
+      | Date of birth 27/09/1989 Change date of birth                             |
+      | Full name Ms Sally Smith Change full name                                 |
+      | Address 102 Petty France London SW1H 9AJ Change address                   |
+      | Email test@hmcts.net Change email                                         |
 
 #  Scenario: End to end path two (non refund, single, £0 to £2,999 savings, yes to 61, benefits, no dependents)
 #    When I submit the form with I don’t have a form checked

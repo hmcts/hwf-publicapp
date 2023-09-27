@@ -73,3 +73,8 @@ end
 And(/^I click the '(.*)' link$/) do |string|
   click_on(string)
 end
+
+When(/^I select I will be completing via online service$/) do
+  find('label', text: 'Online service').click
+  continue
+end
