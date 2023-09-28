@@ -84,3 +84,10 @@ end
 When(/^I slowly select yes to are you paying a fee for a probate case$/) do
   probate_page.slowly_submit_probate_yes
 end
+
+And(/^I enter a date of death "(.*)\/(.*)\/(.*)"$/) do |day, month, year|
+  probate_page.content.probate_day_date_of_death.set(day)
+  probate_page.content.probate_month_date_of_death.set(month)
+  probate_page.content.probate_year_date_of_death.set(year)
+  continue
+end
