@@ -29,10 +29,10 @@ RSpec.describe HelpRequestsController do
                       id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?,
                       name: 'John Doe', email: 'johndoe@example.com', description: 'Test')
     end
-
-    let(:zendesk_sender) { instance_double(ZendeskSender, send_help_request: nil) }
+    let(:ask_for_help_email) { instance_double(ActionMailer::MessageDelivery, deliver_now: true) }
 
     before do
+      allow(NotifyMailer).to receive_messages(ask_for_help_email: ask_for_help_email)
       post :create, params: { id => params }
     end
 
@@ -45,7 +45,8 @@ RSpec.describe HelpRequestsController do
       end
 
       it 'sends an email' do
-        expect { post :create, params: { id => params } }.to change { ActionMailer::Base.deliveries.count }.by(1)
+        expect(NotifyMailer).to have_received(:ask_for_help_email).with(form)
+        expect(ask_for_help_email).to have_received(:deliver_now)
       end
 
       it 'sets a flash message' do

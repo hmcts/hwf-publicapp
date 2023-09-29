@@ -22,6 +22,7 @@ gem 'sentry-rails'
 gem 'slim-rails'
 gem 'uglifier'
 gem 'virtus'
+gem 'govuk_notify_rails'
 
 group :development, :test do
   gem "pry-rails"
