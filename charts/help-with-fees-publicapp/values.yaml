@@ -11,7 +11,7 @@ base:
     RAILS_ENV: 'production'
     SECRETS_PATH: "/mnt/secrets/help-with-fees"
     SERVICE_FQDN: ${SERVICE_FQDN}
-    HELP_ME_EMAIL: "helpwithfees@justice.gov.uk"
+    HELP_ME_EMAIL: "petr.zaparka@hmcts.net"
     RAILS_SERVE_STATIC_FILES: true
     RACK_ENV: "production"
     WEB_CONCURRENCY: 1
