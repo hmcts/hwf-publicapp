@@ -62,6 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "hwf_publicapp_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -86,20 +87,5 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-
-  #### RAILS 6.1
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-
-  ActionMailer::Base.smtp_settings = {
-    domain: ENV['SMTP_DOMAIN'] || 'localhost',
-    address: ENV['SMTP_HOSTNAME'] || 'localhost',
-    port: 587,
-    authentication: :plain,
-    user_name: 'apikey',
-    password: ENV['SMTP_PASSWORD'] || '',
-    enable_starttls_auto: true
-  }
 
 end
