@@ -42,6 +42,6 @@ class MaritalStatusPage < BasePage
     travel 61.minutes do
       content.married.click
       continue
-  end
+    end
   end
 end

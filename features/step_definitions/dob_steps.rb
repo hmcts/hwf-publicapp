@@ -44,7 +44,7 @@ When(/^I slowly enter a valid date of birth$/) do
   dob_page.slow_dob_entry
 end
 
-When(/^I enter a date of birth "(.*)\/(.*)\/(.*)"$/) do |day, month, year|
+When(%r{^I enter a date of birth "(.*)/(.*)/(.*)"$}) do |day, month, year|
   dob_page.content.dob_day.set(day)
   dob_page.content.dob_month.set(month)
   dob_page.content.dob_year.set(year)
