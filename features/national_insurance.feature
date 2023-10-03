@@ -16,6 +16,10 @@ Feature: National insurance page
     When I click continue
     Then I should see enter your national insurance number error message
 
+  Scenario: Help with status
+    When I click on 'Why do we ask for this?'
+    Then I should see a line explaining why
+
   Scenario: National insurance page timeout
     When I slowly submit a valid national insurance number
     Then I should see the home page

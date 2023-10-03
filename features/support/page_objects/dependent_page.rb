@@ -44,4 +44,11 @@ class DependentPage < BasePage
   def children_number(num)
     content.children_number.set num
   end
+
+  def slow_submit_dependent_yes
+    travel 61.minutes do
+      content.yes.click
+      continue
+    end
+  end
 end

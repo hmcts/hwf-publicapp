@@ -34,4 +34,18 @@ class SavingsInvestmentPage < BasePage
       continue
     end
   end
+
+  def slowly_mid_amount_checked
+    travel 61.minutes do
+      savings_investment_page.content.medium_amount.click
+      continue
+    end
+  end
+
+  def slowly_low_amount_checked
+    travel 61.minutes do
+      savings_investment_page.content.low_amount.click
+      continue
+    end
+  end
 end

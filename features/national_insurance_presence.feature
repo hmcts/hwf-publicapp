@@ -16,10 +16,10 @@ Feature: National insurance presence page
     When I click on 'Where to find my National Insurance number?'
     Then I should see further information with a link to ask for a reminder
 
-  Scenario: Displays error message enter your national insurance number
+  Scenario: Displays error message when proceeding with blank national insurance number
     When I click continue
     Then I should see enter your national insurance number error message
 
-  Scenario: National insurance presence page timeout
+  Scenario: National insurance presence page timeout (No option)
     When I slowly select that I do have a national insurance number
     Then I should see the home page

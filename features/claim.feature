@@ -31,7 +31,11 @@ Feature: Claim page
     When I click continue
     Then I should see select whether you have a case, claim or ‘notice to pay’ error message
 
-  Scenario: Claim page timeout
+  Scenario: Claim page timeout (yes option)
     When I select yes to do you have a case, claim or notice to pay number
     And I enter a case, claim or notice to pay number after a long time
+    Then I should see the home page
+
+  Scenario: Claim page timeout (no option)
+    When I slowly select no to do you have a case, claim or notice to pay number
     Then I should see the home page

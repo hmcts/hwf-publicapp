@@ -35,6 +35,10 @@ Feature: Probate page
     When I click continue
     Then I should see select whether you're paying a fee for a probate case error message
 
-  Scenario: Probate page timeout
+  Scenario: Probate page timeout (no option)
     When I slowly select no to are you paying a fee for a probate case
+    Then I should see the home page
+
+  Scenario: Probate page timeout (yes option)
+    When I slowly select yes to are you paying a fee for a probate case
     Then I should see the home page

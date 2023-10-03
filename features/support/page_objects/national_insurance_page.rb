@@ -14,6 +14,7 @@ class NationalInsurancePage < BasePage
     element :no_ni_number_link, 'a', text: "use the paper form"
     element :blank_error_link, 'a', text: 'Enter your National Insurance number'
     element :invalid_error_link, 'a', text: 'Enter a valid National Insurance number'
+    element :explanation, 'li', text: 'We ask for this information as we may contact the Department of Work and Pensions or HM Revenue & Customs to validate details declared in your application.'
   end
 
   def submit_valid_ni

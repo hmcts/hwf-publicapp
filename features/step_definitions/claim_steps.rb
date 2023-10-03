@@ -45,3 +45,7 @@ end
 And(/^I enter a case, claim or notice to pay number after a long time$/) do
   claim_page.slow_claim_number_entry
 end
+
+When(/^I slowly select no to do you have a case, claim or notice to pay number$/) do
+  claim_page.slow_no_option
+end

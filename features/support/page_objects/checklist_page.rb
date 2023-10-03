@@ -14,6 +14,9 @@ class ChecklistPage < BasePage
     element :look_ho, 'li', text: 'You will find your Home Office reference number on any of the correspondence you have received from the Home Office.'
     element :reminder, 'a', text: 'ask for a reminder through the post'
     element :look_for_ho, 'li', text: 'You will find your Home Office reference number on any of the correspondence you have received from the Home Office.'
+    element :income_and_wages, 'li', text: 'income, including wages'
+    element :savings_and_investments, 'li', text: 'savings and investments'
+    element :partner_income, 'li', text: "partner's income, savings and investments - if you have one"
   end
 
   def click_do_not_know

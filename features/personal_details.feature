@@ -39,3 +39,7 @@ Feature: Personal details page
     And I enter my first name
     And I click continue
     Then I should see 'Must not contain special characters' error message
+
+  Scenario: Name entry timeout
+    When I slowly enter my name
+    Then I should see the home page

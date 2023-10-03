@@ -41,3 +41,11 @@ end
 When(/^I slowly submit the form with £16,000 or more checked$/) do
   savings_investment_page.slowly_high_amount_checked
 end
+
+When(/^I slowly submit the form with £3,000 to £15,999 or more checked$/) do
+  savings_investment_page.slowly_mid_amount_checked
+end
+
+When(/^I slowly submit the form with £0 to £2,999 or more checked$/) do
+  savings_investment_page.slowly_low_amount_checked
+end

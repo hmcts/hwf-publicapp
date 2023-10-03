@@ -48,3 +48,11 @@ end
 And(/^I slowly submit the form with a date that is within the last three months$/) do
   fee_page.slow_valid_date
 end
+
+And(/^I submit the form with an invalid date$/) do
+  fee_page.invalid_date
+end
+
+When(/^I slowly submit no to have you already paid the fee$/) do
+  fee_page.slow_no
+end

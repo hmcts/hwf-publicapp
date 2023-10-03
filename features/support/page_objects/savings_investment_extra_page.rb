@@ -31,4 +31,11 @@ class SavingsInvestmentExtraPage < BasePage
       continue
     end
   end
+
+  def slowly_submit_no
+    travel 61.minutes do
+      content.no.click
+      continue
+    end
+  end
 end
