@@ -32,3 +32,7 @@ end
 When(/^I slowly submit a valid national insurance number$/) do
   national_insurance_page.slowly_submit_valid_ni
 end
+
+Then(/^I should see a line explaining why$/) do
+  expect(national_insurance_page.content).to have_explanation
+end

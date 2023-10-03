@@ -21,3 +21,8 @@ Then(/^I should see the home page with error$/) do
   expect(home_page.content).to have_other
   expect(home_page.content).to have_error
 end
+
+When(/^I click the start button$/) do
+  expect(home_page.content).to have_start_button
+  home_page.content.start_button.click
+end

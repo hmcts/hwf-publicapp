@@ -61,3 +61,15 @@ Then(/^I should see a list of seven links$/) do
   expect(footer_page.content.footer_links.text).to have_content("Cymraeg")
   expect(footer_page.content.footer_links.text).to have_content("Accessibility statement")
 end
+
+Then(/^I see that I need to make sure I have details of my income and wages$/) do
+  expect(checklist_page.content).to have_income_and_wages
+end
+
+And(/^I see that I need to make sure I have details of my savings and investments$/) do
+  expect(checklist_page.content).to have_savings_and_investments
+end
+
+And(/^I see that I need to make sure I have details of my partner's details$/) do
+  expect(checklist_page.content).to have_partner_income
+end

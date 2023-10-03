@@ -54,7 +54,12 @@ Feature: Income kind page
     When I click continue
     Then I should see select your kinds of income error message
 
-  Scenario: Income kind page timeout
+  Scenario: Income kind page timeout (single wages option)
     When I am a single person on kind of income page
+    And I slowly submit the form with wages checked
+    Then I should see the home page
+
+  Scenario: Income kind page timeout (married wages option)
+    When I am a married person on kind of income page
     And I slowly submit the form with wages checked
     Then I should see the home page

@@ -32,7 +32,16 @@ Feature: Fee page
     And I submit the form with a future date
     Then I should see this date can't be in the future error message
 
-  Scenario: Fee page timeout
+  Scenario: Invalid date form
+    When I select yes to have you already paid the fee
+    And I submit the form with an invalid date
+    Then I should be taken to fee page
+
+  Scenario: Fee page timeout (Yes option)
     When I select yes to have you already paid the fee
     And I slowly submit the form with a date that is within the last three months
+    Then I should see the home page
+
+  Scenario: Fee page timeout (No option)
+    When I slowly submit no to have you already paid the fee
     Then I should see the home page

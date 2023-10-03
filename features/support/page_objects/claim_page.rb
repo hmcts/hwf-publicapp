@@ -37,4 +37,11 @@ class ClaimPage < BasePage
       continue
     end
   end
+
+  def slow_no_option
+    travel 61.minutes do
+      content.no.click
+      continue
+    end
+  end
 end

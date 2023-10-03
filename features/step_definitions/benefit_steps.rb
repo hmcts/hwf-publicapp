@@ -60,3 +60,7 @@ end
 When(/^I slowly submit the form with yes I am receiving one of the benefits listed$/) do
   benefit_page.slowly_submit_benefit_yes
 end
+
+When(/^I slowly submit the form with no I am not receiving one of the benefits listed$/) do
+  benefit_page.slowly_submit_benefit_no
+end

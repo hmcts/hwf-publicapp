@@ -35,7 +35,7 @@ RSpec.describe OnlineApplicationBuilder do
       expect(subject).to be_a(OnlineApplication)
     end
 
-    it 'assigns the correct values to each field' do # rubocop:disable RSpec/MultipleExpectations
+    it 'assigns the correct values to each field' do
       expect(online_application.married).to be true
       expect(online_application.min_threshold_exceeded).to be true
       expect(online_application.max_threshold_exceeded).to be false

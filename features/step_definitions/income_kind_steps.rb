@@ -20,6 +20,10 @@ When(/^I submit the form with wages checked$/) do
   income_kind_page.submit_single_income_wages_tax_credit
 end
 
+When(/^I submit the married form with wages and working tax credit checked$/) do
+  income_kind_page.submit_married_income_wages_tax_credit
+end
+
 Then(/^I should see an income list:$/) do |incomes|
   incomes.rows.each_with_index do |income, index|
     expect(income_kind_page.content.income_item[index].text).to eq income[0]

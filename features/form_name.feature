@@ -34,6 +34,14 @@ Feature: Form name page
       When I click on 'Applying for help with hearing fees'
       Then I should see more information about what to put in the form number field
 
+    Scenario: Filling in with valid form number
+      When I submit the form with a help with fees form number 'XX10'
+      Then I should be taken to fee page
+
+    Scenario: Filling in with help for hearing fees
+      When I submit the form with a help with fees form number 'hearing fee for claim'
+      Then I should be taken to fee page
+
     Scenario: Form name page timeout
       When I submit the form with a valid form number after a long time
       Then I should see the home page with error
