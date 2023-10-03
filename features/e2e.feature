@@ -8,7 +8,6 @@ Feature: End to end tests
     When I continue
     Then I am on the form number page
 
-# Path one: no refund, married, £3,000 to £15,999 savings, no to 61, less than £5000 in savings, no benefits, 4 dependents, wages & working tax credit, mid income, no fee for probate, yes claim number
   Scenario: End to end path one
     When I submit the form with a help with fees form number 'XX10'
     Then I should be taken to fee page
@@ -75,7 +74,6 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
-# Path two: non refund, single, £0 to £2,999 savings, yes to 61, benefits, no dependents, low income, probate case no claim,
   Scenario: End to end path two
     When I submit the form with I don’t have a form checked
     Then I should be taken to fee page
@@ -98,7 +96,6 @@ Feature: End to end tests
     And I should see high income range 'More than £5,170'
     When I submit less than
     Then I should be taken to the probate page
-#    When I select no to are you paying a fee for a probate case
     When I select yes to are you paying a fee for a probate case
     And I enter the name of deceased
     And I enter a date of death "10/01/2023"
