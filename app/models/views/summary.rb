@@ -61,7 +61,7 @@ module Views
     end
 
     def payment_date
-      ", on #{date_fee_paid.to_fs(:default)}" if refund
+      ", on #{date_fee_paid}" if refund
     end
 
     def format_currency(amount)

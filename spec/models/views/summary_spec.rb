@@ -162,7 +162,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build(:online_application, refund: true, date_fee_paid: '01/02/2016') }
 
       it 'returns Yes with date paid' do
-        expect(subject).to eql('Yes, on 01/02/2016')
+        expect(subject).to eql("Yes, on #{online_application.date_fee_paid}")
       end
     end
 

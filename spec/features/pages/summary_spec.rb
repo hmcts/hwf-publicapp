@@ -55,7 +55,7 @@ RSpec.feature 'As a user' do
         scenario 'I expect to see my answers' do
           expect(page).not_to have_content 'Probate case'
           expect(page).to have_content 'Name of deceasedFooChange'
-          expect(page).to have_content "Date of death#{month_ago.strftime(Date::DATE_FORMATS[:default])}Change"
+          expect(page).to have_content "Date of death#{month_ago}Change"
         end
       end
 
