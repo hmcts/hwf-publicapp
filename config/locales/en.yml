@@ -1,4 +1,10 @@
 en:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  time:
+    formats:
+      default: "%H:%M"
   dictionary:
     yes: &yes 'Yes'
     no: &no 'No'

@@ -1,4 +1,10 @@
 cy:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  time:
+    formats:
+      default: "%H:%M"
   dictionary:
     single_no: &single_no 'Nac ydw'
     single_yes: &single_yes 'Ydw'
