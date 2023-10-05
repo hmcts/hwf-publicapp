@@ -7,7 +7,7 @@ end
 
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 7.1.0'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
