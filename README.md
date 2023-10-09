@@ -13,7 +13,7 @@ Mimemagic gem has a dependency so you need to install this on your machine first
 
 Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 
-(Where `X` & `Y` are version numbers)
+(Where `X` & `Y` are version numbers) 
 
 ## Feature tests
 
