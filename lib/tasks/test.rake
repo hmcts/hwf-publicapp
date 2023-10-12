@@ -4,7 +4,7 @@ task :test => :environment do
   end
   unless system("rake parallel:spec RAILS_ENV=test")
     raise "Rspec testing failed #{$?}"
-   end
+  end
   unless system "bundle exec rubocop"
     raise "Rubocop failed"
   end
