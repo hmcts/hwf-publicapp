@@ -8,6 +8,7 @@ Feature: End to end tests
     When I continue
     Then I am on the form number page
 
+@smoke
   Scenario: End to end path one
     When I submit the form with a help with fees form number 'XX10'
     Then I should be taken to fee page
@@ -74,6 +75,7 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
+@smoke
   Scenario: End to end path two
     When I submit the form with I don’t have a form checked
     Then I should be taken to fee page
