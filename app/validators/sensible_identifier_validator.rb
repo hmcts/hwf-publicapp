@@ -7,4 +7,3 @@ class SensibleIdentifierValidator < ActiveModel::EachValidator
     record.errors.add(attribute, :contains_special_chars) unless value.match(REGEX)
   end
 end
-
