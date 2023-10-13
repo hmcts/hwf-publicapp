@@ -1,8 +1,5 @@
 Selenium::WebDriver.logger.level = :error
 
-# Temporary fix
-Webdrivers::Chromedriver.required_version = "114.0.5735.90"
-
 Capybara.configure do |config|
   driver = ENV['DRIVER']&.to_sym || :headless
   config.default_driver = driver
@@ -29,11 +26,6 @@ end
 Capybara.register_driver :firefox do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new
   Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
-end
-
-Capybara.register_driver :saucelabs do |app|
-  browser = Settings.saucelabs.browsers.send(Settings.saucelabs.browser).to_h
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')

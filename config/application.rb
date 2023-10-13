@@ -28,6 +28,8 @@ module HwfPublicapp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.load_defaults 7.0
+
     #### Rails 6.1
     config.i18n.available_locales = %i[en cy]
 

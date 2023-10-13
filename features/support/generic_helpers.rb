@@ -137,7 +137,7 @@ def continue
 end
 
 def disable_address_lookup
-  stub_request(:post, "https://api.os.uk/oauth2/token/v1").
+  WebMock.stub_request(:post, "https://api.os.uk/oauth2/token/v1").
     with(
       body: { "grant_type" => "client_credentials" },
       headers: {
