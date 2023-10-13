@@ -9,6 +9,10 @@ Help with fees app for public.
 Mimemagic gem has a dependency so you need to install this on your machine first
 ```brew install shared-mime-info.```
 
+### Redis
+Back button functionality depends on redis storage. Only thing you need to do on your localhost is to make sure you are runnin redis server.
+More info: https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/
+
 ## Docker
 
 Using this command `docker build hmcts/hwf-publicapp:vX.Y`
