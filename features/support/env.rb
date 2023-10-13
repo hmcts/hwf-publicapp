@@ -3,67 +3,55 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
-
 require 'cucumber/rails'
 require_relative './page_objects/base_page'
 require 'capybara/apparition'
+require 'capybara/cucumber'
+require 'base64'
+require 'webmock'
+include WebMock::API
 
 Dir[File.dirname(__FILE__) + '/page_objects/**/*.rb'].each { |f| require f }
 
-# Capybara defaults to CSS3 selectors rather than XPath.
-# If you'd prefer to use XPath, just uncomment this line and adjust any
-# selectors in your step definitions to use the XPath syntax.
-# Capybara.default_selector = :xpath
-
-# By default, any exception happening in your Rails application will bubble up
-# to Cucumber so that your scenario will fail. This is a different from how
-# your application behaves in the production environment, where an error page will
-# be rendered instead.
-#
-# Sometimes we want to override this default behaviour and allow Rails to rescue
-# exceptions and display an error page (just like when the app is running in production).
-# Typical scenarios where you want to do this is when you test your error pages.
-# There are two ways to allow Rails to rescue exceptions:
-#
-# 1) Tag your scenario (or feature) with @allow-rescue
-#
-# 2) Set the value below to true. Beware that doing this globally is not
-# recommended as it will mask a lot of errors for you!
-#
 ActionController::Base.allow_rescue = false
 
-#Define global variables
-ENV['zap_proxy'] = "localhost"
-ENV['zap_proxy_port'] = '8099'
+# #Define global variables
+# ENV['zap_proxy'] = "localhost"
+# ENV['zap_proxy_port'] = '8099'
 ENV['HOSTNAME'] = 'localhost'
 
-#Below lines are our driver profile settings to reach internet through a proxy
-#You can set security=true as environment variable or declare it on command window
-if ENV['security'] == "true"
-  Capybara.register_driver :selenium do |app|
-    profile = Selenium::WebDriver::Firefox::Profile.new
-    profile["network.proxy.type"] = 1
-    profile["network.proxy.http"] = ENV['zap_proxy']
-    profile["network.proxy.http_port"] = ENV['zap_proxy_port']
-    Capybara::Selenium::Driver.new(app, :profile => profile)
-  end
+After do |scenario|
+  Capybara.reset_sessions!
 end
 
-ENV['NO_PROXY'] = ENV['no_proxy'] = '127.0.0.1'
-if ENV['APP_HOST']
-  Capybara.app_host = ENV['APP_HOST']
-  if Capybara.app_host.chars.last != '/'
-    Capybara.app_host += '/'
-  end
-end
 
-Capybara.raise_server_errors = false
+# #Below lines are our driver profile settings to reach internet through a proxy
+# #You can set security=true as environment variable or declare it on command window
+# if ENV['security'] == "true"
+#   Capybara.register_driver :selenium do |app|
+#     profile = Selenium::WebDriver::Firefox::Profile.new
+#     profile["network.proxy.type"] = 1
+#     profile["network.proxy.http"] = ENV['zap_proxy']
+#     profile["network.proxy.http_port"] = ENV['zap_proxy_port']
+#     Capybara::Selenium::Driver.new(app, :profile => profile)
+#   end
+# end
 
-require 'capybara/cucumber'
-require 'base64'
-require 'date'
+# ENV['NO_PROXY'] = ENV['no_proxy'] = '127.0.0.1'
+# if ENV['APP_HOST']
+#   Capybara.app_host = ENV['APP_HOST']
+#   if Capybara.app_host.chars.last != '/'
+#     Capybara.app_host += '/'
+#   end
+# end
 
-Before('@cross-service') do
-  Capybara.always_include_port = false
-  Capybara.app_host = 'https://public.demo.hwf.dsd.io'
-end
+# Capybara.raise_server_errors = false
+
+# require 'capybara/cucumber'
+# require 'base64'
+# require 'date'
+
+# Before('@cross-service') do
+#   Capybara.always_include_port = false
+#   Capybara.app_host = 'https://public.demo.hwf.dsd.io'
+# end
