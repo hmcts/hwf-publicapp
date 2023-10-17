@@ -21,6 +21,7 @@ ActionController::Base.allow_rescue = false
 ENV['HOSTNAME'] = 'localhost'
 
 After do |scenario|
+  Timecop.return
   Capybara.reset_sessions!
 end
 

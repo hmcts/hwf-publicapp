@@ -2,13 +2,13 @@ require Rails.root.join('spec/support/probate_fees_switchover_helper.rb')
 
 def probate_disabled
   disable_address_lookup
-  travel_to probate_fees_release_date + 1.day
+  Timecop.freeze probate_fees_release_date + 1.day
   log "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
 
 def probate_enabled
   disable_address_lookup
-  travel_to a_day_before_disable_probate_fees
+  Timecop.freeze a_day_before_disable_probate_fees
   print "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
 
