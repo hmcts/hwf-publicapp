@@ -1,8 +1,8 @@
 Feature: Form name page
 
     Background: Navigating to the form name page
-      Given I am on the form number page
-      And probate is enabled
+      Given probate is enabled
+      And I am on the form number page
 
     Scenario: Does not display probate applications not available warning message - probate enabled
       Then I should not see probate applications not available warning message
