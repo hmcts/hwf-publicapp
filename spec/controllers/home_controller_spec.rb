@@ -62,7 +62,7 @@ RSpec.describe HomeController do
   end
 
   describe '#update' do
-    let(:referer) { 'http://local.net/page' }
+    let(:referer) { root_url }
 
     before do
       request.env['HTTP_REFERER'] = referer
