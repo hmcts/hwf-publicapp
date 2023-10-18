@@ -58,10 +58,11 @@ group :test do
   gem 'rspec-rails'
   gem 'rubocop-rspec', '~> 2.16', require: false
   gem 'rubyzip'
+  gem 'selenium-webdriver', '~> 4.14'
   gem 'shoulda-matchers'
   gem 'site_prism'
   gem "test-prof", "~> 1.1"
   gem 'timecop'
-  gem 'webdrivers'
+  # gem 'webdrivers', '~> 5.3', '>= 5.3.1'
   gem 'webmock'
 end
