@@ -2,9 +2,8 @@ RSpec.shared_examples 'cache suppress headers' do
   it 'sets headers to suppress browser cache' do
     expect(response.headers.to_h).to include(
       "x-frame-options" => "SAMEORIGIN",
-      "x-xss-protection" => "1; mode=block",
+      "x-xss-protection" => "0",
       "x-content-type-options" => "nosniff",
-      "x-download-options" => "noopen",
       "x-permitted-cross-domain-policies" => "none",
       "referrer-policy" => "strict-origin-when-cross-origin",
       "content-type" => "text/html; charset=utf-8",
