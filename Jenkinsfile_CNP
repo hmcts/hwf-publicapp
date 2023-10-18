@@ -12,9 +12,11 @@ def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 withPipeline(type, product, component) {
     env.RAILS_ENV = 'test'
     env.RACK_ENV = 'test'
+    env.TEST_BROWSER = 'chrome_local'
+    env.NODE_OPTIONS='--openssl-legacy-provider'
+    env.ENABLE_COVERAGE='true'
     // random free port should probably be used instead
     env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
-    env.ENABLE_COVERAGE='true'
 
      before('test') {
         sh script:"npm install", label: 'Start test'

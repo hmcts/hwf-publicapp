@@ -7,7 +7,7 @@ end
 
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '7.1.0'
+gem 'rails', '7.1.1'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
@@ -16,6 +16,7 @@ gem 'date_validator'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'puma'
+gem 'rack', '3.0.7'
 gem 'redis'
 gem 'rest-client'
 gem 'sass-rails'
@@ -57,10 +58,10 @@ group :test do
   gem 'rspec-rails'
   gem 'rubocop-rspec', '~> 2.16', require: false
   gem 'rubyzip'
+  gem 'selenium-webdriver', '~> 4.14'
   gem 'shoulda-matchers'
   gem 'site_prism'
   gem "test-prof", "~> 1.1"
   gem 'timecop'
-  gem 'webdrivers'
   gem 'webmock'
 end

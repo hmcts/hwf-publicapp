@@ -20,15 +20,7 @@ Bundler.require(*Rails.groups)
 
 module HwfPublicapp
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.0
 
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration can go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded after loading
-    # the framework and any gems in your application.
-
-    #### Rails 6.1
     config.i18n.available_locales = %i[en cy]
 
     if ENV['AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY'].present?
@@ -37,16 +29,9 @@ module HwfPublicapp
         ENV['AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY']
       )
     end
-
     config.app_title = 'Help with fees - MoJ'
     config.proposition_title = 'Help with fees'
     config.product_type = 'service'
-
-    # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W[#{config.root}/lib]
-
-    # Custom directory with validators
-    config.autoload_paths += Dir["#{config.root}/app/validators"]
 
     # The following values are required by the phase banner
     config.phase = 'beta'
@@ -54,11 +39,6 @@ module HwfPublicapp
 
     # When the application is finished
     config.finish_page_redirect_url = 'https://www.smartsurvey.co.uk/s/HWFExit20/'
-
-    # prevent fields being enclosed in field_with_error divs
-    config.action_view.field_error_proc = proc { |html_tag, _instance|
-      html_tag
-    }
 
     config.x.address_lookup.endpoint = ENV.fetch('ADDRESS_LOOKUP_ENDPOINT', nil)
     config.x.address_lookup.api_key = ENV.fetch('ADDRESS_LOOKUP_API_KEY', nil)
@@ -68,6 +48,26 @@ module HwfPublicapp
     config.maintenance_allowed_ips = ENV.fetch('MAINTENANCE_ALLOWED_IPS', '').split(',').map(&:strip)
     config.maintenance_end = ENV.fetch('MAINTENANCE_END', nil)
 
-    ####
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.1
+
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w[assets tasks])
+
+    # Custom directory with validators
+    config.autoload_paths += Dir["#{config.root}/app/validators"]
+
+    # Configuration for the application, engines, and railties goes here.
+    #
+    # These settings can be overridden in specific environments using the files
+    # in config/environments, which are processed later.
+    #
+    # config.time_zone = "Central Time (US & Canada)"
+    # config.eager_load_paths << Rails.root.join("extras")
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
   end
 end
