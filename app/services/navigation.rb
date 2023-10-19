@@ -15,7 +15,7 @@ class Navigation
   end
 
   def page_number
-    current_index = QuestionFormFactory::page_list.find_index(@current_question)
+    current_index = QuestionFormFactory.page_list.find_index(@current_question)
     return 0 if current_index.nil?
 
     current_index + 1
@@ -24,7 +24,7 @@ class Navigation
   private
 
   def last_question?
-    @current_question == QuestionFormFactory::page_list.last
+    @current_question == QuestionFormFactory.page_list.last
   end
 
   def next_question_id
@@ -40,8 +40,8 @@ class Navigation
   end
 
   def question_id
-    current_question_index = QuestionFormFactory::page_list.find_index(@current_question)
-    next_id = QuestionFormFactory::page_list[current_question_index + 1]
+    current_question_index = QuestionFormFactory.page_list.find_index(@current_question)
+    next_id = QuestionFormFactory.page_list[current_question_index + 1]
 
     if next_id == :probate && !enable_probate?
       :claim

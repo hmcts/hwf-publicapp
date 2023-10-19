@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def start
     storage_with_clear.start
-    redirect_to(question_path(QuestionFormFactory::page_list.first))
+    redirect_to(question_path(QuestionFormFactory.page_list.first))
   end
 
   def finish

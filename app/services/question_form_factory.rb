@@ -1,29 +1,13 @@
 class QuestionFormFactory
+  include FeatureSwitch
   class QuestionDoesNotExist < StandardError; end
 
   def self.page_list
-    %i[
-      fee
-      form_name
-      national_insurance_presence
-      national_insurance
-      home_office
-      marital_status
-      savings_and_investment
-      savings_and_investment_extra
-      benefit
-      dependent
-      income_kind
-      income_range
-      income_amount
-      probate
-      claim
-      dob
-      personal_detail
-      applicant_address
-      contact
-      apply_type
-    ]
+    if FeatureSwitch.active?('ucd_refactor')
+      Settings.navigation.ucd_refactor
+    else
+      Settings.navigation.default
+    end
   end
 
   def self.position(id)
