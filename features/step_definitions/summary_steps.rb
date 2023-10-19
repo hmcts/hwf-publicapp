@@ -66,7 +66,8 @@ Then(/^I should be taken to summary page$/) do
 end
 
 And(/^I visit the start session path$/) do
-  to_form_name
+  to_fee_page
+  fee_page.submit_fee_yes
 end
 
 Then(/^I expect to have a blank form number$/) do

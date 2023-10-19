@@ -3,7 +3,7 @@ class FormNamePage < BasePage
   set_url '/questions/form_name'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 1 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 2 of 22'
     element :header, 'h1', text: 'What number is on your court or tribunal form?'
     element :probate_warning_message, '.govuk-warning-text', text: 'Help with Fees is no longer available for probate applications.'
     element :probate_link, 'a', text: 'Find further details and apply for probate.'

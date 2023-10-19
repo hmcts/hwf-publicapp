@@ -30,7 +30,7 @@ Feature: Checklist page
 
   Scenario: Continue
     When I continue
-    Then I should be taken to form number page
+    Then I should be taken to fee page
 
   Scenario: Footer content
     Then I should see a list of seven links
