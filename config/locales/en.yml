@@ -466,7 +466,7 @@ en:
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
       hint_html: For example, 04 10 2018
-      text: Have you already paid the fee?
+      text: Have you already paid the court or tribunal fee?
       title: Refund
     form_name:
       breadcrumb: Step %{page_number} of 22
