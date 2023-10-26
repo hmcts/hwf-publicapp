@@ -10,14 +10,14 @@ class ConfirmationPage < BasePage
     element :confirmation_header_paper_two, 'h2', text: 'You have one more step to take below'
     element :confirmation_instruction_line_one, 'p', text: 'You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.'
     element :confirmation_instruction_line_two, 'p', text: 'You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.'
-    element :next_step, 'p', text: 'They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
+    element :next_step, 'p', text: 'They will contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
     element :feedback_text, 'p', text: 'After you finish your application, you are directed to an optional feedback form.'
     element :finish_application_button, 'input[value="Finish application"]'
 
     element :confirmation_header_online_one, 'h2', text: 'Your Help with Fees reference number is'
     element :confirmation_header_online_two, 'h2', text: 'You have one more step to take below'
     element :confirmation_instruction_online, 'p', text: 'You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.'
-    element :next_step_online, 'p', text: 'They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
+    element :next_step_online, 'p', text: 'They will contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.'
   end
 
   def submit
