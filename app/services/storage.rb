@@ -17,6 +17,14 @@ class Storage
     @session[:started_at] = Time.zone.now
   end
 
+  def save_calculation_scheme(scheme)
+    @session[:calculation_scheme] = scheme
+  end
+
+  def load_calculation_scheme
+    @session[:calculation_scheme]
+  end
+
   def started?
     @session[:started_at].present?
   end

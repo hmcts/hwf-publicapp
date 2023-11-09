@@ -2,11 +2,11 @@ class QuestionFormFactory
   include FeatureSwitch
   class QuestionDoesNotExist < StandardError; end
 
-  def self.page_list
-    if FeatureSwitch.active?('ucd_refactor')
-      Settings.navigation.ucd_refactor
+  def self.page_list(calculation_scheme)
+    if calculation_scheme
+      Settings.navigation.post_ucd_changes
     else
-      Settings.navigation.default
+      Settings.navigation.pre_ucd_changes
     end
   end
 
@@ -14,8 +14,8 @@ class QuestionFormFactory
     page_list.index(id)
   end
 
-  def self.get_form(id)
-    raise QuestionDoesNotExist unless page_list.include?(id)
+  def self.get_form(id, calculation_scheme)
+    raise QuestionDoesNotExist unless page_list(calculation_scheme).include?(id)
 
     class_name = "Forms::#{form_class_name(id)}".constantize
     class_name.new

@@ -9,10 +9,10 @@ class OnlineApplicationBuilder
   private
 
   def build_application
+    calculation_scheme = @storage.load_calculation_scheme
     @online_application = OnlineApplication.new
-
-    QuestionFormFactory.page_list.each do |question|
-      form = QuestionFormFactory.get_form(question)
+    QuestionFormFactory.page_list(calculation_scheme).each do |question|
+      form = QuestionFormFactory.get_form(question, calculation_scheme)
       @storage.load_form(form)
       @online_application.attributes = form.export
     end

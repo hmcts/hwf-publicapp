@@ -33,9 +33,9 @@ maintenance:
 mail:
   help_me: <%= ENV['HELP_ME_EMAIL'] %>
 navigation:
-  default:
-    - :form_name
+  pre_ucd_changes:
     - :fee
+    - :form_name
     - :national_insurance_presence
     - :national_insurance
     - :home_office
@@ -54,7 +54,7 @@ navigation:
     - :applicant_address
     - :contact
     - :apply_type
-  ucd_refactor:
+  post_ucd_changes:
     - :fee
     - :form_name
     - :national_insurance_presence
@@ -81,3 +81,5 @@ feature_switching:
     enabled: true
   - feature_key: "band test"
     enabled: false
+legislation_work:
+  active_date: <%= ENV['NEW_LEGISLATION_ACTIVE_DATE'] || '27-10-2023' %>
