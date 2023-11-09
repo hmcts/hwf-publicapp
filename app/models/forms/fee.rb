@@ -66,7 +66,7 @@ module Forms
     end
 
     def assign_calculation_scheme
-      if FeatureSwitch::subject_to_new_legislation?(received_and_refund_data)
+      if FeatureSwitch.subject_to_new_legislation?(received_and_refund_data)
         FeatureSwitch::CALCULATION_SCHEMAS[1]
       else
         FeatureSwitch::CALCULATION_SCHEMAS[0]
@@ -74,7 +74,7 @@ module Forms
     end
 
     def received_and_refund_data
-      { refund: paid, date_fee_paid: fee_dates_paid, date_received: Date.today }
+      { refund: paid, date_fee_paid: fee_dates_paid, date_received: Time.zone.today }
     end
   end
 end

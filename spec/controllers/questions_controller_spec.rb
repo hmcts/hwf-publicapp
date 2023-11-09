@@ -18,8 +18,7 @@ RSpec.describe QuestionsController do
     allow(controller).to receive_messages(session: session, online_application: online_application)
     allow(Storage).to receive(:new).with(session).and_return(storage)
     allow(Views::QuestionTitle).to receive(:new).with(form, online_application).and_return(question_title_view)
-    allow(storage).to receive(:load_calculation_scheme).and_return ''
-    allow(storage).to receive(:save_calculation_scheme).and_return ''
+    allow(storage).to receive_messages(load_calculation_scheme: '', save_calculation_scheme: '')
   end
 
   describe 'GET #edit' do
