@@ -23,6 +23,7 @@ class OnlineApplication
   attribute :ni_number, String
   attribute :ho_number, String
   attribute :date_of_birth, Date
+  attribute :partner_date_of_birth, Date
   attribute :title, String
   attribute :first_name, String
   attribute :last_name, String

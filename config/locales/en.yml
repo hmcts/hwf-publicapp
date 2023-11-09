@@ -56,6 +56,9 @@ en:
         day: Day
         month: Month
         year: Year
+        partner_day: Day
+        partner_month: Month
+        partner_year: Year
       forms/personal_detail:
         first_name: First name
         last_name: Last name
@@ -123,6 +126,12 @@ en:
         forms/dob:
           attributes:
             date_of_birth:
+              not_a_date: Enter the date in this format DD/MM/YYYY
+              not_a_number: Enter a valid date
+              too_old: Check this date of birth is correct
+              too_young: You must be over %{minimum_age} to use this service
+              not_over_61: Enter date of birth for age above 61 (as stated in step 8 of 22)
+            partner_date_of_birth:
               not_a_date: Enter the date in this format DD/MM/YYYY
               not_a_number: Enter a valid date
               too_old: Check this date of birth is correct
@@ -459,6 +468,12 @@ en:
       hint_html: For example, 04 10 1990
       text: What is your date of birth?
       title: Date of birth
+      applicant: Your date of birth
+      partner: Your partner's date of birth
+      detail_title: Why do we ask for this?
+      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+    dob_married:
+      text: What are you and your partner’s date of birth
     fee:
       breadcrumb: Step %{page_number} of 22
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.

@@ -3,6 +3,51 @@ require 'rails_helper'
 RSpec.describe Forms::Dob do
   subject(:form_dob) { described_class.new }
 
+  context 'partner' do
+    describe 'validations' do
+      before do
+        form_dob.day = '23'
+        form_dob.month = '01'
+        form_dob.year = '1980'
+        form_dob.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        form_dob.is_married = true
+      end
+
+      it { expect(form_dob.valid?).to be false }
+
+      context 'valid dobs' do
+        before do
+          form_dob.partner_day = '23'
+          form_dob.partner_month = '01'
+          form_dob.partner_year = '1980'
+        end
+
+        it { expect(form_dob.valid?).to be true }
+      end
+
+      context 'blank dobs' do
+        before do
+          form_dob.partner_day = '23'
+          form_dob.partner_month = ''
+          form_dob.partner_year = '1980'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'too old dobs' do
+        before do
+          form_dob.partner_day = '23'
+          form_dob.partner_month = ''
+          form_dob.partner_year = '1900'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+    end
+  end
+
   describe 'validations' do
     describe 'date_of_birth' do
       context 'when not blank' do
