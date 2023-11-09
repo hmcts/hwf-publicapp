@@ -33,7 +33,7 @@ maintenance:
 mail:
   help_me: <%= ENV['HELP_ME_EMAIL'] %>
 navigation:
-  default:
+  old_default:
     - :form_name
     - :fee
     - :national_insurance_presence
@@ -54,7 +54,28 @@ navigation:
     - :applicant_address
     - :contact
     - :apply_type
-  ucd_refactor:
+  pre_ucd_changes:
+    - :fee
+    - :form_name
+    - :national_insurance_presence
+    - :national_insurance
+    - :home_office
+    - :marital_status
+    - :savings_and_investment
+    - :savings_and_investment_extra
+    - :benefit
+    - :dependent
+    - :income_kind
+    - :income_range
+    - :income_amount
+    - :probate
+    - :claim
+    - :dob
+    - :personal_detail
+    - :applicant_address
+    - :contact
+    - :apply_type
+  post_ucd_changes:
     - :fee
     - :form_name
     - :national_insurance_presence
@@ -81,3 +102,5 @@ feature_switching:
     enabled: true
   - feature_key: "band test"
     enabled: false
+legislation_work:
+  active_date: <%= ENV['NEW_LEGISLATION_ACTIVE_DATE'] || '27-10-2023' %>

@@ -27,6 +27,7 @@ node_modules
 .idea/
 
 **/.DS_Store
+dump.rdb
 
 
 .generators
