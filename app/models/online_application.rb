@@ -27,6 +27,8 @@ class OnlineApplication
   attribute :title, String
   attribute :first_name, String
   attribute :last_name, String
+  attribute :partner_first_name, String
+  attribute :partner_last_name, String
   attribute :address, String
   attribute :street, String
   attribute :town, String

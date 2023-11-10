@@ -1,13 +1,45 @@
 require 'rails_helper'
 
 RSpec.describe Forms::PersonalDetail do
-  subject(:form) { described_class.new(title: title, first_name: first_name, last_name: last_name) }
+  subject(:form) { described_class.new(title: title, first_name: first_name, last_name: last_name,
+    partner_first_name: partner_first_name, partner_last_name: partner_last_name) }
 
   let(:title) { 'TITLE' }
   let(:first_name) { 'FIRST NAME' }
   let(:last_name) { 'LAST NAME' }
+  let(:partner_first_name) { '' }
+  let(:partner_last_name) { '' }
 
   describe 'validations' do
+    context 'ucd changes and married' do
+      before do
+        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        form.is_married = true
+      end
+
+      context 'when title is blank' do
+        let(:partner_first_name) { 'first name' }
+        let(:partner_last_name) { 'LAST NAME' }
+
+        let(:title) { nil }
+
+        it { is_expected.to be_valid }
+      end
+
+      context 'partner first_name blank' do
+        let(:partner_first_name) { '' }
+        let(:partner_last_name) { 'LAST NAME' }
+
+        it { is_expected.not_to be_valid }
+      end
+      context 'partner last_name blank' do
+        let(:partner_first_name) { '' }
+        let(:partner_last_name) { 'LAST NAME' }
+
+        it { is_expected.not_to be_valid }
+      end
+    end
+
     describe 'title' do
       context 'when more than 9 characters long' do
         let(:title) { 'f' * 10 }

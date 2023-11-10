@@ -29,6 +29,8 @@ module ApplicationHelper
     case scope
     when 'questions.dob'
       dob_postfix(online_application)
+    when 'questions.personal_detail'
+      personal_detail_postfix(online_application)
     when 'questions.savings_and_investment'
       savings_postfix(online_application)
     else
@@ -58,6 +60,14 @@ module ApplicationHelper
       "questions.dob_married" if online_application.married?
     else
       'questions.dob'
+    end
+  end
+
+  def personal_detail_postfix(online_application)
+    if ucd_changes_apply?(online_application.calculation_scheme) && online_application.married?
+      "questions.personal_detail_married" if online_application.married?
+    else
+      'questions.personal_detail'
     end
   end
 end
