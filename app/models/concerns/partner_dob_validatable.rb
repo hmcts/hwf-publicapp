@@ -5,7 +5,6 @@ module PartnerDobValidatable
     concat_partner_dob_dates
     @partner_date_of_birth = concat_partner_dob_dates.to_date
   rescue ArgumentError
-    errors.add(:partner_date_of_birth, :not_a_date)
     @partner_date_of_birth = concat_partner_dob_dates
   end
 
@@ -15,6 +14,7 @@ module PartnerDobValidatable
 
   def partner_dob_age_valid?
     if errors.messages.key?(:partner_date_of_birth) || blank_partner_dates?
+
       return errors.add(:partner_date_of_birth,
                         :not_a_date)
     end
