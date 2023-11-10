@@ -46,6 +46,10 @@ class OnlineApplication
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
   end
 
+  def partner_full_name
+    %i[partner_first_name partner_last_name].filter_map { |field| send(field) }.join(' ')
+  end
+
   def savings_and_investment_extra_required?
     min_threshold_exceeded? && !max_threshold_exceeded?
   end

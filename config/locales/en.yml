@@ -744,6 +744,7 @@ en:
       contact_phone: Phone
       contact_post: Post
       date_of_birth: Date of birth
+      partner_date_of_birth: Partner's date of birth
       date_of_death: Date of death
       deceased_name: Name of deceased
       fee: Fee paid
@@ -756,7 +757,8 @@ en:
       ni_number: National Insurance number
       ni_number_no: 'No'
       ho_number: Home Office reference number
-      personal: Full name
+      applicant_name: Full name
+      partner_name: Partner’s full name
       probate: Probate case
       savings: Savings and investments
       title: Check details

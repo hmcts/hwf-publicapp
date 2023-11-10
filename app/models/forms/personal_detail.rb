@@ -17,6 +17,16 @@ module Forms
 
     def export_params
       trim_whitespace
+      details = applicant_name
+
+      if partner?
+        details[:partner_first_name] = partner_first_name
+        details[:partner_last_name] = partner_last_name
+      end
+      details
+    end
+
+    def applicant_name
       {
         title: title,
         first_name: first_name,
@@ -27,6 +37,8 @@ module Forms
     def trim_whitespace
       self.first_name = first_name.strip if first_name
       self.last_name = last_name.strip if last_name
+      self.partner_first_name = partner_first_name.strip if partner_first_name
+      self.partner_last_name = partner_last_name.strip if partner_last_name
     end
 
     def partner?

@@ -23,6 +23,7 @@ module ApplicationHelper
     record.send(:street).present?
   end
 
+  # rubocop:disable Metrics/MethodLength
   def title_scope(scope, online_application)
     return scope if online_application.blank?
 
@@ -37,6 +38,7 @@ module ApplicationHelper
       scope
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def date_formatter(date_value)
     return if date_value.blank?
