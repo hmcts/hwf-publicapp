@@ -758,6 +758,7 @@ en:
       ni_number_no: 'No'
       ho_number: Home Office reference number
       applicant_name: Full name
+      personal: full name
       partner_name: Partner’s full name
       probate: Probate case
       savings: Savings and investments
