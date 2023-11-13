@@ -1,3 +1,23 @@
+p.govuk-body = t('header', scope:"#{@form.i18n_scope}.list")
+
+ul.govuk-list.govuk-list--bullet
+  li
+    = t('point_1', scope: "#{@form.i18n_scope}.list")
+  li
+    = t('point_2', scope: "#{@form.i18n_scope}.list")
+  li
+    = t('point_3', scope: "#{@form.i18n_scope}.list")
+  li
+    = t('point_4', scope: "#{@form.i18n_scope}.list")
+  li
+    = t('point_5', scope: "#{@form.i18n_scope}.list")
+  li
+    = t('point_6', scope: "#{@form.i18n_scope}.list")
+  li
+    = t('point_7', scope: "#{@form.i18n_scope}.list")
+
+p.govuk-body = t('text', scope: "#{@form.i18n_scope}.list") if @online_application.married
+
 .govuk-form-group id='savings_and_investment_choice' class=('govuk-form-group--error' if @form.errors.any?)
   = f.hidden_field :choice, value: nil
   - if @form.errors.any?
@@ -20,14 +40,10 @@ details.govuk-details data-module="govuk-details"
     h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
     ul.govuk-list.govuk-list--bullet
       li = t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
-      li = t('item_2', scope: "#{@form.i18n_scope}.details.section_1")
+      - if @online_application.married
+        li = t('item_2', scope: "#{@form.i18n_scope}.details.section_1")
       li = t('item_3', scope: "#{@form.i18n_scope}.details.section_1")
       li = t('item_4', scope: "#{@form.i18n_scope}.details.section_1")
-      li = t('item_5', scope: "#{@form.i18n_scope}.details.section_1")
-      li = t('item_6', scope: "#{@form.i18n_scope}.details.section_1")
-      li = t('item_7', scope: "#{@form.i18n_scope}.details.section_1")
-      li = t('item_8', scope: "#{@form.i18n_scope}.details.section_1")
-    p = t('p_1', scope: "#{@form.i18n_scope}.details.section_1")
 
     h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
     ul.govuk-list.govuk-list--bullet
@@ -41,3 +57,11 @@ details.govuk-details data-module="govuk-details"
       li = t('item_8', scope: "#{@form.i18n_scope}.details.section_2")
       li = t('item_9', scope: "#{@form.i18n_scope}.details.section_2")
       li = t('item_10', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_11', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_12', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_13', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_14', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_15', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_16', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_17', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_18', scope: "#{@form.i18n_scope}.details.section_2")
