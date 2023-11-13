@@ -132,77 +132,74 @@ RSpec.describe Storage do
     end
   end
 
-  describe '#save_form' do
+  context 'questions' do
     let(:id) { 'ID' }
-    let(:json_data) { { some: 'data' } }
-
-    let(:session) { {} }
-    let(:form) { instance_double(Forms::Benefit, id: id, as_json: json_data) }
+    let(:rails_store) { Rails.cache }
+    let(:session) { instance_double(ActionDispatch::Request::Session, id: id) }
 
     before do
+      allow(session).to receive(:[]).with(:started_at).and_return ''
+      allow(session).to receive(:[]=)
       storage.save_form(form)
     end
 
-    it 'sets the json data to the session' do
-      expect(session['questions'][id]).to eql(json_data)
-    end
-  end
+    describe '#save_form' do
+      let(:json_data) { { some: 'data' } }
+      let(:form) { instance_double(Forms::Benefit, id: id, as_json: json_data) }
 
-  describe '#load_form' do
-    let(:id) { 'ID' }
-    let(:json_data) { { some: 'data' } }
+      before { storage.save_form(form) }
 
-    let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
-
-    before do
-      storage.load_form(form)
-    end
-
-    context 'when the data with the form id is in the session' do
-      let(:session) { { 'questions' => { id => json_data } } }
-
-      it 'updates the form with the data' do
-        expect(form).to have_received(:update_attributes).with(json_data)
+      it 'sets the json data to the session' do
+        question = rails_store.read("questions-#{session.id}-#{form.id}")
+        expect(question).to eql(json_data)
       end
     end
 
-    context 'when there is no data with the form id in the session' do
-      let(:session) { { 'questions' => {} } }
+    describe '#load_form' do
+      let(:json_data) { { some: 'data' } }
 
-      it 'updates the form with an empty hash' do
-        expect(form).to have_received(:update_attributes).with({})
+      let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
+
+      before do
+        rails_store.write("questions-#{id}-#{form.id}", json_data)
+      end
+
+      context 'when the data with the form id is in the session' do
+        it 'updates the form with the data' do
+          storage.load_form(form)
+          expect(form).to have_received(:update_attributes).with(json_data)
+        end
+      end
+
+      context 'when there is no data with the form id in the session' do
+        it 'updates the form with an empty hash' do
+          form_2 = instance_double(Forms::Benefit, id: 1, update_attributes: nil)
+          storage.load_form(form_2)
+          expect(form_2).to have_received(:update_attributes).with({})
+        end
       end
     end
-  end
 
-  describe '#clear_form' do
-    let(:questions) { { 'existing' => 'SOME_ANSWER' } }
-    let(:session) { { 'questions' => questions } }
+    describe '#clear_form' do
+      let(:json_data) { { some: 'data' } }
+      let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
 
-    before do
-      storage.clear_form(form_id)
-    end
-
-    context 'when there is a question stored with that id' do
-      let(:form_id) { :existing }
-
-      it 'removes the question from the session' do
-        expect(session['questions']).not_to have_key('existing')
+      before do
+        rails_store.write("questions-#{id}-#{form.id}", json_data)
+        storage.clear_form(form.id)
       end
-    end
 
-    context 'when there is no question stored with that id' do
-      let(:form_id) { :non_existing }
-
-      it 'does not remove anything from the session' do
-        expect(session['questions']).to eql(questions)
+      context 'when there is a question stored with that id' do
+        it 'removes the question from the session' do
+          question = rails_store.read("questions-#{id}-#{form.id}")
+          expect(question).to be_nil
+        end
       end
     end
   end
 
   describe '#submission_result=' do
     let(:result) { double }
-
     let(:session) { {} }
 
     before do
