@@ -639,8 +639,8 @@ en:
       title: Probate
     savings_and_investment_ucd:
       breadcrumb: Step %{page_number} of 22
-      less: "Less than £4,250"
-      between: "£4,250 to £15,999"
+      less: "£0 to £2,999"
+      between: "£3,000 to £15,999"
       more: "£16,000 or more"
       subtext_married: Tell us how much you and your partner have in savings and investments.
       subtext_single: Tell us how much you have in savings and investments.
@@ -691,7 +691,7 @@ en:
           item_18: We Love Manchester Emergency Fund payments
         summary: What not to include in savings and investments
     savings_and_investment:
-      between: "between £4,250 and £15,999"
+      between: "£3,000 to £15,999"
       breadcrumb: Step %{page_number} of 22
       details:
         section_1:
@@ -721,7 +721,7 @@ en:
           item_17: Victim of Overseas Terrorism Compensation Scheme
           item_18: We Love Manchester Emergency Fund payments
         summary: What not to include in savings and investments
-      less: "less than £4,250"
+      less: "£0 to £2,999"
       more: "£16,000 or more"
       subtext_married: Tell us how much you and your partner have in savings and investments.
       subtext_single: Tell us how much you have in savings and investments.
