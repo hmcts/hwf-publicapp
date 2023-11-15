@@ -29,17 +29,16 @@ module ApplicationHelper
     scope_postfix = []
     case scope
     when 'questions.savings_and_investment'
-      scope_postfix << (online_application.married? ? 'married' : 'single')
+      scope_postfix << (online_application.married? ? '_married' : '_single')
       scope_postfix << (online_application.refund? ? 'refund' : nil)
       scope_postfix << (ucd_changes_apply?(@online_application.calculation_scheme) ? 'ucd' : nil)
-      "questions.savings_and_investment_#{scope_postfix.compact.join('_')}"
+      "questions.savings_and_investment#{scope_postfix.compact.join('_')}"
     when 'questions.savings_and_investment_extra'
       scope_postfix << (ucd_changes_apply?(@online_application.calculation_scheme) ? '_ucd' : nil)
       "questions.savings_and_investment_extra#{scope_postfix.compact.join('_')}"
     when 'questions.marital_status'
       scope_postfix << (ucd_changes_apply?(@online_application.calculation_scheme) ? '_ucd' : nil)
       "questions.marital_status#{scope_postfix.compact.join('_')}"
-      # statement_signed_by
     else
       scope
     end
@@ -48,7 +47,6 @@ module ApplicationHelper
   def ucd_changes_apply?(calculation_scheme)
     return FeatureSwitch.active?(:band_calculation) if calculation_scheme.blank?
     calculation_scheme == FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
-    false
   end
 
   def date_formatter(date_value)
