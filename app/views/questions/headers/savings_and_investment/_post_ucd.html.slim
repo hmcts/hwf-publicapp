@@ -1,0 +1,11 @@
+- if @online_application.married?
+  - if @online_application.refund?
+    div.govuk-hint =t('subtext_married_refund', scope:"#{@form.i18n_scope}_ucd")
+  - else
+    div.govuk-hint =t('subtext_married', scope:"#{@form.i18n_scope}_ucd")
+
+- else
+  - if @online_application.refund?
+    div.govuk-hint =t('subtext_single_refund', scope:"#{@form.i18n_scope}_ucd")
+  - else
+    div.govuk-hint =t('subtext_single', scope:"#{@form.i18n_scope}_ucd")

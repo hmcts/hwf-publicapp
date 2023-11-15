@@ -1,0 +1,32 @@
+.govuk-form-group id='marital_status_married' class=('govuk-form-group--error' if @form.errors.any?)
+  = f.hidden_field :married, value: nil
+  - if @form.errors.any?
+    span.govuk-error-message#married = @form.errors[:married].join(' ')
+  .govuk-form-group.govuk-radios
+    .govuk-radios__item
+      = f.radio_button :married, 'false', class: 'govuk-radios__input'
+      = f.label t('married_false', scope: @form.i18n_scope), for: 'marital_status_married_false', class: 'govuk-label govuk-radios__label'
+    .govuk-radios__item
+      = f.radio_button :married, 'true', class: 'govuk-radios__input'
+      = f.label t('married_true', scope: @form.i18n_scope), for: 'marital_status_married_true', class: 'govuk-label govuk-radios__label'
+
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary =t('details.summary', scope: @form.i18n_scope)
+
+  .govuk-details__text
+    .govuk-body
+      h2.govuk-heading-s =t('heading', scope: "#{@form.i18n_scope}.details.section_1")
+      ul.govuk-list.govuk-list--bullet
+        li =t('item_1', scope: 'questions.marital_status.details.section_1')
+        li =t('item_2', scope: 'questions.marital_status.details.section_1')
+        li =t('item_3', scope: 'questions.marital_status.details.section_1')
+        li =t('item_4', scope: 'questions.marital_status.details.section_1')
+        li =t('item_5', scope: 'questions.marital_status.details.section_1')
+
+      h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
+      ul.govuk-list.govuk-list--bullet
+        li = t('item_1', scope: 'questions.marital_status.details.section_2')
+        li = t('item_2', scope: 'questions.marital_status.details.section_2')
+        li = t('item_3', scope: 'questions.marital_status.details.section_2')
+        li = t('item_4', scope: 'questions.marital_status.details.section_2')
+        li = t('item_5', scope: 'questions.marital_status.details.section_2')

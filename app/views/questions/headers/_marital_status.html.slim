@@ -1,1 +1,4 @@
-div.govuk-hint =t('example', scope: @form.i18n_scope)
+- if ucd_changes_apply?(@online_application.calculation_scheme)
+  = render("questions/headers/marital_status/post_ucd")
+- else
+  = render("questions/headers/marital_status/pre_ucd")
