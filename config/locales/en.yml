@@ -483,7 +483,7 @@ en:
       detail_title: Why do we ask for this?
       detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
     dob_married:
-      text: What are you and your partner’s date of birth
+      text: What are you and your partner’s dates of birth
     fee:
       breadcrumb: Step %{page_number} of 22
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
