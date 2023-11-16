@@ -3,6 +3,8 @@ module Forms
     include Virtus.model(nullify_blank: true)
     include ActiveModel::Model
 
+    attribute :calculation_scheme, String
+
     def i18n_scope
       "questions.#{id}"
     end
@@ -48,6 +50,10 @@ module Forms
 
     def export_params
       raise NotImplementedError
+    end
+
+    def ucd_changes_apply?
+      FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == calculation_scheme
     end
   end
 end

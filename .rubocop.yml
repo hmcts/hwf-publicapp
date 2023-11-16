@@ -229,6 +229,9 @@ Capybara/CurrentPathExpectation:
 
 RSpec/ContextWording:
   Enabled: false
+RSpec/RepeatedExampleGroupBody:
+  Enabled: false
+
 
 # NEW COPS afer update to 1.15
 
