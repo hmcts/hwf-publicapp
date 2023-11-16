@@ -178,6 +178,24 @@ en:
               blank: Please enter the address
             legal_representative_organisation_name:
               invalid_name: Must not contain special characters
+            street:
+              blank: Enter your house number and street
+              too_long: Street must be less than 100 characters
+              invalid_name: Must not contain special characters
+            postcode:
+              blank: Enter your postcode
+              too_long: Postcode must be less than 10 characters
+              invalid_name: Must not contain special characters
+            town:
+              blank: Enter your town or city
+              too_long: Town must be less than 50 characters
+              invalid_name: Must not contain special characters
+        forms/over16:
+          attributes:
+            over_16:
+              inclusion: Select whether person you're applying on behalf is over 16
+
+
         forms/help_request:
           attributes:
             description:
@@ -562,7 +580,14 @@ en:
 
     legal_representative_detail_friend:
       text: Enter the litigation friend details
-      title: Enter the litigation friend details
+
+    over16:
+      title: Is the person you are applying for over 16?
+      breadcrumb: Step %{page_number} of 22
+      text: Is the person you are applying for over 16?
+      over_16_true: 'Yes'
+      over_16_false: 'No'
+
 
     income_amount:
       prompt: Enter the total monthly amount you receive in income.

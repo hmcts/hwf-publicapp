@@ -48,10 +48,10 @@ class OnlineApplication
   attribute :legal_representative_email, String
   attribute :legal_representative_organisation_name, String
   attribute :legal_representative_feedback_opt_in, Boolean
-
   attribute :legal_representative_street, String
   attribute :legal_representative_postcode, String
   attribute :legal_representative_town, String
+  attribute :over_16, Boolean
 
 
   def full_name

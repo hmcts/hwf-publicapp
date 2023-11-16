@@ -81,6 +81,7 @@ navigation:
     - :applying_on_behalf
     - :legal_representative
     - :legal_representative_detail
+    - :over_16
     - :national_insurance_presence
     - :national_insurance
     - :home_office

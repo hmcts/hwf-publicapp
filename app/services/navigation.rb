@@ -38,7 +38,9 @@ class Navigation
       @after_savings
     elsif ni_related_question?
       @ni_next_page
-    elsif skip_legal_representative?
+    elsif legal_representative?
+      @next_page
+    elsif over_16?
       @next_page
     else
       question_id
@@ -120,9 +122,22 @@ class Navigation
     @online_application.refund?
   end
 
-  def skip_legal_representative?
-    return false if @online_application.applying_on_behalf
-    @next_page = :national_insurance_presence
+  def legal_representative?
+    return nil if @current_question != :applying_on_behalf
+    @next_page = if @online_application.applying_on_behalf
+      :legal_representative
+    else
+      :national_insurance_presence
+    end
+  end
+
+  def over_16?
+    return nil if @current_question != :over_16
+    @next_page = if @online_application.over_16
+      :national_insurance_presence
+    else
+      :savings_and_investment
+    end
   end
 
 end
