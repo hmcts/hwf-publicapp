@@ -53,7 +53,6 @@ class OnlineApplication
   attribute :legal_representative_town, String
   attribute :over_16, Boolean
 
-
   def full_name
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
   end

@@ -77,6 +77,7 @@ module ApplicationHelper
 
   def legal_representative_detail_postfix(online_application)
     return 'questions.legal_representative_detail_friend' if online_application.legal_representative == 'litigation_friend'
+
     'questions.legal_representative_detail'
   end
 

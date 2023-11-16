@@ -123,21 +123,23 @@ class Navigation
   end
 
   def legal_representative?
-    return nil if @current_question != :applying_on_behalf
+    return false if @current_question != :applying_on_behalf
+
     @next_page = if @online_application.applying_on_behalf
-      :legal_representative
-    else
-      :national_insurance_presence
-    end
+                   :legal_representative
+                 else
+                   :national_insurance_presence
+                 end
   end
 
   def over_16?
-    return nil if @current_question != :over_16
+    return false if @current_question != :over_16
+
     @next_page = if @online_application.over_16
-      :national_insurance_presence
-    else
-      :savings_and_investment
-    end
+                   :national_insurance_presence
+                 else
+                   :savings_and_investment
+                 end
   end
 
 end

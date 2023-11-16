@@ -195,6 +195,7 @@ RSpec.describe Navigation do
         expect(subject).to eql(question_path(:dependent, locale: :en))
       end
     end
+
     context 'ucd' do
       context 'when the applying on behalf of someone else' do
         let(:online_application) { build(:online_application, applying_on_behalf: false) }
