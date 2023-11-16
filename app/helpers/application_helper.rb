@@ -23,30 +23,47 @@ module ApplicationHelper
     record.send(:street).present?
   end
 
+  # rubocop:disable Metrics/MethodLength
   def title_scope(scope, online_application)
     return scope if online_application.blank?
 
-    scope_postfix = []
     case scope
     when 'questions.savings_and_investment'
-      scope_postfix << (online_application.married? ? '_married' : '_single')
-      scope_postfix << (online_application.refund? ? 'refund' : nil)
-      scope_postfix << (ucd_changes_apply?(@online_application.calculation_scheme) ? 'ucd' : nil)
-      "questions.savings_and_investment#{scope_postfix.compact.join('_')}"
+      savings_postfix(online_application)
     when 'questions.savings_and_investment_extra'
-      scope_postfix << (ucd_changes_apply?(@online_application.calculation_scheme) ? '_ucd' : nil)
-      "questions.savings_and_investment_extra#{scope_postfix.compact.join('_')}"
+      savings_extra_postfix(online_application)
     when 'questions.marital_status'
-      scope_postfix << (ucd_changes_apply?(@online_application.calculation_scheme) ? '_ucd' : nil)
-      "questions.marital_status#{scope_postfix.compact.join('_')}"
+      marital_status_postfix(online_application)
     else
       scope
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def ucd_changes_apply?(calculation_scheme)
     return FeatureSwitch.active?(:band_calculation) if calculation_scheme.blank?
+
     calculation_scheme == FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
+  end
+
+  def savings_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (online_application.married? ? '_married' : '_single')
+    scope_postfix << (online_application.refund? ? 'refund' : nil)
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? 'ucd' : nil)
+    "questions.savings_and_investment#{scope_postfix.compact.join('_')}"
+  end
+
+  def savings_extra_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
+    "questions.savings_and_investment_extra#{scope_postfix.compact.join('_')}"
+  end
+
+  def marital_status_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
+    "questions.marital_status#{scope_postfix.compact.join('_')}"
   end
 
   def date_formatter(date_value)

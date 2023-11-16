@@ -5,12 +5,12 @@ Given(/^I am on the marital status page$/) do
   expect(marital_status_page.content).to have_subheader
   expect(marital_status_page.content).to have_single_header
   expect(marital_status_page.content).to have_married_header
-  expect(marital_status_page.content).to have_single_point1
-  expect(marital_status_page.content).to have_single_point2
-  expect(marital_status_page.content).to have_single_point3
-  expect(marital_status_page.content).to have_married_point1
-  expect(marital_status_page.content).to have_married_point2
-  expect(marital_status_page.content).to have_married_point3
+  expect(marital_status_page.content).to have_single_point_1
+  expect(marital_status_page.content).to have_single_point_2
+  expect(marital_status_page.content).to have_single_point_3
+  expect(marital_status_page.content).to have_married_point_1
+  expect(marital_status_page.content).to have_married_point_2
+  expect(marital_status_page.content).to have_married_point_3
 end
 
 When(/^I submit the form as single$/) do
