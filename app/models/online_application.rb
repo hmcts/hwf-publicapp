@@ -41,6 +41,7 @@ class OnlineApplication
   attribute :feedback_opt_in, Boolean
   attribute :applying_method, String
   attribute :calculation_scheme, String
+  attribute :applying_on_behalf, Boolean
 
   def full_name
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')

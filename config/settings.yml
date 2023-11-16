@@ -78,6 +78,9 @@ navigation:
   post_ucd_changes:
     - :fee
     - :form_name
+    - :applying_on_behalf
+    - :legal_representative
+    - :legal_representative_detail
     - :national_insurance_presence
     - :national_insurance
     - :home_office

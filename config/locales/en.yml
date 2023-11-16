@@ -154,6 +154,10 @@ en:
               blank: Enter a valid form number or select 'I don't have a form'
               too_long: The form number must be less than 50 characters
               invalid: You entered the help with fees form number. Enter the number on your court or tribunal form.
+        forms/applying_on_behalf:
+          attributes:
+            applying_on_behalf:
+              inclusion: Select whether you're applying on behalf of someone else
         forms/help_request:
           attributes:
             description:
@@ -504,6 +508,14 @@ en:
       text: What number is on your court or tribunal form?
       title: Form number
       unknown: I don’t have a form
+    applying_on_behalf:
+      title: Are you applying on behalf of someone else?
+      breadcrumb: Step %{page_number} of 22
+      text: Is the application on behalf of someone else?
+      details: Is the application on behalf of someone else?
+      inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
+      applying_on_behalf_false: 'No'
+      applying_on_behalf_true: 'Yes'
     income_amount:
       prompt: Enter the total monthly amount you receive in income.
       amount:
