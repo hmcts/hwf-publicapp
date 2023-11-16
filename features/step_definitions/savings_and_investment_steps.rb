@@ -3,7 +3,7 @@ Given(/^I am a single person on the savings and investments page$/) do
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header
-  expect(savings_investment_page.content).to have_hint_text
+  expect(savings_investment_page.content).to have_single_reminder
 end
 
 Given(/^I am a married person on the savings and investments page$/) do
@@ -26,8 +26,8 @@ When(/^I submit the form with £16,000 or more checked$/) do
   savings_investment_page.high_amount_checked
 end
 
-Then(/^I should see help with savings and investments copy$/) do
-  expect(savings_investment_page.content).to have_help_text
+Then(/^I should see include with savings and investments copy$/) do
+  expect(savings_investment_page.content).to have_include_text
 end
 
 Then(/^I should be taken to benefits page$/) do

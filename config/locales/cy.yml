@@ -568,6 +568,26 @@ cy:
       married_true: Priod neu'n byw gyda rhywun ac yn rhannu incwm
       text: Ydych chi'n sengl, yn briod neu'n byw gyda rhywun ac yn rhannu incwm?
       title: Eich statws priodasol
+    marital_status_ucd:
+      breadcrumb: Cam %{page_number} o 22
+      section_1:
+        header: 'Dewiswch ‘Sengl’:'
+        point_1: os ydych chi’n byw ar eich pen eich hun ac yn dibynnu ar eich incwm chi yn unig gyda neu heb blant dibynnol, neu
+        point_2: rydych wedi gwahanu’n barhaol ac rydych efallai yn y broses o wneud cais am ysgariad, diddymiad neu ddirymiad ac nid ydych yn byw gyda phartner newydd, neu
+        point_3: mae gennych bartner, ond mae ganddynt fudd sy’n gwrthdaro yn yr achos dan sylw
+      section_2:
+        header: 'Dewiswch ’Wedi priodi neu’n byw â rhywun’:'
+        point_1: os ydych chi wedi priodi neu mewn partneriaeth sifil neu
+        point_2: rydych yn cyd-fyw fel pe baech wedi priodi neu mewn partneriaeth sifil neu
+        point_3: mae’n rhaid i chi fyw ar wahân, er enghraifft, mae un neu’r ddau ohonoch yn y Lluoedd Arfog, yn y carchar neu’n byw mewn gofal preswyl
+      details:
+        summary: Pam ydym yn gofyn am eich statws perthynas?
+        text: Os ydych yn un rhan o gwpl, mae Help i Dalu Ffioedd yn seiliedig ar eich incwm ar y cyd oni bai bod yna fudd sy’n gwrthdaro
+      married_false: Single
+      married_true: Wedi priodi neu’n byw â rhywun
+      text: Statws perthynas
+      title: Your marital status
+      subheader: A ydych chi’n sengl, wedi priodi neu’n byw â rhywun?
     national_insurance_presence:
       breadcrumb: Cam %{page_number} o 22
       details:
@@ -617,6 +637,59 @@ cy:
       probate_case_true: Ydw
       text: Ydych chi'n talu ffi am achos profiant?
       title: Profiant
+    savings_and_investment_ucd:
+      breadcrumb: Cam %{page_number} o 22
+      less: "£0 i £2,999"
+      between: "£3,000 i £15,999"
+      more: "£16,000 neu fwy"
+      subtext_married: Dywedwch wrthym faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi.
+      subtext_single: Dywedwch wrthym faint o arian sydd gennych chi wedi’i gynilo a’i fuddsoddi.
+      subtext_married_refund: Dywedwch wrthym faint o arian a oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar y dyddiad y gwnaethoch dalu’r ffi.
+      subtext_single_refund: Dywedwch wrthym faint o arian a oedd gennych chi wedi’i gynilo a’i fuddsoddi ar y dyddiad y gwnaethoch dalu’r ffi.
+      header_married: Faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi?
+      header_single: Faint o arian sydd gennych chi wedi’i gynilo a’i fuddsoddi?
+      header_married_refund: Faint o arian a oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar y dyddiad y gwnaethoch dalu’r ffi?
+      header_single_refund: Faint o arian a oedd gennych chi wedi’i gynilo a’i fuddsoddi ar y dyddiad y gwnaethoch dalu’r ffi?
+      text: Faint o arian sydd gennych chi wedi’i gynilo a’i fuddsoddi?
+      title: Cynilion a buddsoddiadau
+      details:
+        list:
+          header: "Dylech gynnwys:"
+          point_1: arian sydd gennych chi mewn cyfrifon ISA, cronfeydd ymddiriedolaeth neu gyfrifon cynilo y mae gennych fynediad atynt, gan gynnwys Cronfeydd Ymddiriedolaeth Plant sydd wedi aeddfedu neu gyfrifon Junior ISA
+          point_2: unrhyw incwm nas wariwyd o fisoedd blaenorol
+          point_3: bondiau cyfradd sefydlog neu fondiau buddsoddi
+          point_4: unrhyw gyfandaliad - er enghraifft, taliad dileu swydd
+          point_5: stociau a chyfranddaliadau (gan gynnwys stociau a chyfranddaliadau cryptoarian)
+          point_6: gwerth ail gartrefi
+          point_7: unrhyw arian neu eiddo y tu allan i’r DU
+          text: Os oes gan eich partner fudd sy’n gwrthdaro yn eich achos, peidiwch â chynnwys eu cynilion a’u buddsoddiadau nhw
+        section_1:
+          heading: 'Peidiwch â chynnwys y canlynol yn eich cyfanswm cynilo:'
+          item_1: cyflog neu fudd-daliadau a gawsoch yn y mis y gwnaethoch dalu’r ffi
+          item_2: cyfrifon cynilo ar y cyd rydych chi’n eu rhannu gyda’ch partner os yw eich achos yn erbyn eich partner neu’n ymwneud ag ysgariad
+          item_3: pensiynau personol
+          item_4: gwerth cyfalaf busnesau hunangyflogedig
+        section_2:
+          heading: 'Peidiwch â chynnwys y taliadau iawndal canlynol yn eich cyfanswm cynilo:'
+          item_1: taliad a gafwyd yn sgil penderfyniad a wnaed gan lys neu dribiwnlys am ddiswyddo annheg, neu setliad a gafwyd am hawliad o ddiswyddo annheg
+          item_2: Cynllun Iawndal y Lluoedd Arfog
+          item_3: taliadau iawndal yn dilyn tân Tŵr Grenfell yn 2017
+          item_4: iawndal a gafwyd gan Gynllun Windrush
+          item_5: Cynllun Gwneud Iawn Cartrefi Plant Lambeth
+          item_6: Taliadau Ymddiriedolaeth Argyfyngau Llundain
+          item_7: arian o'r Cynllun Digolledu am Anafiadau Troseddol
+          item_8: dyfarniadau am esgeulustod meddygol neu anafiadau personol
+          item_9: Cynllun Cam-drin Corfforol Canolfan Gadw Medomsley
+          item_10: Cynllun Iawndal Camweinyddu Cyfiawnder
+          item_11: Taliadau Ymddiriedolaeth Argyfyngau Cenedlaethol
+          item_12: taliadau gan Gynlluniau Cymorth Gwaed Heintiedig
+          item_13: taliadau am gaethiwedigaeth, llafur gorfodol, colli neu anaf i blentyn yn ystod yr Ail Ryfel Byd
+          item_14: Cynllun Gwneud Iawn Cymdeithas Iesu Grist
+          item_15: Iawndal Taliad Niwed Trwy Frechiad
+          item_16: Cynllun Iawndal Clefyd Amrywiolyn Creutzfeldt-Jakob
+          item_17: Cynllun Iawndal Dioddefwyr Terfysgaeth Tramor
+          item_18: Taliadau Cronfa Argyfwng We Love Manchester
+        summary: Beth i’w hepgor mewn cynilion a buddsoddiadau
     savings_and_investment:
       between: "£3,000 i £15,999"
       breadcrumb: Cam %{page_number} o 22
@@ -661,6 +734,14 @@ cy:
       text: Faint o arian oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar y dyddiad wnaethoch chi dalu’r ffi?
     savings_and_investment_single_refund:
       text: Faint o arian oedd gennych wedi’i gynilo a’i fuddsoddi ar y dyddiad wnaethoch chi dalu’r ffi?
+    savings_and_investment_married_ucd:
+      text: Cynilion a buddsoddiadau
+    savings_and_investment_single_ucd:
+      text: Cynilion a buddsoddiadau
+    savings_and_investment_married_refund_ucd:
+      text: Cynilion a buddsoddiadau
+    savings_and_investment_single_refund_ucd:
+      text: Cynilion a buddsoddiadau
     savings_and_investment_extra:
       amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
       amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
@@ -677,6 +758,10 @@ cy:
       text_married: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
+    savings_and_investment_extra_ucd:
+      title: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
+      text_married: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
+      text_single: Ydych chi'n 66 mlwydd oed neu'n hŷn?
   restart_application:
     cancel_button: "Canslo cais"
     copy_1: "Ydych chi'n siŵr eich bod am ganslo eich cais?"

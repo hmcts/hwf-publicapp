@@ -4,8 +4,8 @@ class SavingsInvestmentExtraPage < BasePage
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 8 of 22'
-    element :single_header, 'h1', text: 'Are you 61 years old or over?'
-    element :married_header, 'h1', text: 'Are you or your partner 61 years old or over?'
+    element :single_header, 'h1', text: 'Are you 66 years or older?'
+    element :married_header, 'h1', text: 'Are you or your partner 66 or older?'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
     element :how_much_label_single, '.govuk-label', text: 'How much between £3,000 and £15,999 do you have in savings and investments?'

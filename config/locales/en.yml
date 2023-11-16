@@ -583,7 +583,7 @@ en:
         summary: Why are we asking for partner status?
         text: If you are in a couple, Help with Fees is based on your joint income unless there’s a contrary interest
       married_false: Single
-      married_true: Married or living with someone and sharing an income
+      married_true: Married or living with someone
       text: Relationship Status
       title: Your marital status
       subheader: Are you single, married or living with someone?
@@ -759,8 +759,8 @@ en:
       text_single: Are you 61 years old or over?
       title: Are you or your partner 61 or over?
     savings_and_investment_extra_ucd:
-      title: Are you or your partner 66 or over?
-      text_married: Are you or your partner 66 or over?
+      title: Are you or your partner 66 or older?
+      text_married: Are you or your partner 66 or older?
       text_single: Are you 66 years or older?
   restart_application:
       cancel_button: "Cancel application"

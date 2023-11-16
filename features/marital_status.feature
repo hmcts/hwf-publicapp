@@ -13,7 +13,7 @@ Feature: Marital status page
     Then I should be taken to savings and investments page
 
   Scenario: Help with status
-    When I click on 'Help with status'
+    When I click on 'Why are we asking for partner status?'
     Then I should see help with status copy
 
   Scenario: Error message when trying to move on without selecting option

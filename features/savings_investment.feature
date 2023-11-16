@@ -22,7 +22,7 @@ Feature: Savings and investment page refund
 
   Scenario: Help with savings and investments
     When I click on 'Help on what to include as savings and investments'
-    Then I should see help with savings and investments copy
+    Then I should see include with savings and investments copy
 
   Scenario: Savings and investments page timeout (£16,000 or more option)
     When I slowly submit the form with £16,000 or more checked
