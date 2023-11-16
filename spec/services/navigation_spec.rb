@@ -195,6 +195,17 @@ RSpec.describe Navigation do
         expect(subject).to eql(question_path(:dependent, locale: :en))
       end
     end
+    context 'ucd' do
+      context 'when the applying on behalf of someone else' do
+        let(:online_application) { build(:online_application, applying_on_behalf: false) }
+        let(:current_question) { :applying_on_behalf }
+
+        it 'skips to ni number' do
+          pending 'list of pages is not final'
+          # expect(subject).to eql(question_path(:national_insurance_presence, locale: :en))
+        end
+      end
+    end
 
   end
 end

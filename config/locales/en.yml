@@ -158,6 +158,10 @@ en:
           attributes:
             applying_on_behalf:
               inclusion: Select whether you're applying on behalf of someone else
+        forms/legal_representative:
+          attributes:
+            legal_representative:
+              inclusion: Select whether you're applying on behalf of legal representative or litigation friend
         forms/help_request:
           attributes:
             description:
@@ -516,6 +520,16 @@ en:
       inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
       applying_on_behalf_false: 'No'
       applying_on_behalf_true: 'Yes'
+    legal_representative:
+      title: Are you a legal representative or litigation friend?
+      breadcrumb: Step %{page_number} of 22
+      text: Are you a legal representative or litigation friend?
+      details: Are you a legal representative or litigation friend?
+      legal_representative_legal_representative: 'Legal representative'
+      legal_representative_litigation_friend: 'Litigation friend'
+      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
+      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+
     income_amount:
       prompt: Enter the total monthly amount you receive in income.
       amount:

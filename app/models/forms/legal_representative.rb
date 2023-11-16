@@ -1,15 +1,14 @@
 module Forms
   class LegalRepresentative < Base
-    # APPLY_TYPE = %w[paper online].freeze
-    # attribute :applying_on_behalf, Boolean
+    attribute :legal_representative, String
 
-    # validates :applying_on_behalf, inclusion: { in: [true, false] }
+    validates :legal_representative, inclusion: { in: ['litigation_friend', 'legal_representative'] }
 
-    # private
+    private
 
     def export_params
       {
-
+        legal_representative: legal_representative
       }
     end
   end

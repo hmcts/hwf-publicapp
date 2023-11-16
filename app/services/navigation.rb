@@ -38,6 +38,8 @@ class Navigation
       @after_savings
     elsif ni_related_question?
       @ni_next_page
+    elsif skip_legal_representative?
+      @next_page
     else
       question_id
     end
@@ -116,6 +118,11 @@ class Navigation
 
   def skip_apply_type?
     @online_application.refund?
+  end
+
+  def skip_legal_representative?
+    return false if @online_application.applying_on_behalf
+    @next_page = :national_insurance_presence
   end
 
 end

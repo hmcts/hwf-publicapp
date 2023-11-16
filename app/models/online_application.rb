@@ -42,6 +42,7 @@ class OnlineApplication
   attribute :applying_method, String
   attribute :calculation_scheme, String
   attribute :applying_on_behalf, Boolean
+  attribute :legal_representative, String
 
   def full_name
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
