@@ -19,7 +19,8 @@ module Views
     end
 
     def children_supplement
-      @online_application.children * settings.per_child_increment
+      children = @online_application.children || 0
+      children * settings.per_child_increment
     end
 
     def married_supplement

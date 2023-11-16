@@ -35,6 +35,15 @@ RSpec.describe Views::IncomeThresholds do
       end
     end
 
+    context 'when the kids are nil' do
+      let(:married) { true }
+      let(:children) { nil }
+
+      it 'calculates the right minimum threshold' do
+        expect(subject).to eq 1345
+      end
+    end
+
     context 'when the applicant is married with kids' do
       let(:married) { true }
       let(:children) { 2 }
