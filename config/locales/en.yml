@@ -162,6 +162,22 @@ en:
           attributes:
             legal_representative:
               inclusion: Select whether you're applying on behalf of legal representative or litigation friend
+
+        forms/legal_representative_detail:
+          attributes:
+            legal_representative_first_name:
+              blank: Please enter first name
+              invalid_name: Must not contain special characters
+            legal_representative_last_name:
+              blank: Please enter last name
+              invalid_name: Must not contain special characters
+            legal_representative_email:
+              blank: Please enter email address
+              invalid: Enter a valid email address.
+            legal_representative_address:
+              blank: Please enter the address
+            legal_representative_organisation_name:
+              invalid_name: Must not contain special characters
         forms/help_request:
           attributes:
             description:
@@ -529,6 +545,24 @@ en:
       legal_representative_litigation_friend: 'Litigation friend'
       hint_legal_rep: A legal representative is usually a lawyer or solicitor.
       hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+    legal_representative_detail:
+      title: Enter the representative details
+      breadcrumb: Step %{page_number} of 22
+      text: Enter the legal representative detail
+      legal_representative_first_name: 'First name'
+      legal_representative_last_name: 'Last name'
+      legal_representative_email: 'Email address'
+      organisation: Organisation details
+      legal_representative_organisation_name: 'Organisation name'
+      legal_representative_address: 'Enter a UK postcode'
+      legal_representative_feedback_opt_in: Check this box if you're also willing to share your experience of this service.
+      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
+      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+      email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
+
+    legal_representative_detail_friend:
+      text: Enter the litigation friend details
+      title: Enter the litigation friend details
 
     income_amount:
       prompt: Enter the total monthly amount you receive in income.

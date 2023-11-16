@@ -34,6 +34,8 @@ module ApplicationHelper
       personal_detail_postfix(online_application)
     when 'questions.savings_and_investment'
       savings_postfix(online_application)
+    when 'questions.legal_representative_detail'
+      legal_representative_detail_postfix(online_application)
     else
       scope
     end
@@ -71,5 +73,14 @@ module ApplicationHelper
     else
       'questions.personal_detail'
     end
+  end
+
+  def legal_representative_detail_postfix(online_application)
+    return 'questions.legal_representative_detail_friend' if online_application.legal_representative == 'litigation_friend'
+    'questions.legal_representative_detail'
+  end
+
+  def show_organisation(online_application)
+    online_application.legal_representative == 'legal_representative'
   end
 end

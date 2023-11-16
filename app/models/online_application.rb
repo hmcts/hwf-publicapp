@@ -43,6 +43,16 @@ class OnlineApplication
   attribute :calculation_scheme, String
   attribute :applying_on_behalf, Boolean
   attribute :legal_representative, String
+  attribute :legal_representative_first_name, String
+  attribute :legal_representative_last_name, String
+  attribute :legal_representative_email, String
+  attribute :legal_representative_organisation_name, String
+  attribute :legal_representative_feedback_opt_in, Boolean
+
+  attribute :legal_representative_street, String
+  attribute :legal_representative_postcode, String
+  attribute :legal_representative_town, String
+
 
   def full_name
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
