@@ -439,10 +439,3 @@ def to_summary_page_with_ho_number
   contact_page.valid_email
   apply_type_page.applying_by_paper
 end
-
-def fee_freeze_time_ucd
-  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
-  Timecop.freeze(time)
-  fee_page.submit_fee_yes
-  Timecop.return
-end
