@@ -10,6 +10,7 @@ class Storage
 
   def clear
     @session.destroy
+    rails_store.clear
     store.write('page_path', [])
   end
 
@@ -29,23 +30,26 @@ class Storage
     @session[:started_at].present?
   end
 
+  def rails_store
+    Rails.cache
+  end
+
   def save_form(form)
-    @session['questions'] = {} unless @session['questions']
-    @session['questions'][form.id] = form.as_json
+    rails_store.write("questions-#{@session.id}-#{form.id}", form.as_json)
   end
 
   def load_form(form)
-    params = @session['questions'] ? (@session['questions'][form.id] || {}) : {}
+    params = rails_store.read("questions-#{@session.id}-#{form.id}") || {}
     form.update_attributes(params)
   end
 
   def clear_form(form_id)
-    @session['questions']&.delete(form_id.to_s)
+    rails_store.delete("questions-#{@session.id}-#{form_id}")
   end
 
   def clear_forms(form_ids)
     form_ids.each do |form_id|
-      clear_form(form_id)
+      rails_store.delete("questions-#{@session.id}-#{form_id}")
     end
   end
 

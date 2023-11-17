@@ -21,7 +21,7 @@ module Views
     end
 
     def source
-      @session.fetch('questions', {}).fetch('income_kind', {})
+      Rails.cache.read("questions-#{@session.id}-income_kind") || {}
     end
   end
 end

@@ -23,9 +23,12 @@ class OnlineApplication
   attribute :ni_number, String
   attribute :ho_number, String
   attribute :date_of_birth, Date
+  attribute :partner_date_of_birth, Date
   attribute :title, String
   attribute :first_name, String
   attribute :last_name, String
+  attribute :partner_first_name, String
+  attribute :partner_last_name, String
   attribute :address, String
   attribute :street, String
   attribute :town, String
@@ -41,6 +44,10 @@ class OnlineApplication
 
   def full_name
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
+  end
+
+  def partner_full_name
+    %i[partner_first_name partner_last_name].filter_map { |field| send(field) }.join(' ')
   end
 
   def savings_and_investment_extra_required?

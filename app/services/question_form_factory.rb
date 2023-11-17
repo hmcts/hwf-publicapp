@@ -20,7 +20,9 @@ class QuestionFormFactory
     raise QuestionDoesNotExist unless page_list(calculation_scheme).include?(id)
 
     class_name = "Forms::#{form_class_name(id)}".constantize
-    class_name.new
+    form = class_name.new
+    form.calculation_scheme = calculation_scheme
+    form
   end
 
   def self.form_class_name(id)
