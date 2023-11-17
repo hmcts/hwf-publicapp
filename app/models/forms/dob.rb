@@ -13,6 +13,8 @@ module Forms
     attribute :partner_day, Integer
     attribute :partner_month, Integer
     attribute :partner_year, Integer
+    attribute :over_16, Integer
+
 
     MINIMUM_AGE = 15
     MAXIMUM_AGE = 120
@@ -53,6 +55,7 @@ module Forms
     end
 
     def too_young?
+      return if over_16 == 'false'
       date_of_birth > minimum_date_of_birth
     end
 

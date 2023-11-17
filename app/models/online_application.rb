@@ -51,6 +51,7 @@ class OnlineApplication
   attribute :legal_representative_street, String
   attribute :legal_representative_postcode, String
   attribute :legal_representative_town, String
+  attribute :legal_representative_address, String
   attribute :over_16, Boolean
 
   def full_name
