@@ -1,11 +1,17 @@
 And(/^I am single with £3,000 to £15,999 in savings$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_single_savings_extra
+  Timecop.return
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_single_header
 end
 
 And(/^I am married with £3,000 to £15,999 in savings$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_married_savings_extra
+  Timecop.return
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_married_header
 end

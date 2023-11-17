@@ -1,5 +1,8 @@
 Given(/^I am a single person on the savings and investments page$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_single_savings
+  Timecop.return
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header
@@ -7,7 +10,10 @@ Given(/^I am a single person on the savings and investments page$/) do
 end
 
 Given(/^I am a married person on the savings and investments page$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_married_savings
+  Timecop.return
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header

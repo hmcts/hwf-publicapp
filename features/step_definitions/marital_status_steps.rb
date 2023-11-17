@@ -1,5 +1,8 @@
 Given(/^I am on the marital status page$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_marital_status
+  Timecop.return
   expect(marital_status_page.content).to have_step_info
   expect(marital_status_page.content).to have_header
   expect(marital_status_page.content).to have_subheader

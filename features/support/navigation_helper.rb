@@ -263,7 +263,10 @@ end
 
 def to_marital_status
   to_fee_page
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -313,7 +316,10 @@ end
 
 def to_single_savings_extra
   to_fee_page
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -324,7 +330,10 @@ end
 
 def to_married_savings_extra
   to_fee_page
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -335,7 +344,10 @@ end
 
 def to_married_savings
   to_fee_page
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -345,7 +357,10 @@ end
 
 def to_single_savings
   to_fee_page
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -423,4 +438,11 @@ def to_summary_page_with_ho_number
   address_page.submit_full_address
   contact_page.valid_email
   apply_type_page.applying_by_paper
+end
+
+def fee_freeze_time_ucd
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
+  fee_page.submit_fee_yes
+  Timecop.return
 end
