@@ -54,7 +54,6 @@ module ApplicationHelper
     FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == calculation_scheme
   end
 
-
   def dob_postfix(online_application)
     if ucd_changes_apply?(online_application.calculation_scheme) && online_application.married?
       "questions.dob_married" if online_application.married?
@@ -70,7 +69,7 @@ module ApplicationHelper
       'questions.personal_detail'
     end
   end
-  
+
   def savings_postfix(online_application)
     scope_postfix = []
     scope_postfix << (online_application.married? ? '_married' : '_single')
