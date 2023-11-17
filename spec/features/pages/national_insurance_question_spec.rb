@@ -8,6 +8,10 @@ RSpec.feature 'As a user' do
     end
     before { given_user_answers_questions_up_to(:national_insurance) }
 
+    after do
+      Timecop.return
+    end
+
     context 'completing the form correctly' do
       describe 'recording a valid NI number' do
         before do
