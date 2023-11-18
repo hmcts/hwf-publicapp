@@ -21,8 +21,9 @@ class OnlineApplicationBuilder
   def check_before_override(form)
     attributes = form.export
 
-    attributes.keys.each do |key|
+    attributes.each_key do |key|
       next if attributes[key].nil?
+
       @online_application[key] = attributes[key]
     end
   end

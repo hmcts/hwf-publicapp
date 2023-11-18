@@ -63,7 +63,9 @@ class OnlineApplication
   end
 
   def legal_full_address
-    %i[legal_representative_street legal_representative_town legal_representative_postcode].filter_map { |field| send(field) }.join(' ')
+    %i[legal_representative_street legal_representative_town legal_representative_postcode].filter_map do |field|
+      send(field)
+    end.join(' ')
   end
 
   def partner_full_name

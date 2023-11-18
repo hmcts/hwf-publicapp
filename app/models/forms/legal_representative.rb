@@ -6,7 +6,7 @@ module Forms
 
     private
 
-    # TODO reset data if legal rep answer is changed
+    # TODO: reset data if legal rep answer is changed
 
     def export_params
       {

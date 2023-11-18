@@ -17,5 +17,4 @@ class LegalRepresentativeDetailPage < BasePage
     continue
   end
 
-
 end

@@ -26,6 +26,7 @@ module Forms
 
     private
 
+    # rubocop:disable Metrics/MethodLength
     def export_params
       {
         legal_representative_address: address,
@@ -39,6 +40,7 @@ module Forms
         legal_representative_feedback_opt_in: legal_representative_feedback_opt_in
       }
     end
+    # rubocop:enable Metrics/MethodLength
 
     def address
       "#{street}, #{town}"

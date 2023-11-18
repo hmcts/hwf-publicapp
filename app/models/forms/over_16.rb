@@ -9,6 +9,7 @@ module Forms
 
     def export_params
       return { over_16: over_16 } if over_16 || over_16.nil?
+
       {
         over_16: over_16,
         married: false,
