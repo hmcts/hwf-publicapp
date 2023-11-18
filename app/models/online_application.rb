@@ -58,6 +58,14 @@ class OnlineApplication
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
   end
 
+  def legal_full_name
+    %i[legal_representative_first_name legal_representative_last_name].filter_map { |field| send(field) }.join(' ')
+  end
+
+  def legal_full_address
+    %i[legal_representative_street legal_representative_town legal_representative_postcode].filter_map { |field| send(field) }.join(' ')
+  end
+
   def partner_full_name
     %i[partner_first_name partner_last_name].filter_map { |field| send(field) }.join(' ')
   end

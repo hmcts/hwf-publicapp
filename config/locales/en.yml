@@ -849,6 +849,14 @@ en:
       savings: Savings and investments
       title: Check details
       apply_type: Court or tribunal application
+      applying_on_behalf: Applying on behalf of someone else
+      legal_representative_or_friend: Legal representative or litigation friend
+      legal_representative: Legal representative
+      legal_representative_detail: Legal representative details
+      litigation_friend: Litigation friend
+      full_name: Full name
+      email: Email
+      over_16: Applicant over 16
     marital_status_false: Single
     marital_status_true: Married or living with someone and sharing an income
     missing_answer:
