@@ -1,6 +1,6 @@
 div.govuk-summary-list__row
   dt.govuk-summary-list__key =t('applying_on_behalf', scope: 'summary.labels')
-  dd.govuk-summary-list__value =@summary.applying_on_behalf
+  dd.govuk-summary-list__value = t("applying_on_behalf_#{@summary.applying_on_behalf}", scope: 'summary')
   dd.govuk-summary-list__actions
     = link_to question_path(:applying_on_behalf), onclick: "dataLayer.push({'sectionName': 'applying_on_behalf', 'event': 'summary_page'});" do
       =t('summary.change')
@@ -9,7 +9,7 @@ div.govuk-summary-list__row
 
 div.govuk-summary-list__row
   dt.govuk-summary-list__key =t('legal_representative_or_friend', scope: 'summary.labels')
-  dd.govuk-summary-list__value =@summary.legal_representative
+  dd.govuk-summary-list__value = t("legal_representative_#{@summary.legal_representative}", scope: 'summary')
   dd.govuk-summary-list__actions
     = link_to question_path(:legal_representative), onclick: "dataLayer.push({'sectionName': 'legal_representative', 'event': 'summary_page'});" do
       =t('summary.change')
@@ -50,7 +50,7 @@ div.govuk-summary-list__row
 
 div.govuk-summary-list__row
   dt.govuk-summary-list__key =t('over_16', scope: 'summary.labels')
-  dd.govuk-summary-list__value =@summary.over_16
+  dd.govuk-summary-list__value = t("over_16_#{@summary.over_16}", scope: 'summary')
   dd.govuk-summary-list__actions
     = link_to question_path(:over_16), onclick: "dataLayer.push({'sectionName': 'over_16', 'event': 'summary_page'});" do
       =t('summary.change')

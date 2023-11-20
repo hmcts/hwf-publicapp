@@ -819,6 +819,12 @@ en:
     fee_paid_false: 'No'
     fee_paid_true: 'Yes'
     invalid_footer: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+    applying_on_behalf_true: 'Yes'
+    applying_on_behalf_false: 'No'
+    legal_representative_legal_representative: 'Legal representative'
+    legal_representative_litigation_friend: 'Litigation friend'
+    over_16_true: 'Yes'
+    over_16_false: 'No'
     labels:
       address: Address
       benefits: Benefits
