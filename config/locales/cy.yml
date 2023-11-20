@@ -993,6 +993,52 @@ cy:
             item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
             item_2: gofynnwch am nodyn atgoffa drwy'r post
           summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
+    checklist_ucd:
+      title: Beth fydd arnoch ei angen
+      heading: 'Pwysig: I’w ddarllen cyn i chi gychwyn'
+      sections:
+        - parts:
+            - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i lys neu dribiwnlys.'
+            - p: 'Fe gewch gyfeirnod Help i Dalu Ffioedd ar ddiwedd y broses a dylech anfon hwn i’r llys neu’r tribiwnlys gyda’ch hawliad o fewn 28 diwrnod. Os bydd yn cyrraedd ar ôl hynny, efallai y bydd yn cael ei wrthod a bydd rhaid ichi wneud cais am Help i Dalu Ffioedd newydd.'
+            - p: 'Rhaid cyflwyno ceisiadau am ad-daliad o fewn 3 mis ichi dalu’r ffi wreiddiol. Os gwrthodir eich cais gan bod y cyfeirnod Help i Dalu Ffioedd wedi’i ddarparu mwy na 28 diwrnod yn ôl, gallai hyn effeithio ar faint o amser sydd gennych yn weddill i fod yn gymwys i gael ad-daliad.'
+            - p: 'Os ydych yn gwneud hawliad neu gais lluosog, bydd angen i’r ddau hawlydd wneud cais am Help i Dalu Ffioedd ar wahân a chyflwyno cyfeirnod ar-lein y ddau gais i’r llys.'
+            - p: 'Bydd y staff yn prosesu’r rhif cyfeirnod Help i Dalu Ffioedd ynghyd â’r cais i’r llys neu’r tribiwnlys, ac yn rhoi gwybod i chi os oes arnoch angen talu rhywfaint tuag at y ffi, neu os oes arnynt angen rhagor o wybodaeth gennych chi.'
+            - p: 'Gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar eich rhan. Mae’n rhaid iddynt roi’ch manylion chi yn y cais.'
+
+            - p: '<h2 class="govuk-heading-m">Cyn i chi barhau, gwnewch yn siŵr fod gennych:</h2>'
+            - ul:
+                - li: eich rhif Yswiriant Gwladol (NI) neu
+                - li: eich gyfeirnod y Swyddfa Gartref - efallai bydd gennych gyfeirnod y Swyddfa Gartref os ydych chi’n destun rheolaethau mewnfudo
+                - li: rhif y ffurflen llys neu dribiwnlys
+                - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
+        - title:
+          parts:
+            - p: "Hefyd bydd arnoch angen manylion eich:"
+            - ul:
+                - li: incwm, yn cynnwys cyflog
+                - li: cynilion a buddsoddiadau
+                - li: manylion incwm, cynilion a buddsoddiadau eich partner - Os oes gennych bartner, byddwch angen eu rhif Yswiriant Gwladol, eu dyddiad geni a manylion eu hincwm, cynilion a buddsoddiadau
+            - p: Efallai y byddwn yn defnyddio eich gwybodaeth bersonol chi a’ch partner (os oes gennych un) i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth rydych wedi’i rhoi. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+      details:
+        section_1:
+          item_1: Mae’ch cyfeirnod Swyddfa Gartref i’w weld ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref.
+        summary: Os nad ydych chi’n gwybod beth yw eich rhif Yswiriant Gwladol
+      paper_form_html: "Os nad oes gennych rif Yswiriant Gwladol neu gyfeirnod Swyddfa Gartref, mae angen i chi ddefnyddio'r
+          <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees.cy'
+          class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+          target='_blank'>ffurflen bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
+      accurate_information: Mae angen i’r wybodaeth a roddir gennych fod yn gywir gan y bydd yn gweithredu fel tystiolaeth ar gyfer eich cais a bydd yn ein galluogi i wirio’r wybodaeth gydag adrannau eraill y llywodraeth. Byddwn yn cysylltu â chi os byddwn angen gweld prawf o’r wybodaeth hon.
+      accurate_information_link: Sut i wneud cais am help i dalu ffioedd
+      national_insurance:
+        details:
+          section_1:
+            detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
+              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+              class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+              target='_blank'>ddefnyddio’r ffurflen bapur</a>."
+            item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
+            item_2: gofynnwch am nodyn atgoffa drwy'r post
+          summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
     cookies:
       title: Cwcis
       heading: Cwcis
