@@ -198,7 +198,7 @@ dl.govuk-summary-list
           span.govuk-visually-hidden
             =t('date_of_birth', scope: 'summary.labels').downcase
 
-    - if @summary.married
+    - if @summary.married && ucd_changes_apply?(@summary.calculation_scheme)
       div.govuk-summary-list__row
         dt.govuk-summary-list__key =t('partner_date_of_birth', scope: 'summary.labels')
         dd.govuk-summary-list__value =date_formatter(@summary.partner_date_of_birth)
