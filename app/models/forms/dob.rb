@@ -20,6 +20,7 @@ module Forms
 
     before_validation :dob_dates
     before_validation :partner_dob_dates, if: :partner?
+    before_validation :reset_partner_dob, unless: :partner?
 
     validate :dob_age_valid?
     validate :partner_dob_age_valid?, if: :partner?
@@ -84,7 +85,7 @@ module Forms
 
     def export_params
       dobs = { date_of_birth: dob_dates }
-      dobs[:partner_date_of_birth] = partner_dob_dates if partner?
+      dobs[:partner_date_of_birth] = partner? ? partner_dob_dates : {}
       dobs
     end
 
