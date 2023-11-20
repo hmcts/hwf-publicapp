@@ -11,26 +11,8 @@ ul.govuk-list.govuk-list--bullet
 
 = render("questions/forms/savings_and_investment/savings_and_investment_conflicting")
 
-= render("questions/headers/savings_and_investment/subheader")
-
-.govuk-form-group id='savings_and_investment_choice' class=('govuk-form-group--error' if @form.errors.any?)
-  = f.hidden_field :choice, value: nil
-  - if @form.errors.any?
-    span.govuk-error-message = @form.errors[:choice].join(' ')
-  .govuk-form-group.govuk-radios
-    .govuk-radios__item
-      = f.radio_button :choice, 'less', class: 'govuk-radios__input'
-      = f.label t('less', scope: "#{@form.i18n_scope}_ucd"), for: 'savings_and_investment_choice_less', class: 'govuk-label govuk-radios__label'
-    .govuk-radios__item
-      = f.radio_button :choice, 'between', class: 'govuk-radios__input'
-      = f.label t('between', scope: "#{@form.i18n_scope}_ucd"), for: 'savings_and_investment_choice_between', class: 'govuk-label govuk-radios__label'
-    .govuk-radios__item
-      = f.radio_button :choice, 'more', class: 'govuk-radios__input'
-      = f.label t('more', scope: "#{@form.i18n_scope}_ucd"), for: 'savings_and_investment_choice_more', class: 'govuk-label govuk-radios__label'
-
-
 details.govuk-details data-module="govuk-details"
-  summary.govuk-details__summary = t('details.summary', scope: @form.i18n_scope)
+  summary.govuk-details__summary = t('details.summary', scope: "#{@form.i18n_scope}_ucd")
   .govuk-details__text
     h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}_ucd.details.section_1")
     ul.govuk-list.govuk-list--bullet
@@ -59,3 +41,22 @@ details.govuk-details data-module="govuk-details"
       li = t('item_16', scope: "#{@form.i18n_scope}_ucd.details.section_2")
       li = t('item_17', scope: "#{@form.i18n_scope}_ucd.details.section_2")
       li = t('item_18', scope: "#{@form.i18n_scope}_ucd.details.section_2")
+
+= render("questions/headers/savings_and_investment/subheader")
+
+.govuk-form-group id='savings_and_investment_choice' class=('govuk-form-group--error' if @form.errors.any?)
+  = f.hidden_field :choice, value: nil
+  - if @form.errors.any?
+    span.govuk-error-message = @form.errors[:choice].join(' ')
+  .govuk-form-group.govuk-radios
+    .govuk-radios__item
+      = f.radio_button :choice, 'less', class: 'govuk-radios__input'
+      = f.label t('less', scope: "#{@form.i18n_scope}_ucd"), for: 'savings_and_investment_choice_less', class: 'govuk-label govuk-radios__label'
+    .govuk-radios__item
+      = f.radio_button :choice, 'between', class: 'govuk-radios__input'
+      = f.label t('between', scope: "#{@form.i18n_scope}_ucd"), for: 'savings_and_investment_choice_between', class: 'govuk-label govuk-radios__label'
+    .govuk-radios__item
+      = f.radio_button :choice, 'more', class: 'govuk-radios__input'
+      = f.label t('more', scope: "#{@form.i18n_scope}_ucd"), for: 'savings_and_investment_choice_more', class: 'govuk-label govuk-radios__label'
+
+

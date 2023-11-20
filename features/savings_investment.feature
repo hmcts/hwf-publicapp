@@ -21,7 +21,7 @@ Feature: Savings and investment page refund
     Then I should see 'Select how much you have in savings and investments' error message
 
   Scenario: Help with savings and investments
-    When I click on 'Help on what to include as savings and investments'
+    When I click on 'What not to include in savings and investments'
     Then I should see include with savings and investments copy
 
   Scenario: Savings and investments page timeout (£16,000 or more option)
