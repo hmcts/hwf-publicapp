@@ -111,5 +111,17 @@ RSpec.describe ClearDownstreamQuestions do
         end
       end
     end
+
+    context 'when the legal representation is present' do
+      let(:question) { :legal_representative }
+      let(:old_online_application) { build(:online_application, legal_representative: 'litigation_friend') }
+      let(:new_online_application) { build(:online_application, legal_representative: 'legal_representative') }
+
+      context 'and the legal_representative changed' do
+        it 'clears national insurance questions' do
+          expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
+        end
+      end
+    end
   end
 end
