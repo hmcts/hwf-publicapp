@@ -1,0 +1,50 @@
+
+.govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_detail].any?)
+  = f.hidden_field :legal_representative_detail, value: nil
+
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend.govuk-fieldset__legend--s.visuallyhidden
+      = t('text', scope: "#{@form.i18n_scope}")
+    - if @form.errors[:legal_representative].any?
+      span.govuk-error-message
+       = f.label :legal_representative, @form.errors[:legal_representative].join(', '), class: 'error'
+
+    .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_first_name].any?)
+      = f.label :legal_representative_first_name, t('legal_representative_first_name', scope: @form.i18n_scope), class: 'govuk-label'
+      - if @form.errors[:legal_representative_first_name].any?
+        span.govuk-error-message#first_name = @form.errors[:legal_representative_first_name].join(' ')
+      = f.text_field :legal_representative_first_name, class: 'govuk-input govuk-!-width-one-half'
+    .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_last_name].any?)
+      = f.label :legal_representative_last_name, t('legal_representative_last_name', scope: @form.i18n_scope), class: 'govuk-label'
+      - if @form.errors[:legal_representative_last_name].any?
+        span.govuk-error-message#last_name = @form.errors[:legal_representative_last_name].join(' ')
+      = f.text_field :legal_representative_last_name, class: 'govuk-input govuk-!-width-one-half'
+    .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_email].any?)
+      = f.label :legal_representative_email, t('legal_representative_email', scope: @form.i18n_scope), class: 'govuk-label'
+      div#event-name-hint { class= "govuk-hint" }
+        = t('email_hint', scope: "#{@form.i18n_scope}")
+
+      - if @form.errors[:legal_representative_email].any?
+        span.govuk-error-message#last_name = @form.errors[:legal_representative_email].join(', ')
+      = f.text_field :legal_representative_email, class: 'govuk-input govuk-!-width-one-half'
+
+    .govuk-form-group
+      .govuk-checkboxes__item
+        = f.check_box :legal_representative_feedback_opt_in, class: 'govuk-checkboxes__input'
+        label.govuk-label.govuk-checkboxes__label.long-label for='legal_representative_detail_legal_representative_feedback_opt_in'
+          = t('legal_representative_feedback_opt_in', scope: @form.i18n_scope)
+
+    - if show_organisation(@online_application)
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_organisation_name].any?)
+        legend.govuk-fieldset__legend.govuk-fieldset__legend--s
+          = t('organisation', scope: "#{@form.i18n_scope}")
+        = f.label :legal_representative_organisation_name, t('legal_representative_organisation_name', scope: @form.i18n_scope), class: 'govuk-label'
+        - if @form.errors[:legal_representative_organisation_name].any?
+          span.govuk-error-message#last_name = @form.errors[:legal_representative_organisation_name].join(' ')
+        = f.text_field :legal_representative_organisation_name, class: 'govuk-input govuk-!-width-one-half'
+
+
+    - if address_lookup_access_token
+      = render("questions/forms/address_lookup", access_token: address_lookup_access_token, show_details: address_lookup_details_filled?(@form), form: f )
+    - else
+      = render("questions/forms/address", f: f)

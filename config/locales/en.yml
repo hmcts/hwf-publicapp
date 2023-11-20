@@ -154,6 +154,48 @@ en:
               blank: Enter a valid form number or select 'I don't have a form'
               too_long: The form number must be less than 50 characters
               invalid: You entered the help with fees form number. Enter the number on your court or tribunal form.
+        forms/applying_on_behalf:
+          attributes:
+            applying_on_behalf:
+              inclusion: Select whether you're applying on behalf of someone else
+        forms/legal_representative:
+          attributes:
+            legal_representative:
+              inclusion: Select whether you're applying on behalf of legal representative or litigation friend
+
+        forms/legal_representative_detail:
+          attributes:
+            legal_representative_first_name:
+              blank: Please enter first name
+              invalid_name: Must not contain special characters
+            legal_representative_last_name:
+              blank: Please enter last name
+              invalid_name: Must not contain special characters
+            legal_representative_email:
+              blank: Please enter email address
+              invalid: Enter a valid email address.
+            legal_representative_address:
+              blank: Please enter the address
+            legal_representative_organisation_name:
+              invalid_name: Must not contain special characters
+            street:
+              blank: Enter your house number and street
+              too_long: Street must be less than 100 characters
+              invalid_name: Must not contain special characters
+            postcode:
+              blank: Enter your postcode
+              too_long: Postcode must be less than 10 characters
+              invalid_name: Must not contain special characters
+            town:
+              blank: Enter your town or city
+              too_long: Town must be less than 50 characters
+              invalid_name: Must not contain special characters
+        forms/over16:
+          attributes:
+            over_16:
+              inclusion: Select whether person you're applying on behalf is over 16
+
+
         forms/help_request:
           attributes:
             description:
@@ -504,6 +546,49 @@ en:
       text: What number is on your court or tribunal form?
       title: Form number
       unknown: I don’t have a form
+    applying_on_behalf:
+      title: Are you applying on behalf of someone else?
+      breadcrumb: Step %{page_number} of 22
+      text: Is the application on behalf of someone else?
+      details: Is the application on behalf of someone else?
+      inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
+      applying_on_behalf_false: 'No'
+      applying_on_behalf_true: 'Yes'
+    legal_representative:
+      title: Are you a legal representative or litigation friend?
+      breadcrumb: Step %{page_number} of 22
+      text: Are you a legal representative or litigation friend?
+      details: Are you a legal representative or litigation friend?
+      legal_representative_legal_representative: 'Legal representative'
+      legal_representative_litigation_friend: 'Litigation friend'
+      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
+      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+    legal_representative_detail:
+      title: Enter the representative details
+      breadcrumb: Step %{page_number} of 22
+      text: Enter the legal representative detail
+      legal_representative_first_name: 'First name'
+      legal_representative_last_name: 'Last name'
+      legal_representative_email: 'Email address'
+      organisation: Organisation details
+      legal_representative_organisation_name: 'Organisation name'
+      legal_representative_address: 'Enter a UK postcode'
+      legal_representative_feedback_opt_in: Check this box if you're also willing to share your experience of this service.
+      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
+      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+      email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
+
+    legal_representative_detail_friend:
+      text: Enter the litigation friend details
+
+    over16:
+      title: Is the person you are applying for over 16?
+      breadcrumb: Step %{page_number} of 22
+      text: Is the person you are applying for over 16?
+      over_16_true: 'Yes'
+      over_16_false: 'No'
+
+
     income_amount:
       prompt: Enter the total monthly amount you receive in income.
       amount:
@@ -734,6 +819,12 @@ en:
     fee_paid_false: 'No'
     fee_paid_true: 'Yes'
     invalid_footer: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+    applying_on_behalf_true: 'Yes'
+    applying_on_behalf_false: 'No'
+    legal_representative_legal_representative: 'Legal representative'
+    legal_representative_litigation_friend: 'Litigation friend'
+    over_16_true: 'Yes'
+    over_16_false: 'No'
     labels:
       address: Address
       benefits: Benefits
@@ -764,6 +855,14 @@ en:
       savings: Savings and investments
       title: Check details
       apply_type: Court or tribunal application
+      applying_on_behalf: Applying on behalf of someone else
+      legal_representative_or_friend: Legal representative or litigation friend
+      legal_representative: Legal representative
+      legal_representative_detail: Legal representative details
+      litigation_friend: Litigation friend
+      full_name: Full name
+      email: Email
+      over_16: Applicant over 16
     marital_status_false: Single
     marital_status_true: Married or living with someone and sharing an income
     missing_answer:
