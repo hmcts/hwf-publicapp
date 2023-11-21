@@ -2,7 +2,15 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "income_kind" page for "Help with fees"' do
-    before { given_user_answers_questions_up_to(:income_kind) }
+    before do
+      time = Time.zone.local(2026, 10, 28, 10, 5, 0)
+      Timecop.freeze(time)
+      given_user_answers_questions_up_to(:income_kind)
+    end
+
+    after do
+      Timecop.return
+    end
 
     context 'not completing the page correctly' do
       before do
@@ -10,7 +18,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "income_kind" page with error block' do
-        expect(page).to have_content 'What kind of income did you receive last month?'
+        expect(page).to have_content 'Types of income you have received'
         expect(page).to have_content 'There is a problem'
         expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select your kinds of income')
       end

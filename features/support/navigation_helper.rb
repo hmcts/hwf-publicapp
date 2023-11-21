@@ -48,7 +48,7 @@ def to_confirmation_done_page
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
+  income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
   dob_page.valid_dob
@@ -71,7 +71,7 @@ def to_confirmation_page
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
+  income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
   dob_page.valid_dob
@@ -97,7 +97,7 @@ def to_online_confirmation_page
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
+  income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
   dob_page.valid_dob
@@ -182,6 +182,7 @@ end
 def to_income_kind_single
   to_fee_page
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -195,6 +196,7 @@ end
 def to_income_kind_married
   to_fee_page
   fee_page.submit_fee_yes
+  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -364,7 +366,7 @@ def to_summary_page_probate_enabled
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
+  income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
   dob_page.static_dob
@@ -385,7 +387,7 @@ def to_summary_page_probate_enabled_fee_paid
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
+  income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
   dob_page.static_dob
@@ -416,7 +418,7 @@ def to_summary_page_with_ho_number
   marital_status_page.submit_married
   savings_investment_page.low_amount_checked
   dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
+  income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   dob_page.static_dob
   personal_details_page.submit_full_name

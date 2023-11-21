@@ -16,6 +16,7 @@ module Views
       (source.fetch('applicant', []) + source.fetch('partner', [])).tap do |arr|
         arr.uniq!
         arr.sort!
+        arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_index_ucd && ucd_changes_apply? }
         arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_index }
       end
     end

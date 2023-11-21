@@ -1,19 +1,25 @@
 Given(/^I am a single person on kind of income page$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_income_kind_single
   expect(income_kind_page.content).to have_choose_income_single
+  expect(income_kind_page.content).to have_representative_hint_single
   expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_single_header
 end
 
 Given(/^I am a married person on kind of income page$/) do
+  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
+  Timecop.freeze(time)
   to_income_kind_married
   expect(income_kind_page.content).to have_choose_income_married
+  expect(income_kind_page.content).to have_representative_hint_married
   expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_married_header
 end
 
-When(/^I submit the form with no income checked$/) do
-  income_kind_page.submit_no_income
+When(/^I submit the form with none of the above checked$/) do
+  income_kind_page.submit_none_of_the_above
 end
 
 When(/^I submit the form with wages checked$/) do
@@ -33,7 +39,7 @@ end
 Then(/^I should see an income list for myself and my partner$/) do
   expect(income_kind_page.content).to have_your_income
   expect(income_kind_page.content).to have_partners_income
-  expect(income_kind_page.content.income_item.count).to eq 26
+  expect(income_kind_page.content.income_item.count).to eq 34
 end
 
 When(/^I should see select your kinds of income error message$/) do

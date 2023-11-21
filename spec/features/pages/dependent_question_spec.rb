@@ -2,7 +2,15 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "dependent" page for "Help with fees"' do
-    before { given_user_answers_questions_up_to(:dependent) }
+    before do
+      time = Time.zone.local(2026, 10, 28, 10, 5, 0)
+      Timecop.freeze(time)
+      given_user_answers_questions_up_to(:dependent)
+    end
+
+    after do
+      Timecop.return
+    end
 
     context 'completing the form correctly' do
       before do
@@ -12,7 +20,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "income_kind" page' do
-        expect(page).to have_content 'What kind of income did you receive last month?'
+        expect(page).to have_content 'Types of income you have received'
       end
     end
 

@@ -34,6 +34,8 @@ module ApplicationHelper
       personal_detail_postfix(online_application)
     when 'questions.savings_and_investment'
       savings_postfix(online_application)
+    when 'questions.income_kind'
+      income_kind_postfix(online_application)
     else
       scope
     end
@@ -71,5 +73,11 @@ module ApplicationHelper
     else
       'questions.personal_detail'
     end
+  end
+
+  def income_kind_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? 'ucd' : nil)
+    "questions.income_kind_#{scope_postfix.compact.join('_')}"
   end
 end
