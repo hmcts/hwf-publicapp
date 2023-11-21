@@ -54,6 +54,18 @@ module Views
       [street, town, postcode].join(' ')
     end
 
+    def children_age_band
+      # puts online_application.children_age_band
+      return nil if online_application.children_age_band.blank?
+
+      one = online_application.children_age_band['one'] || 0
+      two = online_application.children_age_band['two'] || 0
+      return nil if one.zero? && two.zero?
+
+      "#{one} (#{I18n.t('summary.labels.children_age_band_one')}) <br />
+       #{two} (#{I18n.t('summary.labels.children_age_band_two')})".html_safe
+    end
+
     private
 
     def online_application

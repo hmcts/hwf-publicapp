@@ -8,6 +8,7 @@ class OnlineApplication
   attribute :amount, Integer
   attribute :benefits, Boolean
   attribute :children, Integer
+  attribute :children_age_band, Hash
   attribute :income_min_threshold_exceeded, Boolean
   attribute :income_max_threshold_exceeded, Boolean
   attribute :income, Integer
