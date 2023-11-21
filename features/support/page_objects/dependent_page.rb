@@ -4,7 +4,7 @@ class DependentPage < BasePage
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 10 of 22'
-    element :header, 'h1', text: 'Do you have any children living with you, or who you support financially?'
+    element :header, 'h1', text: 'Children that live with you or you’re supporting financially'
     element :no, 'label', text: 'No'
     element :yes, 'label', text: 'Yes'
     element :num_of_children, '.govuk-label', text: 'Number of children'

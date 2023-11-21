@@ -26,6 +26,8 @@ en:
         identifier: Employment tribunal claim number
       forms/dependent:
         children_number: Number of children
+        children_age_band_one: Number of children aged 0-13
+        children_age_band_two: Number of children aged 14 and over
       forms/fee:
         date_paid: Date fee paid
         day_date_paid: Day
@@ -125,6 +127,10 @@ en:
               less_than: You must enter number less than 100
               not_a_number: You must enter financially dependent children as a number
               greater_than: You must enter a number greater than 0
+            children_age_band_one:
+              blank: Enter number of children in this age category
+            children_age_band_two:
+              blank: Enter number of children in this age category
         forms/dob:
           attributes:
             date_of_birth:
@@ -513,8 +519,29 @@ en:
         section_1: You need to give details of any children you support financially.
         section_2: 'This includes children who are:'
         summary: Help with financially dependent children
-      text: Do you have any children living with you, or who you support financially?
-      title: Number of children living with you
+      text: Children that live with you or you’re supporting financially
+      title: Children that live with you or you’re supporting financially
+
+      single:
+        you_need: You need to give details of any children you support financially.
+        they_must: 'They must be:'
+        list:
+          - under 16 and living at home with you or
+          - not living with you, but you pay regular maintenance for them or
+          - between 16 and 19, living at home with you and in full-time education (not including studying for a degree or other higher education qualification).
+        list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        children_age_band: Do you have any children living with you or that you support financially?
+
+      married:
+        you_need: You need to give details of any children you are your partner support financially.
+        they_must: 'They must be:'
+        list:
+          - under 16 and living at home with you or
+          - not living with you, but you or your partner pay regular maintenance for them or
+          - between 16 and 19, living at home with you and in full-time education (not including studying for a degree or other higher education qualification).
+        list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        children_age_band: Do you or your partner have any children living with you or that you support financially?
+
     dob:
       breadcrumb: Step %{page_number} of 22
       hint_html: For example, 04 10 1990
@@ -829,6 +856,9 @@ en:
       address: Address
       benefits: Benefits
       children: Children
+      children_age_band: Children
+      children_age_band_one: aged 0-13
+      children_age_band_two: aged 14 and over
       claim: Claim number
       contact: Contact
       contact_email: Email

@@ -29,7 +29,7 @@ dl.govuk-summary-list
         =t('summary.change')
         span.govuk-visually-hidden
           =t('fee', scope: 'summary.labels').downcase
-  - if ucd_changes_apply?(@summary.calculation_scheme)
+  - if ucd_changes_apply?(@summary.calculation_scheme) && @summary.legal_representative
     =render('represented_by')
 
   div.govuk-summary-list__row
@@ -106,15 +106,7 @@ dl.govuk-summary-list
             =t('income', scope: 'summary.labels').downcase
 
   -else
-    - if @summary.children_text
-      div.govuk-summary-list__row
-        dt.govuk-summary-list__key =t('children', scope: 'summary.labels')
-        dd.govuk-summary-list__value =@summary.children_text
-        dd.govuk-summary-list__actions
-          = link_to question_path(:dependent), onclick: "dataLayer.push({'sectionName': 'dependent', 'event': 'summary_page'});" do
-            =t('summary.change')
-            span.govuk-visually-hidden
-              =t('children', scope: 'summary.labels').downcase
+    = render('children')
 
     - if @summary.income_text
       div.govuk-summary-list__row
