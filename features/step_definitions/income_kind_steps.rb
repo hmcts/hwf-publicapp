@@ -75,11 +75,6 @@ And(/^I slowly submit the form with wages checked$/) do
   income_kind_page.slowly_submit_single_income_wages_tax_credit
 end
 
-When('the ucd changes apply') do
-  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
-  Timecop.freeze(time)
-end
-
 When('the ucd changes end') do
   Timecop.return
 end
