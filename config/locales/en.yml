@@ -661,6 +661,39 @@ en:
       text_single: What kind of income did you receive last month?
       text_single_refund: What kind of income did you receive?
       title: Income kind
+    income_kind_ucd:
+      breadcrumb: Step %{page_number} of 22
+      details_married: Tick all the types of income you and your partner have received in the last calendar month
+      details_single: Tick all the types of income you have received in the last calendar month
+      hint_details_single: If your income last month is not representative of what you usually get, you can provide an average income for the last 3 months if this is lower. If so, tick all income types for that period.
+      hint_details_married: If you and your partner's income last month is not representative of what you usually get, you can provide an average income for the last 3 months if this is lower. If so, tick all income types for that period.
+      applicant_income: Your income
+      partner_income: Your partner's income
+      kinds:
+        '1': Wages
+        '2': Net profits from self employment
+        '3': Child Benefit
+        '4': Working Tax Credit
+        '5': Child Tax Credit
+        '6': Maintenance payments
+        '7': Contribution-based Jobseekers Allowance (JSA)
+        '8': Contribution-based Employment and Support Allowance (ESA)
+        '9': Universal Credit
+        '10': Pensions (state, work, private, pension credit (savings credit))
+        '11': Rent from anyone living with you
+        '12': Rent from other properties you own
+        '13': Cash gifts
+        '14': Financial support from others
+        '15': Loans
+        '16': Other income
+        '17': None of the above
+      one_off_hint: Include all one off payments
+      example_hint: For example, income from online selling or from dividends or interest payments
+      text_married: Types of income you and your partner have received
+      text_married_refund: Types of income you and your partner have received
+      text_single: Types of income you have received
+      text_single_refund: Types of income you have received
+      title: Income kind
     income_range:
       breadcrumb: Step %{page_number} of 22
       details:

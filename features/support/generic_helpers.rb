@@ -64,6 +64,10 @@ def claim_page
   @claim_page ||= ClaimPage.new
 end
 
+def applying_on_behalf_page
+  @applying_on_behalf_page ||= ApplyingOnBehalfPage.new
+end
+
 def national_insurance_page
   @national_insurance_page ||= NationalInsurancePage.new
 end

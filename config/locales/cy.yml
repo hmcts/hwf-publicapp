@@ -553,6 +553,39 @@ cy:
       text_single: Pa fath o incwm a gawsoch fis diwethaf?
       text_single_refund: Pa fath o incwm rydych chi'n ei gael?
       title: Math o incwm
+    income_kind_ucd:
+      breadcrumb: Cam %{page_number} o 22
+      details_married: Ticiwch bob math o incwm rydych chi a’ch partner wedi’i gael yn y mis calendr diwethaf
+      details_single: Ticiwch bob math o incwm rydych wedi’i gael yn y mis calendr diwethaf
+      hint_details_single: Os nad yw eich incwm am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is. Os felly, ticiwch bob math o incwm ar gyfer y cyfnod hwnnw.
+      hint_details_married: Os nad yw eich incwm chi a’ch partner am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is. Os felly, ticiwch bob math o incwm ar gyfer y cyfnod hwnnw.
+      applicant_income: Eich incwm
+      partner_income: Incwm eich partner
+      kinds:
+        '1': Cyflog
+        '2': Elw net o fusnesau hunangyflogedig
+        '3': Budd-dal Plant
+        '4': Credyd Treth Gwaith
+        '5': Credyd Treth Plant
+        '6': Taliadau cynhaliaeth
+        '7': Lwfans Ceisio Gwaith yn Seiliedig ar Gyfraniadau (JSA)
+        '8': Lwfans Cyflogaeth a Chymorth yn Seiliedig ar Gyfraniadau (ESA)
+        '9': Credyd Cynhwysol
+        '10': Pensiynau (gwladol, gwaith, preifat, credyd pensiwn (credyd cynilion))
+        '11': Rhent oddi wrth rywun sy'n byw gyda chi
+        '12': Rhent o eiddo arall rydych chi'n berchen arnynt
+        '13': Rhoddion ariannol
+        '14': Cefnogaeth ariannol tan deulu
+        '15': Benthyciadau
+        '16': Incwm arall
+        '17': Dim un o'r uchod
+      one_off_hint: Dylech gynnwys pob taliad unigol
+      example_hint: Er enghraifft, incwm o werthu nwyddau ar-lein neu o ddifidendau neu daliadau llog
+      text_married: Mathau o incwm rydych chi a’ch partner wedi’i gael
+      text_married_refund: Mathau o incwm rydych chi a’ch partner wedi’i gael
+      text_single: Mathau o incwm rydych chi wedi’i gael
+      text_single_refund: Mathau o incwm rydych chi wedi’i gael
+      title: Math o incwm
     income_range:
       breadcrumb: Cam %{page_number} o 22
       details:

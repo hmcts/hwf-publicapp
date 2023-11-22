@@ -9,6 +9,7 @@ class DependentPage < BasePage
     element :yes, 'label', text: 'Yes'
     element :num_of_children, '.govuk-label', text: 'Number of children'
     element :children_number, '#dependent_children_number'
+    element :children_number_ucd, '#dependent_children_age_band_one'
     element :details_content, '#details-content-0'
     element :give_details, 'p', text: 'You need to give details of any children you support financially.'
     element :includes_children, 'p', text: 'This includes children who are:'
@@ -33,6 +34,12 @@ class DependentPage < BasePage
 
   def dependent_yes
     content.yes.click
+  end
+
+  def submit_dependent_3_ucd
+    content.yes.click
+    content.children_number_ucd.set 3
+    continue
   end
 
   def submit_dependent_3
