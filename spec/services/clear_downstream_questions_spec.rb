@@ -138,7 +138,17 @@ RSpec.describe ClearDownstreamQuestions do
         expect(storage).to have_received(:clear_form).with(:home_office)
         expect(Forms::MaritalStatus).to have_received(:new).with({ married: false })
       end
+    end
 
+    context 'when the applying on behalf changed?' do
+      let(:question) { :applying_on_behalf }
+      let(:old_online_application) { build(:online_application, applying_on_behalf: true) }
+      let(:new_online_application) { build(:online_application, applying_on_behalf: false) }
+
+      it 'clears national insurance questions' do
+        expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
+        expect(storage).to have_received(:clear_form).with(:legal_representative)
+      end
     end
   end
 end

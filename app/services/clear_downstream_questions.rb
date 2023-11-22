@@ -16,6 +16,8 @@ class ClearDownstreamQuestions
       @storage.clear_forms([:income_range, :income_amount, :income_kind, :dependent])
     elsif legal_representative_changed?(new_online_application, old_online_application)
       clear_legal_representative_details
+    elsif applying_on_behalf_changed?(new_online_application, old_online_application)
+      clear_applying_on_behalf
     elsif over_16_changed?(new_online_application, old_online_application)
       clear_over_16_related_data(new_online_application)
     elsif !old_online_application.ni_number_present.nil?
@@ -63,6 +65,17 @@ class ClearDownstreamQuestions
 
   def clear_legal_representative_details
     @storage.clear_form(:legal_representative_detail)
+  end
+
+  def applying_on_behalf_changed?(new_online_application, old_online_application)
+    return false if @question != :applying_on_behalf || old_online_application.applying_on_behalf.nil?
+
+    new_online_application.applying_on_behalf != old_online_application.applying_on_behalf
+  end
+
+  def clear_applying_on_behalf
+    @storage.clear_form(:legal_representative_detail)
+    @storage.clear_form(:legal_representative)
   end
 
   def over_16_changed?(new_online_application, old_online_application)
