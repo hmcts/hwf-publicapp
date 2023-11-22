@@ -4,24 +4,20 @@ Feature: Income kind page
     Given probate is enabled
     When I am a single person on kind of income page
     Then I should see an income list:
-      | income name                                                                                  |
-      | Wages                                                                                        |
-      | Net profits from self employment                                                              |
-      | Child Benefit                                                                                 |
-      | Working Tax Credit                                                                           |
-      | Child Tax Credit                                                                             |
-      | Maintenance payments                                                                         |
-      | Contribution-based Jobseekers Allowance (JSA)                                                |
-      | Contribution-based Employment and Support Allowance (ESA)                                    |
-      | Universal Credit                                                                             |
-      | Pensions (state, work, private, pension credit (savings credit))                             |
-      | Rent from anyone living with you                                                             |
-      | Rent from other properties you own                                                           |
-      | Cash gifts\nInclude all one off payments                                                     |
-      | Financial support from others\nInclude all one off payments                                  |
-      | Loans                                                                                        |
-      | Other income\nFor example, income from online selling or from dividends or interest payments |
-      | None of the above                                                                            |
+      | income name                                               |
+      | Wages                                                     |
+      | Child Benefit                                              |
+      | Working Tax Credit                                        |
+      | Child Tax Credit                                          |
+      | Maintenance payments                                      |
+      | Contribution-based Jobseekers Allowance (JSA)             |
+      | Contribution-based Employment and Support Allowance (ESA) |
+      | Universal Credit                                          |
+      | Pensions (state, work, private)                           |
+      | Rent from anyone living with you                          |
+      | Rent from other properties you own                        |
+      | Other income                                              |
+      | No income                                                 |
 
   Scenario: Displays income lists for a couple
     Given probate is enabled
@@ -31,13 +27,13 @@ Feature: Income kind page
   Scenario: No income - probate enabled
     Given probate is enabled
     And I am a single person on kind of income page
-    When I submit the form with none of the above checked
+    When I submit the form with no income checked
     Then I should be taken to the probate page
 
   Scenario: No income - probate disabled
     Given probate is disabled
     And I am a single person on kind of income page
-    When I submit the form with none of the above checked
+    When I submit the form with no income checked
     Then I should be taken to the claim page
 
   Scenario: Submit the page with wages

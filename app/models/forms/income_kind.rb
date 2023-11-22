@@ -52,9 +52,17 @@ module Forms
           partner: income_kind_text_values(partner)
         }
       }
-      export[:income] = 0 if (applicant + partner).uniq == [self.class.no_income_index_ucd] && ucd_changes_apply?
-      export[:income] = 0 if (applicant + partner).uniq == [self.class.no_income_index]
+      export[:income] = 0 if ap_no_income_ucd
+      export[:income] = 0 if ap_no_income
       export
+    end
+
+    def ap_no_income_ucd
+      (applicant + partner).uniq == [self.class.no_income_index_ucd] && ucd_changes_apply?
+    end
+
+    def ap_no_income
+      (applicant + partner).uniq == [self.class.no_income_index] && ucd_changes_apply? == false
     end
 
     def clear_empty_string(attributes, attribute)

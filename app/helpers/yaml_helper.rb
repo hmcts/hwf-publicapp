@@ -66,10 +66,14 @@ module YamlHelper
 
   def tag_based_list(part)
     return bullet_list_block(part) if part.keys.first == :ul
-    return clear_list_block(part) if part.keys.first == :list
+    return clear_list_block(part) if first_part_key_is_list(part)
     return table_block(part) if part.keys.first == :table
 
     content_tag(part.keys.first, part.values.first.html_safe, class: 'govuk-body')
+  end
+
+  def first_part_key_is_list(part)
+    part.keys.first == :list || part.keys.first == :list_ucd
   end
 
   def bullet_list_block(part)

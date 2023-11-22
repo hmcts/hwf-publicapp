@@ -48,6 +48,29 @@ def to_confirmation_done_page
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.valid_dob
+  personal_details_page.submit_full_name
+  address_page.submit_full_address
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+  summary_page.submit_application
+  continue
+end
+
+def to_confirmation_done_page_ucd
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
   income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
@@ -61,6 +84,32 @@ def to_confirmation_done_page
 end
 
 def to_confirmation_page
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.valid_dob
+  personal_details_page.submit_full_name
+  if Capybara.app_host == 'https://public.demo.hwf.dsd.io'
+    address_page.submit_full_address_demo
+  else
+    address_page.submit_full_address
+  end
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+  summary_page.submit_application
+end
+
+def to_confirmation_page_ucd
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
@@ -86,7 +135,7 @@ def to_confirmation_page
   summary_page.submit_application
 end
 
-def to_online_confirmation_page
+def to_online_confirmation_page_ucd
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
@@ -98,6 +147,32 @@ def to_online_confirmation_page
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
   income_kind_page.submit_none_of_the_above
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.valid_dob
+  personal_details_page.submit_full_name
+  if Capybara.app_host == 'https://public.demo.hwf.dsd.io'
+    address_page.submit_full_address_demo
+  else
+    address_page.submit_full_address
+  end
+  contact_page.valid_email
+  apply_type_page.applying_by_online_service
+  summary_page.submit_application
+end
+
+def to_online_confirmation_page
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
   probate_page.submit_probate_no
   claim_page.submit_claim_no
   dob_page.valid_dob
@@ -182,7 +257,6 @@ end
 def to_income_kind_single
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -196,7 +270,6 @@ end
 def to_income_kind_married
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
   national_insurance_presence_page.submit_yes
@@ -366,6 +439,27 @@ def to_summary_page_probate_enabled
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.static_dob
+  personal_details_page.submit_full_name
+  address_page.submit_full_address
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+end
+
+def to_summary_page_probate_enabled_ucd
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
   income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no
   claim_page.submit_claim_no
@@ -377,6 +471,26 @@ def to_summary_page_probate_enabled
 end
 
 def to_summary_page_probate_enabled_fee_paid
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.static_dob
+  personal_details_page.submit_full_name
+  address_page.submit_full_address
+  contact_page.valid_email
+end
+
+def to_summary_page_probate_enabled_fee_paid_ucd
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
@@ -414,6 +528,20 @@ def to_summary_page_probate_disabled
 end
 
 def to_summary_page_with_ho_number
+  home_office_page.submit_valid_home_office_number
+  marital_status_page.submit_married
+  savings_investment_page.low_amount_checked
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_no_income
+  probate_page.submit_probate_no
+  dob_page.static_dob
+  personal_details_page.submit_full_name
+  address_page.submit_full_address
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+end
+
+def to_summary_page_with_ho_number_ucd
   home_office_page.submit_valid_home_office_number
   marital_status_page.submit_married
   savings_investment_page.low_amount_checked

@@ -77,7 +77,7 @@ module ApplicationHelper
 
   def income_kind_postfix(online_application)
     scope_postfix = []
-    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? 'ucd' : nil)
-    "questions.income_kind_#{scope_postfix.compact.join('_')}"
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
+    "questions.income_kind#{scope_postfix.compact.join('_')}"
   end
 end
