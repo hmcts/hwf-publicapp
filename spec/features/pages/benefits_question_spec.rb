@@ -11,7 +11,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "dependent" page' do
-        expect(page).to have_content 'Do you have any children living with you, or who you support financially?'
+        expect(page).to have_content 'Children that live with you or you’re supporting financially'
       end
     end
 

@@ -20,7 +20,7 @@ module FeatureSwitch
   end
 
   def self.ucd_changes_apply?(calculation_scheme)
-    calculation_scheme == FeatureSwitch::CALCULATION_SCHEMAS[1]
+    calculation_scheme == FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
   end
 
   def self.correct_dates(data)

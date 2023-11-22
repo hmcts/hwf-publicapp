@@ -26,6 +26,9 @@ cy:
         identifier: Rhif hawliad tribiwnlys cyflogaeth
       forms/dependent:
         children_number: Nifer y plant
+        children_age_band_one: Nifer y plant rhwng 0-13 oed
+        children_age_band_two: Nifer y plant sy’n 14 oed neu'n hŷn
+
       forms/fee:
         date_paid: Dyddiad y talwyd y ffi
         day_date_paid: Dydd
@@ -122,6 +125,10 @@ cy:
               less_than: Rhaid i chi roi rhif sy'n llai na 100
               not_a_number: Rhaid i chi roi nifer y plant sy'n dibynnu'n ariannol arnoch chi fel rhif
               greater_than: Rhaid i chi nodi rhif sy'n fwy na 0
+            children_age_band_one:
+              blank: Nodwch nifer y plant yn y categori oedran hwn
+            children_age_band_two:
+              blank: Nodwch nifer y plant yn y categori oedran hwn
         forms/dob:
           attributes:
             date_of_birth:
@@ -453,8 +460,29 @@ cy:
         section_1: Mae angen i chi roi manylion unrhyw blant rydych chi'n eu cynnal yn ariannol.
         section_2: 'Mae hyn yn cynnwys plant sydd:'
         summary: Help gyda phlant sy'n dibynnu arnoch yn ariannol
-      text: Oes gennych chi blant sy'n byw gyda chi, neu rydych chi'n eu cynnal yn ariannol?
-      title: Nifer y plant sy'n byw gyda chi
+      text: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
+      title: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
+
+      single:
+        you_need: Mae angen i chi roi manylion unrhyw blant rydych yn eu cynnal yn ariannol.
+        they_must: 'Mae’n rhaid eu bod:'
+        list:
+          - dan 16 oed ac yn byw gartref gyda chi, neu
+          - ddim yn byw gyda chi, ond rydych chi’n talu cynhaliaeth amdanynt yn rheolaidd, neu
+          - rhwng 16 a 19 oed, yn byw gartref gyda chi ac mewn addysg llawn amser (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall)
+        list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        children_age_band: A oes gennych chi blant sy’n byw gyda chi, neu blant rydych chi’n eu cynnal yn ariannol?
+
+      married:
+        you_need: Mae angen i chi roi manylion unrhyw blant rydych chi a’ch partner yn eu cynnal yn ariannol.
+        they_must: 'Mae’n rhaid eu bod:'
+        list:
+          - under 16 and living at home with you or
+          - ddim yn byw gyda chi, ond rydych chi neu eich partner yn talu cynhaliaeth amdanynt yn rheolaidd, neu
+          - rhwng 16 a 19 oed, yn byw gartref gyda chi ac mewn addysg llawn amser (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall)
+        list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        children_age_band: A oes gennych chi neu’ch partner blant sy’n byw gyda chi, neu blant rydych chi’n eu cynnal y ariannol?
+
     dob:
       breadcrumb: Cam %{page_number} o 22
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
@@ -740,6 +768,10 @@ cy:
       address: Cyfeiriad
       benefits: Budd-daliadau
       children: Plant
+      children_age_band: Plant
+      children_age_band_one: 0-13 oed
+      children_age_band_two: 14 oed neu'n hŷn
+      applicant_name: Full name
       claim: Rhif hawliad
       contact: Cyswllt
       contact_email: E-bost

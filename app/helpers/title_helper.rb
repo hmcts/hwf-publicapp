@@ -57,4 +57,12 @@ module TitleHelper
     scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
     "questions.income_kind#{scope_postfix.compact.join('_')}"
   end
+  
+  def legal_representative_detail_postfix(online_application)
+    if online_application.legal_representative == 'litigation_friend'
+      'questions.legal_representative_detail_friend'
+    else
+      'questions.legal_representative_detail'
+    end
+  end
 end

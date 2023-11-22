@@ -196,5 +196,25 @@ RSpec.describe Navigation do
       end
     end
 
+    context 'ucd' do
+      context 'when the applying on behalf of someone else' do
+        let(:online_application) { build(:online_application, applying_on_behalf: false) }
+        let(:current_question) { :applying_on_behalf }
+
+        it 'skips to ni number' do
+          expect(subject).to eql(question_path(:national_insurance_presence, locale: :en))
+        end
+      end
+
+      context 'under 16' do
+        let(:online_application) { build(:online_application, over_16: false) }
+        let(:current_question) { :over_16 }
+
+        it 'skips to savings_and_investment' do
+          expect(subject).to eql(question_path(:savings_and_investment, locale: :en))
+        end
+      end
+    end
+
   end
 end

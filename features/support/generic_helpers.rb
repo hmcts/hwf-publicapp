@@ -128,6 +128,22 @@ def home_page
   @home_page ||= HomePage.new
 end
 
+def on_behalf_page
+  @on_behalf_page ||= OnBehalfPage.new
+end
+
+def legal_representative_page
+  @legal_representative_page ||= LegalRepresentativePage.new
+end
+
+def legal_representative_detail_page
+  @legal_representative_detail_page ||= LegalRepresentativeDetailPage.new
+end
+
+def over_16_page
+  @over_16_page ||= Over16Page.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end

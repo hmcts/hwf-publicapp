@@ -6,7 +6,7 @@ RSpec.describe OnlineApplicationBuilder do
   let(:session_id) { 2 }
   let(:store_data) do
     rails_store = Rails.cache
-    rails_store.write("questions-#{session_id}-marital_status", { 'married' => true }.as_json)
+    rails_store.write("questions-#{session_id}-over16", { 'married' => false, 'over_16' => false }.as_json)
     rails_store.write("questions-#{session_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
     rails_store.write("questions-#{session_id}-savings_and_investment_extra", { 'over_61' => false, 'amount' => 6000 }.as_json)
     rails_store.write("questions-#{session_id}-benefit", { 'on_benefits' => true }.as_json)
@@ -31,7 +31,7 @@ RSpec.describe OnlineApplicationBuilder do
 
     before do
       store_data
-      allow(session).to receive(:[]).with(:calculation_scheme).and_return ''
+      allow(session).to receive(:[]).with(:calculation_scheme).and_return FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
       allow(session).to receive(:[]).with(:started_at).and_return ''
       allow(session).to receive(:[]=)
     end
@@ -41,7 +41,8 @@ RSpec.describe OnlineApplicationBuilder do
     end
 
     it 'assigns the correct values to each field' do
-      expect(online_application.married).to be true
+      expect(online_application.over_16).to be false
+      expect(online_application.married).to be false
       expect(online_application.min_threshold_exceeded).to be true
       expect(online_application.max_threshold_exceeded).to be false
       expect(online_application.over_61).to be false
