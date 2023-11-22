@@ -4,8 +4,9 @@ RSpec.describe ClearDownstreamQuestions do
   subject(:service) { described_class.new(storage, question) }
 
   describe '#for_changes' do
-    let(:storage) { instance_double(Storage, clear_form: nil, clear_forms: nil) }
+    let(:storage) { instance_double(Storage, clear_form: nil, clear_forms: nil, load_form: form_params, save_form: true) }
     let(:form) { instance_double(Forms::MaritalStatus) }
+    let(:form_params) { {} }
 
     before do
       allow(Forms::MaritalStatus).to receive(:new).and_return form
@@ -138,7 +139,18 @@ RSpec.describe ClearDownstreamQuestions do
         expect(storage).to have_received(:clear_form).with(:home_office)
         expect(Forms::MaritalStatus).to have_received(:new).with({ married: false })
       end
-
     end
+
+    context 'when the applying on behalf changed?' do
+      let(:question) { :applying_on_behalf }
+      let(:old_online_application) { build(:online_application, applying_on_behalf: true) }
+      let(:new_online_application) { build(:online_application, applying_on_behalf: false) }
+
+      it 'clears national insurance questions' do
+        expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
+        expect(storage).to have_received(:clear_form).with(:legal_representative)
+      end
+    end
+
   end
 end
