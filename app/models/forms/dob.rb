@@ -84,9 +84,10 @@ module Forms
     end
 
     def export_params
-      dobs = { date_of_birth: dob_dates }
-      dobs[:partner_date_of_birth] = partner? ? partner_dob_dates : {}
-      dobs
+      {
+        date_of_birth: dob_dates,
+        partner_date_of_birth: partner_dob_dates
+      }
     end
 
     def dob_dates
