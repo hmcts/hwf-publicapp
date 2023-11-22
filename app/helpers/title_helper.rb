@@ -1,27 +1,4 @@
-module ApplicationHelper
-  def ni_number_value(summary)
-    summary.ni_number.presence || t('ni_number_no', scope: 'summary.labels')
-  end
-
-  def cookies_accepted?
-    Forms::Cookie::SettingForm.new(request: request).accepted?
-  end
-
-  def show_cookie_banner?
-    !Forms::Cookie::SettingForm.new(request: request).preference_set?
-  end
-
-  def address_lookup_access_token
-    Rails.cache.read('address_lookup')
-  end
-
-  def address_lookup_url
-    [Rails.configuration.x.address_lookup.endpoint, "/search/places/v1/postcode"].join
-  end
-
-  def address_lookup_details_filled?(record)
-    record.send(:street).present?
-  end
+module TitleHelper
 
   # rubocop:disable Metrics/MethodLength
   def title_scope(scope, online_application)
@@ -34,8 +11,8 @@ module ApplicationHelper
       personal_detail_postfix(online_application)
     when 'questions.savings_and_investment'
       savings_postfix(online_application)
-    when 'questions.income_kind'
-      income_kind_postfix(online_application)
+    when 'questions.legal_representative_detail'
+      legal_representative_detail_postfix(online_application)
     else
       scope
     end
@@ -73,5 +50,11 @@ module ApplicationHelper
     else
       'questions.personal_detail'
     end
+  end
+
+  def income_kind_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
+    "questions.income_kind#{scope_postfix.compact.join('_')}"
   end
 end
