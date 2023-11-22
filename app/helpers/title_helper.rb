@@ -13,6 +13,8 @@ module TitleHelper
       savings_postfix(online_application)
     when 'questions.legal_representative_detail'
       legal_representative_detail_postfix(online_application)
+    when 'questions.income_kind'
+      income_kind_postfix(online_application)
     else
       scope
     end
