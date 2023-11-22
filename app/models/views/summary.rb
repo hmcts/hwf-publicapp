@@ -66,6 +66,12 @@ module Views
        #{two} (#{I18n.t('summary.labels.children_age_band_two')})".html_safe
     end
 
+    def signed_by_representative
+      return false unless online_application.applying_on_behalf
+
+      online_application.legal_representative == 'legal_representative'
+    end
+
     private
 
     def online_application

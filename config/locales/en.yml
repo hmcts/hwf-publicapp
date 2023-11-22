@@ -314,6 +314,7 @@ en:
     back_to_start: Back to start
     default_form_name: claim
     submission_error: "We couldn't process your application at this time. Please try again later."
+    submission_statement_error: "Select whether you are the applicant/litigation friend or legal representative completing this application"
     default:
       breadcrumb: Step 22 of 22
       title: Send your claim form
@@ -853,6 +854,9 @@ en:
       text_married: Are you or your partner 61 years old or over?
       text_single: Are you 61 years old or over?
       title: Are you or your partner 61 or over?
+    statement:
+      signed_by_legal_representative: I am the legal representative completing this application.
+      signed_by_applicant: I am the applicant or litigation friend completing this application.
   restart_application:
       cancel_button: "Cancel application"
       copy_1: "Are you sure you want to cancel your application?"
@@ -867,6 +871,11 @@ en:
   start_application: Start now
   submit_button: Continue
   summary:
+    applicant_truth:
+      statement: 'I believe that my/the applicant’s current financial circumstances mean that I/the applicant may be entitled to help with fees. I declare that the information I have given on this form is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this form if requested, my/this application may be rejected and the full fee will be payable.'
+    legal_representative_truth:
+      statement: 'The applicant believes that their current financial circumstances mean that they may be entitled to help with fees. The applicant declares that the information they have given on this form is correct and complete. The applicant understands that if they have given false information, criminal or civil proceedings may be brought against them. The applicant understands that if they have given false information or they do not provide evidence of the information given in this form if requested, this application may be rejected and the full fee will be payable.'
+
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
     breadcrumb: Step 21 of 22

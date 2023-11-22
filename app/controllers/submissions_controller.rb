@@ -1,14 +1,17 @@
 class SubmissionsController < ApplicationController
-  def create
-    response = submit_service.post(online_application)
-    storage.submission_result = response
 
-    if response[:result]
-      redirect_to(confirmation_route(online_application))
+  def create
+    @form = Forms::Statement.new
+    @form.update_attributes(statement_params)
+
+    if @form.valid?
+      submit
     else
-      flash[:error] = I18n.t('.confirmation.submission_error')
+      flash[:error] = @form_error || I18n.t('.confirmation.submission_error')
+      flash[:statement_blank] = true
       redirect_to(summary_path)
     end
+
   end
 
   def confirmation_route(online_application)
@@ -25,4 +28,22 @@ class SubmissionsController < ApplicationController
     @submit_service ||= SubmitApplication.new(Settings.submission.url, Settings.submission.token, params[:locale])
   end
 
+  def submit
+    response = submit_service.post(online_application)
+    storage.submission_result = response
+
+    if response[:result]
+      redirect_to(confirmation_route(online_application))
+    else
+      flash[:error] = I18n.t('.confirmation.submission_error')
+      redirect_to(summary_path)
+    end
+  end
+
+  def statement_params
+    params.require(@form.id).permit(@form.permitted_attributes).to_h
+  rescue ActionController::ParameterMissing
+    @form_error = I18n.t('.confirmation.submission_statement_error')
+    {}
+  end
 end

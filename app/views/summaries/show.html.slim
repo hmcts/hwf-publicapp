@@ -264,7 +264,12 @@ dl.govuk-summary-list
     span.govuk-error-message =t('summary.invalid_footer')
     p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
 - else
-  h2.govuk-heading-m = t('heading', scope: 'summary.truth')
-  p.govuk-body = t('statement', scope: 'summary.truth')
-  = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
-    = submit_tag(t('button', scope: 'summary.truth'), class: 'govuk-button', role: 'button')
+  - if ucd_changes_apply?(@summary.calculation_scheme)
+    = render('declaration')
+  - else
+    h2.govuk-heading-m = t('heading', scope: 'summary.truth')
+    p.govuk-body = t('statement', scope: 'summary.truth')
+    = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
+      = submit_tag(t('button', scope: 'summary.truth'), class: 'govuk-button', role: 'button')
+
+
