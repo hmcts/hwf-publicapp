@@ -1,4 +1,4 @@
 - if ucd_changes_apply?(@online_application.calculation_scheme)
-  = render('confirmations/paper/post_ucd')
+  = render('confirmations/paper/post_ucd', f: f)
 - else
   = render('confirmations/paper/pre_ucd')
