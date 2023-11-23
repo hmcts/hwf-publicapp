@@ -256,6 +256,7 @@ cy:
     back_to_start: Yn ôl i'r dechrau
     default_form_name: hawlio
     submission_error: "Ni allwn brosesu eich cais ar hyn o bryd. Rhowch gynnig arall arni yn hwyrach ymlaen."
+    submission_statement_error: "Dewiswch p’un ai chi yw’r ceisydd/cyfaill cyfreitha neu’r cynrychiolydd cyfreithiol yn y cais hwn"
     default:
       breadcrumb: Cam 22 of 22
       title: Anfonwch eich ffurflen hawlio
@@ -738,6 +739,10 @@ cy:
       text_married: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
+    statement:
+      signed_by_legal_representative: Fi yw’r cynrychiolydd cyfreithiol sy’n cwblhau’r cais hwn.
+      signed_by_applicant: Fi yw’r ceisydd neu’r cyfaill cyfreitha sy’n cwblhau’r cais hwn.
+
   restart_application:
     cancel_button: "Canslo cais"
     copy_1: "Ydych chi'n siŵr eich bod am ganslo eich cais?"
@@ -752,6 +757,11 @@ cy:
   start_application: Dechrau nawr
   submit_button: Parhau
   summary:
+    applicant_truth:
+      statement: 'Rwy’n credu bod fy amgylchiadau ariannol presennol i yn golygu efallai y byddaf/amgylchiadau ariannol presennol y ceisydd yn golygu efallai y bydd yn gymwys i gael help i dalu ffioedd. Rwy’n datgan bod yr wybodaeth a roddwyd gennyf ar y ffurflen hon yn gywir ac yn gyflawn. Rwy’n deall y gellir dwyn achos troseddol neu sifil yn fy erbyn os byddaf wedi rhoi gwybodaeth ffug. Rwy’n deall y gellid gwrthod fy nghais/y cais os wyf wedi rhoi gwybodaeth ffug neu os nad wyf yn darparu tystiolaeth ar gyfer yr wybodaeth a roddwyd yn y ffurflen hon, os gofynnwyd am hynny, a bydd y ffi lawn yn daladwy.'
+    legal_representative_truth:
+      statement: 'Mae’r ceisydd yn credu bod eu hamgylchiadau ariannol presennol yn golygu efallai y byddant yn gymwys i gael help i dalu ffioedd. Mae’r ceisydd yn datgan bod yr wybodaeth a roddwyd ganddynt yn y ffurflen hon yn gywir ac yn gyflawn. Mae’r ceisydd yn deall y gellir dwyn achos troseddol neu sifil yn eu herbyn os byddant wedi rhoi gwybodaeth ffug. Mae’r ceisydd yn deall y gellid gwrthod y cais hwn os ydyw wedi rhoi gwybodaeth ffug neu os nad yw’n darparu tystiolaeth ar gyfer yr wybodaeth a roddwyd yn y ffurflen hon, os gofynnwyd am hynny, a bydd y ffi lawn yn daladwy.'
+
     applicant_on_benefits_false: Ddim yn derbyn budd-daliadau cymwys
     applicant_on_benefits_true: Yn derbyn budd-daliadau cymwys
     breadcrumb: Cam 21 o 22
@@ -764,7 +774,22 @@ cy:
     fee_paid_false: Naddo
     fee_paid_true: Do
     invalid_footer: "Rydych chi wedi gwneud newidiadau. Atebwch y cwestiynau sydd wedi'u amlygu i gwblhau eich cais"
+    applying_on_behalf_false: 'No'
+    applying_on_behalf_true: 'Yes'
+    legal_representative_legal_representative: 'Legal representative'
+    legal_representative_litigation_friend: 'Litigation friend'
+    over_16_true: 'Yes'
+    over_16_false: 'No'
+
     labels:
+      applying_on_behalf: Applying on behalf of someone else
+      legal_representative_or_friend: Legal representative or litigation friend
+      legal_representative: Legal representative
+      legal_representative_detail: Legal representative details
+      litigation_friend: Litigation friend
+      full_name: Full name
+      email: Email
+      over_16: Applicant over 16
       address: Cyfeiriad
       benefits: Budd-daliadau
       children: Plant
