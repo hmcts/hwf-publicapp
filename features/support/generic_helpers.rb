@@ -148,6 +148,10 @@ def over_16_page
   @over_16_page ||= Over16Page.new
 end
 
+def income_period_page
+  @income_period_page ||= IncomePeriodPage.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end

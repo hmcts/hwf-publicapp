@@ -40,7 +40,7 @@ Feature: Income kind page UCD
   Scenario: Submit the page with wages
     And I am a single person on kind of income page ucd
     When I submit the form with wages checked
-    Then I should be taken to income range page
+    Then I should be taken to income period page
     And the ucd changes end
 
   Scenario: Displays error message
