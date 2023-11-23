@@ -183,6 +183,15 @@ cy:
           attributes:
             choice:
               inclusion: Dewiswch eich incwm misol
+        forms/income_period:
+          attributes:
+            amount:
+              blank: Rhowch swm yr incwm rydych chi'n ei gael
+              greater_than_or_equal_to: Rhowch swm rhwng £0 a £1,000,000
+              less_than: Rhowch swm rhwng £0 a £1,000,000
+              not_within_range: 'Nodwch swm rhwng £%{min} a £%{max}'
+            income_period:
+              blank: Select whether this is for the last calendar month or an average for the last three months
         forms/marital_status:
           attributes:
             married:
@@ -288,6 +297,35 @@ cy:
         reference: 'Cyfeirnod: %{reference}'
         line_one: Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un].
         line_two: Yn gywir,
+    online_ucd:
+      heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
+      sub_heading: Mae gennych un cam arall i’w gyflawni isod
+      h3_one: Cam Olaf
+      h3_two: Beth fydd yn digwydd nesaf
+      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
+      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
+      p_three: Dylech anfon hwn atynt fel rhan o’ch hawliad o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
+      p_four: Os ydych chi'n gwneud cais ar-lein i'r llys, rhowch eich cyfeirnod Help i Dalu Ffioedd ar y system pan ofynnir ichi wneud hynny.
+      p_five_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i  ddod o hyd i fanylion cyswllt pellach.
+      p_six: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      template:
+        line_one: "Nodwch eich cyfeirnod uchod yn yr adran help i dalu ffioedd ar y ffurflen ar-lein. Dylai eich ffurflen gais ar-lein i’r llys edrych rhywbeth fel hyn:"
+      contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
+    paper_ucd:
+      heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
+      sub_heading: Mae gennych un cam arall i’w gyflawni isod
+      h3_one: Cam Olaf
+      h3_two: Beth fydd yn digwydd nesaf
+      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
+      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
+      p_three: Dylech anfon hwn atynt fel rhan o’ch hawliad o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
+      p_four: Dylech gynnwys y cyfeirnod yn yr adran Help i Dalu Ffioedd y ffurflen hawlio. Os nad oes adran Help i Dalu Ffioedd ar y ffurflen, ysgrifennwch y cyfeirnod ar frig y ffurflen hawlio.
+      p_five_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
+      p_six: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      template:
+        reference: 'Cyfeirnod: %{reference}'
+        line_one: Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un].
+        line_two: Yn gywir,
     et:
       address:
         email:
@@ -344,6 +382,7 @@ cy:
       h3_two: Beth fydd yn digwydd nesaf
       p_one: Rydych wedi cwblhau cais ar-lein am ad-daliad help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
       p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys y bu ichi dalu eich ffi, a byddant wedyn yn prosesu eich cais.
+      p_three: Dylech anfon hwn atynt o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
       p_three_html: Os oes arnoch angen help i ddod o hyd i gyfeiriad e-bost neu gyfeiriad post y llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
       p_four: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
   error_block:
@@ -607,6 +646,26 @@ cy:
       title: Ystod incwm
       wages: Cyflog cyn unrhyw ddidyniadau treth ac Yswiriant Gwladol
       contact_hm_revenue: Efallai y byddwn yn cysylltu â Chyllid a Thollau EM i ddilysu'r incwm rydych yn ei ddatgan. Efallai y byddwn hefyd yn cysylltu â chi os bydd angen i ni weld tystiolaeth ychwanegol.
+    income_period:
+      title: 'Faint o incwm gawsoch chi?'
+      breadcrumb: Cam %{page_number} of 22
+      income_period_last_month: Incwm am y mis calendr diwethaf
+      income_period_average: Cyfartaledd incwm am y tri mis calendr diwethaf
+      kinds_example:
+        - Budd-dal Plant
+        - Credyd Treth Plant
+        - Elw net o fusnesau hunangyflogedig
+        - Rhent oddi wrth rywun sy'n byw gyda chi
+
+    income_period_single:
+      text: 'Faint o incwm gawsoch chi?'
+      prompt: "Mae angen i chi ddarparu manylion yr incwm a gawsoch chi yn y mis calendr diwethaf neu ddarparu’r cyfartaledd dros dri mis o:"
+      amount_prompt: "Os nad yw eich incwm am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is."
+    income_period_married:
+      text: 'Faint o incwm gawsoch chi a’ch partner?'
+      prompt: "Mae angen i chi ddarparu manylion yr incwm a gawsoch chi a’ch partner yn y mis calendr diwethaf neu ddarparu’r cyfartaledd dros dri mis o:"
+      amount_prompt: "Os nad yw eich incwm chi a’ch partner am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is."
+
     marital_status:
       breadcrumb: Cam %{page_number} o 22
       example: 'Os ydych yn gwneud cais am ysgariad, diddymu neu ddirymu priodas, dewiswch ‘Sengl’ oni bai eich bod yn byw gyda phartner newydd.  Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth.'
@@ -865,7 +924,9 @@ cy:
     legal_representative_litigation_friend: 'Litigation friend'
     over_16_true: 'Yes'
     over_16_false: 'No'
-
+    income_period:
+      last_month: Mis calendr diwethaf
+      average: Cyfartaledd am y tri mis diwethaf
     labels:
       applying_on_behalf: Applying on behalf of someone else
       legal_representative_or_friend: Legal representative or litigation friend
@@ -893,6 +954,7 @@ cy:
       fee: Ffi a dalwyd
       form_name: Rhif ffurflen
       income: Incwm
+      total_income: Cyfanswm incwm
       income_type: Math o incwm
       income_type_me: Eich math o incwm
       income_type_my_partner: Math o incwm eich partner
@@ -1158,6 +1220,52 @@ cy:
           class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
           target='_blank'>ffurflen bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
       accurate_information: Rhaid i’r wybodaeth a ddarperir gennych fod yn gywir oherwydd dyma fydd y dystiolaeth ar gyfer eich cais. Byddwn yn cysylltu â chi os bydd arnom angen prawf o’r wybodaeth hon.
+      national_insurance:
+        details:
+          section_1:
+            detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
+              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+              class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+              target='_blank'>ddefnyddio’r ffurflen bapur</a>."
+            item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
+            item_2: gofynnwch am nodyn atgoffa drwy'r post
+          summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
+    checklist_ucd:
+      title: Beth fydd arnoch ei angen
+      heading: 'Pwysig: I’w ddarllen cyn i chi gychwyn'
+      sections:
+        - parts:
+            - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i lys neu dribiwnlys.'
+            - p: 'Fe gewch gyfeirnod Help i Dalu Ffioedd ar ddiwedd y broses a dylech anfon hwn i’r llys neu’r tribiwnlys gyda’ch hawliad o fewn 28 diwrnod. Os bydd yn cyrraedd ar ôl hynny, efallai y bydd yn cael ei wrthod a bydd rhaid ichi wneud cais am Help i Dalu Ffioedd newydd.'
+            - p: 'Rhaid cyflwyno ceisiadau am ad-daliad o fewn 3 mis ichi dalu’r ffi wreiddiol. Os gwrthodir eich cais gan bod y cyfeirnod Help i Dalu Ffioedd wedi’i ddarparu mwy na 28 diwrnod yn ôl, gallai hyn effeithio ar faint o amser sydd gennych yn weddill i fod yn gymwys i gael ad-daliad.'
+            - p: 'Os ydych yn gwneud hawliad neu gais lluosog, bydd angen i’r ddau hawlydd wneud cais am Help i Dalu Ffioedd ar wahân a chyflwyno cyfeirnod ar-lein y ddau gais i’r llys.'
+            - p: 'Bydd y staff yn prosesu’r cais am Help i Dalu Ffioedd a’r cais i’r llys neu’r tribiwnlys gyda’i gilydd ac fe’ch hysbysir os bydd angen i chi dalu rhywfaint o’r ffi neu os yw’r llys angen rhagor o wybodaeth gennych.'
+            - p: 'Gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar eich rhan. Mae’n rhaid iddynt roi’ch manylion chi yn y cais.'
+
+            - p: '<h2 class="govuk-heading-m">Cyn i chi barhau, gwnewch yn siŵr fod gennych:</h2>'
+            - ul:
+                - li: eich rhif Yswiriant Gwladol (NI) neu
+                - li: eich gyfeirnod y Swyddfa Gartref - efallai bydd gennych gyfeirnod y Swyddfa Gartref os ydych chi’n destun rheolaethau mewnfudo
+                - li: rhif y ffurflen llys neu dribiwnlys
+                - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
+        - title:
+          parts:
+            - p: "Hefyd bydd arnoch angen manylion eich:"
+            - ul:
+                - li: incwm, yn cynnwys cyflog
+                - li: cynilion a buddsoddiadau
+                - li: manylion incwm, cynilion a buddsoddiadau eich partner - Os oes gennych bartner, byddwch angen eu rhif Yswiriant Gwladol, eu dyddiad geni a manylion eu hincwm, cynilion a buddsoddiadau
+            - p: Efallai y byddwn yn defnyddio eich gwybodaeth bersonol chi a’ch partner (os oes gennych un) i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth rydych wedi’i rhoi. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+      details:
+        section_1:
+          item_1: Mae’ch cyfeirnod Swyddfa Gartref i’w weld ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref.
+        summary: Os nad ydych chi’n gwybod beth yw eich rhif Yswiriant Gwladol
+      paper_form_html: "Os nad oes gennych rif Yswiriant Gwladol neu gyfeirnod Swyddfa Gartref, mae angen i chi ddefnyddio'r
+          <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees.cy'
+          class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+          target='_blank'>ffurflen bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
+      accurate_information: Mae angen i’r wybodaeth a roddir gennych fod yn gywir gan y bydd yn gweithredu fel tystiolaeth ar gyfer eich cais a bydd yn ein galluogi i wirio’r wybodaeth gydag adrannau eraill y llywodraeth. Byddwn yn cysylltu â chi os byddwn angen gweld prawf o’r wybodaeth hon.
+      accurate_information_link: Sut i wneud cais am help i dalu ffioedd
       national_insurance:
         details:
           section_1:

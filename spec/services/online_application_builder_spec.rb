@@ -12,7 +12,7 @@ RSpec.describe OnlineApplicationBuilder do
     rails_store.write("questions-#{session_id}-benefit", { 'on_benefits' => true }.as_json)
     rails_store.write("questions-#{session_id}-dependent", { 'children' => true, 'children_number' => 2 }.as_json)
     rails_store.write("questions-#{session_id}-fee", { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' }.as_json)
-    rails_store.write("questions-#{session_id}-income_amount", { 'amount' => 550 }.as_json)
+    rails_store.write("questions-#{session_id}-income_period", { 'amount' => 550 }.as_json)
     rails_store.write("questions-#{session_id}-probate", { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'day_date_of_death' => '01', 'month_date_of_death' => '08', 'year_date_of_death' => '2015' }.as_json)
     rails_store.write("questions-#{session_id}-claim/default", { 'number' => true, 'identifier' => 'CL001' }.as_json)
     rails_store.write("questions-#{session_id}-form_name", { 'identifier' => 'EX47' }.as_json)

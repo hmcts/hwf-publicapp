@@ -1,0 +1,15 @@
+p.govuk-body
+  = t('prompt', scope: income_period_postfix(@online_application))
+
+p.govuk-body
+ul class="govuk-list govuk-list--bullet"
+  li= t('kinds_example', scope: @form.i18n_scope)[0]
+  li= t('kinds_example', scope: @form.i18n_scope)[1]
+  li= t('kinds_example', scope: @form.i18n_scope)[2]
+  li= t('kinds_example', scope: @form.i18n_scope)[3]
+
+p.govuk-body
+  = t('amount_prompt', scope: income_period_postfix(@online_application))
+
+
+

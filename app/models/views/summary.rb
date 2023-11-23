@@ -72,6 +72,12 @@ module Views
       online_application.legal_representative == 'legal_representative'
     end
 
+    def income_period
+      return unless online_application.income_period
+
+      I18n.t(online_application.income_period, scope: 'summary.income_period')
+    end
+
     private
 
     def online_application
