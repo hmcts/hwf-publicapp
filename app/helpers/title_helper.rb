@@ -15,6 +15,8 @@ module TitleHelper
       legal_representative_detail_postfix(online_application)
     when 'questions.income_kind'
       income_kind_postfix(online_application)
+    when 'questions.income_period'
+      income_period_postfix(online_application)
     else
       scope
     end
@@ -66,5 +68,10 @@ module TitleHelper
     else
       'questions.legal_representative_detail'
     end
+  end
+
+  def income_period_postfix(online_application)
+    scope_postfix = (online_application.married? ? 'married' : 'single')
+    "questions.income_period_#{scope_postfix}"
   end
 end

@@ -91,8 +91,7 @@ navigation:
     - :benefit
     - :dependent
     - :income_kind
-    - :income_range
-    - :income_amount
+    - :income_period
     - :probate
     - :claim
     - :dob

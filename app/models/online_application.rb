@@ -55,6 +55,7 @@ class OnlineApplication
   attribute :legal_representative_address, String
   attribute :over_16, Boolean
   attribute :statement_signed_by, String
+  attribute :income_period, String
 
   def full_name
     %i[title first_name last_name].filter_map { |field| send(field) }.join(' ')
