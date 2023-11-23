@@ -204,7 +204,7 @@ RSpec.describe Forms::Dob do
     let(:date_of_birth) { Date.parse('01/01/1980') }
 
     it 'returns hash with date_of_birth' do
-      expect(subject).to eql(date_of_birth: date_of_birth)
+      expect(subject).to eql(date_of_birth: date_of_birth, partner_date_of_birth: nil)
     end
   end
 

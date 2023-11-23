@@ -1,11 +1,15 @@
 module PartnerDobValidatable
   extend ActiveSupport::Concern
 
+  def reset_partner_dob
+    @partner_date_of_birth = {}
+  end
+
   def partner_dob_dates
     concat_partner_dob_dates
     @partner_date_of_birth = concat_partner_dob_dates.to_date
   rescue ArgumentError
-    @partner_date_of_birth = concat_partner_dob_dates
+    @partner_date_of_birth = nil
   end
 
   def concat_partner_dob_dates

@@ -2,7 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Forms::Dependent do
 
-  subject(:form) { described_class.new(children: children, children_number: children_number) }
+  subject(:form) {
+    described_class.new(children: children,
+                        children_number: children_number, children_age_band_one: children_age_band_one, children_age_band_two: children_age_band_two)
+  }
+
+  let(:children_age_band_one) { 0 }
+  let(:children_age_band_two) { 0 }
 
   describe 'validations' do
     let(:children_number) { nil }
@@ -73,7 +79,7 @@ RSpec.describe Forms::Dependent do
       let(:children) { true }
 
       it 'returns hash with children parameter containing children_number' do
-        expect(subject).to eql(children: children_number)
+        expect(subject).to eql(children: children_number, children_age_band: {})
       end
     end
 
@@ -81,7 +87,7 @@ RSpec.describe Forms::Dependent do
       let(:children) { false }
 
       it 'returns hash with children parameter containing 0' do
-        expect(subject).to eql(children: 0)
+        expect(subject).to eql(children: 0, children_age_band: {})
       end
     end
 
@@ -89,8 +95,25 @@ RSpec.describe Forms::Dependent do
       let(:children) { nil }
 
       it 'returns hash with children parameter being nil' do
-        expect(subject).to eql(children: nil)
+        expect(subject).to eql(children: nil, children_age_band: {})
       end
     end
+
+    context 'ucd changes apply' do
+      before {
+        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        form.valid?
+      }
+
+      let(:children) { true }
+      let(:children_number) { nil }
+      let(:children_age_band_one) { 1 }
+      let(:children_age_band_two) { 3 }
+
+      it 'returns hash with children' do
+        expect(subject).to eql(children: 4, children_age_band: { one: 1, two: 3 })
+      end
+    end
+
   end
 end

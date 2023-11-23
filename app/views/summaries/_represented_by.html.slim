@@ -1,0 +1,58 @@
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t('applying_on_behalf', scope: 'summary.labels')
+  dd.govuk-summary-list__value = t("applying_on_behalf_#{@summary.applying_on_behalf}", scope: 'summary')
+  dd.govuk-summary-list__actions
+    = link_to question_path(:applying_on_behalf), onclick: "dataLayer.push({'sectionName': 'applying_on_behalf', 'event': 'summary_page'});" do
+      =t('summary.change')
+      span.govuk-visually-hidden
+        =t('applying_on_behalf', scope: 'summary.labels').downcase
+
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t('legal_representative_or_friend', scope: 'summary.labels')
+  dd.govuk-summary-list__value = t("legal_representative_#{@summary.legal_representative}", scope: 'summary')
+  dd.govuk-summary-list__actions
+    = link_to question_path(:legal_representative), onclick: "dataLayer.push({'sectionName': 'legal_representative', 'event': 'summary_page'});" do
+      =t('summary.change')
+      span.govuk-visually-hidden
+        =t('legal_representative', scope: 'summary.labels').downcase
+
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t(@summary.legal_representative, scope: 'summary.labels')
+  dd.govuk-summary-list__value &nbsp;
+  dd.govuk-summary-list__actions &nbsp;
+
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t('full_name', scope: 'summary.labels')
+  dd.govuk-summary-list__value =@summary.legal_full_name
+  dd.govuk-summary-list__actions
+    = link_to question_path(:legal_representative_detail), onclick: "dataLayer.push({'sectionName': 'legal_representative_detail', 'event': 'summary_page'});" do
+      =t('summary.change')
+      span.govuk-visually-hidden
+        =t('legal_representative_detail', scope: 'summary.labels').downcase
+
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t('email', scope: 'summary.labels')
+  dd.govuk-summary-list__value =@summary.legal_representative_email
+  dd.govuk-summary-list__actions
+    = link_to question_path(:legal_representative_detail), onclick: "dataLayer.push({'sectionName': 'legal_representative_detail', 'event': 'summary_page'});" do
+      =t('summary.change')
+      span.govuk-visually-hidden
+        =t('legal_representative_detail', scope: 'summary.labels').downcase
+
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t('address', scope: 'summary.labels')
+  dd.govuk-summary-list__value =@summary.legal_full_address
+  dd.govuk-summary-list__actions
+    = link_to question_path(:legal_representative_detail), onclick: "dataLayer.push({'sectionName': 'legal_representative_detail', 'event': 'summary_page'});" do
+      =t('summary.change')
+      span.govuk-visually-hidden
+        =t('legal_representative_detail', scope: 'summary.labels').downcase
+
+div.govuk-summary-list__row
+  dt.govuk-summary-list__key =t('over_16', scope: 'summary.labels')
+  dd.govuk-summary-list__value = t("over_16_#{@summary.over_16}", scope: 'summary')
+  dd.govuk-summary-list__actions
+    = link_to question_path(:over_16), onclick: "dataLayer.push({'sectionName': 'over_16', 'event': 'summary_page'});" do
+      =t('summary.change')
+      span.govuk-visually-hidden
+        =t('over_16', scope: 'summary.labels').downcase
