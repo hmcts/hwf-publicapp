@@ -645,10 +645,10 @@ cy:
       details:
         summary: Pam ydym yn gofyn am eich statws perthynas?
         text: Os ydych yn un rhan o gwpl, mae Help i Dalu Ffioedd yn seiliedig ar eich incwm ar y cyd oni bai bod yna fudd sy’n gwrthdaro
-      married_false: Single
+      married_false: Sengl
       married_true: Wedi priodi neu’n byw â rhywun
       text: Statws perthynas
-      title: Your marital status
+      title: Eich statws priodasol
       subheader: A ydych chi’n sengl, wedi priodi neu’n byw â rhywun?
     national_insurance_presence:
       breadcrumb: Cam %{page_number} o 22
@@ -701,8 +701,8 @@ cy:
       title: Profiant
     savings_and_investment_ucd:
       breadcrumb: Cam %{page_number} o 22
-      less: "£0 i £2,999"
-      between: "£3,000 i £15,999"
+      less: "Llai na £4,250"
+      between: "Rhwng £4,250 a £15,999"
       more: "£16,000 neu fwy"
       subtext_married: Dywedwch wrthym faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi.
       subtext_single: Dywedwch wrthym faint o arian sydd gennych chi wedi’i gynilo a’i fuddsoddi.
@@ -718,6 +718,7 @@ cy:
         list:
           header: "Dylech gynnwys:"
           point_1: arian sydd gennych chi mewn cyfrifon ISA, cronfeydd ymddiriedolaeth neu gyfrifon cynilo y mae gennych fynediad atynt, gan gynnwys Cronfeydd Ymddiriedolaeth Plant sydd wedi aeddfedu neu gyfrifon Junior ISA
+          point_married: cyfrifon cynilo ar y cyd rydych chi’n eu rhannu gyda’ch partner
           point_2: unrhyw incwm nas wariwyd o fisoedd blaenorol
           point_3: bondiau cyfradd sefydlog neu fondiau buddsoddi
           point_4: unrhyw gyfandaliad - er enghraifft, taliad dileu swydd
@@ -821,9 +822,9 @@ cy:
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
     savings_and_investment_extra_ucd:
-      title: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
+      title: Ydych chi neu'ch partner yn 66 mlwydd oed neu§'n hŷn?
       text_married: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
-      text_single: Ydych chi'n 66 mlwydd oed neu'n hŷn?
+      text_single: Ydych chi’n 66 oed neu’n hŷn?§
     statement:
       signed_by_legal_representative: Fi yw’r cynrychiolydd cyfreithiol sy’n cwblhau’r cais hwn.
       signed_by_applicant: Fi yw’r ceisydd neu’r cyfaill cyfreitha sy’n cwblhau’r cais hwn.

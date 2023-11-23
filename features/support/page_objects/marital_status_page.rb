@@ -19,7 +19,7 @@ class MaritalStatusPage < BasePage
     element :help_gender, 'li', text: 'gender recognition'
     element :help_domestic_violence, 'li', text: 'domestic violence'
     element :help_forced_marriage, 'li', text: 'forced marriage'
-    element :header_ucd, 'h1', text: 'Relationship Status'
+    element :header_ucd, 'h1', text: 'Relationship status'
     element :subheader, 'h2', text: 'Are you single, married or living with someone?'
     element :single, 'label', text: 'Single'
     element :married_ucd, 'label', text: 'Married or living with someone'

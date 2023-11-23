@@ -755,7 +755,7 @@ en:
         text: If you are in a couple, Help with Fees is based on your joint income unless there’s a contrary interest
       married_false: Single
       married_true: Married or living with someone
-      text: Relationship Status
+      text: Relationship status
       title: Your marital status
       subheader: Are you single, married or living with someone?
     national_insurance_presence:
@@ -816,8 +816,8 @@ en:
       title: Probate
     savings_and_investment_ucd:
       breadcrumb: Step %{page_number} of 22
-      less: "£0 to £2,999"
-      between: "£3,000 to £15,999"
+      less: "Less than £4,250"
+      between: "Between £4,250 and £15,999"
       more: "£16,000 or more"
       subtext_married: Tell us how much you and your partner have in savings and investments.
       subtext_single: Tell us how much you have in savings and investments.
@@ -833,6 +833,7 @@ en:
         list:
           header: "You should include:"
           point_1: money in ISAs, trust funds, or savings accounts that you can access, including matured Child Trust Funds or Junior ISAs
+          point_married: joint savings accounts that you share with your partner
           point_2: any unspent income from previous months
           point_3: fixed rate or investment bonds
           point_4: any lump sum - for example, a redundancy payout
@@ -912,13 +913,13 @@ en:
     savings_and_investment_single_refund:
       text: How much did you have in savings and investments at the time you paid the fee?
     savings_and_investment_married_ucd:
-      text: Saving and Investments
+      text: Savings and Investments
     savings_and_investment_single_ucd:
-      text: Saving and Investments
+      text: Savings and Investments
     savings_and_investment_married_refund_ucd:
-      text: Saving and Investments
+      text: Savings and Investments
     savings_and_investment_single_refund_ucd:
-      text: Saving and Investments
+      text: Savings and Investments
     savings_and_investment_extra:
       amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
       amount_single: How much between £3,000 and £15,999 do you have in savings and investments?

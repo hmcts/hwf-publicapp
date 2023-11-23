@@ -2,6 +2,8 @@ p.govuk-body = t('header', scope:"#{@form.i18n_scope}_ucd.details.list")
 
 ul.govuk-list.govuk-list--bullet
   li = t('point_1', scope: "#{@form.i18n_scope}_ucd.details.list")
+  - if @online_application.married?
+    li = t('point_married', scope: "#{@form.i18n_scope}_ucd.details.list")
   li = t('point_2', scope: "#{@form.i18n_scope}_ucd.details.list")
   li = t('point_3', scope: "#{@form.i18n_scope}_ucd.details.list")
   li = t('point_4', scope: "#{@form.i18n_scope}_ucd.details.list")
