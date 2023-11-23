@@ -21,11 +21,21 @@ class SavingsInvestmentPage < BasePage
   end
 
   def low_amount_checked
-    savings_investment_page.content.low_amount_ucd.click
+    savings_investment_page.content.low_amount.click
     continue
   end
 
   def medium_amount_checked
+    savings_investment_page.content.medium_amount.click
+    continue
+  end
+
+  def low_amount_checked_ucd
+    savings_investment_page.content.low_amount_ucd.click
+    continue
+  end
+
+  def medium_amount_checked_ucd
     savings_investment_page.content.medium_amount_ucd.click
     continue
   end
@@ -52,6 +62,20 @@ class SavingsInvestmentPage < BasePage
   def slowly_low_amount_checked
     travel 61.minutes do
       savings_investment_page.content.low_amount.click
+      continue
+    end
+  end
+
+  def slowly_mid_amount_checked_ucd
+    travel 61.minutes do
+      savings_investment_page.content.medium_amount_ucd.click
+      continue
+    end
+  end
+
+  def slowly_low_amount_checked_ucd
+    travel 61.minutes do
+      savings_investment_page.content.low_amount_ucd.click
       continue
     end
   end

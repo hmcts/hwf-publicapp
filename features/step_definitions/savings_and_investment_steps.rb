@@ -34,8 +34,16 @@ When(/^I submit the form with £0 to £2,999 checked$/) do
   savings_investment_page.low_amount_checked
 end
 
+When(/^I submit the form with less than £4,250 checked$/) do
+  savings_investment_page.low_amount_checked_ucd
+end
+
 When(/^I submit the form with £3,000 to £15,999 checked$/) do
   savings_investment_page.medium_amount_checked
+end
+
+When(/^I submit the form with between £4,250 and £15,999 checked$/) do
+  savings_investment_page.medium_amount_checked_ucd
 end
 
 When(/^I submit the form with £16,000 or more checked$/) do
@@ -68,4 +76,12 @@ end
 
 When(/^I slowly submit the form with £0 to £2,999 or more checked$/) do
   savings_investment_page.slowly_low_amount_checked
+end
+
+When(/^I slowly submit the form with between £4,250 and £15,999 or more checked$/) do
+  savings_investment_page.slowly_mid_amount_checked_ucd
+end
+
+When(/^I slowly submit the form with less than £4,250 or more checked$/) do
+  savings_investment_page.slowly_low_amount_checked_ucd
 end
