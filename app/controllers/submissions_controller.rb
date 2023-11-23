@@ -1,17 +1,12 @@
 class SubmissionsController < ApplicationController
+  include FeatureSwitch
 
   def create
-    @form = Forms::Statement.new
-    @form.update_attributes(statement_params)
-
-    if @form.valid?
-      submit
+    if ucd_changes_apply?
+      statement_check
     else
-      flash[:error] = @form_error || I18n.t('.confirmation.submission_error')
-      flash[:statement_blank] = true
-      redirect_to(summary_path)
+      submit
     end
-
   end
 
   def confirmation_route(online_application)
@@ -45,5 +40,21 @@ class SubmissionsController < ApplicationController
   rescue ActionController::ParameterMissing
     @form_error = I18n.t('.confirmation.submission_statement_error')
     {}
+  end
+
+  def ucd_changes_apply?
+    FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == online_application.calculation_scheme
+  end
+
+  def statement_check
+    @form = Forms::Statement.new
+    @form.update_attributes(statement_params)
+    if @form.valid?
+      submit
+    else
+      flash[:error] = @form_error || I18n.t('.confirmation.submission_error')
+      flash[:statement_blank] = true
+      redirect_to(summary_path)
+    end
   end
 end
