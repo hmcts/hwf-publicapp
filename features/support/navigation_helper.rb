@@ -433,7 +433,7 @@ def to_single_savings_extra
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_single
   savings_investment_page.medium_amount_checked
-  end
+end
 
 def to_single_savings_extra_ucd
   to_fee_page
@@ -499,7 +499,8 @@ def to_single_savings
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_single
-  end
+end
+
 def to_single_savings_ucd
   to_fee_page
   fee_page.submit_fee_yes
