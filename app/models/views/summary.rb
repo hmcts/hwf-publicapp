@@ -74,6 +74,7 @@ module Views
 
     def income_period
       return unless online_application.income_period
+
       I18n.t(online_application.income_period, scope: 'summary.income_period')
     end
 

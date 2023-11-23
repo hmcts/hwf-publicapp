@@ -1,6 +1,6 @@
 module TitleHelper
 
-  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
   def title_scope(scope, online_application)
     return scope if online_application.blank?
 
@@ -21,7 +21,7 @@ module TitleHelper
       scope
     end
   end
-  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/MethodLength, Metrics/CyclomaticComplexity
 
   def date_formatter(date_value)
     return if date_value.blank?
