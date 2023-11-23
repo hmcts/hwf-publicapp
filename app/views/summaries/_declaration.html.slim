@@ -1,0 +1,27 @@
+h2.govuk-heading-m = t('heading', scope: 'summary.truth')
+
+- if @form.errors[:signed_by].any?
+ p.govuk-error-message id="countries-error"
+   span.govuk-visually-hidden Error:
+   = @form.errors[:signed_by].join(' ')
+
+
+= form_for @form, as: @form.id, url: submission_path, html: { autocomplete: @form.autocomplete, method: :post } do |f|
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:signed_by].any?)
+    .govuk-checkboxes
+      - if @summary.signed_by_representative
+        .govuk-checkboxes__item
+          = f.check_box :signed_by, { class: 'govuk-checkboxes__input' }, 'legal_representative', nil
+          label.govuk-label.govuk-checkboxes__label for='statement_signed_by'
+            =t('signed_by_legal_representative', scope: @form.i18n_scope)
+        p.govuk-body class="govuk-!-margin-top-5" = t('statement', scope: 'summary.legal_representative_truth')
+      - else
+        .govuk-checkboxes__item
+          = f.check_box :signed_by, { class: 'govuk-checkboxes__input' }, 'applicant', nil
+          label.govuk-label.govuk-checkboxes__label for='statement_signed_by'
+            =t('signed_by_applicant', scope: @form.i18n_scope)
+        p.govuk-body class="govuk-!-margin-top-5" = t('statement', scope: 'summary.applicant_truth')
+
+
+    = submit_tag(t('button', scope: 'summary.truth'), class: 'govuk-button', role: 'button')
+
