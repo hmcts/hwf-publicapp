@@ -367,9 +367,18 @@ end
 def to_marital_status
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+end
+
+def to_marital_status_ucd
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+
+  applying_on_behalf_page.submit_no
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
 end
@@ -418,9 +427,20 @@ end
 def to_single_savings_extra
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_single
+  savings_investment_page.medium_amount_checked
+  end
+
+def to_single_savings_extra_ucd
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+
+  applying_on_behalf_page.submit_no
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_single
@@ -430,9 +450,20 @@ end
 def to_married_savings_extra
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+  savings_investment_page.medium_amount_checked
+end
+
+def to_married_savings_extra_ucd
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+
+  applying_on_behalf_page.submit_no
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
@@ -442,9 +473,19 @@ end
 def to_married_savings
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_married
+end
+
+def to_married_savings_ucd
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+
+  applying_on_behalf_page.submit_no
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
@@ -453,9 +494,18 @@ end
 def to_single_savings
   to_fee_page
   fee_page.submit_fee_yes
-  Timecop.return
   form_name_page.submit_valid_form_number
 
+  national_insurance_presence_page.submit_yes
+  national_insurance_page.submit_valid_ni
+  marital_status_page.submit_single
+  end
+def to_single_savings_ucd
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+
+  applying_on_behalf_page.submit_no
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_single

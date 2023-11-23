@@ -1,17 +1,25 @@
 And(/^I am single with £3,000 to £15,999 in savings$/) do
-  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
-  Timecop.freeze(time)
   to_single_savings_extra
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_single_header
 end
 
+And(/^I am single with £3,000 to £15,999 in savings ucd$/) do
+  to_single_savings_extra_ucd
+  expect(savings_investment_extra_page).to be_displayed
+  expect(savings_investment_extra_page.content).to have_single_header_ucd
+end
+
 And(/^I am married with £3,000 to £15,999 in savings$/) do
-  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
-  Timecop.freeze(time)
   to_married_savings_extra
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_married_header
+end
+
+And(/^I am married with £3,000 to £15,999 in savings ucd$/) do
+  to_married_savings_extra_ucd
+  expect(savings_investment_extra_page).to be_displayed
+  expect(savings_investment_extra_page.content).to have_married_header_ucd
 end
 
 When(/^I submit yes I am 61 years old or over$/) do
@@ -19,6 +27,14 @@ When(/^I submit yes I am 61 years old or over$/) do
 end
 
 When(/^I submit no to are you 61 years old or over$/) do
+  savings_investment_extra_page.submit_no
+end
+
+When(/^I submit yes I am 66 years old or over$/) do
+  savings_investment_extra_page.submit_yes
+end
+
+When(/^I submit no to are you 66 years old or over$/) do
   savings_investment_extra_page.submit_no
 end
 
@@ -59,3 +75,12 @@ end
 When(/^I slowly submit no I am not 61 years old or over$/) do
   savings_investment_extra_page.slowly_submit_no
 end
+
+When(/^I slowly submit yes I am 66 years old or over$/) do
+  savings_investment_extra_page.slowly_submit_yes
+end
+
+When(/^I slowly submit no I am not 66 years old or over$/) do
+  savings_investment_extra_page.slowly_submit_no
+end
+
