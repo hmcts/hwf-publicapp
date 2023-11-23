@@ -67,7 +67,7 @@ def to_confirmation_done_page_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
@@ -116,7 +116,7 @@ def to_confirmation_page_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
@@ -142,7 +142,7 @@ def to_online_confirmation_page_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
@@ -444,7 +444,7 @@ def to_single_savings_extra_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_single
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
 end
 
 def to_married_savings_extra
@@ -467,7 +467,7 @@ def to_married_savings_extra_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
 end
 
 def to_married_savings
@@ -540,7 +540,7 @@ def to_summary_page_probate_enabled_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
@@ -581,7 +581,7 @@ def to_summary_page_probate_enabled_fee_paid_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
+  savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_no
@@ -628,7 +628,7 @@ end
 def to_summary_page_with_ho_number_ucd
   home_office_page.submit_valid_home_office_number
   marital_status_page.submit_married
-  savings_investment_page.low_amount_checked
+  savings_investment_page.low_amount_checked_ucd
   dependent_page.submit_dependent_no
   income_kind_page.submit_none_of_the_above
   probate_page.submit_probate_no

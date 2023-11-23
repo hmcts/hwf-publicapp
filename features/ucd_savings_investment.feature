@@ -4,13 +4,13 @@ Feature: Savings and investment page refund
     And the ucd changes apply
     And I am a single person on the savings and investments page ucd
 
-  Scenario: Selecting £0 to £2,999
+  Scenario: Selecting less than £4,250
     When I submit the form with less than £4,250 checked
     Then I should be taken to benefits page
     And the ucd changes end
 
-  Scenario: Selecting £3,000 to £15,999 
-    When I submit the form with between £3,000 and £15,999 checked
+  Scenario: Selecting between £4,250 to £15,999
+    When I submit the form with between £4,250 and £15,999 checked
     Then I should be taken to savings and investment extra page
     And the ucd changes end
 
