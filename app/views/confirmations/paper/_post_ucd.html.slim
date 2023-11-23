@@ -1,0 +1,21 @@
+- content_for :page_title
+  = t('confirmation.default.title')
+  = ' - '
+
+=render('stylesheets')
+
+.govuk-panel.govuk-panel--confirmation
+  h2 =t('confirmation.paper_ucd.heading', claim_number: @result['message'])
+  h2 =t('confirmation.paper_ucd.sub_heading')
+
+br
+
+
+p.govuk-body =t('confirmation.paper_ucd.p_one')
+h3.govuk-heading-m =t('confirmation.paper_ucd.h3_one')
+p.govuk-body =t('confirmation.paper_ucd.p_two')
+p.govuk-body =t('confirmation.paper_ucd.p_three')
+p.govuk-body =t('confirmation.paper_ucd.p_four')
+p.govuk-body =t('confirmation.paper_ucd.p_five_html')
+h3.govuk-heading-m =t('confirmation.paper_ucd.h3_two')
+p.govuk-body =t('confirmation.paper_ucd.p_six')
