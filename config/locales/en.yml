@@ -1229,7 +1229,54 @@ en:
             item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
             item_2: ask for a reminder through the post
           summary: If you don’t know your National Insurance number
+    checklist_ucd:
+      title: What you will need
+      heading: 'Important: Read before you start'
+      sections:
+        - parts:
+            - p: 'You should use this online service when you are ready to make your court or tribunal application.'
+            - p: 'It will provide you with a Help with Fees reference number you should send to the court or tribunal as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new Help with Fees application.'
+            - p: 'Refund applications must be submitted within 3 months of paying the fee. If your application is rejected as the Help with Fees reference number is more than 28 days old, this may affect the amount of time you have left to be eligible for a refund.'
+            - p: 'If you are making a multiple claim or application, both applicants will need to make a separate Help with Fees application and submit both online reference numbers to the court.'
+            - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
+            - p: 'A legal representative or litigation friend can apply on your behalf. They must complete the application with your details.'
 
+            - p: '<h2 class="govuk-heading-m">Before you continue, make sure you have:</h2>'
+            - ul:
+                - li: your National Insurance number (NI) or
+                - li: your Home Office reference number - you may have a Home Office reference number if you are subject to immigration control
+                - li: the court or tribunal form number
+                - li: your case number, claim number or notice to pay - if you have one
+        - title:
+          parts:
+            - p: "You'll also need details of your:"
+            - ul:
+                - li: income, including wages
+                - li: savings and investments
+                - li: partner’s income, savings and investments - If you have a partner, you will need their NI, date of birth and details of their income, savings and investments
+            - p: We may use the personal information of you and your partner (if you have one) to contact other government departments to validate the information you’ve provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+      details:
+        section_1:
+          item_1: You will find your Home Office reference number on any of the correspondence you have received from the Home Office.
+        summary: If you don't know your Home Office reference number
+      paper_form_html: "If you don't have either a National Insurance number or a Home Office reference number, you need to
+          <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+          class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+          target='_blank'>use the paper form</a> and apply to the court or tribunal by post or email."
+      accurate_information: The information you provide needs to be accurate as it will act as evidence for your application and will allow us to check the information with other government departments. We’ll contact you if we need to see proof of this information.
+      accurate_information_link_html: "<a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees/how-to-apply-for-help-with-fees-ex160a'
+              class='external govuk-link'>How to apply for help with fees</a>."
+      accurate_information_link: How to apply for help with fees
+      national_insurance:
+        details:
+          section_1:
+            detail_html: "If you don't have a National Insurance number, you need to
+              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+              class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+              target='_blank'>use the paper form</a>."
+            item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+            item_2: ask for a reminder through the post
+          summary: If you don’t know your National Insurance number
     cookies:
       title: Cookies
       heading: Cookies
