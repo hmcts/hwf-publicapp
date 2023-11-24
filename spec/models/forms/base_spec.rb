@@ -37,7 +37,7 @@ module Forms
 
     describe '#permitted_attributes' do
       it 'returns the list of all attributes from the model' do
-        expect(model.permitted_attributes).to eql(%i[one two])
+        expect(model.permitted_attributes).to eql(%i[calculation_scheme one two])
       end
     end
 

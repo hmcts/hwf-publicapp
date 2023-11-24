@@ -14,7 +14,7 @@ Feature: Form name page
 
     Scenario: Entering valid form number
       When I submit the form with a valid form number
-      Then I should be taken to fee page
+      Then I should be taken to national insurance presence page
 
     Scenario: Leaving form number blank
       When I submit the form without a number
@@ -28,7 +28,7 @@ Feature: Form name page
 
     Scenario: Selecting I don’t have a form
       When I submit the form with I don’t have a form checked
-      Then I should be taken to fee page
+      Then I should be taken to national insurance presence page
 
     Scenario: Applying for help with hearing fees
       When I click on 'Applying for help with hearing fees'
@@ -36,11 +36,11 @@ Feature: Form name page
 
     Scenario: Filling in with valid form number
       When I submit the form with a help with fees form number 'XX10'
-      Then I should be taken to fee page
+      Then I should be taken to national insurance presence page
 
     Scenario: Filling in with help for hearing fees
       When I submit the form with a help with fees form number 'hearing fee for claim'
-      Then I should be taken to fee page
+      Then I should be taken to national insurance presence page
 
     Scenario: Form name page timeout
       When I submit the form with a valid form number after a long time

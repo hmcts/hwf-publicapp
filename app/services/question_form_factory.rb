@@ -1,39 +1,28 @@
 class QuestionFormFactory
+  include FeatureSwitch
   class QuestionDoesNotExist < StandardError; end
 
-  # These are ordered
-  IDS = %i[
-    form_name
-    fee
-    national_insurance_presence
-    national_insurance
-    home_office
-    marital_status
-    savings_and_investment
-    savings_and_investment_extra
-    benefit
-    dependent
-    income_kind
-    income_range
-    income_amount
-    probate
-    claim
-    dob
-    personal_detail
-    applicant_address
-    contact
-    apply_type
-  ].freeze
-
-  def self.position(id)
-    IDS.index(id)
+  def self.page_list(calculation_scheme = '')
+    if FeatureSwitch.ucd_changes_apply?(calculation_scheme)
+      Settings.navigation.post_ucd_changes
+    elsif FeatureSwitch.active?('ucd_refactor')
+      Settings.navigation.pre_ucd_changes
+    else
+      Settings.navigation.old_default
+    end
   end
 
-  def self.get_form(id)
-    raise QuestionDoesNotExist unless IDS.include?(id)
+  def self.position(id)
+    page_list.index(id)
+  end
+
+  def self.get_form(id, calculation_scheme)
+    raise QuestionDoesNotExist unless page_list(calculation_scheme).include?(id)
 
     class_name = "Forms::#{form_class_name(id)}".constantize
-    class_name.new
+    form = class_name.new
+    form.calculation_scheme = calculation_scheme
+    form
   end
 
   def self.form_class_name(id)

@@ -23,23 +23,7 @@ module ApplicationHelper
     record.send(:street).present?
   end
 
-  def title_scope(scope, online_application)
-    return scope if online_application.blank?
-
-    scope_postfix = []
-    case scope
-    when 'questions.savings_and_investment'
-      scope_postfix << (online_application.married? ? 'married' : 'single')
-      scope_postfix << (online_application.refund? ? 'refund' : nil)
-      "questions.savings_and_investment_#{scope_postfix.compact.join('_')}"
-    else
-      scope
-    end
-  end
-
-  def date_formatter(date_value)
-    return if date_value.blank?
-
-    date_value.to_fs(:default)
+  def show_organisation(online_application)
+    online_application.legal_representative == 'legal_representative'
   end
 end

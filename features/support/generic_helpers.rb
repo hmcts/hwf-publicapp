@@ -64,12 +64,20 @@ def claim_page
   @claim_page ||= ClaimPage.new
 end
 
+def applying_on_behalf_page
+  @applying_on_behalf_page ||= ApplyingOnBehalfPage.new
+end
+
 def national_insurance_page
   @national_insurance_page ||= NationalInsurancePage.new
 end
 
 def national_insurance_presence_page
   @national_insurance_presence_page ||= NationalInsurancePresencePage.new
+end
+
+def partner_national_insurance_page
+  @partner_national_insurance_page ||= PartnerNationalInsurancePage.new
 end
 
 def home_office_page
@@ -126,6 +134,26 @@ end
 
 def home_page
   @home_page ||= HomePage.new
+end
+
+def on_behalf_page
+  @on_behalf_page ||= OnBehalfPage.new
+end
+
+def legal_representative_page
+  @legal_representative_page ||= LegalRepresentativePage.new
+end
+
+def legal_representative_detail_page
+  @legal_representative_detail_page ||= LegalRepresentativeDetailPage.new
+end
+
+def over_16_page
+  @over_16_page ||= Over16Page.new
+end
+
+def income_period_page
+  @income_period_page ||= IncomePeriodPage.new
 end
 
 def checklist_continue

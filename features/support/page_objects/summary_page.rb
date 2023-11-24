@@ -10,14 +10,14 @@ class SummaryPage < BasePage
     sections :summary_row, '.govuk-summary-list__row' do
       element :action, 'a', text: 'Change'
     end
-    element :submit_application_button, 'input[value="Submit application and continue"]'
+    element :submit_application_button, 'input[value="Get a reference number and continue"]'
     element :error, '.govuk-error-message', text: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
   end
 
   def home_office_number
-    to_form_name
-    form_name_page.submit_valid_form_number
+    to_fee_page
     fee_page.submit_fee_no
+    form_name_page.submit_valid_form_number
     national_insurance_presence_page.submit_no
   end
 

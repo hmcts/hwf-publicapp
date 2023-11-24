@@ -1,0 +1,28 @@
+- content_for :page_title
+  = t('confirmation.refund.title')
+  = ' - '
+
+=render('stylesheets')
+
+h1.govuk-heading-l
+  =t('confirmation.refund.title')
+
+.govuk-panel.govuk-panel--confirmation
+  h2 =t('confirmation.refund.heading', claim_number: @result['message'])
+  h2 =t('confirmation.refund.sub_heading')
+br
+
+p.govuk-body =t('confirmation.refund.p_one')
+h3.govuk-heading-m =t('confirmation.refund.h3_one')
+p.govuk-body =t('confirmation.refund.p_two')
+p.govuk-body =t('confirmation.refund.p_three')
+p.govuk-body =t('confirmation.refund.p_three_html')
+h3.govuk-heading-m =t('confirmation.refund.h3_two')
+p.govuk-body =t('confirmation.refund.p_four')
+
+.js-only.no-print
+  p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')
+
+= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
+  p.govuk-body =t('confirmation.feedback_text')
+  = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')

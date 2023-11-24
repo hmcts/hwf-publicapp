@@ -6,6 +6,12 @@ module IncomeHelper
     end
   end
 
+  def i18n_status_suffix(online_application)
+    ''.tap do |suffix|
+      suffix << (online_application.married? ? '_married' : '_single')
+    end
+  end
+
   def kinds_alternative_translation(kind)
     return kind if kind != I18n.t('questions.income_kind.kinds.1')
 

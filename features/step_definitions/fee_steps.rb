@@ -1,3 +1,7 @@
+Given('address lookup is disabled') do
+  disable_address_lookup
+end
+
 Given(/^I am on the fee page$/) do
   to_fee_page
   expect(fee_page.content).to have_step_info

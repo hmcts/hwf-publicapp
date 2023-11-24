@@ -1,17 +1,18 @@
 Feature: End to end tests
 
   Background: Same start for each path
-    Given I open the home page
+    Given address lookup is disabled
+    When I open the home page
     Then I should see the home page
     When I click the start button
     Then I am on the checklist page
     When I continue
-    Then I am on the form number page
+    Then I am on the fee page
 
   Scenario: End to end path one
-    When I submit the form with a help with fees form number 'XX10'
-    Then I should be taken to fee page
+    When I should be taken to fee page
     When I submit no to have you already paid the fee
+    Then I submit the form with a help with fees form number 'XX10'
     Then I should be taken to national insurance presence page
     When I have a national insurance number
     Then I should be taken to national insurance page
@@ -75,9 +76,9 @@ Feature: End to end tests
       | Email test@hmcts.net Change email                                         |
 
   Scenario: End to end path two
-    When I submit the form with I don’t have a form checked
-    Then I should be taken to fee page
+    Given I should be taken to fee page
     When I submit no to have you already paid the fee
+    Then I submit the form with I don’t have a form checked
     Then I should be taken to national insurance presence page
     When I do not have a national insurance number
     Then I should be taken to the home office page

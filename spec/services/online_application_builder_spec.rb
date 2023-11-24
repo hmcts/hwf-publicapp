@@ -3,40 +3,46 @@ require 'rails_helper'
 RSpec.describe OnlineApplicationBuilder do
   subject(:builder) { described_class.new(storage) }
 
-  let(:session) do
-    {
-      'questions' =>
-      {
-        'marital_status' => { 'married' => true },
-        'savings_and_investment' => { 'choice' => 'between' },
-        'savings_and_investment_extra' => { 'over_61' => false, 'amount' => 6000 },
-        'benefit' => { 'on_benefits' => true },
-        'dependent' => { 'children' => true, 'children_number' => 2 },
-        'fee' => { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' },
-        'income_amount' => { 'amount' => 550 },
-        'probate' => { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'day_date_of_death' => '01', 'month_date_of_death' => '08', 'year_date_of_death' => '2015' },
-        'claim/default' => { 'number' => true, 'identifier' => 'CL001' },
-        'form_name' => { 'identifier' => 'EX47' },
-        'national_insurance' => { 'number' => 'AA123456A' },
-        'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
-        'dob' => { 'day' => '10', 'month' => '03', 'year' => '1967' },
-        'applicant_address' => { 'street' => '1 Blue Fields', 'town' => 'Shine Town', 'postcode' => 'SH01 TW0' },
-        'contact' => { 'email' => 'mary@jones.com', 'feedback_opt_in' => true }
-      }
-    }
+  let(:session_id) { 2 }
+  let(:store_data) do
+    rails_store = Rails.cache
+    rails_store.write("questions-#{session_id}-over16", { 'married' => false, 'over_16' => false }.as_json)
+    rails_store.write("questions-#{session_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
+    rails_store.write("questions-#{session_id}-savings_and_investment_extra", { 'over_61' => false, 'amount' => 6000 }.as_json)
+    rails_store.write("questions-#{session_id}-benefit", { 'on_benefits' => true }.as_json)
+    rails_store.write("questions-#{session_id}-dependent", { 'children' => true, 'children_number' => 2 }.as_json)
+    rails_store.write("questions-#{session_id}-fee", { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' }.as_json)
+    rails_store.write("questions-#{session_id}-income_period", { 'amount' => 550 }.as_json)
+    rails_store.write("questions-#{session_id}-probate", { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'day_date_of_death' => '01', 'month_date_of_death' => '08', 'year_date_of_death' => '2015' }.as_json)
+    rails_store.write("questions-#{session_id}-claim/default", { 'number' => true, 'identifier' => 'CL001' }.as_json)
+    rails_store.write("questions-#{session_id}-form_name", { 'identifier' => 'EX47' }.as_json)
+    rails_store.write("questions-#{session_id}-national_insurance", { 'number' => 'AA123456A' }.as_json)
+    rails_store.write("questions-#{session_id}-personal_detail", { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' }.as_json)
+    rails_store.write("questions-#{session_id}-dob", { 'day' => '10', 'month' => '03', 'year' => '1967' }.as_json)
+    rails_store.write("questions-#{session_id}-applicant_address", { 'street' => '1 Blue Fields', 'town' => 'Shine Town', 'postcode' => 'SH01 TW0' }.as_json)
+    rails_store.write("questions-#{session_id}-contact", { 'email' => 'mary@jones.com', 'feedback_opt_in' => true }.as_json)
   end
-  # We're using the real storage here to avoid an unnecessary mocking as these are mostly value objects
+
   let(:storage) { Storage.new(session) }
+  let(:session) { instance_double(ActionDispatch::Request::Session, id: session_id) }
 
   describe '#online_application' do
     subject(:online_application) { builder.online_application }
+
+    before do
+      store_data
+      allow(session).to receive(:[]).with(:calculation_scheme).and_return FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
+      allow(session).to receive(:[]).with(:started_at).and_return ''
+      allow(session).to receive(:[]=)
+    end
 
     it 'returns an online_application' do
       expect(subject).to be_a(OnlineApplication)
     end
 
     it 'assigns the correct values to each field' do
-      expect(online_application.married).to be true
+      expect(online_application.over_16).to be false
+      expect(online_application.married).to be false
       expect(online_application.min_threshold_exceeded).to be true
       expect(online_application.max_threshold_exceeded).to be false
       expect(online_application.over_61).to be false
