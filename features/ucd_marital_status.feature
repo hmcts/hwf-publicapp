@@ -11,6 +11,7 @@ Feature: Marital status page
 
   Scenario: Selecting married
     When I submit the form as married
+    And I should see partner NI page
     Then I should be taken to savings and investments page
     And the ucd changes end
 

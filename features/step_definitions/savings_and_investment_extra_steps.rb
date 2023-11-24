@@ -83,3 +83,8 @@ end
 When(/^I slowly submit no I am not 66 years old or over$/) do
   savings_investment_extra_page.slowly_submit_no
 end
+
+When('I should see partner NI page') do
+  expect(partner_national_insurance_page.content).to have_header
+  partner_national_insurance_page.submit_no_ni
+end

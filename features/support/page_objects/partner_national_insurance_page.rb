@@ -3,7 +3,7 @@ class PartnerNationalInsurancePage < BasePage
   set_url '/questions/national_insurance'
 
   section :content, '#content' do
-    element :header, 'h1', text: 'Enter National Insurance number'
+    element :header, 'h1', text: 'Does your partner have a National Insurance number?'
     element :national_insurance_text, 'div.govuk-hint', text: 'For example, QQ123456C'
     element :national_insurance_number, 'partner_national_insurance[number]'
     element :yes, 'label', text: 'Yes'
