@@ -11,6 +11,10 @@ module TitleHelper
       personal_detail_postfix(online_application)
     when 'questions.savings_and_investment'
       savings_postfix(online_application)
+    when 'questions.savings_and_investment_extra'
+      savings_extra_postfix(online_application)
+    when 'questions.marital_status'
+      marital_status_postfix(online_application)
     when 'questions.legal_representative_detail'
       legal_representative_detail_postfix(online_application)
     when 'questions.income_kind'
@@ -35,9 +39,10 @@ module TitleHelper
 
   def savings_postfix(online_application)
     scope_postfix = []
-    scope_postfix << (online_application.married? ? 'married' : 'single')
+    scope_postfix << (online_application.married? ? '_married' : '_single')
     scope_postfix << (online_application.refund? ? 'refund' : nil)
-    "questions.savings_and_investment_#{scope_postfix.compact.join('_')}"
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? 'ucd' : nil)
+    "questions.savings_and_investment#{scope_postfix.compact.join('_')}"
   end
 
   def dob_postfix(online_application)
@@ -60,6 +65,18 @@ module TitleHelper
     scope_postfix = []
     scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
     "questions.income_kind#{scope_postfix.compact.join('_')}"
+  end
+
+  def savings_extra_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
+    "questions.savings_and_investment_extra#{scope_postfix.compact.join('_')}"
+  end
+
+  def marital_status_postfix(online_application)
+    scope_postfix = []
+    scope_postfix << (ucd_changes_apply?(online_application.calculation_scheme) ? '_ucd' : nil)
+    "questions.marital_status#{scope_postfix.compact.join('_')}"
   end
 
   def legal_representative_detail_postfix(online_application)

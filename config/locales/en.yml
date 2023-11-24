@@ -795,6 +795,26 @@ en:
       married_true: Married or living with someone and sharing an income
       text: Are you single, married or living with someone and sharing an income?
       title: Your marital status
+    marital_status_ucd:
+      breadcrumb: Step %{page_number} of 22
+      section_1:
+        header: 'Select ‘Single‘ if:'
+        point_1: you are living alone and relying on your own income with or without dependent children, or
+        point_2: you are permanently separated and may be in the process of applying for a divorce, dissolution or annulment and you are not living with a new partner, or
+        point_3: you have a  partner, but they have a conflicting interest in the case you are bringing
+      section_2:
+        header: 'Select ‘Married or living with someone’ if:'
+        point_1: you are married or in a civil partnership or
+        point_2: you are living together as if you are married or in a civil partnership or
+        point_3: you have to live apart- for example, one or both of you are serving in the armed forces, in prison or living in residential care
+      details:
+        summary: Why are we asking for partner status?
+        text: If you are in a couple, Help with Fees is based on your joint income unless there’s a contrary interest
+      married_false: Single
+      married_true: Married or living with someone
+      text: Relationship status
+      title: Your marital status
+      subheader: Are you single, married or living with someone?
     national_insurance_presence:
       breadcrumb: Step %{page_number} of 22
       details:
@@ -851,6 +871,60 @@ en:
       probate_case_true: 'Yes'
       text: Are you paying a fee for a probate case?
       title: Probate
+    savings_and_investment_ucd:
+      breadcrumb: Step %{page_number} of 22
+      less: "Less than £4,250"
+      between: "Between £4,250 and £15,999"
+      more: "£16,000 or more"
+      subtext_married: Tell us how much you and your partner have in savings and investments.
+      subtext_single: Tell us how much you have in savings and investments.
+      subtext_married_refund: Tell us how much you and your partner had in savings and investments at the time you paid the fee.
+      subtext_single_refund: Tell us how much you had in savings and investments at the time you paid the fee.
+      header_married: How much do you and your partner have in savings and investments?
+      header_single: How much do you have in savings and investments?
+      header_married_refund: How much did you and your partner have in savings and investments at the time you paid the fee?
+      header_single_refund: How much did you have in savings and investments at the time you paid the fee?
+      text: How much do you have in savings and investments?
+      title: Savings and investments
+      details:
+        list:
+          header: "You should include:"
+          point_1: money in ISAs, trust funds, or savings accounts that you can access, including matured Child Trust Funds or Junior ISAs
+          point_married: joint savings accounts that you share with your partner
+          point_2: any unspent income from previous months
+          point_3: fixed rate or investment bonds
+          point_4: any lump sum - for example, a redundancy payout
+          point_5: stocks and shares (including cryptocurrency stocks and shares)
+          point_6: value of second homes
+          point_7: any money or property outside the UK
+          text: If your partner has a conflicting interest in your case, do not include their savings and investments
+        section_1:
+          heading: 'Don’t include the following in your savings total:'
+          item_1: wages or benefits received in the month you paid the fee
+          item_2: joint savings accounts that you share with your partner if your case is against your partner or concerns divorce
+          item_3: personal pensions
+          item_4: capital value of self-employment
+        section_2:
+          heading: 'Don’t include these compensation payments in your savings total:'
+          item_1: a payment made as a result of a determination of unfair dismissal by a court or tribunal, or by way of a settlement of a claim for unfair dismissal
+          item_2: Armed Forces Compensation Scheme
+          item_3: compensation payments relating to the Grenfell Tower fire 2017
+          item_4: compensation relating to the Windrush Scheme
+          item_5: Lambeth Children’s Homes Redress Scheme
+          item_6: London Emergencies Trust payments
+          item_7: money from the Criminal Injuries Compensation Scheme
+          item_8: medical negligence or personal injury awards
+          item_9: Medomsley Detention Centre Physical Abuse Settlement Scheme
+          item_10: Miscarriage of Justice Compensation Scheme
+          item_11: National Emergencies Trust payments
+          item_12: payments from the Infected Blood Support Schemes
+          item_13: payments relating to internment, forced labour, injury or loss if a child during the Second World War
+          item_14: The Jesus Fellowship Redress Scheme
+          item_15: Vaccine Damage Payment compensation
+          item_16: Variant Creutzfeldt-Jakob Disease related compensation scheme
+          item_17: Victim of Overseas Terrorism Compensation Scheme
+          item_18: We Love Manchester Emergency Fund payments
+        summary: What not to include in savings and investments
     savings_and_investment:
       between: "£3,000 to £15,999"
       breadcrumb: Step %{page_number} of 22
@@ -895,6 +969,14 @@ en:
       text: How much did you and your partner have in savings and investments at the time you paid the fee?
     savings_and_investment_single_refund:
       text: How much did you have in savings and investments at the time you paid the fee?
+    savings_and_investment_married_ucd:
+      text: Savings and Investments
+    savings_and_investment_single_ucd:
+      text: Savings and Investments
+    savings_and_investment_married_refund_ucd:
+      text: Savings and Investments
+    savings_and_investment_single_refund_ucd:
+      text: Savings and Investments
     savings_and_investment_extra:
       amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
       amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
@@ -911,6 +993,10 @@ en:
       text_married: Are you or your partner 61 years old or over?
       text_single: Are you 61 years old or over?
       title: Are you or your partner 61 or over?
+    savings_and_investment_extra_ucd:
+      title: Are you or your partner 66 or older?
+      text_married: Are you or your partner 66 or older?
+      text_single: Are you 66 years or older?
     statement:
       signed_by_legal_representative: I am the legal representative completing this application.
       signed_by_applicant: I am the applicant or litigation friend completing this application.
