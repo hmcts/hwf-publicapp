@@ -100,7 +100,7 @@ module FeatureSteps
   end
 
   def when_they_submit_the_application
-    click_link_or_button 'Submit application and continue'
+    click_link_or_button 'Get a reference number and continue'
   end
 
   def when_they_start_new_application
@@ -195,7 +195,7 @@ module FeatureSteps
     expect(page).to have_content 'Check details'
     expect(page).to have_content 'Not receiving eligible benefits'
     expect(page).to have_content 'IncomeLess than £1,170'
-    expect(page).to have_content 'Submit application and continue'
+    expect(page).to have_content 'Get a reference number and continue'
   end
 
   def fill_contact

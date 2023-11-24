@@ -1007,7 +1007,7 @@ cy:
     probate_case_true: Ydw
 
     truth:
-      button: Cyflwyno cais a pharhau
+      button: Cael cyfeirnod a pharhau
       heading: Datganiad a datganiad gwirionedd
       statement: Drwy gwblhau’r cais hwn a chlicio’r botwm ‘Cyflwyno cais a pharhau’, rydw i'n credu bod fy amgylchiadau ariannol yn golygu y gallaf fod yn gymwys i gael help i dalu ffioedd. Rydw i'n datgan fy mod i'n credu bod yr wybodaeth rwyf wedi’i rhoi yn y cais hwn yn gywir ac yn gyflawn. Rwy’n deall os rwyf wedi rhoi gwybodaeth anwir y gellir dwyn achos troseddol neu sifil yn fy erbyn. Rwy’n deall os wyf wedi rhoi gwybodaeth anwir, neu os nad wyf yn darparu tystiolaeth o’r wybodaeth a roddir yn y cais hwn os gofynnir i mi wneud hynny, gall fy nghais gael ei wrthod a bydd rhaid i mi dalu’r ffi lawn.
   switch:
