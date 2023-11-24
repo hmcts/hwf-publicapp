@@ -86,6 +86,7 @@ navigation:
     - :national_insurance
     - :home_office
     - :marital_status
+    - :partner_national_insurance
     - :savings_and_investment
     - :savings_and_investment_extra
     - :benefit

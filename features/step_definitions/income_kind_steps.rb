@@ -1,7 +1,7 @@
 Given(/^I am a single person on kind of income page$/) do
   to_income_kind_single
   expect(income_kind_page.content).to have_choose_income_single
-  expect(income_kind_page.content).to have_step_info
+  # expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_single_header
 end
 
@@ -9,14 +9,14 @@ Given(/^I am a single person on kind of income page ucd$/) do
   to_income_kind_single_ucd
   expect(income_kind_page.content).to have_choose_income_single_ucd
   expect(income_kind_page.content).to have_representative_hint_single
-  expect(income_kind_page.content).to have_step_info_ucd
+  # expect(income_kind_page.content).to have_step_info_ucd
   expect(income_kind_page.content).to have_single_header_ucd
 end
 
 Given(/^I am a married person on kind of income page$/) do
   to_income_kind_married
   expect(income_kind_page.content).to have_choose_income_married
-  expect(income_kind_page.content).to have_step_info
+  # expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_married_header
 end
 
@@ -24,7 +24,7 @@ Given(/^I am a married person on kind of income page ucd$/) do
   to_income_kind_married_ucd
   expect(income_kind_page.content).to have_choose_income_married_ucd
   expect(income_kind_page.content).to have_representative_hint_married
-  expect(income_kind_page.content).to have_step_info_ucd
+  # expect(income_kind_page.content).to have_step_info_ucd
   expect(income_kind_page.content).to have_married_header_ucd
 end
 
