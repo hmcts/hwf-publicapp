@@ -17,6 +17,10 @@ cy:
       select_an_address: "Dewiswch gyfeiriad"
   activemodel:
     attributes:
+      forms/applying_on_behalf:
+          attributes:
+            applying_on_behalf:
+              inclusion: Select whether you're applying on behalf of someone else
       forms/applicant_address:
         street: Rhif tŷ a stryd
         town: Tref
@@ -88,8 +92,46 @@ cy:
               blank: Rhowch eich tref
               too_long: Rhaid i'r cod tref fod yn llai na 30 o nodau
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
+        forms/applying_on_behalf:
+          attributes:
+            applying_on_behalf:
+              inclusion: Select whether you're applying on behalf of someone else
+        forms/legal_representative:
+          attributes:
+            legal_representative:
+              inclusion: Select whether you're applying on behalf of legal representative or litigation friend
 
-
+        forms/legal_representative_detail:
+          attributes:
+            legal_representative_first_name:
+              blank: Please enter first name
+              invalid_name: Must not contain special characters
+            legal_representative_last_name:
+              blank: Please enter last name
+              invalid_name: Must not contain special characters
+            legal_representative_email:
+              blank: Please enter email address
+              invalid: Enter a valid email address.
+            legal_representative_address:
+              blank: Please enter the address
+            legal_representative_organisation_name:
+              invalid_name: Must not contain special characters
+            street:
+              blank: Enter your house number and street
+              too_long: Street must be less than 100 characters
+              invalid_name: Must not contain special characters
+            postcode:
+              blank: Enter your postcode
+              too_long: Postcode must be less than 10 characters
+              invalid_name: Must not contain special characters
+            town:
+              blank: Enter your town or city
+              too_long: Town must be less than 50 characters
+              invalid_name: Must not contain special characters
+        forms/over16:
+          attributes:
+            over_16:
+              inclusion: Select whether person you're applying on behalf is over 16
         forms/benefit:
           attributes:
             on_benefits:
@@ -226,6 +268,16 @@ cy:
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
             title:
               too_long: Rhaid i'r teitl fod yn llai na 10 o nodau
+            partner_first_name:
+              blank: Enter your partner's first name
+              too_long: First name must be less than 50 characters
+              invalid_name: Must not contain special characters
+            partner_last_name:
+              blank: Enter your partner's last name
+              too_long: Last name must be less than 50 characters
+              invalid_name: Must not contain special characters
+            title:
+              too_long: Title must be less than 10 characters
         forms/probate:
           attributes:
             date_of_death:
@@ -415,6 +467,15 @@ cy:
     title: Gofynnwch am help technegol
   optional: "(Dewisol)"
   questions:
+    applying_on_behalf:
+      title: Are you applying on behalf of someone else?
+      breadcrumb: Step %{page_number} of 22
+      text: Is the application on behalf of someone else?
+      details: Is the application on behalf of someone else?
+      inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
+      applying_on_behalf_false: 'No'
+      applying_on_behalf_true: 'Yes'
+
     applicant_address:
       breadcrumb: Cam %{page_number} o 22
       text: Beth yw eich cyfeiriad?
@@ -536,7 +597,12 @@ cy:
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
-    fee:
+      applicant: Your date of birth
+      partner: Your partner's date of birth
+      detail_title: Why do we ask for this?
+      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+    dob_married:
+      text: What are you and your partner’s dates of birth
       breadcrumb: Cam %{page_number} o 22
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.
       date_paid: Dyddiad y talwyd y ffi
@@ -556,6 +622,39 @@ cy:
       text: Pa rif sydd ar eich ffurflen llys neu dribiwnlys?
       title: Enw neu rif y ffurflen
       unknown: Nid oes gen i ffurflen
+    legal_representative:
+      title: Are you a legal representative or litigation friend?
+      breadcrumb: Step %{page_number} of 22
+      text: Are you a legal representative or litigation friend?
+      details: Are you a legal representative or litigation friend?
+      legal_representative_legal_representative: 'Legal representative'
+      legal_representative_litigation_friend: 'Litigation friend'
+      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
+      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+    legal_representative_detail:
+      title: Enter the representative details
+      breadcrumb: Step %{page_number} of 22
+      text: Enter the legal representative detail
+      legal_representative_first_name: 'First name'
+      legal_representative_last_name: 'Last name'
+      legal_representative_email: 'Email address'
+      organisation: Organisation details
+      legal_representative_organisation_name: 'Organisation name'
+      legal_representative_address: 'Enter a UK postcode'
+      legal_representative_feedback_opt_in: Check this box if you're also willing to share your experience of this service.
+      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
+      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+      email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
+
+    legal_representative_detail_friend:
+      text: Enter the litigation friend details
+
+    over16:
+      title: Is the person you are applying for over 16?
+      breadcrumb: Step %{page_number} of 22
+      text: Is the person you are applying for over 16?
+      over_16_true: 'Yes'
+      over_16_false: 'No'
     income_amount:
       prompt: Rhowch gyfanswm yr incwm rydych chi'n ei gael bob mis.
       amount:
@@ -697,6 +796,16 @@ cy:
       married_true: Priod neu'n byw gyda rhywun ac yn rhannu incwm
       text: Ydych chi'n sengl, yn briod neu'n byw gyda rhywun ac yn rhannu incwm?
       title: Eich statws priodasol
+    personal_detail_married:
+      text: What are the full names of both you and your partner?
+    personal_detail:
+      breadcrumb: Step %{page_number} of 22
+      text: What is your full name?
+      title: Title
+      applicant: Your details
+      partner: "Your partner's details"
+      detail_title: Why do we ask for this?
+      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
     marital_status_ucd:
       breadcrumb: Cam %{page_number} o 22
       section_1:
