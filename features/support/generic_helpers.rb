@@ -76,6 +76,10 @@ def national_insurance_presence_page
   @national_insurance_presence_page ||= NationalInsurancePresencePage.new
 end
 
+def partner_national_insurance_page
+  @partner_national_insurance_page ||= PartnerNationalInsurancePage.new
+end
+
 def home_office_page
   @home_office_page ||= HomeOfficePage.new
 end

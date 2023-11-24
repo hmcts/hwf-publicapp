@@ -1,4 +1,5 @@
 module NavigationHelper
+  include NavigationNiHelper
 
   private
 
@@ -19,6 +20,8 @@ module NavigationHelper
       @after_savings
     elsif ni_related_question?
       @ni_next_page
+    elsif partner_ni_related_question?
+      @partner_ni_next_page
     elsif legal_representative?
       @next_page
     elsif over_16?
@@ -87,19 +90,6 @@ module NavigationHelper
     @online_application.ho_number.present?
   end
 
-  def no_ni_number_page
-    @online_application.ni_number_present == false ? :home_office : :national_insurance
-  end
-
-  def ni_related_question?
-    case @current_question
-    when :national_insurance_presence
-      @ni_next_page = no_ni_number_page
-    when :national_insurance
-      @ni_next_page = :marital_status
-    end
-  end
-
   def skip_apply_type?
     @online_application.refund?
   end
@@ -122,6 +112,10 @@ module NavigationHelper
                  else
                    :savings_and_investment
                  end
+  end
+
+  def ucd_apply?(schema)
+    schema == FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
   end
 
 end

@@ -246,6 +246,14 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
+        forms/partner_national_insurance:
+          attributes:
+            number:
+              blank: Enter your partner's National Insurance number
+              invalid: Enter a valid National Insurance number
+            partner_ni_number_present:
+              inclusion: Select if your partner has National Insurance number
+              invalid: Select if your partner has National Insurance number
         forms/national_insurance_presence:
           attributes:
             ni_number_present:
@@ -581,7 +589,23 @@ en:
           - between 16 and 19, living at home with you and in full-time education (not including studying for a degree or other higher education qualification).
         list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
         children_age_band: Do you or your partner have any children living with you or that you support financially?
+    partner_national_insurance:
+      breadcrumb: Step %{page_number} of 22
+      title: 'Does your partner have a National Insurance number?'
+      text: 'Does your partner have a National Insurance number?'
+      prompt: 'National Insurance number'
+      link_html: "<a href='' class='govuk-link'>Find a lost National Insurance number</a>"
+      hint: For example, 'QQ123456C'
+      details:
+        summary: 'Why do we ask for this?'
+        detail_text: 'We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
 
+      partner_ni_number_present_true: 'Yes'
+      partner_ni_number_present_false: 'No'
+      where_to_find:
+        item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+        item_2: ask for a reminder through the post
+        summary: Where to find my National Insurance number?
     dob:
       breadcrumb: Step %{page_number} of 22
       hint_html: For example, 04 10 1990
@@ -1066,6 +1090,7 @@ en:
       married: Status
       ni_number: National Insurance number
       ni_number_no: 'No'
+      partner_ni_number: 'Partner’s National Insurance number'
       ho_number: Home Office reference number
       applicant_name: Full name
       personal: full name

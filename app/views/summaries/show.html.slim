@@ -65,6 +65,18 @@ dl.govuk-summary-list
         =t('summary.change')
         span.govuk-visually-hidden
           =t('married', scope: 'summary.labels').downcase
+
+  -if @summary.partner_ni_number_present
+    div.govuk-summary-list__row
+      dt.govuk-summary-list__key =t('partner_ni_number', scope: 'summary.labels')
+      dd.govuk-summary-list__value =ni_number_value(@summary)
+      dd.govuk-summary-list__actions
+        -if @summary.partner_ni_number
+          = link_to question_path(:partner_national_insurance), onclick: "dataLayer.push({'sectionName': 'partner_national_insurance', 'event': 'summary_page'});" do
+            =t('summary.change')
+            span.govuk-visually-hidden
+              =t('partner_ni_number', scope: 'summary.labels').downcase
+
   div.govuk-summary-list__row
     dt.govuk-summary-list__key =t('savings', scope: 'summary.labels')
     dd.govuk-summary-list__value = @summary.savings

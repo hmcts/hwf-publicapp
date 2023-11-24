@@ -303,6 +303,7 @@ def to_income_kind_married_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
+  partner_national_insurance_page.submit_no_ni
   savings_investment_page.high_amount_checked
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_3_ucd
@@ -467,6 +468,7 @@ def to_married_savings_extra_ucd
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
   marital_status_page.submit_married
+  partner_national_insurance_page.submit_no_ni
   savings_investment_page.medium_amount_checked_ucd
 end
 
@@ -477,6 +479,7 @@ def to_married_savings
 
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
+
   marital_status_page.submit_married
 end
 

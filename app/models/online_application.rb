@@ -22,6 +22,8 @@ class OnlineApplication
   attribute :form_name, String
   attribute :ni_number_present, Boolean
   attribute :ni_number, String
+  attribute :partner_ni_number, String
+  attribute :partner_ni_number_present, String
   attribute :ho_number, String
   attribute :date_of_birth, Date
   attribute :partner_date_of_birth, Date

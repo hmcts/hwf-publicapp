@@ -206,6 +206,14 @@ cy:
             ni_number_present:
               inclusion: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
               invalid: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
+        forms/partner_national_insurance:
+          attributes:
+            number:
+              blank: Rhowch eich rhif Yswiriant Gwladol
+              invalid: Rhowch rif Yswiriant Gwladol dilys
+            ni_number_present:
+              inclusion: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
+              invalid: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
         forms/personal_detail:
           attributes:
             first_name:
@@ -732,6 +740,22 @@ cy:
       prompt: rhif Yswiriant Gwladol
       text: Beth yw eich rhif Yswiriant Gwladol?
       title: rhif Yswiriant Gwladol
+    partner_national_insurance:
+      breadcrumb: Cam %{page_number} o 22
+      title: 'A oes gan eich partner rif Yswiriant Gwladol?'
+      text: 'A oes gan eich partner rif Yswiriant Gwladol?'
+      prompt: 'Rhif Yswiriant Gwladol '
+      hint: Er enghraifft, 'QQ123456C'
+      details:
+        summary: Pam ydym yn gofyn am eich statws perthynas?
+        detail_text: Os ydych yn un rhan o gwpl, mae Help i Dalu Ffioedd yn seiliedig ar eich incwm ar y cyd oni bai bod yna fudd sy’n gwrthdaro
+      partner_ni_number_present_true: 'Nac oes'
+      partner_ni_number_present_false: 'Oes'
+      where_to_find:
+        item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
+        item_2: gofynnwch am nodyn atgoffa drwy'r post
+        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?"
+
     home_office:
       breadcrumb: Cam %{page_number} o 22
       text: Beth yw eich cyfeirnod Swyddfa Gartref?
@@ -961,6 +985,10 @@ cy:
       married: Statws
       ni_number: Rhif Yswiriant Gwladol
       ni_number_no: Nac oes
+      partner_ni_number: 'Rhif Yswiriant Gwladol eich partner'
+      partner_date_of_birth: Dyddiad geni partner
+      partner_name: 'Partner name'
+
       ho_number: Cyfeirnod y Swyddfa Gartref
       personal: Enw llawn
       probate: Achos profiant
