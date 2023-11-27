@@ -7,7 +7,6 @@ class ClearDownstreamQuestions
   end
 
   # TODO: refactor
-  # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize
   def for_changes(old_online_application, new_online_application)
     if dependent_change?(new_online_application, old_online_application) ||
        income_kind_change?(new_online_application, old_online_application)
@@ -16,19 +15,18 @@ class ClearDownstreamQuestions
       @storage.clear_form(:income_amount)
     elsif benefit_change?(new_online_application)
       @storage.clear_forms([:income_range, :income_amount, :income_kind, :dependent])
-    elsif legal_representative_changed?(new_online_application, old_online_application)
-      clear_legal_representative_details
-    elsif applying_on_behalf_changed?(new_online_application, old_online_application)
-      clear_applying_on_behalf
-    elsif over_16_changed?(new_online_application, old_online_application)
-      clear_over_16_related_data(new_online_application)
-    elsif married_changed?(new_online_application, old_online_application)
-      clear_partner_data
+    # elsif legal_representative_changed?(new_online_application, old_online_application)
+    #   clear_legal_representative_details
+    # elsif applying_on_behalf_changed?(new_online_application, old_online_application)
+    #   clear_applying_on_behalf
+    # elsif over_16_changed?(new_online_application, old_online_application)
+    #   clear_over_16_related_data(new_online_application)
+    # elsif married_changed?(new_online_application, old_online_application)
+    #   clear_partner_data
     elsif !old_online_application.ni_number_present.nil?
       clear_ni_or_ho(old_online_application)
     end
   end
-  # rubocop:enable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize
 
   def benefit_change?(new_online_application)
     @question == :benefit && new_online_application.benefits == true

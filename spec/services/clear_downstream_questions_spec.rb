@@ -116,41 +116,41 @@ RSpec.describe ClearDownstreamQuestions do
       end
     end
 
-    context 'when the legal representation is present' do
-      let(:question) { :legal_representative }
-      let(:old_online_application) { build(:online_application, legal_representative: 'litigation_friend') }
-      let(:new_online_application) { build(:online_application, legal_representative: 'legal_representative') }
+    # context 'when the legal representation is present' do
+    #   let(:question) { :legal_representative }
+    #   let(:old_online_application) { build(:online_application, legal_representative: 'litigation_friend') }
+    #   let(:new_online_application) { build(:online_application, legal_representative: 'legal_representative') }
 
-      context 'and the legal_representative changed' do
-        it 'clears national insurance questions' do
-          expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
-        end
-      end
-    end
+    #   context 'and the legal_representative changed' do
+    #     it 'clears national insurance questions' do
+    #       expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
+    #     end
+    #   end
+    # end
 
-    context 'when the over 16 changed' do
-      let(:question) { :over_16 }
-      let(:old_online_application) { build(:online_application, over_16: true) }
-      let(:new_online_application) { build(:online_application, over_16: false) }
+    # context 'when the over 16 changed' do
+    #   let(:question) { :over_16 }
+    #   let(:old_online_application) { build(:online_application, over_16: true) }
+    #   let(:new_online_application) { build(:online_application, over_16: false) }
 
-      it 'clears national insurance questions' do
-        expect(storage).to have_received(:clear_form).with(:dob)
-        expect(storage).to have_received(:clear_form).with(:national_insurance)
-        expect(storage).to have_received(:clear_form).with(:home_office)
-        expect(Forms::MaritalStatus).to have_received(:new).with({ married: false })
-      end
-    end
+    #   it 'clears national insurance questions' do
+    #     expect(storage).to have_received(:clear_form).with(:dob)
+    #     expect(storage).to have_received(:clear_form).with(:national_insurance)
+    #     expect(storage).to have_received(:clear_form).with(:home_office)
+    #     expect(Forms::MaritalStatus).to have_received(:new).with({ married: false })
+    #   end
+    # end
 
-    context 'when the applying on behalf changed?' do
-      let(:question) { :applying_on_behalf }
-      let(:old_online_application) { build(:online_application, applying_on_behalf: true) }
-      let(:new_online_application) { build(:online_application, applying_on_behalf: false) }
+    # context 'when the applying on behalf changed?' do
+    #   let(:question) { :applying_on_behalf }
+    #   let(:old_online_application) { build(:online_application, applying_on_behalf: true) }
+    #   let(:new_online_application) { build(:online_application, applying_on_behalf: false) }
 
-      it 'clears national insurance questions' do
-        expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
-        expect(storage).to have_received(:clear_form).with(:legal_representative)
-      end
-    end
+    #   it 'clears national insurance questions' do
+    #     expect(storage).to have_received(:clear_form).with(:legal_representative_detail)
+    #     expect(storage).to have_received(:clear_form).with(:legal_representative)
+    #   end
+    # end
 
   end
 end
