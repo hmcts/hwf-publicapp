@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController do
-  let(:online_application) { instance_double(OnlineApplication, :attributes= => nil, calculation_scheme: calculation_scheme) }
+  let(:online_application) { instance_double(OnlineApplication, :attributes= => nil) }
   let(:session) { double }
   let(:storage_started) { true }
   let(:storage) { instance_double(Storage, load_form: nil, save_form: nil, started?: storage_started, load_step_back: step_back, store_page_path: true) }
@@ -10,15 +10,13 @@ RSpec.describe QuestionsController do
   let(:form) { double }
   let(:question_title_view) { double }
   let(:step_back) { 'path' }
-  let(:calculation_scheme) { '' }
 
   before do
-    allow(QuestionFormFactory).to receive(:get_form).with(valid_id, calculation_scheme).and_return(form)
-    allow(QuestionFormFactory).to receive(:get_form).with(invalid_id, calculation_scheme).and_raise(QuestionFormFactory::QuestionDoesNotExist)
+    allow(QuestionFormFactory).to receive(:get_form).with(valid_id).and_return(form)
+    allow(QuestionFormFactory).to receive(:get_form).with(invalid_id).and_raise(QuestionFormFactory::QuestionDoesNotExist)
     allow(controller).to receive_messages(session: session, online_application: online_application)
     allow(Storage).to receive(:new).with(session).and_return(storage)
     allow(Views::QuestionTitle).to receive(:new).with(form, online_application).and_return(question_title_view)
-    allow(storage).to receive_messages(load_calculation_scheme: '', save_calculation_scheme: '')
   end
 
   describe 'GET #edit' do

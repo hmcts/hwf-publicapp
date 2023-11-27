@@ -3,20 +3,12 @@ require 'rails_helper'
 RSpec.describe Views::IncomeKinds do
   subject(:view) { described_class.new(session) }
 
-  let(:rails_store) { Rails.cache }
-
   describe '#list' do
     subject { view.list }
 
-    let(:session) { instance_double(ActionDispatch::Request::Session, id: id) }
-    let(:id) { rand(9999999) }
-
-    before do
-      rails_store.write("questions-#{session.id}-income_kind", income_kind)
-    end
+    let(:session) { { 'questions' => { 'income_kind' => income_kind } } }
 
     context 'when only applicant kinds are present' do
-
       let(:income_kind) { { 'applicant' => applicant } }
 
       context 'when they contain "no income" and others' do

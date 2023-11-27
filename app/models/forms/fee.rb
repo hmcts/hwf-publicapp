@@ -1,7 +1,6 @@
 module Forms
   class Fee < Base
     include ActiveModel::Validations::Callbacks
-    include FeatureSwitch
 
     attribute :paid, Boolean
     attribute :date_paid, Date
@@ -10,7 +9,6 @@ module Forms
     attribute :year_date_paid, Integer
 
     before_validation :fee_dates_paid
-    after_validation :assign_calculation_scheme
 
     validates :paid, inclusion: { in: [true, false] }
 
@@ -39,8 +37,7 @@ module Forms
     def export_params
       {
         refund: paid,
-        date_fee_paid: paid ? fee_dates_paid : nil,
-        calculation_scheme: assign_calculation_scheme
+        date_fee_paid: paid ? fee_dates_paid : nil
       }
     end
 
@@ -63,18 +60,6 @@ module Forms
 
     def blank_dates?
       day_date_paid.blank? || month_date_paid.blank? || year_date_paid.blank?
-    end
-
-    def assign_calculation_scheme
-      if FeatureSwitch.subject_to_new_legislation?(received_and_refund_data)
-        FeatureSwitch::CALCULATION_SCHEMAS[1]
-      else
-        FeatureSwitch::CALCULATION_SCHEMAS[0]
-      end
-    end
-
-    def received_and_refund_data
-      { refund: paid, date_fee_paid: fee_dates_paid, date_received: Time.zone.today }
     end
   end
 end

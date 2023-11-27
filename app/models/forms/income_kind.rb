@@ -6,13 +6,13 @@ module Forms
     validates_each :applicant do |record, attr, value|
       if value.blank?
         record.errors.add(attr, :blank)
-      elsif value.any? { |v| allowed_kinds_ucd.exclude?(v) }
+      elsif value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
       end
     end
 
     validates_each :partner do |record, attr, value|
-      if value.any? { |v| allowed_kinds_ucd.exclude?(v) }
+      if value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
       end
     end
@@ -21,16 +21,8 @@ module Forms
       (1..13).to_a
     end
 
-    def self.allowed_kinds_ucd
-      (1..17).to_a
-    end
-
     def self.no_income_index
       13
-    end
-
-    def self.no_income_index_ucd
-      17
     end
 
     def permitted_attributes
@@ -52,17 +44,8 @@ module Forms
           partner: income_kind_text_values(partner)
         }
       }
-      export[:income] = 0 if ap_no_income_ucd
-      export[:income] = 0 if ap_no_income
+      export[:income] = 0 if (applicant + partner).uniq == [self.class.no_income_index]
       export
-    end
-
-    def ap_no_income_ucd
-      (applicant + partner).uniq == [self.class.no_income_index_ucd] && ucd_changes_apply?
-    end
-
-    def ap_no_income
-      (applicant + partner).uniq == [self.class.no_income_index] && ucd_changes_apply? == false
     end
 
     def clear_empty_string(attributes, attribute)

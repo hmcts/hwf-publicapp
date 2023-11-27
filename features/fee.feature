@@ -10,7 +10,7 @@ Feature: Fee page
 
   Scenario: No I have not already paid the fee
     When I submit no to have you already paid the fee
-    Then I should be taken to form number page
+    Then I should be taken to national insurance presence page
 
   Scenario: Selecting yes but not providing a date
     When I select yes to have you already paid the fee
@@ -20,7 +20,7 @@ Feature: Fee page
   Scenario: Date within the last 3 months
     When I select yes to have you already paid the fee
     And I submit the form with a date that is within the last three months
-    Then I should be taken to form number page
+    Then I should be taken to national insurance presence page
 
   Scenario: Date exceeding 3 months
     When I select yes to have you already paid the fee

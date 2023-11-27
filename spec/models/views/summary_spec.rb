@@ -208,22 +208,4 @@ RSpec.describe Views::Summary do
       expect(summary.full_address).to eql('Street City POSTCODE')
     end
   end
-
-  describe '#signed_by_representative applicant' do
-    let(:online_application) { build(:online_application, applying_on_behalf: nil) }
-
-    it { expect(summary.signed_by_representative).to be false }
-  end
-
-  describe '#signed_by_representative litigation friend' do
-    let(:online_application) { build(:online_application, applying_on_behalf: true, legal_representative: 'litigation_friend') }
-
-    it { expect(summary.signed_by_representative).to be false }
-  end
-
-  describe '#signed_by_representative legal representative' do
-    let(:online_application) { build(:online_application, applying_on_behalf: true, legal_representative: 'legal_representative') }
-
-    it { expect(summary.signed_by_representative).to be true }
-  end
 end

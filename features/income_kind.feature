@@ -6,7 +6,7 @@ Feature: Income kind page
     Then I should see an income list:
       | income name                                               |
       | Wages                                                     |
-      | Child Benefit                                              |
+      | Child Benefit                                             |
       | Working Tax Credit                                        |
       | Child Tax Credit                                          |
       | Maintenance payments                                      |

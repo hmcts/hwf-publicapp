@@ -62,7 +62,3 @@ end
 When(/^I slowly submit less than$/) do
   income_range_page.slowly_submit_less
 end
-
-Then('I should be taken to income period page') do
-  expect(income_period_page).to be_displayed
-end

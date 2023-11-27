@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "income_kind" page for "Help with fees"' do
-    before do
-      given_user_answers_questions_up_to(:income_kind)
-    end
+    before { given_user_answers_questions_up_to(:income_kind) }
 
     context 'not completing the page correctly' do
       before do

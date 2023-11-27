@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "dependent" page for "Help with fees"' do
-    before do
-      given_user_answers_questions_up_to(:dependent)
-    end
+    before { given_user_answers_questions_up_to(:dependent) }
 
     context 'completing the form correctly' do
       before do

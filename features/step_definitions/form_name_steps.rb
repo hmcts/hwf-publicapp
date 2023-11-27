@@ -1,6 +1,5 @@
 Given(/^I am on the form number page$/) do
-  to_fee_page
-  fee_page.submit_fee_yes
+  to_form_name
   expect(current_url).to have_content '/questions/form_name'
   expect(form_name_page.content).to have_step_info
   expect(form_name_page.content).to have_header

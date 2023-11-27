@@ -1,29 +1,21 @@
 module Forms
   class Dob < Base
     include ActiveModel::Validations::Callbacks
-    include PartnerDobValidatable
 
-    attr_reader :date_of_birth, :partner_date_of_birth
+    attr_reader :date_of_birth
 
     attribute :over_61, Boolean
     attribute :is_married, Boolean
     attribute :day, Integer
     attribute :month, Integer
     attribute :year, Integer
-    attribute :partner_day, Integer
-    attribute :partner_month, Integer
-    attribute :partner_year, Integer
-    attribute :over_16, Integer
 
     MINIMUM_AGE = 15
     MAXIMUM_AGE = 120
 
     before_validation :dob_dates
-    before_validation :partner_dob_dates, if: :partner?
-    before_validation :reset_partner_dob, unless: :partner?
 
     validate :dob_age_valid?
-    validate :partner_dob_age_valid?, if: :partner?
 
     private
 
@@ -55,8 +47,6 @@ module Forms
     end
 
     def too_young?
-      return false if over_16 == 'false'
-
       date_of_birth > minimum_date_of_birth
     end
 
@@ -85,8 +75,7 @@ module Forms
 
     def export_params
       {
-        date_of_birth: dob_dates,
-        partner_date_of_birth: partner_dob_dates
+        date_of_birth: dob_dates
       }
     end
 

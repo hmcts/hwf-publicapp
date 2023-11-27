@@ -71,12 +71,6 @@ RSpec.describe Forms::IncomeKind do
     it { is_expected.to eq 13 }
   end
 
-  describe '.no_income_index_ucd' do
-    subject { described_class.no_income_index_ucd }
-
-    it { is_expected.to eq 17 }
-  end
-
   describe '#export' do
     subject { form.export }
 

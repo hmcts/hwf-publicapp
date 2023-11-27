@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
   end
 
   def form
-    @form ||= QuestionFormFactory.get_form(question, calculation_scheme)
+    @form ||= QuestionFormFactory.get_form(question)
   end
 
   def form_params
@@ -50,9 +50,8 @@ class QuestionsController < ApplicationController
   end
 
   def process_form_and_online_application
-    old_online_application = online_application.dup
     storage.save_form(form)
-    storage.save_calculation_scheme(online_application.calculation_scheme)
+    old_online_application = online_application.dup
     online_application.attributes = form.export
     clear_service.for_changes(old_online_application, online_application)
   end
@@ -81,10 +80,6 @@ class QuestionsController < ApplicationController
     load_previous_step
     assign_title_view
     assign_page_number
-  end
-
-  def calculation_scheme
-    storage.load_calculation_scheme
   end
 
 end

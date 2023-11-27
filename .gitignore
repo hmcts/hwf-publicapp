@@ -19,15 +19,14 @@
 /tmp/restart.txt
 /tmp/capybara
 /tmp/test
-/tmp/pids
 
+# node
 node_modules
 
 # Ignore IDE configurations
 .idea/
 
 **/.DS_Store
-dump.rdb
 
 
 .generators

@@ -4,21 +4,6 @@ Given(/^I am on the marital status page$/) do
   expect(marital_status_page.content).to have_header
 end
 
-Given(/^I am on the marital status page ucd$/) do
-  to_marital_status_ucd
-  expect(marital_status_page.content).to have_step_info_ucd
-  expect(marital_status_page.content).to have_header_ucd
-  expect(marital_status_page.content).to have_subheader
-  expect(marital_status_page.content).to have_single_header
-  expect(marital_status_page.content).to have_married_header
-  expect(marital_status_page.content).to have_single_point_1
-  expect(marital_status_page.content).to have_single_point_2
-  expect(marital_status_page.content).to have_single_point_3
-  expect(marital_status_page.content).to have_married_point_1
-  expect(marital_status_page.content).to have_married_point_2
-  expect(marital_status_page.content).to have_married_point_3
-end
-
 When(/^I submit the form as single$/) do
   marital_status_page.submit_single
 end
@@ -40,10 +25,6 @@ Then(/^I should see help with status copy$/) do
   expect(marital_status_page.content).to have_help_domestic_violence
   expect(marital_status_page.content).to have_help_forced_marriage
   expect(marital_status_page.content).to have_help_dissolution
-end
-
-Then(/^I should see help with status copy ucd$/) do
-  expect(marital_status_page.content).to have_help_text
 end
 
 Then(/^I should be taken to marital status page$/) do

@@ -1,4 +1,35 @@
-- if FeatureSwitch.active?('ucd_refactor')
-  = render("home/checklist/post_ucd")
-- else
-  = render("home/checklist/pre_ucd")
+- content_for :page_title
+  = t('.title')
+  = ' - '
+
+= render "shared/maintenance_notice" if Settings.maintenance.show.present?
+
+h1.govuk-heading-l =t('.heading')
+
+- t('.sections').each do |section|
+  =display_section(section)
+
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary
+    span =t('home.checklist.national_insurance.details.summary')
+
+  .govuk-details__text
+    .text
+      ul.govuk-list.govuk-list--bullet
+        li =t('item_1', scope: 'home.checklist.national_insurance.details.section_1')
+        li =link_to t('item_2', scope: 'home.checklist.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary
+    span =t('.details.summary')
+
+  .govuk-details__text
+    .text
+      ul.govuk-list.govuk-list--bullet
+        li =t('.details.section_1.item_1')
+
+p.govuk-body =t('.paper_form_html')
+
+p.govuk-body =t('.accurate_information')
+
+= link_to(t('submit_button'), start_session_path, role: :button, class: 'govuk-button')

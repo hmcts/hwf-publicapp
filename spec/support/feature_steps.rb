@@ -4,7 +4,7 @@ module FeatureSteps
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
 
-    QuestionFormFactory.page_list.take_while { |id| id != question }.each do |id|
+    QuestionFormFactory::IDS.take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
       next if id == :home_office
 
@@ -22,8 +22,8 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
-    fill_fee(true)
     fill_form_name
+    fill_fee(true)
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status
@@ -46,8 +46,8 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
-    fill_fee(false)
     fill_form_name
+    fill_fee(false)
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status
@@ -70,8 +70,8 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
-    fill_fee
     fill_form_name
+    fill_fee
     fill_national_insurance_presence
     fill_national_insurance
     fill_marital_status
@@ -100,7 +100,7 @@ module FeatureSteps
   end
 
   def when_they_submit_the_application
-    click_link_or_button 'Get a reference number and continue'
+    click_link_or_button 'Submit application and continue'
   end
 
   def when_they_start_new_application
@@ -195,7 +195,7 @@ module FeatureSteps
     expect(page).to have_content 'Check details'
     expect(page).to have_content 'Not receiving eligible benefits'
     expect(page).to have_content 'IncomeLess than £1,170'
-    expect(page).to have_content 'Get a reference number and continue'
+    expect(page).to have_content 'Submit application and continue'
   end
 
   def fill_contact
@@ -273,6 +273,7 @@ module FeatureSteps
     else
       choose 'fee_paid_false'
     end
+
     click_button 'Continue'
   end
 

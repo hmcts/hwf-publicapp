@@ -3,8 +3,8 @@ class FeePage < BasePage
   set_url '/questions/fee'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 1 of 22'
-    element :header, 'h1', text: 'Have you already paid the court or tribunal fee?'
+    element :step_info, '.govuk-caption-l', text: 'Step 2 of 22'
+    element :header, 'h1', text: 'Have you already paid the fee?'
     element :apply_for_refund, '.govuk-body', text: 'You can apply for a refund for a fee paid in the last 3 months'
     element :format_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'
     element :format_error_message, '.error-message', text: 'Enter the date in this format DD/MM/YYYY'

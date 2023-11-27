@@ -1,19 +1,10 @@
-= f.hidden_field :is_married, value: @online_application.married?
-
-- if ucd_changes_apply?(@online_application.calculation_scheme) && @online_application.married?
-  .govuk-form-group
-    fieldset.govuk-fieldset
-    legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
-      = t('applicant', scope: @form.i18n_scope)
-
-- if !ucd_changes_apply?(@online_application.calculation_scheme)
-  .govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:title].any?)
-    = f.label :title, class: 'govuk-label'
-      = t('title', scope: @form.i18n_scope)
-      span.optional  = t('optional')
-    - if @form.errors[:title].any?
-      span.govuk-error-message#title = @form.errors[:title].join(' ')
-    = f.text_field :title, class: 'govuk-input govuk-!-width-one-quarter'
+.govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:title].any?)
+  = f.label :title, class: 'govuk-label'
+    = t('title', scope: @form.i18n_scope)
+    span.optional  = t('optional')
+  - if @form.errors[:title].any?
+    span.govuk-error-message#title = @form.errors[:title].join(' ')
+  = f.text_field :title, class: 'govuk-input govuk-!-width-one-quarter'
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:first_name].any?)
   = f.label :first_name, class: 'govuk-label'
   - if @form.errors[:first_name].any?
@@ -24,27 +15,3 @@
   - if @form.errors[:last_name].any?
     span.govuk-error-message#last_name = @form.errors[:last_name].join(' ')
   = f.text_field :last_name, class: 'govuk-input govuk-!-width-one-half'
-
-
-- if ucd_changes_apply?(@online_application.calculation_scheme) && @online_application.married?
-  .govuk-form-group
-    fieldset.govuk-fieldset
-    legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
-      = t('partner', scope: @form.i18n_scope)
-
-  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:partner_first_name].any?)
-    = f.label :partner_first_name, class: 'govuk-label'
-    - if @form.errors[:partner_first_name].any?
-      span.govuk-error-message#first_name = @form.errors[:partner_first_name].join(' ')
-    = f.text_field :partner_first_name, class: 'govuk-input govuk-!-width-one-half'
-  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:partner_last_name].any?)
-    = f.label :partner_last_name, class: 'govuk-label'
-    - if @form.errors[:partner_last_name].any?
-      span.govuk-error-message#last_name = @form.errors[:partner_last_name].join(' ')
-    = f.text_field :partner_last_name, class: 'govuk-input govuk-!-width-one-half'
-
-details.govuk-details data-module="govuk-details"
-  summary.govuk-details__summary
-    span =t('detail_title', scope: @form.i18n_scope)
-  .govuk-details__text
-    =t('detail_text', scope: @form.i18n_scope)
