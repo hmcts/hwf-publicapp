@@ -35,6 +35,8 @@ class Storage
   end
 
   def save_form(form)
+    Rails.logger.debug { "AAAAA SAVE FORM: #{form.class.name} == #{form.as_json} - #{@session.id}" }
+
     rails_store.write("questions-#{@session.id}-#{form.id}", form.as_json)
   end
 
@@ -44,6 +46,7 @@ class Storage
   end
 
   def clear_form(form_id)
+    Rails.logger.debug { "AAAAA CLEAR FORM: #{form_id} == #{@session.id}" }
     rails_store.delete("questions-#{@session.id}-#{form_id}")
   end
 
