@@ -1116,7 +1116,7 @@ en:
     probate_case_false: 'No'
     probate_case_true: 'Yes'
     truth:
-      button: Get a reference number and continue
+      button: Submit application and continue
       heading: Declaration and statement of truth
       statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my current financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
     applying_method_paper: 'Paper'
