@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe SubmissionsController do
   let(:session) { double }
   let(:storage) { double }
-  let(:online_application) { build(:online_application) }
+  let(:online_application) { build(:online_application, calculation_scheme: schema) }
   let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
+  let(:schema) { 'scheme' }
 
   before do
     allow(controller).to receive(:session).and_return(session)
@@ -14,11 +15,14 @@ RSpec.describe SubmissionsController do
 
   describe 'POST #create' do
     let(:service) { double }
+    let(:statement) { instance_double(Forms::Statement, valid?: true, signed_by: 'applicant', id: 'statement', update_attributes: true) }
 
     before do
+      allow(Forms::Statement).to receive(:new).and_return statement
       allow(SubmitApplication).to receive(:new).and_return(service)
       allow(service).to receive(:post).with(online_application).and_return(response)
       allow(storage).to receive(:submission_result=)
+      allow(storage).to receive(:save_form)
 
       post :create, params: { locale: 'cy' }
     end
@@ -31,6 +35,19 @@ RSpec.describe SubmissionsController do
 
     context 'on a successful response' do
       let(:response) { { result: true, message: 'HWF-000-000' } }
+
+      context 'signed by' do
+        let(:schema) { FeatureSwitch::CALCULATION_SCHEMAS[1] }
+
+        it 'assigns statement to online application' do
+          expect(online_application.statement_signed_by).to eq 'applicant'
+        end
+
+        it 'save statement form' do
+          expect(storage).to have_received(:save_form).with(statement)
+        end
+
+      end
 
       it 'stores the result on the session' do
         expect(storage).to have_received(:submission_result=).with(response)

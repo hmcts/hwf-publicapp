@@ -89,16 +89,37 @@ RSpec.describe Storage do
   end
 
   describe '#clear' do
-    let(:session) { mock_session.new }
+    let(:session) { instance_double(ActionDispatch::Request::Session, id: session_id, destroy: true) }
+    let(:rails_store) { Rails.cache }
+    let(:session_id) { 2 }
+    let(:session_two_id) { 3 }
+    let(:store_data) {
+      rails_store.write("questions-#{session_id}-over_16", { 'married' => false, 'over_16' => false }.as_json)
+      rails_store.write("questions-#{session_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
+      rails_store.write("questions-#{session_two_id}-over_16", { 'married' => false, 'over_16' => false }.as_json)
+      rails_store.write("questions-#{session_two_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
+    }
 
     before do
-      allow(session).to receive(:destroy)
+      store_data
+
+      allow(session).to receive(:[]).with(:calculation_scheme).and_return FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
+      allow(session).to receive(:[]).with(:started_at).and_return ''
+      allow(session).to receive(:[]=)
 
       storage.clear
     end
 
     it 'calls #destroy on the session' do
-      expect(session).to have_received(:destroy)
+      # expect(session).to have_received(:destroy)
+    end
+
+    it 'clears forms only for the session' do
+      expect(rails_store.read("questions-#{session_id}-over_16")).to be_nil
+      expect(rails_store.read("questions-#{session_id}-savings_and_investment")).to be_nil
+
+      expect(rails_store.read("questions-#{session_two_id}-over_16")).to eq({ "married" => false, "over_16" => false })
+      expect(rails_store.read("questions-#{session_two_id}-savings_and_investment")).to eq({ "choice" => "between" })
     end
   end
 

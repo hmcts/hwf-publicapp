@@ -48,13 +48,20 @@ class SubmissionsController < ApplicationController
 
   def statement_check
     @form = Forms::Statement.new
+
     @form.update_attributes(statement_params)
     if @form.valid?
+      save_statement_form
       submit
     else
       flash[:error] = @form_error || I18n.t('.confirmation.submission_error')
       flash[:statement_blank] = true
       redirect_to(summary_path)
     end
+  end
+
+  def save_statement_form
+    storage.save_form(@form)
+    online_application.statement_signed_by = @form.signed_by
   end
 end

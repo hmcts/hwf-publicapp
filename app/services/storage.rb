@@ -9,9 +9,8 @@ class Storage
   end
 
   def clear
+    clear_redis
     @session.destroy
-    rails_store.clear
-    store.write('page_path', [])
   end
 
   def start
@@ -35,8 +34,6 @@ class Storage
   end
 
   def save_form(form)
-    Rails.logger.debug { "AAAAA SAVE FORM: #{form.class.name} == #{form.as_json} - #{@session.id}" }
-
     rails_store.write("questions-#{@session.id}-#{form.id}", form.as_json)
   end
 
@@ -46,7 +43,6 @@ class Storage
   end
 
   def clear_form(form_id)
-    Rails.logger.debug { "AAAAA CLEAR FORM: #{form_id} == #{@session.id}" }
     rails_store.delete("questions-#{@session.id}-#{form_id}")
   end
 
@@ -93,6 +89,13 @@ class Storage
 
   def expires_in_seconds
     Settings.session.expires_in_minutes * 60
+  end
+
+  def clear_redis
+    if load_calculation_scheme
+      form_ids = QuestionFormFactory.page_list(load_calculation_scheme)
+      clear_forms(form_ids)
+    end
   end
 
 end
