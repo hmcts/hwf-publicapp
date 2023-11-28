@@ -5,7 +5,7 @@ RSpec.describe ConfirmationsController do
   let(:online_application) { instance_double(OnlineApplication, benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }
   let(:storage_started) { true }
-  let(:storage) { instance_double(Storage, submission_result: result, started?: storage_started) }
+  let(:storage) { instance_double(Storage, submission_result: result, started?: storage_started, clear: true) }
   let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
 
   before do
@@ -18,12 +18,12 @@ RSpec.describe ConfirmationsController do
   describe 'storage' do
     it 'clear for show' do
       get :show
-      expect(session).to have_received(:clear)
+      expect(storage).to have_received(:clear)
     end
 
     it 'clear for refund' do
       get :refund
-      expect(session).to have_received(:clear)
+      expect(storage).to have_received(:clear)
     end
   end
 

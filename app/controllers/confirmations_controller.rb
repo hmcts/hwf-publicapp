@@ -19,6 +19,6 @@ class ConfirmationsController < ApplicationController
   end
 
   def reset_cache
-    session.clear
+    storage.clear
   end
 end
