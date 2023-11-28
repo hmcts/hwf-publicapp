@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe AddressLookup do
   subject(:address_lookup) { described_class }
+
   before {
-    stub_request(:post, "https://api.os.uk/oauth2/token/v1").to_return(body: {access_token: "abc"}.to_json)
+    stub_request(:post, "https://api.os.uk/oauth2/token/v1").to_return(body: { access_token: "abc" }.to_json)
   }
+
   describe '#access_token' do
     context 'question' do
 

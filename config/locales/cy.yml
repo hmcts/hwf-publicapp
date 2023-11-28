@@ -32,7 +32,11 @@ cy:
         children_number: Nifer y plant
         children_age_band_one: Nifer y plant rhwng 0-13 oed
         children_age_band_two: Nifer y plant sy’n 14 oed neu'n hŷn
-
+      forms/legal_representative_detail:
+        street: Rhif tŷ a stryd
+        town: Tref
+        postcode: Cod post
+        find_address: "Dod o hyd i gyfeiriad"
       forms/fee:
         date_paid: Dyddiad y talwyd y ffi
         day_date_paid: Dydd
@@ -63,6 +67,8 @@ cy:
         first_name: Enw cyntaf
         last_name: Enw olaf
         title: Teitl
+        partner_first_name: Enw cyntaf
+        partner_last_name: Enw olaf
       forms/probate:
         date_of_death: Dyddiad y farwolaeth
         deceased_name: Enw'r ymadawedig
@@ -75,6 +81,9 @@ cy:
         day: Dydd
         month: Mis
         year: Flwyddyn
+        partner_day: Dydd
+        partner_month: Mis
+        partner_year: Flwyddyn
 
     errors:
       models:
@@ -104,11 +113,13 @@ cy:
         forms/legal_representative_detail:
           attributes:
             legal_representative_first_name:
-              blank: Please enter first name
-              invalid_name: Must not contain special characters
+              blank: Rhowch eich enw cyntaf
+              too_long: Rhaid i'r enw cyntaf fod yn llai na 50 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             legal_representative_last_name:
-              blank: Please enter last name
-              invalid_name: Must not contain special characters
+              blank: Rhowch eich enw olaf
+              too_long: Rhaid i'r enw olaf fod yn llai na 50 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             legal_representative_email:
               blank: Please enter email address
               invalid: Enter a valid email address.
@@ -174,6 +185,12 @@ cy:
         forms/dob:
           attributes:
             date_of_birth:
+              not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
+              not_a_number: Rhowch ddyddiad dilys
+              too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
+              too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
+              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8 o 22)
+            partner_date_of_birth:
               not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
@@ -263,8 +280,8 @@ cy:
               too_long: Rhaid i'r enw cyntaf fod yn llai na 50 o nodau
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
             last_name:
-              blank: Rhowch eich enw olaf
-              too_long: Rhaid i'r enw olaf fod yn llai na 50 o nodau
+              blank: Rhowch eich enw cyntaf
+              too_long: Rhaid i'r enw cyntaf fod yn llai na 50 o nodau
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
             title:
               too_long: Rhaid i'r teitl fod yn llai na 10 o nodau
@@ -273,9 +290,9 @@ cy:
               too_long: First name must be less than 50 characters
               invalid_name: Must not contain special characters
             partner_last_name:
-              blank: Enter your partner's last name
-              too_long: Last name must be less than 50 characters
-              invalid_name: Must not contain special characters
+              blank: Rhowch eich enw olaf
+              too_long: Rhaid i'r enw olaf fod yn llai na 50 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             title:
               too_long: Title must be less than 10 characters
         forms/probate:
@@ -467,14 +484,22 @@ cy:
     title: Gofynnwch am help technegol
   optional: "(Dewisol)"
   questions:
+    fee:
+      breadcrumb:  Cam %{page_number} o 22
+      details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
+      date_paid: Date fee paid
+      fee_paid_false: 'No'
+      fee_paid_true: 'Yes'
+      hint_html: For example, 04 10 2018
+      text: Have you already paid the court or tribunal fee?
+      title: Refund
     applying_on_behalf:
-      title: Are you applying on behalf of someone else?
-      breadcrumb: Step %{page_number} of 22
-      text: Is the application on behalf of someone else?
-      details: Is the application on behalf of someone else?
-      inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
-      applying_on_behalf_false: 'No'
-      applying_on_behalf_true: 'Yes'
+      title: Ydych chi’n gwneud cais ar ran rhywun arall?
+      breadcrumb: Cam %{page_number} o 22
+      text: Ydych chi’n gwneud cais ar ran rhywun arall?
+      inset_text: Os ydych chi’n gwneud cais ar ran rhywun arall, fel cynrychiolydd cyfreithiol neu gyfaill cyfreitha, dylech ddarparu eu manylion nhw yn y cais hwn.
+      applying_on_behalf_false: 'Nac oes'
+      applying_on_behalf_true: 'Oes'
 
     applicant_address:
       breadcrumb: Cam %{page_number} o 22
@@ -598,9 +623,9 @@ cy:
       text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
       applicant: Your date of birth
-      partner: Your partner's date of birth
-      detail_title: Why do we ask for this?
-      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+      partner: Dyddiad geni eich partner
+      detail_title: Pam ein bod yn gofyn am hyn?
+      detail_text: Rydym angen gwybodaeth bersonol er mwyn ein galluogi i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth a ddarparwyd. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
     dob_married:
       text: What are you and your partner’s dates of birth
       breadcrumb: Cam %{page_number} o 22
@@ -623,38 +648,38 @@ cy:
       title: Enw neu rif y ffurflen
       unknown: Nid oes gen i ffurflen
     legal_representative:
-      title: Are you a legal representative or litigation friend?
-      breadcrumb: Step %{page_number} of 22
-      text: Are you a legal representative or litigation friend?
-      details: Are you a legal representative or litigation friend?
-      legal_representative_legal_representative: 'Legal representative'
-      legal_representative_litigation_friend: 'Litigation friend'
-      hint_legal_rep: A legal representative is usually a lawyer or solicitor.
-      hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
+      title: Ydych chi’n gynrychiolydd cyfreithiol neu’n gyfaill cyfreitha?
+      breadcrumb: Cam %{page_number} o 22
+      text: Ydych chi’n gynrychiolydd cyfreithiol neu’n gyfaill cyfreitha?
+      details: Ydych chi’n gynrychiolydd cyfreithiol neu’n gyfaill cyfreitha?
+      legal_representative_legal_representative: 'Cynrychiolydd cyfreithiol'
+      legal_representative_litigation_friend: 'Cyfaill cyfreitha'
+      hint_legal_rep: Fel arfer mae cynrychiolydd cyfreithiol yn gyfreithiwr
+      hint_litigation: Cyfaill cyfreitha yw rhywun a benodir i wneud penderfyniadau am achos llys ar gyfer rhywun sy’n blentyn neu’n oedolyn sydd heb alluedd meddyliol i reoli achos eu hunain. Er enghraifft, gall cyfaill cyfreitha fod yn rhiant, yn aelod o’r teulu neu’n ffrind, yn eiriolwr proffesiynol, yn ddirprwy’r Llys Gwarchod neu’n rhywun sydd ag atwrneiaeth arhosol neu atwrneiaeth barhaus berthnasol.
     legal_representative_detail:
-      title: Enter the representative details
-      breadcrumb: Step %{page_number} of 22
-      text: Enter the legal representative detail
-      legal_representative_first_name: 'First name'
-      legal_representative_last_name: 'Last name'
-      legal_representative_email: 'Email address'
-      organisation: Organisation details
-      legal_representative_organisation_name: 'Organisation name'
+      title: Rhowch fanylion y cynrychiolydd cyfreithiol
+      breadcrumb: Cam %{page_number} o 22
+      text: Rhowch fanylion y cynrychiolydd cyfreithiol
+      legal_representative_first_name: 'Enw cyntaf'
+      legal_representative_last_name: 'Enw olaf'
+      legal_representative_email: 'E-bost'
+      organisation: Manylion y sefydliad
+      legal_representative_organisation_name: 'Enw’r sefydliad'
       legal_representative_address: 'Enter a UK postcode'
-      legal_representative_feedback_opt_in: Check this box if you're also willing to share your experience of this service.
+      legal_representative_feedback_opt_in: Ticiwch y blwch hwn os ydych chi hefyd yn fodlon rhannu gwybodaeth am eich profiad o ddefnyddio’r gwasanaeth hwn.
       hint_legal_rep: A legal representative is usually a lawyer or solicitor.
       hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
-      email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
-
+      email_hint: 'Byddwn yn defnyddio’r cyfeiriad e-bost hwn i anfon copi o’ch cyfeirnod Help i Dalu Ffioedd atoch.'
+      find_address: "Dod o hyd i gyfeiriad"
     legal_representative_detail_friend:
-      text: Enter the litigation friend details
+      text: Rhowch fanylion y cyfaill cyfreitha
 
     over16:
-      title: Is the person you are applying for over 16?
-      breadcrumb: Step %{page_number} of 22
-      text: Is the person you are applying for over 16?
-      over_16_true: 'Yes'
-      over_16_false: 'No'
+      title: A yw’r unigolyn rydych chi’n gwneud cais ar ei ran dros 16 oed?
+      breadcrumb: Cam %{page_number} o 22
+      text: A yw’r unigolyn rydych chi’n gwneud cais ar ei ran dros 16 oed?
+      over_16_true: 'Oes'
+      over_16_false: 'Nac oes'
     income_amount:
       prompt: Rhowch gyfanswm yr incwm rydych chi'n ei gael bob mis.
       amount:
@@ -798,14 +823,15 @@ cy:
       title: Eich statws priodasol
     personal_detail_married:
       text: What are the full names of both you and your partner?
+
     personal_detail:
-      breadcrumb: Step %{page_number} of 22
-      text: What is your full name?
-      title: Title
-      applicant: Your details
-      partner: "Your partner's details"
-      detail_title: Why do we ask for this?
-      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+      breadcrumb: Cam %{page_number} o 22
+      text: Beth yw eich enw llawn?
+      title: Teitl
+      applicant: Eich manylion chi
+      partner: "Manylion eich partner"
+      detail_title: Pam ein bod yn gofyn am hyn?
+      detail_text: Rydym angen gwybodaeth bersonol er mwyn ein galluogi i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth a ddarparwyd. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
     marital_status_ucd:
       breadcrumb: Cam %{page_number} o 22
       section_1:
@@ -878,10 +904,6 @@ cy:
       details:
         summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
         item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref
-    personal_detail:
-      breadcrumb: Cam %{page_number} o 22
-      text: Beth yw eich enw llawn?
-      title: Teitl
     probate:
       breadcrumb: Cam %{page_number} o 22
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
@@ -1061,21 +1083,21 @@ cy:
       last_month: Mis calendr diwethaf
       average: Cyfartaledd am y tri mis diwethaf
     labels:
-      applying_on_behalf: Applying on behalf of someone else
-      legal_representative_or_friend: Legal representative or litigation friend
-      legal_representative: Legal representative
-      legal_representative_detail: Legal representative details
-      litigation_friend: Litigation friend
-      full_name: Full name
+      applying_on_behalf: Gwneud cais ar ran rhywun arall
+      legal_representative_or_friend: Cynrychiolydd cyfreithiol neu gyfaill cyfreitha
+      legal_representative: Cynrychiolydd cyfreithiol
+      legal_representative_detail: Manylion y cynrychiolydd cyfreithiol
+      litigation_friend: Cyfaill cyfreitha
+      full_name: Enw llawn
+      applicant_name: Enw llawn
       email: Email
-      over_16: Applicant over 16
+      over_16: Ceisydd dros 16 oed
       address: Cyfeiriad
       benefits: Budd-daliadau
       children: Plant
       children_age_band: Plant
       children_age_band_one: 0-13 oed
       children_age_band_two: 14 oed neu'n hŷn
-      applicant_name: Full name
       claim: Rhif hawliad
       contact: Cyswllt
       contact_email: E-bost
@@ -1096,7 +1118,7 @@ cy:
       ni_number_no: Nac oes
       partner_ni_number: 'Rhif Yswiriant Gwladol eich partner'
       partner_date_of_birth: Dyddiad geni partner
-      partner_name: 'Partner name'
+      partner_name: 'Enw llawn eich partner'
 
       ho_number: Cyfeirnod y Swyddfa Gartref
       personal: Enw llawn

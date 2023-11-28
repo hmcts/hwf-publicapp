@@ -42,9 +42,9 @@ module AddressLookup
     end
 
     def page_with_address?(question)
-      [:applicant_address, :legal_representative_detail].each{ |page|
+      [:applicant_address, :legal_representative_detail].each do |page|
         return true if page == question
-      }
+      end
       false
     end
   end
