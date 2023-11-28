@@ -1524,3 +1524,5 @@ en:
 
   maintenance:
     message: 'Advance notice: This service will be unavailable on Wednesday 4 September 2019 from 6am until 11am while we make essential upgrades.'
+  maintenance_warning:
+    message_html: "We are aware that some applicants may have an issue submitting their online HWF applications this morning. We are looking into resolving this as soon as possible.<br><br>If that is the case for you, please try later this afternoon or, if the matter is urgent, submit a paper application available here: <a class='govuk-link' href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees?_ga=2.1962929.1678050508.1701077451-1002250069.1681809825'>Apply for help with court and tribunal fees: Form EX160</a>. We apologise for any inconvenience.<br><br>Help with Fees IT"

@@ -30,6 +30,8 @@ sentry:
   dsn: <%= ENV['SENTRY_DSN'] %>
 maintenance:
   show: <%= ENV['SHOW_MAINTENANCE_BANNER'] || false %>
+maintenance_warning:
+  show: true
 mail:
   help_me: <%= ENV['HELP_ME_EMAIL'] %>
 navigation:
