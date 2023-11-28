@@ -110,10 +110,6 @@ RSpec.describe Storage do
       storage.clear
     end
 
-    it 'calls #destroy on the session' do
-      # expect(session).to have_received(:destroy)
-    end
-
     it 'clears forms only for the session' do
       expect(rails_store.read("questions-#{session_id}-over_16")).to be_nil
       expect(rails_store.read("questions-#{session_id}-savings_and_investment")).to be_nil
