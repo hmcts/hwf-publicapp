@@ -322,18 +322,7 @@ module FeatureSteps
   end
 
   def disable_postcode_lookup
-    stub_request(:post, "https://api.os.uk/oauth2/token/v1").
-      with(
-        body: { "grant_type" => "client_credentials" },
-        headers: {
-          'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'Authorization' => 'Basic YXBpX2tleTphcGlfc2VjcmV0',
-          'Content-Type' => 'application/x-www-form-urlencoded',
-          'User-Agent' => 'Ruby'
-        }
-      ).
-      to_return(status: 200, body: "", headers: {})
+    stub_request(:post, "https://api.os.uk/oauth2/token/v1").to_return(body: { access_token: "abc" }.to_json)
   end
 end
 
