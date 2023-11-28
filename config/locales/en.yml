@@ -670,7 +670,7 @@ en:
       email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
 
     legal_representative_detail_friend:
-      text: Enter the litigation friend details
+      text: Enter the litigation's friend details
 
     over16:
       title: Is the person you are applying for over 16?

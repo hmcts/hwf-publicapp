@@ -1,7 +1,7 @@
 module AddressLookup
   class << self
     def access_token(question)
-      return if question != :applicant_address
+      return unless page_with_address?(question)
 
       Rails.cache.fetch('address_lookup', expires_in: 290) do
         uri = URI(Rails.configuration.x.address_lookup.endpoint)
@@ -39,6 +39,13 @@ module AddressLookup
           Rails.logger.info("[Address Lookup] :: os cred #{response.body} -- token: #{token}")
         end
       end
+    end
+
+    def page_with_address?(question)
+      [:applicant_address, :legal_representative_detail].each{ |page|
+        return true if page == question
+      }
+      false
     end
   end
 end
