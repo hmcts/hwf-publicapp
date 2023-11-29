@@ -10,7 +10,7 @@ class BasePage < SitePrism::Page
     element :p, 'p'
     element :h1, 'h1'
     element :h2, 'h2'
-    section :alert, 'div' do
+    section :alert, 'div.govuk-error-summary' do
       element :there_is_a_problem, 'h2', text: 'There is a problem'
     end
     element :step_number, '.govuk-caption-l'
