@@ -1,0 +1,9 @@
+-if @form.id == 'fee'
+  .govuk-notification-banner role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
+    .govuk-notification-banner__header
+      h2.govuk-notification-banner__title#govuk-notification-banner-title
+        = t('banner_representatives_title', scope: @form.i18n_scope)
+
+    .govuk-notification-banner__content
+      p.govuk-notification-banner__heading class="width-fit-content"
+        = t('banner_representatives', scope: @form.i18n_scope)

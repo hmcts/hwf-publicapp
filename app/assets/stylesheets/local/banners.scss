@@ -52,3 +52,9 @@
     }
   }
 }
+
+.govuk-notification-banner__content {
+  .width-fit-content {
+    min-width: fit-content;
+  }
+}
