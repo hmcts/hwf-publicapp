@@ -657,7 +657,7 @@ en:
     legal_representative_detail:
       title: Enter the representative details
       breadcrumb: Step %{page_number} of 22
-      text: Enter the legal representative detail
+      text: Enter the legal representative details
       legal_representative_first_name: 'First name'
       legal_representative_last_name: 'Last name'
       legal_representative_email: 'Email address'
@@ -670,7 +670,7 @@ en:
       email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
 
     legal_representative_detail_friend:
-      text: Enter the litigation friend details
+      text: Enter the litigation friend's details
 
     over16:
       title: Is the person you are applying for over 16?
