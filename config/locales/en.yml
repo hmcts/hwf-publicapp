@@ -618,6 +618,8 @@ en:
     dob_married:
       text: What are you and your partner’s dates of birth
     fee:
+      banner_representatives_title: Important
+      banner_representatives: A legal representative or litigation friend can only apply online if the court or tribunal fee has not yet been paid or the fee was paid on or after the 27th November 2023.
       breadcrumb: Step %{page_number} of 22
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       date_paid: Date fee paid

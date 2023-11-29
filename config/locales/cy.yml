@@ -485,6 +485,8 @@ cy:
   optional: "(Dewisol)"
   questions:
     fee:
+      banner_representatives_title: Pwysig
+      banner_representatives: Dim ond os nad yw’r ffi llys neu dribiwnlys wedi’i thalu eto neu os cafodd y ffi ei thalu ar 27 Tachwedd 2023 neu ar ôl hynny y gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar-lein.
       breadcrumb:  Cam %{page_number} o 22
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       date_paid: Date fee paid
