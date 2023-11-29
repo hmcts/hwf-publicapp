@@ -1199,14 +1199,18 @@ en:
             - li: your National Insurance number
             - li: your marital status
             - li: your date of birth and that of your partner
+            - li: your partner’s full name
+            - li: your partner’s National Insurance number
             - li: how much you and your partner have in savings and investments
             - li: whether you receive qualifying benefits for Help with Fees
+            - li: the number and age of dependent children you have
             - li: the number of dependent children you have
             - li: the type and amount of total monthly income you and your partner receive
             - li: If relevant, your Home Office reference number
+            - li: If relevant, the name and address of your Litigation Friend or the name, position, company and address of your Legal Representative
       - title: How we use your personal data
         parts:
-        - p: The legal basis on which we collect the data is for the administration of justice and, anonymously, for research and statistical purposes. We use your personal data to complete a claim for Help with Fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your application. We may also use your details to contact you for research purposes or to prevent or detect fraud. Your personal data may be shared with Other Government Departments for the purpose of validating or assisting you in progressing your application.
+        - p: The legal basis on which we collect the data is for the administration of justice and, anonymously, for research and statistical purposes. We use your personal data to complete a claim for Help with Fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your application. We may also use your details to contact you for research purposes or to prevent or detect fraud. Your personal data may be shared with Other Government Departments, specifically the Department for Work and Pensions and HM Revenue and Customs, for the purpose of validating or assisting you in progressing your application.
         - p: This online service contains free-text fields in which you’re invited to enter certain types of information. This includes sensitive data such as, but not limited to, financial data. Please only enter the information specifically requested.
       - title: How we use non-personal data
         parts:
