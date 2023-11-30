@@ -73,7 +73,10 @@ RSpec.describe Forms::Contact do
   end
 
   describe '#export' do
-    subject { form.export }
+    subject {
+      form.valid?
+      form.export
+    }
 
     context 'when email is set' do
       let(:email) { '  some@email.domain  ' }
@@ -96,7 +99,7 @@ RSpec.describe Forms::Contact do
       expect(subject).to include(phone_contact: false)
     end
 
-    it 'the returned hash includesreturns post_contact as false' do
+    it 'the returned hash includes returns post_contact as false' do
       expect(subject).to include(post_contact: false)
     end
 

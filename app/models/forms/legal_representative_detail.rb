@@ -12,12 +12,12 @@ module Forms
     attribute :postcode, String
     attribute :town, String
 
+    before_validation :sanitize_email
+
     validates :legal_representative_first_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :legal_representative_last_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :legal_representative_organisation_name, allow_blank: true, sensible_name: true
     validates :legal_representative_email, presence: true
-
-    before_validation :sanitize_email
 
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validates :legal_representative_email,
@@ -53,7 +53,7 @@ module Forms
     def sanitize_email
       return if legal_representative_email.blank?
 
-      @legal_representative_email = legal_representative_email.strip!
+      @legal_representative_email = legal_representative_email.strip
     end
   end
 end
