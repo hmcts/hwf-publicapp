@@ -1,5 +1,7 @@
 module Forms
   class LegalRepresentativeDetail < Base
+    include ActiveModel::Validations::Callbacks
+
     attribute :legal_representative_first_name, String
     attribute :legal_representative_last_name, String
     attribute :legal_representative_email, String
@@ -9,6 +11,8 @@ module Forms
     attribute :street, String
     attribute :postcode, String
     attribute :town, String
+
+    before_validation :sanitize_email
 
     validates :legal_representative_first_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :legal_representative_last_name, presence: true, sensible_name: true, length: { maximum: 49 }
@@ -46,5 +50,10 @@ module Forms
       "#{street}, #{town}"
     end
 
+    def sanitize_email
+      return if legal_representative_email.blank?
+
+      @legal_representative_email = legal_representative_email.strip
+    end
   end
 end
