@@ -17,7 +17,6 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
-  # TODO: check back btn on page
   config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] || "redis://localhost:6379/1" }
 
   # Enable/disable caching. By default caching is disabled.
