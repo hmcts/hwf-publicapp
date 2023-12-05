@@ -69,7 +69,7 @@ dl.govuk-summary-list
   -if @summary.partner_ni_number_present
     div.govuk-summary-list__row
       dt.govuk-summary-list__key =t('partner_ni_number', scope: 'summary.labels')
-      dd.govuk-summary-list__value =ni_number_value(@summary)
+      dd.govuk-summary-list__value =@summary.partner_ni_number
       dd.govuk-summary-list__actions
         -if @summary.partner_ni_number
           = link_to question_path(:partner_national_insurance), onclick: "dataLayer.push({'sectionName': 'partner_national_insurance', 'event': 'summary_page'});" do
