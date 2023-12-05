@@ -13,6 +13,7 @@ module Forms
               presence: true, numericality: { less_than: 100, greater_than: 0 }, if: :children
 
     # POST UCD
+    before_validation :sanitize_children_age_band
     before_validation :reset_children_fields
     before_validation :prepare_children_fields
 
@@ -81,6 +82,15 @@ module Forms
       return 0 if children_age_band_two.blank?
 
       children_age_band_two
+    end
+
+    def sanitize_children_age_band
+      if children_age_band_one.is_a?(String)
+        @children_age_band_one = children_age_band_one.to_i
+      end
+      if children_age_band_two.is_a?(String)
+        @children_age_band_two = children_age_band_two.to_i
+      end
     end
 
   end

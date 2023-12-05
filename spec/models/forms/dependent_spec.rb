@@ -14,6 +14,7 @@ RSpec.describe Forms::Dependent do
     let(:children_number) { nil }
 
     describe 'children' do
+
       context 'when true' do
         let(:children) { true }
 
@@ -113,6 +114,17 @@ RSpec.describe Forms::Dependent do
       it 'returns hash with children' do
         expect(subject).to eql(children: 4, children_age_band: { one: 1, two: 3 })
       end
+
+      context 'string in the value' do
+        let(:children) { true }
+        let(:children_age_band_one) { ' 1' }
+        let(:children_age_band_two) { ' 2' }
+
+        it { expect(form).to be_valid }
+        it { expect(form.children_age_band_one).to eq(1) }
+        it { expect(form.children_age_band_two).to eq(2) }
+      end
+
     end
 
   end
