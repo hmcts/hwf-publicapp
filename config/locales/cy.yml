@@ -624,19 +624,18 @@ cy:
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
-      applicant: Your date of birth
+      applicant: Eich dyddiad geni chi
       partner: Dyddiad geni eich partner
       detail_title: Pam ein bod yn gofyn am hyn?
       detail_text: Rydym angen gwybodaeth bersonol er mwyn ein galluogi i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth a ddarparwyd. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
     dob_married:
-      text: What are you and your partner’s dates of birth
+      text: Beth yw eich dyddiad geni chi a’ch partner?
       breadcrumb: Cam %{page_number} o 22
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.
       date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: Naddo
       fee_paid_true: Do
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
-      text: Ydych chi wedi talu'r ffi'n barod?
       title: Ad-dalu
     form_name:
       breadcrumb: Cam %{page_number} o 22
@@ -824,8 +823,7 @@ cy:
       text: Ydych chi'n sengl, yn briod neu'n byw gyda rhywun ac yn rhannu incwm?
       title: Eich statws priodasol
     personal_detail_married:
-      text: What are the full names of both you and your partner?
-
+      text: Beth yw eich enw llawn chi a’ch partner?
     personal_detail:
       breadcrumb: Cam %{page_number} o 22
       text: Beth yw eich enw llawn?
