@@ -9,6 +9,13 @@ Given(/^I am on the fee page$/) do
   expect(fee_page.content).to have_apply_for_refund
 end
 
+Given(/^I am on the fee page ucd$/) do
+  to_fee_page
+  expect(fee_page.content).to have_step_info_ucd
+  expect(fee_page.content).to have_header
+  expect(fee_page.content).to have_apply_for_refund
+end
+
 When(/^I submit no to have you already paid the fee$/) do
   fee_page.submit_fee_no
 end

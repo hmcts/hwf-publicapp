@@ -3,7 +3,11 @@
   = ' - '
 
 .govuk-caption-l
-  =t('summary.breadcrumb')
+  - if ucd_changes_apply?(@online_application.calculation_scheme)
+    = t('summary.breadcrumb_ucd')
+  - else
+    = t('summary.breadcrumb')
+
 
 h1.govuk-heading-l
   span.heading-secondary =t('title', scope: 'summary.labels')
