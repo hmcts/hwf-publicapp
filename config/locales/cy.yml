@@ -1253,14 +1253,17 @@ cy:
               - li: eich rhif Yswiriant Gwladol
               - li: eich statws priodasol
               - li: eich dyddiad geni a dyddiad geni eich partner
+              - li: Enw llawn eich partner
+              - li: Rhif Yswiriant Gwladol eich partner
               - li: faint sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi
               - li: p'un a ydych yn cael y budd-daliadau cymhwysol ar gyfer cael Help i Dalu Ffioedd
-              - li: nifer y plant sy’n ddibynnol arnoch
+              - li: nifer y plant sy’n ddibynnol arnoch a’u hoedrannau
               - li: cyfanswm eich incwm misol chi a'ch partner a pha fath o incwm ydyw
               - li: os yw’n berthnasol, eich cyfeirnod Swyddfa Gartref
+              - li: Os yw’n berthnasol, enw a chyfeiriad eich Cyfaill Cyfreitha neu enw, swydd, cwmni a chyfeiriad eich Cynrychiolydd Cyfreithiol
       - title: Sut rydym ni’n defnyddio eich data personol
         parts:
-          - p: Y sail gyfreithiol dros gasglu'r data yw er mwyn gweinyddu cyfiawnder ac, yn ddienw, at bwrpas ystadegol ac ymchwil. Rydym yn defnyddio eich data personol i gwblhau eich cais am Help i Dalu Ffioedd. Bydd GLlTEM yn defnyddio unrhyw gyfeiriad e-bost a ddarperir gennych i gysylltu â chi ynghylch eich cais. Efallai byddwn hefyd yn defnyddio eich manylion i gysylltu â chi at ddibenion ymchwil neu i atal neu i ganfod twyll. Gall eich data personol gael ei rannu ag adrannau eraill y Llywodraeth at ddibenion dilysu neu i’ch cynorthwyo gyda symud eich cais yn ei flaen.
+          - p: Y sail gyfreithiol dros gasglu'r data yw er mwyn gweinyddu cyfiawnder ac, yn ddienw, at bwrpas ystadegol ac ymchwil. Rydym yn defnyddio eich data personol i gwblhau eich cais am Help i Dalu Ffioedd. Bydd GLlTEM yn defnyddio unrhyw gyfeiriad e-bost a ddarperir gennych i gysylltu â chi ynghylch eich cais. Efallai byddwn hefyd yn defnyddio eich manylion i gysylltu â chi at ddibenion ymchwil neu i atal neu i ganfod twyll. Gall eich data personol gael ei rannu ag adrannau eraill y Llywodraeth, yn benodol - yr Adran Waith a Phensiynau a Chyllid a Thollau EF - at ddibenion dilysu neu i’ch cynorthwyo gyda symud eich cais yn ei flaen.
           - p: Mae’r gwasanaeth ar-lein hwn yn cynnwys meysydd testun rhydd lle’ch gwahoddir i nodi mathau penodol o wybodaeth. Mae hyn yn cynnwys data sensitif megis data ariannol, ond heb fod yn gyfyngedig iddo. Rhowch yr wybodaeth y gofynnir amdani yn unig.
       - title: Sut rydym ni’n defnyddio data nad yw’n bersonol
         parts:
