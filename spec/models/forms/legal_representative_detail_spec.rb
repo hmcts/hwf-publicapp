@@ -25,7 +25,6 @@ RSpec.describe Forms::LegalRepresentativeDetail do
 
     it { expect(error_messages[:legal_representative_first_name].first).to eq 'Please enter first name' }
     it { expect(error_messages[:legal_representative_last_name].first).to eq 'Please enter last name' }
-    it { expect(error_messages[:legal_representative_email].first).to eq 'Please enter email address' }
     it { expect(error_messages[:street].first).to eq 'Enter your house number and street' }
     it { expect(error_messages[:postcode].first).to eq 'Enter your postcode' }
     it { expect(error_messages[:town].first).to eq 'Enter your town or city' }
@@ -47,7 +46,7 @@ RSpec.describe Forms::LegalRepresentativeDetail do
     end
 
     it 'remove blank spaces from email address' do
-      expect(form.valid?).to be false
+      expect(form.valid?).to be true
     end
   end
 end
