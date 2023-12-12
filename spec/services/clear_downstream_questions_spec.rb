@@ -78,7 +78,7 @@ RSpec.describe ClearDownstreamQuestions do
         let(:benefit_value) { true }
 
         it 'clears income_amount questions' do
-          expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount, :income_kind, :dependent])
+          expect(storage).to have_received(:clear_forms).with([:income_range, :income_amount, :income_kind, :income_period, :dependent])
         end
       end
 
@@ -86,7 +86,7 @@ RSpec.describe ClearDownstreamQuestions do
         let(:benefit_value) { false }
 
         it 'clears income_amount questions' do
-          expect(storage).not_to have_received(:clear_forms).with([:income_range, :income_amount, :income_kind, :dependent])
+          expect(storage).not_to have_received(:clear_forms).with([:income_range, :income_amount, :income_kind, :income_period, :dependent])
         end
       end
     end

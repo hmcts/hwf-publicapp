@@ -15,7 +15,7 @@ class ClearDownstreamQuestions
     elsif income_range_change?(new_online_application, old_online_application)
       @storage.clear_form(:income_amount)
     elsif benefit_change?(new_online_application)
-      @storage.clear_forms([:income_range, :income_amount, :income_kind, :dependent])
+      @storage.clear_forms([:income_range, :income_amount, :income_kind, :income_period, :dependent])
     elsif legal_representative_changed?(new_online_application, old_online_application)
       clear_legal_representative_details
     elsif applying_on_behalf_changed?(new_online_application, old_online_application)
