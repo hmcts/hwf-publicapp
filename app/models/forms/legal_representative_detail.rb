@@ -22,7 +22,8 @@ module Forms
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validates :legal_representative_email,
               format: { with: email_regex },
-              length: { maximum: 99 }
+              length: { maximum: 99 },
+              unless: -> { legal_representative_email.blank? }
 
     validates :street, presence: true, sensible_address: true, length: { maximum: 99 }
     validates :postcode, presence: true, sensible_address: true, length: { maximum: 8 }

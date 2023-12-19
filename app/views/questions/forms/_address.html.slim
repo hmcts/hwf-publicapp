@@ -1,17 +1,17 @@
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:street].any?)
-  = f.label :street, class: 'govuk-label'
+  = f.label :street, t('activemodel.attributes.forms/applicant_address.street'), class: 'govuk-label'
   - if @form.errors[:street].any?
     span.govuk-error-message#street = @form.errors[:street].join(' ')
   = f.text_field :street, class: "govuk-input govuk-!-width-one-half street", autocomplete: "street-address"
 
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:town].any?)
-  = f.label :town, class: 'govuk-label'
+  = f.label :town, t('activemodel.attributes.forms/applicant_address.town'), class: 'govuk-label'
   - if @form.errors[:town].any?
     span.govuk-error-message#town = @form.errors[:town].join(' ')
   = f.text_field :town, class: "govuk-input govuk-!-width-one-half town", autocomplete: "address-level2"
 
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:postcode].any?)
-  = f.label :postcode, class: 'govuk-label'
+  = f.label :postcode, t('activemodel.attributes.forms/applicant_address.postcode'), class: 'govuk-label'
   - if @form.errors[:postcode].any?
     span.govuk-error-message#postcode = @form.errors[:postcode].join(' ')
   = f.text_field :postcode, class: 'govuk-input govuk-!-width-one-half js-uppercase govuk-input--width-10 postcode', autocomplete: "postal-code"

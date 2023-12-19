@@ -167,7 +167,7 @@ en:
         forms/legal_representative:
           attributes:
             legal_representative:
-              inclusion: Select whether you're applying on behalf of legal representative or litigation friend
+              inclusion: Select whether you're a legal representative or litigation friend
 
         forms/legal_representative_detail:
           attributes:
@@ -199,7 +199,7 @@ en:
         forms/over16:
           attributes:
             over_16:
-              inclusion: Select whether person you're applying on behalf is over 16
+              inclusion: Select whether the person you're applying for is over 16
 
 
         forms/help_request:

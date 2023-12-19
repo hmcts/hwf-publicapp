@@ -108,7 +108,7 @@ cy:
         forms/legal_representative:
           attributes:
             legal_representative:
-              inclusion: Select whether you're applying on behalf of legal representative or litigation friend
+              inclusion: Select whether you're a legal representative or litigation friend
 
         forms/legal_representative_detail:
           attributes:
@@ -128,21 +128,21 @@ cy:
             legal_representative_organisation_name:
               invalid_name: Must not contain special characters
             street:
-              blank: Enter your house number and street
-              too_long: Street must be less than 100 characters
-              invalid_name: Must not contain special characters
+              blank: Rhowch eich rhif tŷ a stryd
+              too_long: Rhaid i'r rhif tŷ a stryd fod yn llai na 100 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             postcode:
-              blank: Enter your postcode
-              too_long: Postcode must be less than 10 characters
-              invalid_name: Must not contain special characters
+              blank: Rhowch eich cod post
+              too_long: Rhaid i'r cod post fod yn llai na 10 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
             town:
-              blank: Enter your town or city
-              too_long: Town must be less than 50 characters
-              invalid_name: Must not contain special characters
+              blank: Rhowch eich tref
+              too_long: Rhaid i'r cod tref fod yn llai na 50 o nodau
+              invalid_name: Rhaid peidio â chynnwys nodau arbennig
         forms/over16:
           attributes:
             over_16:
-              inclusion: Select whether person you're applying on behalf is over 16
+              inclusion: Select whether the person you're applying for is over 16
         forms/benefit:
           attributes:
             on_benefits:
@@ -858,7 +858,7 @@ cy:
         section_1:
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
           item_2: gofynnwch am nodyn atgoffa drwy'r post
-        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?"
+        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?
       example: Dewiswch un
       ni_number_present_false: 'Nac oes'
       ni_number_present_true: 'Oes'
@@ -889,7 +889,7 @@ cy:
       where_to_find:
         item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
         item_2: gofynnwch am nodyn atgoffa drwy'r post
-        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?"
+        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?
 
     home_office:
       breadcrumb: Cam %{page_number} o 22
