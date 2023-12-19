@@ -60,7 +60,7 @@ module NavigationHelper
   end
 
   def skip_income_range?
-    (@current_question == :income_kind && @online_application.income&.zero?)
+    @current_question == :income_kind && @online_application.income&.zero?
   end
 
   def skip_income_amount?
