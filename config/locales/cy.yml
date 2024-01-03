@@ -20,7 +20,7 @@ cy:
       forms/applying_on_behalf:
           attributes:
             applying_on_behalf:
-              inclusion: Select whether you're applying on behalf of someone else
+              inclusion: Dewiswch a ydych yn gwneud cais ar ran rhywun arall
       forms/applicant_address:
         street: Rhif tŷ a stryd
         town: Tref
@@ -104,11 +104,11 @@ cy:
         forms/applying_on_behalf:
           attributes:
             applying_on_behalf:
-              inclusion: Select whether you're applying on behalf of someone else
+              inclusion: Dewiswch a ydych yn gwneud cais ar ran rhywun arall
         forms/legal_representative:
           attributes:
             legal_representative:
-              inclusion: Select whether you're a legal representative or litigation friend
+              inclusion: Dewiswch a ydych chi'n gynrychiolydd cyfreithiol neu'n gyfaill cyfreitha
 
         forms/legal_representative_detail:
           attributes:
