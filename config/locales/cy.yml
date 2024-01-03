@@ -142,7 +142,7 @@ cy:
         forms/over16:
           attributes:
             over_16:
-              inclusion: Select whether the person you're applying for is over 16
+              inclusion: Dewiswch a yw'r unigolyn yr ydych yn gwneud cais ar ei ran / rhan dros 16 oed
         forms/benefit:
           attributes:
             on_benefits:
