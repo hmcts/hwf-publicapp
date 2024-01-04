@@ -4,7 +4,7 @@ class NationalInsurancePage < BasePage
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 4 of 22'
-    element :header, 'h1', text: 'Enter National Insurance number'
+    element :header, 'h1', text: 'National Insurance number'
     element :national_insurance_text, 'div.govuk-hint', text: 'For example, QQ123456C'
     element :national_insurance_number, '#national_insurance_number'
     element :help_with_ni_dropdown, 'summary', text: 'If you don’t know your National Insurance number'
@@ -14,7 +14,7 @@ class NationalInsurancePage < BasePage
     element :no_ni_number_link, 'a', text: "use the paper form"
     element :blank_error_link, 'a', text: 'Enter your National Insurance number'
     element :invalid_error_link, 'a', text: 'Enter a valid National Insurance number'
-    element :explanation, 'li', text: 'We ask for this information as we may contact the Department of Work and Pensions or HM Revenue & Customs to validate details declared in your application.'
+    element :explanation, 'li', text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
   end
 
   def submit_valid_ni

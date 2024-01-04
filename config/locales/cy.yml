@@ -504,6 +504,7 @@ cy:
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
       text: Ydych chi’n gwneud cais ar ran rhywun arall?
+      details: Ydych chi’n gwneud cais ar ran rhywun arall?
       inset_text: Os ydych chi’n gwneud cais ar ran rhywun arall, fel cynrychiolydd cyfreithiol neu gyfaill cyfreitha, dylech ddarparu eu manylion nhw yn y cais hwn.
       applying_on_behalf_false: 'Nac oes'
       applying_on_behalf_true: 'Oes'
@@ -640,7 +641,7 @@ cy:
       applicant: Eich dyddiad geni chi
       partner: Dyddiad geni eich partner
       detail_title: Pam ein bod yn gofyn am hyn?
-      detail_text: Rydym angen gwybodaeth bersonol er mwyn ein galluogi i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth a ddarparwyd. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+      detail_text: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
     dob_married:
       text: Beth yw eich dyddiad geni chi a’ch partner?
       breadcrumb: Cam %{page_number} o 22
@@ -855,7 +856,7 @@ cy:
       applicant: Eich manylion chi
       partner: "Manylion eich partner"
       detail_title: Pam ein bod yn gofyn am hyn?
-      detail_text: Rydym angen gwybodaeth bersonol er mwyn ein galluogi i gysylltu ag adrannau eraill y llywodraeth i ddilysu’r wybodaeth a ddarparwyd. Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+      detail_text: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
     marital_status_ucd:
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
@@ -884,8 +885,8 @@ cy:
         section_1:
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
           item_2: gofynnwch am nodyn atgoffa drwy'r post
-        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?
-      example: Dewiswch un
+        summary: Sut i ddod o hyd i rif Yswiriant Gwladol coll
+      example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau.
       ni_number_present_false: 'Nac oes'
       ni_number_present_true: 'Oes'
       prompt: A oes gennych rif Yswiriant Gwladol?
@@ -896,11 +897,11 @@ cy:
       breadcrumb_ucd: Cam %{page_number} o 26
       details:
         section_1:
-          item_1: Rydym yn gofyn am yr wybodaeth hon oherwydd efallai y byddem yn cysylltu â’r Adran Gwaith a Phensiynau neu Gyllid a Thollau EM i ddilysu’r manylion sydd wedi’u datgan ar eich cais.
+          item_1: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
         summary: Pam ein bod yn gofyn am hyn?
       example: Er enghraifft, QQ123456C
       prompt: rhif Yswiriant Gwladol
-      text: Beth yw eich rhif Yswiriant Gwladol?
+      text: Rhif Yswiriant Gwladol
       title: rhif Yswiriant Gwladol
     partner_national_insurance:
       breadcrumb: Cam %{page_number} o 22
@@ -908,16 +909,18 @@ cy:
       title: 'A oes gan eich partner rif Yswiriant Gwladol?'
       text: 'A oes gan eich partner rif Yswiriant Gwladol?'
       prompt: 'Rhif Yswiriant Gwladol '
+      link_html: "<a href='' class='govuk-link'>Sut i ddod o hyd i rif Yswiriant Gwladol coll</a>"
       hint: Er enghraifft, 'QQ123456C'
       details:
         summary: Pam ydym yn gofyn am eich statws perthynas?
-        detail_text: Os ydych yn un rhan o gwpl, mae Help i Dalu Ffioedd yn seiliedig ar eich incwm ar y cyd oni bai bod yna fudd sy’n gwrthdaro
+        detail_text: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+      example: Gallwch ddod o hyd i’ch rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
       partner_ni_number_present_true: 'Nac oes'
       partner_ni_number_present_false: 'Oes'
       where_to_find:
         item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
         item_2: gofynnwch am nodyn atgoffa drwy'r post
-        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?
+        summary: Sut i ddod o hyd i rif Yswiriant Gwladol coll
 
     home_office:
       breadcrumb: Cam %{page_number} o 22

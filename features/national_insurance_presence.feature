@@ -13,7 +13,7 @@ Feature: National insurance presence page
     Then I should be taken to the home office page
 
   Scenario: Where to find my national insurance number
-    When I click on 'Where to find my National Insurance number?'
+    When I click on 'Find a lost National Insurance number'
     Then I should see further information with a link to ask for a reminder
 
   Scenario: Displays error message when proceeding with blank national insurance number
