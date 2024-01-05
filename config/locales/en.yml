@@ -899,7 +899,7 @@ en:
       title: What is your Home Office reference number?
       prompt: Home Office reference number
       example: For example, L1234567 or L1234567/1 (for family members) or 1111-2222-3333-4444 or 1111-2222-3333-4444/1 (for family members)
-      paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
+      paper_form_link_html: "If you are over 16 and don't have a National Insurance number or Home Office reference number, you'll need to fill in the 
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
             target='_blank'>paper application form</a> and apply to the court or tribunal by post or email."

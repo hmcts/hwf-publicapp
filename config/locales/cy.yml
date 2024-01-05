@@ -503,8 +503,8 @@ cy:
       title: Ydych chi’n gwneud cais ar ran rhywun arall?
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      text: Ydych chi’n gwneud cais ar ran rhywun arall?
-      details: Ydych chi’n gwneud cais ar ran rhywun arall?
+      text: A yw’r cais ar ran rhywun arall?
+      details: A yw’r cais ar ran rhywun arall?
       inset_text: Os ydych chi’n gwneud cais ar ran rhywun arall, fel cynrychiolydd cyfreithiol neu gyfaill cyfreitha, dylech ddarparu eu manylion nhw yn y cais hwn.
       applying_on_behalf_false: 'Nac oes'
       applying_on_behalf_true: 'Oes'
@@ -929,10 +929,10 @@ cy:
       title: Beth yw eich cyfeirnod Swyddfa Gartref?
       prompt: Cyfeirnod y Swyddfa Gartref
       example: Er enghraifft, L1234567 neu L1234567/1 (ar gyfer aelodau o’ch teulu) neu 1111-2222-3333-4444 neu 1111-2222-3333-4444/01 (ar gyfer aelodau o’ch teulu)
-      paper_form_link_html: "Os nad oes gennych rif Yswiriant Gwladol, neu gyfeirnod Swyddfa Gartref, bydd angen i chi lenwi'r
+      paper_form_link_html: "Os ydych chi dros 16 oed ac nid oes gennych chi rif Yswiriant Gwladol neu gyfeirnod Y Swyddfa Gartref, bydd angen i chi lenwi’r
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-            target='_blank'>ffurflen gais bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
+            target='_blank'>ffurflen gais bapur</a> a’i hanfon ar e-bost neu drwy’r post i’r llys neu’r tribiwnlys."
       details:
         summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
         item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref
