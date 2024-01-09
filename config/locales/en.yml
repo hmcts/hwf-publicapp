@@ -893,7 +893,6 @@ en:
         summary: Why do we ask for this?
 
     home_office:
-      smoke: test
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
       text: What is your Home Office reference number?
