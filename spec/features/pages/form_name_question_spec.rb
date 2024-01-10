@@ -33,7 +33,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I do not expect the warning message to be displayed' do
-        expect(page).not_to have_css('#probate-warning')
+        expect(page).to have_no_css('#probate-warning')
       end
     end
 
@@ -57,7 +57,7 @@ RSpec.feature 'As a user' do
       after { Timecop.return }
 
       scenario 'I do not expect the warning message to be displayed' do
-        expect(page).not_to have_css('#probate-warning')
+        expect(page).to have_no_css('#probate-warning')
       end
     end
 

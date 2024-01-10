@@ -8,7 +8,7 @@ module FeatureSteps
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
       next if id == :home_office
 
-      send("fill_#{id}")
+      send(:"fill_#{id}")
     end
   end
 

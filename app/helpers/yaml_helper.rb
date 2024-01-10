@@ -25,7 +25,7 @@ module YamlHelper
   end
 
   def header_block(&block)
-    tag.send("h#{@recursion_level}", class: header_class) do
+    tag.send(:"h#{@recursion_level}", class: header_class) do
       yield block
     end
   end
