@@ -10,7 +10,7 @@ module Forms
     end
 
     def validate_date?(field)
-      attribute = instance_variable_get("@#{field}")
+      attribute = instance_variable_get(:"@#{field}")
       if attribute.is_a?(Date) || attribute.is_a?(Time)
         true
       else

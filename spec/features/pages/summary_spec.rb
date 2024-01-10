@@ -53,7 +53,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect to see my answers' do
-          expect(page).not_to have_content 'Probate case'
+          expect(page).to have_no_content 'Probate case'
           expect(page).to have_content 'Name of deceasedFooChange'
           expect(page).to have_content "Date of death#{month_ago.strftime(Date::DATE_FORMATS[:default])}Change"
         end
@@ -69,8 +69,8 @@ RSpec.feature 'As a user' do
 
         scenario 'I do not expect to see the probate sub headers' do
           expect(page).to have_content 'Probate case'
-          expect(page).not_to have_content 'Name of deceased'
-          expect(page).not_to have_content 'Date of death'
+          expect(page).to have_no_content 'Name of deceased'
+          expect(page).to have_no_content 'Date of death'
         end
       end
 
@@ -142,7 +142,7 @@ RSpec.feature 'As a user' do
         expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dependent)}')]"
         expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:income_kind)}')]"
         expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:fee)}')]"
-        expect(page).not_to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:probate)}')]"
+        expect(page).to have_no_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:probate)}')]"
         expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:claim)}')]"
         expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dob)}')]"
         expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:national_insurance)}')]"
