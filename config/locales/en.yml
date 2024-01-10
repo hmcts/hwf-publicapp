@@ -167,7 +167,7 @@ en:
         forms/legal_representative:
           attributes:
             legal_representative:
-              inclusion: Select whether you're applying on behalf of legal representative or litigation friend
+              inclusion: Select whether you're a legal representative or litigation friend
 
         forms/legal_representative_detail:
           attributes:
@@ -199,7 +199,7 @@ en:
         forms/over16:
           attributes:
             over_16:
-              inclusion: Select whether person you're applying on behalf is over 16
+              inclusion: Select whether the person you're applying for is over 16
 
 
         forms/help_request:
@@ -609,14 +609,14 @@ en:
       hint: For example, 'QQ123456C'
       details:
         summary: 'Why do we ask for this?'
-        detail_text: 'We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
-
+        detail_text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
+      example: You can find your National Insurance number on payslips or official letters about tax, pensions or benefits
       partner_ni_number_present_true: 'Yes'
       partner_ni_number_present_false: 'No'
       where_to_find:
         item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
         item_2: ask for a reminder through the post
-        summary: Where to find my National Insurance number?
+        summary: Find a lost National Insurance number
     dob:
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
@@ -626,7 +626,7 @@ en:
       applicant: Your date of birth
       partner: Your partner's date of birth
       detail_title: Why do we ask for this?
-      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+      detail_text: We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
     dob_married:
       text: What are you and your partner’s date of birth
     fee:
@@ -873,8 +873,8 @@ en:
         section_1:
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
           item_2: ask for a reminder through the post
-        summary: Where to find my National Insurance number?
-      example: Select one
+        summary: Find a lost National Insurance number
+      example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
       ni_number_present_false: 'No'
       ni_number_present_true: 'Yes'
       prompt: Do you have a National Insurance number?
@@ -885,11 +885,11 @@ en:
       breadcrumb_ucd: Step %{page_number} of 26
       example: For example, QQ123456C
       prompt: National Insurance number
-      text: Enter National Insurance number
+      text: National Insurance number
       title: National Insurance number
       details:
         section_1:
-          item_1: We ask for this information as we may contact the Department of Work and Pensions or HM Revenue & Customs to validate details declared in your application.
+          item_1: We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
         summary: Why do we ask for this?
 
     home_office:
@@ -899,7 +899,7 @@ en:
       title: What is your Home Office reference number?
       prompt: Home Office reference number
       example: For example, L1234567 or L1234567/1 (for family members) or 1111-2222-3333-4444 or 1111-2222-3333-4444/1 (for family members)
-      paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
+      paper_form_link_html: "If you are over 16 and don't have a National Insurance number or Home Office reference number, you'll need to fill in the 
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
             target='_blank'>paper application form</a> and apply to the court or tribunal by post or email."
@@ -916,7 +916,7 @@ en:
       applicant: Your details
       partner: Your partner's details
       detail_title: Why do we ask for this?
-      detail_text: We need personal details to allow us to contact other government departments to validate the information provided. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
+      detail_text: We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
     probate:
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
