@@ -122,7 +122,7 @@ cy:
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
             legal_representative_email:
               blank: Please enter email address
-              invalid: Enter a valid email address.
+              invalid: Rhowch gyfeiriad e-bost dilys
             legal_representative_address:
               blank: Please enter the address
             legal_representative_organisation_name:
@@ -492,12 +492,12 @@ cy:
       banner_representatives: Dim ond os nad yw’r ffi llys neu dribiwnlys wedi’i thalu eto neu os cafodd y ffi ei thalu ar 27 Tachwedd 2023 neu ar ôl hynny y gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar-lein.
       breadcrumb:  Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
+      details: Gallwch wneud cais am ad-daliad am ffi a dalwyd yn ystod y 3 mis diwethaf. Os ydych yn gwneud cais am ad-daliad, dylech ateb pob cwestiwn am eich amgylchiadau ar yr adeg y gwnaethoch dalu'r ffi.
       date_paid: Date fee paid
-      fee_paid_false: 'No'
-      fee_paid_true: 'Yes'
+      fee_paid_false: 'Nac ydw'
+      fee_paid_true: 'Ydw'
       hint_html: For example, 04 10 2018
-      text: Have you already paid the court or tribunal fee?
+      text: Ydych chi eisoes wedi talu ffi’r llys neu ffi’r tribiwnlys?
       title: Refund
     applying_on_behalf:
       title: Ydych chi’n gwneud cais ar ran rhywun arall?
