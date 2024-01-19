@@ -113,7 +113,7 @@ en:
         forms/contact:
           attributes:
             email:
-              invalid: Please enter a valid email address in the format yourname@example.com
+              invalid: Please enter a valid email address
               too_long: Email must be less than 100 characters
               feedback_with_no_email: Enter an email address
             phone:
