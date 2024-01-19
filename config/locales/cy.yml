@@ -626,7 +626,7 @@ cy:
         you_need: Mae angen i chi roi manylion unrhyw blant rydych chi a’ch partner yn eu cynnal yn ariannol.
         they_must: 'Mae’n rhaid eu bod:'
         list:
-          - under 16 and living at home with you or
+          - dan 16 oed ac yn byw gartref gyda chi, neu
           - ddim yn byw gyda chi, ond rydych chi neu eich partner yn talu cynhaliaeth amdanynt yn rheolaidd, neu
           - rhwng 16 a 19 oed, yn byw gartref gyda chi ac mewn addysg llawn amser (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall)
         list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
