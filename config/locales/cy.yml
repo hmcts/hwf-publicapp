@@ -122,7 +122,7 @@ cy:
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
             legal_representative_email:
               blank: Please enter email address
-              invalid: Enter a valid email address.
+              invalid: Rhowch gyfeiriad e-bost dilys
             legal_representative_address:
               blank: Please enter the address
             legal_representative_organisation_name:
@@ -494,8 +494,8 @@ cy:
       breadcrumb_ucd: Cam %{page_number} o 26
       details: Gallwch wneud cais am ad-daliad am ffi a dalwyd yn ystod y 3 mis diwethaf. Os ydych yn gwneud cais am ad-daliad, dylech ateb pob cwestiwn am eich amgylchiadau ar yr adeg y gwnaethoch dalu'r ffi.
       date_paid: Date fee paid
-      fee_paid_false: 'No'
-      fee_paid_true: 'Yes'
+      fee_paid_false: 'Nac ydw'
+      fee_paid_true: 'Ydw'
       hint_html: For example, 04 10 2018
       text: Ydych chi eisoes wedi talu ffi’r llys neu ffi’r tribiwnlys?
       title: Refund
