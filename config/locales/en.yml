@@ -148,7 +148,7 @@ en:
         forms/fee:
           attributes:
             date_paid:
-              date_after_or_equal_to: The application must have been made in the last 3 months
+              date_after_or_equal_to: The date the fee was paid must have been within the last three months
               date_before_or_equal_to: This date can't be in the future
               blank: Enter the date in this format DD/MM/YYYY
               not_a_date: That date is not recognised

@@ -69,7 +69,7 @@ RSpec.feature 'As a user' do
           end
 
           scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'The application must have been made in the last 3 months')
+            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'The date the fee was paid must have been within the last three months')
           end
 
           scenario 'I expect the incorrect data to be shown' do
