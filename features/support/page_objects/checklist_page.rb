@@ -2,7 +2,7 @@ class ChecklistPage < BasePage
   set_url '/checklist'
 
   section :content, '#content' do
-    element :header, 'h1', text: 'Important: Read before you start'
+    element :header, 'h1', text: 'Important: read before you start'
     element :list_item_ni_number, 'li', text: 'your National Insurance number (NI) or'
     element :list_item_ho_number, 'li', text: 'your Home Office reference number - you may have a Home Office reference number if you are subject to immigration control'
     element :list_item_form_number, 'li', text: 'the court or tribunal form number'
