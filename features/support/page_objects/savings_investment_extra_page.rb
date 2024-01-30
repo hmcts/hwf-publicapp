@@ -10,10 +10,10 @@ class SavingsInvestmentExtraPage < BasePage
     element :married_header_ucd, 'h1', text: 'Are you or your partner 66 or older?'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
-    element :how_much_label_single, '.govuk-label', text: 'How much between £3,000 and £15,999 do you have in savings and investments?'
-    element :how_much_label_married, '.govuk-label', text: 'How much between £3,000 and £15,999 do you and your partner have in savings and investments?'
+    element :how_much_label_single, '.govuk-label', text: 'How much between £4,250 and £15,999 do you have in savings and investments?'
+    element :how_much_label_married, '.govuk-label', text: 'How much between £4,250 and £15,999 do you and your partner have in savings and investments?'
     element :extra_amount, '#savings_and_investment_extra_amount'
-    element :error_link, 'a', text: 'Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings'
+    element :error_link, 'a', text: 'Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings'
     element :blank_error_link, 'a', text: 'Enter how much you have in savings and investments'
   end
 

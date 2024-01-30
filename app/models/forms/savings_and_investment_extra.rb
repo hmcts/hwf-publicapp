@@ -8,7 +8,7 @@ module Forms
               presence: true, numericality: {
                                 allow_blank: true,
                                 less_than: 16000,
-                                greater_than_or_equal_to: 3000
+                                greater_than_or_equal_to: 4250
                               },
               if: proc { |c| c.over_61 == false }
 
