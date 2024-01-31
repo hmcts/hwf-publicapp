@@ -699,6 +699,7 @@ cy:
       text: A yw’r unigolyn rydych chi’n gwneud cais ar ei ran dros 16 oed?
       over_16_true: 'Oes'
       over_16_false: 'Nac oes'
+      inset_text: 'Os ydych yn gwneud cais ar ran rhywun arall, fel cynrychiolydd cyfreithiol neu gyfaill cyfreitha, dylech ateb y cwestiynau canlynol fel petai chi oedd y ceisydd'
     income_amount:
       prompt: Rhowch gyfanswm yr incwm rydych chi'n ei gael bob mis.
       amount:
@@ -979,7 +980,8 @@ cy:
           item_1: cyflog neu fudd-daliadau a gawsoch yn y mis y gwnaethoch dalu’r ffi
           item_2: cyfrifon cynilo ar y cyd rydych chi’n eu rhannu gyda’ch partner os yw eich achos yn erbyn eich partner neu’n ymwneud ag ysgariad
           item_3: pensiynau personol
-          item_4: gwerth cyfalaf busnesau hunangyflogedig
+          item_4: Benthyciadau myfyriwr
+          item_5: gwerth cyfalaf busnesau hunangyflogedig
         section_2:
           heading: 'Peidiwch â chynnwys y taliadau iawndal canlynol yn eich cyfanswm cynilo:'
           item_1: taliad a gafwyd yn sgil penderfyniad a wnaed gan lys neu dribiwnlys am ddiswyddo annheg, neu setliad a gafwyd am hawliad o ddiswyddo annheg
@@ -1394,7 +1396,7 @@ cy:
       sections:
       - parts:
           - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i’r llys neu’r tribiwnlys. Bydd yn rhoi rhif cyfeirnod Help i Dalu Ffioedd i chi, y gallwch ei nodi ar eich cais i’r llys neu’r tribiwnlys.'
-          - p: 'Os ydych yn gwneud hawliad neu gais lluosog, bydd angen i’r ddau hawlydd wneud cais am Help i Dalu Ffioedd ar wahân a chyflwyno cyfeirnod ar-lein y ddau gais i’r llys.'
+          - p: 'Os ydych yn gwneud sawl hawliad neu sawl cais, bydd rhaid i’r holl geiswyr wneud cais ar wahân am Help i Dalu Ffioedd a chyflwyno’r cyfeirnodau ar-lein i’r llys.'
           - p: 'Bydd y staff yn prosesu’r rhif cyfeirnod Help i Dalu Ffioedd ynghyd â’r cais i’r llys neu’r tribiwnlys, ac yn rhoi gwybod i chi os oes arnoch angen talu rhywfaint tuag at y ffi, neu os oes arnynt angen rhagor o wybodaeth gennych chi.'
 
           - p: '<h2 class="govuk-heading-m">Cyn i chi barhau, gwnewch yn siŵr fod gennych:</h2>'
@@ -1431,13 +1433,13 @@ cy:
           summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
     checklist_ucd:
       title: Beth fydd arnoch ei angen
-      heading: 'Pwysig: I’w ddarllen cyn i chi gychwyn'
+      heading: 'Pwysig: i’w ddarllen cyn i chi gychwyn'
       sections:
         - parts:
             - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i lys neu dribiwnlys.'
             - p: 'Fe gewch gyfeirnod Help i Dalu Ffioedd ar ddiwedd y broses a dylech anfon hwn i’r llys neu’r tribiwnlys gyda’ch hawliad o fewn 28 diwrnod. Os bydd yn cyrraedd ar ôl hynny, efallai y bydd yn cael ei wrthod a bydd rhaid ichi wneud cais am Help i Dalu Ffioedd newydd.'
             - p: 'Rhaid cyflwyno ceisiadau am ad-daliad o fewn 3 mis ichi dalu’r ffi wreiddiol. Os gwrthodir eich cais gan bod y cyfeirnod Help i Dalu Ffioedd wedi’i ddarparu mwy na 28 diwrnod yn ôl, gallai hyn effeithio ar faint o amser sydd gennych yn weddill i fod yn gymwys i gael ad-daliad.'
-            - p: 'Os ydych yn gwneud hawliad neu gais lluosog, bydd angen i’r ddau hawlydd wneud cais am Help i Dalu Ffioedd ar wahân a chyflwyno cyfeirnod ar-lein y ddau gais i’r llys.'
+            - p: 'Os ydych yn gwneud sawl hawliad neu sawl cais, bydd rhaid i’r holl geiswyr wneud cais ar wahân am Help i Dalu Ffioedd a chyflwyno’r cyfeirnodau ar-lein i’r llys.'
             - p: 'Bydd y staff yn prosesu’r cais am Help i Dalu Ffioedd a’r cais i’r llys neu’r tribiwnlys gyda’i gilydd ac fe’ch hysbysir os bydd angen i chi dalu rhywfaint o’r ffi neu os yw’r llys angen rhagor o wybodaeth gennych.'
             - p: 'Gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar eich rhan. Mae’n rhaid iddynt roi’ch manylion chi yn y cais.'
 

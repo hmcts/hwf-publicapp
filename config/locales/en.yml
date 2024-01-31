@@ -698,6 +698,7 @@ en:
       text: Is the person you are applying for over 16?
       over_16_true: 'Yes'
       over_16_false: 'No'
+      inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, the following questions should be answered as if you were the applicant
 
 
     income_amount:
@@ -960,7 +961,8 @@ en:
           item_1: wages or benefits received in the month you paid the fee
           item_2: joint savings accounts that you share with your partner if your case is against your partner or concerns divorce
           item_3: personal pensions
-          item_4: capital value of self-employment
+          item_4: student loans
+          item_5: capital value of self-employment
         section_2:
           heading: 'Don’t include these compensation payments in your savings total:'
           item_1: a payment made as a result of a determination of unfair dismissal by a court or tribunal, or by way of a settlement of a claim for unfair dismissal
@@ -1376,7 +1378,7 @@ en:
       sections:
       - parts:
           - p: 'You should use this online service when you are ready to make your court or tribunal application. It will provide you with a Help with Fees reference number you can put on your court or tribunal application.'
-          - p: 'If you are making a multiple claim or application, both applicants will need to make a separate Help with Fees application and submit both online reference numbers to the court.'
+          - p: 'If you are making a multiple claim or application, all applicants will usually need to make a separate Help with Fees application and submit those online reference numbers to the court.'
           - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
 
           - p: '<h2 class="govuk-heading-m">Before you continue, make sure you have:</h2>'
@@ -1413,13 +1415,13 @@ en:
           summary: If you don’t know your National Insurance number
     checklist_ucd:
       title: What you will need
-      heading: 'Important: Read before you start'
+      heading: 'Important: read before you start'
       sections:
         - parts:
             - p: 'You should use this online service when you are ready to make your court or tribunal application.'
             - p: 'It will provide you with a Help with Fees reference number you should send to the court or tribunal as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new Help with Fees application.'
             - p: 'Refund applications must be submitted within 3 months of paying the fee. If your application is rejected as the Help with Fees reference number is more than 28 days old, this may affect the amount of time you have left to be eligible for a refund.'
-            - p: 'If you are making a multiple claim or application, both applicants will need to make a separate Help with Fees application and submit both online reference numbers to the court.'
+            - p: 'If you are making a multiple claim or application, all applicants will usually need to make a separate Help with Fees application and submit those online reference numbers to the court.'
             - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
             - p: 'A legal representative or litigation friend can apply on your behalf. They must complete the application with your details.'
 

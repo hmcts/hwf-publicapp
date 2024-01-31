@@ -15,3 +15,5 @@
         = f.radio_button :over_16, 'false', class: 'govuk-radios__input'
         = f.label t('over_16_false', scope: @form.i18n_scope), for: 'over16_over_16_false', class: 'govuk-label govuk-radios__label'
 
+    .govuk-inset-text
+      = t('inset_text', scope: "#{@form.i18n_scope}")
