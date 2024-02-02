@@ -25,7 +25,7 @@ Feature: Fee page
   Scenario: Date exceeding 3 months
     When I select yes to have you already paid the fee
     And I submit the form with a date that exceeds three months
-    Then I should see the application must have been made in the last 3 months error message
+    Then I should see the date the fee was paid must have been within the last three months error message
 
   Scenario: Date is in the future
     When I select yes to have you already paid the fee

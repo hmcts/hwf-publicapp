@@ -199,7 +199,7 @@ cy:
         forms/fee:
           attributes:
             date_paid:
-              date_after_or_equal_to: Rhaid i'r cais fod wedi'i wneud yn y 3 mis diwethaf
+              date_after_or_equal_to: Rhaid i’r dyddiad pan gafodd y ffi ei thalu fod o fewn y tri mis diwethaf
               date_before_or_equal_to: Ni all y dyddiad hwn fod yn y dyfodol
               blank: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
               not_a_date: Nid yw'r dyddiad hwnnw wedi'i adnabod

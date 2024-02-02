@@ -51,7 +51,7 @@ Then(/^I should see this date can't be in the future error message$/) do
   expect(fee_page.content).to have_future_date_error_link
 end
 
-Then(/^I should see the application must have been made in the last 3 months error message$/) do
+Then(/^I should see the date the fee was paid must have been within the last three months error message$/) do
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(fee_page.content).to have_expired_error_link
 end
