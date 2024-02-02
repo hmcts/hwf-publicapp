@@ -304,7 +304,8 @@ en:
           attributes:
             amount:
               blank: Enter how much you have in savings and investments
-              greater_than_or_equal_to: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
+              greater_than_or_equal_to: Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings
+              greater_than_or_equal_to_ucd: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
               less_than: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
             over_61:
               inclusion: Select if you or your partner are over 61
@@ -1038,8 +1039,8 @@ en:
     savings_and_investment_single_refund_ucd:
       text: Savings and Investments
     savings_and_investment_extra:
-      amount_married: How much between £4,250 and £15,999 do you and your partner have in savings and investments?
-      amount_single: How much between £4,250 and £15,999 do you have in savings and investments?
+      amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
+      amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
       amount_hint: Rounded to the nearest £
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
@@ -1055,6 +1056,19 @@ en:
       text_single: Are you 61 years old or over?
       title: Are you or your partner 61 or over?
     savings_and_investment_extra_ucd:
+      amount_married: How much between £4,250 and £15,999 do you and your partner have in savings and investments?
+      amount_single: How much between £4,250 and £15,999 do you have in savings and investments?
+      amount_hint: Rounded to the nearest £
+      breadcrumb: Step %{page_number} of 22
+      breadcrumb_ucd: Step %{page_number} of 26
+      over_61_false_single: *no
+      over_61_true_single: *yes
+      over_61_false_single_refund: *no
+      over_61_true_single_refund: *yes
+      over_61_false_married: *no
+      over_61_true_married: *yes
+      over_61_false_married_refund: *no
+      over_61_true_married_refund: *yes
       title: Are you or your partner 66 or older?
       text_married: Are you or your partner 66 or older?
       text_single: Are you 66 years or older?

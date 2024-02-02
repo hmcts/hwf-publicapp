@@ -47,6 +47,17 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
 
         context 'when the amount is set' do
           context 'when below the minimum threshold' do
+            let(:amount) { 2999 }
+
+            it { is_expected.not_to be_valid }
+          end
+
+          context 'ucd changes apply' do
+            before {
+              form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+              form.valid?
+            }
+
             let(:amount) { 4249 }
 
             it { is_expected.not_to be_valid }

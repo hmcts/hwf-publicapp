@@ -315,7 +315,8 @@ cy:
           attributes:
             amount:
               blank: Rhowch y swm o gynilion a buddsoddiadau sydd gennych chi
-              greater_than_or_equal_to: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
+              greater_than_or_equal_to: Rhowch swm rhwng £3,000 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
+              greater_than_or_equal_to_ucd: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
               less_than: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
             over_61:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
@@ -1057,8 +1058,8 @@ cy:
     savings_and_investment_single_refund_ucd:
       text: Cynilion a buddsoddiadau
     savings_and_investment_extra:
-      amount_married: Faint o gynilion a buddsoddiadau rhwng £4,250 a £15,999 sydd gennych chi a'ch partner?
-      amount_single: Faint o gynilion a buddsoddiadau rhwng £4,250 a £15,999 sydd gennych chi?
+      amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
+      amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
       amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
@@ -1074,6 +1075,19 @@ cy:
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
     savings_and_investment_extra_ucd:
+      amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
+      amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
+      amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
+      breadcrumb: Cam %{page_number} o 22
+      breadcrumb_ucd: Cam %{page_number} o 26
+      over_61_false_single: *single_no
+      over_61_true_single: *single_yes
+      over_61_false_married: *married_no
+      over_61_true_married: *married_yes
+      over_61_false_single_refund: *single_no
+      over_61_true_single_refund: *single_yes
+      over_61_false_married_refund: *married_no
+      over_61_true_married_refund: *married_yes
       title: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
       text_married: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
       text_single: Ydych chi’n 66 oed neu’n hŷn?

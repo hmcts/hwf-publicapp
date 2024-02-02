@@ -1,0 +1,25 @@
+.govuk-form-group id='savings_and_investment_extra_over_61' class=('govuk-form-group--error' if @form.errors[:over_61].any?)
+  = f.hidden_field :over_61, value: nil
+  - if @form.errors[:over_61].any?
+    span.govuk-error-message#over_61 = @form.errors[:over_61].join(' ')
+
+  .govuk-form-group.govuk-radios
+    .govuk-radios__item
+      = f.radio_button :over_61, 'true', class: 'govuk-radios__input'
+      = f.label t("over_61_true#{i18n_status_refund_suffix(@online_application)}", scope: @form.i18n_scope), for: 'savings_and_investment_extra_over_61_true', class: 'govuk-label govuk-radios__label'
+    .govuk-radios__item
+      = f.radio_button :over_61, 'false', class: 'govuk-radios__input', 'data-target': 'amount-panel'
+      = f.label t("over_61_false#{i18n_status_refund_suffix(@online_application)}", scope: @form.i18n_scope), for: 'savings_and_investment_extra_over_61_false', class: 'govuk-label govuk-radios__label'
+
+    #amount-panel.js-hidden
+      .govuk-form-group class=((@form.errors[:amount].any?) ? 'govuk-form-group--error' : 'panel-indent')
+        - if @form.errors[:amount].any?
+          span.govuk-error-message#date_paid = @form.errors[:amount].join(' ')
+        = f.label :amount, class: 'govuk-label text' do
+          - if @online_application.married?
+            =t('amount_married', scope: @form.i18n_scope)
+          - else
+            =t('amount_single', scope: @form.i18n_scope)
+        div#cost-hint.govuk-hint =t('amount_hint', scope: @form.i18n_scope)
+        span.govuk-body.currency £
+        = f.text_field :amount, type: 'number', class: 'govuk-input govuk-!-width-one-quarter'
