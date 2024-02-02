@@ -1075,8 +1075,8 @@ cy:
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
     savings_and_investment_extra_ucd:
-      amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
-      amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
+      amount_married: Faint o gynilion a buddsoddiadau rhwng £4,250 a £15,999 sydd gennych chi a'ch partner?
+      amount_single: Faint o gynilion a buddsoddiadau rhwng £4,250 a £15,999 sydd gennych chi?
       amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
