@@ -44,8 +44,19 @@ When(/^I enter £5000 as my savings and investments$/) do
   savings_investment_extra_page.content.extra_amount.set(5000)
 end
 
+When(/^I enter £5000 as my savings and investments ucd$/) do
+  expect(page).to have_text 'Rounded to the nearest £'
+  expect(savings_investment_extra_page.content).to have_how_much_label_single_ucd
+  savings_investment_extra_page.content.extra_amount.set(5000)
+end
+
 When(/^I enter £1600 as our savings and investments$/) do
   expect(savings_investment_extra_page.content).to have_how_much_label_married
+  savings_investment_extra_page.content.extra_amount.set(1600)
+end
+
+When(/^I enter £1600 as our savings and investments ucd$/) do
+  expect(savings_investment_extra_page.content).to have_how_much_label_married_ucd
   savings_investment_extra_page.content.extra_amount.set(1600)
 end
 
@@ -57,6 +68,11 @@ end
 Then(/^I should see enter amount between error message$/) do
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(savings_investment_extra_page.content).to have_error_link
+end
+
+Then(/^I should see enter amount between error message ucd$/) do
+  expect(base_page.content.alert).to have_there_is_a_problem
+  expect(savings_investment_extra_page.content).to have_error_link_ucd
 end
 
 Then(/^I should see enter how much you have in savings and investments error message$/) do

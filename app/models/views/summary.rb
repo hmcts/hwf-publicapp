@@ -16,8 +16,12 @@ module Views
       __getobj__.form_name || '—'
     end
 
+    def ucd_changes_apply?
+      FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == online_application.calculation_scheme
+    end
+
     def savings
-      scope = 'questions.savings_and_investment'
+      scope = ucd_changes_apply? ? 'questions.savings_and_investment_ucd' : 'questions.savings_and_investment'
 
       if !online_application.min_threshold_exceeded?
         I18n.t('less', scope: scope)

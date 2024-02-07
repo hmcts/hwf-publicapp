@@ -52,6 +52,17 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
             it { is_expected.not_to be_valid }
           end
 
+          context 'ucd changes apply' do
+            before {
+              form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+              form.valid?
+            }
+
+            let(:amount) { 4249 }
+
+            it { is_expected.not_to be_valid }
+          end
+
           context 'when above the maximum threshold' do
             let(:amount) { 16000 }
 
