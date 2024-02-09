@@ -5,10 +5,12 @@ module NavigationNiHelper
 
   def ni_related_question?
     case @current_question
-    when :national_insurance_presence
-      @ni_next_page = no_ni_number_page
-    when :national_insurance
-      @ni_next_page = :marital_status
+    when :applying_on_behalf
+      @ni_next_page = if ucd_apply?(@online_application.calculation_scheme) && !@online_application.applying_on_behalf
+                        :national_insurance
+                      else
+                        :marital_status
+                      end
     end
   end
 
