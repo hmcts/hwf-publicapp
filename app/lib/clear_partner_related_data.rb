@@ -4,6 +4,7 @@ module ClearPartnerRelatedData
     clear_partner_income_kind
     clear_partner_dob
     clear_partner_name
+    clear_partner_ni
   end
 
   private
@@ -35,4 +36,12 @@ module ClearPartnerRelatedData
     @storage.save_form(form)
   end
 
+  def clear_partner_ni
+    form = Forms::PartnerNationalInsurance.new
+    form_attributes = @storage.load_form(form)
+    form_attributes.delete('partner_ni_number_present')
+    form_attributes.delete('number')
+    form = Forms::PartnerNationalInsurance.new(form_attributes)
+    @storage.save_form(form)
+  end
 end
