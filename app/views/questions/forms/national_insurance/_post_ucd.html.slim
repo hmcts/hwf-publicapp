@@ -6,7 +6,7 @@
     .govuk-radios
       .govuk-radios__item
         = f.radio_button :has_ni_number, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel"
-        label.govuk-label.govuk-radios__label for='national_insurance_presence_ni_number_present_true'
+        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number_true'
           = t('ni_number_present_true', scope: @form.i18n_scope)
 
       .govuk-radios__conditional#ni-number-panel.visuallyhidden
@@ -21,7 +21,7 @@
 
       .govuk-radios__item
         = f.radio_button :has_ni_number, 'false', class: 'govuk-radios__input'
-        label.govuk-label.govuk-radios__label for='national_insurance_presence_ni_number_present_false'
+        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number_true'
           = t('ni_number_present_false', scope: @form.i18n_scope)
 .govuk-body
 
