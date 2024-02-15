@@ -5,8 +5,11 @@ RSpec.describe Forms::NationalInsurance do
 
   describe 'validations' do
     describe 'number' do
+      before { form_ni.has_ni_number = true }
       context 'when provided' do
-        before { form_ni.number = 'AB123456A' }
+        before {
+          form_ni.number = 'AB123456A'
+        }
 
         it { expect(form_ni.valid?).to be true }
       end
@@ -63,12 +66,13 @@ RSpec.describe Forms::NationalInsurance do
   end
 
   describe '#export' do
-    subject { described_class.new(number: number).export }
+    subject { described_class.new(number: , has_ni_number:).export }
 
     let(:number) { 'AA123456A' }
+    let(:has_ni_number) { true }
 
     it 'returns hash with ni_number set' do
-      expect(subject).to eql(ni_number: number)
+      expect(subject).to eql(ni_number: number, ni_number_present: has_ni_number)
     end
   end
 
