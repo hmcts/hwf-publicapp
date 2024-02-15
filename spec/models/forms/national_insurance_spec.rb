@@ -6,6 +6,7 @@ RSpec.describe Forms::NationalInsurance do
   describe 'validations' do
     describe 'number' do
       before { form_ni.has_ni_number = true }
+
       context 'when provided' do
         before {
           form_ni.number = 'AB123456A'
@@ -66,7 +67,7 @@ RSpec.describe Forms::NationalInsurance do
   end
 
   describe '#export' do
-    subject { described_class.new(number: , has_ni_number:).export }
+    subject { described_class.new(number:, has_ni_number:).export }
 
     let(:number) { 'AA123456A' }
     let(:has_ni_number) { true }
