@@ -2,7 +2,7 @@ class OnBehalfPage < BasePage
   set_url '/questions/applying_on_behalf'
 
   section :content, '#content' do
-    element :header, 'h1', text: 'Is the application on behalf of someone else?'
+    element :header, 'h1', text: 'Are you applying on behalf of someone else?'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
   end
