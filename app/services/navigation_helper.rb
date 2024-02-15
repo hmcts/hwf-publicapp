@@ -107,7 +107,9 @@ module NavigationHelper
   def over_16?
     return false if @current_question != :over_16
 
-    @next_page = if @online_application.over_16
+    @next_page = if ucd_apply?(@online_application.calculation_scheme) && @online_application.over_16
+                   :national_insurance
+                 elsif @online_application.over_16
                    :national_insurance_presence
                  else
                    :savings_and_investment
