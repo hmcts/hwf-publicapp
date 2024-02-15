@@ -100,7 +100,7 @@ module NavigationHelper
     @next_page = if @online_application.applying_on_behalf
                    :legal_representative
                  else
-                   :national_insurance_presence
+                   :national_insurance
                  end
   end
 
@@ -109,8 +109,6 @@ module NavigationHelper
 
     @next_page = if ucd_apply?(@online_application.calculation_scheme) && @online_application.over_16
                    :national_insurance
-                 elsif @online_application.over_16
-                   :national_insurance_presence
                  else
                    :savings_and_investment
                  end

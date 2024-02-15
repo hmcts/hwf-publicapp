@@ -7,7 +7,9 @@ module Forms
 
     NI_NUMBER_REGEXP = /\A(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]\z/
 
-    validates :number, format: { with: NI_NUMBER_REGEXP }, allow_blank: true
+    validates :number, format: { with: NI_NUMBER_REGEXP }, allow_blank: true, unless: lambda { |form|
+                                                                                        form.has_ni_number.blank?
+                                                                                      }
     validates :number, presence: true, unless: ->(form) { form.has_ni_number.blank? }
     validates :has_ni_number, inclusion: { in: [true, false] }
 

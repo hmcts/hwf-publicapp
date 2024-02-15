@@ -6,10 +6,8 @@ module NavigationNiHelper
   def ucd_ni_next_question
     if ucd_apply?(@online_application.calculation_scheme) && !@online_application.applying_on_behalf
       :national_insurance
-    elsif @online_application.applying_on_behalf
-      :legal_representative
     else
-      :marital_status
+      :legal_representative
     end
   end
 
