@@ -202,7 +202,8 @@ RSpec.describe Navigation do
         let(:current_question) { :applying_on_behalf }
 
         it 'skips to ni number' do
-          expect(subject).to eql(question_path(:national_insurance_presence, locale: :en))
+          online_application.calculation_scheme = 'q4_23'
+          expect(subject).to eql(question_path(:national_insurance, locale: :en))
         end
       end
 
