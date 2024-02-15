@@ -18,7 +18,6 @@ Feature: Home office page
 
   Scenario: If I do not have either a national insurance number or home office number
     Then I should see what to do if I do not have either a national insurance number or home office number
-    And there should be a link paper application form
 
   Scenario: Where to find my home office reference number
     When I click on 'Where to find my Home Office reference number?'

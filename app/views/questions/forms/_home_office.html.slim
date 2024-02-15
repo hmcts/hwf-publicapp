@@ -5,7 +5,7 @@
       span.govuk-error-message#number = @form.errors[:ho_number].join(' ')
   = f.text_field :ho_number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
-p.govuk-body =t('paper_form_link_html', scope: "#{@form.i18n_scope}")
+p.govuk-body =t('paper_form', scope: "#{@form.i18n_scope}")
 
 details.govuk-details data-module="govuk-details"
   summary.govuk-details__summary =t('summary', scope: "#{@form.i18n_scope}.details")

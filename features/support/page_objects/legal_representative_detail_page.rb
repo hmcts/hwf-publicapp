@@ -2,7 +2,7 @@ class LegalRepresentativeDetailPage < BasePage
   set_url '/questions/legal_representative_detail'
 
   section :content, '#content' do
-    element :header, 'h1', text: 'Enter the legal representative detail'
+    element :header, 'h1', text: 'Enter the legal representative details'
     element :legal, 'label', text: 'Legal representative'
   end
 
