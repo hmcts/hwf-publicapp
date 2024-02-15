@@ -273,8 +273,7 @@ def to_income_kind_single_ucd
   form_name_page.submit_valid_form_number
 
   applying_on_behalf_page.submit_no
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
+  national_insurance_page.ucd_select_yes_and_enter_valid_ni
   marital_status_page.submit_single
   savings_investment_page.high_amount_checked
   benefit_page.submit_benefit_no
