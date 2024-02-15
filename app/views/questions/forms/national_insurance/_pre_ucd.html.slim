@@ -3,7 +3,7 @@
   span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
   - if @form.errors[:number].any?
     span.govuk-error-message#number = @form.errors[:number].join(' ')
-  = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+  = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope), id: "national_insurance_number"
   = f.hidden_field :has_ni_number, value: @online_application.ni_number_present
 
 details.govuk-details data-module="govuk-details"
