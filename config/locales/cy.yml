@@ -501,10 +501,11 @@ cy:
       text: Ydych chi eisoes wedi talu ffi’r llys neu ffi’r tribiwnlys?
       title: Refund
     applying_on_behalf:
+      hint: A yw’r cais ar ran rhywun arall?
       title: Ydych chi’n gwneud cais ar ran rhywun arall?
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      text: A yw’r cais ar ran rhywun arall?
+      text: Ydych chi’n gwneud cais ar ran rhywun arall?
       details: A yw’r cais ar ran rhywun arall?
       inset_text: Os ydych chi’n gwneud cais ar ran rhywun arall, fel cynrychiolydd cyfreithiol neu gyfaill cyfreitha, dylech ddarparu eu manylion nhw yn y cais hwn.
       applying_on_behalf_false: 'Nac oes'
@@ -685,7 +686,7 @@ cy:
       organisation: Manylion y sefydliad
       legal_representative_organisation_name: 'Enw’r sefydliad'
       legal_representative_address: 'Enter a UK postcode'
-      legal_representative_feedback_opt_in: Ticiwch y blwch hwn os ydych chi hefyd yn fodlon rhannu gwybodaeth am eich profiad o ddefnyddio’r gwasanaeth hwn.
+      legal_representative_feedback_opt_in: Ticiwch y blwch hwn os ydych chi hefyd yn fodlon rhannu gwybodaeth am eich profiad o ddefnyddio’r gwasanaeth hwn. Efallai y bydd aelod o’r tîm yn cysylltu â chi. Ni fyddwn yn defnyddio eich cyfeiriad e-bost at unrhyw bwrpas arall.
       hint_legal_rep: A legal representative is usually a lawyer or solicitor.
       hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
       email_hint: 'Byddwn yn defnyddio’r cyfeiriad e-bost hwn i anfon copi o’ch cyfeirnod Help i Dalu Ffioedd atoch.'
@@ -931,10 +932,7 @@ cy:
       title: Beth yw eich cyfeirnod Swyddfa Gartref?
       prompt: Cyfeirnod y Swyddfa Gartref
       example: Er enghraifft, L1234567 neu L1234567/1 (ar gyfer aelodau o’ch teulu) neu 1111-2222-3333-4444 neu 1111-2222-3333-4444/01 (ar gyfer aelodau o’ch teulu)
-      paper_form_link_html: "Os ydych chi dros 16 oed ac nid oes gennych chi rif Yswiriant Gwladol neu gyfeirnod Y Swyddfa Gartref, bydd angen i chi lenwi’r
-            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-            target='_blank'>ffurflen gais bapur</a> a’i hanfon ar e-bost neu drwy’r post i’r llys neu’r tribiwnlys."
+      paper_form: Os ydych chi dros 16 oed ac nid oes gennych chi rif Yswiriant Gwladol neu gyfeirnod Y Swyddfa Gartref, bydd angen i chi lenwi’r ffurflen gais bapur a’i hanfon ar e-bost neu drwy’r post i’r llys neu’r tribiwnlys.
       details:
         summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
         item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref
@@ -1138,9 +1136,9 @@ cy:
     labels:
       applying_on_behalf: Gwneud cais ar ran rhywun arall
       legal_representative_or_friend: Cynrychiolydd cyfreithiol neu gyfaill cyfreitha
-      legal_representative: Cynrychiolydd cyfreithiol
+      legal_representative: Manylion y cynrychiolydd cyfreithiol
       legal_representative_detail: Manylion y cynrychiolydd cyfreithiol
-      litigation_friend: Cyfaill cyfreitha
+      litigation_friend: Manylion y cyfaill cyfreitha
       full_name: Enw llawn
       applicant_name: Enw llawn
       email: Email

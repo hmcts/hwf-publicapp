@@ -655,10 +655,11 @@ en:
       title: Form number
       unknown: I don’t have a form
     applying_on_behalf:
+      hint: Is the application on behalf of someone else?
       title: Are you applying on behalf of someone else?
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
-      text: Is the application on behalf of someone else?
+      text: Are you applying on behalf of someone else?
       details: Is the application on behalf of someone else?
       inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
       applying_on_behalf_false: 'No'
@@ -684,7 +685,7 @@ en:
       organisation: Organisation details
       legal_representative_organisation_name: 'Organisation name'
       legal_representative_address: 'Enter a UK postcode'
-      legal_representative_feedback_opt_in: Check this box if you're also willing to share your experience of this service.
+      legal_representative_feedback_opt_in: Check this box if you're also willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
       hint_legal_rep: A legal representative is usually a lawyer or solicitor.
       hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
       email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
@@ -901,10 +902,7 @@ en:
       title: What is your Home Office reference number?
       prompt: Home Office reference number
       example: For example, L1234567 or L1234567/1 (for family members) or 1111-2222-3333-4444 or 1111-2222-3333-4444/1 (for family members)
-      paper_form_link_html: "If you are over 16 and don't have a National Insurance number or Home Office reference number, you'll need to fill in the 
-            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-            target='_blank'>paper application form</a> and apply to the court or tribunal by post or email."
+      paper_form: If you are over 16 and don't have a National Insurance number or Home Office reference number, you'll need to fill in the paper application form and apply to the court or tribunal by post or email.
       details:
         summary: "Where to find my Home Office reference number?"
         item_1: Your Home Office reference number can be found on any correspondence you have received from the Home Office
@@ -1153,9 +1151,9 @@ en:
       apply_type: Court or tribunal application
       applying_on_behalf: Applying on behalf of someone else
       legal_representative_or_friend: Legal representative or litigation friend
-      legal_representative: Legal representative
+      legal_representative: Legal representative details
       legal_representative_detail: Legal representative details
-      litigation_friend: Litigation friend
+      litigation_friend: Litigation friend details
       full_name: Full name
       email: Email
       over_16: Applicant over 16
