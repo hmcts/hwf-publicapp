@@ -64,8 +64,9 @@ RSpec.describe Forms::NationalInsurance do
         it { expect(form_ni.valid?).to be true }
       end
     end
+
     describe 'has_ni_number' do
-      before { form_ni.number = 'AB123456A'}
+      before { form_ni.number = 'AB123456A' }
 
       context 'is valid when true' do
         before do
