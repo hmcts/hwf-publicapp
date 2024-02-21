@@ -52,12 +52,12 @@ module Forms
       check_income_and_none_selected(partner, :partner)
     end
 
-    def check_income_and_none_selected(attr, attribute_name)
-      return if attr.count <= 1
+    def check_income_and_none_selected(income_attribute, attribute_name)
+      return if income_attribute.count <= 1
 
-      if ucd_changes_apply? == false && attr.include?(self.class.no_income_index)
+      if ucd_changes_apply? == false && income_attribute.include?(self.class.no_income_index)
         errors.add(attribute_name, :none_value_selected)
-      elsif ucd_changes_apply? && attr.include?(self.class.no_income_index_ucd)
+      elsif ucd_changes_apply? && income_attribute.include?(self.class.no_income_index_ucd)
         errors.add(attribute_name, :none_value_selected)
       end
     end
