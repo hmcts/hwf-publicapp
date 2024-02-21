@@ -48,7 +48,8 @@ module Forms
     private
 
     def none_of_above_selected
-      check_income_and_none_selected(applicant, :applicant) || check_income_and_none_selected(partner, :partner)
+      check_income_and_none_selected(applicant, :applicant)
+      check_income_and_none_selected(partner, :partner)
     end
 
     def check_income_and_none_selected(attr, attribute_name)
