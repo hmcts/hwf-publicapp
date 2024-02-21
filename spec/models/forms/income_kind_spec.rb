@@ -22,6 +22,12 @@ RSpec.describe Forms::IncomeKind do
         it { is_expected.not_to be_valid }
       end
 
+      context 'when none and income is selected for applicant' do
+        let(:applicant) { [1, described_class.no_income_index] }
+
+        it { is_expected.not_to be_valid }
+      end
+
       context 'when it is empty' do
         let(:applicant) { [] }
 
@@ -40,6 +46,12 @@ RSpec.describe Forms::IncomeKind do
             it { is_expected.not_to be_valid }
           end
 
+          context 'when none and income is selected for partner' do
+            let(:partner) { [1, described_class.no_income_index] }
+
+            it { is_expected.not_to be_valid }
+          end
+
           context 'when it is empty' do
             let(:partner) { [] }
 
@@ -52,7 +64,25 @@ RSpec.describe Forms::IncomeKind do
             it { is_expected.to be_valid }
           end
         end
+      end
+    end
 
+    context 'ucd changes apply' do
+      before {
+        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        form.valid?
+      }
+
+      context 'when none and income is selected for applicant' do
+        let(:applicant) { [1, described_class.no_income_index_ucd] }
+
+        it { is_expected.not_to be_valid }
+
+        context 'when none and income is selected for partner' do
+          let(:partner) { [1, described_class.no_income_index_ucd] }
+
+          it { is_expected.not_to be_valid }
+        end
       end
     end
   end
@@ -75,6 +105,61 @@ RSpec.describe Forms::IncomeKind do
     subject { described_class.no_income_index_ucd }
 
     it { is_expected.to eq 17 }
+  end
+
+  describe '#none_of_above_selected' do
+    subject { form.send(:check_income_and_none_selected, applicant, attribute_name) }
+
+    let(:attribute_name) { :applicant }
+
+    context 'if the kinds count is below 1' do
+      let(:applicant) { [1] }
+
+      it 'returns nil' do
+        expect(subject).to be_nil
+      end
+    end
+
+    context 'pre UCD' do
+      context 'if only none of above is selected' do
+        let(:applicant) { [described_class.no_income_index] }
+
+        it 'returns nil' do
+          expect(subject).to be_nil
+        end
+      end
+
+      context 'if none of above and additional kinds are selected' do
+        let(:applicant) { [1, described_class.no_income_index] }
+
+        it 'returns error' do
+          expect(subject.type).to eq :none_value_selected
+        end
+      end
+    end
+
+    context 'post UCD' do
+      before {
+        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        form.valid?
+      }
+
+      context 'if only none of above is selected' do
+        let(:applicant) { [described_class.no_income_index_ucd] }
+
+        it 'returns nil' do
+          expect(subject).to be_nil
+        end
+      end
+
+      context 'if none of above and additional kinds are selected' do
+        let(:applicant) { [1, described_class.no_income_index_ucd] }
+
+        it 'returns error' do
+          expect(subject.type).to eq :none_value_selected
+        end
+      end
+    end
   end
 
   describe '#export' do
