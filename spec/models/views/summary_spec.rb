@@ -226,4 +226,48 @@ RSpec.describe Views::Summary do
 
     it { expect(summary.signed_by_representative).to be true }
   end
+
+  describe '#display_benefits?' do
+    let(:online_application) { build(:online_application, over_16: over_16, ho_number: '') }
+
+    context "is over 16" do
+      let(:over_16) { true }
+
+      it { expect(summary.display_benefits?).to be true }
+    end
+
+    context "is under 16" do
+      let(:over_16) { false }
+
+      it { expect(summary.display_benefits?).to be false }
+    end
+
+    context "over 16 is nil" do
+      let(:over_16) { nil }
+
+      it { expect(summary.display_benefits?).to be true }
+    end
+  end
+
+  describe '#display_ni?' do
+    let(:online_application) { build(:online_application, over_16: over_16) }
+
+    context "is over 16" do
+      let(:over_16) { true }
+
+      it { expect(summary.display_ni?).to be true }
+    end
+
+    context "is under 16" do
+      let(:over_16) { false }
+
+      it { expect(summary.display_ni?).to be false }
+    end
+
+    context "over 16 is nil" do
+      let(:over_16) { nil }
+
+      it { expect(summary.display_ni?).to be true }
+    end
+  end
 end

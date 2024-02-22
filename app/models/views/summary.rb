@@ -82,6 +82,16 @@ module Views
       I18n.t(online_application.income_period, scope: 'summary.income_period')
     end
 
+    def display_benefits?
+      return false if online_application.over_16 == false
+
+      online_application.ho_number.blank?
+    end
+
+    def display_ni?
+      online_application.over_16 != false
+    end
+
     private
 
     def online_application
