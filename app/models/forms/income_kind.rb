@@ -17,6 +17,8 @@ module Forms
       end
     end
 
+    validate :none_of_above_selected
+
     def self.allowed_kinds
       (1..13).to_a
     end
@@ -44,6 +46,21 @@ module Forms
     end
 
     private
+
+    def none_of_above_selected
+      check_income_and_none_selected(applicant, :applicant)
+      check_income_and_none_selected(partner, :partner)
+    end
+
+    def check_income_and_none_selected(income_attribute, attribute_name)
+      return if income_attribute.count <= 1
+
+      if ucd_changes_apply? == false && income_attribute.include?(self.class.no_income_index)
+        errors.add(attribute_name, :none_value_selected)
+      elsif ucd_changes_apply? && income_attribute.include?(self.class.no_income_index_ucd)
+        errors.add(attribute_name, :none_value_selected)
+      end
+    end
 
     # rubocop:disable Metrics/MethodLength
     def export_params

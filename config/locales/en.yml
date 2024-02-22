@@ -222,8 +222,10 @@ en:
             applicant:
               blank: Select your kinds of income
               invalid: Select only the kinds from the list
+              none_value_selected: Deselect 'None of the above' if you would like to select any of the other options
             partner:
               invalid: Select only the kinds from the list
+              none_value_selected: Deselect 'None of the above' if you would like to select any of the other options
         forms/income_range:
           attributes:
             choice:

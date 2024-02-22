@@ -236,8 +236,10 @@ cy:
             applicant:
               blank: Dewiswch y mathau o incwm
               invalid: Dewiswch o'r mathau sydd ar y rhestr yn unig
+              none_value_selected: Peidiwch â dewis ‘Dim un o’r uchod’ os yr hoffech ddewis unrhyw un o’r opsiynau eraill
             partner:
               invalid: Dewiswch o'r mathau sydd ar y rhestr yn unig
+              none_value_selected: Peidiwch â dewis ‘Dim un o’r uchod’ os yr hoffech ddewis unrhyw un o’r opsiynau eraill
         forms/income_range:
           attributes:
             choice:
