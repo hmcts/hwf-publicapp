@@ -481,6 +481,8 @@ en:
     title: Ask for technical help
   optional: "(Optional)"
   questions:
+    edit:
+      back_button: Go to previous page
     applicant_address:
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
