@@ -42,6 +42,13 @@ br
                   = f.label :children_age_band_two, @form.errors[:children_age_band_two].join(', '), class: 'error'
               = f.text_field :children_age_band_two, class: 'govuk-input govuk-input--width-3', value: age_band_value('two', @online_application)
 
+
+          .govuk-warning-text
+            span.govuk-warning-text__icon aria-hidden="true" !
+            strong.govuk-warning-text__text
+              span.govuk-visually-hidden Warning
+              = t('questions.dependent.warning')
+
       .govuk-radios__item
         = f.radio_button :children, 'false', class: 'govuk-radios__input'
         = f.label t('children_false', scope: @form.i18n_scope), for: 'dependent_children_false', class: 'govuk-label govuk-radios__label'
