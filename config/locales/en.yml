@@ -585,6 +585,7 @@ en:
         summary: Help with financially dependent children
       text: Children that live with you or you’re supporting financially
       title: Children that live with you or you’re supporting financially
+      warning: Please note - Do not give their ages in the boxes above.
 
       single:
         you_need: You need to give details of any children you support financially.
