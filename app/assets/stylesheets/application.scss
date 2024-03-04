@@ -1,19 +1,11 @@
 
 $govuk-global-styles: true;
+$govuk-new-typography-scale: true;
 
-@function frontend-font-url($filename) {
-  @return font-url("govuk-frontend/govuk/assets/fonts/" + $filename);
-}
+$govuk-fonts-path: 'govuk-frontend/dist/govuk/assets/fonts/';
+$govuk-images-path: 'govuk-frontend/dist/govuk/assets/images/';
 
-@function frontend-image-url($filename) {
-  @return image-url("govuk-frontend/govuk/assets/images/" + $filename);
-}
-
-$govuk-font-url-function: frontend-font-url;
-$govuk-image-url-function: frontend-image-url;
-@import "govuk-frontend/govuk/all";
-
-
+@import "govuk-frontend/dist/govuk/all";
 
 // /*local*/
 @import 'local/address_lookup';
