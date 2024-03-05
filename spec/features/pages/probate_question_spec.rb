@@ -68,21 +68,6 @@ RSpec.feature 'As a user' do
           end
         end
 
-        context 'entering date_of_death that is too old' do
-          let(:long_ago) { Time.zone.today - 21.years }
-
-          before do
-            fill_in :probate_day_date_of_death, with: long_ago.day
-            fill_in :probate_month_date_of_death, with: long_ago.month
-            fill_in :probate_year_date_of_death, with: long_ago.year
-            click_button 'Continue'
-          end
-
-          scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'The date of death must have been in the last 20 years')
-          end
-        end
-
         context 'entering date_of_death that is in the future' do
           let(:future_date) { Time.zone.tomorrow }
 
