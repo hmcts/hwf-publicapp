@@ -191,6 +191,7 @@ cy:
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
               not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8 o 22)
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6 o 22)
+              not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6 o 22)
             partner_date_of_birth:
               not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
               not_a_number: Rhowch ddyddiad dilys

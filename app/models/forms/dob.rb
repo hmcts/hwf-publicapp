@@ -52,7 +52,7 @@ module Forms
       too_young_error if too_young?
       too_old_error if too_old?
       not_over_61_error if not_over_61?
-      not_over_16_error if not_over_16?
+      over_16_answer_match_dob?
     end
 
     def too_young?
@@ -84,14 +84,16 @@ module Forms
       errors.add(:date_of_birth, :not_over_61)
     end
 
-    def not_over_16?
-      return false if over_16 == 'false' || too_young?
-
-      date_of_birth > (Time.zone.today - 16.years)
+    def over_16_answer_match_dob?
+      if over_16 == 'false' && dob_over_16?
+        errors.add(:date_of_birth, :not_under_16)
+      elsif over_16 == 'true' && !dob_over_16?
+        errors.add(:date_of_birth, :not_over_16)
+      end
     end
 
-    def not_over_16_error
-      errors.add(:date_of_birth, :not_over_16)
+    def dob_over_16?
+      (date_of_birth + 16.years) <= Time.zone.today
     end
 
     def export_params
