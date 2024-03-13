@@ -49,10 +49,10 @@ module Forms
     end
 
     def validate_dob_ranges
-      too_young_error if too_young?
+      over_16_answer_match_dob?
+      too_young_error if too_young? && over_16 != 'true'
       too_old_error if too_old?
       not_over_61_error if not_over_61?
-      over_16_answer_match_dob?
     end
 
     def too_young?
