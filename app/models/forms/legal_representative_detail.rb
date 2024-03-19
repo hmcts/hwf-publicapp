@@ -7,6 +7,7 @@ module Forms
     attribute :legal_representative_email, String
     attribute :legal_representative_organisation_name, String
     attribute :legal_representative_feedback_opt_in, Boolean
+    attribute :legal_representative_position, String
 
     attribute :street, String
     attribute :postcode, String
@@ -17,6 +18,7 @@ module Forms
     validates :legal_representative_first_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :legal_representative_last_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :legal_representative_organisation_name, allow_blank: true, sensible_name: true
+    validates :legal_representative_position, format: { allow_blank: true, with: /\A[a-zA-Z\s]+\z/ }
 
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validates :legal_representative_email,
@@ -40,7 +42,8 @@ module Forms
         legal_representative_last_name: legal_representative_last_name,
         legal_representative_email: legal_representative_email,
         legal_representative_organisation_name: legal_representative_organisation_name,
-        legal_representative_feedback_opt_in: legal_representative_feedback_opt_in
+        legal_representative_feedback_opt_in: legal_representative_feedback_opt_in,
+        legal_representative_position: legal_representative_position
       }
     end
     # rubocop:enable Metrics/MethodLength
