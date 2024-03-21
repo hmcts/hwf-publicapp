@@ -71,7 +71,7 @@ And(/^I visit the start session path$/) do
 end
 
 Then(/^I expect to have a blank form number$/) do
-  find('#form_name_identifier').value.should eq("")
+  find_by_id('form_name_identifier').value.should eq("")
 end
 
 And(/^I change the benefit status$/) do
