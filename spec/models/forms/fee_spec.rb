@@ -49,6 +49,10 @@ RSpec.describe Forms::Fee do
         before { form_fee.paid = false }
 
         it { expect(form_fee.valid?).to be true }
+
+        it('does not return a fee date paid') {
+          expect(form_fee.date_paid).to be(nil)
+        }
       end
 
       context 'when not a boolean value' do
