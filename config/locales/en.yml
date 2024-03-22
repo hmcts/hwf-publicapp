@@ -139,6 +139,8 @@ en:
               too_old: Check this date of birth is correct
               too_young: You must be over %{minimum_age} to use this service
               not_over_61: Enter date of birth for age above 61 (as stated in step 8 of 22)
+              not_over_16: Enter date of birth for age above 16 (as stated in step 6 of 22)
+              not_under_16: Enter date of birth for age under 16 (as stated in step 6 of 22)
             partner_date_of_birth:
               not_a_date: Enter the date in this format DD/MM/YYYY
               not_a_number: Enter a valid date
@@ -196,6 +198,8 @@ en:
               blank: Enter your town or city
               too_long: Town must be less than 50 characters
               invalid_name: Must not contain special characters
+            legal_representative_position:
+              invalid: 'Only latters and spaces are allowed'
         forms/over16:
           attributes:
             over_16:
@@ -222,8 +226,10 @@ en:
             applicant:
               blank: Select your kinds of income
               invalid: Select only the kinds from the list
+              none_value_selected: Deselect 'None of the above' if you would like to select any of the other options
             partner:
               invalid: Select only the kinds from the list
+              none_value_selected: Deselect 'None of the above' if you would like to select any of the other options
         forms/income_range:
           attributes:
             choice:
@@ -478,6 +484,8 @@ en:
     title: Ask for technical help
   optional: "(Optional)"
   questions:
+    edit:
+      back_button: Go to previous page
     applicant_address:
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 26
@@ -580,6 +588,7 @@ en:
         summary: Help with financially dependent children
       text: Children that live with you or you’re supporting financially
       title: Children that live with you or you’re supporting financially
+      warning: Please note - Do not give their ages in the boxes above.
 
       single:
         you_need: You need to give details of any children you support financially.
@@ -689,7 +698,7 @@ en:
       hint_legal_rep: A legal representative is usually a lawyer or solicitor.
       hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
       email_hint: 'We will use this email to send you a copy of your Help with Fees reference number.'
-
+      legal_representative_position: 'Position held at firm'
     legal_representative_detail_friend:
       text: Enter the litigation friend's details
 
@@ -1153,6 +1162,7 @@ en:
       legal_representative_or_friend: Legal representative or litigation friend
       legal_representative: Legal representative details
       legal_representative_detail: Legal representative details
+      position: Position held at firm
       litigation_friend: Litigation friend details
       full_name: Full name
       email: Email

@@ -9,6 +9,7 @@ RSpec.describe Forms::LegalRepresentativeDetail do
       legal_representative_last_name: 'Lawyer',
       legal_representative_organisation_name: 'Law and Co',
       legal_representative_email: 'law@co.com',
+      legal_representative_position: 'lawyer',
       street: 'Treadlneedl',
       postcode: 'N103EE',
       town: 'London'
@@ -48,5 +49,32 @@ RSpec.describe Forms::LegalRepresentativeDetail do
     it 'remove blank spaces from email address' do
       expect(form.valid?).to be true
     end
+  end
+
+  describe 'only letters for position' do
+    let(:position) { nil }
+
+    before do
+      params.merge!(legal_representative_position: position)
+    end
+
+    context 'nil' do
+      let(:position) { nil }
+
+      it { expect(form.valid?).to be true }
+    end
+
+    context 'digits' do
+      let(:position) { '1test' }
+
+      it { expect(form.valid?).to be false }
+    end
+
+    context 'spaces' do
+      let(:position) { 'test test' }
+
+      it { expect(form.valid?).to be true }
+    end
+
   end
 end

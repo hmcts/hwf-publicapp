@@ -35,9 +35,15 @@
           = t('legal_representative_feedback_opt_in', scope: @form.i18n_scope)
 
     - if show_organisation(@online_application)
-      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_organisation_name].any?)
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_position].any?)
         legend.govuk-fieldset__legend.govuk-fieldset__legend--s
           = t('organisation', scope: "#{@form.i18n_scope}")
+        = f.label :legal_representative_position, t('legal_representative_position', scope: @form.i18n_scope), class: 'govuk-label'
+        - if @form.errors[:legal_representative_position].any?
+          span.govuk-error-message#last_name = @form.errors[:legal_representative_position].join(' ')
+        = f.text_field :legal_representative_position, class: 'govuk-input govuk-!-width-one-half'
+
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_organisation_name].any?)
         = f.label :legal_representative_organisation_name, t('legal_representative_organisation_name', scope: @form.i18n_scope), class: 'govuk-label'
         - if @form.errors[:legal_representative_organisation_name].any?
           span.govuk-error-message#last_name = @form.errors[:legal_representative_organisation_name].join(' ')
