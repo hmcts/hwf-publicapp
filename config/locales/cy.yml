@@ -139,6 +139,8 @@ cy:
               blank: Rhowch eich tref
               too_long: Rhaid i'r cod tref fod yn llai na 50 o nodau
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
+            legal_representative_position:
+              invalid: 'Dim ond llythyrau a bylchau a ganiateir'
         forms/over16:
           attributes:
             over_16:
@@ -191,6 +193,7 @@ cy:
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
               not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8 o 22)
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6 o 22)
+              not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6 o 22)
             partner_date_of_birth:
               not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
               not_a_number: Rhowch ddyddiad dilys
@@ -689,6 +692,7 @@ cy:
       legal_representative_first_name: 'Enw cyntaf'
       legal_representative_last_name: 'Enw olaf'
       legal_representative_email: 'E-bost'
+      legal_representative_position: 'Swydd a ddelir yn y cwmni'
       organisation: Manylion y sefydliad
       legal_representative_organisation_name: 'Enw’r sefydliad'
       legal_representative_address: 'Enter a UK postcode'
@@ -1145,6 +1149,7 @@ cy:
       legal_representative: Manylion y cynrychiolydd cyfreithiol
       legal_representative_detail: Manylion y cynrychiolydd cyfreithiol
       litigation_friend: Manylion y cyfaill cyfreitha
+      position: Swydd a ddelir yn y cwmni
       full_name: Enw llawn
       applicant_name: Enw llawn
       email: Email
