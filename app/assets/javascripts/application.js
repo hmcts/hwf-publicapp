@@ -11,11 +11,10 @@
 // about supported directives.
 //
 
-// = require jquery
+// = require jquery3
 // = require jquery_ujs
 
 // = require is-nan.polyfill
-// = require govuk-frontend/govuk/all
 
 // = require ./modules/module_loader
 // = require ./modules/form-name

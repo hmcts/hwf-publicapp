@@ -69,7 +69,7 @@ Feature: End to end tests
       | Income £5,000 Change income                                               |
       | Income type Your income type Change income type                           |
       | Probate case No Change probate case                                       |
-      | Claim number Yes Change claim number                                      |
+      | Claim number 012345678 Change claim number                                |
       | Date of birth 27/09/1989 Change date of birth                             |
       | Full name Ms Sally Smith Change full name                                 |
       | Address 102 Petty France London SW1H 9AJ Change address                   |

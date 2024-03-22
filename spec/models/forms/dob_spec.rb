@@ -193,6 +193,59 @@ RSpec.describe Forms::Dob do
           it { expect(form_dob.valid?).to be true }
         end
       end
+
+      context 'when the over_16 is checked and age is below 16' do
+        let(:over_16) { 'true' }
+        let(:today) { Time.zone.today }
+
+        before do
+          form_dob.day = today.day
+          form_dob.month = today.month
+          form_dob.year = today.year - 15
+          form_dob.over_16 = over_16
+        end
+
+        it { expect(form_dob.valid?).not_to be true }
+
+        it 'returns an error message' do
+          form_dob.valid?
+          expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 16 (as stated in step 6 of 22)']
+        end
+      end
+
+      context 'when the over_16 is checked and age is 16 today' do
+        let(:over_16) { 'true' }
+        let(:today) { Time.zone.today }
+
+        before do
+          form_dob.day = today.day
+          form_dob.month = today.month
+          form_dob.year = today.year - 16
+          form_dob.over_16 = over_16
+        end
+
+        it { expect(form_dob.valid?).to be true }
+      end
+
+      context 'when the over_16 is false and age is 16 today' do
+        let(:over_16) { 'false' }
+        let(:today) { Time.zone.today }
+
+        before do
+          form_dob.day = today.day
+          form_dob.month = today.month
+          form_dob.year = today.year - 16
+          form_dob.over_16 = over_16
+        end
+
+        it { expect(form_dob.valid?).not_to be true }
+
+        it 'returns an error message' do
+          form_dob.valid?
+          expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age under 16 (as stated in step 6 of 22)']
+        end
+
+      end
     end
   end
 
@@ -207,5 +260,4 @@ RSpec.describe Forms::Dob do
       expect(subject).to eql(date_of_birth: date_of_birth, partner_date_of_birth: nil)
     end
   end
-
 end

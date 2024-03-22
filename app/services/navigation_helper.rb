@@ -87,7 +87,7 @@ module NavigationHelper
   end
 
   def skip_benefit?
-    @online_application.ho_number.present?
+    @online_application.ho_number.present? || @online_application.over_16 == false
   end
 
   def skip_apply_type?

@@ -49,7 +49,8 @@ module Forms
     end
 
     def validate_dob_ranges
-      too_young_error if too_young?
+      over_16_answer_match_dob?
+      too_young_error if too_young? && over_16 != 'true'
       too_old_error if too_old?
       not_over_61_error if not_over_61?
     end
@@ -81,6 +82,18 @@ module Forms
 
     def not_over_61_error
       errors.add(:date_of_birth, :not_over_61)
+    end
+
+    def over_16_answer_match_dob?
+      if over_16 == 'false' && dob_over_16?
+        errors.add(:date_of_birth, :not_under_16)
+      elsif over_16 == 'true' && !dob_over_16?
+        errors.add(:date_of_birth, :not_over_16)
+      end
+    end
+
+    def dob_over_16?
+      (date_of_birth + 16.years) <= Time.zone.today
     end
 
     def export_params

@@ -55,6 +55,7 @@ class OnlineApplication
   attribute :legal_representative_postcode, String
   attribute :legal_representative_town, String
   attribute :legal_representative_address, String
+  attribute :legal_representative_position, String
   attribute :over_16, Boolean
   attribute :statement_signed_by, String
   attribute :income_period, String
