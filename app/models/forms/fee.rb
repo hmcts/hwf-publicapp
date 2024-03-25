@@ -45,7 +45,7 @@ module Forms
     end
 
     def fee_dates_paid
-      return if date_not_recognized? || blank_dates?
+      return if date_not_recognized? || blank_dates? || !paid?
 
       @date_paid ||= concat_dates_paid.to_date
     rescue ArgumentError

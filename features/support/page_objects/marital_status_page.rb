@@ -4,7 +4,7 @@ class MaritalStatusPage < BasePage
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 6 of 22'
-    element :step_info_ucd, '.govuk-caption-l', text: 'Step 10 of 26'
+    element :step_info_ucd, '.govuk-caption-l', text: 'Step 9 of 25'
     element :header, 'h1', text: 'Are you single, married or living with someone and sharing an income?'
     element :married, 'label', text: 'Married'
     element :help_choose_married, 'h2', text: 'Select ‘Married or living with someone and sharing an income’ if you’re:'

@@ -9,7 +9,7 @@ RSpec.feature 'As a user' do
     context 'completing the form correctly' do
       describe 'recording a valid NI number' do
         before do
-          fill_in :number, with: 'AB123456A'
+          fill_in 'national_insurance_number', with: 'AB123456A'
           click_button 'Continue'
         end
 
@@ -30,7 +30,7 @@ RSpec.feature 'As a user' do
 
       describe 'providing an incorrect value' do
         before do
-          fill_in :number, with: 'AB123'
+          fill_in 'national_insurance_number', with: 'AB123'
           click_button 'Continue'
         end
 
