@@ -1,0 +1,13 @@
+.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+  label.govuk-label =t('prompt', scope: @form.i18n_scope)
+  span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
+  - if @form.errors[:number].any?
+    span.govuk-error-message#number = @form.errors[:number].join(' ')
+  = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope), id: "national_insurance_number"
+  = f.hidden_field :has_ni_number, value: @online_application.ni_number_present
+
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary =t('summary', scope: "#{@form.i18n_scope}.details")
+  .govuk-details__text.govuk-body
+    ul.govuk-list.govuk-list--bullet
+      li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
