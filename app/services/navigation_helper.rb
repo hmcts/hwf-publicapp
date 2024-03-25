@@ -95,13 +95,12 @@ module NavigationHelper
   end
 
   def legal_representative?
-    return false if @current_question != :applying_on_behalf
+    next_pages = {
+      applying_on_behalf: @online_application.applying_on_behalf ? :legal_representative : :national_insurance_presence,
+      applicant_address: @online_application.legal_representative ? :apply_type : :contact
+    }
 
-    @next_page = if @online_application.applying_on_behalf
-                   :legal_representative
-                 else
-                   :national_insurance
-                 end
+    @next_page = next_pages[@current_question] || false
   end
 
   def over_16?
