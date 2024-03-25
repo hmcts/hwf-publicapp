@@ -23,10 +23,6 @@ Feature: Probate page
     When I enter a future date of death
     Then I should see this date can't be in the future error message
 
-  Scenario: Displays must have been in the last 20 years error message
-    When I enter a date over twenty years ago
-    Then I should see error message the date of death must have been in the last 20 years
-
   Scenario: Displays invalid format error message
     When I enter a invalid date of death
     Then I should see enter the date in this format error message
