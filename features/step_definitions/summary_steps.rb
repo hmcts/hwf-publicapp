@@ -71,7 +71,7 @@ And(/^I visit the start session path$/) do
 end
 
 Then(/^I expect to have a blank form number$/) do
-  expect(find(:element, name: "form_name[identifier]").text).to eql('')
+  expect(find(:element, id: "form_name_identifier").text).to eql('')
 end
 
 And(/^I change the benefit status$/) do
