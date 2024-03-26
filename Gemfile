@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '3.3.0'
-
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
 gem 'rails', '7.1.3.2'
