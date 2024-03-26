@@ -167,7 +167,7 @@ RSpec.describe Forms::Dob do
 
           it 'returns an error message' do
             form_dob.valid?
-            expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 61 (as stated in step 8 of 22)']
+            expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 61 (as stated in step 8)']
           end
         end
       end
@@ -209,7 +209,7 @@ RSpec.describe Forms::Dob do
 
         it 'returns an error message' do
           form_dob.valid?
-          expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 16 (as stated in step 6 of 22)']
+          expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 16 (as stated in step 6)']
         end
       end
 
@@ -242,7 +242,7 @@ RSpec.describe Forms::Dob do
 
         it 'returns an error message' do
           form_dob.valid?
-          expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age under 16 (as stated in step 6 of 22)']
+          expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age under 16 (as stated in step 6)']
         end
 
       end
