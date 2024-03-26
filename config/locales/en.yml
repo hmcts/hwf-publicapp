@@ -138,15 +138,15 @@ en:
               not_a_number: Enter a valid date
               too_old: Check this date of birth is correct
               too_young: You must be over %{minimum_age} to use this service
-              not_over_61: Enter date of birth for age above 61 (as stated in step 8 of 22)
-              not_over_16: Enter date of birth for age above 16 (as stated in step 6 of 22)
-              not_under_16: Enter date of birth for age under 16 (as stated in step 6 of 22)
+              not_over_61: Enter date of birth for age above 61 (as stated in step 8)
+              not_over_16: Enter date of birth for age above 16 (as stated in step 6)
+              not_under_16: Enter date of birth for age under 16 (as stated in step 6)
             partner_date_of_birth:
               not_a_date: Enter the date in this format DD/MM/YYYY
               not_a_number: Enter a valid date
               too_old: Check this date of birth is correct
               too_young: You must be over %{minimum_age} to use this service
-              not_over_61: Enter date of birth for age above 61 (as stated in step 8 of 22)
+              not_over_61: Enter date of birth for age above 61 (as stated in step 8)
         forms/fee:
           attributes:
             date_paid:
@@ -252,6 +252,9 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
+            has_ni_number:
+              inclusion: Select yes if you have National Insurance number
+              invalid: Select yes if you have National Insurance number
         forms/partner_national_insurance:
           attributes:
             number:
@@ -341,7 +344,7 @@ en:
     submission_statement_error: "Select whether you are the applicant/litigation friend or legal representative completing this application"
     default:
       breadcrumb: Step 22 of 22
-      breadcrumb_ucd: Step 26 of 26
+      breadcrumb_ucd: Step 25 of 25
       title: Send your claim form
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">What did you think of this service?</a>
     online:
@@ -424,7 +427,7 @@ en:
             two: Eagle Building
           heading: Scotland
       breadcrumb: Step 22 of 22
-      breadcrumb_ucd: Step 26 of 26
+      breadcrumb_ucd: Step 25 of 25
       heading: Your application for help with fees is not finished yet
       letter:
         five: "%{full_name}"
@@ -451,7 +454,7 @@ en:
     feedback_text: After you finish your application, you are directed to an optional feedback form.
     refund:
       breadcrumb: Step 22 of 22
-      breadcrumb_ucd: Step 26 of 26
+      breadcrumb_ucd: Step 25 of 25
       title: Send your reference number to complete the process
       heading: Your Help with Fees reference number is %{claim_number}
       sub_heading: You have one more step to take below
@@ -488,12 +491,12 @@ en:
       back_button: Go to previous page
     applicant_address:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       text: What is your address?
       title: Your address
     benefit:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         section_1:
           heading: If you’ve only recently started receiving one of these benefits,
@@ -529,7 +532,7 @@ en:
       title: Benefits
     claim/default:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, appeal or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
@@ -543,7 +546,7 @@ en:
       title: Claim or case number
     claim/et:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         section_1: Your employment tribunal claim number is a unique reference to identify your employment tribunal claim.
         section_2: You will receive a claim number when you make an employment tribunal claim online.
@@ -554,7 +557,7 @@ en:
       title: Claim number
     contact:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details: We will email you confirmation of your Help with Fees reference number.
       email_label: Email address
       feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
@@ -562,7 +565,7 @@ en:
       title: Your email address
     apply_type:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       title: Will you be making your court or tribunal application on paper or using an online service?
       text: Will you be making your court or tribunal application on paper or using an online service?
       applying_method_paper: 'Paper'
@@ -575,7 +578,7 @@ en:
         text_online: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using an online service, you should select online. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you can enter when asked to do so on the court or tribunal online service.
     dependent:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       children_false: 'No'
       children_number: Number of children
       children_true: 'Yes'
@@ -611,7 +614,7 @@ en:
         children_age_band: Do you or your partner have any children living with you or that you support financially?
     partner_national_insurance:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       title: 'Does your partner have a National Insurance number?'
       text: 'Does your partner have a National Insurance number?'
       prompt: 'National Insurance number'
@@ -629,7 +632,7 @@ en:
         summary: Find a lost National Insurance number
     dob:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       hint_html: For example, 04 10 1990
       text: What is your date of birth?
       title: Date of birth
@@ -643,7 +646,7 @@ en:
       banner_representatives_title: Important
       banner_representatives: A legal representative or litigation friend can only apply online if the court or tribunal fee has not yet been paid or the fee was paid on or after the 27th November 2023.
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       date_paid: Date fee paid
       fee_paid_false: 'No'
@@ -653,7 +656,7 @@ en:
       title: Refund
     form_name:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         item_1: Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Applying for help with hearing fees
@@ -667,8 +670,8 @@ en:
       hint: Is the application on behalf of someone else?
       title: Are you applying on behalf of someone else?
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
-      text: Are you applying on behalf of someone else?
+      breadcrumb_ucd: Step %{page_number} of 25
+      text: Is the application on behalf of someone else?
       details: Is the application on behalf of someone else?
       inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
       applying_on_behalf_false: 'No'
@@ -676,7 +679,7 @@ en:
     legal_representative:
       title: Are you a legal representative or litigation friend?
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       text: Are you a legal representative or litigation friend?
       details: Are you a legal representative or litigation friend?
       legal_representative_legal_representative: 'Legal representative'
@@ -686,7 +689,7 @@ en:
     legal_representative_detail:
       title: Enter the representative details
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       text: Enter the legal representative details
       legal_representative_first_name: 'First name'
       legal_representative_last_name: 'Last name'
@@ -705,7 +708,7 @@ en:
     over16:
       title: Is the person you are applying for over 16?
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       text: Is the person you are applying for over 16?
       over_16_true: 'Yes'
       over_16_false: 'No'
@@ -718,7 +721,7 @@ en:
         married: Enter the total monthly amount you and your partner receive in income.
         single: Enter the total monthly amount you receive in income.
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
@@ -733,7 +736,7 @@ en:
       title: Income amount
     income_kind:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details_married: Select all the different types of income you and your partner received in the last full calendar month.
       details_married_refund: Select all the different types of income you and your partner received in the full calendar month before you paid your fee.
       details_single: Select all the different types of income you received in the last full calendar month.
@@ -761,7 +764,7 @@ en:
       title: Income kind
     income_kind_ucd:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details_married: Tick all the types of income you and your partner have received in the last calendar month
       details_single: Tick all the types of income you have received in the last calendar month
       hint_details_single: If your income last month is not representative of what you usually get, you can provide an average income for the last 3 months if this is lower. If so, tick all income types for that period.
@@ -795,7 +798,7 @@ en:
       title: Income kind
     income_range:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
@@ -817,7 +820,7 @@ en:
     income_period:
       title: 'How much income did you receive?'
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       income_period_last_month: This is for the last calendar month
       income_period_average: This is an average for the last three calendar months
       kinds_example:
@@ -835,7 +838,7 @@ en:
       amount_prompt: "If you and your partner's income last month is not representative of what you usually get, you can provide an average income for the last three months if this is lower."
     marital_status:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       example: 'If you’re applying for a divorce, dissolution or annulment select ‘Single’ unless you are living with a new partner. For more information click the help section below.'
       details:
         section_1:
@@ -859,7 +862,7 @@ en:
       title: Your marital status
     marital_status_ucd:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       section_1:
         header: 'Select ‘Single‘ if:'
         point_1: you are living alone and relying on your own income with or without dependent children, or
@@ -880,7 +883,7 @@ en:
       subheader: Are you single, married or living with someone?
     national_insurance_presence:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         section_1:
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
@@ -894,8 +897,9 @@ en:
       title: Do you have a National Insurance number?
     national_insurance:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       example: For example, QQ123456C
+      post_ucd_example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
       prompt: National Insurance number
       text: National Insurance number
       title: National Insurance number
@@ -903,10 +907,18 @@ en:
         section_1:
           item_1: We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
         summary: Why do we ask for this?
+      post_ucd_details:
+        section_1:
+          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+          item_2: ask for a reminder through the post
+        summary: Find a lost National Insurance number
+      ni_number_present_false: 'No'
+      ni_number_present_true: 'Yes'
+      hint: For example, 'QQ123456C'
 
     home_office:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       text: What is your Home Office reference number?
       title: What is your Home Office reference number?
       prompt: Home Office reference number
@@ -919,7 +931,7 @@ en:
       text: What are the full names of both you and your partner?
     personal_detail:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       text: What is your full name?
       title: Title
       applicant: Your details
@@ -928,7 +940,7 @@ en:
       detail_text: We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
     probate:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details: These cases are usually about the property and belongings of someone who has died.
       hint_html: For example, 04 10 2018
       date_of_death: Date of death
@@ -938,7 +950,7 @@ en:
       title: Probate
     savings_and_investment_ucd:
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       less: "Less than £4,250"
       between: "Between £4,250 and £15,999"
       more: "£16,000 or more"
@@ -995,7 +1007,7 @@ en:
     savings_and_investment:
       between: "£3,000 to £15,999"
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       details:
         section_1:
           heading: 'What to include in savings and investments:'
@@ -1050,7 +1062,7 @@ en:
       amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
       amount_hint: Rounded to the nearest £
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       over_61_false_single: *no
       over_61_true_single: *yes
       over_61_false_single_refund: *no
@@ -1067,7 +1079,7 @@ en:
       amount_single: How much between £4,250 and £15,999 do you have in savings and investments?
       amount_hint: Rounded to the nearest £
       breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 26
+      breadcrumb_ucd: Step %{page_number} of 25
       over_61_false_single: *no
       over_61_true_single: *yes
       over_61_false_single_refund: *no
@@ -1104,7 +1116,7 @@ en:
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
     breadcrumb: Step 21 of 22
-    breadcrumb_ucd: Step 25 of 26
+    breadcrumb_ucd: Step 24 of 25
     change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'

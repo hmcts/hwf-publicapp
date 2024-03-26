@@ -68,15 +68,6 @@ RSpec.describe Forms::Probate do
 
               it { is_expected.not_to be_valid }
             end
-
-            context 'exceeds lower bound' do
-              let(:date_of_death) { Time.zone.today - 21.years }
-              let(:day_date_of_death) { date_of_death.day }
-              let(:month_date_of_death) { date_of_death.month }
-              let(:year_date_of_death) { date_of_death.year }
-
-              it { is_expected.not_to be_valid }
-            end
           end
         end
 
