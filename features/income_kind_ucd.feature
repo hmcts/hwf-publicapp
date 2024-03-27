@@ -34,6 +34,8 @@ Feature: Income kind page UCD
   Scenario: No income - probate disabled
     And I am a single person on kind of income page ucd
     When I submit the form with none of the above checked
+    Then I should be taken to income period page
+    When I submit the form with income '1000' and monthly
     Then I should be taken to the claim page
     And the ucd changes end
 
