@@ -249,7 +249,7 @@ GEM
     notifications-ruby-client (5.4.0)
       jwt (>= 1.5, < 3)
     parallel (1.24.0)
-    parallel_tests (4.6.0)
+    parallel_tests (4.6.1)
       parallel
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -519,9 +519,6 @@ DEPENDENCIES
   virtus
   web-console
   webmock
-
-RUBY VERSION
-   ruby 3.3.0p0
 
 BUNDLED WITH
    2.5.6
