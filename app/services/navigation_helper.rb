@@ -60,6 +60,8 @@ module NavigationHelper
   end
 
   def skip_income_range?
+    return false if ucd_apply?(@online_application.calculation_scheme)
+
     @current_question == :income_kind && @online_application.income&.zero?
   end
 

@@ -130,6 +130,18 @@ RSpec.describe Navigation do
           expect(subject).to eql(question_path(:income_range, locale: :en))
         end
       end
+
+      context 'when the application is post ucd - "no income" selected' do
+        let(:online_application) { build(:online_application, :no_income) }
+
+        before do
+          online_application.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        end
+
+        it 'routes to the probate question' do
+          expect(subject).to eql(question_path(:income_period, locale: :en))
+        end
+      end
     end
 
     context 'for income_range question' do
