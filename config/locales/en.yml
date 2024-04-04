@@ -318,6 +318,7 @@ en:
               less_than: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
             over_61:
               inclusion: Select if you or your partner are over 61
+              not_over_16: Choose age under 16 (as stated in step 6)
         forms/apply_type:
           attributes:
             applying_method:

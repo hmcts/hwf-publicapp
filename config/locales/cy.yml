@@ -326,6 +326,8 @@ cy:
               less_than: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
             over_61:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
+              not_over_16: Choose age under 16 (as stated in step 6)
+              not_over_61: Rhowch ddyddiad geni ar gyfer rhywun o dan 16 oed (fel a nodir yng ngham 6)
         forms/apply_type:
           attributes:
             applying_method:
