@@ -595,3 +595,4 @@ require:
   - rubocop-performance
   - rubocop-capybara
   - rubocop-factory_bot
+  - rubocop-rspec_rails
