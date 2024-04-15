@@ -451,6 +451,8 @@ RSpec/SubjectDeclaration: # new in 2.5
   Enabled: true
 RSpec/VerifiedDoubleReference: # new in 2.10.0
   Enabled: true
+RSpec/IndexedLet:
+  Enabled: false
 Capybara/NegationMatcher: # new in 2.14
   Enabled: true
 Capybara/SpecificActions: # new in 2.14
@@ -469,11 +471,11 @@ FactoryBot/FactoryNameStyle: # new in 2.16
   Enabled: true
 FactoryBot/SyntaxMethods: # new in 2.7
   Enabled: true
-RSpec/Rails/AvoidSetupHook: # new in 2.4
+RSpecRails/AvoidSetupHook: # new in 2.4
   Enabled: true
-RSpec/Rails/HaveHttpStatus: # new in 2.12
+RSpecRails/HaveHttpStatus: # new in 2.12
   Enabled: true
-RSpec/Rails/InferredSpecType: # new in 2.14
+RSpecRails/InferredSpecType: # new in 2.14
   Enabled: true
 Rails/ActionControllerFlashBeforeRender: # new in 2.16
   Enabled: true
@@ -593,3 +595,4 @@ require:
   - rubocop-performance
   - rubocop-capybara
   - rubocop-factory_bot
+  - rubocop-rspec_rails

@@ -15,7 +15,6 @@ for the application to work correctly.
 
 More info: https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/
 
-
 ## Docker
 
 Using this command `docker build hmcts/hwf-publicapp:vX.Y`

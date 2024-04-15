@@ -130,6 +130,18 @@ RSpec.describe Navigation do
           expect(subject).to eql(question_path(:income_range, locale: :en))
         end
       end
+
+      context 'when the application is post ucd - "no income" selected' do
+        let(:online_application) { build(:online_application, :no_income) }
+
+        before do
+          online_application.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        end
+
+        it 'routes to the probate question' do
+          expect(subject).to eql(question_path(:income_period, locale: :en))
+        end
+      end
     end
 
     context 'for income_range question' do
@@ -197,12 +209,23 @@ RSpec.describe Navigation do
     end
 
     context 'ucd' do
-      context 'when the applying on behalf of someone else' do
+      context 'when the not applying on behalf of someone else' do
         let(:online_application) { build(:online_application, applying_on_behalf: false) }
         let(:current_question) { :applying_on_behalf }
 
         it 'skips to ni number' do
-          expect(subject).to eql(question_path(:national_insurance_presence, locale: :en))
+          online_application.calculation_scheme = 'q4_23'
+          expect(subject).to eql(question_path(:national_insurance, locale: :en))
+        end
+      end
+
+      context 'when applying on behalf of someone else' do
+        let(:online_application) { build(:online_application, applying_on_behalf: true) }
+        let(:current_question) { :applying_on_behalf }
+
+        it 'skips to legal_representative' do
+          online_application.calculation_scheme = 'q4_23'
+          expect(subject).to eql(question_path(:legal_representative, locale: :en))
         end
       end
 

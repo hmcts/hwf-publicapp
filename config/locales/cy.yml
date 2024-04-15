@@ -139,6 +139,8 @@ cy:
               blank: Rhowch eich tref
               too_long: Rhaid i'r cod tref fod yn llai na 50 o nodau
               invalid_name: Rhaid peidio â chynnwys nodau arbennig
+            legal_representative_position:
+              invalid: 'Dim ond llythyrau a bylchau a ganiateir'
         forms/over16:
           attributes:
             over_16:
@@ -189,13 +191,15 @@ cy:
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
-              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8 o 22)
+              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8)
+              not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6)
+              not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6)
             partner_date_of_birth:
               not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
-              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8 o 22)
+              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8)
         forms/fee:
           attributes:
             date_paid:
@@ -322,6 +326,8 @@ cy:
               less_than: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
             over_61:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
+              not_over_16: Choose age under 16 (as stated in step 6)
+              not_over_61: Rhowch ddyddiad geni ar gyfer rhywun o dan 16 oed (fel a nodir yng ngham 6)
         forms/apply_type:
           attributes:
             applying_method:
@@ -490,6 +496,8 @@ cy:
     title: Gofynnwch am help technegol
   optional: "(Dewisol)"
   questions:
+    edit:
+      back_button: Ewch i'r dudalen flaenorol
     fee:
       banner_representatives_title: Pwysig
       banner_representatives: Dim ond os nad yw’r ffi llys neu dribiwnlys wedi’i thalu eto neu os cafodd y ffi ei thalu ar 27 Tachwedd 2023 neu ar ôl hynny y gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar-lein.
@@ -615,6 +623,7 @@ cy:
         summary: Help gyda phlant sy'n dibynnu arnoch yn ariannol
       text: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
       title: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
+      warning: Dalier sylw - Peidiwch â nodi eu hoedrannau yn y blychau uchod.
 
       single:
         you_need: Mae angen i chi roi manylion unrhyw blant rydych yn eu cynnal yn ariannol.
@@ -685,6 +694,7 @@ cy:
       legal_representative_first_name: 'Enw cyntaf'
       legal_representative_last_name: 'Enw olaf'
       legal_representative_email: 'E-bost'
+      legal_representative_position: 'Swydd a ddelir yn y cwmni'
       organisation: Manylion y sefydliad
       legal_representative_organisation_name: 'Enw’r sefydliad'
       legal_representative_address: 'Enter a UK postcode'
@@ -1141,6 +1151,7 @@ cy:
       legal_representative: Manylion y cynrychiolydd cyfreithiol
       legal_representative_detail: Manylion y cynrychiolydd cyfreithiol
       litigation_friend: Manylion y cyfaill cyfreitha
+      position: Swydd a ddelir yn y cwmni
       full_name: Enw llawn
       applicant_name: Enw llawn
       email: Email

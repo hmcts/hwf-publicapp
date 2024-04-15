@@ -1,5 +1,5 @@
 .govuk-form-group id='national_insurance_presence_ni_number_present' class=('govuk-form-group--error' if @form.errors[:number].any?)
-  = f.hidden_field :ni_number_present, value: nil
+  = f.hidden_field :has_ni_number, value: nil
   - if @form.errors[:ni_number_present].any?
     span.govuk-error-message#kase = @form.errors[:ni_number_present].join(' ')
   .govuk-form-group

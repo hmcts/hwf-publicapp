@@ -9,20 +9,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="<%= asset_path 'govuk-frontend/govuk/assets/images/favicon.ico' %>" type="image/x-icon" />
-  <link rel="mask-icon" href="<%= asset_path 'govuk-frontend/govuk/assets/images/govuk-mask-icon.svg' %>" color="blue">
-  <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-180x180.png' %>">
-  <link rel="apple-touch-icon" sizes="167x167" href="<%= asset_path 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-167x167.png' %>">
-  <link rel="apple-touch-icon" sizes="152x152" href="<%= asset_path 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-152x152.png' %>">
-  <link rel="apple-touch-icon" href="<%= asset_path 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon.png' %>">
+  <link rel="icon" sizes="48x48" href="<%= asset_path 'govuk-frontend/dist/govuk/assets/images/favicon.ico' %>" />
+  <link rel="icon" sizes="any" href="<%= asset_path 'govuk-frontend/dist/govuk/assets/images/favicon.svg' %>" type="image/svg+xml">
+  <link rel="mask-icon" href="<%= asset_path 'govuk-frontend/dist/govuk/assets/images/govuk-icon-mask.svg' %>" color="#0b0c0c">
+  <link rel="apple-touch-icon" href="<%= asset_path 'govuk-frontend/dist/govuk/assets/images/govuk-icon-180.png' %>">
 
-  <!--[if !IE 8]><!-->
-    <%= stylesheet_link_tag "application" %>
-  <!--<![endif]-->
-
-  <!--[if IE 8]>
-    <%= stylesheet_link_tag "application-ie8" %>
-  <![endif]-->
 
   <!--[if lt IE 9]>
     <script src="/html5-shiv/html5shiv.js"></script>
@@ -37,14 +28,14 @@
 <body class="govuk-template__body ">
   <script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-
+    document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
   </script>
 
   <%= yield :cookie_banner %>
 
   <a href="#main-content" class="govuk-skip-link no-print">Skip to main content</a>
 
-  <header class="govuk-header " role="banner" data-module="govuk-header">
+  <header class="govuk-header " data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
         <a href="/" class="govuk-header__link govuk-header__link--homepage">
@@ -81,7 +72,7 @@
         <%= link_to( t('switch.language'), {locale: t('switch.locale')}, class: 'language-picker') %>
       </p>
     </div>
-    <main class="govuk-main-wrapper " id="main-content" role="main">
+    <main class="govuk-main-wrapper " id="main-content">
         <% if content_for?(:content_override) %>
           <%= yield(:content_override) %>
         <% else %>
@@ -100,7 +91,7 @@
 
   <div id="global-app-error" class="app-error hidden"></div>
 
-  <footer class="govuk-footer no-print" role="contentinfo">
+  <footer class="govuk-footer no-print">
     <div class="govuk-width-container ">
       <div class="govuk-footer__meta">
         <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
@@ -125,12 +116,15 @@
 
   <%= yield :javascripts %>
 
-  <script src="<%= asset_path "govuk-frontend/govuk/all.js" %>" type="text/javascript"></script>
+  <script src="<%= asset_path "govuk-frontend/dist/govuk/govuk-frontend.min.js" %>" type="module"></script>
 
-  <script>
-    window.GOVUKFrontend.initAll()
+  <script type="module">
+    import { initAll } from '<%= asset_path "govuk-frontend/dist/govuk/govuk-frontend.min.js" %>'
+    initAll()
+
     $(moj.init);
   </script>
+
 
 </body>
 

@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Forms::SavingsAndInvestmentExtra do
-  subject(:form) { described_class.new(over_61: over_61, amount: amount) }
+  subject(:form) { described_class.new(over_61: over_61, amount: amount, over_16: over_16) }
 
   let(:over_61) { true }
   let(:amount) { nil }
+  let(:over_16) { nil }
 
   describe 'validations' do
     describe 'over_61' do
@@ -32,6 +33,20 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
         let(:over_61) { 'something' }
 
         it { is_expected.not_to be_valid }
+      end
+
+      context 'under 16' do
+        let(:over_16) { false }
+        let(:over_61) { true }
+
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'over 16' do
+        let(:over_16) { true }
+        let(:over_61) { true }
+
+        it { is_expected.to be_valid }
       end
     end
 

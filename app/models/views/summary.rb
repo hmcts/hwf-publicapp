@@ -73,7 +73,7 @@ module Views
     def signed_by_representative
       return false unless online_application.applying_on_behalf
 
-      online_application.legal_representative == 'legal_representative'
+      legal_representative?
     end
 
     def income_period
@@ -82,7 +82,25 @@ module Views
       I18n.t(online_application.income_period, scope: 'summary.income_period')
     end
 
+    def display_benefits?
+      return false if online_application.over_16 == false
+
+      online_application.ho_number.blank?
+    end
+
+    def display_ni?
+      online_application.over_16 != false
+    end
+
+    def display_position?
+      legal_representative?
+    end
+
     private
+
+    def legal_representative?
+      online_application.legal_representative == 'legal_representative'
+    end
 
     def online_application
       __getobj__

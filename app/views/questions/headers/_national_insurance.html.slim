@@ -1,1 +1,4 @@
-div.govuk-hint =t('example', scope: @form.i18n_scope)
+- if ucd_changes_apply?(@online_application.calculation_scheme)
+  = render("questions/headers/national_insurance/post_ucd")
+- else
+  = render("questions/headers/national_insurance/pre_ucd")

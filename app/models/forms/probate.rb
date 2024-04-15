@@ -10,8 +10,6 @@ module Forms
     attribute :month_date_of_death, Integer
     attribute :year_date_of_death, Integer
 
-    TIME_LIMIT_FOR_PROBATE = 20
-
     before_validation :date_of_death_dates
 
     validates :kase, inclusion: { in: [true, false] }
@@ -19,7 +17,6 @@ module Forms
 
     with_options if: :validate_probate_date_of_death? do
       validates :date_of_death, date: {
-        after_or_equal_to: :time_limit_probate,
         before: :tomorrow,
         allow_blank: false
       }
@@ -41,10 +38,6 @@ module Forms
 
     def tomorrow
       Time.zone.tomorrow
-    end
-
-    def time_limit_probate
-      TIME_LIMIT_FOR_PROBATE.years.ago
     end
 
     def date_of_death_dates
