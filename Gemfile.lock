@@ -156,6 +156,12 @@ GEM
       cucumber (>= 5, < 10)
       railties (>= 5.2, < 8)
     cucumber-tag-expressions (6.1.0)
+    dartsass-sprockets (3.1.0)
+      railties (>= 4.0.0)
+      sassc-embedded (~> 1.69)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     date (3.3.4)
     date_validator (0.12.0)
       activemodel (>= 3)
@@ -181,6 +187,8 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (4.26.1)
+      rake (>= 13)
     govuk_notify_rails (2.2.0)
       notifications-ruby-client (~> 5.1)
       rails (>= 4.1.0)
@@ -379,16 +387,11 @@ GEM
       rubocop (~> 1.40)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
+    sass-embedded (1.77.2)
+      google-protobuf (>= 3.25, < 5.0)
+      rake (>= 13.0.0)
+    sassc-embedded (1.76.0)
+      sass-embedded (~> 1.76)
     selenium-webdriver (4.21.1)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
@@ -480,6 +483,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   config
   cucumber-rails
+  dartsass-sprockets (~> 3.1)
   date_validator
   dotenv-rails
   factory_bot_rails
@@ -505,7 +509,6 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec (~> 2.16)
   rubyzip
-  sass-rails
   selenium-webdriver (~> 4.14)
   sentry-rails
   shoulda-matchers
