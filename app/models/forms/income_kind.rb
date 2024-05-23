@@ -42,7 +42,7 @@ module Forms
     def update_attributes(attributes)
       clear_empty_string(attributes, :applicant)
       clear_empty_string(attributes, :partner)
-      super(attributes)
+      super
     end
 
     private
