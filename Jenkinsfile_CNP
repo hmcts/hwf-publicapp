@@ -28,6 +28,7 @@ withPipeline(type, product, component) {
 
    before('test') {
       sh script:"npm install", label: 'Start test'
+      rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
   }
 }
