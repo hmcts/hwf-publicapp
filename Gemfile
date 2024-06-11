@@ -19,7 +19,7 @@ gem "dartsass-sprockets", "~> 3.1"
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'puma'
-gem 'rack', '~> 3.0.8'
+gem 'rack', '~> 3.1.0'
 gem 'redis'
 gem 'rest-client'
 gem 'sentry-rails'
