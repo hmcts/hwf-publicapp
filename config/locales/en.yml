@@ -900,7 +900,7 @@ en:
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 25
       example: For example, QQ123456C
-      post_ucd_example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
+      post_ucd_example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits. Providing this may reduce the likelihood of you having to provide further evidence before a decision is made.
       prompt: National Insurance number
       text: National Insurance number
       title: National Insurance number
