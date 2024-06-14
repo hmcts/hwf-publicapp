@@ -2,17 +2,19 @@
   .govuk-form-group class=('govuk-form-group--error' if @form.errors[:number].any?)
     label.govuk-label = t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:number].any?
-      span.govuk-error-message#number = @form.errors[:number].join(', ')
+      - @form.errors[:number].each do |error|
+        p.govuk-error-message#number = error
       span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
 
-    = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+    div
+      = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
   .govuk-form-group
     .govuk-checkboxes
       .govuk-checkboxes__item
-        = f.check_box :partner_ni_number_present, class: 'govuk-checkboxes__input'
-        label.govuk-label.govuk-checkboxes__label for='partner_national_insurance_partner_ni_number_present_false'
-          = t('partner_ni_number_present_false', scope: @form.i18n_scope)
+        = f.check_box :partner_ni_number_present, { class: 'govuk-checkboxes__input' }
+        = f.label :partner_ni_number_present, t('partner_ni_number_present_false', scope: @form.i18n_scope), class: 'govuk-label govuk-checkboxes__label'
+
 .govuk-body
 
 details.govuk-details data-module="govuk-details"

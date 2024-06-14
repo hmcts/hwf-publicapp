@@ -921,17 +921,17 @@ cy:
     partner_national_insurance:
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      title: 'A oes gan eich partner rif Yswiriant Gwladol?'
-      text: 'A oes gan eich partner rif Yswiriant Gwladol?'
+      title: 'Rhowch rif Yswiriant Gwladol eich partner'
+      text: 'Rhowch rif Yswiriant Gwladol eich partner'
       prompt: 'Rhif Yswiriant Gwladol '
       link_html: "<a href='' class='govuk-link'>Sut i ddod o hyd i rif Yswiriant Gwladol coll</a>"
       hint: Er enghraifft, 'QQ123456C'
       details:
         summary: Pam ydym yn gofyn am eich statws perthynas?
         detail_text: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
-      example: Gallwch ddod o hyd i’ch rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
+      example: Gallwch ddod o hyd i’ch rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau. Drwy ddarparu hwn byddwch yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
       partner_ni_number_present_true: 'Nac oes'
-      partner_ni_number_present_false: 'Oes'
+      partner_ni_number_present_false: Nid oes gan fy mhartner rif Yswiriant Gwladol
       where_to_find:
         item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
         item_2: gofynnwch am nodyn atgoffa drwy'r post

@@ -626,7 +626,7 @@ en:
         detail_text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
       example: You can find your National Insurance number on payslips or official letters about tax, pensions or benefits. Providing this may reduce the likelihood of you having to provide further evidence before a decision is made.
       partner_ni_number_present_true: 'Yes'
-      partner_ni_number_present_false: 'My partner does not have a National Insurance number'
+      partner_ni_number_present_false: My partner does not have a National Insurance number
       where_to_find:
         item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
         item_2: ask for a reminder through the post
