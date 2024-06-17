@@ -23,7 +23,7 @@ module Forms
 
     def export_params
       {
-        partner_ni_number: partner_ni_number_present ? number : nil,
+        partner_ni_number: partner_ni_number_present ? nil : number,
         partner_ni_number_present: partner_ni_number_present
       }
     end
