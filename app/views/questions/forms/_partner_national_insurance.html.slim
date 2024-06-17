@@ -7,13 +7,14 @@
       span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
 
     div
-      = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+      = f.text_field :number, id: 'number_input', class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
-  .govuk-form-group
-    .govuk-checkboxes
-      .govuk-checkboxes__item
-        = f.check_box :partner_ni_number_present, { class: 'govuk-checkboxes__input' }
-        = f.label :partner_ni_number_present, t('partner_ni_number_present_false', scope: @form.i18n_scope), class: 'govuk-label govuk-checkboxes__label'
+  div#partner_ni_checkbox_group
+    .govuk-form-group
+      .govuk-checkboxes
+        .govuk-checkboxes__item
+          = f.check_box :partner_ni_number_present, id: 'partner_ni_checkbox', class: 'govuk-checkboxes__input'
+          = f.label :partner_ni_number_present, t('partner_ni_number_present_false', scope: @form.i18n_scope),  for: 'partner_ni_checkbox', class: 'govuk-label govuk-checkboxes__label'
 
 .govuk-body
 
