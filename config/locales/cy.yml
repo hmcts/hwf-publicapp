@@ -915,9 +915,12 @@ cy:
           item_1: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
         summary: Pam ein bod yn gofyn am hyn?
       example: Er enghraifft, QQ123456C
+      post_ucd_example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau. Drwy ddarparu hwn byddwch yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
       prompt: rhif Yswiriant Gwladol
       text: Rhif Yswiriant Gwladol
       title: rhif Yswiriant Gwladol
+      ni_number_present_false: 'Nac oes'
+      ni_number_present_true: 'Oes'
     partner_national_insurance:
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
