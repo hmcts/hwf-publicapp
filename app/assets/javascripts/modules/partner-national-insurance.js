@@ -5,7 +5,7 @@ window.moj.Modules.FormName = {
     $no_ni_present_group: $('#partner_ni_checkbox_group'),
 
     init: function () {
-        var self = this;
+        let self = this;
 
         if (self.$number.length && self.$no_ni_present_group.length) {
             self.bindEvents();
@@ -13,7 +13,7 @@ window.moj.Modules.FormName = {
     },
 
     bindEvents: function() {
-        var self = this;
+        let self = this;
 
         self.$number.on('input', function() {
             self.numberKeyUp();
@@ -29,7 +29,7 @@ window.moj.Modules.FormName = {
     },
 
     numberKeyUp: function() {
-        var self = this;
+        let self = this;
 
         if (self.$number.val().trim().length > 0) {
             self.$no_ni_present_group.find('input[type="checkbox"]').prop('checked', false);
@@ -37,7 +37,7 @@ window.moj.Modules.FormName = {
     },
 
     no_ni_presentClick: function() {
-        var self = this;
+        let self = this;
 
         if (self.$no_ni_present_group.find('input[type="checkbox"]').is(':checked')) {
             self.$number.val('');
