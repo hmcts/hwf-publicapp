@@ -13,8 +13,8 @@
     .govuk-form-group
       .govuk-checkboxes
         .govuk-checkboxes__item
-          = f.check_box :partner_ni_number_present, id: 'partner_ni_checkbox', class: 'govuk-checkboxes__input'
-          = f.label :partner_ni_number_present, t('partner_ni_number_present_false', scope: @form.i18n_scope),  for: 'partner_ni_checkbox', class: 'govuk-label govuk-checkboxes__label'
+          = f.check_box :partner_ni_number_blank, id: 'partner_ni_checkbox', class: 'govuk-checkboxes__input'
+          = f.label :partner_ni_number_blank, t('partner_ni_number_present_false', scope: @form.i18n_scope),  for: 'partner_ni_checkbox', class: 'govuk-label govuk-checkboxes__label'
 
 .govuk-body
 
