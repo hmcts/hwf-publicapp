@@ -4,8 +4,8 @@
     - if @form.errors[:number].any?
       - @form.errors[:number].each do |error|
         p.govuk-error-message#number = error
-      span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
 
+    span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
     div
       = f.text_field :number, id: 'number_input', class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
