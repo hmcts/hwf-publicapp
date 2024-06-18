@@ -39,7 +39,7 @@ module ClearPartnerRelatedData
   def clear_partner_ni
     form = Forms::PartnerNationalInsurance.new
     form_attributes = @storage.load_form(form)
-    form_attributes.delete('partner_ni_number_present')
+    form_attributes.delete('partner_ni_number_blank')
     form_attributes.delete('number')
     form = Forms::PartnerNationalInsurance.new(form_attributes)
     @storage.save_form(form)

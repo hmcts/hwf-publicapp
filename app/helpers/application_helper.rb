@@ -3,6 +3,10 @@ module ApplicationHelper
     summary.ni_number.presence || t('ni_number_no', scope: 'summary.labels')
   end
 
+  def partner_ni_number_value(summary)
+    summary.partner_ni_number.presence || t('ni_number_no', scope: 'summary.labels')
+  end
+
   def cookies_accepted?
     Forms::Cookie::SettingForm.new(request: request).accepted?
   end

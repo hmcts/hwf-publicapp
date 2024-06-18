@@ -19,7 +19,7 @@ Then('I should be on are you legal representative page') do
   expect(legal_representative_page.content).to have_header
 end
 
-When('I anwser legal representative') do
+When('I answer legal representative') do
   legal_representative_page.legal_representative
 end
 

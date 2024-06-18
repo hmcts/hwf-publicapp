@@ -26,7 +26,7 @@ Feature: End to end tests
     Then I should be on the application on behalf of someone else page
     When I answer Yes to on behalf question
     Then I should be on are you legal representative page
-    When I anwser legal representative
+    When I answer legal representative
     Then I should be on legal representative detail page
     When I fill in all mandatory fields for legal representative
     Then I should be on are you applying for over 16 page
@@ -35,14 +35,14 @@ Feature: End to end tests
     When I have a national insurance number
 
 
-  Scenario: Path applying on behalf someone else unde 16
+  Scenario: Path applying on behalf someone else under 16
     When I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with a help with fees form number 'XX10'
     Then I should be on the application on behalf of someone else page
     When I answer Yes to on behalf question
     Then I should be on are you legal representative page
-    When I anwser legal representative
+    When I answer legal representative
     Then I should be on legal representative detail page
     When I fill in all mandatory fields for legal representative
     Then I should be on are you applying for over 16 page
