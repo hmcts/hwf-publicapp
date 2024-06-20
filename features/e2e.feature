@@ -9,6 +9,7 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
+@smoke
   Scenario: End to end path one
     When I should be taken to fee page
     When I submit no to have you already paid the fee
@@ -75,6 +76,7 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
+@smoke
   Scenario: End to end path two
     Given I should be taken to fee page
     When I submit no to have you already paid the fee
