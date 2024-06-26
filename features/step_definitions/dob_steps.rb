@@ -50,3 +50,7 @@ When(%r{^I enter a date of birth "(.*)/(.*)/(.*)"$}) do |day, month, year|
   dob_page.content.dob_year.set(year)
   continue
 end
+
+And(/^I enter a valid date of birth for me and my partner$/) do
+  dob_page.valid_partner_dob
+end
