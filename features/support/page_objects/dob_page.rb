@@ -10,6 +10,9 @@ class DobPage < BasePage
     element :dob_day, '#dob_day'
     element :dob_month, '#dob_month'
     element :dob_year, '#dob_year'
+    element :dob_partner_day, '#dob_partner_day'
+    element :dob_partner_month, '#dob_partner_month'
+    element :dob_partner_year, '#dob_partner_year'
     element :blank_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'
     element :under_age_error_link, 'a', text: 'You must be over 15 to use this service'
     element :over_age_error_link, 'a', text: 'Check this date of birth is correct'
@@ -20,6 +23,16 @@ class DobPage < BasePage
     content.dob_day.set(age.day)
     content.dob_month.set(age.month)
     content.dob_year.set(age.year)
+    continue
+  end
+
+  def valid_partner_dob
+    content.dob_day.set('28')
+    content.dob_month.set('11')
+    content.dob_year.set('1992')
+    content.dob_partner_day.set('28')
+    content.dob_partner_month.set('11')
+    content.dob_partner_year.set('1992')
     continue
   end
 
