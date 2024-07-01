@@ -28,6 +28,10 @@ gem 'uglifier'
 gem 'virtus'
 gem 'govuk_notify_rails'
 
+# To fix ruby 3.3.3 gemsepec file issue with this gem
+gem 'net-pop', github: 'ruby/net-pop'
+
+
 group :development, :test do
   gem "pry-rails"
   gem 'letter_opener'
