@@ -5,6 +5,10 @@ class PersonalDetailsPage < BasePage
     element :step_info, '.govuk-caption-l', text: 'Step 17 of 22'
     element :header, 'h1', text: 'What is your full name?'
     element :optional_hint, '.optional', text: 'Optional'
+    element :first_name, '#personal_detail_first_name'
+    element :last_name, '#personal_detail_last_name'
+    element :partner_first_name, '#personal_detail_partner_first_name'
+    element :partner_last_name, '#personal_detail_partner_last_name'
   end
 
   def submit_full_name
@@ -24,5 +28,12 @@ class PersonalDetailsPage < BasePage
 
   def last_name(str)
     fill_in 'Last name', with: str
+  end
+
+  def submit_full_names
+    content.first_name.set('Thomas')
+    content.last_name.set('Test')
+    content.partner_first_name.set('Tina')
+    content.partner_last_name.set('Test')
   end
 end

@@ -41,3 +41,8 @@ When(/^I slowly enter my name$/) do
     personal_details_page.submit_full_name
   end
 end
+
+When(/^I enter mine and my partner's names$/) do
+  personal_details_page.submit_full_names
+  continue
+end
