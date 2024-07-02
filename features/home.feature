@@ -11,7 +11,7 @@ Feature: Home page
 
   Scenario: adjournment fees for certain civil and family hearings link
     When I click the 'adjournment fees for certain civil and family hearings' link
-    Then I should see 'Courts and tribunals: living with COVID-19' header
+    Then I should see 'What to expect coming to a court or tribunal' header
 
   Scenario: in Welsh (Cymraeg)
     When I click the 'in Welsh (Cymraeg)' link
