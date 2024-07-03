@@ -913,15 +913,15 @@ cy:
     national_insurance:
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      prompt: rhif Yswiriant Gwladol
-      text: Rhif Yswiriant Gwladol
-      title: rhif Yswiriant Gwladol
+      prompt: A oes gennych Rif Yswiriant Gwladol?
+      text: A oes gennych Rif Yswiriant Gwladol?
+      title: A oes gennych Rif Yswiriant Gwladol?
       details:
         section_1:
-          item_1: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+          item_1: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Drwy ddarparu hwn byddwch yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
         summary: Pam ein bod yn gofyn am hyn?
       hint: Er enghraifft, QQ123456C
-      post_ucd_example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau. Drwy ddarparu hwn byddwch yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
+      post_ucd_example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau.
       post_ucd_details:
         section_1:
           item_1: chwilio am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
