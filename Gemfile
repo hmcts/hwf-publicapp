@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '3.3.2'
+ruby '3.3.3'
 
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
@@ -19,7 +19,7 @@ gem "dartsass-sprockets", "~> 3.1"
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'puma'
-gem 'rack', '~> 3.0.8'
+gem 'rack', '~> 3.1.0'
 gem 'redis'
 gem 'rest-client'
 gem 'sentry-rails'
@@ -27,6 +27,10 @@ gem 'slim-rails'
 gem 'uglifier'
 gem 'virtus'
 gem 'govuk_notify_rails'
+
+# To fix ruby 3.3.3 gemsepec file issue with this gem
+gem 'net-pop', github: 'ruby/net-pop'
+
 
 group :development, :test do
   gem "pry-rails"
