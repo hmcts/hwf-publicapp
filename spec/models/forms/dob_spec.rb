@@ -147,8 +147,8 @@ RSpec.describe Forms::Dob do
         it { expect(form_dob.valid?).to be false }
       end
 
-      context 'when the over_61 is checked and age is below 66' do
-        let(:over_61) { true }
+      context 'when the over_66 is checked and age is below 66' do
+        let(:over_66) { true }
 
         before do
           form_dob.day = '01'
@@ -157,7 +157,7 @@ RSpec.describe Forms::Dob do
           form_dob.partner_day = '01'
           form_dob.partner_month = '01'
           form_dob.partner_year = '1999'
-          form_dob.over_61 = over_61
+          form_dob.over_66 = over_66
           form_dob.is_married = is_married
         end
 
@@ -184,8 +184,8 @@ RSpec.describe Forms::Dob do
         end
       end
 
-      context 'when the over_61 is checked and one of the ages is above 66' do
-        let(:over_61) { true }
+      context 'when the over_66 is checked and one of the ages is above 66' do
+        let(:over_66) { true }
 
         before do
           form_dob.day = '23'

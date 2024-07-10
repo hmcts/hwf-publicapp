@@ -27,7 +27,7 @@ module Views
         I18n.t('less', scope: scope)
       elsif online_application.max_threshold_exceeded?
         I18n.t('more', scope: scope)
-      elsif online_application.over_61?
+      elsif online_application.over_66?
         I18n.t('between', scope: scope)
       else
         format_currency(online_application.amount)

@@ -5,7 +5,7 @@ module Forms
 
     attr_reader :date_of_birth, :partner_date_of_birth
 
-    attribute :over_61, Boolean
+    attribute :over_66, Boolean
     attribute :is_married, Boolean
     attribute :day, Integer
     attribute :month, Integer
@@ -74,7 +74,7 @@ module Forms
     end
 
     def not_over_66?
-      return false unless over_61 == true
+      return false unless over_66 == true
 
       age_66 = Time.zone.today - 66.years
       if is_married == true

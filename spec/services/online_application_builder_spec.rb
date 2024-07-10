@@ -8,7 +8,7 @@ RSpec.describe OnlineApplicationBuilder do
     rails_store = Rails.cache
     rails_store.write("questions-#{session_id}-over16", { 'married' => false, 'over_16' => false }.as_json)
     rails_store.write("questions-#{session_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
-    rails_store.write("questions-#{session_id}-savings_and_investment_extra", { 'over_61' => false, 'amount' => 6000 }.as_json)
+    rails_store.write("questions-#{session_id}-savings_and_investment_extra", { 'over_66' => false, 'amount' => 6000 }.as_json)
     rails_store.write("questions-#{session_id}-benefit", { 'on_benefits' => true }.as_json)
     rails_store.write("questions-#{session_id}-dependent", { 'children' => true, 'children_number' => 2 }.as_json)
     rails_store.write("questions-#{session_id}-fee", { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' }.as_json)
@@ -45,7 +45,7 @@ RSpec.describe OnlineApplicationBuilder do
       expect(online_application.married).to be false
       expect(online_application.min_threshold_exceeded).to be true
       expect(online_application.max_threshold_exceeded).to be false
-      expect(online_application.over_61).to be false
+      expect(online_application.over_66).to be false
       expect(online_application.amount).to eq 6000
       expect(online_application.benefits).to be true
       expect(online_application.children).to eq 2
