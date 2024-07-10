@@ -192,6 +192,8 @@ cy:
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
               not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8)
+              not_over_66: Enter date of birth for age 66 years or above (as stated in Step 12)
+              not_over_66_married: Enter date of birth for age 66 years or above for you or your partner (as stated in Step 12)
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6)
               not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6)
             partner_date_of_birth:
@@ -199,7 +201,6 @@ cy:
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
-              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8)
         forms/fee:
           attributes:
             date_paid:

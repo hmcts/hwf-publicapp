@@ -36,6 +36,25 @@ class DobPage < BasePage
     continue
   end
 
+  def valid_over_66_dob
+    age = Time.zone.today - 67.years
+    content.dob_day.set(age.day)
+    content.dob_month.set(age.month)
+    content.dob_year.set(age.year)
+    continue
+  end
+
+  def valid_partner_over_66_dob
+    age = Time.zone.today - 67.years
+    content.dob_day.set(age.day)
+    content.dob_month.set(age.month)
+    content.dob_year.set(age.year)
+    content.dob_partner_day.set(age.day)
+    content.dob_partner_month.set(age.month)
+    content.dob_partner_year.set(age.year)
+    continue
+  end
+
   def static_dob
     content.dob_day.set('23')
     content.dob_month.set('07')

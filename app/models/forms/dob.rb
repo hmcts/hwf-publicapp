@@ -52,7 +52,7 @@ module Forms
       over_16_answer_match_dob?
       too_young_error if too_young? && over_16 != 'true'
       too_old_error if too_old?
-      not_over_61_error if not_over_61?
+      not_over_66_error if not_over_66?
     end
 
     def too_young?
@@ -73,15 +73,22 @@ module Forms
       errors.add(:date_of_birth, :too_old)
     end
 
-    def not_over_61?
-      return false if is_married == true
+    def not_over_66?
       return false unless over_61 == true
 
-      date_of_birth > (Time.zone.today - 61.years)
+      age_66 = Time.zone.today - 66.years
+      if is_married == true
+        return false if partner_date_of_birth.blank?
+
+        date_of_birth > age_66 && partner_date_of_birth > age_66
+      else
+        date_of_birth > age_66
+      end
     end
 
-    def not_over_61_error
-      errors.add(:date_of_birth, :not_over_61)
+    def not_over_66_error
+      errors.add(:date_of_birth, :not_over_66) unless is_married == true
+      errors.add(:date_of_birth, :not_over_66_married) if is_married == true
     end
 
     def over_16_answer_match_dob?

@@ -138,7 +138,8 @@ en:
               not_a_number: Enter a valid date
               too_old: Check this date of birth is correct
               too_young: You must be over %{minimum_age} to use this service
-              not_over_61: Enter date of birth for age above 61 (as stated in step 8)
+              not_over_66: Enter date of birth for age 66 years or above (as stated in Step 12)
+              not_over_66_married: Enter date of birth for age 66 years or above for you or your partner (as stated in Step 12)
               not_over_16: Enter date of birth for age above 16 (as stated in step 6)
               not_under_16: Enter date of birth for age under 16 (as stated in step 6)
             partner_date_of_birth:
@@ -146,7 +147,6 @@ en:
               not_a_number: Enter a valid date
               too_old: Check this date of birth is correct
               too_young: You must be over %{minimum_age} to use this service
-              not_over_61: Enter date of birth for age above 61 (as stated in step 8)
         forms/fee:
           attributes:
             date_paid:
