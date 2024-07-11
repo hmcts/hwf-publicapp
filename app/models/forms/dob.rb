@@ -1,5 +1,5 @@
 module Forms
-  class Dob < Base
+  class Dob < Base # rubocop:disable Metrics/ClassLength
     include ActiveModel::Validations::Callbacks
     include PartnerDobValidatable
 
@@ -132,4 +132,4 @@ module Forms
     end
 
   end
-end
+end # rubocop:enable Metrics/ClassLength

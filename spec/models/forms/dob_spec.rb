@@ -4,7 +4,7 @@ RSpec.describe Forms::Dob do
   subject(:form_dob) { described_class.new }
 
   before do
-    allow(form_dob).to receive(:ucd_changes_apply?).and_return(true)
+    form_dob.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
   end
 
   context 'partner' do
@@ -13,7 +13,6 @@ RSpec.describe Forms::Dob do
         form_dob.day = '23'
         form_dob.month = '01'
         form_dob.year = '1980'
-        form_dob.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form_dob.is_married = true
       end
 
