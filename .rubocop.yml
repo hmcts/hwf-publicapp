@@ -217,7 +217,7 @@ Metrics/ModuleLength:
   Exclude:
     - 'spec/support/feature_steps.rb'
 
-RSpec/Dialect:
+RSpec/Capybara/FeatureMethods:
   Enabled: false
 
 RSpec/NamedSubject:
