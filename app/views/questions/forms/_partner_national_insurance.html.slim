@@ -1,5 +1,6 @@
 .govuk-fieldset
   .govuk-form-group class=('govuk-form-group--error' if @form.errors[:number].any?)
+    = f.hidden_field :ni_number, value: @online_application[:ni_number]
     label.govuk-label = t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:number].any?
       - @form.errors[:number].each do |error|

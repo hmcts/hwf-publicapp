@@ -260,6 +260,7 @@ en:
             number:
               blank: Enter your partner's National Insurance number
               invalid: Enter a valid National Insurance number
+              not_duplicate: This National Insurance number has already been entered on another page. Enter another National Insurance number
             partner_ni_number_present:
               inclusion: Select if your partner has National Insurance number
               invalid: Select if your partner has National Insurance number

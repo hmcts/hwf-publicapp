@@ -279,6 +279,7 @@ cy:
             number:
               blank: Rhowch eich rhif Yswiriant Gwladol
               invalid: Rhowch rif Yswiriant Gwladol dilys
+              not_duplicate: Mae’r Rhif Yswiriant Gwladol hwn eisoes wedi’i nodi ar dudalen arall. Nodwch Rif Yswiriant Gwladol arall
             ni_number_present:
               inclusion: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
               invalid: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
