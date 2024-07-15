@@ -10,7 +10,7 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        choose 'savings_and_investment_extra_over_61_false'
+        choose 'savings_and_investment_extra_over_66_false'
         fill_in 'savings_and_investment_extra_amount', with: 6000
         click_button 'Continue'
       end
@@ -30,7 +30,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect the fields to have specific errors' do
-        expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select if you or your partner are over 61')
+        expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select if you or your partner are over 66')
       end
     end
   end

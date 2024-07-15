@@ -3,13 +3,16 @@ require 'rails_helper'
 RSpec.describe Forms::Dob do
   subject(:form_dob) { described_class.new }
 
+  before do
+    form_dob.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+  end
+
   context 'partner' do
     describe 'validations' do
       before do
         form_dob.day = '23'
         form_dob.month = '01'
         form_dob.year = '1980'
-        form_dob.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form_dob.is_married = true
       end
 
@@ -143,21 +146,29 @@ RSpec.describe Forms::Dob do
         it { expect(form_dob.valid?).to be false }
       end
 
-      context 'when the over_61 is checked and age is below 61' do
-        let(:over_61) { true }
+      context 'when the over_66 is checked and age is below 66' do
+        let(:over_66) { true }
 
         before do
-          form_dob.day = '19'
-          form_dob.month = '11'
+          form_dob.day = '01'
+          form_dob.month = '01'
           form_dob.year = '1999'
-          form_dob.over_61 = over_61
+          form_dob.partner_day = '01'
+          form_dob.partner_month = '01'
+          form_dob.partner_year = '1999'
+          form_dob.over_66 = over_66
           form_dob.is_married = is_married
         end
 
         context 'when is married' do
           let(:is_married) { true }
 
-          it { expect(form_dob.valid?).to be true }
+          it { expect(form_dob.valid?).not_to be true }
+
+          it 'returns an error message' do
+            form_dob.valid?
+            expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age 66 years or above for you or your partner (as stated in Step 12)']
+          end
         end
 
         context 'when is not married' do
@@ -167,22 +178,34 @@ RSpec.describe Forms::Dob do
 
           it 'returns an error message' do
             form_dob.valid?
-            expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age above 61 (as stated in step 8)']
+            expect(form_dob.errors.messages[:date_of_birth]).to eq ['Enter date of birth for age 66 years or above (as stated in Step 12)']
           end
         end
       end
 
-      context 'when the over_61 is checked and age is above 61' do
-        let(:over_61) { true }
+      context 'when the over_66 is checked and one of the ages is above 66' do
+        let(:over_66) { true }
 
         before do
           form_dob.day = '23'
           form_dob.month = '01'
           form_dob.year = '1940'
+          form_dob.partner_day = '01'
+          form_dob.partner_month = '01'
+          form_dob.partner_year = '1999'
         end
 
         context 'when is married' do
           let(:is_married) { true }
+
+          before do
+            form_dob.day = '01'
+            form_dob.month = '01'
+            form_dob.year = '1999'
+            form_dob.partner_day = '23'
+            form_dob.partner_month = '01'
+            form_dob.partner_year = '1940'
+          end
 
           it { expect(form_dob.valid?).to be true }
         end

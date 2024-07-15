@@ -93,16 +93,16 @@ RSpec.describe Views::Summary do
     end
 
     context 'when the minimum threshold has been exceeded but not the maximum threshold' do
-      context 'when the applicant or partner are over 61' do
-        let(:online_application) { build(:online_application, :savings_between_threshold, over_61: true) }
+      context 'when the applicant or partner are over 66' do
+        let(:online_application) { build(:online_application, :savings_between_threshold, over_66: true) }
 
         it 'returns the correct text - between thresholds' do
           expect(subject).to eql('£3,000 to £15,999')
         end
       end
 
-      context 'when the applicant or partner are not over 61' do
-        let(:online_application) { build(:online_application, :savings_between_threshold, over_61: false, amount: 6000) }
+      context 'when the applicant or partner are not over 66' do
+        let(:online_application) { build(:online_application, :savings_between_threshold, over_66: false, amount: 6000) }
 
         it 'returns the correct text - exact amount' do
           expect(subject).to eql('£6,000')

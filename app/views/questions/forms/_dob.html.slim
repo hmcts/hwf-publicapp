@@ -1,5 +1,5 @@
 .govuk-form-group id='dob_date_of_birth' class=('govuk-form-group--error' if @form.errors.any?)
-  = f.hidden_field :over_61, value: @online_application[:over_61]
+  = f.hidden_field :over_66, value: @online_application[:over_66]
   = f.hidden_field :over_16, value: @online_application[:over_16]
   = f.hidden_field :is_married, value: @online_application.married?
   legend.govuk-fieldset__legend for='dob_date_of_birth'

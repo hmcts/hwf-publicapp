@@ -311,7 +311,7 @@ module FeatureSteps
   end
 
   def fill_savings_and_investment_extra
-    choose 'savings_and_investment_extra_over_61_false'
+    choose 'savings_and_investment_extra_over_66_false'
     fill_in :savings_and_investment_extra_amount, with: '6300'
     click_button 'Continue'
   end

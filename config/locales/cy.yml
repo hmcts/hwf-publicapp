@@ -191,7 +191,8 @@ cy:
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
-              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8)
+              not_over_66: Nodwch y dyddiad geni ar gyfer 66 oed neu hŷn (fel y nodir yng Ngham 12)
+              not_over_66_married: Nodwch y dyddiad geni ar gyfer 66 oed neu’n hŷn ar eich cyfer chi neu’ch partner (fel y nodir yng Ngham 12)
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6)
               not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6)
             partner_date_of_birth:
@@ -199,7 +200,6 @@ cy:
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
-              not_over_61: Rhowch ddyddiad geni ar gyfer oed hŷn na 61 (fel a nodir yng ngham 8)
         forms/fee:
           attributes:
             date_paid:
@@ -327,10 +327,9 @@ cy:
               greater_than_or_equal_to: Rhowch swm rhwng £3,000 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
               greater_than_or_equal_to_ucd: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
               less_than: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
-            over_61:
-              inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
+            over_66:
+              inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 66
               not_over_16: Choose age under 16 (as stated in step 6)
-              not_over_61: Rhowch ddyddiad geni ar gyfer rhywun o dan 16 oed (fel a nodir yng ngham 6)
         forms/apply_type:
           attributes:
             applying_method:
@@ -1084,14 +1083,14 @@ cy:
       amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      over_61_false_single: *single_no
-      over_61_true_single: *single_yes
-      over_61_false_married: *married_no
-      over_61_true_married: *married_yes
-      over_61_false_single_refund: *single_no
-      over_61_true_single_refund: *single_yes
-      over_61_false_married_refund: *married_no
-      over_61_true_married_refund: *married_yes
+      over_66_false_single: *single_no
+      over_66_true_single: *single_yes
+      over_66_false_married: *married_no
+      over_66_true_married: *married_yes
+      over_66_false_single_refund: *single_no
+      over_66_true_single_refund: *single_yes
+      over_66_false_married_refund: *married_no
+      over_66_true_married_refund: *married_yes
       text_married: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
@@ -1101,14 +1100,14 @@ cy:
       amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
       breadcrumb: Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
-      over_61_false_single: *single_no
-      over_61_true_single: *single_yes
-      over_61_false_married: *married_no
-      over_61_true_married: *married_yes
-      over_61_false_single_refund: *single_no
-      over_61_true_single_refund: *single_yes
-      over_61_false_married_refund: *married_no
-      over_61_true_married_refund: *married_yes
+      over_66_false_single: *single_no
+      over_66_true_single: *single_yes
+      over_66_false_married: *married_no
+      over_66_true_married: *married_yes
+      over_66_false_single_refund: *single_no
+      over_66_true_single_refund: *single_yes
+      over_66_false_married_refund: *married_no
+      over_66_true_married_refund: *married_yes
       title: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
       text_married: Ydych chi neu'ch partner yn 66 mlwydd oed neu'n hŷn?
       text_single: Ydych chi’n 66 oed neu’n hŷn?

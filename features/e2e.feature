@@ -22,7 +22,7 @@ Feature: End to end tests
     Then I should be taken to savings and investments page
     When I submit the form with £3,000 to £15,999 checked
     Then I should be taken to savings and investment extra page
-    When I submit no to are you 61 years old or over
+    When I submit no to are you 66 years old or over
     And I enter £5000 as our savings and investments
     And I click continue
     Then I should be taken to benefits page
