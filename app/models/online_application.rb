@@ -4,7 +4,7 @@ class OnlineApplication
   attribute :married, Boolean
   attribute :min_threshold_exceeded, Boolean
   attribute :max_threshold_exceeded, Boolean
-  attribute :over_61, Boolean
+  attribute :over_66, Boolean
   attribute :amount, Integer
   attribute :benefits, Boolean
   attribute :children, Integer
