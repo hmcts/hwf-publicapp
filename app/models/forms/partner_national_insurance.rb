@@ -19,7 +19,7 @@ module Forms
 
     def number_duplicate
       if number.present? && number == ni_number
-        errors.add(:number, :not_duplicate)
+        errors.add(:number, :duplicate)
       end
     end
 
