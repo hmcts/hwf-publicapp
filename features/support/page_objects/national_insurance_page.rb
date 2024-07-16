@@ -14,7 +14,7 @@ class NationalInsurancePage < BasePage
     element :no_ni_number_link, 'a', text: "use the paper form"
     element :blank_error_link, 'a', text: 'Enter your National Insurance number'
     element :invalid_error_link, 'a', text: 'Enter a valid National Insurance number'
-    element :explanation, 'li', text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
+    element :explanation, 'li', text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. Providing this may reduce the likelihood of you having to provide further evidence before a decision is made.'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
   end
