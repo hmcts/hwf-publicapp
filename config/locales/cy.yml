@@ -501,8 +501,6 @@ cy:
     edit:
       back_button: Ewch i'r dudalen flaenorol
     fee:
-      banner_representatives_title: Pwysig
-      banner_representatives: Dim ond os nad yw’r ffi llys neu dribiwnlys wedi’i thalu eto neu os cafodd y ffi ei thalu ar 27 Tachwedd 2023 neu ar ôl hynny y gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar-lein.
       breadcrumb:  Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
       details: Gallwch wneud cais am ad-daliad am ffi a dalwyd yn ystod y 3 mis diwethaf. Os ydych yn gwneud cais am ad-daliad, dylech ateb pob cwestiwn am eich amgylchiadau ar yr adeg y gwnaethoch dalu'r ffi.

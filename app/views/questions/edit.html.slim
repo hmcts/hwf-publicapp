@@ -2,8 +2,6 @@
   = t('title', scope: @form.i18n_scope)
   = ' - '
 
-= render("questions/headers/banner")
-
 = render('shared/error_block', form: @form) if @form.errors.any?
 
 .govuk-grid-row
