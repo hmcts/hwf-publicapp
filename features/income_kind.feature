@@ -5,7 +5,7 @@ Feature: Income kind page
     When I am a single person on kind of income page
     Then I should see an income list:
       | income name                                               |
-      | Wages                                                     |
+      | Wages before tax and National Insurance are taken off     |
       | Child Benefit                                              |
       | Working Tax Credit                                        |
       | Child Tax Credit                                          |
