@@ -1,28 +1,22 @@
-.govuk-form-group id='national_insurance_presence_ni_number_present' class=('govuk-form-group--error' if @form.errors[:partner_national_insurance].any?)
-  = f.hidden_field :partner_ni_number_present, value: nil
-  - if @form.errors[:partner_ni_number_present].any?
-    span.govuk-error-message#kase = @form.errors[:partner_ni_number_present].join(' ')
-  .govuk-form-group
-    .govuk-radios
-      .govuk-radios__item
-        = f.radio_button :partner_ni_number_present, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel"
-        label.govuk-label.govuk-radios__label for='partner_national_insurance_partner_ni_number_present_true'
-          = t('partner_ni_number_present_true', scope: @form.i18n_scope)
+.govuk-fieldset
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:number].any?)
+    = f.hidden_field :ni_number, value: @online_application[:ni_number]
+    label.govuk-label = t('prompt', scope: @form.i18n_scope)
+    - if @form.errors[:number].any?
+      - @form.errors[:number].each do |error|
+        p.govuk-error-message#number = error
 
-      .govuk-radios__conditional#ni-number-panel.visuallyhidden
-        .govuk-form-group class=('govuk-form-group--error' if @form.errors[:number].any?)
-          label.govuk-label =t('prompt', scope: @form.i18n_scope)
-          - if @form.errors[:number].any?
-            span.govuk-error-message#number = @form.errors[:number].join(' ')
-          .govuk-hint#number-hint
-            = t('hint', scope: @form.i18n_scope)
+    span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
+    div
+      = f.text_field :number, id: 'number_input', class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
-          = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+  div#partner_ni_checkbox_group
+    .govuk-form-group
+      .govuk-checkboxes
+        .govuk-checkboxes__item
+          = f.check_box :partner_ni_number_blank, id: 'partner_ni_checkbox', class: 'govuk-checkboxes__input'
+          = f.label :partner_ni_number_blank, t('partner_ni_number_present_false', scope: @form.i18n_scope),  for: 'partner_ni_checkbox', class: 'govuk-label govuk-checkboxes__label'
 
-      .govuk-radios__item
-        = f.radio_button :partner_ni_number_present, 'false', class: 'govuk-radios__input'
-        label.govuk-label.govuk-radios__label for='partner_national_insurance_partner_ni_number_present_false'
-          = t('partner_ni_number_present_false', scope: @form.i18n_scope)
 .govuk-body
 
 details.govuk-details data-module="govuk-details"

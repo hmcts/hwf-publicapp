@@ -260,6 +260,7 @@ en:
             number:
               blank: Enter your partner's National Insurance number
               invalid: Enter a valid National Insurance number
+              duplicate: This National Insurance number has already been entered on another page. Enter another National Insurance number
             partner_ni_number_present:
               inclusion: Select if your partner has National Insurance number
               invalid: Select if your partner has National Insurance number
@@ -616,17 +617,17 @@ en:
     partner_national_insurance:
       breadcrumb: Step %{page_number} of 22
       breadcrumb_ucd: Step %{page_number} of 25
-      title: 'Does your partner have a National Insurance number?'
-      text: 'Does your partner have a National Insurance number?'
+      title: "Enter your partner's National Insurance number"
+      text: "Enter your partner's National Insurance number"
       prompt: 'National Insurance number'
       link_html: "<a href='' class='govuk-link'>Find a lost National Insurance number</a>"
       hint: For example, 'QQ123456C'
       details:
         summary: 'Why do we ask for this?'
         detail_text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.'
-      example: You can find your National Insurance number on payslips or official letters about tax, pensions or benefits
+      example: You can find your National Insurance number on payslips or official letters about tax, pensions or benefits. Providing this may reduce the likelihood of you having to provide further evidence before a decision is made.
       partner_ni_number_present_true: 'Yes'
-      partner_ni_number_present_false: 'No'
+      partner_ni_number_present_false: My partner does not have a National Insurance number
       where_to_find:
         item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
         item_2: ask for a reminder through the post

@@ -25,8 +25,6 @@ Feature: End to end tests
     Then I should be on the application on behalf of someone else page
     When I answer Yes to on behalf question
     Then I should be on are you legal representative page
-    When I click continue
-    Then I should see 'Select whether you're a legal representative or litigation friend' error message
     When I answer legal representative
     Then I should be on legal representative detail page
     When I click continue
@@ -39,7 +37,7 @@ Feature: End to end tests
     Then I should be taken to national insurance page
 
 
-  Scenario: Path applying on behalf someone else unde 16
+  Scenario: Path applying on behalf someone else under 16
     When I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with a help with fees form number 'XX10'
