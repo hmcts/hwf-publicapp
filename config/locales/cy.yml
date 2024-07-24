@@ -744,7 +744,7 @@ cy:
       applicant_income: Eich incwm
       partner_income: Incwm eich partner
       kinds:
-        '1': Cyflog
+        '1': Cyflog cyn didyniadau treth ac Yswiriant Gwladol
         '10': Rhent oddi wrth rywun sy'n byw gyda chi
         '11': Rhent o eiddo arall rydych chi'n berchen arnynt
         '12': Incwm arall
@@ -772,7 +772,7 @@ cy:
       applicant_income: Eich incwm
       partner_income: Incwm eich partner
       kinds:
-        '1': Cyflog
+        '1': Cyflog cyn didyniadau treth ac Yswiriant Gwladol
         '2': Elw net o fusnesau hunangyflogedig
         '3': Budd-dal Plant
         '4': Credyd Treth Gwaith

@@ -7,7 +7,7 @@ Feature: Income kind page UCD
     When I am a single person on kind of income page ucd
     Then I should see an income list:
       | income name                                                                                  |
-      | Wages                                                                                        |
+      | Wages before tax and National Insurance are taken off                                        |
       | Net profits from self employment                                                              |
       | Child Benefit                                                                                 |
       | Working Tax Credit                                                                           |

@@ -190,7 +190,7 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: ["Wages"])
+          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: ["Wages before tax and National Insurance are taken off"])
         end
       end
 
@@ -203,7 +203,8 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["Wages", "No income"], partner: ["Maintenance payments", "No income"])
+          expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
+                                                          "No income"], partner: ["Maintenance payments", "No income"])
         end
       end
     end
@@ -232,7 +233,8 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["Wages", "Maintenance payments"], partner: [])
+          expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
+                                                          "Maintenance payments"], partner: [])
         end
       end
 
@@ -244,7 +246,8 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["Wages", "No income"], partner: [])
+          expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
+                                                          "No income"], partner: [])
         end
       end
     end

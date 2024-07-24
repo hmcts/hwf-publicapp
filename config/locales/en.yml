@@ -744,7 +744,7 @@ en:
       applicant_income: Your income
       partner_income: Your partner's income
       kinds:
-        '1': Wages
+        '1': Wages before tax and National Insurance are taken off
         '10': Rent from anyone living with you
         '11': Rent from other properties you own
         '12': Other income
@@ -772,7 +772,7 @@ en:
       applicant_income: Your income
       partner_income: Your partner's income
       kinds:
-        '1': Wages
+        '1': Wages before tax and National Insurance are taken off
         '2': Net profits from self employment
         '3': Child Benefit
         '4': Working Tax Credit
