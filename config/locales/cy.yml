@@ -505,10 +505,10 @@ cy:
       breadcrumb:  Cam %{page_number} o 22
       breadcrumb_ucd: Cam %{page_number} o 26
       details: Gallwch wneud cais am ad-daliad am ffi a dalwyd yn ystod y 3 mis diwethaf. Os ydych yn gwneud cais am ad-daliad, dylech ateb pob cwestiwn am eich amgylchiadau ar yr adeg y gwnaethoch dalu'r ffi.
-      date_paid: Date fee paid
+      date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: 'Nac ydw'
       fee_paid_true: 'Ydw'
-      hint_html: For example, 04 10 2018
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Ydych chi eisoes wedi talu ffi’r llys neu ffi’r tribiwnlys?
       title: Refund
     applying_on_behalf:
