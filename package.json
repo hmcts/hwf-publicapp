@@ -1,6 +1,6 @@
 {
   "name": "hwf-publicapp",
-  "version": "3.3.1",
+  "version": "3.3.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/ministryofjustice/hwf-publicapp"
@@ -11,6 +11,6 @@
   "scripts": {},
   "engineStrict": true,
   "dependencies": {
-    "govuk-frontend": "^5.4.0"
+    "govuk-frontend": "^5.4.1"
   }
 }
