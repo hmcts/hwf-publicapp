@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# ruby
 ruby '3.3.4'
 
 # Azure key vault secrets to ENV variables
