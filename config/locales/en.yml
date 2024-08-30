@@ -26,8 +26,8 @@ en:
         identifier: Employment tribunal claim number
       forms/dependent:
         children_number: Number of children
-        children_age_band_one: Number of children aged 0-13
-        children_age_band_two: Number of children aged 14 and over
+        children_age_band_one: How many children do you have aged 0-13
+        children_age_band_two: How many children do you have aged 14 and over
       forms/fee:
         date_paid: Date fee paid
         day_date_paid: Day
