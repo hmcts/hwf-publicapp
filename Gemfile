@@ -71,3 +71,5 @@ group :test do
   gem 'timecop'
   gem 'webmock'
 end
+
+gem "importmap-rails", "~> 2.0"

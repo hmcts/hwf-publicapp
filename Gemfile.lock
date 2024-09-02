@@ -204,6 +204,10 @@ GEM
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    importmap-rails (2.0.1)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.7.2)
     irb (1.14.0)
       rdoc (>= 4.0.0)
@@ -494,6 +498,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   govuk_notify_rails
+  importmap-rails (~> 2.0)
   jquery-rails
   launchy
   letter_opener

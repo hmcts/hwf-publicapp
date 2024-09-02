@@ -48,7 +48,7 @@
       = yield
 
 - content_for :javascripts
-  = javascript_include_tag('application.js')
+  = javascript_importmap_tags
 
 - content_for :footer_support_links
   ul.govuk-footer__inline-list
