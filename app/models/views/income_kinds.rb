@@ -21,16 +21,14 @@ module Views
     def kinds
       (source.fetch('applicant', []) + source.fetch('partner', [])).tap do |arr|
         arr.uniq!
-        arr.sort!
-        arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_index }
+        arr.delete_if { |kind| kind == Forms::IncomeKind.no_income }
       end
     end
 
     def kinds_ucd
       (source.fetch('applicant', []) + source.fetch('partner', [])).tap do |arr|
         arr.uniq!
-        arr.sort!
-        arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_index_ucd }
+        arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_ucd }
       end
     end
 

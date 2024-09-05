@@ -13,7 +13,7 @@ module IncomeHelper
   end
 
   def kinds_alternative_translation(kind)
-    return kind if kind != I18n.t('questions.income_kind.kinds.1')
+    return kind if kind != I18n.t('questions.income_kind.kinds.wage')
 
     I18n.t('questions.income_range.wages')
   end

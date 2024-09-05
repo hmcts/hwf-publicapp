@@ -744,19 +744,19 @@ en:
       applicant_income: Your income
       partner_income: Your partner's income
       kinds:
-        '1': Wages before tax and National Insurance are taken off
-        '10': Rent from anyone living with you
-        '11': Rent from other properties you own
-        '12': Other income
-        '13': No income
-        '2': Child Benefit
-        '3': Working Tax Credit
-        '4': Child Tax Credit
-        '5': Maintenance payments
-        '6': Contribution-based Jobseekers Allowance (JSA)
-        '7': Contribution-based Employment and Support Allowance (ESA)
-        '8': Universal Credit
-        '9': Pensions (state, work, private)
+        wage: Wages before tax and National Insurance are taken off
+        child_benefit: Child Benefit
+        working_credit: Working Tax Credit
+        child_credit: Child Tax Credit
+        maintenance_payments: Maintenance payments
+        jsa: Contribution-based Jobseekers Allowance (JSA)
+        esa: Contribution-based Employment and Support Allowance (ESA)
+        universal_credit: Universal Credit
+        pensions: Pensions (state, work, private)
+        rent_from_cohabit: Rent from anyone living with you
+        rent_from_properties: Rent from other properties you own
+        other_income: Other income
+        none_of_the_above: No income
       text_married: What kind of income did you and your partner receive last month?
       text_married_refund: What kind of income do you and your partner receive?
       text_single: What kind of income did you receive last month?
@@ -772,23 +772,23 @@ en:
       applicant_income: Your income
       partner_income: Your partner's income
       kinds:
-        '1': Wages before tax and National Insurance are taken off
-        '2': Net profits from self employment
-        '3': Child Benefit
-        '4': Working Tax Credit
-        '5': Child Tax Credit
-        '6': Maintenance payments
-        '7': Contribution-based Jobseekers Allowance (JSA)
-        '8': Contribution-based Employment and Support Allowance (ESA)
-        '9': Universal Credit
-        '10': Pensions (state, work, private, pension credit (savings credit))
-        '11': Rent from anyone living with you
-        '12': Rent from other properties you own
-        '13': Cash gifts
-        '14': Financial support from others
-        '15': Loans
-        '16': Other income
-        '17': None of the above
+        wage: Wages before tax and National Insurance are taken off
+        net_profit: Net profits from self employment
+        child_benefit: Child Benefit
+        working_credit: Working Tax Credit
+        child_credit: Child Tax Credit
+        maintenance_payments: Maintenance payments
+        jsa: Contribution-based Jobseekers Allowance (JSA)
+        esa: Contribution-based Employment and Support Allowance (ESA)
+        universal_credit: Universal Credit
+        pensions: Pensions (state, work, private, pension credit (savings credit))
+        rent_from_cohabit: Rent from anyone living with you
+        rent_from_properties: Rent from other properties you own
+        cash_gifts: Cash gifts
+        financial_support: Financial support from others
+        loans: Loans
+        other_income: Other income
+        none_of_the_above: None of the above
       one_off_hint: Include all one off payments
       example_hint: For example, income from online selling or from dividends or interest payments
       text_married: Types of income you and your partner have received

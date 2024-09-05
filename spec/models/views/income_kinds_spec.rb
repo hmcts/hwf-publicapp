@@ -20,7 +20,7 @@ RSpec.describe Views::IncomeKinds do
       let(:income_kind) { { 'applicant' => applicant } }
 
       context 'when they contain "no income" and others' do
-        let(:applicant) { [1, 8, 13] }
+        let(:applicant) { [:wage, :universal_credit, :none_of_the_above] }
 
         it 'returns list of translated kinds without "no income"' do
           expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit'])
@@ -28,7 +28,7 @@ RSpec.describe Views::IncomeKinds do
       end
 
       context 'when they do not contain "no income"' do
-        let(:applicant) { [1, 8] }
+        let(:applicant) { [:wage, :universal_credit] }
 
         it 'returns list of translated kinds' do
           expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit'])
@@ -40,22 +40,22 @@ RSpec.describe Views::IncomeKinds do
       let(:income_kind) { { 'applicant' => applicant, 'partner' => partner } }
 
       context 'when they contain "no income" and others' do
-        let(:applicant) { [1, 8, 13] }
-        let(:partner) { [1, 5, 13] }
+        let(:applicant) { [:wage, :universal_credit, :none_of_the_above] }
+        let(:partner) { [:wage, :maintenance_payments, :none_of_the_above] }
 
         it 'returns list of merged translated kinds without "no income"' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off',
-                                  'Maintenance payments', 'Universal Credit'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit',
+                                  'Maintenance payments'])
         end
       end
 
       context 'when they do not contain "no income"' do
-        let(:applicant) { [1, 8] }
-        let(:partner) { [1, 5] }
+        let(:applicant) { [:wage, :universal_credit] }
+        let(:partner) { [:wage, :maintenance_payments] }
 
         it 'returns list of merged translated kinds' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off',
-                                  'Maintenance payments', 'Universal Credit'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit',
+                                  'Maintenance payments'])
         end
       end
     end
