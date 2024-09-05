@@ -30,8 +30,8 @@ cy:
         identifier: Rhif hawliad tribiwnlys cyflogaeth
       forms/dependent:
         children_number: Nifer y plant
-        children_age_band_one: Nifer y plant rhwng 0-13 oed
-        children_age_band_two: Nifer y plant sy’n 14 oed neu'n hŷn
+        children_age_band_one: Sawl plentyn sydd gennych rhwng 0-13 mlwydd oedd?
+        children_age_band_two: Sawl plentyn sydd gennych sydd sy’n 14 mlwydd oed neu’n hŷn?
       forms/legal_representative_detail:
         street: Rhif tŷ a stryd
         town: Tref
