@@ -35,5 +35,6 @@ class PersonalDetailsPage < BasePage
     content.last_name.set('Test')
     content.partner_first_name.set('Tina')
     content.partner_last_name.set('Test')
+    continue
   end
 end

@@ -1,6 +1,6 @@
 Given(/^I am on the paper confirmation page with probate enabled$/) do
   probate_enabled
-  to_confirmation_page
+  to_confirmation_page_ucd
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
@@ -10,7 +10,7 @@ end
 
 Given(/^I am on the online confirmation page with probate enabled$/) do
   probate_enabled
-  to_online_confirmation_page
+  to_online_confirmation_page_ucd
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
