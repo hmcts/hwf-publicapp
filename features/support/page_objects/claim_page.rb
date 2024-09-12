@@ -3,7 +3,7 @@ class ClaimPage < BasePage
   set_url '/questions/claim'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 15 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 18 of 25'
     element :header, 'h1', text: 'Do you have a case, claim, appeal or ‘notice to pay’ number?'
     element :claim_text, 'div.govuk-hint', text: 'Find this number on letters from the court or tribunal.'
     element :no, 'label', text: 'No'
