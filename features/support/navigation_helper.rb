@@ -387,9 +387,8 @@ def to_marital_status
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
-
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
+  applying_on_behalf_page.submit_no
+  national_insurance_page.ucd_select_yes_and_enter_valid_ni
 end
 
 def to_marital_status_ucd
