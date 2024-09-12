@@ -195,15 +195,16 @@ def to_contact_page
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
+  applying_on_behalf_page.submit_no
+  national_insurance_page.ucd_select_yes_and_enter_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.low_amount_checked
+  partner_national_insurance_page.submit_no_ni
+  savings_investment_page.low_amount_checked_ucd
   benefit_page.submit_benefit_yes
   probate_page.submit_probate_no
   claim_page.submit_claim_no
-  dob_page.valid_dob
-  personal_details_page.submit_full_name
+  dob_page.valid_partner_dob
+  personal_details_page.submit_full_names
   address_page.submit_full_address
 end
 
@@ -211,10 +212,11 @@ def to_dependent_page
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
+  applying_on_behalf_page.submit_no
+  national_insurance_page.ucd_select_yes_and_enter_valid_ni
   marital_status_page.submit_married
-  savings_investment_page.low_amount_checked
+  partner_national_insurance_page.submit_no_ni
+  savings_investment_page.low_amount_checked_ucd
   benefit_page.submit_benefit_no
 end
 
