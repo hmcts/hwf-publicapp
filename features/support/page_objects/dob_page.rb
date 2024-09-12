@@ -4,8 +4,9 @@ class DobPage < BasePage
   set_url '/questions/dob'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 16 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 19 of 25'
     element :header, 'h1', text: 'What is your date of birth?'
+    element :header_partner, 'h1', text: 'What are you and your partner’s date of birth'
     element :dob_hint, '.govuk-hint', text: 'For example, 04 10 1990'
     element :dob_day, '#dob_day'
     element :dob_month, '#dob_month'
