@@ -42,5 +42,5 @@ Then(/^I should see a line explaining how$/) do
 end
 
 When(/^I submit a valid national insurance number \(UCD\)$/) do
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
 end
