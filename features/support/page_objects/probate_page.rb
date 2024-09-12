@@ -3,7 +3,7 @@ class ProbatePage < BasePage
   set_url '/questions/probate'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 14 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 17 of 25'
     element :header, 'h1', text: 'Are you paying a fee for a probate case?'
     element :probate_hint, 'div.govuk-hint', text: 'These cases are usually about the property and belongings of someone who has died.'
     element :yes, 'label', text: 'Yes'
