@@ -19,6 +19,11 @@ class NationalInsurancePage < BasePage
     element :no, 'label', text: 'No'
   end
 
+  def submit_no
+    national_insurance_page.content.no.click
+    continue
+  end
+
   def submit_valid_ni
     national_insurance_page.content.national_insurance_number.set('JL806367D')
     continue
