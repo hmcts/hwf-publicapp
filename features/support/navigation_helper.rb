@@ -411,8 +411,7 @@ def to_national_insurance_page
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
-
-  national_insurance_presence_page.submit_yes
+  applying_on_behalf_page.submit_no
 end
 
 def to_personal_details_page
