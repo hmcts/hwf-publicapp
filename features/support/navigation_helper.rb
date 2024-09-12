@@ -142,7 +142,7 @@ def to_online_confirmation_page_ucd
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.medium_amount_checked_ucd
