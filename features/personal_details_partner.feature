@@ -2,19 +2,13 @@ Feature: Personal details page
 
   Background: Navigating to the personal details page
     Given probate is enabled
-    And I am on the personal details page with probate enabled
-  
+    And I am married and on the personal details page with probate enabled
+
   Scenario: Displays header
-    Then I should see 'What is your full name?' header
+    Then I should see 'What are the full names of both you and your partner?' header
 
   Scenario: Entering personal details
-    And I enter my first name
-    And I enter my last name
-    Then I should be taken to address page
-
-  Scenario: Entering a full name without a title
-    When I enter my first name
-    And I enter my last name
+    And I enter mine and my partner's names
     Then I should be taken to address page
 
   Scenario: Displays enter your first name error message
