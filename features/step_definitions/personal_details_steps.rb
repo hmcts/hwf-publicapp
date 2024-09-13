@@ -29,7 +29,7 @@ When(/^I enter my last name$/) do
 end
 
 When(/^I enter my full name$/) do
-  personal_details_page.submit_full_name
+  personal_details_page.submit_full_name(false)
 end
 
 Then(/^I should be taken to personal details page$/) do

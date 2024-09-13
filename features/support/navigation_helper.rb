@@ -401,7 +401,7 @@ def to_marital_status_ucd
   national_insurance_page.submit_valid_ni
 end
 
-def to_national_insurance_presence_page
+def to_apply_on_behalf_page
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number

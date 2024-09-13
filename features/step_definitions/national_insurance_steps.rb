@@ -13,6 +13,10 @@ And(/^I submit an invalid national insurance number$/) do
   national_insurance_page.select_yes_and_enter_invalid_ni
 end
 
+When(/^I am on the national insurance page, select no and submit$/) do
+  national_insurance_page.submit_no
+end
+
 Then(/^I should see if you don't know your national insurance number copy$/) do
   expect(national_insurance_page.content).to have_look_for_ni_text
   expect(national_insurance_page.content.ask_for_reminder_link['href']).to eq 'https://www.gov.uk/lost-national-insurance-number'
