@@ -63,6 +63,16 @@ class DobPage < BasePage
     continue
   end
 
+  def static_dobs
+    content.dob_day.set('23')
+    content.dob_month.set('07')
+    content.dob_year.set('1980')
+    content.dob_partner_day.set('01')
+    content.dob_partner_month.set('01')
+    content.dob_partner_year.set('1981')
+    continue
+  end
+
   def under_age_dob
     age = Time.zone.today - 14.years
     content.dob_day.set(age.day)

@@ -12,11 +12,13 @@ Feature: Summary page
     | Fee paid No Change fee paid                                               |
     | National Insurance number JL806367D Change national insurance number      |
     | Status Married or living with someone and sharing an income Change status |
-    | Savings and investments £0 to £2,999 Change savings and investments       |
+    | Less than £4,250 Change savings and investments                           |
     | Benefits Receiving eligible benefits Change benefits                      |
     | Claim number No Change claim number                                       |
     | Date of birth 23/07/1980 Change date of birth                             |
-    | Full name Ms Sally Smith Change full name                                 |
+    | Partner's date of birth 01/01/1981 Change partner's date of birth                             |
+    | Full name Thomas Test Change full name                                 |
+    | Partner’s full name Tina Test Change full name                                   |
     | Address 102 Petty France London SW1H 9AJ Change address                   |
     | Email test@hmcts.net Change email                                         |
     And I should be able to go back and change my details:
@@ -29,6 +31,8 @@ Feature: Summary page
     | benefit                |
     | claim                  |
     | dob                    |
+    | dob                    |
+    | personal_detail        |
     | personal_detail        |
     | applicant_address      |
     | contact                |
@@ -44,13 +48,15 @@ Feature: Summary page
     | National Insurance number No Change national insurance number             |
     | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number|
     | Status Married or living with someone and sharing an income Change status |
-    | Savings and investments £0 to £2,999 Change savings and investments       |
+    | Less than £4,250 Change savings and investments                           |
     | Children No Change children                                               |
-    | Income £0 Change income                                                   |
-    | Income type Your income type Change income                                |
+    | Total income £0 Last calendar month Change income                                                   |
+    | Income type Your income type Your partner's income type Change income                                |
     | Claim number No Change claim number                                       |
     | Date of birth 23/07/1980 Change date of birth                             |
-    | Full name Ms Sally Smith Change full name                                 |
+    | Partner's date of birth 01/01/1981 Change partner's date of birth           |
+    | Full name Thomas Test Change full name                                 |
+    | Partner’s full name Tina Test Change full name                              |
     | Address 102 Petty France London SW1H 9AJ Change address                   |
     | Email test@hmcts.net Change email                                         |
 
