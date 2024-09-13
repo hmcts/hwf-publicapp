@@ -26,16 +26,6 @@ class SavingsInvestmentPage < BasePage
     continue
   end
 
-  def low_amount_checked_ucd
-    savings_investment_page.content.low_amount.click
-    continue
-  end
-
-  def medium_amount_checked_ucd
-    savings_investment_page.content.medium_amount.click
-    continue
-  end
-
   def high_amount_checked
     savings_investment_page.content.high_amount.click
     continue
