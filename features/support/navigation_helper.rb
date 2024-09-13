@@ -3,7 +3,7 @@ def to_address_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.low_amount_checked_ucd
@@ -19,7 +19,7 @@ def to_benefit_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_single
   savings_investment_page.low_amount_checked_ucd
 end
@@ -29,7 +29,7 @@ def to_claim_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.low_amount_checked_ucd
@@ -65,7 +65,7 @@ def to_confirmation_done_page_ucd
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
@@ -196,7 +196,7 @@ def to_contact_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.low_amount_checked_ucd
@@ -213,7 +213,7 @@ def to_dependent_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.low_amount_checked_ucd
@@ -225,7 +225,7 @@ def to_dob_page_single
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_single
   savings_investment_page.low_amount_checked_ucd
   benefit_page.submit_benefit_yes
@@ -238,7 +238,7 @@ def to_dob_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.low_amount_checked_ucd
@@ -293,7 +293,7 @@ def to_income_kind_single_ucd
   form_name_page.submit_valid_form_number
 
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_single
   savings_investment_page.high_amount_checked
   benefit_page.submit_benefit_no
@@ -319,7 +319,7 @@ def to_income_kind_married_ucd
   form_name_page.submit_valid_form_number
 
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.high_amount_checked
@@ -388,7 +388,7 @@ def to_marital_status
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
 end
 
 def to_marital_status_ucd
@@ -445,20 +445,8 @@ def to_single_savings_extra
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
-
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
-  marital_status_page.submit_single
-  savings_investment_page.medium_amount_checked
-end
-
-def to_single_savings_extra_ucd
-  to_fee_page
-  fee_page.submit_fee_yes
-  form_name_page.submit_valid_form_number
-
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_single
   savings_investment_page.medium_amount_checked_ucd
 end
@@ -467,20 +455,8 @@ def to_married_savings_extra
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
-
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
-  marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
-end
-
-def to_married_savings_extra_ucd
-  to_fee_page
-  fee_page.submit_fee_yes
-  form_name_page.submit_valid_form_number
-
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
   savings_investment_page.medium_amount_checked_ucd
@@ -554,7 +530,7 @@ def to_summary_page_probate_enabled_ucd
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
@@ -595,7 +571,7 @@ def to_summary_page_probate_enabled_fee_paid_ucd
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
   applying_on_behalf_page.submit_no
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   savings_investment_page.medium_amount_checked_ucd
   savings_investment_extra_page.submit_yes
