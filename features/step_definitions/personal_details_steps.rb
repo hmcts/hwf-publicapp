@@ -1,9 +1,17 @@
 Given(/^I am on the personal details page with probate enabled$/) do
   probate_enabled
-  to_personal_details_page
+  to_personal_details_page_single
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info
   expect(personal_details_page.content).to have_header
+end
+
+Given(/^I am married and on the personal details page with probate enabled$/) do
+  probate_enabled
+  to_personal_details_page_married
+  expect(personal_details_page).to be_displayed
+  expect(personal_details_page.content).to have_step_info
+  expect(personal_details_page.content).to have_married_header
 end
 
 When(/^I enter my title$/) do
@@ -38,7 +46,7 @@ end
 
 When(/^I slowly enter my name$/) do
   travel 61.minutes do
-    personal_details_page.submit_full_name
+    personal_details_page.submit_full_name(false)
   end
 end
 
