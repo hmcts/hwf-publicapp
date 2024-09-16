@@ -17,12 +17,16 @@ module PartnerDobValidatable
   end
 
   def partner_dob_age_valid?
-    if errors.messages.key?(:partner_date_of_birth) || blank_partner_dates?
+    if errors.messages.key?(:partner_date_of_birth) || blank_partner_dates? || partner_dates_zeros?
 
       return errors.add(:partner_date_of_birth,
                         :not_a_date)
     end
     errors.add(:partner_date_of_birth, :too_old) if partner_too_old?
+  end
+
+  def partner_dates_zeros?
+    partner_day.zero? || partner_month.zero? || partner_year.zero?
   end
 
   def blank_partner_dates?
