@@ -6,13 +6,14 @@ module FeatureSteps
 
     QuestionFormFactory.page_list('q4_23').take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
-      next if id == :home_office
-      next if id == :legal_representative
-      next if id == :legal_representative_detail
-      next if id == :over_16
+      next if skip_step(id)
 
       send(:"fill_#{id}")
     end
+  end
+
+  def skip_step(id)
+    [:home_office, :legal_representative, :legal_representative_detail, :over_16].include?(id)
   end
 
   def given_user_provides_all_data
