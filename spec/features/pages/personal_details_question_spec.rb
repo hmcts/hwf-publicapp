@@ -9,9 +9,10 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        fill_in :personal_detail_title, with: 'Mr'
         fill_in :personal_detail_first_name, with: 'Foo'
         fill_in :personal_detail_last_name, with: 'Bar'
+        fill_in :personal_detail_partner_first_name, with: 'Baz'
+        fill_in :personal_detail_partner_last_name, with: 'Qux'
         click_button 'Continue'
       end
 

@@ -9,27 +9,40 @@ RSpec.feature 'As a user' do
     context 'completing the form correctly' do
       describe 'recording a valid NI number' do
         before do
-          fill_in 'national_insurance_number', with: 'AB123456A'
-          click_button 'Continue'
+          fill_national_insurance
         end
 
         scenario 'I expect to be routed to the "marital-status" page' do
-          expect(page).to have_content 'Are you single, married or living with someone and sharing an income?'
+          expect(page).to have_content 'Relationship status'
         end
       end
     end
 
     context 'not completing the page correctly' do
-      describe 'leaving the field empty' do
-        before { click_button 'Continue' }
+      describe 'not selecting radio button' do
+        before do
+          click_button 'Continue'
+        end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter your National Insurance number')
+          expect(page).to have_xpath('//a[@class="error-link"]', text: 'Select yes if you have National Insurance number')
+        end
+      end
+
+      describe 'clicking yes and leaving the ni field empty' do
+        before do
+          choose 'national_insurance_has_ni_number_true'
+          click_button 'Continue'
+        end
+
+        scenario 'I expect the fields to have specific errors' do
+          expect(page).to have_xpath('//a[@class="error-link"]', text: 'Enter your National Insurance number')
         end
       end
 
       describe 'providing an incorrect value' do
         before do
+          choose 'national_insurance_has_ni_number_true'
           fill_in 'national_insurance_number', with: 'AB123'
           click_button 'Continue'
         end

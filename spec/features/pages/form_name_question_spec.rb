@@ -10,8 +10,8 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "NI page" page' do
-        expect(page).to have_content 'Do you have a National Insurance number?'
+      scenario 'I expect to be routed to the "Apply on behalf of" page' do
+        expect(page).to have_content 'Is the application on behalf of someone else?'
       end
     end
 
