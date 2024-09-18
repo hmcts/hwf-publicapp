@@ -9,11 +9,14 @@ RSpec.feature 'As a user' do
         fill_in :dob_day, with: '01'
         fill_in :dob_month, with: '01'
         fill_in :dob_year, with: '1990'
+        fill_in :dob_partner_day, with: '01'
+        fill_in :dob_partner_month, with: '01'
+        fill_in :dob_partner_year, with: '1990'
         click_button 'Continue'
       end
 
       scenario 'I expect to be routed to the "personal-detail" page' do
-        expect(page).to have_content 'What is your full name?'
+        expect(page).to have_content 'What are the full names of both you and your partner?'
       end
     end
 

@@ -6,11 +6,15 @@ Given(/^I am on the national insurance page$/) do
 end
 
 When(/^I submit a valid national insurance number$/) do
-  national_insurance_page.submit_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
 end
 
 And(/^I submit an invalid national insurance number$/) do
-  national_insurance_page.submit_invalid_ni
+  national_insurance_page.select_yes_and_enter_invalid_ni
+end
+
+When(/^I am on the national insurance page, select no and submit$/) do
+  national_insurance_page.submit_no
 end
 
 Then(/^I should see if you don't know your national insurance number copy$/) do
@@ -37,6 +41,10 @@ Then(/^I should see a line explaining why$/) do
   expect(national_insurance_page.content).to have_explanation
 end
 
+Then(/^I should see a line explaining how$/) do
+  expect(national_insurance_page.content).to have_lost_ni_number_text
+end
+
 When(/^I submit a valid national insurance number \(UCD\)$/) do
-  national_insurance_page.ucd_select_yes_and_enter_valid_ni
+  national_insurance_page.select_yes_and_enter_valid_ni
 end

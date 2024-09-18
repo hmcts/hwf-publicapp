@@ -16,14 +16,13 @@ Feature: Dependent page
   Scenario: Partial yes to do you have any children error
     When I select yes to do you have any children
     And I click continue
-    Then I should see 'You must enter the number of financially dependent children' error message
+    Then I should see 'Enter number of children in this age category' error message
 
   Scenario: Displays error message
     When I click continue
     Then I should see you need to say whether you have financially dependent children error message
 
   Scenario: Help with benefits
-    When I click on 'Help with financially dependent children'
     Then I should see help with financially dependent children copy
 
   Scenario: Dependent page timeout (No option)

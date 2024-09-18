@@ -3,7 +3,7 @@ class ConfirmationPage < BasePage
   set_url '/confirmation'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 22 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 25 of 25'
     element :header, 'h1', text: 'Send your claim form'
     element :header_refund, 'h1', text: 'Send your reference number to complete the process'
     element :confirmation_header_paper_one, 'h2', text: 'Your Help with Fees reference number is'

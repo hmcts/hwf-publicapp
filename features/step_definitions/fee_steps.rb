@@ -11,7 +11,7 @@ end
 
 Given(/^I am on the fee page ucd$/) do
   to_fee_page
-  expect(fee_page.content).to have_step_info_ucd
+  expect(fee_page.content).to have_step_info
   expect(fee_page.content).to have_header
   expect(fee_page.content).to have_apply_for_refund
 end

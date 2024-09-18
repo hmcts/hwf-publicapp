@@ -4,12 +4,16 @@ module FeatureSteps
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
 
-    QuestionFormFactory.page_list.take_while { |id| id != question }.each do |id|
+    QuestionFormFactory.page_list('q4_23').take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
-      next if id == :home_office
+      next if skip_step(id)
 
       send(:"fill_#{id}")
     end
+  end
+
+  def skip_step(id)
+    [:home_office, :legal_representative, :legal_representative_detail, :over_16].include?(id)
   end
 
   def given_user_provides_all_data
@@ -24,16 +28,16 @@ module FeatureSteps
     click_link_or_button 'Continue'
     fill_fee(true)
     fill_form_name
-    fill_national_insurance_presence
+    fill_applying_on_behalf
     fill_national_insurance
     fill_marital_status
+    fill_partner_national_insurance
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
     fill_income_kind
-    fill_income_range
-    fill_income_amount
+    fill_income_period
     fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
     fill_dob
@@ -48,15 +52,16 @@ module FeatureSteps
     click_link_or_button 'Continue'
     fill_fee(false)
     fill_form_name
-    fill_national_insurance_presence
+    fill_applying_on_behalf
     fill_national_insurance
     fill_marital_status
+    fill_partner_national_insurance
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
     fill_income_kind
-    fill_income_range(below: true)
+    fill_income_period
     fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
     fill_dob
@@ -72,9 +77,10 @@ module FeatureSteps
     click_link_or_button 'Continue'
     fill_fee
     fill_form_name
-    fill_national_insurance_presence
+    fill_applying_on_behalf
     fill_national_insurance
     fill_marital_status
+    fill_partner_national_insurance
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit(true)
@@ -125,7 +131,7 @@ module FeatureSteps
     when_they_go_back_to_homepage_and_start_again
     fill_et_form_name
     fill_fee
-    fill_national_insurance_presence
+    fill_applying_on_behalf
     fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
@@ -133,7 +139,7 @@ module FeatureSteps
     fill_benefit
     fill_dependent
     fill_income_kind
-    fill_income_range(true)
+    fill_income_period
     fill_probate
     fill_claim
     fill_dob
@@ -147,7 +153,7 @@ module FeatureSteps
   def when_they_apply_for_help_with_et_case_up_to_step_12
     fill_et_form_name
     fill_fee
-    fill_national_insurance_presence
+    fill_applying_on_behalf
     fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
@@ -155,7 +161,7 @@ module FeatureSteps
     fill_benefit
     fill_dependent
     fill_income_kind
-    fill_income_range(true)
+    fill_income_period
     fill_probate unless ProbateFeesSwitch.disable_probate_fees?
   end
 
@@ -216,9 +222,10 @@ module FeatureSteps
   end
 
   def fill_personal_detail
-    fill_in 'personal_detail_title', with: 'Sir'
     fill_in 'personal_detail_first_name', with: 'Bob'
     fill_in 'personal_detail_last_name', with: 'Oliver'
+    fill_in 'personal_detail_partner_first_name', with: 'Sally'
+    fill_in 'personal_detail_partner_last_name', with: 'Test'
     click_button 'Continue'
   end
 
@@ -226,16 +233,25 @@ module FeatureSteps
     fill_in 'dob_day', with: '01'
     fill_in 'dob_month', with: '01'
     fill_in 'dob_year', with: '1980'
+    fill_in 'dob_partner_day', with: '01'
+    fill_in 'dob_partner_month', with: '01'
+    fill_in 'dob_partner_year', with: '1980'
     click_button 'Continue'
   end
 
-  def fill_national_insurance_presence
-    choose 'national_insurance_presence_ni_number_present_true'
+  def fill_applying_on_behalf
+    choose 'applying_on_behalf_applying_on_behalf_false'
     click_button 'Continue'
   end
 
   def fill_national_insurance
+    choose 'national_insurance_has_ni_number_true'
     fill_in 'national_insurance_number', with: 'AB123456A'
+    click_button 'Continue'
+  end
+
+  def fill_partner_national_insurance
+    check 'partner_ni_checkbox'
     click_button 'Continue'
   end
 
@@ -281,22 +297,20 @@ module FeatureSteps
     click_button 'Continue'
   end
 
-  def fill_income_range(below = false)
-    if below
-      choose :income_range_choice_less
+  def fill_income_period
+    fill_in 'income_period_amount', with: 0
+    choose 'income_period_income_period_last_month'
+    click_button 'Continue'
+  end
+
+  def fill_dependent(dependent = false)
+    if dependent
+      choose 'dependent_children_true'
+      fill_in 'dependent_children_age_band_one', with: 1
+      fill_in 'dependent_children_age_band_two', with: 0
     else
-      choose :income_range_choice_between
+      choose 'dependent_children_false'
     end
-    click_button 'Continue'
-  end
-
-  def fill_income_amount
-    fill_in :amount, with: 1500.0
-    click_button 'Continue'
-  end
-
-  def fill_dependent
-    choose 'dependent_children_false'
     click_button 'Continue'
   end
 
@@ -317,7 +331,7 @@ module FeatureSteps
   end
 
   def fill_marital_status
-    choose 'marital_status_married_false'
+    choose 'marital_status_married_true'
     click_button 'Continue'
   end
 
