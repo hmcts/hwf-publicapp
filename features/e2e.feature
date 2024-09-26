@@ -9,7 +9,7 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
-  Scenario: End to end path one
+  Scenario: End to end path one - married
     When I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with a help with fees form number 'XX10'
@@ -72,7 +72,7 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
-  Scenario: End to end path two
+  Scenario: End to end path two - single
     Given I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with I don’t have a form checked
