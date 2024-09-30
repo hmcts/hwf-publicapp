@@ -29,7 +29,18 @@ def to_address_page_single
   personal_details_page.submit_full_name
 end
 
-def to_benefit_page
+def to_benefit_page_married
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
+  national_insurance_page.select_yes_and_enter_valid_ni
+  marital_status_page.submit_married
+  partner_national_insurance_page.submit_no_ni
+  savings_investment_page.low_amount_checked
+end
+
+def to_benefit_page_single
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
