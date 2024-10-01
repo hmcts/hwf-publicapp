@@ -262,7 +262,7 @@ def to_contact_page_single
   address_page.submit_full_address
 end
 
-def to_dependent_page
+def to_dependent_page_married
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
@@ -270,6 +270,17 @@ def to_dependent_page
   national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
+  savings_investment_page.low_amount_checked
+  benefit_page.submit_benefit_no
+end
+
+def to_dependent_page_single
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
+  national_insurance_page.select_yes_and_enter_valid_ni
+  marital_status_page.submit_single
   savings_investment_page.low_amount_checked
   benefit_page.submit_benefit_no
 end
@@ -287,7 +298,7 @@ def to_dob_page_single
   claim_page.submit_claim_no
 end
 
-def to_dob_page
+def to_dob_page_married
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number

@@ -90,6 +90,18 @@ class DobPage < BasePage
     continue
   end
 
+  def over_age_partner_dob
+    age = Time.zone.today - 150.years
+    content.dob_day.set('28')
+    content.dob_month.set('11')
+    content.dob_year.set('1992')
+    content.dob_partner_day.set(age.day)
+    content.dob_partner_month.set(age.month)
+    content.dob_partner_year.set(age.year)
+
+    continue
+  end
+
   def slow_dob_entry
     travel 61.minutes do
       age = Time.zone.today - 34.years
