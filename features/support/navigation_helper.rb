@@ -50,7 +50,7 @@ def to_benefit_page_single
   savings_investment_page.low_amount_checked
 end
 
-def to_claim_page
+def to_claim_page_married
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
@@ -58,6 +58,18 @@ def to_claim_page
   national_insurance_page.select_yes_and_enter_valid_ni
   marital_status_page.submit_married
   partner_national_insurance_page.submit_no_ni
+  savings_investment_page.low_amount_checked
+  benefit_page.submit_benefit_yes
+  probate_page.submit_probate_no
+end
+
+def to_claim_page_single
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
+  national_insurance_page.select_yes_and_enter_valid_ni
+  marital_status_page.submit_single
   savings_investment_page.low_amount_checked
   benefit_page.submit_benefit_yes
   probate_page.submit_probate_no
