@@ -4,12 +4,6 @@ module Views
       @session = session
     end
 
-    def list_pre
-      kinds.map do |kind|
-        I18n.t(kind, scope: ['questions.income_kind.kinds'])
-      end
-    end
-
     def list
       kinds.map do |kind|
         I18n.t(kind, scope: ['questions.income_kind.kinds'])
