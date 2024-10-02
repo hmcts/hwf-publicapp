@@ -103,7 +103,7 @@ RSpec.describe Storage do
     before do
       store_data
 
-      allow(session).to receive(:[]).with(:calculation_scheme).and_return FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
+      allow(session).to receive(:[]).with(:calculation_scheme).and_return Rails.configuration.ucd_schema.to_s
       allow(session).to receive(:[]).with(:started_at).and_return ''
       allow(session).to receive(:[]=)
 

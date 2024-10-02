@@ -1,6 +1,6 @@
 Given(/^I am on the summary page with probate enabled$/) do
   probate_enabled
-  to_summary_page_probate_enabled_ucd
+  to_summary_page_probate_enabled
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header

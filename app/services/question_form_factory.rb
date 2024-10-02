@@ -1,14 +1,11 @@
 class QuestionFormFactory
-  include FeatureSwitch
   class QuestionDoesNotExist < StandardError; end
 
   def self.page_list(calculation_scheme = '')
-    if FeatureSwitch.ucd_changes_apply?(calculation_scheme)
+    if calculation_scheme == Rails.configuration.ucd_schema.to_s
       Settings.navigation.post_ucd_changes
-    elsif FeatureSwitch.active?('ucd_refactor')
-      Settings.navigation.pre_ucd_changes
     else
-      Settings.navigation.old_default
+      Settings.navigation.pre_ucd_changes
     end
   end
 

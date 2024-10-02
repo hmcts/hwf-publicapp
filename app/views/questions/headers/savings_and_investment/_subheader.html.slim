@@ -1,10 +1,10 @@
 - if @online_application.married?
   - if @online_application.refund?
-    h2.govuk-heading-m = t('header_married_refund', scope:"#{@form.i18n_scope}_ucd")
+    h2.govuk-heading-m = t('header_married_refund', scope:"#{@form.i18n_scope}")
   - else
-    h2.govuk-heading-m = t('header_married', scope:"#{@form.i18n_scope}_ucd")
+    h2.govuk-heading-m = t('header_married', scope:"#{@form.i18n_scope}")
 - else
   - if @online_application.refund?
-    h2.govuk-heading-m = t('header_single_refund', scope:"#{@form.i18n_scope}_ucd")
+    h2.govuk-heading-m = t('header_single_refund', scope:"#{@form.i18n_scope}")
   - else
-    h2.govuk-heading-m = t('header_single', scope:"#{@form.i18n_scope}_ucd")
+    h2.govuk-heading-m = t('header_single', scope:"#{@form.i18n_scope}")

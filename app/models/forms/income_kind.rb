@@ -6,13 +6,13 @@ module Forms
     validates_each :applicant do |record, attr, value|
       if value.blank?
         record.errors.add(attr, :blank)
-      elsif value.any? { |v| allowed_kinds_ucd.exclude?(v) }
+      elsif value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
       end
     end
 
     validates_each :partner do |record, attr, value|
-      if value.any? { |v| allowed_kinds_ucd.exclude?(v) }
+      if value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
       end
     end
@@ -20,18 +20,10 @@ module Forms
     validate :none_of_above_selected
 
     def self.allowed_kinds
-      (1..13).to_a
-    end
-
-    def self.allowed_kinds_ucd
       (1..17).to_a
     end
 
     def self.no_income_index
-      13
-    end
-
-    def self.no_income_index_ucd
       17
     end
 
@@ -55,43 +47,25 @@ module Forms
     def check_income_and_none_selected(income_attribute, attribute_name)
       return if income_attribute.count <= 1
 
-      if ucd_changes_apply? == false && income_attribute.include?(self.class.no_income_index)
-        errors.add(attribute_name, :none_value_selected)
-      elsif ucd_changes_apply? && income_attribute.include?(self.class.no_income_index_ucd)
+      if income_attribute.include?(self.class.no_income_index)
         errors.add(attribute_name, :none_value_selected)
       end
     end
 
-    # rubocop:disable Metrics/MethodLength
     def export_params
-      export = if ucd_changes_apply? == false
-                 {
-                   income_kind: {
-                     applicant: income_kind_text_values(applicant),
-                     partner: income_kind_text_values(partner)
-                   }
-                 }
-               else
-                 {
-                   income_kind: {
-                     applicant: income_kind_text_values_ucd(applicant),
-                     partner: income_kind_text_values_ucd(partner)
-                   }
-                 }
-               end
+      export = {
+        income_kind: {
+          applicant: income_kind_text_values(applicant),
+          partner: income_kind_text_values(partner)
+        }
+      }
 
-      export[:income] = 0 if ap_no_income_ucd
       export[:income] = 0 if ap_no_income
       export
     end
-    # rubocop:enable Metrics/MethodLength
-
-    def ap_no_income_ucd
-      (applicant + partner).uniq == [self.class.no_income_index_ucd] && ucd_changes_apply?
-    end
 
     def ap_no_income
-      (applicant + partner).uniq == [self.class.no_income_index] && ucd_changes_apply? == false
+      (applicant + partner).uniq == [self.class.no_income_index]
     end
 
     def clear_empty_string(attributes, attribute)
@@ -101,12 +75,6 @@ module Forms
     def income_kind_text_values(kinds)
       kinds.map do |kind|
         I18n.t(kind, scope: ['questions.income_kind.kinds'])
-      end
-    end
-
-    def income_kind_text_values_ucd(kinds)
-      kinds.map do |kind|
-        I18n.t(kind, scope: ['questions.income_kind_ucd.kinds'])
       end
     end
   end

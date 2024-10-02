@@ -1,12 +1,6 @@
 class SubmissionsController < ApplicationController
-  include FeatureSwitch
-
   def create
-    if ucd_changes_apply?
-      statement_check
-    else
-      submit
-    end
+    statement_check
   end
 
   def confirmation_route(online_application)
@@ -40,10 +34,6 @@ class SubmissionsController < ApplicationController
   rescue ActionController::ParameterMissing
     @form_error = I18n.t('.confirmation.submission_statement_error')
     {}
-  end
-
-  def ucd_changes_apply?
-    FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == online_application.calculation_scheme
   end
 
   def statement_check
