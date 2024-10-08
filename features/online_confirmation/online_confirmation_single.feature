@@ -3,7 +3,7 @@
 Feature: Online confirmation page
 
   Background: Navigating to the confirmation page
-    Given I am on the online confirmation page with probate enabled
+    Given I am 'single' and on the online confirmation page with probate enabled
 
   Scenario: Displays instructions
     Then I should see online instruction points
