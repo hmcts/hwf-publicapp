@@ -3,7 +3,7 @@
 Feature: Paper confirmation page
 
   Background: Navigating to the confirmation page
-    Given I am on the paper confirmation page with probate enabled
+    Given I am 'married' and on the paper confirmation page with probate enabled
 
   Scenario: Displays instructions
     Then I should see instruction points
@@ -19,4 +19,3 @@ Feature: Paper confirmation page
   Scenario: Paper page timeout
     When I slowly click the finish application button
     Then I should see the home page
-

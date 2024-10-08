@@ -1,6 +1,6 @@
-Given(/^I am on the paper confirmation page with probate enabled$/) do
+Given(/^I am '([^"]*)' and on the paper confirmation page with probate enabled$/) do |status|
   probate_enabled
-  to_confirmation_page_ucd
+  status == 'married' ? to_confirmation_page_ucd_married : to_confirmation_page_ucd_single
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
