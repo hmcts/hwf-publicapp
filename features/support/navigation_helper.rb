@@ -650,28 +650,7 @@ def to_single_savings_ucd
   marital_status_page.submit_single
 end
 
-def to_summary_page_probate_enabled
-  to_fee_page
-  fee_page.submit_fee_no
-  form_name_page.submit_valid_form_number
-  national_insurance_presence_page.submit_yes
-  national_insurance_page.submit_valid_ni
-  marital_status_page.submit_married
-  savings_investment_page.medium_amount_checked
-  savings_investment_extra_page.submit_yes
-  benefit_page.submit_benefit_no
-  dependent_page.submit_dependent_no
-  income_kind_page.submit_no_income
-  probate_page.submit_probate_no
-  claim_page.submit_claim_no
-  dob_page.static_dob
-  personal_details_page.submit_full_name
-  address_page.submit_full_address
-  contact_page.valid_email
-  apply_type_page.applying_by_paper
-end
-
-def to_summary_page_probate_enabled_ucd
+def to_summary_page_probate_enabled_married
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
@@ -694,7 +673,30 @@ def to_summary_page_probate_enabled_ucd
   apply_type_page.applying_by_paper
 end
 
-def to_summary_page_probate_enabled_fee_paid
+def to_summary_page_probate_enabled_single
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
+  national_insurance_page.select_yes_and_enter_valid_ni
+  marital_status_page.submit_married
+  partner_national_insurance_page.submit_no_ni
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_none_of_the_above
+  income_period_page.submit_income(1000)
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.valid_partner_over_66_dob
+  personal_details_page.submit_full_names
+  address_page.submit_full_address
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+end
+
+def to_summary_page_probate_enabled_fee_paid_married
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
@@ -712,6 +714,27 @@ def to_summary_page_probate_enabled_fee_paid
   claim_page.submit_claim_no
   dob_page.valid_partner_over_66_dob
   personal_details_page.submit_full_names
+  address_page.submit_full_address
+  contact_page.valid_email
+end
+
+def to_summary_page_probate_enabled_fee_paid_single
+  to_fee_page
+  fee_page.submit_fee_yes
+  form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
+  national_insurance_page.select_yes_and_enter_valid_ni
+  marital_status_page.submit_single
+  savings_investment_page.medium_amount_checked
+  savings_investment_extra_page.submit_yes
+  benefit_page.submit_benefit_no
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_none_of_the_above
+  income_period_page.submit_income(0)
+  probate_page.submit_probate_no
+  claim_page.submit_claim_no
+  dob_page.valid_over_66_dob
+  personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
 end
@@ -736,7 +759,7 @@ def to_summary_page_probate_enabled_fee_paid_ucd
   contact_page.valid_email
 end
 
-def to_summary_page_probate_disabled
+def to_summary_page_probate_disabled_married
   to_fee_page
   fee_page.submit_fee_no
   form_name_page.submit_valid_form_number
@@ -754,7 +777,24 @@ def to_summary_page_probate_disabled
   apply_type_page.applying_by_paper
 end
 
-def to_summary_page_with_ho_number
+def to_summary_page_probate_disabled_single
+  to_fee_page
+  fee_page.submit_fee_no
+  form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
+  national_insurance_page.select_yes_and_enter_valid_ni
+  marital_status_page.submit_single
+  savings_investment_page.low_amount_checked
+  benefit_page.submit_benefit_yes
+  claim_page.submit_claim_no
+  dob_page.static_dob
+  personal_details_page.submit_full_name
+  address_page.submit_full_address
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+end
+
+def to_summary_page_with_ho_number_married
   national_insurance_page.submit_no
   home_office_page.submit_valid_home_office_number
   marital_status_page.submit_married
@@ -766,6 +806,22 @@ def to_summary_page_with_ho_number
   probate_page.submit_probate_no
   dob_page.static_dobs
   personal_details_page.submit_full_names
+  address_page.submit_full_address
+  contact_page.valid_email
+  apply_type_page.applying_by_paper
+end
+
+def to_summary_page_with_ho_number_single
+  national_insurance_page.submit_no
+  home_office_page.submit_valid_home_office_number
+  marital_status_page.submit_single
+  savings_investment_page.low_amount_checked
+  dependent_page.submit_dependent_no
+  income_kind_page.submit_none_of_the_above
+  income_period_page.submit_income(0)
+  probate_page.submit_probate_no
+  dob_page.static_dob
+  personal_details_page.submit_full_name
   address_page.submit_full_address
   contact_page.valid_email
   apply_type_page.applying_by_paper
