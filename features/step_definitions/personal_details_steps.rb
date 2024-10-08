@@ -1,4 +1,4 @@
-Given(/^I am on the personal details page with probate enabled$/) do
+Given(/^I am single and on the personal details page with probate enabled$/) do
   probate_enabled
   to_personal_details_page_single
   expect(personal_details_page).to be_displayed
