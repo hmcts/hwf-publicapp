@@ -610,11 +610,13 @@ def to_married_savings
   to_fee_page
   fee_page.submit_fee_yes
   form_name_page.submit_valid_form_number
+  applying_on_behalf_page.submit_no
 
   national_insurance_presence_page.submit_yes
   national_insurance_page.submit_valid_ni
 
   marital_status_page.submit_married
+  partner_national_insurance_page.submit_valid_ni
 end
 
 def to_married_savings_ucd
