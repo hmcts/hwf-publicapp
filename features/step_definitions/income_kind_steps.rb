@@ -6,7 +6,7 @@ Given(/^I am a single person on kind of income page$/) do
 end
 
 Given(/^I am a single person on kind of income page ucd$/) do
-  to_income_kind_single_ucd
+  to_income_kind_single
   expect(income_kind_page.content).to have_choose_income_single_ucd
   expect(income_kind_page.content).to have_representative_hint_single
   # expect(income_kind_page.content).to have_step_info_ucd
@@ -21,7 +21,7 @@ Given(/^I am a married person on kind of income page$/) do
 end
 
 Given(/^I am a married person on kind of income page ucd$/) do
-  to_income_kind_married_ucd
+  to_income_kind_married
   expect(income_kind_page.content).to have_choose_income_married_ucd
   expect(income_kind_page.content).to have_representative_hint_married
   # expect(income_kind_page.content).to have_step_info_ucd
