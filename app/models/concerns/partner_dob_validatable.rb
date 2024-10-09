@@ -37,8 +37,4 @@ module PartnerDobValidatable
     partner_date_of_birth < maximum_date_of_birth
   end
 
-  def partner?
-    ucd_changes_apply? && is_married?
-  end
-
 end

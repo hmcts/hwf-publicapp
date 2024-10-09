@@ -13,9 +13,8 @@ RSpec.describe Forms::PersonalDetail do
   let(:partner_last_name) { '' }
 
   describe 'validations' do
-    context 'ucd changes and married' do
+    context 'married' do
       before do
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form.is_married = true
       end
 
@@ -114,14 +113,13 @@ RSpec.describe Forms::PersonalDetail do
       expect(subject).to eql(title: title, first_name: trimmed_first_name, last_name: trimmed_last_name)
     end
 
-    context 'ucd changes and married' do
+    context 'married' do
       let(:partner_first_name) { " partner first name  " }
       let(:trimmed_partner_first_name) { "partner first name" }
       let(:partner_last_name) { "partner last name  " }
       let(:trimmed_partner_last_name) { "partner last name" }
 
       before do
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form.is_married = true
       end
 

@@ -1,38 +1,38 @@
 - content_for :page_title
-  = t('title', scope: 'home.checklist_ucd')
+  = t('title', scope: 'home.checklist')
   = ' - '
 
 = render "shared/maintenance_notice" if Settings.maintenance.show.present?
 
-h1.govuk-heading-l =t('heading', scope: 'home.checklist_ucd')
+h1.govuk-heading-l =t('heading', scope: 'home.checklist')
 
-- t('sections', scope: 'home.checklist_ucd').each do |section|
+- t('sections', scope: 'home.checklist').each do |section|
   =display_section(section)
 
 details.govuk-details data-module="govuk-details"
   summary.govuk-details__summary
-    span =t('home.checklist_ucd.national_insurance.details.summary')
+    span =t('home.checklist.national_insurance.details.summary')
 
   .govuk-details__text
     .text
       ul.govuk-list.govuk-list--bullet
-        li =t('item_1', scope: 'home.checklist_ucd.national_insurance.details.section_1')
-        li =link_to t('item_2', scope: 'home.checklist_ucd.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+        li =t('item_1', scope: 'home.checklist.national_insurance.details.section_1')
+        li =link_to t('item_2', scope: 'home.checklist.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
 
 details.govuk-details data-module="govuk-details"
   summary.govuk-details__summary
-    span =t('details.summary', scope: 'home.checklist_ucd')
+    span =t('details.summary', scope: 'home.checklist')
 
   .govuk-details__text
     .text
       ul.govuk-list.govuk-list--bullet
-        li =t('details.section_1.item_1', scope: 'home.checklist_ucd')
+        li =t('details.section_1.item_1', scope: 'home.checklist')
 
-p.govuk-body =t('paper_form_html', scope: 'home.checklist_ucd')
+p.govuk-body =t('paper_form_html', scope: 'home.checklist')
 
-p.govuk-body =t('accurate_information', scope: 'home.checklist_ucd')
+p.govuk-body =t('accurate_information', scope: 'home.checklist')
 
-p.govuk-body =link_to t('accurate_information_link', scope: 'home.checklist_ucd'), 'https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees/how-to-apply-for-help-with-fees-ex160a-for-applications-made-or-fees-paid-on-or-after-27-november-2023', class: 'external govuk-link', rel: 'external'
+p.govuk-body =link_to t('accurate_information_link', scope: 'home.checklist'), 'https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees/how-to-apply-for-help-with-fees-ex160a-for-applications-made-or-fees-paid-on-or-after-27-november-2023', class: 'external govuk-link', rel: 'external'
 
 
 = link_to(t('submit_button'), start_session_path, role: :button, class: 'govuk-button')

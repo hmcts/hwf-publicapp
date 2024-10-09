@@ -19,11 +19,11 @@ module Forms
     MAXIMUM_AGE = 120
 
     before_validation :dob_dates
-    before_validation :partner_dob_dates, if: :partner?
-    before_validation :reset_partner_dob, unless: :partner?
+    before_validation :partner_dob_dates, if: :is_married?
+    before_validation :reset_partner_dob, unless: :is_married?
 
     validate :dob_age_valid?
-    validate :partner_dob_age_valid?, if: :partner?
+    validate :partner_dob_age_valid?, if: :is_married?
 
     private
 

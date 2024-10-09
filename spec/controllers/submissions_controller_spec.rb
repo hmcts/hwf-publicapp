@@ -37,7 +37,7 @@ RSpec.describe SubmissionsController do
       let(:response) { { result: true, message: 'HWF-000-000' } }
 
       context 'signed by' do
-        let(:schema) { FeatureSwitch::CALCULATION_SCHEMAS[1] }
+        let(:schema) { Rails.configuration.ucd_schema }
 
         it 'assigns statement to online application' do
           expect(online_application.statement_signed_by).to eq 'applicant'

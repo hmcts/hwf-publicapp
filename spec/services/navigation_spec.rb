@@ -135,7 +135,7 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, :no_income) }
 
         before do
-          online_application.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+          online_application.calculation_scheme = Rails.configuration.ucd_schema
         end
 
         it 'routes to the probate question' do

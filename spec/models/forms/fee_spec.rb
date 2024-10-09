@@ -77,7 +77,7 @@ RSpec.describe Forms::Fee do
       let(:paid) { true }
 
       it 'returns hash with refund true and date_fee_paid set' do
-        expect(subject).to eql(refund: true, date_fee_paid: date_paid, calculation_scheme: FeatureSwitch::CALCULATION_SCHEMAS[0])
+        expect(subject).to eql(refund: true, date_fee_paid: date_paid, calculation_scheme: Rails.configuration.ucd_schema)
       end
     end
 
@@ -85,7 +85,7 @@ RSpec.describe Forms::Fee do
       let(:paid) { false }
 
       it 'returns hash with refund false dna date_fee_paid nil' do
-        expect(subject).to eql(refund: false, date_fee_paid: nil, calculation_scheme: FeatureSwitch::CALCULATION_SCHEMAS[1])
+        expect(subject).to eql(refund: false, date_fee_paid: nil, calculation_scheme: Rails.configuration.ucd_schema)
       end
     end
   end

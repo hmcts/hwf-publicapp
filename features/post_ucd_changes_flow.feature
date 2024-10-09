@@ -8,7 +8,7 @@ Feature: End to end tests
     When I click the start button
     Then I am on the checklist page
     When I continue
-    Then I am on the fee page ucd
+    Then I am on the fee page
 
   Scenario: Path not applying on behalf someone else
     When I should be taken to fee page

@@ -23,8 +23,7 @@ module Forms
     def amount_greater_than_or_equal
       return if over_66 == true || amount.nil?
 
-      errors.add(:amount, :greater_than_or_equal_to_ucd) if amount < 4250 && ucd_changes_apply?
-      errors.add(:amount, :greater_than_or_equal_to) if amount < 3000 && !ucd_changes_apply?
+      errors.add(:amount, :greater_than_or_equal_to) if amount < 4250
     end
 
     def export_params
