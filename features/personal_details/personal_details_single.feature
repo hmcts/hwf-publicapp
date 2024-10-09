@@ -2,7 +2,7 @@ Feature: Personal details page
 
   Background: Navigating to the personal details page
     Given probate is enabled
-    And I am on the personal details page with probate enabled
+    And I am single and on the personal details page with probate enabled
   
   Scenario: Displays header
     Then I should see 'What is your full name?' header

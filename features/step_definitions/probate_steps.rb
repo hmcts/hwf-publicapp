@@ -1,5 +1,5 @@
-Given(/^I am on the page for Are you paying a fee for a probate case\?$/) do
-  to_probate_page
+Given(/^I am '([^"]*)' and on the page for Are you paying a fee for a probate case\?$/) do |status|
+  status == 'married' ? to_probate_page_married : to_probate_page_single
   expect(probate_page.content).to have_step_info
   expect(probate_page.content).to have_header
   expect(probate_page.content).to have_probate_hint

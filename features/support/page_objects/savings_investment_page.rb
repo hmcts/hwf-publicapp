@@ -7,6 +7,7 @@ class SavingsInvestmentPage < BasePage
     element :header, 'h1', text: 'Savings and Investments'
     element :married_reminder, 'div.govuk-hint', text: 'Remember to include your partner’s savings and investments in your total. For more information on what to include in your total see the Help section below.'
     element :hint_text, 'h2', text: 'How much did you have in savings and investments at the time you paid the fee?'
+    element :hint_text_married, 'div.govuk-hint', text: 'Tell us how much you and your partner had in savings and investments at the time you paid the fee.'
     element :married_reminder_ucd, 'div.govuk-hint', text: 'Tell us how much you and your partner have in savings and investments.'
     element :single_reminder, 'div.govuk-hint', text: 'Tell us how much you had in savings and investments at the time you paid the fee.'
     element :low_amount, 'label', text: 'Less than £4,250'

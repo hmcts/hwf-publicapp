@@ -2,7 +2,7 @@ Feature: Dependent page
 
   Background: Navigating to the dependent page
     Given probate is enabled
-    And I am on the dependent page
+    And I am 'single' and on the dependent page
 
   Scenario: Yes to do you have any children
     When I select yes to do you have any children
@@ -26,13 +26,9 @@ Feature: Dependent page
     Then I should see help with financially dependent children copy
 
   Scenario: Dependent page timeout (No option)
-    Given probate is enabled
-    And I am on the dependent page
     When I submit the form with no I do not have any children after a long time
     Then I should see the home page
 
   Scenario: Dependent page timeout (Yes option)
-    Given probate is enabled
-    And I am on the dependent page
     When I submit the form with yes I do have children after a long time
     Then I should see the home page
