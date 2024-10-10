@@ -1,4 +1,4 @@
-Given(/^I am on the personal details page with probate enabled$/) do
+Given(/^I am single and on the personal details page with probate enabled$/) do
   probate_enabled
   to_personal_details_page_single
   expect(personal_details_page).to be_displayed
@@ -29,7 +29,7 @@ When(/^I enter my last name$/) do
 end
 
 When(/^I enter my full name$/) do
-  personal_details_page.submit_full_name(false)
+  personal_details_page.submit_full_name
 end
 
 Then(/^I should be taken to personal details page$/) do
@@ -46,7 +46,7 @@ end
 
 When(/^I slowly enter my name$/) do
   travel 61.minutes do
-    personal_details_page.submit_full_name(false)
+    personal_details_page.submit_full_name
   end
 end
 

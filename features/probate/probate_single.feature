@@ -2,7 +2,7 @@ Feature: Probate page
 
   Background: Navigating to the probate page
     Given probate is enabled
-    And I am on the page for Are you paying a fee for a probate case?
+    And I am 'single' and on the page for Are you paying a fee for a probate case?
 
   Scenario: Selecting no to are you paying a fee for a probate case
     When I select no to are you paying a fee for a probate case
@@ -13,7 +13,7 @@ Feature: Probate page
     And I enter the name of deceased
     And I enter a valid date of death
     Then I should be taken to the claim page
-    
+
   Scenario: Partially selecting yes to are you paying a fee for a probate case
     When I select yes to are you paying a fee for a probate case
     And I click continue

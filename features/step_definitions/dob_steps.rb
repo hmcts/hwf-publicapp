@@ -1,4 +1,4 @@
-Given(/^I am on the date of birth page$/) do
+Given(/^I am single and on the date of birth page$/) do
   to_dob_page_single
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_header
@@ -6,7 +6,7 @@ Given(/^I am on the date of birth page$/) do
 end
 
 Given(/^I am married and on the date of birth page$/) do
-  to_dob_page
+  to_dob_page_married
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_header_partner
   expect(dob_page.content).to have_dob_hint
@@ -26,6 +26,10 @@ end
 
 And(/^I enter an invalid date of birth$/) do
   dob_page.over_age_dob
+end
+
+And(/^I enter an invalid date of birth for partner$/) do
+  dob_page.over_age_partner_dob
 end
 
 Then(/^I should see this format hint$/) do

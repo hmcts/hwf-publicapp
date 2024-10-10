@@ -19,7 +19,7 @@ Given(/^I am a married person on the savings and investments page$/) do
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header
-  expect(savings_investment_page.content).to have_married_reminder
+  expect(savings_investment_page.content).to have_hint_text_married
 end
 
 Given(/^I am a married person on the savings and investments page ucd$/) do

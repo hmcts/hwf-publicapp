@@ -2,8 +2,8 @@ Feature: Claim page
 
   Background: Navigating to the claim page
     Given probate is enabled
-    And I am on the claim page
- 
+    And I am 'single' and on the claim page
+
   Scenario: Selecting no to do you have a case, claim or notice to pay number
     When I select no to do you have a case, claim or notice to pay number
     Then I should be taken to date of birth page

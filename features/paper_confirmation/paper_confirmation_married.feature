@@ -1,13 +1,13 @@
 @hwf_submit_application
 
-Feature: Online confirmation page
+Feature: Paper confirmation page
 
   Background: Navigating to the confirmation page
-    Given I am on the online confirmation page with probate enabled
+    Given I am 'married' and on the paper confirmation page with probate enabled
 
   Scenario: Displays instructions
-    Then I should see online instruction points
-    And I should see online next steps
+    Then I should see instruction points
+    And I should see next steps
 
   Scenario: Save or print this page
     Then I should see save or print this page
@@ -16,6 +16,6 @@ Feature: Online confirmation page
     When I click the finish application button
     Then I should be taken to the survey page
 
-  Scenario: Finish page timeout
+  Scenario: Paper page timeout
     When I slowly click the finish application button
     Then I should see the home page
