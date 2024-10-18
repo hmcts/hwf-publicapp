@@ -5,7 +5,7 @@ Given(/^I am on the marital status page$/) do
 end
 
 Given(/^I am on the marital status page ucd$/) do
-  to_marital_status_ucd
+  to_marital_status
   expect(marital_status_page.content).to have_step_info_ucd
   expect(marital_status_page.content).to have_header_ucd
   expect(marital_status_page.content).to have_subheader
