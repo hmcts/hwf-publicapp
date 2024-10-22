@@ -2,8 +2,9 @@ class PersonalDetailsPage < BasePage
   set_url '/questions/personal_detail'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 17 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 20 of 25'
     element :header, 'h1', text: 'What is your full name?'
+    element :married_header, 'h1', text: 'What are the full names of both you and your partner?'
     element :optional_hint, '.optional', text: 'Optional'
     element :first_name, '#personal_detail_first_name'
     element :last_name, '#personal_detail_last_name'
@@ -12,7 +13,6 @@ class PersonalDetailsPage < BasePage
   end
 
   def submit_full_name
-    fill_in 'Title(Optional)', with: 'Ms'
     fill_in 'First name', with: 'Sally'
     fill_in 'Last name', with: 'Smith'
     continue
@@ -35,5 +35,6 @@ class PersonalDetailsPage < BasePage
     content.last_name.set('Test')
     content.partner_first_name.set('Tina')
     content.partner_last_name.set('Test')
+    continue
   end
 end

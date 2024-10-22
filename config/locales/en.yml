@@ -26,8 +26,8 @@ en:
         identifier: Employment tribunal claim number
       forms/dependent:
         children_number: Number of children
-        children_age_band_one: Number of children aged 0-13
-        children_age_band_two: Number of children aged 14 and over
+        children_age_band_one: How many children do you have aged 0-13?
+        children_age_band_two: How many children do you have aged 14 and over?
       forms/fee:
         date_paid: Date fee paid
         day_date_paid: Day
@@ -199,7 +199,7 @@ en:
               too_long: Town must be less than 50 characters
               invalid_name: Must not contain special characters
             legal_representative_position:
-              invalid: 'Only latters and spaces are allowed'
+              invalid: 'Only letters and spaces are allowed'
         forms/over16:
           attributes:
             over_16:
@@ -1343,7 +1343,7 @@ en:
     - title:
       parts:
       - p: This accessibility statement applies to the Help with Fees service.
-      - p: "This website is run by Her Majesty's Courts and Tribunals Service (HMCTS). We want as many people as possible to be able to use this online form. For example, that means you should be able to:"
+      - p: "This website is run by HM Courts and Tribunals Service (HMCTS). We want as many people as possible to be able to use this online form. For example, that means you should be able to:"
       - ul:
         - li: change colours, contrast levels and fonts
         - li: zoom in up to 300% without the text spilling off the screen
@@ -1354,11 +1354,8 @@ en:
       - p: <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.
     - title: How accessible this website is
       parts:
-      - p: We are in the process of arranging a full Web Content Accessibility Guidelines (WCAG) version 2.1 audit for this online form.
-      - p: We will update this statement once we’ve received the WCAG 2.1 audit report. In the meantime, we have done some basic tests, and addressed the issues that were flagged.
-      - p: We used components in the GOV.UK Design System to build this form. The <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">Design System accessibility guide</a> explains the current state of accessibility for these components.
-      - p: Components listed on the <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">Design System accessibility guide</a> are fully compliant with the WCAG 2.1 AA standard.
-      - p: The feedback form corresponding to the link ‘help us improve’ is provided by Google Forms and therefore does not use components of the GOV.UK Design System.
+      - p: This website is fully compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1 AA standard.</a>
+      - p: There are no known accessibility issues within this service.
     - title: Feedback and contact information
       parts:
       - p: "If you need information on this form in a different format like accessible PDF, large print, easy read, audio recording or braille:"
@@ -1383,26 +1380,12 @@ en:
       sections:
         - title: Compliance status
           parts:
-          - p: This website is partially compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1</a> AA standard, due to the exemptions listed below.
-    - title: Non-accessible content
-      parts:
-      - p: The content listed below is non-accessible for the following reasons.
-      sections:
-        - title: Non-compliance with the accessibility regulations
-          parts:
-          sections:
-            - title: Lack of manual accessibility testing
-              parts:
-              - p: Some basic testing has been conducted on the Help with Fees service. Specifically, the service was made to pass WCAG 2.1 AA standard tests outputted by HTML web accessibility testing tools, Pa11y and WAVE. The form was also tested from start to finish with keyboard testing, zooming in to 300% and VoiceOver.
-              - p: However, the lack of manual accessibility testing means that it is not possible to declare the service fully compliant. The full WCAG 2.1 audit to be carried out will clarify the overall accessibility of the service. This will allow us to make the service fully compliant.
-    - title: What we’re doing to improve accessibility
-      parts:
-      - p: We are in the process of arranging a full WCAG 2.1 audit of this online form. We will then update this statement.
+          - p: This website is fully compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1 AA standard.</a>
+          - p: There are no known accessibility issues within this service.
     - title: Preparation of this accessibility statement
       parts:
-      - p: This statement was prepared on 2 October 2020. It was last updated on 5 October 2020
-      - p: This website was last tested on 2 October 2020. The tests were carried out by Her Majesty’s Courts and Tribunals Service (HMCTS).
-
+      - p: This statement was prepared on 13 November 2023. It was last updated on 20 November 2023.
+      - p: This website was last tested on 8 November 2023. The test was carried out by HM Courts and Tribunals (HMCTS).
 
 
   home:

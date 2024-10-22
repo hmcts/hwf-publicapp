@@ -16,9 +16,9 @@ Feature: National insurance page
     When I click continue
     Then I should see enter your national insurance number error message
 
-  Scenario: Help with status
-    When I click on 'Why do we ask for this?'
-    Then I should see a line explaining why
+  Scenario: Help with lost NI number
+    When I click on 'Find a lost National Insurance number'
+    Then I should see a line explaining how
 
   Scenario: National insurance page timeout
     When I slowly submit a valid national insurance number

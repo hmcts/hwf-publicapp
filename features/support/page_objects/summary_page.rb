@@ -2,12 +2,12 @@ class SummaryPage < BasePage
   set_url '/summary'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 21 of 22'
-    element :step_info_ucd, '.govuk-caption-l', text: 'Step 21 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 24 of 25'
     element :header, 'h1', text: 'Check details'
     element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     element :probate, '.govuk-summary-list__row', text: 'Probate case No'
     element :declaration_of_truth, 'h2', text: 'Declaration and statement of truth'
+    element :declaration_of_truth_checkbox, 'label', text: 'I am the applicant or litigation friend completing this application.'
     sections :summary_row, '.govuk-summary-list__row' do
       element :action, 'a', text: 'Change'
     end
@@ -27,6 +27,7 @@ class SummaryPage < BasePage
   end
 
   def submit_application
+    content.declaration_of_truth_checkbox.click
     content.submit_application_button.click
   end
 

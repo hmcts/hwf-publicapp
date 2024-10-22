@@ -4,7 +4,7 @@ class HomeOfficePage < BasePage
 
   section :content, '#content' do
     element :header, 'h1', text: 'What is your Home Office reference number?'
-    element :step_info, '.govuk-caption-l', text: 'Step 5 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 8 of 25'
     element :hint, 'div.govuk-hint', text: 'For example, L1234567 or L1234567/1 (for family members) or 1111-2222-3333-4444 or 1111-2222-3333-4444/1 (for family members)'
     element :home_offce_number, '#home_office_ho_number'
     element :user_paper_form, 'p', text: "If you are over 16 and don't have a National Insurance number or Home Office reference number, you'll need to fill in the paper application form and apply to the court or tribunal by post or email."

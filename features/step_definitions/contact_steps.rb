@@ -1,6 +1,6 @@
-Given(/^I am on the contact page with probate enabled$/) do
+Given(/^I am '([^"]*)' and on the contact page with probate enabled$/) do |status|
   probate_enabled
-  to_contact_page
+  status == 'married' ? to_contact_page_married : to_contact_page_single
   expect(contact_page.content).to have_step_info
   expect(contact_page.content).to have_header
   expect(contact_page.content).to have_confirmation_email

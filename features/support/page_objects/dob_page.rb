@@ -4,8 +4,9 @@ class DobPage < BasePage
   set_url '/questions/dob'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 16 of 22'
+    element :step_info, '.govuk-caption-l', text: 'Step 19 of 25'
     element :header, 'h1', text: 'What is your date of birth?'
+    element :header_partner, 'h1', text: 'What are you and your partner’s date of birth'
     element :dob_hint, '.govuk-hint', text: 'For example, 04 10 1990'
     element :dob_day, '#dob_day'
     element :dob_month, '#dob_month'
@@ -62,6 +63,16 @@ class DobPage < BasePage
     continue
   end
 
+  def static_dobs
+    content.dob_day.set('23')
+    content.dob_month.set('07')
+    content.dob_year.set('1980')
+    content.dob_partner_day.set('01')
+    content.dob_partner_month.set('01')
+    content.dob_partner_year.set('1981')
+    continue
+  end
+
   def under_age_dob
     age = Time.zone.today - 14.years
     content.dob_day.set(age.day)
@@ -75,6 +86,18 @@ class DobPage < BasePage
     content.dob_day.set(age.day)
     content.dob_month.set(age.month)
     content.dob_year.set(age.year)
+
+    continue
+  end
+
+  def over_age_partner_dob
+    age = Time.zone.today - 150.years
+    content.dob_day.set('28')
+    content.dob_month.set('11')
+    content.dob_year.set('1992')
+    content.dob_partner_day.set(age.day)
+    content.dob_partner_month.set(age.month)
+    content.dob_partner_year.set(age.year)
 
     continue
   end

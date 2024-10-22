@@ -1,5 +1,5 @@
-Given(/^I am on the dependent page$/) do
-  to_dependent_page
+Given(/^I am ([^"]*)' and on the dependent page$/) do |status|
+  status == 'married' ? to_dependent_page_married : to_dependent_page_single
   expect(dependent_page.content).to have_step_info
   expect(dependent_page.content).to have_header
 end
@@ -13,8 +13,8 @@ When(/^I submit the form with no I do not have any children$/) do
 end
 
 When(/^I submit the form with four children$/) do
-  expect(dependent_page.content).to have_num_of_children
-  dependent_page.content.children_number.set 4
+  expect(dependent_page.content).to have_children_number_ucd
+  dependent_page.content.children_number_ucd.set 4
   continue
 end
 

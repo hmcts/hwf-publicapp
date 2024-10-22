@@ -28,6 +28,49 @@ RSpec.describe Forms::Dob do
         it { expect(form_dob.valid?).to be true }
       end
 
+      context 'zero dobs' do
+        describe 'partner day is zero' do
+          before do
+            form_dob.partner_day = '0'
+            form_dob.partner_month = '01'
+            form_dob.partner_year = '1980'
+          end
+
+          it { expect(form_dob.valid?).to be false }
+        end
+
+        describe 'partner month is zero' do
+          before do
+            form_dob.partner_day = '23'
+            form_dob.partner_month = '0'
+            form_dob.partner_year = '1980'
+          end
+
+          it { expect(form_dob.valid?).to be false }
+        end
+
+        describe 'partner year is zero' do
+          before do
+            form_dob.partner_day = '23'
+            form_dob.partner_month = '01'
+            form_dob.partner_year = '0'
+          end
+
+          it { expect(form_dob.valid?).to be false }
+        end
+
+        describe 'day, month, year are zero' do
+          before do
+            form_dob.partner_day = '0'
+            form_dob.partner_month = '0'
+            form_dob.partner_year = '0'
+          end
+
+          it { expect(form_dob.valid?).to be false }
+        end
+
+      end
+
       context 'blank dobs' do
         before do
           form_dob.partner_day = '23'

@@ -9,10 +9,7 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        fill_in :applicant_address_street, with: '10, The Street'
-        fill_in :applicant_address_town, with: 'London'
-        fill_in :applicant_address_postcode, with: 'PO5T 0DE'
-        click_button 'Continue'
+        fill_applicant_address
       end
 
       scenario 'I expect to be routed to the "contact" page' do

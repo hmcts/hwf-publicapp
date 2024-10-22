@@ -22,13 +22,15 @@ withPipeline(type, product, component) {
    sh script:"""#!/bin/bash -l
        set +x
        source /usr/local/rvm/scripts/rvm
-       rvm install ruby-3.3.4
+       rvm install ruby-3.3.5
    """, label: 'Ruby version install'
   }
 
    before('test') {
       sh script:"npm install", label: 'Start test'
+      rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
   }
 }
+
 

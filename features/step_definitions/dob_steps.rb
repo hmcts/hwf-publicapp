@@ -1,12 +1,23 @@
-Given(/^I am on the date of birth page$/) do
-  to_dob_page
+Given(/^I am single and on the date of birth page$/) do
+  to_dob_page_single
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_header
   expect(dob_page.content).to have_dob_hint
 end
 
+Given(/^I am married and on the date of birth page$/) do
+  to_dob_page_married
+  expect(dob_page.content).to have_step_info
+  expect(dob_page.content).to have_header_partner
+  expect(dob_page.content).to have_dob_hint
+end
+
 When(/^I enter a valid date of birth$/) do
   dob_page.valid_dob
+end
+
+When(/^I enter a valid dates of birth for myself and partner$/) do
+  dob_page.valid_partner_dob
 end
 
 When(/^I enter a date of less than fifteen years$/) do
@@ -15,6 +26,10 @@ end
 
 And(/^I enter an invalid date of birth$/) do
   dob_page.over_age_dob
+end
+
+And(/^I enter an invalid date of birth for partner$/) do
+  dob_page.over_age_partner_dob
 end
 
 Then(/^I should see this format hint$/) do
