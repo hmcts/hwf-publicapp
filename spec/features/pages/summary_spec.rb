@@ -6,36 +6,36 @@ RSpec.feature 'As a user' do
   context 'when accessing the "summary" page for "Help with fees"' do
     # temporarily commenting out:
     # navigating directly to summary doesn't maintain dependent page selection
-#     context 'after answering yes to the dependents question' do
-#       before do
-#         given_user_answers_questions_up_to(:dependent)
-#         choose 'dependent_children_true'
-#         fill_in :dependent_children_number, with: '10'
-#         click_button 'Continue'
-#         check :income_kind_applicant_none_of_the_above
-#         click_button 'Continue'
-#         page.visit '/summary'
-#       end
+    #     context 'after answering yes to the dependents question' do
+    #       before do
+    #         given_user_answers_questions_up_to(:dependent)
+    #         choose 'dependent_children_true'
+    #         fill_in :dependent_children_number, with: '10'
+    #         click_button 'Continue'
+    #         check :income_kind_applicant_none_of_the_above
+    #         click_button 'Continue'
+    #         page.visit '/summary'
+    #       end
 
-#       scenario 'I expect to see my answer' do
-#         expect(page).to have_content 'Children10'
-#       end
-#     end
+    #       scenario 'I expect to see my answer' do
+    #         expect(page).to have_content 'Children10'
+    #       end
+    #     end
 
-#     context 'after answering no to the dependents question' do
-#       before do
-#         given_user_answers_questions_up_to(:dependent)
-#         choose 'dependent_children_false'
-#         click_button 'Continue'
-#         check :income_kind_applicant_none_of_the_above
-#         click_button 'Continue'
-#         page.visit '/summary'
-#       end
+    #     context 'after answering no to the dependents question' do
+    #       before do
+    #         given_user_answers_questions_up_to(:dependent)
+    #         choose 'dependent_children_false'
+    #         click_button 'Continue'
+    #         check :income_kind_applicant_none_of_the_above
+    #         click_button 'Continue'
+    #         page.visit '/summary'
+    #       end
 
-#       scenario 'I expect to a negative answer' do
-#         expect(page).to have_content 'ChildrenNo'
-#       end
-#     end
+    #       scenario 'I expect to a negative answer' do
+    #         expect(page).to have_content 'ChildrenNo'
+    #       end
+    #     end
 
     context 'when probate fess is still active' do
       before { travel_to a_day_before_disable_probate_fees }
