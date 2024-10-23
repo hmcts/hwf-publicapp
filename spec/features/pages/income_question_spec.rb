@@ -56,7 +56,7 @@ RSpec.feature 'As a user' do
       scenario 'I expect to be shown the "income_amount" page with error block' do
         expect(page).to have_content 'How much income did you and your partner receive?'
         expect(page).to have_content 'There is a problem'
-        expect(page).to have_xpath('//a[@class="error-link"]', text: 'Enter how much income do you receive')
+        expect(page).to have_xpath('//p[@class="govuk-error-message"]', text: 'Enter how much income do you receive')
       end
     end
   end
