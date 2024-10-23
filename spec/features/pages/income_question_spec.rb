@@ -56,37 +56,7 @@ RSpec.feature 'As a user' do
       scenario 'I expect to be shown the "income_amount" page with error block' do
         expect(page).to have_content 'How much income did you and your partner receive?'
         expect(page).to have_content 'There is a problem'
-        expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter how much income do you receive')
-      end
-    end
-  end
-
-  context 'when accessing the "income_kind" before probate is disabled' do
-    context 'completing the form correctly' do
-      context 'when "no income" selected' do
-        before do
-          travel_to a_day_before_disable_probate_fees
-          given_user_answers_questions_up_to(:income_kind)
-          check :income_kind_applicant_none_of_the_above
-          click_button 'Continue'
-        end
-
-        scenario 'I expect to be routed to the "probate" page' do
-          expect(page).to have_content 'Are you paying a fee for a probate case?'
-        end
-      end
-
-      context 'when some income sources selected' do
-        before do
-          given_user_answers_questions_up_to(:income_kind)
-          check :income_kind_applicant_child_benefit
-          check :income_kind_applicant_universal_credit
-          click_button 'Continue'
-        end
-
-        scenario 'I expect to be routed to the "income_range" page' do
-          expect(page).to have_content 'How much income did you receive last month?'
-        end
+        expect(page).to have_xpath('//p[@class="govuk-error-message"]', text: 'Enter how much income do you receive')
       end
     end
   end
