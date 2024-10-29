@@ -32,6 +32,7 @@ gem 'govuk_notify_rails'
 # To fix ruby 3.3.3 gemsepec file issue with this gem
 gem 'net-pop', github: 'ruby/net-pop'
 
+gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
   gem "pry-rails"
