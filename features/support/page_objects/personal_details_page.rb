@@ -12,8 +12,7 @@ class PersonalDetailsPage < BasePage
     element :partner_last_name, '#personal_detail_partner_last_name'
   end
 
-  def submit_full_name(title = true)
-    fill_in 'Title(Optional)', with: 'Ms' if title
+  def submit_full_name
     fill_in 'First name', with: 'Sally'
     fill_in 'Last name', with: 'Smith'
     continue

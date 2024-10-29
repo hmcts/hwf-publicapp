@@ -1190,7 +1190,7 @@ cy:
     - title:
       parts:
       - p: Mae'r datganiad hygyrchedd hwn yn berthnasol i'r gwasanaeth Cymorth â Ffioedd.
-      - p: "Mae'r wefan hon yn cael ei rhedeg gan Wasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi (GLlTEM). Rydym am i gynifer o bobl â phosibl allu defnyddio'r ffurflen ar-lein hon. Er enghraifft, mae hynny'n golygu y dylech chi allu:"
+      - p: "Gwasanaeth Llysoedd a Thribiwnlysoedd EM sy’n gyfrifol am y wefan hon (GLlTEM). . Rydym am i gynifer o bobl â phosibl allu defnyddio'r ffurflen ar-lein hon. Er enghraifft, mae hynny'n golygu y dylech chi allu:"
       - ul:
         - li: newid lliwiau, lefelau cyferbyniad a ffontiau
         - li: chwyddo hyd at 300% heb golli'r testun oddi ar y sgrin
@@ -1199,13 +1199,10 @@ cy:
       - p: Sylwch mai cydnawsedd â VoiceOver yn unig a gynhwyswyd yn y profion hygyrchedd a gynhaliwyd hyd yma.
       - p: Rydym hefyd wedi gwneud y testun mor syml â phosibl i'w ddeall.
       - p: Mae gan <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i'w defnyddio os oes gennych anabledd.
-    - title: Hygyrchedd y wefan hon
+    - title: Pa mor hygyrch yw'r wefan hon
       parts:
-      - p: Rydym yn y broses o drefnu archwiliad llawn fersiwn 2.1 y Canllawiau Hygyrchedd Cynnwys ar y We (WCAG) o’r ffurflen ar-lein hon.
-      - p: Byddwn yn diweddaru'r datganiad hwn ar ôl i ni dderbyn adroddiad archwilio 2.1 WCAG. Yn y cyfamser, rydym wedi gwneud rhai profion sylfaenol, ac wedi mynd i'r afael â'r materion a amlygwyd.
-      - p: Defnyddiwyd cydrannau yn System Ddylunio GOV.UK. i lunio’r ffurflen hon. Mae <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">canllaw hygyrchedd y System Ddylunio</a> yn egluro cyflwr hygyrchedd cyfredol y cydrannau hyn.
-      - p: Mae'r cydrannau a restrir yng <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">nghanllaw hygyrchedd y System Ddylunio</a> yn cydymffurfio'n llawn â safon AA WCAG 2.1.
-      - p: Darperir y ffurflen adborth y gellir ei chael drwy’r ddolen ‘helpwch ni i wella’ gan Google Forms ac felly nid yw’n defnyddio cydrannau System Ddylunio GOV.UK.
+      - p: Mae’r wefan hon yn cydymffurfio’n llawn â’r <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Canllawiau Hygyrchedd Cynnwys Gwe fersiwn 2.1 safon AA.</a>
+      - p: Nid oes unrhyw faterion hygyrchedd hysbys o fewn y gwasanaeth hwn.
     - title: Sylwadau a gwybodaeth am sut i gysylltu â ni
       parts:
       - p: "Os oes arnoch angen yr wybodaeth ar y ffurflen hon mewn fformat gwahanol fel PDF hygyrch, print bras, hawdd ei ddarllen, recordiad sain neu braille:"
@@ -1230,25 +1227,12 @@ cy:
       sections:
         - title: Statws cydymffurfio
           parts:
-          - p: Mae'r wefan hon yn cydymffurfio'n rhannol â safon AA <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">fersiwn 2.1 y Canllawiau Hygyrchedd Cynnwys ar y We</a>, oherwydd yr eithriadau a restrir isod.
-    - title: Cynnwys nad yw’n hygyrch
-      parts:
-      - p: Nid yw'r cynnwys a restrir isod yn hygyrch am y rhesymau canlynol.
-      sections:
-        - title: Diffyg cydymffurfio â’r rheoliadau hygyrchedd
-          parts:
-          sections:
-            - title: Diffyg profion hygyrchedd llawn
-              parts:
-              - p: Mae rhywfaint o brofion sylfaenol wedi'u cynnal ar y gwasanaeth Cymorth gyda Ffioedd. Yn benodol, sicrhawyd bod y gwasanaeth yn pasio profion safonol AA WCAG 2.1 a gynhaliwyd gydag offer profi hygyrchedd gwe HTML, Pa11y a WAVE. Profwyd y ffurflen hefyd o'r dechrau i'r diwedd gyda phrofion bysellfwrdd, chwyddo i mewn i 300% a VoiceOver.
-              - p: Fodd bynnag, mae'r diffyg profion hygyrchedd llawn yn golygu nad yw'n bosibl datgan bod y gwasanaeth yn cydymffurfio'n llawn. Bydd archwiliad llawn WCAG 2.1 sydd i'w gynnal yn egluro hygyrchedd cyffredinol y gwasanaeth. Bydd hyn yn caniatáu inni sicrhau bod y gwasanaeth yn cydymffurfio'n llawn.
-    - title: Beth rydym ni’n ei wneud i wella hygyrchedd
-      parts:
-      - p: Rydym wrthi'n trefnu archwiliad llawn WCAG 2.1 o'r ffurflen ar-lein hon. Yna byddwn yn diweddaru'r datganiad hwn.
+          - p: Mae’r wefan hon yn cydymffurfio’n llawn â’r <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Canllawiau Hygyrchedd Cynnwys Gwe fersiwn 2.1 safon AA.</a>
+          - p: Nid oes unrhyw faterion hygyrchedd hysbys o fewn y gwasanaeth hwn.
     - title: Paratoi’r datganiad hygyrchedd hwn
       parts:
-      - p: Paratowyd y datganiad hwn ar 2 Hydref 2020. Fe'i diweddarwyd ddiwethaf ar 5 Hydref 2020.
-      - p: Profwyd y wefan hon ddiwethaf ar 2 Hydref 2020. Cynhaliwyd y profion gan Wasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi (GLlTEM).
+      - p: Paratowyd y datganiad hwn ar 13 Tachwedd 2023. Fe'i diweddarwyd ddiwethaf ar 20 Tachwedd 2023.
+      - p: Profwyd y wefan hon ddiwethaf ar 8 Tachwedd 2023. Cynhaliwyd y prawf gan y Llysoedd a Thribiwnlysoedd EM (GLlTEM).
 
   home:
     checklist:

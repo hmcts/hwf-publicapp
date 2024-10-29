@@ -1,7 +1,7 @@
 Feature: Contact page
 
   Background: Navigating to the contact page
-    Given I am on the contact page with probate enabled
+    Given I am 'single' and on the contact page with probate enabled
 
   Scenario: Entering a valid email address
     When I enter a valid email address

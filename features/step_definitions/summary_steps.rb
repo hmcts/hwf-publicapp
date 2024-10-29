@@ -1,20 +1,20 @@
-Given(/^I am on the summary page with probate enabled$/) do
+Given(/^I am '([^"]*)' and on the summary page with probate enabled$/) do |status|
   probate_enabled
-  to_summary_page_probate_enabled
+  status == 'married' ? to_summary_page_probate_enabled_married : to_summary_page_probate_enabled_single
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
   expect(summary_page.content).to have_check_details_hint
 end
 
-Given(/^I am on the summary page with probate enabled and paid a fee$/) do
+Given(/^I am '([^"]*)' and on the summary page with probate enabled and paid a fee$/) do |status|
   probate_enabled
-  to_summary_page_probate_enabled_fee_paid
+  status == 'married' ? to_summary_page_probate_enabled_fee_paid_married : to_summary_page_probate_enabled_fee_paid_single
 end
 
-Given(/^I am on the summary page with probate disabled$/) do
+Given(/^I am '([^"]*)' and on the summary page with probate disabled$/) do |status|
   probate_disabled
-  to_summary_page_probate_disabled
+  status == 'married' ? to_summary_page_probate_disabled_married : to_summary_page_probate_disabled_single
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
   expect(summary_page.content).to have_check_details_hint
@@ -25,8 +25,8 @@ Given(/^I have a home office number but not a national insurance number$/) do
   summary_page.home_office_number
 end
 
-Then(/^I am on the summary page$/) do
-  to_summary_page_with_ho_number
+Then(/^I am '([^"]*)' and on the summary page$/) do |status|
+  status == 'married' ? to_summary_page_with_ho_number_married : to_summary_page_with_ho_number_single
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header

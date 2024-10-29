@@ -1,11 +1,11 @@
 Feature: Summary page
 
   Scenario: Displays your details table - probate enabled
-    Given I am on the summary page with probate enabled
+    Given I am 'married' and on the summary page with probate enabled
     Then I should see probate in the check details table
 
   Scenario: Displays your details table - probate disabled
-    Given I am on the summary page with probate disabled
+    Given I am 'married' and on the summary page with probate disabled
     Then I should see my details:
     | scope                                                                     |
     | Form name or number C100 Change form name or number                       |
@@ -40,7 +40,7 @@ Feature: Summary page
 
   Scenario: Displays home office number
     Given I have a home office number but not a national insurance number
-    And I am on the summary page
+    And I am 'married' and on the summary page
     Then I should see my details:
     | scope                                                                     |
     | Form name or number C100 Change form name or number                       |
@@ -61,36 +61,35 @@ Feature: Summary page
     | Email test@hmcts.net Change email                                         |
 
   Scenario: Displays declaration of truth
-    Given I am on the summary page with probate enabled
+    Given I am 'married' and on the summary page with probate enabled
     Then I should see declaration of truth
 
   @hwf_submit_application @zap
   Scenario: Continue button
-    Given I am on the summary page with probate enabled
+    Given I am 'married' and on the summary page with probate enabled
     When I click submit application and continue
     Then I should be taken to confirmation page
 
   @hwf_submit_application @zap
   Scenario: User details are not persisted
-    Given I am on the summary page with probate enabled
+    Given I am 'married' and on the summary page with probate enabled
     When I click submit application and continue
     And I visit the start session path
     Then I expect to have a blank form number
 
   @hwf_submit_application
   Scenario: User submits for a successful refund
-    Given I am on the summary page with probate enabled and paid a fee
+    Given I am 'married' and on the summary page with probate enabled and paid a fee
     When I click submit application and continue
     Then I should be taken to confirmation page about refund
 
   Scenario: User submits a benefit application and then changes benefit answer.
-    Given I am on the summary page with probate disabled
+    Given I am 'married' and on the summary page with probate disabled
     And I change the benefit status
     And I navigate back to the summary page using the browser back button
     Then I should see a changes notification.
 
   Scenario: User submits with the service down
-    Given I am on the summary page with probate enabled and paid a fee
+    Given I am 'married' and on the summary page with probate enabled and paid a fee
     When The submission service is down and I click continue
     Then They are redirected to the summary page with error message.
-

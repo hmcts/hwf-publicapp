@@ -51,7 +51,7 @@ Feature: End to end tests
     When I answer no to over 16
     Then I should be taken to savings and investments page
 
-  Scenario: End to end post UCD
+  Scenario: End to end
     When I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with a help with fees form number 'XX10'
@@ -64,7 +64,7 @@ Feature: End to end tests
     Then I should be on are you applying for over 16 page
     When I answer yes to over 16
     Then I should be taken to national insurance page
-    When I submit a valid national insurance number (UCD)
+    When I submit a valid national insurance number
     Then I should be taken to marital status page
     When I submit the form as married
     Then I should be taken to partner national insurance page

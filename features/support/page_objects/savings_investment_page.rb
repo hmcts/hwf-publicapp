@@ -5,8 +5,10 @@ class SavingsInvestmentPage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 11 of 25'
     element :header, 'h1', text: 'Savings and Investments'
+    element :married_reminder, 'div.govuk-hint', text: 'Remember to include your partner’s savings and investments in your total. For more information on what to include in your total see the Help section below.'
     element :hint_text, 'h2', text: 'How much did you have in savings and investments at the time you paid the fee?'
-    element :married_reminder, 'div.govuk-hint', text: 'Tell us how much you and your partner have in savings and investments.'
+    element :hint_text_married, 'div.govuk-hint', text: 'Tell us how much you and your partner had in savings and investments at the time you paid the fee.'
+    element :married_reminder_ucd, 'div.govuk-hint', text: 'Tell us how much you and your partner have in savings and investments.'
     element :single_reminder, 'div.govuk-hint', text: 'Tell us how much you had in savings and investments at the time you paid the fee.'
     element :low_amount, 'label', text: 'Less than £4,250'
     element :medium_amount, 'label', text: 'Between £4,250 and £15,999'
@@ -45,6 +47,20 @@ class SavingsInvestmentPage < BasePage
   end
 
   def slowly_low_amount_checked
+    travel 61.minutes do
+      savings_investment_page.content.low_amount.click
+      continue
+    end
+  end
+
+  def slowly_mid_amount_checked_ucd
+    travel 61.minutes do
+      savings_investment_page.content.medium_amount.click
+      continue
+    end
+  end
+
+  def slowly_low_amount_checked_ucd
     travel 61.minutes do
       savings_investment_page.content.low_amount.click
       continue

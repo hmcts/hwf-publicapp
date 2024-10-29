@@ -1,7 +1,7 @@
 Feature: Address page
 
   Background: Navigating to the address page
-    Given I am on the address page with probate enabled
+    Given I am 'single' and on the address page with probate enabled
 
   Scenario: Entering address with postcode
     When I enter my address with postcode

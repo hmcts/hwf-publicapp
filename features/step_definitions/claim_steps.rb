@@ -1,5 +1,5 @@
-Given(/^I am on the claim page$/) do
-  to_claim_page
+Given(/^I am '([^"]*)' and on the claim page$/) do |status|
+  status == 'married' ? to_claim_page_married : to_claim_page_single
   expect(claim_page).to be_displayed
   expect(claim_page.content).to have_step_info
   expect(claim_page.content).to have_header

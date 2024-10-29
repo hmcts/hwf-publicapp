@@ -1,6 +1,6 @@
-Given(/^I am on the paper confirmation page with probate enabled$/) do
+Given(/^I am '([^"]*)' and on the paper confirmation page with probate enabled$/) do |status|
   probate_enabled
-  to_confirmation_page
+  status == 'married' ? to_confirmation_page_married : to_confirmation_page_single
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
@@ -8,9 +8,9 @@ Given(/^I am on the paper confirmation page with probate enabled$/) do
   expect(confirmation_page.content).to have_confirmation_header_paper_two
 end
 
-Given(/^I am on the online confirmation page with probate enabled$/) do
+Given(/^I am '([^"]*)' and on the online confirmation page with probate enabled$/) do |status|
   probate_enabled
-  to_online_confirmation_page
+  status == 'married' ? to_online_confirmation_page_married : to_online_confirmation_page_single
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header

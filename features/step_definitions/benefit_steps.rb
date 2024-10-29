@@ -1,5 +1,5 @@
-Given(/^I am on the benefit page$/) do
-  to_benefit_page
+Given(/^I am '([^"]*)' and on the benefit page$/) do |status|
+  status == 'married' ? to_benefit_page_married : to_benefit_page_single
   expect(benefit_page).to be_displayed
   expect(benefit_page.content).to have_step_info
   expect(benefit_page.content).to have_header

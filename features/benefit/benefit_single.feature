@@ -2,7 +2,7 @@ Feature: Benefit page
 
   Scenario: Displays instruction bullet points
     Given probate is enabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     Then I should see the instruction bullet points:
     | benefit                                                                                                                   |
     | If you are receiving one of the benefits listed in column 1, select ‘Yes’.                                                |
@@ -11,7 +11,7 @@ Feature: Benefit page
 
   Scenario: Displays benefits table
     Given probate is enabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     Then I should see the benefits table:
     | Income-based Jobseeker’s Allowance (JSA)                                                | Contribution-based Job Seekers Allowance (JSA)                                       |
     | Income-related Employment and Support Allowance (ESA)                                   | Contribution-based Employment and Support Allowance (ESA)                            |
@@ -22,36 +22,36 @@ Feature: Benefit page
 
   Scenario: No I am not receiving any benefits from list
     Given probate is enabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     When I submit the form with no I do not receive one of the benefits listed
     Then I should be taken to dependent page
 
   Scenario: Yes I am receiving benefits from list - probate enabled
     Given probate is enabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     When I submit the form with yes I am receiving one of the benefits listed
     Then I should be taken to the probate page
   
   Scenario: Yes I am receiving benefits from list - probate disabled
     Given probate is disabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     When I submit the form with yes I am receiving one of the benefits listed
     Then I should be taken to the claim page
 
   Scenario: Displays error message
     Given probate is enabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     When I click continue
     Then I should see select whether you're receiving one of the benefits listed error message
 
   Scenario: Benefit page timeout (Yes option)
     Given probate is disabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     When I slowly submit the form with yes I am receiving one of the benefits listed
     Then I should see the home page
 
   Scenario: Benefit page timeout (No option)
     Given probate is disabled
-    And I am on the benefit page
+    And I am 'single' and on the benefit page
     When I slowly submit the form with no I am not receiving one of the benefits listed
     Then I should see the home page
