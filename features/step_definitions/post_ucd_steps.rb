@@ -4,15 +4,15 @@ When('the ucd changes apply') do
 end
 
 Then('I should be on the application on behalf of someone else page') do
-  expect(on_behalf_page.content).to have_header
+  expect(applying_on_behalf_page.content).to have_header
 end
 
 When('I answer No to on behalf question') do
-  on_behalf_page.not_applying_on_behalf
+  applying_on_behalf_page.submit_no
 end
 
 When('I answer Yes to on behalf question') do
-  on_behalf_page.applying_on_behalf
+  applying_on_behalf_page.submit_yes
 end
 
 Then('I should be on are you legal representative page') do
