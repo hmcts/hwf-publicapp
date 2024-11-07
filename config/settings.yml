@@ -33,72 +33,29 @@ maintenance:
 mail:
   help_me: <%= ENV['HELP_ME_EMAIL'] %>
 navigation:
-  old_default:
-    - :form_name
-    - :fee
-    - :national_insurance_presence
-    - :national_insurance
-    - :home_office
-    - :marital_status
-    - :savings_and_investment
-    - :savings_and_investment_extra
-    - :benefit
-    - :dependent
-    - :income_kind
-    - :income_range
-    - :income_amount
-    - :probate
-    - :claim
-    - :dob
-    - :personal_detail
-    - :applicant_address
-    - :contact
-    - :apply_type
-  pre_ucd_changes:
-    - :fee
-    - :form_name
-    - :national_insurance_presence
-    - :national_insurance
-    - :home_office
-    - :marital_status
-    - :savings_and_investment
-    - :savings_and_investment_extra
-    - :benefit
-    - :dependent
-    - :income_kind
-    - :income_range
-    - :income_amount
-    - :probate
-    - :claim
-    - :dob
-    - :personal_detail
-    - :applicant_address
-    - :contact
-    - :apply_type
-  post_ucd_changes:
-    - :fee
-    - :form_name
-    - :applying_on_behalf
-    - :legal_representative
-    - :legal_representative_detail
-    - :over_16
-    - :national_insurance
-    - :home_office
-    - :marital_status
-    - :partner_national_insurance
-    - :savings_and_investment
-    - :savings_and_investment_extra
-    - :benefit
-    - :dependent
-    - :income_kind
-    - :income_period
-    - :probate
-    - :claim
-    - :dob
-    - :personal_detail
-    - :applicant_address
-    - :contact
-    - :apply_type
+  - :fee
+  - :form_name
+  - :applying_on_behalf
+  - :legal_representative
+  - :legal_representative_detail
+  - :over_16
+  - :national_insurance
+  - :home_office
+  - :marital_status
+  - :partner_national_insurance
+  - :savings_and_investment
+  - :savings_and_investment_extra
+  - :benefit
+  - :dependent
+  - :income_kind
+  - :income_period
+  - :probate
+  - :claim
+  - :dob
+  - :personal_detail
+  - :applicant_address
+  - :contact
+  - :apply_type
 
 feature_switching:
   - feature_key: "band test"

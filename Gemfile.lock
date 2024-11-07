@@ -338,7 +338,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.3.8)
+    rexml (3.3.9)
     rspec-core (3.13.1)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.3)
@@ -509,6 +509,7 @@ DEPENDENCIES
   redis
   regexp_parser
   rest-client
+  rexml (>= 3.3.9)
   rspec-rails
   rspec_junit_formatter
   rubocop (~> 1.40)

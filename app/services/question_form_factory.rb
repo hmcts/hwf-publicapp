@@ -1,12 +1,8 @@
 class QuestionFormFactory
   class QuestionDoesNotExist < StandardError; end
 
-  def self.page_list(calculation_scheme = '')
-    if calculation_scheme == Rails.configuration.ucd_schema.to_s
-      Settings.navigation.post_ucd_changes
-    else
-      Settings.navigation.pre_ucd_changes
-    end
+  def self.page_list
+    Settings.navigation
   end
 
   def self.position(id)
@@ -14,7 +10,7 @@ class QuestionFormFactory
   end
 
   def self.get_form(id, calculation_scheme)
-    raise QuestionDoesNotExist unless page_list(calculation_scheme).include?(id)
+    raise QuestionDoesNotExist unless page_list.include?(id)
 
     class_name = "Forms::#{form_class_name(id)}".constantize
     form = class_name.new

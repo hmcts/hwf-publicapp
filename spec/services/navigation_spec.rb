@@ -13,14 +13,14 @@ RSpec.describe Navigation do
 
     {
       fee: :form_name,
-      form_name: :national_insurance_presence,
+      form_name: :applying_on_behalf,
       national_insurance_presence: :national_insurance,
       national_insurance: :marital_status,
       home_office: :marital_status,
       marital_status: :savings_and_investment,
       savings_and_investment_extra: :benefit,
       dependent: :income_kind,
-      income_amount: :probate,
+      income_period: :probate,
       probate: :claim,
       claim: :dob,
       dob: :personal_detail,
@@ -126,8 +126,8 @@ RSpec.describe Navigation do
       end
 
       context 'when the application is not 0 income - some income sources selected' do
-        it 'routes to the income_range question' do
-          expect(subject).to eql(question_path(:income_range, locale: :en))
+        it 'routes to the income_period question' do
+          expect(subject).to eql(question_path(:income_period, locale: :en))
         end
       end
 
@@ -144,14 +144,14 @@ RSpec.describe Navigation do
       end
     end
 
-    context 'for income_range question' do
-      let(:current_question) { :income_range }
+    context 'for income_period question' do
+      let(:current_question) { :income_period }
 
       context 'when the application is between thresholds' do
         let(:online_application) { build(:online_application, :income_between_thresholds) }
 
-        it 'routes to the income_amount question' do
-          expect(subject).to eql(question_path(:income_amount, locale: :en))
+        it 'routes to the probate question' do
+          expect(subject).to eql(question_path(:probate, locale: :en))
         end
       end
 
@@ -214,7 +214,7 @@ RSpec.describe Navigation do
         let(:current_question) { :applying_on_behalf }
 
         it 'skips to ni number' do
-          online_application.calculation_scheme = 'q4_23'
+          online_application.calculation_scheme = Rails.configuration.ucd_schema
           expect(subject).to eql(question_path(:national_insurance, locale: :en))
         end
       end
@@ -224,7 +224,7 @@ RSpec.describe Navigation do
         let(:current_question) { :applying_on_behalf }
 
         it 'skips to legal_representative' do
-          online_application.calculation_scheme = 'q4_23'
+          online_application.calculation_scheme = Rails.configuration.ucd_schema
           expect(subject).to eql(question_path(:legal_representative, locale: :en))
         end
       end

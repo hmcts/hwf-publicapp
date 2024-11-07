@@ -8,7 +8,7 @@ module NavigationHelper
   end
 
   def last_question?
-    @current_question == QuestionFormFactory.page_list(calculation_scheme).last
+    @current_question == QuestionFormFactory.page_list.last
   end
 
   # This need more refactoring
@@ -33,8 +33,8 @@ module NavigationHelper
   # rubocop:enable Metrics/MethodLength
 
   def question_id
-    current_question_index = QuestionFormFactory.page_list(calculation_scheme).find_index(@current_question)
-    next_id = QuestionFormFactory.page_list(calculation_scheme)[current_question_index + 1]
+    current_question_index = QuestionFormFactory.page_list.find_index(@current_question)
+    next_id = QuestionFormFactory.page_list[current_question_index + 1]
 
     if next_id == :probate && !enable_probate?
       :claim

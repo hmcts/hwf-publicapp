@@ -4,7 +4,7 @@ module FeatureSteps
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
 
-    QuestionFormFactory.page_list('q4_23').take_while { |id| id != question }.each do |id|
+    QuestionFormFactory.page_list.take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
       next if skip_step(id)
 
