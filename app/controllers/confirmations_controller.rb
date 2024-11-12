@@ -5,6 +5,7 @@ class ConfirmationsController < ApplicationController
 
   def show
     prepare_view
+    @form = Forms::ReferenceConfirm.new
   end
 
   def refund

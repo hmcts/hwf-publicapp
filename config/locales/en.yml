@@ -379,9 +379,8 @@ en:
     online_ucd:
       heading: Your Help with Fees reference number is %{claim_number}
       sub_heading: You have one more step to take below
-      h3_one: Final step
       h3_two: What happens next
-      p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
+      p_one: You have completed an application online for help paying a court or tribunal fee.
       p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
       p_three: You should send this to them as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new HWF application.
       p_four: If you are applying to the court online, put your Help with Fees reference number onto their system when prompted.
@@ -1094,6 +1093,8 @@ en:
     statement:
       signed_by_legal_representative: I am the legal representative completing this application.
       signed_by_applicant: I am the applicant or litigation friend completing this application.
+    reference_confirm:
+      reference_confirm_checkbox: I confirm I will add the above reference number to my online court/tribunal application
   restart_application:
       cancel_button: "Cancel application"
       copy_1: "Are you sure you want to cancel your application?"

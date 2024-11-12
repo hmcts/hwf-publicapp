@@ -390,9 +390,8 @@ cy:
     online_ucd:
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
-      h3_one: Cam Olaf
       h3_two: Beth fydd yn digwydd nesaf
-      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
+      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys.
       p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
       p_three: Dylech anfon hwn atynt fel rhan o’ch hawliad o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
       p_four: Os ydych chi'n gwneud cais ar-lein i'r llys, rhowch eich cyfeirnod Help i Dalu Ffioedd ar y system pan ofynnir ichi wneud hynny.
@@ -464,6 +463,7 @@ cy:
     finish: Gorffen cais
     print: Cadw neu argraffu'r dudalen hon
     feedback_text: Ar ôl i chi orffen eich cais, fe'ch cyfeirir at ffurflen adborth ddewisol.
+    reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn ychwanegu'r cyfeirnod uchod at fy nghais ar-lein i'r llys/tribiwnlys
     refund:
       breadcrumb: Cam 22 o 22
       breadcrumb_ucd: Cam 26 o 26
