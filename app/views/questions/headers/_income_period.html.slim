@@ -4,9 +4,9 @@ p.govuk-body
 p.govuk-body
 ul class="govuk-list govuk-list--bullet"
   - @online_application.income_kind[:applicant].map do |kind|
-      li= kind
+    li= I18n.t(kind, scope: ['questions.income_kind_ucd.kinds'])
   - @online_application.income_kind[:partner].map do |kind|
-      li= kind
+    li= I18n.t(kind, scope: ['questions.income_kind_ucd.kinds'])
 
 p.govuk-body
   = t('amount_prompt', scope: income_period_postfix(@online_application))
