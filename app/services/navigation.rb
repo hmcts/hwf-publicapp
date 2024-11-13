@@ -16,7 +16,7 @@ class Navigation
   end
 
   def page_number
-    current_index = QuestionFormFactory.page_list(calculation_scheme).find_index(@current_question)
+    current_index = QuestionFormFactory.page_list.find_index(@current_question)
     return 0 if current_index.nil?
 
     current_index + 1

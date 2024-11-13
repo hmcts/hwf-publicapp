@@ -69,7 +69,6 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
 
           context 'ucd changes apply' do
             before {
-              form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
               form.valid?
             }
 

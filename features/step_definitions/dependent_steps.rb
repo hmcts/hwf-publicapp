@@ -13,8 +13,8 @@ When(/^I submit the form with no I do not have any children$/) do
 end
 
 When(/^I submit the form with four children$/) do
-  expect(dependent_page.content).to have_children_number_ucd
-  dependent_page.content.children_number_ucd.set 4
+  expect(dependent_page.content).to have_children_number
+  dependent_page.content.children_number.set 4
   continue
 end
 

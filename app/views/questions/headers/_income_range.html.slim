@@ -1,10 +1,5 @@
 p.govuk-body = t("details.kinds_list#{i18n_status_refund_suffix(@online_application)}", scope: @form.i18n_scope)
 
-- if ucd_changes_apply?(@online_application.calculation_scheme)
-  ul.govuk-list.govuk-list--bullet
-    - Views::IncomeKinds.new(session).list_ucd.each do |kind|
-      li = kinds_alternative_translation(kind)
-- else
-  ul.govuk-list.govuk-list--bullet
-    - Views::IncomeKinds.new(session).list.each do |kind|
-      li = kinds_alternative_translation(kind)
+ul.govuk-list.govuk-list--bullet
+  - Views::IncomeKinds.new(session).list.each do |kind|
+    li = kinds_alternative_translation(kind)

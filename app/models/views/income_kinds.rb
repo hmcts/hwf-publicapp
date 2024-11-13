@@ -10,12 +10,6 @@ module Views
       end
     end
 
-    def list_ucd
-      kinds_ucd.map do |kind|
-        I18n.t(kind, scope: ['questions.income_kind_ucd.kinds'])
-      end
-    end
-
     private
 
     def kinds
@@ -23,14 +17,6 @@ module Views
         arr.uniq!
         arr.sort!
         arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_index }
-      end
-    end
-
-    def kinds_ucd
-      (source.fetch('applicant', []) + source.fetch('partner', [])).tap do |arr|
-        arr.uniq!
-        arr.sort!
-        arr.delete_if { |kind| kind == Forms::IncomeKind.no_income_index_ucd }
       end
     end
 
