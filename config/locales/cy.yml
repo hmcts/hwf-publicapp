@@ -325,8 +325,7 @@ cy:
           attributes:
             amount:
               blank: Rhowch y swm o gynilion a buddsoddiadau sydd gennych chi
-              greater_than_or_equal_to: Rhowch swm rhwng £3,000 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
-              greater_than_or_equal_to_ucd: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
+              greater_than_or_equal_to: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
               less_than: Rhowch swm rhwng £4,250 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
             over_66:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 66
@@ -356,8 +355,7 @@ cy:
     submission_error: "Ni allwn brosesu eich cais ar hyn o bryd. Rhowch gynnig arall arni yn hwyrach ymlaen."
     submission_statement_error: "Dewiswch p’un ai chi yw’r ceisydd/cyfaill cyfreitha neu’r cynrychiolydd cyfreithiol yn y cais hwn"
     default:
-      breadcrumb: Cam 22 o 22
-      breadcrumb_ucd: Cam 26 o 26
+      breadcrumb: Cam 26 o 26
       title: Anfonwch eich ffurflen hawlio
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">Beth yw eich barn am y gwasanaeth hwn?</a>
     online:
@@ -367,32 +365,6 @@ cy:
       h3_two: Beth fydd yn digwydd nesaf
       p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
       p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
-      p_three: Os ydych chi'n gwneud cais ar-lein i'r llys, rhowch eich cyfeirnod Help i Dalu Ffioedd ar y system pan ofynnir ichi wneud hynny.
-      p_four_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i  ddod o hyd i fanylion cyswllt pellach.
-      p_five: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
-      template:
-        line_one: "Nodwch eich cyfeirnod uchod yn yr adran help i dalu ffioedd ar y ffurflen ar-lein. Dylai eich ffurflen gais ar-lein i’r llys edrych rhywbeth fel hyn:"
-      contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
-    paper:
-      heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
-      sub_heading: Mae gennych un cam arall i’w gyflawni isod
-      h3_one: Cam Olaf
-      h3_two: Beth fydd yn digwydd nesaf
-      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
-      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
-      p_three: Dylech gynnwys y cyfeirnod yn yr adran Help i Dalu Ffioedd y ffurflen hawlio. Os nad oes adran Help i Dalu Ffioedd ar y ffurflen, ysgrifennwch y cyfeirnod ar frig y ffurflen hawlio.
-      p_four_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
-      p_five: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
-      template:
-        reference: 'Cyfeirnod: %{reference}'
-        line_one: Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un].
-        line_two: Yn gywir,
-    online_ucd:
-      heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
-      sub_heading: Mae gennych un cam arall i’w gyflawni isod
-      h3_two: Beth fydd yn digwydd nesaf
-      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys.
-      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
       p_three: Dylech anfon hwn atynt fel rhan o’ch hawliad o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
       p_four: Os ydych chi'n gwneud cais ar-lein i'r llys, rhowch eich cyfeirnod Help i Dalu Ffioedd ar y system pan ofynnir ichi wneud hynny.
       p_five_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i  ddod o hyd i fanylion cyswllt pellach.
@@ -400,7 +372,7 @@ cy:
       template:
         line_one: "Nodwch eich cyfeirnod uchod yn yr adran help i dalu ffioedd ar y ffurflen ar-lein. Dylai eich ffurflen gais ar-lein i’r llys edrych rhywbeth fel hyn:"
       contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
-    paper_ucd:
+    paper:
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
       h3_one: Cam Olaf
@@ -438,8 +410,7 @@ cy:
             three: 215 Bothwell Street
             two: Eagle Building
           heading: Yr Alban
-      breadcrumb: Cam 22 o 22
-      breadcrumb_ucd: Cam 26 o 26
+      breadcrumb: Cam 26 o 26
       heading: Nid yw eich cais am help i dalu ffioedd wedi'i orffen eto
       letter:
         five: "%{full_name}"
@@ -465,8 +436,7 @@ cy:
     feedback_text: Ar ôl i chi orffen eich cais, fe'ch cyfeirir at ffurflen adborth ddewisol.
     reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn ychwanegu'r cyfeirnod uchod at fy nghais ar-lein i'r llys/tribiwnlys
     refund:
-      breadcrumb: Cam 22 o 22
-      breadcrumb_ucd: Cam 26 o 26
+      breadcrumb: Cam 26 o 26
       title: Anfonwch eich cyfeirnod i gwblhau'r broses
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
@@ -502,8 +472,7 @@ cy:
     edit:
       back_button: Ewch i'r dudalen flaenorol
     fee:
-      breadcrumb:  Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details: Gallwch wneud cais am ad-daliad am ffi a dalwyd yn ystod y 3 mis diwethaf. Os ydych yn gwneud cais am ad-daliad, dylech ateb pob cwestiwn am eich amgylchiadau ar yr adeg y gwnaethoch dalu'r ffi.
       date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: 'Nac ydw'
@@ -514,8 +483,7 @@ cy:
     applying_on_behalf:
       hint: A yw’r cais ar ran rhywun arall?
       title: Ydych chi’n gwneud cais ar ran rhywun arall?
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: Ydych chi’n gwneud cais ar ran rhywun arall?
       details: A yw’r cais ar ran rhywun arall?
       inset_text: Os ydych chi’n gwneud cais ar ran rhywun arall, fel cynrychiolydd cyfreithiol neu gyfaill cyfreitha, dylech ddarparu eu manylion nhw yn y cais hwn.
@@ -523,13 +491,11 @@ cy:
       applying_on_behalf_true: 'Oes'
 
     applicant_address:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: Beth yw eich cyfeiriad?
       title: Eich cyfeiriad
     benefit:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         section_1:
           details: "efallai na fydd ein staff yn gallu cadarnhau eich cymhwysedd gyda’r Adran Gwaith a Phensiynau.  Yn yr achos hwn, dylech ddarparu llythyr gan y Ganolfan Waith."
@@ -564,8 +530,7 @@ cy:
       text_refund: Oeddech chi'n derbyn unrhyw un o'r budd-daliadau canlynol?
       title: Budd-daliadau
     claim/default:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         section_1: Mae'r llys neu dribiwnlys yn creu cyfeirnod ar gyfer pob achos. Weithiau mae hwn yn cael ei alw’n rhif hawliad, rhif achos, rhif apêl neu rif ‘hysbysiad talu’.
         section_2: Os yw'ch achos yn mynd ymlaen ar hyn o bryd, bydd y cyfeirnod ar lythyrau oddi wrth y llys neu dribiwnlys.
@@ -578,8 +543,7 @@ cy:
       text: A oes gennych chi rif achos, rhif hawliad, rhif apêl neu rif ‘hysbysiad talu’?
       title: Rhif hawliad neu achos
     claim/et:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         section_1: Mae'ch rhif hawliad tribiwnlys cyflogaeth yn gyfeirnod unigryw ar gyfer eich hawliad tribiwnlys cyflogaeth.
         section_2: Byddwch chi'n cael rhif hawliad pan wnewch chi hawliad tribiwnlys cyflogaeth ar-lein.
@@ -589,16 +553,14 @@ cy:
       text: Rhowch eich rhif hawliad tribiwnlys cyflogaeth
       title: Rhif hawliad
     contact:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details: Byddwn yn anfon neges e-bost atoch yn cadarnhau eich cyfeirnod Help i Dalu Ffioedd.
       email_label: Cyfeiriad e-bost
       feedback_opt_in: Ticiwch y blwch hwn os ydych chi'n barod i rannu'ch profiad o'r gwasanaeth hwn. Efallai y bydd aelod o'r tîm yn cysylltu â chi. Ni fyddwn yn defnyddio'ch cyfeiriad e-bost at unrhyw bwrpas arall.
       text: Beth yw eich cyfeiriad e-bost?
       title: Eich cyfeiriad e-bost
     apply_type:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       title: A fyddwch yn gwneud eich cais i’r llys neu’r tribiwnlys ar bapur neu’n defnyddio gwasanaeth ar-lein?
       text: A fyddwch yn gwneud eich cais i’r llys neu’r tribiwnlys ar bapur neu’n defnyddio gwasanaeth ar-lein?
       applying_method_paper: 'Bapur'
@@ -610,8 +572,7 @@ cy:
         title_online: Dewiswch 'gwasanaeth ar-lein' os ydych chi'n gwneud eich cais llys neu dribiwnlys gan ddefnyddio gwasanaeth ar-lein.
         text_online: Mae angen i chi wneud cais am Help i Dalu Ffioedd ar adeg gwneud cais i’r llys neu’r tribiwnlys sydd fel arfer yn cynnwys ffi. Os ydych yn gwneud cais i’r llys neu’r tribiwnlys hwn gan ddefnyddio gwasanaeth ar-lein, dylech ddewis ar-lein. Ar ôl i chi orffen cwblhau'r gwasanaeth Help i Dalu Ffioedd hwn, byddwch yn cael rhif cyfeirnod unigryw Help i Dalu Ffioedd y gallwch ei nodi pan ofynnir i chi wneud hynny ar wasanaeth ar-lein y llys neu'r tribiwnlys.
     dependent:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       children_false: Nac oes
       children_number: Nifer y plant
       children_true: Oes
@@ -647,8 +608,7 @@ cy:
         children_age_band: A oes gennych chi neu’ch partner blant sy’n byw gyda chi, neu blant rydych chi’n eu cynnal y ariannol?
 
     dob:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
@@ -666,8 +626,7 @@ cy:
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       title: Ad-dalu
     form_name:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         item_1: "Yn hytrach na rhif y ffurflen nodwch ‘ffi gwrandawiad’ wedi ei ddilyn gan eglurhad byr, er enghraifft 'ffi gwrandawiad ar gyfer ‘hawliadau bychain’ neu ‘ffi gwrandawiad ar gyfer trac cyflym’."
         summary: Gwneud cais am gymorth gyda ffioedd gwrandawiad
@@ -679,8 +638,7 @@ cy:
       unknown: Nid oes gen i ffurflen
     legal_representative:
       title: Ydych chi’n gynrychiolydd cyfreithiol neu’n gyfaill cyfreitha?
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: Ydych chi’n gynrychiolydd cyfreithiol neu’n gyfaill cyfreitha?
       details: Ydych chi’n gynrychiolydd cyfreithiol neu’n gyfaill cyfreitha?
       legal_representative_legal_representative: 'Cynrychiolydd cyfreithiol'
@@ -689,8 +647,7 @@ cy:
       hint_litigation: Cyfaill cyfreitha yw rhywun a benodir i wneud penderfyniadau am achos llys ar gyfer rhywun sy’n blentyn neu’n oedolyn sydd heb alluedd meddyliol i reoli achos eu hunain. Er enghraifft, gall cyfaill cyfreitha fod yn rhiant, yn aelod o’r teulu neu’n ffrind, yn eiriolwr proffesiynol, yn ddirprwy’r Llys Gwarchod neu’n rhywun sydd ag atwrneiaeth arhosol neu atwrneiaeth barhaus berthnasol.
     legal_representative_detail:
       title: Rhowch fanylion y cynrychiolydd cyfreithiol
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: Rhowch fanylion y cynrychiolydd cyfreithiol
       legal_representative_first_name: 'Enw cyntaf'
       legal_representative_last_name: 'Enw olaf'
@@ -709,8 +666,7 @@ cy:
 
     over16:
       title: A yw’r unigolyn rydych chi’n gwneud cais ar ei ran dros 16 oed?
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: A yw’r unigolyn rydych chi’n gwneud cais ar ei ran dros 16 oed?
       over_16_true: 'Oes'
       over_16_false: 'Nac oes'
@@ -720,8 +676,7 @@ cy:
       amount:
         married: Rhowch gyfanswm yr incwm rydych chi a'ch partner yn ei gael bob mis.
         single: Rhowch gyfanswm yr incwm rydych chi'n ei gael bob mis.
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
@@ -735,36 +690,7 @@ cy:
       text_single_refund: Beth oedd cyfanswm eich incwm?
       title: Swm yr incwm
     income_kind:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
-      details_married: Dewiswch yr holl fathau gwahanol o incwm a gawsoch chi a’ch partner yn y mis calendr diwethaf.
-      details_married_refund: Dewiswch yr holl fathau gwahanol o incwm a gawsoch chi a’ch partner yn y mis calendr cyn ichi dalu eich ffi.
-      details_single: Dewiswch y mathau gwahanol o incwm a gawsoch yn y mis calendr diwethaf.
-      details_single_refund: Dewiswch yr holl fathau gwahanol o incwm a gawsoch chi yn y mis calendr cyn ichi dalu’r ffi.
-      applicant_income: Eich incwm
-      partner_income: Incwm eich partner
-      kinds:
-        '1': Cyflog cyn didyniadau treth ac Yswiriant Gwladol
-        '10': Rhent oddi wrth rywun sy'n byw gyda chi
-        '11': Rhent o eiddo arall rydych chi'n berchen arnynt
-        '12': Incwm arall
-        '13': Dim incwm
-        '2': Budd-dal Plant
-        '3': Credyd Treth Gwaith
-        '4': Credyd Treth Plant
-        '5': Taliadau cynhaliaeth
-        '6': Lwfans Ceisio Gwaith yn Seiliedig ar Gyfraniadau (JSA)
-        '7': Lwfans Cyflogaeth a Chymorth yn Seiliedig ar Gyfraniadau (ESA)
-        '8': Credyd Cynhwysol
-        '9': Pensiynau (gwladwriaeth, gwaith, preifat)
-      text_married: Pa fath o incwm a gawsoch chi a’ch partner mis diwethaf?
-      text_married_refund: Pa fath o incwm rydych chi a'ch partner yn ei gael?
-      text_single: Pa fath o incwm a gawsoch fis diwethaf?
-      text_single_refund: Pa fath o incwm rydych chi'n ei gael?
-      title: Math o incwm
-    income_kind_ucd:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details_married: Ticiwch bob math o incwm rydych chi a’ch partner wedi’i gael yn y mis calendr diwethaf
       details_single: Ticiwch bob math o incwm rydych wedi’i gael yn y mis calendr diwethaf
       hint_details_single: Os nad yw eich incwm am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is. Os felly, ticiwch bob math o incwm ar gyfer y cyfnod hwnnw.
@@ -797,8 +723,7 @@ cy:
       text_single_refund: Mathau o incwm rydych chi wedi’i gael
       title: Math o incwm
     income_range:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
@@ -819,8 +744,7 @@ cy:
       contact_hm_revenue: Efallai y byddwn yn cysylltu â Chyllid a Thollau EM i ddilysu'r incwm rydych yn ei ddatgan. Efallai y byddwn hefyd yn cysylltu â chi os bydd angen i ni weld tystiolaeth ychwanegol.
     income_period:
       title: 'Faint o incwm gawsoch chi?'
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       income_period_last_month: Incwm am y mis calendr diwethaf
       income_period_average: Cyfartaledd incwm am y tri mis calendr diwethaf
       kinds_example:
@@ -838,44 +762,18 @@ cy:
       prompt: "Mae angen i chi ddarparu manylion yr incwm a gawsoch chi a’ch partner yn y mis calendr diwethaf neu ddarparu’r cyfartaledd dros dri mis o:"
       amount_prompt: "Os nad yw eich incwm chi a’ch partner am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is."
 
-    marital_status:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
-      example: 'Os ydych yn gwneud cais am ysgariad, diddymu neu ddirymu priodas, dewiswch ‘Sengl’ oni bai eich bod yn byw gyda phartner newydd.  Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth.'
-      details:
-        section_1:
-          heading: "Dewiswch ‘Wedi priodi neu’n byw â rhywun ac yn rhannu incwm’ os ydych:"
-          item_1: yn briod
-          item_2: yn bartneriaid sifil
-          item_3: yn cyd-fyw fel pe baech chi'n briod neu mewn partneriaeth sifil
-          item_4: yn byw yn yr un cyfeiriad gydag incwm ar y cyd
-          item_5: yn gwpl sy'n gorfod byw ar wahân, ee un neu'r ddau'n gwasanaethu yn y lluoedd arfog, yn y carchar neu'n byw mewn gofal preswyl
-        section_2:
-          heading: "Dewiswch ‘Sengl’ os ydych yn dibynnu ar eich incwm eich hun neu mae eich achos yn ymwneud â’ch partner, er enghraifft:"
-          item_1: wedi ysgaru neu’n gwneud cais am ysgariad ac nid ydych yn byw gyda phartner newydd
-          item_2: diddymiad neu ddirymiad ac nid ydych yn byw gyda phartner newydd
-          item_3: trais domestig
-          item_4: priodas dan orfod
-          item_5: chi a'ch partner ill dau'n rhan o grŵp ffi luosog
-        summary: Help gyda statws
-      married_false: Sengl
-      married_true: Priod neu'n byw gyda rhywun ac yn rhannu incwm
-      text: Ydych chi'n sengl, yn briod neu'n byw gyda rhywun ac yn rhannu incwm?
-      title: Eich statws priodasol
     personal_detail_married:
       text: Beth yw eich enw llawn chi a’ch partner?
     personal_detail:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: Beth yw eich enw llawn?
       title: Teitl
       applicant: Eich manylion chi
       partner: "Manylion eich partner"
       detail_title: Pam ein bod yn gofyn am hyn?
       detail_text: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
-    marital_status_ucd:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+    marital_status:
+      breadcrumb: Cam %{page_number} o 26
       section_1:
         header: 'Dewiswch ‘Sengl’:'
         point_1: os ydych chi’n byw ar eich pen eich hun ac yn dibynnu ar eich incwm chi yn unig gyda neu heb blant dibynnol, neu
@@ -895,8 +793,7 @@ cy:
       title: Eich statws priodasol
       subheader: A ydych chi’n sengl, wedi priodi neu’n byw â rhywun?
     national_insurance_presence:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details:
         section_1:
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
@@ -909,8 +806,7 @@ cy:
       text: A oes gennych rif Yswiriant Gwladol?
       title: A oes gennych rif Yswiriant Gwladol?
     national_insurance:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       prompt: A oes gennych Rif Yswiriant Gwladol?
       text: A oes gennych Rif Yswiriant Gwladol?
       title: A oes gennych Rif Yswiriant Gwladol?
@@ -919,7 +815,7 @@ cy:
           item_1: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Drwy ddarparu hwn byddwch yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
         summary: Pam ein bod yn gofyn am hyn?
       hint: Er enghraifft, QQ123456C
-      post_ucd_example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau.
+      example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau.
       post_ucd_details:
         section_1:
           item_1: chwilio am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
@@ -928,8 +824,7 @@ cy:
       ni_number_present_false: 'Nac oes'
       ni_number_present_true: 'Oes'
     partner_national_insurance:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       title: 'Rhowch rif Yswiriant Gwladol eich partner'
       text: 'Rhowch rif Yswiriant Gwladol eich partner'
       prompt: 'Rhif Yswiriant Gwladol '
@@ -947,8 +842,7 @@ cy:
         summary: Sut i ddod o hyd i rif Yswiriant Gwladol coll
 
     home_office:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       text: Beth yw eich cyfeirnod Swyddfa Gartref?
       title: Beth yw eich cyfeirnod Swyddfa Gartref?
       prompt: Cyfeirnod y Swyddfa Gartref
@@ -958,8 +852,7 @@ cy:
         summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
         item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref
     probate:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       date_of_death: Dyddiad y farwolaeth
@@ -967,9 +860,8 @@ cy:
       probate_case_true: Ydw
       text: Ydych chi'n talu ffi am achos profiant?
       title: Profiant
-    savings_and_investment_ucd:
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+    savings_and_investment:
+      breadcrumb: Cam %{page_number} o 26
       less: "Llai na £4,250"
       between: "Rhwng £4,250 a £15,999"
       more: "£16,000 neu fwy"
@@ -1023,82 +915,19 @@ cy:
           item_17: Cynllun Iawndal Dioddefwyr Terfysgaeth Tramor
           item_18: Taliadau Cronfa Argyfwng We Love Manchester
         summary: Beth i’w hepgor mewn cynilion a buddsoddiadau
-    savings_and_investment:
-      between: "£3,000 i £15,999"
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
-      details:
-        section_1:
-          heading: 'Beth i''w gynnwys mewn cynilion a buddsoddiadau:'
-          item_1: arian mewn ISAs ac unrhyw gyfrif cynilo arall, gan gynnwys Cronfeydd Ymddiriedolaeth Plant aeddfed neu ISAs pobl ifanc
-          item_2: cyfrifon cynilo ar y cyd rydych chi'n eu rhannu â'ch partner
-          item_3: bondiau cyfradd sefydlog neu fuddsoddi
-          item_4: unrhyw gyfandaliad (ee tâl diswyddo)
-          item_5: stociau a chyfrannau
-          item_6: cronfeydd ymddiriedolaeth (neu unrhyw fath arall o gronfa)
-          item_7: gwerth ail gartrefi
-          item_8: unrhyw arian neu eiddo y tu allan i'r DU
-          p_1: Os oes gennych bartner, cofiwch gynnwys eu cynilion a'u buddsoddiadau hefyd, oni bai bod eich achos yn eu cynnwys.
-        section_2:
-          heading: 'Peidiwch â chynnwys y canlynol yng nghyfanswm eich cynilion:'
-          item_1: cyflogau neu fudd-daliadau
-          item_2: cyfrifon cynilo ar y cyd rydych chi'n eu rhannu â'ch partner os yw'ch achos yn erbyn eich partner neu'n ymwneud ag ysgaru neu gydnabod rhywedd
-          item_3: pensiynau personol
-          item_4: gwerth cyfalaf busnesau pobl hunangyflogedig
-          item_5: gwerth unrhyw gerbyd a fyddai'n eich gadael chi neu'ch partner heb gludiant modur os caiff ei werthu
-          item_6: benthyciadau
-          item_7: dyfarndal am ddiswyddo annheg
-          item_8: arian o'r cynllun digolledu am anafiadau troseddol
-          item_9: dyfarndal am esgeuluster meddygol neu anaf personol
-          item_10: digollediad o dan gynllun statudol mewn perthynas â Mesothelioma
-        summary: Help ar beth i'w gynnwys fel cynilion a buddsoddiadau
-      less: "£0 i £2,999"
-      more: "£16,000 neu fwy"
-      subtext_married: I’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi. I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
-      subtext_single: At y bunt agosaf, dewiswch o’r opsiynau isod faint o arian sydd gennych wedi’i gynilo a’i fuddsoddi.  Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth am yr hyn dylech ei gynnwys yn eich cyfanswm.
-      subtext_married_refund: ’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar yr adeg wnaethoch chi dalu’r ffi. I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
-      subtext_single_refund: I’r bunt agosaf, dewiswch o’r opsiynau isod faint o arian roedd gennych wedi’i gynilo a’i fuddsoddi ar yr adeg wnaethoch chi dalu’r ffi. Cliciwch ar yr adran gymorth isod i gael mwy o wybodaeth am yr hyn dylech ei gynnwys yn eich cyfanswm.
-      text: Beth yw swm eich cynilion a buddsoddiadau?
-      title: Cynilion a buddsoddiadau
     savings_and_investment_married:
-      text: Faint o arian sydd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi?
+      text: Cynilion a buddsoddiadau
     savings_and_investment_single:
-      text: Beth yw swm eich cynilion a buddsoddiadau?
+      text: Cynilion a buddsoddiadau
     savings_and_investment_married_refund:
-      text: Faint o arian oedd gennych chi a’ch partner wedi’i gynilo a’i fuddsoddi ar y dyddiad wnaethoch chi dalu’r ffi?
+      text: Cynilion a buddsoddiadau
     savings_and_investment_single_refund:
-      text: Faint o arian oedd gennych wedi’i gynilo a’i fuddsoddi ar y dyddiad wnaethoch chi dalu’r ffi?
-    savings_and_investment_married_ucd:
-      text: Cynilion a buddsoddiadau
-    savings_and_investment_single_ucd:
-      text: Cynilion a buddsoddiadau
-    savings_and_investment_married_refund_ucd:
-      text: Cynilion a buddsoddiadau
-    savings_and_investment_single_refund_ucd:
       text: Cynilion a buddsoddiadau
     savings_and_investment_extra:
-      amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
-      amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
-      amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
-      over_66_false_single: *single_no
-      over_66_true_single: *single_yes
-      over_66_false_married: *married_no
-      over_66_true_married: *married_yes
-      over_66_false_single_refund: *single_no
-      over_66_true_single_refund: *single_yes
-      over_66_false_married_refund: *married_no
-      over_66_true_married_refund: *married_yes
-      text_married: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
-      text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
-      title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
-    savings_and_investment_extra_ucd:
       amount_married: Faint o gynilion a buddsoddiadau rhwng £4,250 a £15,999 sydd gennych chi a'ch partner?
       amount_single: Faint o gynilion a buddsoddiadau rhwng £4,250 a £15,999 sydd gennych chi?
       amount_hint: 'Wedi ei dalgrynnu i’r £ agosaf'
-      breadcrumb: Cam %{page_number} o 22
-      breadcrumb_ucd: Cam %{page_number} o 26
+      breadcrumb: Cam %{page_number} o 26
       over_66_false_single: *single_no
       over_66_true_single: *single_yes
       over_66_false_married: *married_no
@@ -1134,8 +963,7 @@ cy:
 
     applicant_on_benefits_false: Ddim yn derbyn budd-daliadau cymwys
     applicant_on_benefits_true: Yn derbyn budd-daliadau cymwys
-    breadcrumb: Cam 21 o 22
-    breadcrumb_ucd: Cam 25 o 26
+    breadcrumb: Cam 25 o 26
     change: Newid
     children_false: Nac oes
     claim_number_false: Nac oes
@@ -1409,47 +1237,6 @@ cy:
 
   home:
     checklist:
-      title: Beth fydd arnoch ei angen?
-      heading: Beth fydd arnoch ei angen?
-      sections:
-      - parts:
-          - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i’r llys neu’r tribiwnlys. Bydd yn rhoi rhif cyfeirnod Help i Dalu Ffioedd i chi, y gallwch ei nodi ar eich cais i’r llys neu’r tribiwnlys.'
-          - p: 'Os ydych yn gwneud sawl hawliad neu sawl cais, bydd rhaid i’r holl geiswyr wneud cais ar wahân am Help i Dalu Ffioedd a chyflwyno’r cyfeirnodau ar-lein i’r llys.'
-          - p: 'Bydd y staff yn prosesu’r rhif cyfeirnod Help i Dalu Ffioedd ynghyd â’r cais i’r llys neu’r tribiwnlys, ac yn rhoi gwybod i chi os oes arnoch angen talu rhywfaint tuag at y ffi, neu os oes arnynt angen rhagor o wybodaeth gennych chi.'
-
-          - p: '<h2 class="govuk-heading-m">Cyn i chi barhau, gwnewch yn siŵr fod gennych:</h2>'
-          - ul:
-            - li: eich rhif Yswiriant Gwladol neu
-            - li: eich cyfeirnod Swyddfa Gartref - efallai y bydd gennych gyfeirnod Swyddfa Gartref os ydych yn destun rheoliadau mewnfudo
-            - li: rhif y ffurflen llys neu dribiwnlys
-            - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
-      - title:
-        parts:
-          - p: 'Hefyd bydd arnoch angen manylion eich:'
-          - ul:
-            - li: incwm, yn cynnwys cyflog
-            - li: cynilion a buddsoddiadau
-            - li: incwm, cynilion a buddsoddiadau eich partner - os oes gennych un
-      details:
-        section_1:
-          item_1: Mae’ch cyfeirnod Swyddfa Gartref i’w weld ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref.
-        summary: Os nad ydych chi’n gwybod beth yw eich rhif Yswiriant Gwladol
-      paper_form_html: "Os nad oes gennych rif Yswiriant Gwladol neu gyfeirnod Swyddfa Gartref, mae angen i chi ddefnyddio'r
-          <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees.cy'
-          class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
-          target='_blank'>ffurflen bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
-      accurate_information: Rhaid i’r wybodaeth a ddarperir gennych fod yn gywir oherwydd dyma fydd y dystiolaeth ar gyfer eich cais. Byddwn yn cysylltu â chi os bydd arnom angen prawf o’r wybodaeth hon.
-      national_insurance:
-        details:
-          section_1:
-            detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
-              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-              class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
-              target='_blank'>ddefnyddio’r ffurflen bapur</a>."
-            item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
-            item_2: gofynnwch am nodyn atgoffa drwy'r post
-          summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
-    checklist_ucd:
       title: Beth fydd arnoch ei angen
       heading: 'Pwysig: i’w ddarllen cyn i chi gychwyn'
       sections:

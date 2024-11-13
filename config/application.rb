@@ -32,6 +32,7 @@ module HwfPublicapp
     config.app_title = 'Help with fees - MoJ'
     config.proposition_title = 'Help with fees'
     config.product_type = 'service'
+    config.ucd_schema = :q4_23
 
     # The following values are required by the phase banner
     config.phase = 'beta'

@@ -73,7 +73,7 @@ module YamlHelper
   end
 
   def first_part_key_is_list(part)
-    part.keys.first == :list || part.keys.first == :list_ucd
+    part.keys.first == :list
   end
 
   def bullet_list_block(part)

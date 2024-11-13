@@ -22,12 +22,6 @@ RSpec.describe Forms::IncomeKind do
         it { is_expected.not_to be_valid }
       end
 
-      context 'when none and income is selected for applicant' do
-        let(:applicant) { [1, described_class.no_income_index] }
-
-        it { is_expected.not_to be_valid }
-      end
-
       context 'when it is empty' do
         let(:applicant) { [] }
 
@@ -42,12 +36,6 @@ RSpec.describe Forms::IncomeKind do
         context 'when partner is provided' do
           context 'when it has values which are not allowed' do
             let(:partner) { [2, 50] }
-
-            it { is_expected.not_to be_valid }
-          end
-
-          context 'when none and income is selected for partner' do
-            let(:partner) { [1, described_class.no_income_index] }
 
             it { is_expected.not_to be_valid }
           end
@@ -69,17 +57,16 @@ RSpec.describe Forms::IncomeKind do
 
     context 'ucd changes apply' do
       before {
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form.valid?
       }
 
       context 'when none and income is selected for applicant' do
-        let(:applicant) { [1, described_class.no_income_index_ucd] }
+        let(:applicant) { [1, described_class.no_income_index] }
 
         it { is_expected.not_to be_valid }
 
         context 'when none and income is selected for partner' do
-          let(:partner) { [1, described_class.no_income_index_ucd] }
+          let(:partner) { [1, described_class.no_income_index] }
 
           it { is_expected.not_to be_valid }
         end
@@ -91,18 +78,12 @@ RSpec.describe Forms::IncomeKind do
     subject { described_class.allowed_kinds }
 
     it 'returns an array of indexes of allowed income kinds' do
-      expect(subject).to eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+      expect(subject).to eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
     end
   end
 
   describe '.no_income_index' do
     subject { described_class.no_income_index }
-
-    it { is_expected.to eq 13 }
-  end
-
-  describe '.no_income_index_ucd' do
-    subject { described_class.no_income_index_ucd }
 
     it { is_expected.to eq 17 }
   end
@@ -119,47 +100,6 @@ RSpec.describe Forms::IncomeKind do
         expect(subject).to be_nil
       end
     end
-
-    context 'pre UCD' do
-      context 'if only none of above is selected' do
-        let(:applicant) { [described_class.no_income_index] }
-
-        it 'returns nil' do
-          expect(subject).to be_nil
-        end
-      end
-
-      context 'if none of above and additional kinds are selected' do
-        let(:applicant) { [1, described_class.no_income_index] }
-
-        it 'returns error' do
-          expect(subject.type).to eq :none_value_selected
-        end
-      end
-    end
-
-    context 'post UCD' do
-      before {
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
-        form.valid?
-      }
-
-      context 'if only none of above is selected' do
-        let(:applicant) { [described_class.no_income_index_ucd] }
-
-        it 'returns nil' do
-          expect(subject).to be_nil
-        end
-      end
-
-      context 'if none of above and additional kinds are selected' do
-        let(:applicant) { [1, described_class.no_income_index_ucd] }
-
-        it 'returns error' do
-          expect(subject.type).to eq :none_value_selected
-        end
-      end
-    end
   end
 
   describe '#export' do
@@ -169,20 +109,20 @@ RSpec.describe Forms::IncomeKind do
 
     context 'when partner kinds are provided' do
       context 'when the only option for both is "no income"' do
-        let(:applicant) { [13] }
-        let(:partner) { [13] }
+        let(:applicant) { [17] }
+        let(:partner) { [17] }
 
         it 'returns hash with income parameter set to 0' do
           expect(subject[:income]).to be(0)
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: ["No income"])
+          expect(subject[:income_kind]).to eq(applicant: ["None of the above"], partner: ["None of the above"])
         end
       end
 
       context 'when applicant has "no income" but partner does have an income' do
-        let(:applicant) { [13] }
+        let(:applicant) { [17] }
         let(:partner) { [1] }
 
         it 'returns an empty hash' do
@@ -190,13 +130,13 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: ["Wages before tax and National Insurance are taken off"])
+          expect(subject[:income_kind]).to eq(applicant: ["None of the above"], partner: ["Wages before tax and National Insurance are taken off"])
         end
       end
 
       context 'when both applicant and partner has other sources than "no income"' do
-        let(:applicant) { [1, 13] }
-        let(:partner) { [5, 13] }
+        let(:applicant) { [1, 17] }
+        let(:partner) { [5, 17] }
 
         it 'returns an empty hash' do
           expect(subject[:income]).to be_nil
@@ -204,7 +144,7 @@ RSpec.describe Forms::IncomeKind do
 
         it 'returns hash with income_kind text value' do
           expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
-                                                          "No income"], partner: ["Maintenance payments", "No income"])
+                                                          "None of the above"], partner: ["Child Tax Credit", "None of the above"])
         end
       end
     end
@@ -213,7 +153,7 @@ RSpec.describe Forms::IncomeKind do
       let(:partner) { nil }
 
       context 'when the only selected option is "no income"' do
-        let(:applicant) { [13] }
+        let(:applicant) { [17] }
 
         it 'returns hash with income parameter set to 0' do
           expect(subject[:income]).to be(0)
@@ -221,7 +161,7 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: [])
+          expect(subject[:income_kind]).to eq(applicant: ["None of the above"], partner: [])
         end
       end
 
@@ -234,12 +174,12 @@ RSpec.describe Forms::IncomeKind do
 
         it 'returns hash with income_kind text value' do
           expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
-                                                          "Maintenance payments"], partner: [])
+                                                          "Child Tax Credit"], partner: [])
         end
       end
 
       context 'when the selected options do include "no income"' do
-        let(:applicant) { [1, 13] }
+        let(:applicant) { [1, 17] }
 
         it 'returns an empty hash' do
           expect(subject[:income]).to be_nil
@@ -247,7 +187,7 @@ RSpec.describe Forms::IncomeKind do
 
         it 'returns hash with income_kind text value' do
           expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
-                                                          "No income"], partner: [])
+                                                          "None of the above"], partner: [])
         end
       end
     end

@@ -51,9 +51,5 @@ module Forms
     def export_params
       raise NotImplementedError
     end
-
-    def ucd_changes_apply?
-      FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == calculation_scheme
-    end
   end
 end

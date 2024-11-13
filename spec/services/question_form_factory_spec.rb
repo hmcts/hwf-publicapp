@@ -7,7 +7,7 @@ RSpec.describe QuestionFormFactory do
     let(:id) { :benefit }
 
     it 'returns the position of the given question' do
-      expect(subject).to eq 8
+      expect(subject).to eq 12
     end
   end
 

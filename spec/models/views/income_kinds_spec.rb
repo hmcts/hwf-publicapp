@@ -23,7 +23,7 @@ RSpec.describe Views::IncomeKinds do
         let(:applicant) { [1, 8, 13] }
 
         it 'returns list of translated kinds without "no income"' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Contribution-based Employment and Support Allowance (ESA)', 'Cash gifts'])
         end
       end
 
@@ -31,7 +31,7 @@ RSpec.describe Views::IncomeKinds do
         let(:applicant) { [1, 8] }
 
         it 'returns list of translated kinds' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Contribution-based Employment and Support Allowance (ESA)'])
         end
       end
     end
@@ -45,7 +45,7 @@ RSpec.describe Views::IncomeKinds do
 
         it 'returns list of merged translated kinds without "no income"' do
           expect(subject).to eql(['Wages before tax and National Insurance are taken off',
-                                  'Maintenance payments', 'Universal Credit'])
+                                  'Child Tax Credit', 'Contribution-based Employment and Support Allowance (ESA)', 'Cash gifts'])
         end
       end
 
@@ -55,7 +55,7 @@ RSpec.describe Views::IncomeKinds do
 
         it 'returns list of merged translated kinds' do
           expect(subject).to eql(['Wages before tax and National Insurance are taken off',
-                                  'Maintenance payments', 'Universal Credit'])
+                                  'Child Tax Credit', 'Contribution-based Employment and Support Allowance (ESA)'])
         end
       end
     end

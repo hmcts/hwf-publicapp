@@ -8,7 +8,7 @@ module NavigationHelper
   end
 
   def last_question?
-    @current_question == QuestionFormFactory.page_list(calculation_scheme).last
+    @current_question == QuestionFormFactory.page_list.last
   end
 
   # This need more refactoring
@@ -33,8 +33,8 @@ module NavigationHelper
   # rubocop:enable Metrics/MethodLength
 
   def question_id
-    current_question_index = QuestionFormFactory.page_list(calculation_scheme).find_index(@current_question)
-    next_id = QuestionFormFactory.page_list(calculation_scheme)[current_question_index + 1]
+    current_question_index = QuestionFormFactory.page_list.find_index(@current_question)
+    next_id = QuestionFormFactory.page_list[current_question_index + 1]
 
     if next_id == :probate && !enable_probate?
       :claim
@@ -60,7 +60,7 @@ module NavigationHelper
   end
 
   def skip_income_range?
-    return false if ucd_apply?(@online_application.calculation_scheme)
+    return false if @online_application.calculation_scheme == Rails.configuration.ucd_schema.to_s
 
     @current_question == :income_kind && @online_application.income&.zero?
   end
@@ -108,15 +108,11 @@ module NavigationHelper
   def over_16?
     return false if @current_question != :over_16
 
-    @next_page = if ucd_apply?(@online_application.calculation_scheme) && @online_application.over_16
+    @next_page = if @online_application.over_16
                    :national_insurance
                  else
                    :savings_and_investment
                  end
-  end
-
-  def ucd_apply?(schema)
-    schema == FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
   end
 
 end
