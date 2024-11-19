@@ -12,7 +12,6 @@ module Forms
     validates :children_number,
               presence: true, numericality: { less_than: 100, greater_than: 0 }, if: :children
 
-    # POST UCD
     before_validation :sanitize_children_age_band
     before_validation :reset_children_fields
     before_validation :prepare_children_fields
@@ -36,8 +35,6 @@ module Forms
       end
     end
 
-    # POST UCD
-
     def number_of_children_when_no_dependents
       if children_declared_but_dependents_arent?
         errors.add(
@@ -53,7 +50,7 @@ module Forms
 
     def prepare_children_fields
       return unless children
-      return unless ucd_changes_apply?
+      return unless calculation_scheme == Rails.configuration.ucd_schema.to_s
 
       @children_number = band_one_value + band_two_value
       @children_age_band = { one: band_one_value, two: band_two_value }
@@ -65,7 +62,6 @@ module Forms
     end
 
     def reset_children_fields
-      return unless ucd_changes_apply?
       return if children
 
       @children_number = 0

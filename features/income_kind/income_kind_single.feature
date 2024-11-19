@@ -4,7 +4,7 @@ Feature: Income kind page UCD
     And the ucd changes apply
 
   Scenario: Displays income lists for a single person
-    When I am a single person on kind of income page ucd
+    When I am a single person on kind of income page
     Then I should see an income list:
       | income name                                                                                  |
       | Wages before tax and National Insurance are taken off                                        |
@@ -27,7 +27,7 @@ Feature: Income kind page UCD
     And the ucd changes end
 
   Scenario: No income - probate disabled
-    And I am a single person on kind of income page ucd
+    And I am a single person on kind of income page
     When I submit the form with none of the above checked
     Then I should be taken to income period page
     When I submit the form with income '1000' and monthly
@@ -35,19 +35,19 @@ Feature: Income kind page UCD
     And the ucd changes end
 
   Scenario: Submit the page with wages
-    And I am a single person on kind of income page ucd
+    And I am a single person on kind of income page
     When I submit the form with wages checked
     Then I should be taken to income period page
     And the ucd changes end
 
   Scenario: Displays error message
-    And I am a single person on kind of income page ucd
+    And I am a single person on kind of income page
     When I click continue
     Then I should see select your kinds of income error message
     And the ucd changes end
 
   Scenario: Income kind page timeout (single wages option)
-    When I am a single person on kind of income page ucd
+    When I am a single person on kind of income page
     And I slowly submit the form with wages checked
     Then I should see the home page
     And the ucd changes end

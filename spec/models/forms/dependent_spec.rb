@@ -102,7 +102,7 @@ RSpec.describe Forms::Dependent do
 
     context 'ucd changes apply' do
       before {
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
+        form.calculation_scheme = Rails.configuration.ucd_schema
         form.valid?
       }
 

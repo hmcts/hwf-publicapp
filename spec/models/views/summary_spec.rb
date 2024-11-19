@@ -88,7 +88,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build(:online_application, :savings_less_than_threshold) }
 
       it 'returns the correct text - less than minimum threshold' do
-        expect(subject).to eql('£0 to £2,999')
+        expect(subject).to eql('Less than £4,250')
       end
     end
 
@@ -97,7 +97,7 @@ RSpec.describe Views::Summary do
         let(:online_application) { build(:online_application, :savings_between_threshold, over_66: true) }
 
         it 'returns the correct text - between thresholds' do
-          expect(subject).to eql('£3,000 to £15,999')
+          expect(subject).to eql('Between £4,250 and £15,999')
         end
       end
 

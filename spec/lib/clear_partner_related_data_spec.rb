@@ -25,7 +25,7 @@ RSpec.describe ClearPartnerRelatedData do
     let(:rails_store) { Rails.cache }
 
     before {
-      allow(session).to receive(:[]).with(:calculation_scheme).and_return FeatureSwitch::CALCULATION_SCHEMAS[1].to_s
+      allow(session).to receive(:[]).with(:calculation_scheme).and_return Rails.configuration.ucd_schema.to_s
       allow(session).to receive(:[]).with(:started_at).and_return ''
       allow(session).to receive(:[]=)
 

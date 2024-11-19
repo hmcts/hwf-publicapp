@@ -10,10 +10,7 @@
 
 
 .govuk-caption-l
-  - if ucd_changes_apply?(@online_application.calculation_scheme)
-    = t('breadcrumb_ucd', scope: @form.i18n_scope, page_number: @page_number)
-  - else
-    = t('breadcrumb', scope: @form.i18n_scope, page_number: @page_number)
+  = t('breadcrumb', scope: @form.i18n_scope, page_number: @page_number)
 
 .govuk-form-group
   fieldset.govuk-fieldset

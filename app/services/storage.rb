@@ -93,7 +93,7 @@ class Storage
 
   def clear_redis
     if load_calculation_scheme
-      form_ids = QuestionFormFactory.page_list(load_calculation_scheme)
+      form_ids = QuestionFormFactory.page_list
       clear_forms(form_ids)
     end
   end

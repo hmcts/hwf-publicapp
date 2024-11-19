@@ -11,7 +11,7 @@ class OnlineApplicationBuilder
   def build_application
     calculation_scheme = @storage.load_calculation_scheme
     @online_application = OnlineApplication.new
-    QuestionFormFactory.page_list(calculation_scheme).each do |question|
+    QuestionFormFactory.page_list.each do |question|
       form = QuestionFormFactory.get_form(question, calculation_scheme)
       @storage.load_form(form)
       check_before_override(form)

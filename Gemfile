@@ -5,12 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '3.3.5'
+ruby '3.3.6'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.2.1'
+gem 'rails', '~> 7.2', '>= 7.2.2'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
@@ -32,6 +32,7 @@ gem 'govuk_notify_rails'
 # To fix ruby 3.3.3 gemsepec file issue with this gem
 gem 'net-pop', github: 'ruby/net-pop'
 
+gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
   gem "pry-rails"
