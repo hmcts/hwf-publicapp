@@ -1,20 +1,3 @@
-When('the ucd changes apply') do
-  time = Time.zone.local(2026, 11, 28, 10, 5, 0)
-  Timecop.freeze(time)
-end
-
-Then('I should be on the application on behalf of someone else page') do
-  expect(applying_on_behalf_page.content).to have_header
-end
-
-When('I answer No to on behalf question') do
-  applying_on_behalf_page.submit_no
-end
-
-When('I answer Yes to on behalf question') do
-  applying_on_behalf_page.submit_yes
-end
-
 Then('I should be on are you legal representative page') do
   expect(legal_representative_page.content).to have_header
 end
@@ -41,12 +24,4 @@ end
 
 When('I answer no to over 16') do
   over_16_page.applicant_under_16
-end
-
-Then(/^I should be taken to partner national insurance page$/) do
-  expect(partner_national_insurance_page.content).to have_header
-end
-
-When(/^I select my partner does not have a national insurance number$/) do
-  partner_national_insurance_page.submit_no_ni
 end
