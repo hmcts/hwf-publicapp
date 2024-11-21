@@ -39,8 +39,20 @@ Then('I should see online next steps') do
   expect(confirmation_page.content).to have_feedback_text
 end
 
+When(/^I click the confirm checkbox$/) do
+  confirmation_page.check_confirmation_checkbox
+end
+
 When(/^I click the finish application button$/) do
   confirmation_page.submit
+end
+
+Then(/^I should see '([^"]*)' error$/) do |applying_method|
+  if applying_method == 'online'
+    expect(confirmation_page.content).to have_confirmation_error_online
+  else
+    expect(confirmation_page.content).to have_confirmation_error
+  end
 end
 
 Then(/^I should be taken to the survey page$/) do

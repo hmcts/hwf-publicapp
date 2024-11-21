@@ -16,13 +16,10 @@ RSpec.describe ConfirmationsController do
   end
 
   describe 'storage' do
-    it 'clear for show' do
-      get :show
-      expect(storage).to have_received(:clear)
-    end
+    let(:params) { { forms_reference_confirm: { reference_confirm: 'true' } } }
 
-    it 'clear for refund' do
-      get :refund
+    it 'clear for create' do
+      post :create, params: params
       expect(storage).to have_received(:clear)
     end
   end
