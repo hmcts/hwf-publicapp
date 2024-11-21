@@ -45,7 +45,6 @@ RSpec.describe ConfirmationsController do
         allow(I18n).to receive(:t).and_return(error_message)
       end
 
-
       context 'and applying_method is nil and refund is true' do
         let(:online_application) { instance_double(OnlineApplication, applying_method: nil, refund: true) }
 
