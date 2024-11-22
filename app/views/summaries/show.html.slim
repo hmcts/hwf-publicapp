@@ -242,11 +242,11 @@ dl.govuk-summary-list
               =t('apply_type', scope: 'summary.labels').downcase
 
 
-- if @summary.income_validation_fails?
-  .govuk-form-group
-    span.govuk-error-message =t('summary.invalid_footer')
-    p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
-- else
-  = render('declaration')
+/ - if @summary.income_validation_fails?
+/   .govuk-form-group
+/     span.govuk-error-message =t('summary.invalid_footer')
+/     p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
+/ - else
+= render('declaration')
 
 
