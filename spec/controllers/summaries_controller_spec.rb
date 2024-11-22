@@ -6,7 +6,7 @@ RSpec.describe SummariesController do
     let(:storage_started) { true }
     let(:storage) { instance_double(Storage, started?: storage_started) }
     let(:online_application) { build(:online_application) }
-    let(:summary_view) { double('summary_view', income_validation_fails?: income_fails?) }
+    let(:summary_view) { instance_double(Views::Summary, income_validation_fails?: income_fails?) }
     let(:income_fails?) { false }
 
     before do
