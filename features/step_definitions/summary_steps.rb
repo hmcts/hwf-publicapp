@@ -86,7 +86,7 @@ And(/^I navigate back to the summary page using the browser back button$/) do
 end
 
 Then(/^I should see a changes notification\.$/) do
-  expect(summary_page).to be_displayed(wait: 20)
+  expect(summary_page).to be_displayed
   expect(summary_page.content).to have_error
 end
 
