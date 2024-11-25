@@ -11,8 +11,8 @@ class SummariesController < ApplicationController
 
   def check_submission_form_error
     @summary = Views::Summary.new(online_application)
-
     income_validation_check
+
     return unless flash['statement_blank']
 
     @form.errors.add(:signed_by, I18n.t('.confirmation.submission_statement_error'))
