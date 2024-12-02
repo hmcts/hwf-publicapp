@@ -1,0 +1,13 @@
+- if @form.errors[:reference_confirm].any?
+  p.govuk-error-message id="countries-error"
+    span.govuk-visually-hidden Error:
+    = @form.errors[:reference_confirm].join(' ')
+
+
+= form_for @form, as: @form.id, html: { method: :post } do |f|
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:reference_confirm].any?)
+    .govuk-checkboxes
+      .govuk-checkboxes__item
+        = f.check_box :reference_confirm, { class: 'govuk-checkboxes__input' }, true, false
+        label.govuk-label.govuk-checkboxes__label for='reference_confirm_reference_confirm'
+          =t('signed_by_legal_representative', scope: @form.i18n_scope)

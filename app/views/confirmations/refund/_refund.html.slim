@@ -13,16 +13,34 @@ h1.govuk-heading-l
 br
 
 p.govuk-body =t('confirmation.refund.p_one')
-h3.govuk-heading-m =t('confirmation.refund.h3_one')
 p.govuk-body =t('confirmation.refund.p_two')
-p.govuk-body =t('confirmation.refund.p_three')
-p.govuk-body =t('confirmation.refund.p_three_html')
-h3.govuk-heading-m =t('confirmation.refund.h3_two')
+.govuk-warning-text
+  span.govuk-warning-text__icon class=('govuk-!-margin-top-1') aria-hidden="true" !
+  strong.govuk-warning-text__text
+    =t('confirmation.refund.p_three')
 p.govuk-body =t('confirmation.refund.p_four')
+p.govuk-body =t('confirmation.refund.p_four_html')
+h3.govuk-heading-m =t('confirmation.refund.h3_one')
+p.govuk-body =t('confirmation.refund.p_five')
 
 .js-only.no-print
   p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')
 
-= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
   p.govuk-body =t('confirmation.feedback_text')
+
+- if @form.errors[:reference_confirm].any?
+  p.govuk-error-message id="refund-confirm-error"
+    span.govuk-visually-hidden Error:
+    = @form.errors[:reference_confirm].join(' ')
+
+= form_for @form, url: confirmation_path, html: { method: :post, class: 'util_mb-medium util_mt-medium' } do |f|
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:reference_confirm].any?)
+    .govuk-checkboxes
+      .govuk-checkboxes__item
+        = f.check_box :reference_confirm, { class: 'govuk-checkboxes__input' }, true, false
+        .govuk-label.govuk-checkboxes__label for='confirmations_reference_confirm' class=('govuk-!-padding-top-0')
+          .govuk-warning-text
+            span.govuk-warning-text__icon aria-hidden="true" !
+            strong.govuk-warning-text__text
+              =t('confirmation.refund.reference_confirm_checkbox')
   = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')

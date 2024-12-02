@@ -20,12 +20,13 @@ Rails.application.routes.draw do
   resource :submission, only: :create
 
   resource :confirmation, only: :show do
+    post :create
     get :refund
   end
 
   resource :session, only: :destroy do
     get :start
-    post :finish
+    get :finish
   end
 
   resource :help_request, only: %i[new create], path: 'ask-for-help'
