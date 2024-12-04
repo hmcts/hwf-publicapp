@@ -63,7 +63,10 @@ group :test do
   gem 'regexp_parser'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
-  gem 'rubocop-rspec', '~> 2.16', require: false
+  gem 'rubocop-rspec'
+  gem 'rubocop-capybara'
+  gem 'rubocop-factory_bot'
+  gem 'rubocop-rspec_rails'
   gem 'rubyzip'
   gem 'selenium-webdriver', '~> 4.14'
   gem 'shoulda-matchers'
