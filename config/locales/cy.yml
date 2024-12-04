@@ -355,7 +355,7 @@ cy:
     submission_error: "Ni allwn brosesu eich cais ar hyn o bryd. Rhowch gynnig arall arni yn hwyrach ymlaen."
     submission_statement_error: "Dewiswch p’un ai chi yw’r ceisydd/cyfaill cyfreitha neu’r cynrychiolydd cyfreithiol yn y cais hwn"
     default:
-      breadcrumb: Cam 26 o 26
+      breadcrumb: Cam 25 o 25
       title: Anfonwch eich ffurflen hawlio
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">Beth yw eich barn am y gwasanaeth hwn?</a>
     online:
@@ -416,7 +416,7 @@ cy:
             three: 215 Bothwell Street
             two: Eagle Building
           heading: Yr Alban
-      breadcrumb: Cam 26 o 26
+      breadcrumb: Cam 25 o 25
       heading: Nid yw eich cais am help i dalu ffioedd wedi'i orffen eto
       letter:
         five: "%{full_name}"
@@ -441,7 +441,7 @@ cy:
     print: Cadw neu argraffu'r dudalen hon
     feedback_text: Ar ôl i chi orffen eich cais, fe'ch cyfeirir at ffurflen adborth ddewisol.
     refund:
-      breadcrumb: Cam 26 o 26
+      breadcrumb: Cam 25 o 25
       title: Anfonwch eich cyfeirnod i gwblhau'r broses
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
@@ -970,7 +970,7 @@ cy:
 
     applicant_on_benefits_false: Ddim yn derbyn budd-daliadau cymwys
     applicant_on_benefits_true: Yn derbyn budd-daliadau cymwys
-    breadcrumb: Cam 25 o 26
+    breadcrumb: Cam 24 o 25
     change: Newid
     children_false: Nac oes
     claim_number_false: Nac oes
