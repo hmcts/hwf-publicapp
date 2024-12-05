@@ -868,7 +868,7 @@ cy:
       text: Ydych chi'n talu ffi am achos profiant?
       title: Profiant
     savings_and_investment:
-      breadcrumb: Cam %{page_number} 5
+      breadcrumb: Cam %{page_number} o 25
       less: "Llai na £4,250"
       between: "Rhwng £4,250 a £15,999"
       more: "£16,000 neu fwy"
