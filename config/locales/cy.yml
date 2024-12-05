@@ -625,7 +625,7 @@ cy:
       detail_text: Efallai y byddwn yn cysylltu ag adrannau eraill yn y llywodraeth i ddilysu’r wybodaeth y byddwch yn ei rhoi am eich manylion ariannol chi a’ch partner (os oes gennych un). Bydd hyn yn lleihau’r tebygolrwydd y bydd rhaid i chi ddarparu tystiolaeth bellach cyn y gellir gwneud penderfyniad.
     dob_married:
       text: Beth yw eich dyddiad geni chi a’ch partner?
-      breadcrumb: Cam %{page_number} o 22
+      breadcrumb: Cam %{page_number} o 25
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.
       date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: Naddo
