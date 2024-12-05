@@ -12,7 +12,7 @@ class SummaryPage < BasePage
       element :action, 'a', text: 'Change'
     end
     element :submit_application_button, 'input[value="Get a reference number and continue"]'
-    element :error, '.govuk-error-message', text: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+    element :error, '.govuk-error-summary__body', text: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
   end
 
   def home_office_number

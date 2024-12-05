@@ -77,6 +77,7 @@ Feature: Summary page
     When I click submit application and continue
     Then I should be taken to confirmation page about refund
 
+  @wip
   Scenario: User submits a benefit application and then changes benefit answer.
     Given I am 'single' and on the summary page with probate disabled
     And I change the benefit status

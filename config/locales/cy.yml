@@ -361,32 +361,38 @@ cy:
     online:
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
-      h3_one: Cam Olaf
-      h3_two: Beth fydd yn digwydd nesaf
-      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
-      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
-      p_three: Dylech anfon hwn atynt fel rhan o’ch hawliad o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
-      p_four: Os ydych chi'n gwneud cais ar-lein i'r llys, rhowch eich cyfeirnod Help i Dalu Ffioedd ar y system pan ofynnir ichi wneud hynny.
-      p_five_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i  ddod o hyd i fanylion cyswllt pellach.
-      p_six: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      h3_one: Beth fydd yn digwydd nesaf
+      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys.
+      p_two: Nawr mae angen i chi ychwanegu’r cyfeirnod hwn at eich cais llys/tribiwnlys ar-lein.
+      p_three: Mae gennych 28 diwrnod i wneud hyn neu bydd eich cais yn cael ei wrthod a bydd angen i chi gychwyn cais Help i Dalu Ffioedd newydd.
+      p_four_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt.
+      p_five: Unwaith y bydd y llys/tribiwnlys wedi cael eich cyfeirnod byddant yn prosesu eich cais am help i dalu ffioedd. Wedyn byddant yn cysylltu â chi i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu a oes angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
       template:
         line_one: "Nodwch eich cyfeirnod uchod yn yr adran help i dalu ffioedd ar y ffurflen ar-lein. Dylai eich ffurflen gais ar-lein i’r llys edrych rhywbeth fel hyn:"
       contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
+      reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn ychwanegu'r cyfeirnod uchod at fy nghais ar-lein i'r llys/tribiwnlys
+      confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i’r llys/tribiwnlys"
     paper:
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
       h3_one: Cam Olaf
       h3_two: Beth fydd yn digwydd nesaf
       p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
-      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu’r ffi.
-      p_three: Dylech anfon hwn atynt fel rhan o’ch hawliad o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
-      p_four: Dylech gynnwys y cyfeirnod yn yr adran Help i Dalu Ffioedd y ffurflen hawlio. Os nad oes adran Help i Dalu Ffioedd ar y ffurflen, ysgrifennwch y cyfeirnod ar frig y ffurflen hawlio.
-      p_five_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
-      p_six: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu'r ffi.
+      p_three: Mae gennych 28 diwrnod i wneud hyn neu bydd eich cais yn cael ei wrthod a bydd angen i chi gychwyn cais Help i Dalu Ffioedd newydd.
+      p_four: "Gallwch wneud hyn drwy:"
+      p_five_html: "Gellir dod o hyd i fanylion cyswllt ar gyfer yr holl lysoedd a thribiwnlysoedd yma: <a class='external govuk-link' rel='external' href='https://www.gov.uk/find-court-tribunal'>https://www.gov.uk/find-court-tribunal</a>"
+      p_six: Unwaith y bydd y llys/tribiwnlys wedi cael eich cyfeirnod byddant yn prosesu eich cais am help i dalu ffioedd. Wedyn byddant yn cysylltu â chi i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu a oes angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      instructions:
+        line_one: Ychwanegu'r cyfeirnod i adran help i dalu ffioedd eich prif ffurflen hawlio
+        line_two: Os nad oes gan y ffurflen adran help i dalu ffioedd, ysgrifennwch y cyfeirnod ar frig y ffurflen hawlio
+        line_three: Os ydych eisoes wedi anfon eich ffurflen hawlio i'r llys/tribiwnlys, mae angen i chi anfon eich cyfeirnod i'r llys/tribiwnlys naill ai drwy e-bost neu'r post
       template:
         reference: 'Cyfeirnod: %{reference}'
         line_one: Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un].
         line_two: Yn gywir,
+      reference_confirm_checkbox: Rwy’n cadarnhau y byddaf yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu
+      confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu"
     et:
       address:
         email:
@@ -439,13 +445,15 @@ cy:
       title: Anfonwch eich cyfeirnod i gwblhau'r broses
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
-      h3_one: Cam Olaf
-      h3_two: Beth fydd yn digwydd nesaf
-      p_one: Rydych wedi cwblhau cais ar-lein am ad-daliad help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
-      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys y bu ichi dalu eich ffi, a byddant wedyn yn prosesu eich cais.
-      p_three: Dylech anfon hwn atynt o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach, efallai bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
-      p_three_html: Os oes arnoch angen help i ddod o hyd i gyfeiriad e-bost neu gyfeiriad post y llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
-      p_four: Byddant yn cysylltu â chi o fewn 21 diwrnod i ddweud wrthych os bydd angen i chi ddarparu mwy o wybodaeth neu os bydd angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      h3_one: Beth fydd yn digwydd nesaf
+      p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys.
+      p_two: Nawr mae angen i chi ychwanegu'r cyfeirnod hwn at eich cais llys/tribiwnlys ar-lein.
+      p_three: Dylech anfon hwn atynt o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
+      p_four: Sylwch, dim ond o fewn 3 mis i'r dyddiad y taloch eich ffi gwreiddiol y gallwch wneud cais am ad-daliad (er enghraifft, os taloch eich ffi ar 16 Medi, mae gennych hyd at 15 Rhagfyr i wneud hynny). Mae'r terfyn amser hwn yn cynnwys gwneud unrhyw gais newydd os yw eich cais help i dalu ffioedd gwreiddiol wedi'i wrthod.
+      p_four_html: Os oes arnoch angen help i ddod o hyd i gyfeiriad e-bost neu gyfeiriad post y llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
+      p_five: Y llys neu tribiwnlys byddant yn cysylltu â chi i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu a oes angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
+      reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu
+      confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu"
   error_block:
     heading: Mae problem wedi codi
     visuallyhidden: Mae'r gwallau wedi'u rhestru fel dolenni isod, cliciwch i ddewis y maes sydd angen ei gywiro.

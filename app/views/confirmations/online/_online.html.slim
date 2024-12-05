@@ -6,10 +6,11 @@
 br
 
 p.govuk-body =t('confirmation.online.p_one')
-h3.govuk-heading-m =t('confirmation.online.h3_one')
 p.govuk-body =t('confirmation.online.p_two')
-p.govuk-body =t('confirmation.online.p_three')
-p.govuk-body =t('confirmation.online.p_four')
-p.govuk-body =t('confirmation.online.p_five_html')
-h3.govuk-heading-m =t('confirmation.online.h3_two')
-p.govuk-body =t('confirmation.online.p_six')
+.govuk-warning-text
+  span.govuk-warning-text__icon class=('govuk-!-margin-top-1') aria-hidden="true" !
+  strong.govuk-warning-text__text
+    =t('confirmation.online.p_three')
+p.govuk-body =t('confirmation.online.p_four_html')
+h3.govuk-heading-m =t('confirmation.online.h3_one')
+p.govuk-body =t('confirmation.online.p_five')

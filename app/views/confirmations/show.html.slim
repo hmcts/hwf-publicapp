@@ -14,8 +14,21 @@ h1.govuk-heading-l
 .js-only.no-print
   p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')
 
-= form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
   p.govuk-body =t('confirmation.feedback_text')
+
+- if @form.errors[:reference_confirm].any?
+  p.govuk-error-message
+    span.govuk-visually-hidden Error:
+    = @form.errors[:reference_confirm].join(' ')
+
+= form_for @form, url: confirmation_path, html: { method: :post } do |f|
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:reference_confirm].any?)
+    .govuk-checkboxes
+      .govuk-checkboxes__item
+        = f.check_box :reference_confirm, { class: 'govuk-checkboxes__input' }, true, false
+        .govuk-label.govuk-checkboxes__label for='reference_confirm' class=('govuk-!-padding-top-0')
+          .govuk-warning-text
+            span.govuk-warning-text__icon aria-hidden="true" !
+            strong.govuk-warning-text__text
+              = t("confirmation.#{@online_application.applying_method}.reference_confirm_checkbox")
   = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')
-
-
