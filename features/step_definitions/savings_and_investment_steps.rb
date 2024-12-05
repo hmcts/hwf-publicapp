@@ -1,5 +1,5 @@
 Given(/^I am a single person on the savings and investments page$/) do
-  to_single_savings
+  to_savings_single
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header
@@ -7,7 +7,7 @@ Given(/^I am a single person on the savings and investments page$/) do
 end
 
 Given(/^I am a married person on the savings and investments page$/) do
-  to_married_savings
+  to_savings_married
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header

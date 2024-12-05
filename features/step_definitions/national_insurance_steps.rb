@@ -48,3 +48,11 @@ end
 When(/^I submit a valid national insurance number \(UCD\)$/) do
   national_insurance_page.select_yes_and_enter_valid_ni
 end
+
+Then(/^I should be taken to partner national insurance page$/) do
+  expect(partner_national_insurance_page.content).to have_header
+end
+
+When(/^I select my partner does not have a national insurance number$/) do
+  partner_national_insurance_page.submit_no_ni
+end
