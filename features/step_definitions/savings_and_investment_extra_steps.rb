@@ -1,23 +1,23 @@
 And(/^I am single with £3,000 to £15,999 in savings$/) do
-  to_single_savings_extra
+  to_savings_extra_single
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_single_header
 end
 
 And(/^I am single with between £4,250 and £15,999 in savings$/) do
-  to_single_savings_extra
+  to_savings_extra_single
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_single_header
 end
 
 And(/^I am married with £3,000 to £15,999 in savings$/) do
-  to_married_savings_extra
+  to_savings_extra_married
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_married_header
 end
 
 And(/^I am married with between £4,250 and £15,999 in savings$/) do
-  to_married_savings_extra
+  to_savings_extra_married
   expect(savings_investment_extra_page).to be_displayed
   expect(savings_investment_extra_page.content).to have_married_header
 end
