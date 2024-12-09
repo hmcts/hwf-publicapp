@@ -1,6 +1,6 @@
 Given(/^I am single and on the personal details page with probate enabled$/) do
   probate_enabled
-  to_personal_details_page_single
+  to_personal_details_page('single')
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info
   expect(personal_details_page.content).to have_header
@@ -8,7 +8,7 @@ end
 
 Given(/^I am married and on the personal details page with probate enabled$/) do
   probate_enabled
-  to_personal_details_page_married
+  to_personal_details_page('married')
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info
   expect(personal_details_page.content).to have_married_header

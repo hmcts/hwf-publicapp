@@ -9,7 +9,7 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
-  Scenario: End to end path one - married
+  Scenario: End to end path one - on_behalf? NO - married - savings_and_investments? between £4,250 and £15,999 - children? YES - probate? NO - case,_claim,_notice_to_pay_number? YES
     When I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with a help with fees form number 'XX10'
