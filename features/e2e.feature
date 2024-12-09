@@ -9,12 +9,6 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
-#    not on behalf
-#    married
-#    saving and investments between £4,250 and £15,999
-#    children? YES
-#    PROBATE? NO
-#    case, claim , notice to pay number YES
   Scenario: End to end path one - on_behalf? NO - married - savings_and_investments? between £4,250 and £15,999 - children? YES - probate? NO - case,_claim,_notice_to_pay_number? YES
     When I should be taken to fee page
     When I submit no to have you already paid the fee
@@ -78,13 +72,6 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
-
-#    not on behalf
-#    single
-#    saving and investments less than £4,250
-#    children? no
-#    Probate? YES
-#    case, claim , notice to pay number NO
   Scenario: End to end path two - single
     Given I should be taken to fee page
     When I submit no to have you already paid the fee

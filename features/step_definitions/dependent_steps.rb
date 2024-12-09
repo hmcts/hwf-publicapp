@@ -1,5 +1,5 @@
 Given(/^I am ([^"]*)' and on the dependent page$/) do |status|
-  status == 'married' ? to_dependent_page_married : to_dependent_page_single
+  status == 'married' ? to_dependent_page('married') : to_dependent_page('single')
   expect(dependent_page.content).to have_step_info
   expect(dependent_page.content).to have_header
 end
