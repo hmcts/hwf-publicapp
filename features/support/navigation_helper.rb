@@ -33,11 +33,10 @@ def to_benefit_page(marital_status)
   if marital_status == 'married'
     marital_status_page.submit_married
     partner_national_insurance_page.submit_no_ni
-    savings_investment_page.low_amount_checked
   else
     marital_status_page.submit_single
-    savings_investment_page.low_amount_checked
   end
+  savings_investment_page.low_amount_checked
 end
 
 def to_claim_page(marital_status)
@@ -49,15 +48,12 @@ def to_claim_page(marital_status)
   if marital_status == 'married'
     marital_status_page.submit_married
     partner_national_insurance_page.submit_no_ni
-    savings_investment_page.low_amount_checked
-    benefit_page.submit_benefit_yes
-    probate_page.submit_probate_no
   else
     marital_status_page.submit_single
-    savings_investment_page.low_amount_checked
-    benefit_page.submit_benefit_yes
-    probate_page.submit_probate_no
   end
+  savings_investment_page.low_amount_checked
+  benefit_page.submit_benefit_yes
+  probate_page.submit_probate_no
 end
 
 def to_confirmation_page(marital_status)
