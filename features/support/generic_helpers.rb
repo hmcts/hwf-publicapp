@@ -136,10 +136,6 @@ def home_page
   @home_page ||= HomePage.new
 end
 
-def on_behalf_page
-  @on_behalf_page ||= OnBehalfPage.new
-end
-
 def legal_representative_page
   @legal_representative_page ||= LegalRepresentativePage.new
 end
