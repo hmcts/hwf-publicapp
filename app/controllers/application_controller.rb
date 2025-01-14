@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sanitized_locale
-    return params[:locale] if params[:locale] == 'en' || params[:locale] == 'cy'
+    return params[:locale] if %w[en cy].include?(params[:locale])
 
     I18n.default_locale
   end
