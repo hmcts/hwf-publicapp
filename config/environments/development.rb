@@ -68,4 +68,8 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
+  Rails.application.config.session_store :cookie_store,
+                                         key: '_hwf-publicapp_session',
+                                         same_site: :strict
+
 end

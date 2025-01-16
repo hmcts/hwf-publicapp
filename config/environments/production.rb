@@ -80,6 +80,11 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
+  Rails.application.config.session_store :cookie_store,
+                                         key: '_hwf-publicapp_session',
+                                         secure: true,
+                                         same_site: :none
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
