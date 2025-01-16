@@ -83,6 +83,7 @@ Rails.application.configure do
   Rails.application.config.session_store :cookie_store,
                                          key: '_hwf-publicapp_session',
                                          secure: true,
+                                         domain: '.hmcts.net',
                                          same_site: :none
 
   # Enable DNS rebinding protection and other `Host` header attacks.
