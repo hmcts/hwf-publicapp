@@ -2,5 +2,6 @@
 
 Rails.application.config.session_store :cookie_store,
                                        key: '_hwf-publicapp_session',
-                                       domain: Rails.env.production? ? '.hmcts.net' : nil,
+                                       secure: Rails.env.production?,
+                                       domain: Rails.env.production? ? '.helpwithcourtfees.service.gov.uk' : nil,
                                        same_site: :strict
