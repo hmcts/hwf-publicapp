@@ -10,7 +10,7 @@ ruby '3.3.6'
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.2', '>= 7.2.2.1'
+gem 'rails', '~> 8.0.0'
 
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
