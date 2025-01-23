@@ -1,6 +1,6 @@
 AllCops:
-  TargetRubyVersion: 3.3.5
-  TargetRailsVersion: 6.0
+  TargetRubyVersion: 3.4.1
+  TargetRailsVersion: 7.0
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
