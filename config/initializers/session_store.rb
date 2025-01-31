@@ -7,8 +7,7 @@ Rails.application.config.session_store :cookie_store,
                                        domain: ->(request) { determine_domain(request.host) }
 
 def determine_domain(host)
-  valid_domains =
-    %w[helpwithcourtfees.service.gov.uk hwf-publicapp.aat.platform.hmcts.net hwf-publicapp.demo.platform.hmcts.net]
+  valid_domains = Settings.session_store.valid_domains || []
 
   valid_domains.each do |domain|
     return domain if host.end_with?(domain)
