@@ -27,7 +27,15 @@ br
             = f.label :children_number, @form.errors[:children_number].join(', '), class: 'error'
         = f.collection_select :children_number, 0..99, :to_i, :to_s, {},{ class: 'govuk-select', 'data-target': 'dependent-children-age-panel'}
 
-      = render('questions/forms/dependents/child_age_range_box', f: f)
+  .govuk-form-group id='dependent-children-age-panel'
+    .govuk-form-group.children_age_select
+      label.govuk-label for="children_age_band" =t('children_age_range', scope: @form.i18n_scope)
+      select.govuk-select id="children_age_band[]" name="children_age_band[]"
+        option value="one" =t('summary.labels.children_age_band_one')
+        option value="two" =t('summary.labels.children_age_band_two')
+
+
+      / = render('questions/forms/dependents/child_age_range_box', f: f)
       / - if true
       /   br
       /   .govuk-form-group
@@ -61,4 +69,3 @@ br
         / </div>
             / es5 compatible
 
-      .div id='children_age_range_box'
