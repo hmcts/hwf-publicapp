@@ -592,8 +592,8 @@ cy:
         summary: Help gyda phlant sy'n dibynnu arnoch yn ariannol
       text: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
       title: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
-      warning: Dalier sylw - Peidiwch â nodi eu hoedrannau yn y blychau uchod.
-
+      children_number_title: How many children do you have living with you or that you support financially?
+      children_age_range: Children's age range
       single:
         you_need: Mae angen i chi roi manylion unrhyw blant rydych yn eu cynnal yn ariannol.
         they_must: 'Mae’n rhaid eu bod:'

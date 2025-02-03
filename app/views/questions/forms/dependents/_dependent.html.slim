@@ -18,39 +18,47 @@ ul{class="govuk-list govuk-list--bullet"}
 
 br
 
-.govuk-form-group
-  fieldset.govuk-fieldset
-    legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("#{@prefix}.children_age_band", scope: @form.i18n_scope)
-    .govuk-form-group.govuk-radios
-      .govuk-radios__item
-        = f.radio_button :children, 'true', class: 'govuk-radios__input', 'data-target': 'dependent-children_number-panel'
-        = f.label t('children_true', scope: @form.i18n_scope), for: 'dependent_children_true', class: 'govuk-label govuk-radios__label'
+  .govuk-form-group
+    fieldset.govuk-fieldset
+      legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("children_number_title", scope: @form.i18n_scope)
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:children_number].any?)
+        - if @form.errors[:children_number].present?
+          span.govuk-error-message
+            = f.label :children_number, @form.errors[:children_number].join(', '), class: 'error'
+        = f.collection_select :children_number, 0..99, :to_i, :to_s, {},{ class: 'govuk-select', 'data-target': 'dependent-children-age-panel'}
 
-        #dependent-children_number-panel.js-hidden class='govuk-!-margin-bottom-5'
-          .govuk-form-group class=((@form.errors[:children_number].any?) ? 'govuk-form-group--error' : 'panel-indent')
-            .govuk-form-group
-              = f.label :children_age_band_one, class: 'govuk-label'
-              - if @form.errors[:children_age_band_one].present?
-                span.govuk-error-message
-                  = f.label :children_age_band_one, @form.errors[:children_age_band_one].join(', '), class: 'error'
-              = f.text_field :children_age_band_one, class: 'govuk-input govuk-input--width-3', value: age_band_value('one', @online_application)
+      = render('questions/forms/dependents/child_age_range_box', f: f)
+      / - if true
+      /   br
+      /   .govuk-form-group
+      /     h2.govuk-heading-s = t('children_age_range', scope: @form.i18n_scope)
+      /   - (1..2).each do |i|
+      /     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:children_age_band].any?)
+      /       = f.label t("child_age_range", scope: @form.i18n_scope, child_number: i), class: 'govuk-label'
+      /       - if @form.errors[:children_age_band].present?
+      /         span.govuk-error-message
+      /           = f.label :children_age_band, @form.errors[:children_age_band].join(', '), class: 'error'
+      /       = f.collection_select :children_age_band, @children_age_band_select, :to_s, :to_s, {},{ class: 'govuk-select', name: "dependent[children_bands][]"}
 
-            .govuk-form-group
-              = f.label :children_age_band_two, class: 'govuk-label'
-              - if @form.errors[:children_age_band_two].present?
-                span.govuk-error-message
-                  = f.label :children_age_band_two, @form.errors[:children_age_band_two].join(', '), class: 'error'
-              = f.text_field :children_age_band_two, class: 'govuk-input govuk-input--width-3', value: age_band_value('two', @online_application)
+        / <br>
+        / <div class="govuk-form-group">
+        /   <h2 class="govuk-heading-s">t('children_age_range', scope: @form.i18n_scope)</h2>
+        / </div>
+        /
+        / <div class="govuk-form-group <%= 'govuk-form-group--error' if @form.errors[:children_age_band].any? %>">
+        /   <label class="govuk-label" for="dependent_children_bands_<%= i %>">t("child_age_range", scope: @form.i18n_scope, child_number: i)</label>
+        /   <% if @form.errors[:children_age_band].present? %>
+        /     <span class="govuk-error-message">
+        /       <%= f.label :children_age_band, @form.errors[:children_age_band].join(', '), class: 'error' %>
+        /     </span>
+        /   <% end %>
+        /
+        /   <select class="govuk-select" name="dependent[children_bands][]" id="dependent_children_bands_<%= i %>">
+        /     <% @children_age_band_select.each do |option| %>
+        /       <option value="<%= option.to_s %>"><%= option.to_s %></option>
+        /     <% end %>
+        /   </select>
+        / </div>
+            / es5 compatible
 
-
-          .govuk-warning-text
-            span.govuk-warning-text__icon aria-hidden="true" !
-            strong.govuk-warning-text__text
-              span.govuk-visually-hidden Warning
-              = t('questions.dependent.warning')
-
-      .govuk-radios__item
-        = f.radio_button :children, 'false', class: 'govuk-radios__input'
-        = f.label t('children_false', scope: @form.i18n_scope), for: 'dependent_children_false', class: 'govuk-label govuk-radios__label'
-
-
+      .div id='children_age_range_box'
