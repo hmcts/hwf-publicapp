@@ -5,18 +5,18 @@ Given(/^I am ([^"]*)' and on the dependent page$/) do |status|
 end
 
 When(/^I submit the form with no I do not have any children$/) do
-  dependent_page.content.children_number.set 0
+  dependent_page.content.children_number.select 0
   continue
 end
 
 When(/^I submit the form with four children$/) do
   expect(dependent_page.content).to have_children_number
-  dependent_page.content.children_number.set 4
+  dependent_page.content.children_number.select 4
   continue
 end
 
 When(/^I add I have three children$/) do
-  dependent_page.content.children_number.set 3
+  dependent_page.content.children_number.select 3
   continue
 end
 

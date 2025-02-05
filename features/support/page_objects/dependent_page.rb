@@ -18,13 +18,13 @@ class DependentPage < BasePage
   end
 
   def submit_dependent_no
-    content.children_number.set 0
+    content.children_number.select 0
     continue
   end
 
   def slow_submit_dependent_no
     travel 61.minutes do
-      content.children_number.set 0
+      content.children_number.select 0
       continue
     end
   end
@@ -34,13 +34,13 @@ class DependentPage < BasePage
   end
 
   def submit_dependent_3
-    content.children_number.set 3
+    content.children_number.select 3
     continue
   end
 
   def slow_submit_dependent_yes
     travel 61.minutes do
-      content.children_number.set 1
+      content.children_number.select 1
       continue
     end
   end
