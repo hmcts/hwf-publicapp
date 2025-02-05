@@ -17,6 +17,11 @@ class DependentPage < BasePage
     element :error_link, 'a', text: 'You need to say whether you have financially dependent children'
   end
 
+  def submit_dependent_no
+    content.children_number.set 0
+    continue
+  end
+
   def slow_submit_dependent_no
     travel 61.minutes do
       content.children_number.set 0
