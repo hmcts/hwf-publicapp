@@ -13,9 +13,10 @@ RSpec.describe Forms::PersonalDetail do
   let(:partner_last_name) { '' }
 
   describe 'validations' do
-    context 'married' do
+    context 'married & NI present' do
       before do
         form.is_married = true
+        form.ni_number_present = true
       end
 
       context 'when title is blank' do
@@ -39,6 +40,20 @@ RSpec.describe Forms::PersonalDetail do
         let(:partner_last_name) { 'LAST NAME' }
 
         it { is_expected.not_to be_valid }
+      end
+    end
+
+    context 'married & no NI present' do
+      before do
+        form.is_married = true
+        form.ni_number_present = false
+      end
+
+      context 'partner names blank' do
+        let(:partner_first_name) { '' }
+        let(:partner_last_name) { '' }
+
+        it { is_expected.to be_valid }
       end
     end
 

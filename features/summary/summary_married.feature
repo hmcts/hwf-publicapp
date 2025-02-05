@@ -42,22 +42,42 @@ Feature: Summary page
     Given I have a home office number but not a national insurance number
     And I am 'married' and on the summary page
     Then I should see my details:
+      | scope                                                                     |
+      | Form name or number C100 Change form name or number                       |
+      | Fee paid No Change fee paid                                               |
+      | National Insurance number No Change national insurance number             |
+      | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number|
+      | Status Married or living with someone and sharing an income Change status |
+      | Less than £4,250 Change savings and investments                           |
+      | Children No Change children                                               |
+      | Total income £0 Last calendar month Change income                                                   |
+      | Income type Your income type Your partner's income type Change income                                |
+      | Claim number No Change claim number                                       |
+      | Date of birth 23/07/1980 Change date of birth                             |
+      | Full name Sally Smith Change full name                                 |
+      | Address 102 Petty France London SW1H 9AJ Change address                   |
+      | Email test@hmcts.net Change email                                         |
+
+  Scenario: Displays national insurance number
+    Given I have an NI number
+    And I am 'married with NI' and on the summary page
+    Then I should see my details:
     | scope                                                                     |
     | Form name or number C100 Change form name or number                       |
     | Fee paid No Change fee paid                                               |
-    | National Insurance number No Change national insurance number             |
-    | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number|
+    | National Insurance number JL806367D Change national insurance number             |
     | Status Married or living with someone and sharing an income Change status |
     | Less than £4,250 Change savings and investments                           |
-    | Children No Change children                                               |
-    | Total income £0 Last calendar month Change income                                                   |
-    | Income type Your income type Your partner's income type Change income                                |
-    | Claim number No Change claim number                                       |
-    | Date of birth 23/07/1980 Change date of birth                             |
-    | Partner's date of birth 01/01/1981 Change partner's date of birth           |
-    | Full name Thomas Test Change full name                                 |
-    | Partner’s full name Tina Test Change full name                              |
-    | Address 102 Petty France London SW1H 9AJ Change address                   |
+    | Benefits Not receiving eligible benefits Change benefits                                               |
+    | Children No Change children                                                   |
+    | Total income £0 Last calendar month Change income                                |
+    | Income type Your income type Your partner's income type Change income type                                       |
+    | Claim number No Change claim number                             |
+    | Date of birth 23/07/1980 Change date of birth           |
+    | Partner's date of birth 01/01/1981 Change partner's date of birth                                 |
+    | Full name Thomas Test Change full name                              |
+    | Partner’s full name Tina Test Change full name                   |
+    | Address 102 Petty France London SW1H 9AJ Change address                                         |
     | Email test@hmcts.net Change email                                         |
 
   Scenario: Displays declaration of truth

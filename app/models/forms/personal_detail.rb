@@ -6,12 +6,16 @@ module Forms
     attribute :partner_first_name, String
     attribute :partner_last_name, String
     attribute :is_married, Boolean
+    attribute :ni_number_present, Boolean
 
     validates :title, length: { maximum: 9 }
     validates :first_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :last_name, presence: true, sensible_name: true, length: { maximum: 49 }
-    validates :partner_first_name, presence: true, sensible_name: true, length: { maximum: 49 }, if: :is_married?
-    validates :partner_last_name, presence: true, sensible_name: true, length: { maximum: 49 }, if: :is_married?
+    validates :partner_first_name, presence: true, sensible_name: true, length: { maximum: 49 },
+                                   if: -> { is_married? && ni_number_present == true }
+
+    validates :partner_last_name, presence: true, sensible_name: true, length: { maximum: 49 },
+                                  if: -> { is_married? && ni_number_present == true }
 
     private
 

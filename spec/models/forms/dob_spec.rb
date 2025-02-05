@@ -10,6 +10,7 @@ RSpec.describe Forms::Dob do
         form_dob.month = '01'
         form_dob.year = '1980'
         form_dob.is_married = true
+        form_dob.ni_number_present = true
       end
 
       it { expect(form_dob.valid?).to be false }
@@ -82,6 +83,22 @@ RSpec.describe Forms::Dob do
           form_dob.partner_day = '23'
           form_dob.partner_month = ''
           form_dob.partner_year = '1900'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'no NI present' do
+        before do
+          form_dob.ni_number_present = false
+        end
+
+        it { expect(form_dob.valid?).to be true }
+      end
+
+      context 'NI present with empty partner details' do
+        before do
+          form_dob.ni_number_present = true
         end
 
         it { expect(form_dob.valid?).to be false }
@@ -197,6 +214,7 @@ RSpec.describe Forms::Dob do
           form_dob.partner_year = '1999'
           form_dob.over_66 = over_66
           form_dob.is_married = is_married
+          form_dob.ni_number_present = true
         end
 
         context 'when is married' do
