@@ -28,44 +28,17 @@ br
         = f.collection_select :children_number, 0..99, :to_i, :to_s, {},{ class: 'govuk-select', 'data-target': 'dependent-children-age-panel'}
 
   .govuk-form-group id='dependent-children-age-panel'
+    legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("children_age_range", scope: @form.i18n_scope)
     .govuk-form-group.children_age_select
-      label.govuk-label for="children_age_band" =t('children_age_range', scope: @form.i18n_scope)
-      select.govuk-select id="children_age_band[]" name="children_age_band[]"
-        option value="one" =t('summary.labels.children_age_band_one')
-        option value="two" =t('summary.labels.children_age_band_two')
+      label.govuk-label for="children_bands" = t('child_age_range', scope: @form.i18n_scope, child_number: 1)
+      select.govuk-select id="children_bands[]" name="dependent[children_bands][]"
+        option value="one" = t('children_age_band_one', scope: @form.i18n_scope)
+        option value="two" selected=(@form.attributes[:children_bands].first == 'two') = t('children_age_band_two', scope: @form.i18n_scope)
 
-
-      / = render('questions/forms/dependents/child_age_range_box', f: f)
-      / - if true
-      /   br
-      /   .govuk-form-group
-      /     h2.govuk-heading-s = t('children_age_range', scope: @form.i18n_scope)
-      /   - (1..2).each do |i|
-      /     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:children_age_band].any?)
-      /       = f.label t("child_age_range", scope: @form.i18n_scope, child_number: i), class: 'govuk-label'
-      /       - if @form.errors[:children_age_band].present?
-      /         span.govuk-error-message
-      /           = f.label :children_age_band, @form.errors[:children_age_band].join(', '), class: 'error'
-      /       = f.collection_select :children_age_band, @children_age_band_select, :to_s, :to_s, {},{ class: 'govuk-select', name: "dependent[children_bands][]"}
-
-        / <br>
-        / <div class="govuk-form-group">
-        /   <h2 class="govuk-heading-s">t('children_age_range', scope: @form.i18n_scope)</h2>
-        / </div>
-        /
-        / <div class="govuk-form-group <%= 'govuk-form-group--error' if @form.errors[:children_age_band].any? %>">
-        /   <label class="govuk-label" for="dependent_children_bands_<%= i %>">t("child_age_range", scope: @form.i18n_scope, child_number: i)</label>
-        /   <% if @form.errors[:children_age_band].present? %>
-        /     <span class="govuk-error-message">
-        /       <%= f.label :children_age_band, @form.errors[:children_age_band].join(', '), class: 'error' %>
-        /     </span>
-        /   <% end %>
-        /
-        /   <select class="govuk-select" name="dependent[children_bands][]" id="dependent_children_bands_<%= i %>">
-        /     <% @children_age_band_select.each do |option| %>
-        /       <option value="<%= option.to_s %>"><%= option.to_s %></option>
-        /     <% end %>
-        /   </select>
-        / </div>
-            / es5 compatible
-
+    - if @form.attributes[:children_number]
+      - (@form.attributes[:children_number]-1).times do |i|
+        .govuk-form-group.children_age_select
+          label.govuk-label for="children_bands" =t('child_age_range', scope: @form.i18n_scope, child_number: i+2)
+          select.govuk-select id="children_bands[]" name="dependent[children_bands][]"
+            option value="one" = t('children_age_band_one', scope: @form.i18n_scope)
+            option value="two" selected=(@form.attributes[:children_bands][i+1] == 'two') = t('children_age_band_two', scope: @form.i18n_scope)

@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
   before_action :address_lookup_access_token
-  before_action :set_children_age_band_values
 
   def edit
     assign_title_view
@@ -29,10 +28,6 @@ class QuestionsController < ApplicationController
 
   private
 
-  def set_children_age_band_values
-    @children_age_band_select = ['0-13 years', '14 years and over']
-  end
-
   def track_step
     @storage.store_page_path(question_path(question, locale: I18n.locale), question)
   end
@@ -51,7 +46,11 @@ class QuestionsController < ApplicationController
   end
 
   def form_params
-    params.require(@form.id).permit(*@form.permitted_attributes).to_h
+    if @form.id == "dependent"
+      params.require(@form.id).permit(*@form.permitted_attributes, children_bands: []).to_h
+    else
+      params.require(@form.id).permit(*@form.permitted_attributes).to_h
+    end
   end
 
   def process_form_and_online_application

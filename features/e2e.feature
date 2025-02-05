@@ -30,7 +30,6 @@ Feature: End to end tests
     Then I should be taken to benefits page
     When I submit the form with no I do not receive one of the benefits listed
     Then I should be taken to dependent page
-    When I select yes to do you have any children
     And I submit the form with four children
     Then I should be taken to kind of income page
     When I submit the married form with wages and working tax credit checked

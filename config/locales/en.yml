@@ -566,6 +566,8 @@ en:
       title: Children that live with you or you’re supporting financially
       children_number_title: How many children do you have living with you or that you support financially?
       children_age_range: Children's age range
+      children_age_band_one: 0-13 years
+      children_age_band_two: 14 years and over
 
       single:
         you_need: You need to give details of any children you support financially.
