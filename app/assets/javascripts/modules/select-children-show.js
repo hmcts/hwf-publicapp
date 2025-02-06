@@ -56,8 +56,13 @@ window.moj.Modules.SelectChildrenShow  = {
         }
 
         while (numberOfChildren > numOfChildHTML) {
-            let lastChildHtmlEnglish = "<label class='govuk-label' for='children_bands'>Age range for child " + (numOfChildHTML + 1).toString() + "?</label><select class='govuk-select' id='children_bands[]' name='dependent[children_bands][]'><option value='one'>0-13 years</option><option value='two'>14 years and over</option></select>";
-            let lastChildHtmlWelsh = "<label class='govuk-label' for='children_bands'>Ystod oedran ar gyfer plentyn " + (numOfChildHTML + 1).toString() + "?</label><select class='govuk-select' id='children_bands[]' name='dependent[children_bands][]'><option value='one'>0-13 mlwydd oed</option><option value='two'>14 mlwydd oed neu'n hŷn</option></select>";
+            englishSelect = self.newSelect('0-13 years','14 years and over');
+            welshSelect = self.newSelect('0-13 mlwydd oed',"14 mlwydd oed neu'n hŷn");
+            enLabel = self.newLabel("Age range for child " + (numOfChildHTML + 1).toString() + "?");
+            welshLable = self.newLabel("Ystod oedran ar gyfer plentyn " + (numOfChildHTML + 1).toString() + "?");
+
+            let lastChildHtmlEnglish = enLabel.prop('outerHTML') + englishSelect.prop('outerHTML');
+            let lastChildHtmlWelsh = welshLable.prop('outerHTML') + welshSelect.prop('outerHTML');
             if (languagePicker === 'English'){
                 $('#dependent-children-age-panel .children_age_select').last().after(self.newDiv(lastChildHtmlWelsh));
             } else {
@@ -65,6 +70,38 @@ window.moj.Modules.SelectChildrenShow  = {
             }
             numOfChildHTML = $('.children_age_select').length;
         }
+    },
+
+    newLabel: function(text) {
+      const self = this;
+      const newLabel = $('<label>', {
+          class: 'govuk-label',
+          for: 'children_bands',
+          text: text
+      });
+      return newLabel;
+    },
+
+    newSelect: function(oneText, twoText) {
+      const self = this;
+      const newSelect = $('<select>', {
+        class: 'govuk-select',
+        id: 'children_bands[]',
+        name: 'dependent[children_bands][]'
+      });
+
+      newSelect.append(self.newOption(oneText,'one'));
+      newSelect.append(self.newOption(twoText,'two'));
+      return newSelect;
+    },
+
+    newOption: function(text, value) {
+      const self = this;
+      const newOption = $('<option>', {
+          value: value,
+          text: text
+      });
+      return newOption;
     },
 
     newDiv: function(innerHTML) {
