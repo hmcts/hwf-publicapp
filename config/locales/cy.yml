@@ -266,14 +266,9 @@ cy:
             number:
               blank: Rhowch eich rhif Yswiriant Gwladol
               invalid: Rhowch rif Yswiriant Gwladol dilys
-            has_ni_number:
+            ni_number_present:
               inclusion: Dewiswch 'oes' os oes gennych rif Yswiriant Gwladol
               invalid: Dewiswch 'oes' os oes gennych rif Yswiriant Gwladol
-        forms/national_insurance_presence:
-          attributes:
-            ni_number_present:
-              inclusion: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
-              invalid: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
         forms/partner_national_insurance:
           attributes:
             number:
