@@ -580,7 +580,7 @@ en:
         children_age_band: Do you have any children living with you or that you support financially?
 
       married:
-        you_need: You need to give details of any children you are your partner support financially.
+        you_need: You need to give details of any children you or your partner support financially.
         they_must: 'They must be:'
         list:
           - under 16 and living at home with you or
