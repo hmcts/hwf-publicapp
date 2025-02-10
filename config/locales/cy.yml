@@ -794,19 +794,6 @@ cy:
       text: Statws perthynas
       title: Eich statws priodasol
       subheader: A ydych chi’n sengl, wedi priodi neu’n byw â rhywun?
-    national_insurance_presence:
-      breadcrumb: Cam %{page_number} o 25
-      details:
-        section_1:
-          item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
-          item_2: gofynnwch am nodyn atgoffa drwy'r post
-        summary: Sut i ddod o hyd i rif Yswiriant Gwladol coll
-      example: Gallwch ddod o hyd i rifau Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau.
-      ni_number_present_false: 'Nac oes'
-      ni_number_present_true: 'Oes'
-      prompt: A oes gennych rif Yswiriant Gwladol?
-      text: A oes gennych rif Yswiriant Gwladol?
-      title: A oes gennych rif Yswiriant Gwladol?
     national_insurance:
       breadcrumb: Cam %{page_number} o 25
       prompt: A oes gennych Rif Yswiriant Gwladol?
