@@ -252,7 +252,7 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
-            has_ni_number:
+            ni_number_present:
               inclusion: Select yes if you have National Insurance number
               invalid: Select yes if you have National Insurance number
         forms/partner_national_insurance:
@@ -264,11 +264,6 @@ en:
             partner_ni_number_present:
               inclusion: Select if your partner has National Insurance number
               invalid: Select if your partner has National Insurance number
-        forms/national_insurance_presence:
-          attributes:
-            ni_number_present:
-              inclusion: Select yes if you have National Insurance number
-              invalid: Select yes if you have National Insurance number
         forms/home_office:
           attributes:
             ho_number:

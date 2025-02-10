@@ -3,15 +3,15 @@ module Forms
     include ActiveModel::Validations::Callbacks
 
     attribute :number, String
-    attribute :has_ni_number, Boolean
+    attribute :ni_number_present, Boolean
 
     NI_NUMBER_REGEXP = /\A(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]\z/
 
     validates :number, format: { with: NI_NUMBER_REGEXP }, allow_blank: true, unless: lambda { |form|
-                                                                                        form.has_ni_number.blank?
+                                                                                        form.ni_number_present.blank?
                                                                                       }
-    validates :number, presence: true, unless: ->(form) { form.has_ni_number.blank? }
-    validates :has_ni_number, inclusion: { in: [true, false] }
+    validates :number, presence: true, unless: ->(form) { form.ni_number_present.blank? }
+    validates :ni_number_present, inclusion: { in: [true, false] }
 
     before_validation :format_number
 
@@ -27,7 +27,7 @@ module Forms
     def export_params
       {
         ni_number: number,
-        ni_number_present: has_ni_number
+        ni_number_present: ni_number_present
       }
     end
   end

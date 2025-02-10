@@ -5,7 +5,7 @@ RSpec.describe Forms::NationalInsurance do
 
   describe 'validations' do
     describe 'number' do
-      before { form_ni.has_ni_number = true }
+      before { form_ni.ni_number_present = true }
 
       context 'when provided' do
         before {
@@ -49,7 +49,7 @@ RSpec.describe Forms::NationalInsurance do
       context 'when not provided' do
         before {
           form_ni.number = ''
-          form_ni.has_ni_number = true
+          form_ni.ni_number_present = true
         }
 
         it { expect(form_ni.valid?).to be false }
@@ -58,19 +58,19 @@ RSpec.describe Forms::NationalInsurance do
       context 'when not does not have one' do
         before do
           form_ni.number = ''
-          form_ni.has_ni_number = false
+          form_ni.ni_number_present = false
         end
 
         it { expect(form_ni.valid?).to be true }
       end
     end
 
-    describe 'has_ni_number' do
+    describe 'ni_number_present' do
       before { form_ni.number = 'AB123456A' }
 
       context 'is valid when true' do
         before do
-          form_ni.has_ni_number = true
+          form_ni.ni_number_present = true
         end
 
         it { expect(form_ni.valid?).to be true }
@@ -78,7 +78,7 @@ RSpec.describe Forms::NationalInsurance do
 
       context 'is valid when false' do
         before do
-          form_ni.has_ni_number = false
+          form_ni.ni_number_present = false
         end
 
         it { expect(form_ni.valid?).to be true }
@@ -86,7 +86,7 @@ RSpec.describe Forms::NationalInsurance do
 
       context 'is invalid when not true of false' do
         before do
-          form_ni.has_ni_number = nil
+          form_ni.ni_number_present = nil
         end
 
         it { expect(form_ni.valid?).to be false }
@@ -95,13 +95,13 @@ RSpec.describe Forms::NationalInsurance do
   end
 
   describe '#export' do
-    subject { described_class.new(number:, has_ni_number:).export }
+    subject { described_class.new(number:, ni_number_present:).export }
 
     let(:number) { 'AA123456A' }
-    let(:has_ni_number) { true }
+    let(:ni_number_present) { true }
 
     it 'returns hash with ni_number set' do
-      expect(subject).to eql(ni_number: number, ni_number_present: has_ni_number)
+      expect(subject).to eql(ni_number: number, ni_number_present:)
     end
   end
 
