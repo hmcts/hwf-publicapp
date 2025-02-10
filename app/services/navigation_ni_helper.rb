@@ -1,9 +1,5 @@
 module NavigationNiHelper
   def no_ni_number_page
-    @online_application.ni_number_present == false ? :home_office : :national_insurance
-  end
-
-  def ucd_no_ni_number_page
     @online_application.ni_number_present == false ? :home_office : :marital_status
   end
 
@@ -18,8 +14,7 @@ module NavigationNiHelper
   def ni_related_question?
     next_pages = {
       applying_on_behalf: ni_next_question,
-      national_insurance_presence: no_ni_number_page,
-      national_insurance: ucd_no_ni_number_page
+      national_insurance: no_ni_number_page
     }
     @ni_next_page = next_pages[@current_question]
   end
