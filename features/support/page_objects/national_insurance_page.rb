@@ -12,7 +12,7 @@ class NationalInsurancePage < BasePage
     element :ask_for_reminder_link, 'a', text: 'ask for a reminder through the post'
     element :no_ni_number_text, 'p', text: "If you don't have a National Insurance number, you need to"
     element :no_ni_number_link, 'a', text: "use the paper form"
-    element :blank_error_link, 'a', text: 'Select yes if you have National Insurance number'
+    element :blank_error_link, 'a', text: 'Enter your National Insurance number'
     element :invalid_error_link, 'a', text: 'Enter a valid National Insurance number'
     element :lost_ni_number_text, 'li', text: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
     element :explanation, 'li', text: 'We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. Providing this may reduce the likelihood of you having to provide further evidence before a decision is made.'

@@ -1,11 +1,12 @@
-.govuk-form-group id='national_insurance_ni_number_present' class=('govuk-form-group--error' if @form.errors[:partner_national_insurance].any?)
-  - if @form.errors[:ni_number_present].any?
+.govuk-form-group id='national_insurance_presence_ni_number_present' class=('govuk-form-group--error' if @form.errors[:partner_national_insurance].any?)
+  = f.hidden_field :has_ni_number, value: nil
+  - if @form.errors[:has_ni_number].any?
     span.govuk-error-message#kase = @form.errors[:ni_number_present].join(' ')
   .govuk-form-group
     .govuk-radios
       .govuk-radios__item
-        = f.radio_button :ni_number_present, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel"
-        label.govuk-label.govuk-radios__label for='national_insurance_ni_number_present_true'
+        = f.radio_button :has_ni_number, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel"
+        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number_true'
           = t('ni_number_present_true', scope: @form.i18n_scope)
 
       .govuk-radios__conditional#ni-number-panel.visuallyhidden
@@ -19,9 +20,10 @@
           = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
       .govuk-radios__item
-        = f.radio_button :ni_number_present, 'false', class: 'govuk-radios__input'
-        label.govuk-label.govuk-radios__label for='national_insurance_ni_number_present_false'
+        = f.radio_button :has_ni_number, 'false', class: 'govuk-radios__input'
+        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number_false'
           = t('ni_number_present_false', scope: @form.i18n_scope)
+.govuk-body
 
 details.govuk-details data-module="govuk-details"
   summary.govuk-details__summary =t('summary', scope: "#{@form.i18n_scope}.post_ucd_details")

@@ -19,7 +19,7 @@ class SummaryPage < BasePage
     to_fee_page
     fee_page.submit_fee_no
     form_name_page.submit_valid_form_number
-    national_insurance_page.submit_no
+    national_insurance_presence_page.submit_no
   end
 
   def benefits_change

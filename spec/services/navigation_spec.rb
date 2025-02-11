@@ -14,6 +14,7 @@ RSpec.describe Navigation do
     {
       fee: :form_name,
       form_name: :applying_on_behalf,
+      national_insurance_presence: :national_insurance,
       national_insurance: :marital_status,
       home_office: :marital_status,
       marital_status: :savings_and_investment,
@@ -172,7 +173,7 @@ RSpec.describe Navigation do
     end
 
     context 'when the NI number is not present' do
-      let(:current_question) { :national_insurance }
+      let(:current_question) { :national_insurance_presence }
       let(:online_application) { build(:online_application, ni_number_present: false) }
 
       it 'routes to the home office question' do

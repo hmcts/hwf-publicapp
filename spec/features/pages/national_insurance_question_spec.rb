@@ -31,7 +31,7 @@ RSpec.feature 'As a user' do
 
       describe 'clicking yes and leaving the ni field empty' do
         before do
-          choose 'national_insurance_ni_number_present_true'
+          choose 'national_insurance_has_ni_number_true'
           click_button 'Continue'
         end
 
@@ -42,7 +42,7 @@ RSpec.feature 'As a user' do
 
       describe 'providing an incorrect value' do
         before do
-          choose 'national_insurance_ni_number_present_true'
+          choose 'national_insurance_has_ni_number_true'
           fill_in 'national_insurance_number', with: 'AB123'
           click_button 'Continue'
         end

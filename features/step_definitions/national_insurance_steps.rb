@@ -56,12 +56,3 @@ end
 When(/^I select my partner does not have a national insurance number$/) do
   partner_national_insurance_page.submit_no_ni
 end
-
-Then("I should be taken to the home office page") do
-  expect(home_office_page).to be_displayed
-end
-
-Then(/^I should see enter your national insurance number error message$/) do
-  expect(base_page.content.alert).to have_there_is_a_problem
-  expect(national_insurance_page.content).to have_blank_error_link
-end
