@@ -21,10 +21,9 @@
           = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
       .govuk-radios__item
-        = f.radio_button :has_ni_number, 'false', class: 'govuk-radios__input'
-        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number_false'
+        = f.radio_button :ni_number_present, 'false', class: 'govuk-radios__input'
+        label.govuk-label.govuk-radios__label for='national_insurance_ni_number_present_false'
           = t('ni_number_present_false', scope: @form.i18n_scope)
-.govuk-body
 
 details.govuk-details data-module="govuk-details"
   summary.govuk-details__summary =t('summary', scope: "#{@form.i18n_scope}.post_ucd_details")
