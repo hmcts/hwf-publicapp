@@ -12,10 +12,10 @@ module Forms
     validates :first_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :last_name, presence: true, sensible_name: true, length: { maximum: 49 }
     validates :partner_first_name, presence: true, sensible_name: true, length: { maximum: 49 },
-                                   if: -> { is_married? && ni_number_present == true }
+                                   if: -> { is_married? && ni_number_present }
 
     validates :partner_last_name, presence: true, sensible_name: true, length: { maximum: 49 },
-                                  if: -> { is_married? && ni_number_present == true }
+                                  if: -> { is_married? && ni_number_present }
 
     private
 
