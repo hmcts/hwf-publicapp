@@ -1,12 +1,13 @@
 .govuk-form-group id='national_insurance_presence_ni_number_present' class=('govuk-form-group--error' if @form.errors[:partner_national_insurance].any?)
-  = f.hidden_field :has_ni_number, value: nil
+  / = f.hidden_field :has_ni_number, value: nil
   - if @form.errors[:has_ni_number].any?
     span.govuk-error-message#kase = @form.errors[:ni_number_present].join(' ')
+
   .govuk-form-group
     .govuk-radios
       .govuk-radios__item
-        = f.radio_button :has_ni_number, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel"
-        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number_true'
+        = f.radio_button :has_ni_number, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel", id: 'national_insurance_has_ni_number'
+        label.govuk-label.govuk-radios__label for='national_insurance_has_ni_number'
           = t('ni_number_present_true', scope: @form.i18n_scope)
 
       .govuk-radios__conditional#ni-number-panel.visuallyhidden
