@@ -98,7 +98,7 @@ module NavigationHelper
 
   def legal_representative?
     next_pages = {
-      applying_on_behalf: @online_application.applying_on_behalf ? :legal_representative : :national_insurance_presence,
+      applying_on_behalf: @online_application.applying_on_behalf ? :legal_representative : :national_insurance,
       applicant_address: @online_application.legal_representative ? :apply_type : :contact
     }
 

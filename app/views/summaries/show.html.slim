@@ -38,16 +38,10 @@ dl.govuk-summary-list
       dt.govuk-summary-list__key =t('ni_number', scope: 'summary.labels')
       dd.govuk-summary-list__value =ni_number_value(@summary)
       dd.govuk-summary-list__actions
-        -if @summary.ni_number
-          = link_to question_path(:national_insurance), onclick: "dataLayer.push({'sectionName': 'national_insurance', 'event': 'summary_page'});" do
-            =t('summary.change')
-            span.govuk-visually-hidden
-              =t('ni_number', scope: 'summary.labels').downcase
-        -else
-          = link_to question_path(:national_insurance_presence), onclick: "dataLayer.push({'sectionName': 'national_insurance_presence', 'event': 'summary_page'});" do
-            =t('summary.change')
-            span.govuk-visually-hidden
-              =t('ni_number', scope: 'summary.labels').downcase
+        = link_to question_path(:national_insurance), onclick: "dataLayer.push({'sectionName': 'national_insurance', 'event': 'summary_page'});" do
+          = t('summary.change')
+          span.govuk-visually-hidden
+            = t('ni_number', scope: 'summary.labels').downcase
 
   - if @summary.ho_number.present?
     div.govuk-summary-list__row

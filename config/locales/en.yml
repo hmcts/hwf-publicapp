@@ -252,7 +252,7 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
-            has_ni_number:
+            ni_number_present:
               inclusion: Select yes if you have National Insurance number
               invalid: Select yes if you have National Insurance number
         forms/partner_national_insurance:
@@ -264,11 +264,6 @@ en:
             partner_ni_number_present:
               inclusion: Select if your partner has National Insurance number
               invalid: Select if your partner has National Insurance number
-        forms/national_insurance_presence:
-          attributes:
-            ni_number_present:
-              inclusion: Select yes if you have National Insurance number
-              invalid: Select yes if you have National Insurance number
         forms/home_office:
           attributes:
             ho_number:
@@ -786,19 +781,6 @@ en:
       text: Relationship status
       title: Your marital status
       subheader: Are you single, married or living with someone?
-    national_insurance_presence:
-      breadcrumb: Step %{page_number} of 25
-      details:
-        section_1:
-          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
-          item_2: ask for a reminder through the post
-        summary: Find a lost National Insurance number
-      example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
-      ni_number_present_false: 'No'
-      ni_number_present_true: 'Yes'
-      prompt: Do you have a National Insurance number?
-      text: Do you have a National Insurance number?
-      title: Do you have a National Insurance number?
     national_insurance:
       breadcrumb: Step %{page_number} of 25
       example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
