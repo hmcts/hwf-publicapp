@@ -22,7 +22,7 @@ module NavigationNiHelper
   def partner_ni_related_question?
     case @current_question
     when :marital_status
-      @partner_ni_next_page = if @online_application.married && @online_application.ni_number_present
+      @partner_ni_next_page = if @online_application.married && @online_application.ni_number_present?
                                 :partner_national_insurance
                               else
                                 :savings_and_investment

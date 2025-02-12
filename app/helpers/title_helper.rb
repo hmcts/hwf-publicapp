@@ -41,7 +41,7 @@ module TitleHelper
   end
 
   def dob_postfix(online_application)
-    if online_application.married? && online_application.ni_number_present
+    if online_application.married? && online_application.ni_number_present?
       "questions.dob_married" if online_application.married?
     else
       'questions.dob'
