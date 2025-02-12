@@ -49,7 +49,7 @@ module TitleHelper
   end
 
   def personal_detail_postfix(online_application)
-    if online_application.married? && online_application.ni_number_present
+    if online_application.married? && online_application.ni_number_present?
       "questions.personal_detail_married"
     else
       'questions.personal_detail'

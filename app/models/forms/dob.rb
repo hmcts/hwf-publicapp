@@ -24,7 +24,7 @@ module Forms
     before_validation :reset_partner_dob, unless: :is_married? && :ni_number_present?
 
     validate :dob_age_valid?
-    validate :partner_dob_age_valid?, if: -> { is_married? && ni_number_present }
+    validate :partner_dob_age_valid?, if: -> { is_married? && ni_number_present? }
 
     private
 

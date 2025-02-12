@@ -62,7 +62,7 @@ dl.govuk-summary-list
         span.govuk-visually-hidden
           =t('married', scope: 'summary.labels').downcase
 
-  - if @summary.partner_ni_number.present? && @summary.ni_number_present
+  - if @summary.partner_ni_number.present? && @summary.ni_number_present?
     div.govuk-summary-list__row
       dt.govuk-summary-list__key =t('partner_ni_number', scope: 'summary.labels')
       dd.govuk-summary-list__value =partner_ni_number_value(@summary)
@@ -167,7 +167,7 @@ dl.govuk-summary-list
           span.govuk-visually-hidden
             =t('date_of_birth', scope: 'summary.labels').downcase
 
-    - if @summary.married && @summary.ni_number_present
+    - if @summary.married && @summary.ni_number_present?
       div.govuk-summary-list__row
         dt.govuk-summary-list__key =t('partner_date_of_birth', scope: 'summary.labels')
         dd.govuk-summary-list__value =date_formatter(@summary.partner_date_of_birth)

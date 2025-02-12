@@ -1,7 +1,7 @@
 = f.hidden_field :is_married, value: @online_application.married?
 = f.hidden_field :ni_number_present, value: @online_application.ni_number_present?
 
-- @online_application.married? && @online_application.ni_number_present
+- @online_application.married? && @online_application.ni_number_present?
   .govuk-form-group
     fieldset.govuk-fieldset
     legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
@@ -20,7 +20,7 @@
   = f.text_field :last_name, class: 'govuk-input govuk-!-width-one-half'
 
 
-- if @online_application.married? && @online_application.ni_number_present
+- if @online_application.married? && @online_application.ni_number_present?
   .govuk-form-group
     fieldset.govuk-fieldset
     legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'

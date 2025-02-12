@@ -9,7 +9,7 @@
     span.govuk-error-message#date_of_birth = @form.errors[:date_of_birth].join(' ')
 
   .govuk-form-group
-    - if @online_application.married? && @online_application.ni_number_present
+    - if @online_application.married? && @online_application.ni_number_present?
       fieldset.govuk-fieldset
         legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
           = t('applicant', scope: @form.i18n_scope)
@@ -30,7 +30,7 @@
           = f.label :year, class: 'govuk-label'
           = f.text_field :year, class: 'govuk-input govuk-date-input__input govuk-input--width-4', type:"number", pattern: "[0-9]*"
 
-  - if @online_application.married? && @online_application.ni_number_present
+  - if @online_application.married? && @online_application.ni_number_present?
     .govuk-form-group
       fieldset.govuk-fieldset
         legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
