@@ -577,6 +577,7 @@ cy:
       breadcrumb: Cam %{page_number} o 25
       children_false: Nac oes
       children_number: Nifer y plant
+      child_age_range: Ystod oedran ar gyfer plentyn %{child_number}?
       children_true: Oes
       details:
         item_1: o dan 16 oed ac yn byw gartref gyda chi
@@ -587,8 +588,10 @@ cy:
         summary: Help gyda phlant sy'n dibynnu arnoch yn ariannol
       text: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
       title: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
-      warning: Dalier sylw - Peidiwch â nodi eu hoedrannau yn y blychau uchod.
-
+      children_number_title: Sawl plentyn sydd gennych yn byw gyda chi neu rydych yn eu cefnogi’n ariannol?
+      children_age_range: Ystod oedran y plant
+      children_age_band_one: 0-13 mlwydd oed
+      children_age_band_two: 14 mlwydd oed neu'n hŷn
       single:
         you_need: Mae angen i chi roi manylion unrhyw blant rydych yn eu cynnal yn ariannol.
         they_must: 'Mae’n rhaid eu bod:'

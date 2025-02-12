@@ -548,6 +548,7 @@ en:
       breadcrumb: Step %{page_number} of 25
       children_false: 'No'
       children_number: Number of children
+      child_age_range: Age range for child %{child_number}?
       children_true: 'Yes'
       details:
         item_1: under 16 and living at home with you
@@ -558,7 +559,10 @@ en:
         summary: Help with financially dependent children
       text: Children that live with you or you’re supporting financially
       title: Children that live with you or you’re supporting financially
-      warning: Please note - Do not give their ages in the boxes above.
+      children_number_title: How many children do you have living with you or that you support financially?
+      children_age_range: Children's age range
+      children_age_band_one: 0-13 years
+      children_age_band_two: 14 years and over
 
       single:
         you_need: You need to give details of any children you support financially.
@@ -571,7 +575,7 @@ en:
         children_age_band: Do you have any children living with you or that you support financially?
 
       married:
-        you_need: You need to give details of any children you are your partner support financially.
+        you_need: You need to give details of any children you or your partner support financially.
         they_must: 'They must be:'
         list:
           - under 16 and living at home with you or

@@ -303,14 +303,8 @@ module FeatureSteps
     click_button 'Continue'
   end
 
-  def fill_dependent(dependent = false)
-    if dependent
-      choose 'dependent_children_true'
-      fill_in 'dependent_children_age_band_one', with: 1
-      fill_in 'dependent_children_age_band_two', with: 0
-    else
-      choose 'dependent_children_false'
-    end
+  def fill_dependent
+    select 2, from: 'dependent_children_number'
     click_button 'Continue'
   end
 

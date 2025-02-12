@@ -46,7 +46,11 @@ class QuestionsController < ApplicationController
   end
 
   def form_params
-    params.require(@form.id).permit(*@form.permitted_attributes).to_h
+    if @form.id == "dependent"
+      params.require(@form.id).permit(*@form.permitted_attributes, children_bands: []).to_h
+    else
+      params.require(@form.id).permit(*@form.permitted_attributes).to_h
+    end
   end
 
   def process_form_and_online_application

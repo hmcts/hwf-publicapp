@@ -26,6 +26,7 @@
 // = require ./modules/uppercase-fields
 // = require ./modules/address-lookup
 // = require ./modules/partner-national-insurance.js
+// = require ./modules/select-children-show.js
 
 
 // overwrite annoying console message module

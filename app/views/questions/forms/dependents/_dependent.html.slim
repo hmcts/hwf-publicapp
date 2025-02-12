@@ -18,39 +18,27 @@ ul{class="govuk-list govuk-list--bullet"}
 
 br
 
-.govuk-form-group
-  fieldset.govuk-fieldset
-    legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("#{@prefix}.children_age_band", scope: @form.i18n_scope)
-    .govuk-form-group.govuk-radios
-      .govuk-radios__item
-        = f.radio_button :children, 'true', class: 'govuk-radios__input', 'data-target': 'dependent-children_number-panel'
-        = f.label t('children_true', scope: @form.i18n_scope), for: 'dependent_children_true', class: 'govuk-label govuk-radios__label'
+  .govuk-form-group
+    fieldset.govuk-fieldset
+      legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("children_number_title", scope: @form.i18n_scope)
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:children_number].any?)
+        - if @form.errors[:children_number].present?
+          span.govuk-error-message
+            = f.label :children_number, @form.errors[:children_number].join(', '), class: 'error'
+        = f.collection_select :children_number, 0..99, :to_i, :to_s, {},{ class: 'govuk-select', 'data-target': 'dependent-children-age-panel'}
 
-        #dependent-children_number-panel.js-hidden class='govuk-!-margin-bottom-5'
-          .govuk-form-group class=((@form.errors[:children_number].any?) ? 'govuk-form-group--error' : 'panel-indent')
-            .govuk-form-group
-              = f.label :children_age_band_one, class: 'govuk-label'
-              - if @form.errors[:children_age_band_one].present?
-                span.govuk-error-message
-                  = f.label :children_age_band_one, @form.errors[:children_age_band_one].join(', '), class: 'error'
-              = f.text_field :children_age_band_one, class: 'govuk-input govuk-input--width-3', value: age_band_value('one', @online_application)
+  .govuk-form-group id='dependent-children-age-panel'
+    legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("children_age_range", scope: @form.i18n_scope)
+    .govuk-form-group.children_age_select
+      label.govuk-label for="children_bands" = t('child_age_range', scope: @form.i18n_scope, child_number: 1)
+      select.govuk-select id="children_bands[]" name="dependent[children_bands][]"
+        option value="one" = t('children_age_band_one', scope: @form.i18n_scope)
+        option value="two" selected=(@form.attributes[:children_bands].first == 'two') = t('children_age_band_two', scope: @form.i18n_scope)
 
-            .govuk-form-group
-              = f.label :children_age_band_two, class: 'govuk-label'
-              - if @form.errors[:children_age_band_two].present?
-                span.govuk-error-message
-                  = f.label :children_age_band_two, @form.errors[:children_age_band_two].join(', '), class: 'error'
-              = f.text_field :children_age_band_two, class: 'govuk-input govuk-input--width-3', value: age_band_value('two', @online_application)
-
-
-          .govuk-warning-text
-            span.govuk-warning-text__icon aria-hidden="true" !
-            strong.govuk-warning-text__text
-              span.govuk-visually-hidden Warning
-              = t('questions.dependent.warning')
-
-      .govuk-radios__item
-        = f.radio_button :children, 'false', class: 'govuk-radios__input'
-        = f.label t('children_false', scope: @form.i18n_scope), for: 'dependent_children_false', class: 'govuk-label govuk-radios__label'
-
-
+    - if @form.attributes[:children_number]
+      - (@form.attributes[:children_number]-1).times do |i|
+        .govuk-form-group.children_age_select
+          label.govuk-label for="children_bands" =t('child_age_range', scope: @form.i18n_scope, child_number: i+2)
+          select.govuk-select id="children_bands[]" name="dependent[children_bands][]"
+            option value="one" = t('children_age_band_one', scope: @form.i18n_scope)
+            option value="two" selected=(@form.attributes[:children_bands][i+1] == 'two') = t('children_age_band_two', scope: @form.i18n_scope)
