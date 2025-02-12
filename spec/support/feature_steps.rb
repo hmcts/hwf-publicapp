@@ -245,7 +245,7 @@ module FeatureSteps
   end
 
   def fill_national_insurance
-    choose 'national_insurance_ni_number_present_true'
+    choose 'national_insurance_ni_number_present'
     fill_in 'national_insurance_number', with: 'AB123456A'
     click_button 'Continue'
   end
