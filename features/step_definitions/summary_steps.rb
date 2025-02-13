@@ -25,8 +25,19 @@ Given(/^I have a home office number but not a national insurance number$/) do
   summary_page.home_office_number
 end
 
+Given(/^I have an NI number$/) do
+  probate_disabled
+  summary_page.ni_number
+end
+
 Then(/^I am '([^"]*)' and on the summary page$/) do |status|
-  status == 'married' ? to_summary_page_with_ho_number('married') : to_summary_page_with_ho_number('single')
+  if status == 'married'
+    to_summary_page_with_ho_number('married')
+  elsif status == 'married with NI'
+    to_summary_page_with_ni_number
+  else
+    to_summary_page_with_ho_number('single')
+  end
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header

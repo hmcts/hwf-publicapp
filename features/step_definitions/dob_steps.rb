@@ -6,7 +6,6 @@ Given(/^I am single and on the date of birth page$/) do
 end
 
 Given(/^I am married and on the date of birth page$/) do
-  # to_dob_page_married
   to_dob_page('married')
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_header_partner

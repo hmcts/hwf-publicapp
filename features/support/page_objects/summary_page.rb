@@ -22,6 +22,13 @@ class SummaryPage < BasePage
     national_insurance_page.submit_no
   end
 
+  def ni_number
+    to_fee_page
+    fee_page.submit_fee_no
+    form_name_page.submit_valid_form_number
+    applying_on_behalf_page.submit_no
+  end
+
   def benefits_change
     content.summary_row[5].action.click
   end

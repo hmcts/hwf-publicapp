@@ -7,6 +7,7 @@ module Forms
 
     attribute :over_66, Boolean
     attribute :is_married, Boolean
+    attribute :ni_number_present, Boolean
     attribute :day, Integer
     attribute :month, Integer
     attribute :year, Integer
@@ -19,11 +20,11 @@ module Forms
     MAXIMUM_AGE = 120
 
     before_validation :dob_dates
-    before_validation :partner_dob_dates, if: :is_married?
-    before_validation :reset_partner_dob, unless: :is_married?
+    before_validation :partner_dob_dates, if: :is_married? && :ni_number_present?
+    before_validation :reset_partner_dob, unless: :is_married? && :ni_number_present?
 
     validate :dob_age_valid?
-    validate :partner_dob_age_valid?, if: :is_married?
+    validate :partner_dob_age_valid?, if: -> { is_married? && ni_number_present? }
 
     private
 
