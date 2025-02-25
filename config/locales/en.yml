@@ -1243,7 +1243,8 @@ en:
           <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
           class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
           target='_blank'>use the paper form</a> and apply to the court or tribunal by post or email."
-      accurate_information: The information you provide needs to be accurate as it will act as evidence for your application and will allow us to check the information with other government departments. We’ll contact you if we need to see proof of this information.
+      accurate_information_html: "The information you provide needs to be accurate as it will act as evidence for your application and will allow us to check the information with other government departments. We’ll contact you if we need to see proof of this information. You can find more information about the application process in the following video
+          <a href=' https://www.youtube.com/watch?v=nGykh-hrsa8' class='external govuk-link' rel='external' target='_blank'>HMCTS Help With Fees scheme</a>."
       accurate_information_link_html: "<a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees/how-to-apply-for-help-with-fees-ex160a'
               class='external govuk-link'>How to apply for help with fees</a>."
       accurate_information_link: How to apply for help with fees
