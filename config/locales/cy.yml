@@ -1262,7 +1262,8 @@ cy:
           <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees.cy'
           class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
           target='_blank'>ffurflen bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
-      accurate_information_html: Mae angen i’r wybodaeth a roddir gennych fod yn gywir gan y bydd yn gweithredu fel tystiolaeth ar gyfer eich cais a bydd yn ein galluogi i wirio’r wybodaeth gydag adrannau eraill y llywodraeth. Byddwn yn cysylltu â chi os byddwn angen gweld prawf o’r wybodaeth hon.
+      accurate_information_html: "Mae angen i’r wybodaeth a roddir gennych fod yn gywir gan y bydd yn gweithredu fel tystiolaeth ar gyfer eich cais a bydd yn ein galluogi i wirio’r wybodaeth gydag adrannau eraill y llywodraeth. Byddwn yn cysylltu â chi os byddwn angen gweld prawf o’r wybodaeth hon. Gallwch gael rhagor o wybodaeth am y broses ymgeisio yn y fideo canlynol
+        <a href=' https://www.youtube.com/watch?v=nGykh-hrsa8' class='external govuk-link' rel='external' target='_blank'>HMCTS Help With Fees scheme</a>."
       accurate_information_link: Sut i wneud cais am help i dalu ffioedd
       national_insurance:
         details:
