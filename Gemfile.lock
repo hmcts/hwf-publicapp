@@ -542,6 +542,7 @@ DEPENDENCIES
   test-prof (~> 1.1)
   timecop
   uglifier
+  uri (>= 1.0.3)
   virtus
   web-console
   webmock
