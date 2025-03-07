@@ -32,7 +32,6 @@ gem 'govuk_notify_rails'
 gem 'net-pop', github: 'ruby/net-pop'
 
 gem 'rexml', '>= 3.3.9'
-gem 'uri', '>= 1.0.3'
 
 group :development, :test do
   gem "pry-rails"
