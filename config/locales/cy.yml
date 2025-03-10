@@ -1186,7 +1186,7 @@ cy:
       - p: "Gwasanaeth Llysoedd a Thribiwnlysoedd EM sy’n gyfrifol am y wefan hon (GLlTEM). . Rydym am i gynifer o bobl â phosibl allu defnyddio'r ffurflen ar-lein hon. Er enghraifft, mae hynny'n golygu y dylech chi allu:"
       - ul:
         - li: newid lliwiau, lefelau cyferbyniad a ffontiau
-        - li: chwyddo hyd at 300% heb golli'r testun oddi ar y sgrin
+        - li: chwyddo hyd at 200% heb golli'r testun oddi ar y sgrin
         - li: mynd drwy'r ffurflen gan ddefnyddio bysellfwrdd yn unig
         - li: gwrando ar y ffurflen gan ddefnyddio darllenydd sgrin
       - p: Sylwch mai cydnawsedd â VoiceOver yn unig a gynhwyswyd yn y profion hygyrchedd a gynhaliwyd hyd yma.
@@ -1194,7 +1194,7 @@ cy:
       - p: Mae gan <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i'w defnyddio os oes gennych anabledd.
     - title: Pa mor hygyrch yw'r wefan hon
       parts:
-      - p: Mae’r wefan hon yn cydymffurfio’n llawn â’r <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Canllawiau Hygyrchedd Cynnwys Gwe fersiwn 2.1 safon AA.</a>
+      - p: Mae’r wefan hon yn cydymffurfio’n llawn â’r <a href="https://www.w3.org/TR/WCAG22" class="govuk-link">Canllawiau Hygyrchedd Cynnwys Gwe fersiwn 2.2 safon AA.</a>
       - p: Nid oes unrhyw faterion hygyrchedd hysbys o fewn y gwasanaeth hwn.
     - title: Sylwadau a gwybodaeth am sut i gysylltu â ni
       parts:
@@ -1220,12 +1220,12 @@ cy:
       sections:
         - title: Statws cydymffurfio
           parts:
-          - p: Mae’r wefan hon yn cydymffurfio’n llawn â’r <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Canllawiau Hygyrchedd Cynnwys Gwe fersiwn 2.1 safon AA.</a>
+          - p: Mae’r wefan hon yn cydymffurfio’n llawn â’r <a href="https://www.w3.org/TR/WCAG22" class="govuk-link">Canllawiau Hygyrchedd Cynnwys Gwe fersiwn 2.2 safon AA.</a>
           - p: Nid oes unrhyw faterion hygyrchedd hysbys o fewn y gwasanaeth hwn.
     - title: Paratoi’r datganiad hygyrchedd hwn
       parts:
-      - p: Paratowyd y datganiad hwn ar 13 Tachwedd 2023. Fe'i diweddarwyd ddiwethaf ar 20 Tachwedd 2023.
-      - p: Profwyd y wefan hon ddiwethaf ar 8 Tachwedd 2023. Cynhaliwyd y prawf gan y Llysoedd a Thribiwnlysoedd EM (GLlTEM).
+      - p: Paratowyd y datganiad hwn ar 21 Chwefror 2025. Fe'i diweddarwyd ddiwethaf ar 10 Mawrth 2025.
+      - p: Profwyd y wefan hon ddiwethaf ar 21 Ionawr 2025. Cynhaliwyd y prawf gan y Llysoedd a Thribiwnlysoedd EM (GLlTEM).
 
   home:
     checklist:
