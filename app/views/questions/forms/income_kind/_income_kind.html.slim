@@ -3,8 +3,8 @@
 
 .govuk-form-group id='income_kind_applicant'
   .govuk-grid-row
-    .govuk-grid-column-one-half
-      fieldset.govuk-fieldset.income-sources class=('govuk-form-group--error' if @form.errors[:applicant].any?)
+    .govuk-grid-column-one-half class=('govuk-form-group--error' if @form.errors[:applicant].any?)
+      fieldset.govuk-fieldset.income-sources
         - if @online_application.married?
         legend.govuk-fieldset__legend
           h2.govuk-heading-s =t('applicant_income', scope: "#{@form.i18n_scope}")
