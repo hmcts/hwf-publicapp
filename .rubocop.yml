@@ -1,6 +1,6 @@
 AllCops:
-  TargetRubyVersion: 3.4.1
-  TargetRailsVersion: 7.0
+  TargetRubyVersion: 3.4.2
+  TargetRailsVersion: 8.0
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
@@ -588,12 +588,13 @@ Style/HashSyntax:
 Style/SpecialGlobalVars:
   Enabled: false
 
+Rails/StrongParametersExpect:
+  Enabled: false
+
 plugins:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance
-
-require:
   - rubocop-capybara
   - rubocop-factory_bot
   - rubocop-rspec_rails
