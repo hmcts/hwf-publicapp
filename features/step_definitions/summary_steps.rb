@@ -4,6 +4,8 @@ Given(/^I am '([^"]*)' and on the summary page with probate enabled$/) do |statu
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
+  expect(summary_page.content).to have_application_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -17,6 +19,8 @@ Given(/^I am '([^"]*)' and on the summary page with probate disabled$/) do |stat
   status == 'married' ? to_summary_page_probate_disabled('married') : to_summary_page_probate_disabled('single')
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
+  expect(summary_page.content).to have_application_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -41,6 +45,8 @@ Then(/^I am '([^"]*)' and on the summary page$/) do |status|
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
+  expect(summary_page.content).to have_application_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -108,4 +114,5 @@ end
 
 Then(/^They are redirected to the summary page with error message\.$/) do
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
 end

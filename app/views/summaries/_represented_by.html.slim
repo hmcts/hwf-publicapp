@@ -7,6 +7,10 @@ div.govuk-summary-list__row
       span.govuk-visually-hidden
         =t('applying_on_behalf', scope: 'summary.labels').downcase
 
+br
+h1.govuk-heading-l
+  span.no-wrap = t('representative_title', scope: 'summary.labels')
+
 div.govuk-summary-list__row
   dt.govuk-summary-list__key =t('legal_representative_or_friend', scope: 'summary.labels')
   dd.govuk-summary-list__value = t("legal_representative_#{@summary.legal_representative}", scope: 'summary')
