@@ -77,7 +77,7 @@ RSpec.describe Views::Summary do
     context 'when the form_name is nil' do
       let(:form_name) { nil }
 
-      it { is_expected.to eql('—') }
+      it { is_expected.to be_nil }
     end
   end
 

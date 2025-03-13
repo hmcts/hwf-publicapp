@@ -110,7 +110,6 @@ Feature: End to end tests
     Then I should be taken to summary page
     And I should see my details:
       | scope                                                                                   |
-      | Form name or number — Change form name or number                                        |
       | Fee paid No Change fee paid                                                             |
       | National Insurance number No Change national insurance number                           |
       | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number |

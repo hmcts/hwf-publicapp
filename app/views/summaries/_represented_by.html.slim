@@ -60,12 +60,3 @@ div.govuk-summary-list__row
       =t('summary.change')
       span.govuk-visually-hidden
         =t('legal_representative_detail', scope: 'summary.labels').downcase
-
-div.govuk-summary-list__row
-  dt.govuk-summary-list__key =t('over_16', scope: 'summary.labels')
-  dd.govuk-summary-list__value = t("over_16_#{@summary.over_16}", scope: 'summary')
-  dd.govuk-summary-list__actions
-    = link_to question_path(:over_16), onclick: "dataLayer.push({'sectionName': 'over_16', 'event': 'summary_page'});" do
-      =t('summary.change')
-      span.govuk-visually-hidden
-        =t('over_16', scope: 'summary.labels').downcase

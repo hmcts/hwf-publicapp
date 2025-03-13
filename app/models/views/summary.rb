@@ -13,7 +13,7 @@ module Views
     end
 
     def form_name
-      __getobj__.form_name || '—'
+      __getobj__.form_name
     end
 
     def savings
