@@ -976,6 +976,9 @@ cy:
       average: Cyfartaledd am y tri mis diwethaf
     labels:
       applying_on_behalf: Gwneud cais ar ran rhywun arall
+      representative_title: Manylion y cynrychiolydd
+      personal_title: Manylion personol
+      application_title: Manylion cais
       legal_representative_or_friend: Cynrychiolydd cyfreithiol neu gyfaill cyfreitha
       legal_representative: Manylion y cynrychiolydd cyfreithiol
       legal_representative_detail: Manylion y cynrychiolydd cyfreithiol

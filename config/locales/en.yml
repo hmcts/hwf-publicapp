@@ -991,6 +991,9 @@ en:
       title: Check details
       apply_type: Court or tribunal application
       applying_on_behalf: Applying on behalf of someone else
+      representative_title: Representative details
+      personal_title: Personal details
+      application_title: Application details
       legal_representative_or_friend: Legal representative or litigation friend
       legal_representative: Legal representative details
       legal_representative_detail: Legal representative details

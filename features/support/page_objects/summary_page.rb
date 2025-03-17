@@ -4,6 +4,9 @@ class SummaryPage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 24 of 25'
     element :header, 'h1', text: 'Check details'
+    element :representative_header, 'h1', text: 'Representative details'
+    element :personal_header, 'h1', text: 'Personal details'
+    element :application_header, 'h1', text: 'Application details'
     element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     element :probate, '.govuk-summary-list__row', text: 'Probate case No'
     element :declaration_of_truth, 'h2', text: 'Declaration and statement of truth'

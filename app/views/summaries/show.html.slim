@@ -14,14 +14,16 @@ p.govuk-body =t('summary.details')
 
 
 dl.govuk-summary-list
-  div.govuk-summary-list__row
-    dt.govuk-summary-list__key =t('form_name', scope: 'summary.labels')
-    dd.govuk-summary-list__value =@summary.form_name
-    dd.govuk-summary-list__actions
-      = link_to question_path(:form_name), onclick: "dataLayer.push({'sectionName': 'form_name', 'event': 'summary_page'});" do
-        =t('summary.change')
-        span.govuk-visually-hidden
-          =t('form_name', scope: 'summary.labels').downcase
+  - if @summary.form_name
+    div.govuk-summary-list__row
+      dt.govuk-summary-list__key =t('form_name', scope: 'summary.labels')
+      dd.govuk-summary-list__value =@summary.form_name
+      dd.govuk-summary-list__actions
+        = link_to question_path(:form_name), onclick: "dataLayer.push({'sectionName': 'form_name', 'event': 'summary_page'});" do
+          =t('summary.change')
+          span.govuk-visually-hidden
+            =t('form_name', scope: 'summary.labels').downcase
+
   div.govuk-summary-list__row
     dt.govuk-summary-list__key =t('fee', scope: 'summary.labels')
     dd.govuk-summary-list__value =@summary.refund_text
@@ -32,6 +34,19 @@ dl.govuk-summary-list
           =t('fee', scope: 'summary.labels').downcase
   - if @summary.legal_representative
     =render('represented_by')
+
+  br
+  h1.govuk-heading-l
+    span.no-wrap =t('personal_title', scope: 'summary.labels')
+  - if @summary.legal_representative
+    div.govuk-summary-list__row
+      dt.govuk-summary-list__key = t('over_16', scope: 'summary.labels')
+      dd.govuk-summary-list__value = t("over_16_#{@summary.over_16}", scope: 'summary')
+      dd.govuk-summary-list__actions
+        = link_to question_path(:over_16), onclick: "dataLayer.push({'sectionName': 'over_16', 'event': 'summary_page'});" do
+          = t('summary.change')
+          span.govuk-visually-hidden
+            = t('over_16', scope: 'summary.labels').downcase
 
   - if @summary.display_ni?
     div.govuk-summary-list__row
@@ -226,6 +241,9 @@ dl.govuk-summary-list
               =t('contact', scope: 'summary.labels').downcase
 
     -if @summary.applying_method
+      br
+      h1.govuk-heading-l
+        span.no-wrap = t('application_title', scope: 'summary.labels')
       div.govuk-summary-list__row
         dt.govuk-summary-list__key =t('apply_type', scope: 'summary.labels')
         dd.govuk-summary-list__value =t("applying_method_#{@summary.applying_method}", scope: 'summary')
