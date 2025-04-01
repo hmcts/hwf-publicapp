@@ -30,7 +30,7 @@ income:
   per_child_increment: 265
   married_supplement: 175
 probate_fees:
-  release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2025-04-01' %>
+  release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2026-04-01' %>
 sentry:
   dsn: <%= ENV['SENTRY_DSN'] %>
 maintenance:
