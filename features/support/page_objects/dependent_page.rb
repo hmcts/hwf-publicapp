@@ -44,4 +44,11 @@ class DependentPage < BasePage
       continue
     end
   end
+
+  def submit_child_bands
+    all('select', text: 'Select the child\'s age range').each do |child|
+      child.select '0-13 years'
+    end
+    continue
+  end
 end

@@ -176,10 +176,11 @@ cy:
             children:
               inclusion: Mae angen i chi ddweud a oes gennych chi blant sy'n dibynnu'n ariannol arnoch chi
             children_number:
-              blank: Rhaid i chi roi nifer y plant sy'n dibynnu'n ariannol arnoch chi
               less_than: Rhaid i chi roi rhif sy'n llai na 100
-              not_a_number: Rhaid i chi roi nifer y plant sy'n dibynnu'n ariannol arnoch chi fel rhif
+              not_a_number: Dewiswch nifer y plant sy’n byw gyda chi neu rydych chi’n eu cefnogi’n ariannol
               greater_than: Rhaid i chi nodi rhif sy'n fwy na 0
+            children_bands:
+              blank: Dewiswch ystod oedran y plentyn
             children_age_band_one:
               blank: Nodwch nifer y plant yn y categori oedran hwn
             children_age_band_two:
@@ -589,7 +590,9 @@ cy:
       text: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
       title: Plant sy’n byw gyda chi, neu rydych yn eu cynnal yn ariannol
       children_number_title: Sawl plentyn sydd gennych yn byw gyda chi neu rydych yn eu cefnogi’n ariannol?
+      children_number_blank: Dewiswch nifer y plant
       children_age_range: Ystod oedran y plant
+      children_age_range_blank: Dewiswch ystod oedran y plentyn
       children_age_band_one: 0-13 mlwydd oed
       children_age_band_two: 14 mlwydd oed neu'n hŷn
       single:

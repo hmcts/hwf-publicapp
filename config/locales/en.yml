@@ -123,10 +123,11 @@ en:
             children:
               inclusion: You need to say whether you have financially dependent children
             children_number:
-              blank: You must enter the number of financially dependent children
               less_than: You must enter number less than 100
-              not_a_number: You must enter financially dependent children as a number
+              not_a_number: Select the number of children that live with you or you're supporting financially
               greater_than: You must enter a number greater than 0
+            children_bands:
+              blank: Select the child's age range
             children_age_band_one:
               blank: Enter number of children in this age category
             children_age_band_two:
@@ -560,7 +561,9 @@ en:
       text: Children that live with you or you’re supporting financially
       title: Children that live with you or you’re supporting financially
       children_number_title: How many children do you have living with you or that you support financially?
+      children_number_blank: Select the number of children
       children_age_range: Children's age range
+      children_age_range_blank: Select the child's age range
       children_age_band_one: 0-13 years
       children_age_band_two: 14 years and over
 

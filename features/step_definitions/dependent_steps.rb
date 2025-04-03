@@ -12,11 +12,13 @@ end
 When(/^I submit the form with four children$/) do
   expect(dependent_page.content).to have_children_number
   dependent_page.content.children_number.select 4
+  dependent_page.submit_child_bands
   continue
 end
 
 When(/^I add I have three children$/) do
   dependent_page.content.children_number.select 3
+  dependent_page.submit_child_bands
   continue
 end
 
