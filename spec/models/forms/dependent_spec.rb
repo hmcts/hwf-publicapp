@@ -49,6 +49,7 @@ RSpec.describe Forms::Dependent do
           before {
             form.calculation_scheme = Rails.configuration.ucd_schema
           }
+
           let(:children_number) { '1' }
           let(:children_bands) { [nil] }
 
@@ -59,6 +60,7 @@ RSpec.describe Forms::Dependent do
           before {
             form.calculation_scheme = Rails.configuration.ucd_schema
           }
+
           let(:children_number) { '1' }
           let(:children_bands) { ["one"] }
 
@@ -69,6 +71,7 @@ RSpec.describe Forms::Dependent do
           before {
             form.calculation_scheme = Rails.configuration.ucd_schema
           }
+
           let(:children_number) { '3' }
           let(:children_bands) { %w[one one two] }
 
