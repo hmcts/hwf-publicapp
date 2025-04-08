@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 module IncomeHelper
   def i18n_status_refund_suffix(online_application)
     ''.tap do |suffix|
