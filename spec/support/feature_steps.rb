@@ -305,6 +305,7 @@ module FeatureSteps
 
   def fill_dependent
     select 2, from: 'dependent_children_number'
+    select '0-13 years', from: 'dependent[children_bands][]'
     click_button 'Continue'
   end
 

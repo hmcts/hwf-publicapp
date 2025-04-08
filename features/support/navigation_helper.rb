@@ -229,6 +229,7 @@ def to_income_kind(marital_status)
   savings_investment_page.high_amount_checked
   benefit_page.submit_benefit_no
   dependent_page.submit_dependent_3
+  dependent_page.submit_child_bands
 end
 
 def to_marital_status

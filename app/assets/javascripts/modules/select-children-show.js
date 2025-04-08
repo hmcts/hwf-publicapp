@@ -56,8 +56,8 @@ window.moj.Modules.SelectChildrenShow  = {
         }
 
         while (numberOfChildren > numOfChildHTML) {
-            englishSelect = self.newSelect('0-13 years','14 years and over');
-            welshSelect = self.newSelect('0-13 mlwydd oed',"14 mlwydd oed neu'n hŷn");
+            englishSelect = self.newSelect('Select the child\'s age range','0-13 years','14 years and over');
+            welshSelect = self.newSelect('Dewiswch ystod oedran y plentyn','0-13 mlwydd oed',"14 mlwydd oed neu'n hŷn");
             enLabel = self.newLabel("Age range for child " + (numOfChildHTML + 1).toString() + "?");
             welshLable = self.newLabel("Ystod oedran ar gyfer plentyn " + (numOfChildHTML + 1).toString() + "?");
 
@@ -82,7 +82,7 @@ window.moj.Modules.SelectChildrenShow  = {
       return newLabel;
     },
 
-    newSelect: function(oneText, twoText) {
+    newSelect: function(defaultText, oneText, twoText) {
       const self = this;
       const newSelect = $('<select>', {
         class: 'govuk-select',
@@ -90,6 +90,7 @@ window.moj.Modules.SelectChildrenShow  = {
         name: 'dependent[children_bands][]'
       });
 
+      newSelect.append(self.newOption(defaultText,''));
       newSelect.append(self.newOption(oneText,'one'));
       newSelect.append(self.newOption(twoText,'two'));
       return newSelect;

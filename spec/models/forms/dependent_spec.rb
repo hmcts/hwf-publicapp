@@ -17,7 +17,7 @@ RSpec.describe Forms::Dependent do
       context 'when children_number is not supplied' do
         let(:children_number) { nil }
 
-        it { is_expected.to be_valid }
+        it { is_expected.not_to be_valid }
       end
 
       context 'when children_number is supplied as a word' do
@@ -41,6 +41,39 @@ RSpec.describe Forms::Dependent do
 
         context 'when it is less or equal than 99' do
           let(:children_number) { '4' }
+
+          it { is_expected.to be_valid }
+        end
+
+        context 'when children_number is supplied and age range is empty' do
+          before {
+            form.calculation_scheme = Rails.configuration.ucd_schema
+          }
+
+          let(:children_number) { '1' }
+          let(:children_bands) { [nil] }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when children_number is supplied and age range is filled' do
+          before {
+            form.calculation_scheme = Rails.configuration.ucd_schema
+          }
+
+          let(:children_number) { '1' }
+          let(:children_bands) { ["one"] }
+
+          it { is_expected.to be_valid }
+        end
+
+        context 'when multiple children_number are supplied with age ranges' do
+          before {
+            form.calculation_scheme = Rails.configuration.ucd_schema
+          }
+
+          let(:children_number) { '3' }
+          let(:children_bands) { %w[one one two] }
 
           it { is_expected.to be_valid }
         end
