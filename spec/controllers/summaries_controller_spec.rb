@@ -36,7 +36,7 @@ RSpec.describe SummariesController do
       end
     end
 
-    include_examples 'cache suppress headers'
+    it_behaves_like 'cache suppress headers'
 
     context 'when no question has been answered' do
       let(:storage_started) { false }

@@ -106,7 +106,7 @@ RSpec.describe ConfirmationsController do
       expect(assigns(:form)).to be_an_instance_of(Forms::ReferenceConfirm)
     end
 
-    include_examples 'cache suppress headers'
+    it_behaves_like 'cache suppress headers'
 
     context 'when storage has been cleared' do
       let(:storage_started) { false }
@@ -137,7 +137,7 @@ RSpec.describe ConfirmationsController do
       expect(assigns(:form)).to be_an_instance_of(Forms::ReferenceConfirm)
     end
 
-    include_examples 'cache suppress headers'
+    it_behaves_like 'cache suppress headers'
 
     context 'when storage has been cleared' do
       let(:storage_started) { false }
