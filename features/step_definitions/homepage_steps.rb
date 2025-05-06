@@ -48,5 +48,5 @@ Then(/^I should see the paper form link$/) do
 end
 
 Then(/^I should see the paper form link 2$/) do
-  expect(home_page.content).to have_paper_form_link2
+  expect(home_page.content).to have_paper_form_link_2
 end

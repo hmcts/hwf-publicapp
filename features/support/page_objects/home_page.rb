@@ -16,6 +16,6 @@ class HomePage < BasePage
     element :welsh_guide_link, 'a', text: 'in Welsh (Cymraeg)'
     element :eligible_link, 'a', text: 'Check if you\'re eligible'
     element :paper_form_link, 'a', text: 'Fill in a paper form'
-    element :paper_form_link2, 'a', text: 'filling in a paper form'
+    element :paper_form_link_2, 'a', text: 'filling in a paper form'
   end
 end
