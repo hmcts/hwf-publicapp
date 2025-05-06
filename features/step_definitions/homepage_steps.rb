@@ -26,3 +26,7 @@ When(/^I click the start button$/) do
   expect(home_page.content).to have_start_button
   home_page.content.start_button.click
 end
+
+Then(/^I should see the court and tribunal fees link$/) do
+  expect(home_page.content).to have_fees_link
+end

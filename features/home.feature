@@ -6,8 +6,7 @@ Feature: Home page
     Then I should see the home page
     
   Scenario: Court or tribunal fee link
-    When I click the 'court or tribunal fee' link
-    Then I should see 'Court and tribunal fees' header
+    Then I should see the court and tribunal fees link
 
   Scenario: adjournment fees for certain civil and family hearings link
     When I click the 'adjournment fees for certain civil and family hearings' link

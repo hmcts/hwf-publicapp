@@ -42,4 +42,3 @@ Run the cucumber features in parallel
 CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
 ```
 Deployment versions trigger: 4
-x

@@ -11,5 +11,6 @@ class HomePage < BasePage
     element :other, 'h2', text: 'Other ways to apply'
     element :error, 'h2', text: 'There is a problem'
     element :start_button, 'a', text: 'Start now'
+    element :fees_link, 'a', text: 'Court and tribunal fees'
   end
 end
