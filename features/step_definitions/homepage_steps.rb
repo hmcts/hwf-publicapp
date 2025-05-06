@@ -30,3 +30,23 @@ end
 Then(/^I should see the court and tribunal fees link$/) do
   expect(home_page.content).to have_fees_link
 end
+
+Then(/^I should see the adjournment fees for certain civil and family hearings link$/) do
+  expect(home_page.content).to have_adjournment_link
+end
+
+Then(/^I should see the welsh guide link$/) do
+  expect(home_page.content).to have_welsh_guide_link
+end
+
+Then(/^I should see the eligible link$/) do
+  expect(home_page.content).to have_eligible_link
+end
+
+Then(/^I should see the paper form link$/) do
+  expect(home_page.content).to have_paper_form_link
+end
+
+Then(/^I should see the paper form link 2$/) do
+  expect(home_page.content).to have_paper_form_link2
+end
