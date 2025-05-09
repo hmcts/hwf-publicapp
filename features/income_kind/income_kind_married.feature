@@ -20,6 +20,13 @@ Feature: Income kind page
     When I click continue
     Then I should see select your kinds of income error message
 
+  Scenario: Displays child benefit error message
+    When I submit the form with child benefit checked
+    Then I should be taken to income period page
+    When I select no children as a married person
+    And I submit the form with child benefit checked
+    Then I should see the no child selected error message
+
   Scenario: Income kind page timeout (married wages option)
     And I slowly submit the form with wages checked
     Then I should see the home page

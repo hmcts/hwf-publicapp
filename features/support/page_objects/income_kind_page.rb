@@ -14,11 +14,13 @@ class IncomeKindPage < BasePage
     element :partners_income, 'h2', text: 'Your partner\'s income'
     element :wages, 'label', text: 'Wages'
     element :none_of_the_above, 'label', text: 'None of the above'
+    element :child_benefit, 'label', text: 'Child Benefit'
     element :none_of_the_above_partner, 'label[for="income_kind_partner_17"]'
     element :no_income, 'label', text: 'No income'
     element :working_tax_credit, 'label', text: 'Working Tax Credit'
     elements :income_item, '.govuk-checkboxes__item'
     element :blank_error_link, 'a', text: 'Select your kinds of income'
+    element :child_error_link, 'a', text: 'You have declared you receive Child Benefit, however you have not declared any children. Please amend your selection.'
   end
 
   def submit_no_income
@@ -34,6 +36,11 @@ class IncomeKindPage < BasePage
   def submit_none_of_the_above_married
     content.none_of_the_above.click
     content.none_of_the_above_partner.click
+    continue
+  end
+
+  def submit_child_benefit
+    content.child_benefit.click
     continue
   end
 

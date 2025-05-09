@@ -2,12 +2,15 @@ module Forms
   class IncomeKind < Base
     attribute :applicant, [Integer]
     attribute :partner, [Integer]
+    attribute :children, Integer
 
     validates_each :applicant do |record, attr, value|
       if value.blank?
         record.errors.add(attr, :blank)
       elsif value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
+      elsif value.include?(3) && record.children.to_i.zero?
+        record.errors.add(attr, :child_benefit_without_children)
       end
     end
 
@@ -28,7 +31,7 @@ module Forms
     end
 
     def permitted_attributes
-      [applicant: [], partner: []]
+      [applicant: [], partner: [], children: []]
     end
 
     def update_attributes(attributes)
