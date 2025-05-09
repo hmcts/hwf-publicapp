@@ -9,6 +9,7 @@
         - if @online_application.married?
         legend.govuk-fieldset__legend
           h2.govuk-heading-s =t('applicant_income', scope: "#{@form.i18n_scope}")
+
         - if @form.errors[:applicant].any?
           span.govuk-error-message#applicant = @form.errors[:applicant].join(' ')
         .govuk-checkboxes
