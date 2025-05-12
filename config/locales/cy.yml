@@ -767,10 +767,12 @@ cy:
       text: 'Faint o incwm gawsoch chi?'
       prompt: "Mae angen i chi ddarparu manylion yr incwm a gawsoch chi yn y mis calendr diwethaf neu ddarparu’r cyfartaledd dros dri mis o:"
       amount_prompt: "Os nad yw eich incwm am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is."
+      calculate_prompt: "I gyfrifo eich incwm cyfartalog, adiwch eich incwm o'r tri mis diwethaf a rhannu'r cyfanswm â thri. Bydd y ffigur sy'n deillio o hyn yn cynrychioli eich incwm cyfartalog."
     income_period_married:
       text: 'Faint o incwm gawsoch chi a’ch partner?'
       prompt: "Mae angen i chi ddarparu manylion yr incwm a gawsoch chi a’ch partner yn y mis calendr diwethaf neu ddarparu’r cyfartaledd dros dri mis o:"
       amount_prompt: "Os nad yw eich incwm chi a’ch partner am y mis diwethaf yn gynrychioladol o beth rydych yn ei gael fel arfer, gallwch ddarparu cyfartaledd o’ch incwm am y 3 mis diwethaf os yw’r ffigur hwnnw’n is."
+      calculate_prompt: "I gyfrifo incwm cyfartalog chi a'ch partner, adiwch eich incwm chi a'ch partner o'r tri mis diwethaf a rhannu'r cyfanswm â thri. Bydd y ffigur sy'n deillio o hyn yn cynrychioli incwm cyfartalog eich hun a'ch partner."
 
     personal_detail_married:
       text: Beth yw eich enw llawn chi a’ch partner?

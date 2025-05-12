@@ -766,10 +766,12 @@ en:
       text: 'How much income did you receive?'
       prompt: "You need to include income you received in the last calendar month or provide a three month average from:"
       amount_prompt: "If your income last month is not representative of what you usually get, you can provide an average income for the last three months if this is lower."
+      calculate_prompt: "To calculate your average income, add up your income from the last three months and divide the total by three. The resulting figure represents your average income."
     income_period_married:
       text: 'How much income did you and your partner receive?'
       prompt: "You need to include income you and your partner received in the last calendar month or provide a three month average from:"
       amount_prompt: "If you and your partner's income last month is not representative of what you usually get, you can provide an average income for the last three months if this is lower."
+      calculate_prompt: "To calculate you and your partner's average income, add up you and your partner's income from the last three months and divide the total by three. The resulting figure represents you and your partner's average income."
     marital_status:
       breadcrumb: Step %{page_number} of 25
       section_1:
