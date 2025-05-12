@@ -250,6 +250,7 @@ GEM
     minitest (5.25.5)
     msgpack (1.8.0)
     multi_test (1.1.0)
+    mutex_m (0.3.0)
     net-imap (0.5.7)
       date
       net-protocol
@@ -516,6 +517,7 @@ DEPENDENCIES
   launchy
   letter_opener
   listen
+  mutex_m
   net-pop!
   nokogiri
   parallel_tests

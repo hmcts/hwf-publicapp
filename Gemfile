@@ -49,6 +49,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'web-console'
+  gem 'mutex_m'
 end
 
 group :test do

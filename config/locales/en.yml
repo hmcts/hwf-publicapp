@@ -141,6 +141,8 @@ en:
               too_young: You must be over %{minimum_age} to use this service
               not_over_66: Enter date of birth for age 66 years or above (as stated in Step 12)
               not_over_66_married: Enter date of birth for age 66 years or above for you or your partner (as stated in Step 12)
+              not_under_66: You have stated that you are not 66 years or older. Please change your response or check that this date of birth is correct
+              not_under_66_married: You have stated that you or your partner are not 66 years or older. Please change your response or check that these dates of birth are correct
               not_over_16: Enter date of birth for age above 16 (as stated in step 6)
               not_under_16: Enter date of birth for age under 16 (as stated in step 6)
             partner_date_of_birth:

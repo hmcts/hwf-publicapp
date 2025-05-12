@@ -194,6 +194,8 @@ cy:
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
               not_over_66: Nodwch y dyddiad geni ar gyfer 66 oed neu hŷn (fel y nodir yng Ngham 12)
               not_over_66_married: Nodwch y dyddiad geni ar gyfer 66 oed neu’n hŷn ar eich cyfer chi neu’ch partner (fel y nodir yng Ngham 12)
+              not_under_66: Rydych wedi dweud nad ydych chi'n 66 oed neu'n hŷn. Newidiwch eich ymateb neu gwiriwch fod y dyddiad geni hwn yn gywir
+              not_under_66_married: Rydych wedi nodi nad ydych chi neu'ch partner yn 66 oed neu'n hŷn. Newidiwch eich ymateb neu gwiriwch fod y dyddiadau geni hyn yn gywir
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6)
               not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6)
             partner_date_of_birth:
