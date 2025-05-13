@@ -52,6 +52,40 @@ RSpec.describe Forms::IncomeKind do
             it { is_expected.to be_valid }
           end
         end
+
+        context 'when children is provided' do
+          let(:params) { { applicant: applicant, partner: partner, children: children } }
+
+          context 'when it is empty' do
+            let(:children) { [] }
+
+            it { is_expected.to be_valid }
+          end
+
+          context 'when it has only values which are allowed' do
+            let(:children) { 1 }
+
+            it { is_expected.to be_valid }
+          end
+        end
+      end
+
+      context 'when child benefit is selected' do
+        let(:params) { { applicant: applicant, partner: partner, children: children } }
+
+        context 'when no children are selected' do
+          let(:applicant) { [3] }
+          let(:children) { 0 }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when children are selected' do
+          let(:applicant) { [3] }
+          let(:children) { 1 }
+
+          it { is_expected.to be_valid }
+        end
       end
     end
 
@@ -197,7 +231,7 @@ RSpec.describe Forms::IncomeKind do
     subject { form.permitted_attributes }
 
     it 'permits the applicant and partner attributes as an array' do
-      expect(subject).to eql([applicant: [], partner: []])
+      expect(subject).to eql([applicant: [], partner: [], children: []])
     end
   end
 

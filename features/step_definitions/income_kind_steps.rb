@@ -54,3 +54,21 @@ end
 And(/^I slowly submit the form with wages checked$/) do
   income_kind_page.slowly_submit_single_income_wages_tax_credit
 end
+
+When(/^I submit the form with child benefit checked$/) do
+  income_kind_page.submit_child_benefit
+end
+
+When(/^I select no children as a married person$/) do
+  to_dependent_page('married')
+  dependent_page.submit_dependent_no
+end
+
+When(/^I select no children as a single person$/) do
+  to_dependent_page('single')
+  dependent_page.submit_dependent_no
+end
+
+Then(/^I should see the no child selected error message$/) do
+  expect(income_kind_page.content).to have_child_error_link
+end
