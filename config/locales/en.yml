@@ -531,7 +531,7 @@ en:
       title: Claim number
     contact:
       breadcrumb: Step %{page_number} of 25
-      details: We will email you confirmation of your Help with Fees reference number.
+      details: If you provide your email address, you will receive confirmation of your Help with Fees reference number and a copy of your online Help with Fees application
       email_label: Email address
       feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
       text: What's your email address?
