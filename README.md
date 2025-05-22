@@ -26,7 +26,15 @@ Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 See the [feature testing README](https://github.com/hmcts/hwf-publicapp/blob/master/README.md).
 
 ## Frontend toolkit
-npm install --save govuk-frontend (https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md)
+yarn install
+
+## CSS + JS updates
+We are now using propshaft, cssbundling-rails and jsbundling-rails. You will need to run
+```
+yarn build:css --watch
+yarn build --watch
+```
+to build your assets you localhost for the first time. Then everytime you are toding any changes to JS or CSS.
 
 ## Run tests in parallel
 Follow the [official guides](https://github.com/grosser/parallel_tests#setup-environment-from-scratch-create-db-and-loads-schema-useful-for-ci) to setup your local env.
