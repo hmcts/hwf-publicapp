@@ -15,8 +15,8 @@ gem 'rails', '~> 8.0.0'
 gem 'bootsnap', require: false
 gem 'config'
 gem 'date_validator'
-gem "dartsass-sprockets", "~> 3.1"
-gem 'jquery-rails'
+# gem "dartsass-sprockets", "~> 3.1"
+# gem 'jquery-rails'
 gem 'nokogiri'
 gem 'puma'
 gem 'rack', '~> 3.1.5'
@@ -27,6 +27,10 @@ gem 'slim-rails'
 gem 'uglifier'
 gem 'virtus'
 gem 'govuk_notify_rails'
+
+gem 'propshaft'
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
 
 # To fix ruby 3.3.3 gemsepec file issue with this gem
 gem 'net-pop', github: 'ruby/net-pop'
