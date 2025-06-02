@@ -13,6 +13,7 @@
   },
   "engineStrict": true,
   "dependencies": {
-    "govuk-frontend": "^5.9.0"
+    "govuk-frontend": "^5.9.0",
+    "sass": "^1.88.0"
   }
 }
