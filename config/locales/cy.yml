@@ -535,6 +535,8 @@ cy:
       text: A ydych chi’n cael unrhyw un o’r budd-daliadau canlynol?
       text_refund: Oeddech chi'n derbyn unrhyw un o'r budd-daliadau canlynol?
       title: Budd-daliadau
+      evidence: <strong>You need to provide evidence of your benefits</strong>
+      support: To support your claim, you must provide proof of your benefits. This includes a full breakdown letter from the Department for Work and Pensions, which should detail your assessment date and confirm the benefit you receive. Any documents submitted must clearly identify both you and your partner (if applicable), with evidence that you share the same address. You can send this information along with your Help with Fees reference number to the court or tribunal office via post or email (copies, scans or mobile screenshots).
     claim/default:
       breadcrumb: Cam %{page_number} o 25
       details:
