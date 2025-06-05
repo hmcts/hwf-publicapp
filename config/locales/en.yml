@@ -379,7 +379,7 @@ en:
         reference: 'Reference: %{reference}'
         line_one: I have completed on online application for help with fees [insert application type and case number if you have one].
         line_two: Yours sincerely,
-      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processingI confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
+      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
       confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
     et:
       address:
@@ -441,7 +441,7 @@ en:
       p_four: Please note, you can only apply for a refund within 3 months from the date you originally paid your fee (for example if you paid your fee on 16th September, you have until 15th December). This time limit includes the making of any replacement application if your original HWF application has been rejected.
       p_four_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
       p_five: The court or tribunal will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
-      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
+      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing
       confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
   error_block:
     heading: There is a problem
@@ -1241,7 +1241,6 @@ en:
                 - li: your Home Office reference number - you may have a Home Office reference number if you are subject to immigration control
                 - li: the court or tribunal form number
                 - li: your case number, claim number or notice to pay - if you have one
-                - li: If you're applying for benefits, you'll need to provide evidence from the Department for Work and Pensions (DWP) confirming that you're receiving one of the eligible benefits. You can request proof of your benefits through the DWP, which may include a letter of entitlement, a proof of benefit letter, or other official documentation
                 - li: "<strong>If you're applying for benefits, you'll need to provide evidence from the Department for Work and Pensions (DWP) confirming that you're receiving one of the eligible benefits. This includes a full breakdown letter from the Department for Work and Pensions, which should detail your assessment date and confirm the benefit you receive. Any documents submitted must clearly identify both you and your partner (if applicable), with evidence that you share the same address. You can send this information along with your Help with Fees reference number to the court or tribunal office via post or email (copies, scans or mobile screenshots). You can request proof of your benefits through the DWP, which may include a letter of entitlement, a proof of benefit letter, or other official documentation</strong>"
         - title:
           parts:
