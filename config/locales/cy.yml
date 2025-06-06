@@ -451,7 +451,7 @@ cy:
       p_four: Sylwch, dim ond o fewn 3 mis i'r dyddiad y taloch eich ffi gwreiddiol y gallwch wneud cais am ad-daliad (er enghraifft, os taloch eich ffi ar 16 Medi, mae gennych hyd at 15 Rhagfyr i wneud hynny). Mae'r terfyn amser hwn yn cynnwys gwneud unrhyw gais newydd os yw eich cais help i dalu ffioedd gwreiddiol wedi'i wrthod.
       p_four_html: Os oes arnoch angen help i ddod o hyd i gyfeiriad e-bost neu gyfeiriad post y llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
       p_five: Y llys neu tribiwnlys byddant yn cysylltu â chi i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu a oes angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
-      reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu
+      reference_confirm_checkbox: Cadarnhaf y byddaf yn ychwanegu’r cyfeirnod uchod at fy nghais ar-lein i’r llys/tribiwnlys ac yn anfon unrhyw dystiolaeth o fudd-daliadau os yn berthnasol i’r llys/tribiwnlys ar gyfer prosesu
       confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu"
   error_block:
     heading: Mae problem wedi codi
