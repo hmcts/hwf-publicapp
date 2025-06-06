@@ -362,14 +362,14 @@ cy:
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
       h3_one: Beth fydd yn digwydd nesaf
       p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys.
-      p_two: Nawr mae angen i chi ychwanegu’r cyfeirnod hwn at eich cais llys/tribiwnlys ar-lein.
+      p_two: Rydych nawr angen ychwanegu’r cyfeirnod hwn at eich cais llys/tribiwnlys ar-lein ac anfon tystiolaeth i swyddfa’r llys/tribiwnlys o unrhyw fudd-daliadau, os yn berthnasol.
       p_three: Mae gennych 28 diwrnod i wneud hyn neu bydd eich cais yn cael ei wrthod a bydd angen i chi gychwyn cais Help i Dalu Ffioedd newydd.
       p_four_html: Os oes arnoch angen cysylltu â'r llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt.
       p_five: Unwaith y bydd y llys/tribiwnlys wedi cael eich cyfeirnod byddant yn prosesu eich cais am help i dalu ffioedd. Wedyn byddant yn cysylltu â chi i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu a oes angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
       template:
         line_one: "Nodwch eich cyfeirnod uchod yn yr adran help i dalu ffioedd ar y ffurflen ar-lein. Dylai eich ffurflen gais ar-lein i’r llys edrych rhywbeth fel hyn:"
       contact_line: Byddwn yn cysylltu â chi os oes angen i chi ddarparu mwy o wybodaeth neu “os oes angen i chi dalu rhywfaint tuag at eich ffi llys neu dribiwnlys.
-      reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn ychwanegu'r cyfeirnod uchod at fy nghais ar-lein i'r llys/tribiwnlys
+      reference_confirm_checkbox: Cadarnhaf y byddaf yn ychwanegu’r cyfeirnod uchod at fy nghais ar-lein i’r llys/tribiwnlys ac yn anfon unrhyw dystiolaeth o fudd-daliadau os yn berthnasol i’r llys/tribiwnlys ar gyfer prosesu
       confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i’r llys/tribiwnlys"
     paper:
       heading: Eich cyfeirnod Help i Dalu Ffioedd yw %{claim_number}
@@ -377,7 +377,7 @@ cy:
       h3_one: Cam Olaf
       h3_two: Beth fydd yn digwydd nesaf
       p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys a rhoddwyd y cyfeirnod uchod ar gyfer eich cais.
-      p_two: Nawr mae angen i chi ddarparu'r cyfeirnod hwn i’r swyddfa, y llys neu'r tribiwnlys a fydd yn delio â'r hawliad yr ydych eisiau help i dalu'r ffi.
+      p_two: Rydych nawr angen darparu’r cyfeirnod hwn i’r swyddfa, llys neu dribiwnlys fydd yn delio gyda’r hawliad yr ydych angen help i dalu’r ffi, ynghyd â thystiolaeth o unrhyw fudd-dal (os yn berthnasol).
       p_three: Mae gennych 28 diwrnod i wneud hyn neu bydd eich cais yn cael ei wrthod a bydd angen i chi gychwyn cais Help i Dalu Ffioedd newydd.
       p_four: "Gallwch wneud hyn drwy:"
       p_five_html: "Gellir dod o hyd i fanylion cyswllt ar gyfer yr holl lysoedd a thribiwnlysoedd yma: <a class='external govuk-link' rel='external' href='https://www.gov.uk/find-court-tribunal'>https://www.gov.uk/find-court-tribunal</a>"
@@ -385,12 +385,12 @@ cy:
       instructions:
         line_one: Ychwanegu'r cyfeirnod i adran help i dalu ffioedd eich prif ffurflen hawlio
         line_two: Os nad oes gan y ffurflen adran help i dalu ffioedd, ysgrifennwch y cyfeirnod ar frig y ffurflen hawlio
-        line_three: Os ydych eisoes wedi anfon eich ffurflen hawlio i'r llys/tribiwnlys, mae angen i chi anfon eich cyfeirnod i'r llys/tribiwnlys naill ai drwy e-bost neu'r post
+        line_three: Os ydych eisoes wedi anfon eich ffurflen hawlio i’r llys/tribiwnlys, mae angen i chi anfon eich cyfeirnod i’r llys/tribiwnlys naill ai drwy e-bost neu’r post, ynghyd â thystiolaeth o unrhyw fudd-daliadau (os yn berthnasol)
       template:
         reference: 'Cyfeirnod: %{reference}'
         line_one: Rwyf wedi cwblhau cais ar-lein am help i dalu ffioedd [nodwch y math o gais a rhif yr achos os oes gennych un].
         line_two: Yn gywir,
-      reference_confirm_checkbox: Rwy’n cadarnhau y byddaf yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu
+      reference_confirm_checkbox: Rwy’n cadarnhau y byddaf yn anfon y cyfeirnod uchod i’r llys/tribiwnlys i’w brosesu a’r dystiolaeth budd-dal cymhwysol os yn berthnasol
       confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu"
     et:
       address:
@@ -446,12 +446,12 @@ cy:
       sub_heading: Mae gennych un cam arall i’w gyflawni isod
       h3_one: Beth fydd yn digwydd nesaf
       p_one: Rydych wedi cwblhau cais ar-lein am help i dalu ffioedd llys neu dribiwnlys.
-      p_two: Nawr mae angen i chi ychwanegu'r cyfeirnod hwn at eich cais llys/tribiwnlys ar-lein.
+      p_two: Rydych nawr angen ychwanegu’r cyfeirnod hwn at eich cais llys/tribiwnlys ar-lein ac anfon tystiolaeth i swyddfa’r llys/tribiwnlys o unrhyw fudd-daliadau, os yn berthnasol.
       p_three: Dylech anfon hwn atynt o fewn 28 diwrnod. Os ddaw hwn i law yn hwyrach bydd yn cael ei wrthod a bydd rhaid i chi wneud cais newydd am help i dalu ffioedd.
       p_four: Sylwch, dim ond o fewn 3 mis i'r dyddiad y taloch eich ffi gwreiddiol y gallwch wneud cais am ad-daliad (er enghraifft, os taloch eich ffi ar 16 Medi, mae gennych hyd at 15 Rhagfyr i wneud hynny). Mae'r terfyn amser hwn yn cynnwys gwneud unrhyw gais newydd os yw eich cais help i dalu ffioedd gwreiddiol wedi'i wrthod.
       p_four_html: Os oes arnoch angen help i ddod o hyd i gyfeiriad e-bost neu gyfeiriad post y llys, dilynwch y ddolen hon <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> i ddod o hyd i fanylion cyswllt pellach.
       p_five: Y llys neu tribiwnlys byddant yn cysylltu â chi i ddweud wrthych a oes angen i chi ddarparu mwy o wybodaeth neu a oes angen i chi dalu tuag at eich ffi llys neu dribiwnlys.
-      reference_confirm_checkbox: Rwy'n cadarnhau y byddaf yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu
+      reference_confirm_checkbox: Rwy’n cadarnhau y byddaf yn anfon y cyfeirnod uchod i’r llys/tribiwnlys i’w brosesu a’r dystiolaeth budd-dal cymhwysol os yn berthnasol
       confirmation_error: "Rhaid i chi gadarnhau y byddwch yn anfon y cyfeirnod uchod i'r llys/tribiwnlys i'w brosesu"
   error_block:
     heading: Mae problem wedi codi
@@ -535,6 +535,8 @@ cy:
       text: A ydych chi’n cael unrhyw un o’r budd-daliadau canlynol?
       text_refund: Oeddech chi'n derbyn unrhyw un o'r budd-daliadau canlynol?
       title: Budd-daliadau
+      evidence: <strong>Rydych angen darparu tystiolaeth o’ch budd-daliadau</strong>
+      support: Gefnogi eich hawliad, mae’n rhaid i chi ddarparu prawf o’ch budd-daliadau. Mae hyn yn cynnwys llythyr dadansoddiad llawn gan yr Adran Waith a Phensiynau, ddylai fanylu dyddiad eich asesiad a chadarnhau’r budd-dal rydych yn ei dderbyn. Dylai unrhyw ddogfennau a gyflwynir eich adnabod chi a’ch partner (os yn berthnasol) yn glir, gyda thystiolaeth eich bod yn rhannu’r un cyfeiriad. Gallwch anfon y wybodaeth hon ynghyd â’ch cyfeirnod Cymorth gyda Ffioedd i’r llys neu swyddfa tribiwnlys drwy’r post neu e-bost, copïau wedi eu sganio neu sgrinlun ar ffôn symudol).
     claim/default:
       breadcrumb: Cam %{page_number} o 25
       details:
@@ -1244,19 +1246,20 @@ cy:
       heading: 'Pwysig: i’w ddarllen cyn i chi gychwyn'
       sections:
         - parts:
+            - p: 'Os ydych yn gwneud cais am help gyda ffioedd llys a thribiwnlys ac rydych yn derbyn budd-daliadau cymhwysol ar hyn o bryd, rhaid i chi anfon tystiolaeth ochr yn ochr â’ch cais wedi’i lenwi. Mae hyn oherwydd problem dechnegol dros dro yr ydym yn ei phrofi.'
             - p: 'Dylech ddefnyddio’r gwasanaeth ar-lein hwn pan fyddwch yn barod i wneud eich cais i lys neu dribiwnlys.'
-            - p: 'Fe gewch gyfeirnod Help i Dalu Ffioedd ar ddiwedd y broses a dylech anfon hwn i’r llys neu’r tribiwnlys gyda’ch hawliad o fewn 28 diwrnod. Os bydd yn cyrraedd ar ôl hynny, efallai y bydd yn cael ei wrthod a bydd rhaid ichi wneud cais am Help i Dalu Ffioedd newydd.'
+            - p: 'Fe gewch gyfeirnod Help i Dalu Ffioedd ar ddiwedd y broses a dylech anfon hwn i’r llys neu’r tribiwnlys gyda’ch hawliad o fewn 28 diwrnod. Os bydd yn cyrraedd ar ôl hynny, efallai y bydd yn cael ei wrthod a bydd rhaid ichi wneud cais am Help i Dalu Ffioedd newydd. Rhaid ichi ddarparu tystiolaeth o unrhyw fudd-daliadau cymhwysol, gwnewch yn siŵr bod hwn gennych yn barod cyn ymgeisio.'
             - p: 'Rhaid cyflwyno ceisiadau am ad-daliad o fewn 3 mis ichi dalu’r ffi wreiddiol. Os gwrthodir eich cais gan bod y cyfeirnod Help i Dalu Ffioedd wedi’i ddarparu mwy na 28 diwrnod yn ôl, gallai hyn effeithio ar faint o amser sydd gennych yn weddill i fod yn gymwys i gael ad-daliad.'
             - p: 'Os ydych yn gwneud sawl hawliad neu sawl cais, bydd rhaid i’r holl geiswyr wneud cais ar wahân am Help i Dalu Ffioedd a chyflwyno’r cyfeirnodau ar-lein i’r llys.'
             - p: 'Bydd y staff yn prosesu’r cais am Help i Dalu Ffioedd a’r cais i’r llys neu’r tribiwnlys gyda’i gilydd ac fe’ch hysbysir os bydd angen i chi dalu rhywfaint o’r ffi neu os yw’r llys angen rhagor o wybodaeth gennych.'
             - p: 'Gall cynrychiolydd cyfreithiol neu gyfaill cyfreitha wneud cais ar eich rhan. Mae’n rhaid iddynt roi’ch manylion chi yn y cais.'
-
             - p: '<h2 class="govuk-heading-m">Cyn i chi barhau, gwnewch yn siŵr fod gennych:</h2>'
             - ul:
                 - li: eich rhif Yswiriant Gwladol (NI) neu
                 - li: eich gyfeirnod y Swyddfa Gartref - efallai bydd gennych gyfeirnod y Swyddfa Gartref os ydych chi’n destun rheolaethau mewnfudo
                 - li: rhif y ffurflen llys neu dribiwnlys
                 - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
+                - li: "<strong>Os ydych yn ymgeisio am fudd-daliadau, byddwch angen darparu tystiolaeth gan yr Adran Gwaith a Phensiynau (DWP) yn cadarnhau eich bod yn derbyn un o’r budd-daliadau cymhwysol. Gallwch ofyn am brawf o’ch budd-daliadau drwy’r DWP, a all gynnwys llythyr hawliad, llythyr prawf budd-dal neu ddogfennau swyddogol eraill. Mae hyn yn cynnwys llythyr dadansoddiad llawn gan yr Adran Waith a Phensiynau, ddylai fanylu dyddiad eich asesiad a chadarnhau’r budd-dal rydych yn ei dderbyn. Dylai unrhyw ddogfennau a gyflwynir eich adnabod chi a’ch partner (os yn berthnasol) yn glir, gyda thystiolaeth eich bod yn rhannu’r un cyfeiriad. Gallwch anfon y wybodaeth hon ynghyd â’ch cyfeirnod Cymorth gyda Ffioedd i’r llys neu swyddfa tribiwnlys drwy’r post neu e-bost, copïau wedi eu sganio neu sgrinlun ar ffôn symudol). Gallwch ofyn am brawf o’ch budd-daliadau drwy’r DWP, a all gynnwys llythyr hawliad, llythyr prawf budd-dal neu ddogfennau swyddogol eraill.</strong>"
         - title:
           parts:
             - p: "Hefyd bydd arnoch angen manylion eich:"

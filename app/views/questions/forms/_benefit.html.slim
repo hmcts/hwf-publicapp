@@ -12,6 +12,10 @@
       .govuk-radios__item
         = f.radio_button :on_benefits, 'true', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
         = f.label :on_benefits, t('on_benefits_true', scope: @form.i18n_scope), for: 'benefit_on_benefits_true', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"
+      .govuk-radios__conditional#date-fee-paid-panel.visuallyhidden
+        .govuk-body
+          p = raw t('evidence', scope: @form.i18n_scope)
+          p = t('support', scope: @form.i18n_scope)
 
 .govuk-form-group
   .govuk-body
