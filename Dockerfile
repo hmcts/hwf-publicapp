@@ -14,7 +14,7 @@ ENV APP_BUILD_TAG=${APP_BUILD_TAG}
 
 
 RUN apk update && apk add --no-cache libc6-compat && \
-    apk add --no-cache --virtual .build-tools git build-base curl-dev npm tzdata shared-mime-info \
+    apk add --no-cache --virtual .build-tools git build-base curl-dev yarn tzdata shared-mime-info \
     yaml-dev
 
 ENV UNICORN_PORT=3000
@@ -35,7 +35,7 @@ RUN bundle install
 ENV PHUSION=true
 
 COPY . /home/app
-RUN npm install
+RUN yarn install --check-files
 
 CMD ["sh", "-c", "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah && \
      sh ./run.sh"]
