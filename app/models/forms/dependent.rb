@@ -28,7 +28,7 @@ module Forms
 
       totals = children_bands.tally
       @children_age_band = { one: totals.fetch('one', 0), two: totals.fetch('two', 0) }
-      @children_age_band = { one: 0, two: 0 } if children_number.to_i.zero?
+      @children_age_band = { one: nil, two: nil } if children_number.zero?
     end
 
     def reset_children_fields
