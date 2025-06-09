@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '3.4.3'
+ruby '3.4.2'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
@@ -19,7 +19,7 @@ gem "dartsass-sprockets", "~> 3.1"
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'puma'
-gem 'rack', '~> 3.1.16'
+gem 'rack', '~> 3.1.5'
 gem 'redis'
 gem 'rest-client'
 gem 'sentry-rails'
@@ -49,7 +49,6 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'web-console'
-  gem 'mutex_m'
 end
 
 group :test do
