@@ -591,6 +591,9 @@ Style/SpecialGlobalVars:
 Rails/StrongParametersExpect:
   Enabled: false
 
+Naming/PredicateMethod:
+  Enabled: false
+
 plugins:
   - rubocop-rspec
   - rubocop-rails
