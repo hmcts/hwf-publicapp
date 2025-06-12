@@ -1,7 +1,7 @@
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:partner_national_insurance].any?)
   - if @form.errors[:ni_number_present].any?
     span.govuk-error-message#kase = @form.errors[:ni_number_present].join(' ')
-  .govuk-form-group
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:ni_number_present].any?)
     .govuk-radios
       .govuk-radios__item
         = f.radio_button :ni_number_present, 'true', class: 'govuk-radios__input', 'data-target': "ni-number-panel", id: 'national_insurance_ni_number_present'

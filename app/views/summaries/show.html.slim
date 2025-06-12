@@ -2,6 +2,9 @@
   = t('summary.labels.title')
   = ' - '
 
+- content_for :content_override
+  = render 'shared/error_block', form: @form if @form.errors.any?
+
 .govuk-caption-l
   = t('summary.breadcrumb')
 

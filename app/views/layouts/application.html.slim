@@ -28,15 +28,16 @@
 - content_for :content_override
   .container
     #content.cf
-      - if flash.key?("error")
-        div role="alert"
-          .govuk-error-summary tabindex="-1" data-module="govuk-error-summary"
-            h2.govuk-error-summary__title =t('error_block.heading')
-            .govuk-error-summary__body
-              ul.govuk-list.govuk-error-summary__list
-                - flash.each do |field, message|
-                  li
-                    span.govuk-error-message = message
+      - unless content_for?(:content_override)
+        - if flash.key?("error")
+          div role="alert"
+            .govuk-error-summary tabindex="-1" data-module="govuk-error-summary"
+              h2.govuk-error-summary__title =t('error_block.heading')
+              .govuk-error-summary__body
+                ul.govuk-list.govuk-error-summary__list
+                  - flash.each do |field, message|
+                    li
+                      span.govuk-error-message = message
       - if flash.key?("cookie_notification")
         .govuk-notification-banner.govuk-notification-banner--success aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
           .govuk-notification-banner__header
