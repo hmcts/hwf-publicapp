@@ -31,6 +31,8 @@ income:
   married_supplement: 175
 probate_fees:
   release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2026-04-01' %>
+new_branding:
+  new_branding_date: <%= ENV['NEW_BRANDING_DATE'] || '2025-06-25' %>
 sentry:
   dsn: <%= ENV['SENTRY_DSN'] %>
 maintenance:
