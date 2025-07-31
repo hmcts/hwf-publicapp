@@ -1,5 +1,6 @@
 class ConfirmationPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/confirmation'
 
   section :content, '#content' do

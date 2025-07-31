@@ -1,5 +1,6 @@
 class ClaimPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/claim'
 
   section :content, '#content' do

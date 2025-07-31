@@ -1,5 +1,6 @@
 class DependentPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/dependent'
 
   section :content, '#content' do

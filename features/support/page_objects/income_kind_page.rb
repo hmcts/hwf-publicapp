@@ -1,5 +1,6 @@
 class IncomeKindPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/income_kind'
 
   section :content, '#content' do

@@ -1,5 +1,6 @@
 class HomeOfficePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/home_office?locale=en'
 
   section :content, '#content' do
