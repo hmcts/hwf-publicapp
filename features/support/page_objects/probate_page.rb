@@ -1,5 +1,6 @@
 class ProbatePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/probate'
 
   section :content, '#content' do

@@ -1,5 +1,6 @@
 class SavingsInvestmentExtraPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/savings_and_investment_extra'
 
   section :content, '#content' do
