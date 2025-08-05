@@ -243,7 +243,7 @@ dl.govuk-summary-list
             span.govuk-visually-hidden
               =t('contact', scope: 'summary.labels').downcase
 
-    -if @summary.applying_method
+    -if @summary.applying_method && !@summary.refund
       br
       h1.govuk-heading-l
         span.no-wrap = t('application_title', scope: 'summary.labels')
