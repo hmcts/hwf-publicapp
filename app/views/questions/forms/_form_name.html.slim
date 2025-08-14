@@ -1,5 +1,5 @@
 .govuk-fieldset
-  .govuk-form-group  class=('error' if @form.errors.any?)
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
     = f.label :identifier, class: 'govuk-label'
     - if @form.errors[:identifier].any?
       span.govuk-error-message

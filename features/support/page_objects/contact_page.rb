@@ -1,5 +1,6 @@
 class ContactPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/contact'
 
   section :content, '#content' do

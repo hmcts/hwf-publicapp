@@ -1,5 +1,6 @@
 class FeePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/fee'
 
   section :content, '#content' do

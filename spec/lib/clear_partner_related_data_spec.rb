@@ -2,6 +2,7 @@ RSpec.describe ClearPartnerRelatedData do
   # rubocop:disable RSpec/LeakyConstantDeclaration, Lint/ConstantDefinitionInBlock
   class TestClass
     include ClearPartnerRelatedData
+
     def initialize(storage, question)
       @storage = storage
       @question = question

@@ -1,5 +1,6 @@
 class PartnerNationalInsurancePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/partner_national_insurance'
 
   section :content, '#content' do

@@ -1,5 +1,6 @@
 class BenefitPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/benefit'
 
   section :content, '#content' do
