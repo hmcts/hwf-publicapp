@@ -18,6 +18,8 @@ withPipeline(type, product, component) {
   // random free port should probably be used instead
   env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
 
+  enableFortifyScan()
+
   before('build') {
     sh script:"""#!/bin/bash -l
       set +x
@@ -26,6 +28,7 @@ withPipeline(type, product, component) {
       rvm use ruby-3.4.5 --default
       """, label: 'Ruby version install'
     sh script: "echo '---------- FORTIFY ----------'"
+
     rubyBuilder.fortifyScan()
   }
 
