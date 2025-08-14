@@ -27,15 +27,16 @@ withPipeline(type, product, component) {
       rvm install ruby-3.4.5
       rvm use ruby-3.4.5 --default
       """, label: 'Ruby version install'
-    sh script: "echo '---------- FORTIFY ----------'"
-
-    rubyBuilder.fortifyScan()
   }
 
 
   before('test') {
     sh script:"npm install", label: 'Start test'
     rubyBuilder.bundle("install")
+
+    sh script: "echo '---------- FORTIFY ----------'"
+    rubyBuilder.fortifyScan()
+
     rubyBuilder.bundle("exec rails assets:precompile")
   }
 }
