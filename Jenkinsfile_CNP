@@ -19,14 +19,15 @@ withPipeline(type, product, component) {
   env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
 
   before('build') {
-   sh script:"""#!/bin/bash -l
-       set +x
-       source /usr/local/rvm/scripts/rvm
-       rvm install ruby-3.4.5
-       rvm use ruby-3.4.5 --default
-   """, label: 'Ruby version install'
+    sh script:"""#!/bin/bash -l
+      set +x
+      source /usr/local/rvm/scripts/rvm
+      rvm install ruby-3.4.5
+      rvm use ruby-3.4.5 --default
+      """, label: 'Ruby version install'
+    sh -c 'echo "---------- FORTIFY ----------"'
+    rubyBuilder.fortifyScan()
   }
-  enableFortifyScan()
 
    before('test') {
       sh script:"yarn install", label: 'Start test'
