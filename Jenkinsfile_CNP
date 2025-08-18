@@ -32,6 +32,10 @@ withPipeline(type, product, component) {
       rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
   }
+
+  after('test') {
+    rubyBuilder.fortifyScan()
+  }
 }
 
 

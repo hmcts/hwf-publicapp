@@ -1,0 +1,17 @@
+# Fortify Static Code Analyzer configuration for hwf-publicapp
+
+# Build settings
+build.id=hwf-publicapp
+build.label=Help with Fees Public App
+
+# Scan settings
+scan.exclude.dirs=spec,test,features,tmp,log,vendor,node_modules
+scan.include.dirs=app,lib,config
+
+# Analysis settings
+analysis.verbose=true
+analysis.debug=false
+
+# Report settings
+report.format=fpr
+report.output.dir=fortify_results
