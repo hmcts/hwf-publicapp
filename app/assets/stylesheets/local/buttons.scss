@@ -1,9 +1,3 @@
-.button {
-  &.secondary {
-    @include button($grey-3);
-  }
-}
-
 .button-start,
 .button-get-started {
   font-family: "nta", Arial, sans-serif;

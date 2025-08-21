@@ -8,6 +8,8 @@ $govuk-images-path: 'govuk-frontend/dist/govuk/assets/images/';
 @import "govuk-frontend/dist/govuk/index";
 
 // /*local*/
+@import 'local/mixins';
+@import 'local/colours';
 @import 'local/address_lookup';
 @import 'local/alerts';
 @import 'local/banners';
