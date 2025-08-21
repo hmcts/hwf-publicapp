@@ -16,7 +16,7 @@
 
 .post {
   display: table;
-  background-image: asset-url('icon-post.png');
+  background-image: url('icon-post.png');
   background-repeat: no-repeat;
   background-position: left middle;
 
@@ -44,7 +44,7 @@
 
 .restart-confirm {
   display: none;
-  background: asset-url('icon-important-red.png') 15px 15px no-repeat;
+  background: url('icon-important-red.png') 15px 15px no-repeat;
   background-size: 34px 34px;
   padding-left: 65px;
   border-color: $govuk-error-colour;
@@ -54,7 +54,7 @@
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background-image: asset-url('icon-important-red-2x.png');
+    background-image: url('icon-important-red-2x.png');
   }
 
   button.secondary {
@@ -71,7 +71,7 @@
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .post {
-    background-image: asset-url('icon-post-2x.png');
+    background-image: url('icon-post-2x.png');
   }
 }
 
