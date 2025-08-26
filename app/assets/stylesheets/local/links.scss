@@ -15,7 +15,7 @@ a[rel~="external"]:after {
       }
     }
 a[rel~="external"]:after {
-  content: "\A0\A0\A0\A0";
+  content: "";
   background-position: right 6px;
 }
 a[rel~="external"]:hover:after {
@@ -23,7 +23,7 @@ a[rel~="external"]:hover:after {
 }
 @media (max-width: 640px) {
   a[rel~="external"]:after {
-    content: "\A0\A0\A0\A0\A0";
+    content: "";
     background-position: right 3px;
   }
   a[rel~="external"]:hover:after {
