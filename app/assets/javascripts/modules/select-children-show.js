@@ -56,13 +56,13 @@ window.moj.Modules.SelectChildrenShow  = {
         }
 
         while (numberOfChildren > numOfChildHTML) {
-            englishSelect = self.newSelect('Select the child\'s age range','0-13 years','14 years and over');
-            welshSelect = self.newSelect('Dewiswch ystod oedran y plentyn','0-13 mlwydd oed',"14 mlwydd oed neu'n hŷn");
-            enLabel = self.newLabel("Age range for child " + (numOfChildHTML + 1).toString() + "?");
-            welshLable = self.newLabel("Ystod oedran ar gyfer plentyn " + (numOfChildHTML + 1).toString() + "?");
+            let englishSelect = self.newSelect('Select the child\'s age range','0-13 years','14 years and over');
+            let welshSelect = self.newSelect('Dewiswch ystod oedran y plentyn','0-13 mlwydd oed',"14 mlwydd oed neu'n hŷn");
+            let enLabel = self.newLabel("Age range for child " + (numOfChildHTML + 1).toString() + "?");
+            let welshLabel = self.newLabel("Ystod oedran ar gyfer plentyn " + (numOfChildHTML + 1).toString() + "?");
 
             let lastChildHtmlEnglish = enLabel.prop('outerHTML') + englishSelect.prop('outerHTML');
-            let lastChildHtmlWelsh = welshLable.prop('outerHTML') + welshSelect.prop('outerHTML');
+            let lastChildHtmlWelsh = welshLabel.prop('outerHTML') + welshSelect.prop('outerHTML');
             if (languagePicker === 'English'){
                 $('#dependent-children-age-panel .children_age_select').last().after(self.newDiv(lastChildHtmlWelsh));
             } else {
