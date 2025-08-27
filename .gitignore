@@ -42,3 +42,5 @@ features/cucumber-report/screenshot.png
 .env.development
 
 input-secrets.rb
+
+/app/assets/builds/*
