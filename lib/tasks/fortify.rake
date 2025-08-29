@@ -1,5 +1,5 @@
 namespace :fortify_scan do
-  desc 'fortify scan'
+  desc 'Fortify scan'
   task :run do
     puts "Building project for Fortify analysis..."
     unless system("sourceanalyzer -b hwf-publicapp -clean")
@@ -8,5 +8,5 @@ namespace :fortify_scan do
   end
 end
 
-desc 'fortify scan'
-task :fortifyScan => 'fortify_scan:run'
+desc 'Fortify scan'
+task :fortify_scan => 'fortify_scan:run'
