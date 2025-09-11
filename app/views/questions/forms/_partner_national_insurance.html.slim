@@ -7,7 +7,7 @@
         p.govuk-error-message#number = error
 
     span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
-    div
+    div#partner_national_insurance_number
       = f.text_field :number, id: 'number_input', class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
 
   div#partner_ni_checkbox_group
@@ -15,7 +15,7 @@
       .govuk-checkboxes
         .govuk-checkboxes__item
           = f.check_box :partner_ni_number_blank, id: 'partner_ni_checkbox', class: 'govuk-checkboxes__input'
-          = f.label :partner_ni_number_blank, t('partner_ni_number_present_false', scope: @form.i18n_scope),  for: 'partner_ni_checkbox', class: 'govuk-label govuk-checkboxes__label'
+          = f.label :partner_ni_number_blank, t('partner_ni_number_present_false', scope: @form.i18n_scope), for: 'partner_ni_checkbox', class: 'govuk-label govuk-checkboxes__label'
 
 .govuk-body
 

@@ -12,8 +12,13 @@ Feature: Online confirmation page
   Scenario: Save or print this page
     Then I should see save or print this page
 
-  Scenario: Finish application
+  Scenario: Finish application without confirming
     When I click the finish application button
+    Then I should see 'online' error
+
+  Scenario: Finish application
+    When I click the confirm checkbox
+    And I click the finish application button
     Then I should be taken to the survey page
 
   Scenario: Finish page timeout

@@ -4,7 +4,7 @@ module FeatureSteps
     click_link_or_button 'Start now'
     click_link_or_button 'Continue'
 
-    QuestionFormFactory.page_list('q4_23').take_while { |id| id != question }.each do |id|
+    QuestionFormFactory.page_list.take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
       next if skip_step(id)
 
@@ -245,7 +245,7 @@ module FeatureSteps
   end
 
   def fill_national_insurance
-    choose 'national_insurance_has_ni_number_true'
+    choose 'national_insurance_ni_number_present'
     fill_in 'national_insurance_number', with: 'AB123456A'
     click_button 'Continue'
   end
@@ -303,14 +303,9 @@ module FeatureSteps
     click_button 'Continue'
   end
 
-  def fill_dependent(dependent = false)
-    if dependent
-      choose 'dependent_children_true'
-      fill_in 'dependent_children_age_band_one', with: 1
-      fill_in 'dependent_children_age_band_two', with: 0
-    else
-      choose 'dependent_children_false'
-    end
+  def fill_dependent
+    select 2, from: 'dependent_children_number'
+    select '0-13 years', from: 'dependent[children_bands][]'
     click_button 'Continue'
   end
 

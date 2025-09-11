@@ -5,22 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '3.3.5'
+ruby '3.4.5'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 7.2.1'
+gem 'rails', '~> 8.0.2.1'
 
-gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
 gem 'config'
 gem 'date_validator'
-gem "dartsass-sprockets", "~> 3.1"
-gem 'jquery-rails'
+# gem "dartsass-sprockets", "~> 3.1"
+# gem 'jquery-rails'
 gem 'nokogiri'
 gem 'puma'
-gem 'rack', '~> 3.1.5'
+gem 'rack', '~> 3.1.16'
 gem 'redis'
 gem 'rest-client'
 gem 'sentry-rails'
@@ -29,9 +28,14 @@ gem 'uglifier'
 gem 'virtus'
 gem 'govuk_notify_rails'
 
+gem 'propshaft'
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
+
 # To fix ruby 3.3.3 gemsepec file issue with this gem
 gem 'net-pop', github: 'ruby/net-pop'
 
+gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
   gem "pry-rails"
@@ -49,6 +53,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'web-console'
+  gem 'mutex_m'
 end
 
 group :test do
@@ -62,7 +67,10 @@ group :test do
   gem 'regexp_parser'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
-  gem 'rubocop-rspec', '~> 2.16', require: false
+  gem 'rubocop-rspec'
+  gem 'rubocop-capybara'
+  gem 'rubocop-factory_bot'
+  gem 'rubocop-rspec_rails'
   gem 'rubyzip'
   gem 'selenium-webdriver', '~> 4.14'
   gem 'shoulda-matchers'

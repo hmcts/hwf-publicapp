@@ -1,5 +1,1 @@
-- if ucd_changes_apply?(@online_application.calculation_scheme)
-  = render('questions/forms/income_kind/post_ucd', f: f)
-- else
-  = render('questions/forms/income_kind/pre_ucd', f: f)
-
+= render('questions/forms/income_kind/income_kind', f: f)

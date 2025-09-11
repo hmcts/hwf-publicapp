@@ -7,6 +7,7 @@ module Forms
 
     attribute :over_66, Boolean
     attribute :is_married, Boolean
+    attribute :ni_number_present, Boolean
     attribute :day, Integer
     attribute :month, Integer
     attribute :year, Integer
@@ -19,11 +20,13 @@ module Forms
     MAXIMUM_AGE = 120
 
     before_validation :dob_dates
-    before_validation :partner_dob_dates, if: :partner?
-    before_validation :reset_partner_dob, unless: :partner?
+    # rubocop:disable Lint/LiteralAsCondition
+    before_validation :partner_dob_dates, if: :is_married? && :ni_number_present?
+    before_validation :reset_partner_dob, unless: :is_married? && :ni_number_present?
+    # rubocop:enable Lint/LiteralAsCondition
 
     validate :dob_age_valid?
-    validate :partner_dob_age_valid?, if: :partner?
+    validate :partner_dob_age_valid?, if: -> { is_married? && ni_number_present? }
 
     private
 
@@ -53,6 +56,7 @@ module Forms
       too_young_error if too_young? && over_16 != 'true'
       too_old_error if too_old?
       not_over_66_error if not_over_66?
+      not_under_66_error if not_under_66?
     end
 
     def too_young?
@@ -89,6 +93,24 @@ module Forms
     def not_over_66_error
       errors.add(:date_of_birth, :not_over_66) unless is_married == true
       errors.add(:date_of_birth, :not_over_66_married) if is_married == true
+    end
+
+    def not_under_66?
+      return false unless over_66 == false
+
+      age_66 = Time.zone.today - 66.years
+      if is_married == true
+        return false if partner_date_of_birth.blank?
+
+        date_of_birth < age_66 && partner_date_of_birth < age_66
+      else
+        date_of_birth < age_66
+      end
+    end
+
+    def not_under_66_error
+      errors.add(:date_of_birth, :not_under_66) unless is_married == true
+      errors.add(:date_of_birth, :not_under_66_married) if is_married == true
     end
 
     def over_16_answer_match_dob?

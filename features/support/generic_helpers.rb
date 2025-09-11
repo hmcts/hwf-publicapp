@@ -72,10 +72,6 @@ def national_insurance_page
   @national_insurance_page ||= NationalInsurancePage.new
 end
 
-def national_insurance_presence_page
-  @national_insurance_presence_page ||= NationalInsurancePresencePage.new
-end
-
 def partner_national_insurance_page
   @partner_national_insurance_page ||= PartnerNationalInsurancePage.new
 end
@@ -134,10 +130,6 @@ end
 
 def home_page
   @home_page ||= HomePage.new
-end
-
-def on_behalf_page
-  @on_behalf_page ||= OnBehalfPage.new
 end
 
 def legal_representative_page

@@ -1,0 +1,25 @@
+
+$govuk-global-styles: true;
+$govuk-new-typography-scale: true;
+
+$govuk-fonts-path: 'govuk-frontend/dist/govuk/assets/fonts/';
+$govuk-images-path: 'govuk-frontend/dist/govuk/assets/images/';
+
+@import "govuk-frontend/dist/govuk/index";
+
+// /*local*/
+@import 'local/mixins';
+@import 'local/colours';
+@import 'local/address_lookup';
+@import 'local/alerts';
+@import 'local/banners';
+@import 'local/buttons';
+@import 'local/icons';
+@import 'local/inputs';
+@import 'local/links';
+@import 'local/lists';
+@import 'local/panels';
+@import 'local/phase-banner';
+@import 'local/rules';
+@import 'local/typography';
+@import 'local/utilities';

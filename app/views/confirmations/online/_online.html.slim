@@ -1,0 +1,16 @@
+
+
+.govuk-panel.govuk-panel--confirmation
+  h2 =t('confirmation.online.heading', claim_number: @result['message'])
+  h2 =t('confirmation.online.sub_heading')
+br
+
+p.govuk-body =t('confirmation.online.p_one')
+p.govuk-body =t('confirmation.online.p_two')
+.govuk-warning-text
+  span.govuk-warning-text__icon class=('govuk-!-margin-top-1') aria-hidden="true" !
+  strong.govuk-warning-text__text
+    =t('confirmation.online.p_three')
+p.govuk-body =t('confirmation.online.p_four_html')
+h3.govuk-heading-m =t('confirmation.online.h3_one')
+p.govuk-body =t('confirmation.online.p_five')

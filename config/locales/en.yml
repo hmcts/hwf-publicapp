@@ -123,10 +123,11 @@ en:
             children:
               inclusion: You need to say whether you have financially dependent children
             children_number:
-              blank: You must enter the number of financially dependent children
               less_than: You must enter number less than 100
-              not_a_number: You must enter financially dependent children as a number
+              not_a_number: Select the number of children that live with you or you're supporting financially
               greater_than: You must enter a number greater than 0
+            children_bands:
+              blank: Select the child's age range
             children_age_band_one:
               blank: Enter number of children in this age category
             children_age_band_two:
@@ -140,6 +141,8 @@ en:
               too_young: You must be over %{minimum_age} to use this service
               not_over_66: Enter date of birth for age 66 years or above (as stated in Step 12)
               not_over_66_married: Enter date of birth for age 66 years or above for you or your partner (as stated in Step 12)
+              not_under_66: You have stated that you are not 66 years or older. Please change your response or check that this date of birth is correct
+              not_under_66_married: You have stated that you or your partner are not 66 years or older. Please change your response or check that these dates of birth are correct
               not_over_16: Enter date of birth for age above 16 (as stated in step 6)
               not_under_16: Enter date of birth for age under 16 (as stated in step 6)
             partner_date_of_birth:
@@ -227,6 +230,7 @@ en:
               blank: Select your kinds of income
               invalid: Select only the kinds from the list
               none_value_selected: Deselect 'None of the above' if you would like to select any of the other options
+              child_benefit_without_children: You have declared you receive Child Benefit, however you have not declared any children. Please amend your selection.
             partner:
               invalid: Select only the kinds from the list
               none_value_selected: Deselect 'None of the above' if you would like to select any of the other options
@@ -252,7 +256,7 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
-            has_ni_number:
+            ni_number_present:
               inclusion: Select yes if you have National Insurance number
               invalid: Select yes if you have National Insurance number
         forms/partner_national_insurance:
@@ -264,11 +268,6 @@ en:
             partner_ni_number_present:
               inclusion: Select if your partner has National Insurance number
               invalid: Select if your partner has National Insurance number
-        forms/national_insurance_presence:
-          attributes:
-            ni_number_present:
-              inclusion: Select yes if you have National Insurance number
-              invalid: Select yes if you have National Insurance number
         forms/home_office:
           attributes:
             ho_number:
@@ -314,8 +313,7 @@ en:
           attributes:
             amount:
               blank: Enter how much you have in savings and investments
-              greater_than_or_equal_to: Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings
-              greater_than_or_equal_to_ucd: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
+              greater_than_or_equal_to: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
               less_than: Enter an amount between £4,250 and £15,999, or go back to the previous question about your savings
             over_66:
               inclusion: Select if you or your partner are over 66
@@ -345,66 +343,44 @@ en:
     submission_error: "We couldn't process your application at this time. Please try again later."
     submission_statement_error: "Select whether you are the applicant/litigation friend or legal representative completing this application"
     default:
-      breadcrumb: Step 22 of 22
-      breadcrumb_ucd: Step 25 of 25
+      breadcrumb: Step 25 of 25
       title: Send your claim form
       what_think_html: <a class="external govuk-link" rel="external" href="https://www.smartsurvey.co.uk/s/HWFFeed20">What did you think of this service?</a>
     online:
       heading: Your Help with Fees reference number is %{claim_number}
       sub_heading: You have one more step to take below
-      h3_one: Final step
-      h3_two: What happens next
-      p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
-      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
-      p_three: If you are applying to the court online, put your Help with Fees reference number onto their system when prompted.
-      p_four_html: If you need to contact the court, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
-      p_five: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+      h3_one: What happens next
+      p_one: You have completed an application online for help paying a court or tribunal fee.
+      p_two: You now need to add this reference number to your online court/tribunal application and send the court or tribunal office evidence of any benefits if applicable.
+      p_three: You have 28 days to do this otherwise your application will be rejected and you will need to take a new Help With Fees application.
+      p_four_html: "If you need to contact the court, please follow this link: <a class='external govuk-link' rel='external' href='https://www.gov.uk/find-court-tribunal'>https://www.gov.uk/find-court-tribunal</a> to find contact details."
+      p_five: Once the court or tribunal have received your reference number they will process your help with fees application. They will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
       template:
         line_one: "Enter your reference above into the help with fees section of the online form. Your online court application form should look something like this:"
       contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
+      reference_confirm_checkbox: I confirm I will add the above reference number to my online court/tribunal application and send any evidence of benefits if applicable to the court/tribunal for processing
+      confirmation_error: "You must confirm you will add the above reference number to your online court/tribunal application"
     paper:
       heading: Your Help with Fees reference number is %{claim_number}
       sub_heading: You have one more step to take below
       h3_one: Final step
       h3_two: What happens next
       p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
-      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
-      p_three: Include the reference number in the help with fees section of the claim form. If the form does not have a Help with Fees section, write the reference number at the top of the claim form.
-      p_four_html: If you need to contact the court, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
-      p_five: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee alongside evidence of any qualifying benefits (if applicable).
+      p_three: You have 28 days to do this otherwise your application will be rejected and you will need to make a new Help With Fees application.
+      p_four: "You can do this by:"
+      p_five_html: "You can find contact details for all courts and tribunals here: <a class='external govuk-link' rel='external' href='https://www.gov.uk/find-court-tribunal'>https://www.gov.uk/find-court-tribunal</a>"
+      p_six: Once the court or tribunal have received your reference number they will process your help with fees application. They will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+      instructions:
+        line_one: Adding the reference number to the help with fees section of your main claim form
+        line_two: If the form does not have a Help with Fees section, write the reference number at the top of the claim form
+        line_three: If you have already sent your claim form to the court/tribunal, you need to send your reference number to the court/tribunal either by email or post along with evidence of any benefits (if applicable)
       template:
         reference: 'Reference: %{reference}'
         line_one: I have completed on online application for help with fees [insert application type and case number if you have one].
         line_two: Yours sincerely,
-    online_ucd:
-      heading: Your Help with Fees reference number is %{claim_number}
-      sub_heading: You have one more step to take below
-      h3_one: Final step
-      h3_two: What happens next
-      p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
-      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
-      p_three: You should send this to them as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new HWF application.
-      p_four: If you are applying to the court online, put your Help with Fees reference number onto their system when prompted.
-      p_five_html: If you need to contact the court, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
-      p_six: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
-      template:
-        line_one: "Enter your reference above into the help with fees section of the online form. Your online court application form should look something like this:"
-      contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
-    paper_ucd:
-      heading: Your Help with Fees reference number is %{claim_number}
-      sub_heading: You have one more step to take below
-      h3_one: Final step
-      h3_two: What happens next
-      p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
-      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
-      p_three: You should send this to them as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new HWF application.
-      p_four: Include the reference number in the help with fees section of the claim form. If the form does not have a Help with Fees section, write the reference number at the top of the claim form.
-      p_five_html: If you need to contact the court, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
-      p_six: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
-      template:
-        reference: 'Reference: %{reference}'
-        line_one: I have completed on online application for help with fees [insert application type and case number if you have one].
-        line_two: Yours sincerely,
+      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
+      confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
     et:
       address:
         email:
@@ -428,8 +404,7 @@ en:
             three: 215 Bothwell Street
             two: Eagle Building
           heading: Scotland
-      breadcrumb: Step 22 of 22
-      breadcrumb_ucd: Step 25 of 25
+      breadcrumb: Step 25 of 25
       heading: Your application for help with fees is not finished yet
       letter:
         five: "%{full_name}"
@@ -455,18 +430,19 @@ en:
     print: Save or print this page
     feedback_text: After you finish your application, you are directed to an optional feedback form.
     refund:
-      breadcrumb: Step 22 of 22
-      breadcrumb_ucd: Step 25 of 25
+      breadcrumb: Step 25 of 25
       title: Send your reference number to complete the process
       heading: Your Help with Fees reference number is %{claim_number}
       sub_heading: You have one more step to take below
-      h3_one: Final step
-      h3_two: What happens next
-      p_one: You have completed an application online for a Help with Fees refund and you have been provided with the above reference number for your application.
-      p_two: You now need to provide this reference number to the office, court or tribunal to which you paid your fee who will process your application.
-      p_three: You should send this to them within 28 days. If it is received later, it may be rejected and you will need to make a new HWF application.
-      p_three_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
-      p_four: They will contact you within 21 days to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+      h3_one: What happens next
+      p_one: You have completed an application online for help paying a court or tribunal fee.
+      p_two: You now need to add this reference number to your online court/tribunal application and send the court or tribunal office evidence of any benefits if applicable.
+      p_three: You should send this to them within 28 days. If it is received later it will be rejected and you will need to make a new HWF application.
+      p_four: Please note, you can only apply for a refund within 3 months from the date you originally paid your fee (for example if you paid your fee on 16th September, you have until 15th December). This time limit includes the making of any replacement application if your original HWF application has been rejected.
+      p_four_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
+      p_five: The court or tribunal will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
+      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
+      confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
   error_block:
     heading: There is a problem
     visuallyhidden: Errors are listed as links below, click to select the field that needs correcting.
@@ -492,13 +468,11 @@ en:
     edit:
       back_button: Go to previous page
     applicant_address:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: What is your address?
       title: Your address
     benefit:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details:
         section_1:
           heading: If you’ve only recently started receiving one of these benefits,
@@ -532,9 +506,10 @@ en:
       text: Do you receive any of the following benefits?
       text_refund: Did you receive any of the following benefits?
       title: Benefits
+      evidence: <strong>You need to provide evidence of your benefits</strong>
+      support: To support your claim, you must provide proof of your benefits. This includes a full breakdown letter from the Department for Work and Pensions, which should detail your assessment date and confirm the benefit you receive. Any documents submitted must clearly identify both you and your partner (if applicable), with evidence that you share the same address. You can send this information along with your Help with Fees reference number to the court or tribunal office via post or email (copies, scans or mobile screenshots).
     claim/default:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details:
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, appeal or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
@@ -547,8 +522,7 @@ en:
       text: Do you have a case, claim, appeal or ‘notice to pay’ number?
       title: Claim or case number
     claim/et:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details:
         section_1: Your employment tribunal claim number is a unique reference to identify your employment tribunal claim.
         section_2: You will receive a claim number when you make an employment tribunal claim online.
@@ -558,16 +532,14 @@ en:
       text: Enter your employment tribunal claim number
       title: Claim number
     contact:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      details: We will email you confirmation of your Help with Fees reference number.
+      breadcrumb: Step %{page_number} of 25
+      details: If you provide your email address, you will receive confirmation of your Help with Fees reference number and a copy of your online Help with Fees application
       email_label: Email address
       feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
       text: What's your email address?
       title: Your email address
     apply_type:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       title: Will you be making your court or tribunal application on paper or using an online service?
       text: Will you be making your court or tribunal application on paper or using an online service?
       applying_method_paper: 'Paper'
@@ -579,10 +551,10 @@ en:
         title_online: Choose 'online service' if you are making your court or tribunal application using an online service.
         text_online: You need to apply for Help with Fees at the time of making a court or tribunal application which usually has a fee. If you are making this court or tribunal application using an online service, you should select online. Once you have finished completing this Help with Fees service, you will be provided with a Help with Fees unique reference number which you can enter when asked to do so on the court or tribunal online service.
     dependent:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       children_false: 'No'
       children_number: Number of children
+      child_age_range: Age range for child %{child_number}?
       children_true: 'Yes'
       details:
         item_1: under 16 and living at home with you
@@ -593,7 +565,12 @@ en:
         summary: Help with financially dependent children
       text: Children that live with you or you’re supporting financially
       title: Children that live with you or you’re supporting financially
-      warning: Please note - Do not give their ages in the boxes above.
+      children_number_title: How many children do you have living with you or that you support financially?
+      children_number_blank: Select the number of children
+      children_age_range: Children's age range
+      children_age_range_blank: Select the child's age range
+      children_age_band_one: 0-13 years
+      children_age_band_two: 14 years and over
 
       single:
         you_need: You need to give details of any children you support financially.
@@ -606,7 +583,7 @@ en:
         children_age_band: Do you have any children living with you or that you support financially?
 
       married:
-        you_need: You need to give details of any children you are your partner support financially.
+        you_need: You need to give details of any children you or your partner support financially.
         they_must: 'They must be:'
         list:
           - under 16 and living at home with you or
@@ -615,8 +592,7 @@ en:
         list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
         children_age_band: Do you or your partner have any children living with you or that you support financially?
     partner_national_insurance:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       title: "Enter your partner's National Insurance number"
       text: "Enter your partner's National Insurance number"
       prompt: 'National Insurance number'
@@ -633,8 +609,7 @@ en:
         item_2: ask for a reminder through the post
         summary: Find a lost National Insurance number
     dob:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       hint_html: For example, 04 10 1990
       text: What is your date of birth?
       title: Date of birth
@@ -645,8 +620,7 @@ en:
     dob_married:
       text: What are you and your partner’s date of birth
     fee:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       date_paid: Date fee paid
       fee_paid_false: 'No'
@@ -655,8 +629,7 @@ en:
       text: Have you already paid the court or tribunal fee?
       title: Refund
     form_name:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details:
         item_1: Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Applying for help with hearing fees
@@ -669,8 +642,7 @@ en:
     applying_on_behalf:
       hint: Is the application on behalf of someone else?
       title: Are you applying on behalf of someone else?
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: Is the application on behalf of someone else?
       details: Is the application on behalf of someone else?
       inset_text: If you are applying on behalf of someone else, as a legal representative or litigation friend, you should provide their details in this application.
@@ -678,8 +650,7 @@ en:
       applying_on_behalf_true: 'Yes'
     legal_representative:
       title: Are you a legal representative or litigation friend?
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: Are you a legal representative or litigation friend?
       details: Are you a legal representative or litigation friend?
       legal_representative_legal_representative: 'Legal representative'
@@ -688,8 +659,7 @@ en:
       hint_litigation: A litigation friend is someone who is appointed to make decisions about a court case for someone who is a child or an adult who lacks the mental capacity to manage a case themselves. For example, this might be a parent, family member or friend, a professional advocate, a Court of Protection deputy or someone who has a relevant lasting or enduring power of attorney.
     legal_representative_detail:
       title: Enter the representative details
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: Enter the legal representative details
       legal_representative_first_name: 'First name'
       legal_representative_last_name: 'Last name'
@@ -707,8 +677,7 @@ en:
 
     over16:
       title: Is the person you are applying for over 16?
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: Is the person you are applying for over 16?
       over_16_true: 'Yes'
       over_16_false: 'No'
@@ -720,8 +689,7 @@ en:
       amount:
         married: Enter the total monthly amount you and your partner receive in income.
         single: Enter the total monthly amount you receive in income.
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
@@ -735,36 +703,7 @@ en:
       text_single_refund: What was your total income?
       title: Income amount
     income_kind:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      details_married: Select all the different types of income you and your partner received in the last full calendar month.
-      details_married_refund: Select all the different types of income you and your partner received in the full calendar month before you paid your fee.
-      details_single: Select all the different types of income you received in the last full calendar month.
-      details_single_refund: Select all the different types of income you received in the full calendar month before you paid the fee.
-      applicant_income: Your income
-      partner_income: Your partner's income
-      kinds:
-        wage: Wages before tax and National Insurance are taken off
-        child_benefit: Child Benefit
-        working_credit: Working Tax Credit
-        child_credit: Child Tax Credit
-        maintenance_payments: Maintenance payments
-        jsa: Contribution-based Jobseekers Allowance (JSA)
-        esa: Contribution-based Employment and Support Allowance (ESA)
-        universal_credit: Universal Credit
-        pensions: Pensions (state, work, private)
-        rent_from_cohabit: Rent from anyone living with you
-        rent_from_properties: Rent from other properties you own
-        other_income: Other income
-        none_of_the_above: No income
-      text_married: What kind of income did you and your partner receive last month?
-      text_married_refund: What kind of income do you and your partner receive?
-      text_single: What kind of income did you receive last month?
-      text_single_refund: What kind of income did you receive?
-      title: Income kind
-    income_kind_ucd:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details_married: Tick all the types of income you and your partner have received in the last calendar month
       details_single: Tick all the types of income you have received in the last calendar month
       hint_details_single: If your income last month is not representative of what you usually get, you can provide an average income for the last 3 months if this is lower. If so, tick all income types for that period.
@@ -797,8 +736,7 @@ en:
       text_single_refund: Types of income you have received
       title: Income kind
     income_range:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
@@ -819,8 +757,7 @@ en:
       contact_hm_revenue: We may contact HM Revenue & Customs to validate the income you declare. We may also contact you if we need to see additional evidence.
     income_period:
       title: 'How much income did you receive?'
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       income_period_last_month: This is for the last calendar month
       income_period_average: This is an average for the last three calendar months
       kinds_example:
@@ -832,37 +769,14 @@ en:
       text: 'How much income did you receive?'
       prompt: "You need to include income you received in the last calendar month or provide a three month average from:"
       amount_prompt: "If your income last month is not representative of what you usually get, you can provide an average income for the last three months if this is lower."
+      calculate_prompt: "To calculate your average income, add up your income from the last three months and divide the total by three. The resulting figure represents your average income."
     income_period_married:
       text: 'How much income did you and your partner receive?'
       prompt: "You need to include income you and your partner received in the last calendar month or provide a three month average from:"
       amount_prompt: "If you and your partner's income last month is not representative of what you usually get, you can provide an average income for the last three months if this is lower."
+      calculate_prompt: "To calculate you and your partner's average income, add up you and your partner's income from the last three months and divide the total by three. The resulting figure represents you and your partner's average income."
     marital_status:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      example: 'If you’re applying for a divorce, dissolution or annulment select ‘Single’ unless you are living with a new partner. For more information click the help section below.'
-      details:
-        section_1:
-          heading: 'Select ‘Married or living with someone and sharing an income’ if you’re:'
-          item_1: married
-          item_2: civil partners
-          item_3: living together as if you are married or in a civil partnership
-          item_4: living at the same address with a joint income
-          item_5: a couple forced to live apart, eg where one or both is serving in the armed forces, in prison or living in residential care
-        section_2:
-          heading: 'Select ‘Single’ if you rely on your own income or your case involves your partner, for example:'
-          item_1: divorced or applying for a divorce and you are not living with a new partner
-          item_2: dissolution or annulment and you are not living with a new partner
-          item_3: gender recognition
-          item_4: domestic violence
-          item_5: forced marriage
-        summary: Help with status
-      married_false: Single
-      married_true: Married or living with someone and sharing an income
-      text: Are you single, married or living with someone and sharing an income?
-      title: Your marital status
-    marital_status_ucd:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       section_1:
         header: 'Select ‘Single‘ if:'
         point_1: you are living alone and relying on your own income with or without dependent children, or
@@ -881,25 +795,9 @@ en:
       text: Relationship status
       title: Your marital status
       subheader: Are you single, married or living with someone?
-    national_insurance_presence:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      details:
-        section_1:
-          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
-          item_2: ask for a reminder through the post
-        summary: Find a lost National Insurance number
-      example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
-      ni_number_present_false: 'No'
-      ni_number_present_true: 'Yes'
-      prompt: Do you have a National Insurance number?
-      text: Do you have a National Insurance number?
-      title: Do you have a National Insurance number?
     national_insurance:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      example: For example, QQ123456C
-      post_ucd_example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
+      breadcrumb: Step %{page_number} of 25
+      example: National Insurance numbers can be found on payslips or official letters about tax, pensions or benefits.
       prompt: Do you have a National Insurance number?
       text: Do you have a National Insurance number?
       title: Do you have a National Insurance number?
@@ -917,8 +815,7 @@ en:
       hint: For example, 'QQ123456C'
 
     home_office:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: What is your Home Office reference number?
       title: What is your Home Office reference number?
       prompt: Home Office reference number
@@ -930,8 +827,7 @@ en:
     personal_detail_married:
       text: What are the full names of both you and your partner?
     personal_detail:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       text: What is your full name?
       title: Title
       applicant: Your details
@@ -939,8 +835,7 @@ en:
       detail_title: Why do we ask for this?
       detail_text: We may contact other government departments to validate the information you provide about you and your partner’s (if you have one) financial details. This will reduce the likelihood of you having to provide further evidence before a decision can be made.
     probate:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       details: These cases are usually about the property and belongings of someone who has died.
       hint_html: For example, 04 10 2018
       date_of_death: Date of death
@@ -948,9 +843,8 @@ en:
       probate_case_true: 'Yes'
       text: Are you paying a fee for a probate case?
       title: Probate
-    savings_and_investment_ucd:
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+    savings_and_investment:
+      breadcrumb: Step %{page_number} of 25
       less: "Less than £4,250"
       between: "Between £4,250 and £15,999"
       more: "£16,000 or more"
@@ -1004,82 +898,19 @@ en:
           item_17: Victim of Overseas Terrorism Compensation Scheme
           item_18: We Love Manchester Emergency Fund payments
         summary: What not to include in savings and investments
-    savings_and_investment:
-      between: "£3,000 to £15,999"
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      details:
-        section_1:
-          heading: 'What to include in savings and investments:'
-          item_1: money in ISAs and any other savings account, including matured Child Trust Funds or Junior ISAs
-          item_2: joint savings accounts that you share with your partner
-          item_3: fixed rate or investment bonds
-          item_4: any lump sum (eg a redundancy payout)
-          item_5: stocks and shares
-          item_6: trust funds (or any other kind of fund)
-          item_7: value of second homes
-          item_8: any money or property outside the UK
-          p_1: If you have a partner, remember to include their savings and investments too, unless your case involves them.
-        section_2:
-          heading: 'Don’t include the following in your savings total:'
-          item_1: wages or benefits
-          item_2: joint savings accounts that you share with your partner if your case is against your partner or concerns divorce or gender recognition
-          item_3: personal pensions
-          item_4: capital value of self-employed businesses
-          item_5: the value of any vehicle which would leave you or your partner without motor transport if sold
-          item_6: loans
-          item_7: unfair dismissal awards
-          item_8: money from the criminal injury compensation scheme
-          item_9: medical negligence or personal injury awards
-          item_10: any compensation under a statutory scheme in respect of Mesothelioma
-        summary: Help on what to include as savings and investments
-      less: "£0 to £2,999"
-      more: "£16,000 or more"
-      subtext_married: To the nearest pound, select from the options below how much you and your partner have in savings and investments. For more information on what to include in your total click the help section below.
-      subtext_single: To the nearest pound, select from the options below how much you have in savings and investments. For more information on what to include in your total see the Help section below.
-      subtext_married_refund: To the nearest pound, select from the options below how much you and your partner have in savings and investments at the time you paid the fee. For more information on what to include in your total click the help section below.
-      subtext_single_refund: To the nearest pound, select from the options below how much you had in savings and investments at the time you paid the fee. For more information on what to include in your total see the help section below.
-      text: How much do you have in savings and investments?
-      title: Savings and investments
     savings_and_investment_married:
-      text: How much do you and your partner have in savings and investments?
+      text: Savings and Investments
     savings_and_investment_single:
-      text: How much do you have in savings and investments?
+      text: Savings and Investments
     savings_and_investment_married_refund:
-      text: How much did you and your partner have in savings and investments at the time you paid the fee?
+      text: Savings and Investments
     savings_and_investment_single_refund:
-      text: How much did you have in savings and investments at the time you paid the fee?
-    savings_and_investment_married_ucd:
-      text: Savings and Investments
-    savings_and_investment_single_ucd:
-      text: Savings and Investments
-    savings_and_investment_married_refund_ucd:
-      text: Savings and Investments
-    savings_and_investment_single_refund_ucd:
       text: Savings and Investments
     savings_and_investment_extra:
-      amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
-      amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
-      amount_hint: Rounded to the nearest £
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
-      over_66_false_single: *no
-      over_66_true_single: *yes
-      over_66_false_single_refund: *no
-      over_66_true_single_refund: *yes
-      over_66_false_married: *no
-      over_66_true_married: *yes
-      over_66_false_married_refund: *no
-      over_66_true_married_refund: *yes
-      text_married: Are you or your partner 61 years old or over?
-      text_single: Are you 61 years old or over?
-      title: Are you or your partner 61 or over?
-    savings_and_investment_extra_ucd:
       amount_married: How much between £4,250 and £15,999 do you and your partner have in savings and investments?
       amount_single: How much between £4,250 and £15,999 do you have in savings and investments?
       amount_hint: Rounded to the nearest £
-      breadcrumb: Step %{page_number} of 22
-      breadcrumb_ucd: Step %{page_number} of 25
+      breadcrumb: Step %{page_number} of 25
       over_66_false_single: *no
       over_66_true_single: *yes
       over_66_false_single_refund: *no
@@ -1115,8 +946,7 @@ en:
 
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
-    breadcrumb: Step 21 of 22
-    breadcrumb_ucd: Step 24 of 25
+    breadcrumb: Step 24 of 25
     change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'
@@ -1171,6 +1001,9 @@ en:
       title: Check details
       apply_type: Court or tribunal application
       applying_on_behalf: Applying on behalf of someone else
+      representative_title: Representative details
+      personal_title: Personal details
+      application_title: Application details
       legal_representative_or_friend: Legal representative or litigation friend
       legal_representative: Legal representative details
       legal_representative_detail: Legal representative details
@@ -1346,7 +1179,7 @@ en:
       - p: "This website is run by HM Courts and Tribunals Service (HMCTS). We want as many people as possible to be able to use this online form. For example, that means you should be able to:"
       - ul:
         - li: change colours, contrast levels and fonts
-        - li: zoom in up to 300% without the text spilling off the screen
+        - li: zoom in up to 200% without the text spilling off the screen
         - li: navigate the form using just a keyboard
         - li: listen to the form using a screen reader
       - p: Please note that the accessibility tests conducted to date only cover VoiceOver compatibility.
@@ -1354,7 +1187,7 @@ en:
       - p: <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.
     - title: How accessible this website is
       parts:
-      - p: This website is fully compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1 AA standard.</a>
+      - p: This website is fully compliant with the <a href="https://www.w3.org/TR/WCAG22" class="govuk-link">Web Content Accessibility Guidelines version 2.2 AA standard.</a>
       - p: There are no known accessibility issues within this service.
     - title: Feedback and contact information
       parts:
@@ -1380,63 +1213,23 @@ en:
       sections:
         - title: Compliance status
           parts:
-          - p: This website is fully compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1 AA standard.</a>
+          - p: This website is fully compliant with the <a href="https://www.w3.org/TR/WCAG22" class="govuk-link">Web Content Accessibility Guidelines version 2.2 AA standard.</a>
           - p: There are no known accessibility issues within this service.
     - title: Preparation of this accessibility statement
       parts:
-      - p: This statement was prepared on 13 November 2023. It was last updated on 20 November 2023.
-      - p: This website was last tested on 8 November 2023. The test was carried out by HM Courts and Tribunals (HMCTS).
+      - p: This statement was prepared on 21 February 2025. It was last updated on 10 March 2025.
+      - p: This website was last tested on 21 January 2025. The test was carried out by HM Courts and Tribunals (HMCTS).
 
 
   home:
     checklist:
       title: What you will need
-      heading: What you will need
-      sections:
-      - parts:
-          - p: 'You should use this online service when you are ready to make your court or tribunal application. It will provide you with a Help with Fees reference number you can put on your court or tribunal application.'
-          - p: 'If you are making a multiple claim or application, all applicants will usually need to make a separate Help with Fees application and submit those online reference numbers to the court.'
-          - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
-
-          - p: '<h2 class="govuk-heading-m">Before you continue, make sure you have:</h2>'
-          - ul:
-            - li: your National Insurance number or
-            - li: your Home Office reference number – you may have a Home Office reference number if you are subject to immigration control
-            - li: the court or tribunal form number
-            - li: your case number, claim number or notice to pay - if you have one
-      - title:
-        parts:
-          - p: "You'll also need details of your:"
-          - ul:
-            - li: income, including wages
-            - li: savings and investments
-            - li: partner's income, savings and investments - if you have one
-      details:
-        section_1:
-          item_1: You will find your Home Office reference number on any of the correspondence you have received from the Home Office.
-        summary: If you don't know your Home Office reference number
-      paper_form_html: "If you don't have either a National Insurance number or a Home Office reference number, you need to
-          <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-          class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-          target='_blank'>use the paper form</a> and apply to the court or tribunal by post or email."
-      accurate_information: The information you provide needs to be accurate as it will act as evidence for your application. We’ll contact you if we need to see proof of this information.
-      national_insurance:
-        details:
-          section_1:
-            detail_html: "If you don't have a National Insurance number, you need to
-              <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-              class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-              target='_blank'>use the paper form</a>."
-            item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
-            item_2: ask for a reminder through the post
-          summary: If you don’t know your National Insurance number
-    checklist_ucd:
-      title: What you will need
       heading: 'Important: read before you start'
       sections:
         - parts:
+            - p: "If you're applying for help with court and tribunal fees and you're currently receiving qualifying benefits, you must send evidence alongside your completed application. This is because of a temporary technical problem we are experiencing."
             - p: 'You should use this online service when you are ready to make your court or tribunal application.'
-            - p: 'It will provide you with a Help with Fees reference number you should send to the court or tribunal as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new Help with Fees application.'
+            - p: 'It will provide you with a Help with Fees reference number you should send to the court or tribunal as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new Help with Fees application. You must provide evidence of any qualifying benefits, please make sure you have this ready before applying.'
             - p: 'Refund applications must be submitted within 3 months of paying the fee. If your application is rejected as the Help with Fees reference number is more than 28 days old, this may affect the amount of time you have left to be eligible for a refund.'
             - p: 'If you are making a multiple claim or application, all applicants will usually need to make a separate Help with Fees application and submit those online reference numbers to the court.'
             - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
@@ -1448,6 +1241,7 @@ en:
                 - li: your Home Office reference number - you may have a Home Office reference number if you are subject to immigration control
                 - li: the court or tribunal form number
                 - li: your case number, claim number or notice to pay - if you have one
+                - li: "<strong>If you're applying for benefits, you'll need to provide evidence from the Department for Work and Pensions (DWP) confirming that you're receiving one of the eligible benefits. This includes a full breakdown letter from the Department for Work and Pensions, which should detail your assessment date and confirm the benefit you receive. Any documents submitted must clearly identify both you and your partner (if applicable), with evidence that you share the same address. You can send this information along with your Help with Fees reference number to the court or tribunal office via post or email (copies, scans or mobile screenshots). You can request proof of your benefits through the DWP, which may include a letter of entitlement, a proof of benefit letter, or other official documentation</strong>"
         - title:
           parts:
             - p: "You'll also need details of your:"
@@ -1464,7 +1258,8 @@ en:
           <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
           class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
           target='_blank'>use the paper form</a> and apply to the court or tribunal by post or email."
-      accurate_information: The information you provide needs to be accurate as it will act as evidence for your application and will allow us to check the information with other government departments. We’ll contact you if we need to see proof of this information.
+      accurate_information_html: "The information you provide needs to be accurate as it will act as evidence for your application and will allow us to check the information with other government departments. We’ll contact you if we need to see proof of this information. You can find more information about the application process in the following video
+          <a href=' https://www.youtube.com/watch?v=nGykh-hrsa8' class='external govuk-link' rel='external' target='_blank'>HMCTS Help With Fees scheme</a>."
       accurate_information_link_html: "<a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees/how-to-apply-for-help-with-fees-ex160a'
               class='external govuk-link'>How to apply for help with fees</a>."
       accurate_information_link: How to apply for help with fees

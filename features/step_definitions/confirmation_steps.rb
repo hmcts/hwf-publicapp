@@ -1,6 +1,6 @@
 Given(/^I am '([^"]*)' and on the paper confirmation page with probate enabled$/) do |status|
   probate_enabled
-  status == 'married' ? to_confirmation_page_ucd_married : to_confirmation_page_ucd_single
+  status == 'married' ? to_confirmation_page('married') : to_confirmation_page('single')
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
@@ -10,7 +10,7 @@ end
 
 Given(/^I am '([^"]*)' and on the online confirmation page with probate enabled$/) do |status|
   probate_enabled
-  status == 'married' ? to_online_confirmation_page_ucd_married : to_online_confirmation_page_ucd_single
+  status == 'married' ? to_online_confirmation_page('married') : to_online_confirmation_page('single')
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
   expect(confirmation_page.content).to have_header
@@ -39,8 +39,20 @@ Then('I should see online next steps') do
   expect(confirmation_page.content).to have_feedback_text
 end
 
+When(/^I click the confirm checkbox$/) do
+  confirmation_page.check_confirmation_checkbox
+end
+
 When(/^I click the finish application button$/) do
   confirmation_page.submit
+end
+
+Then(/^I should see '([^"]*)' error$/) do |applying_method|
+  if applying_method == 'online'
+    expect(confirmation_page.content).to have_confirmation_error_online
+  else
+    expect(confirmation_page.content).to have_confirmation_error
+  end
 end
 
 Then(/^I should be taken to the survey page$/) do

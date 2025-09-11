@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log/*
 
 /tmp/cache
 /tmp/parallel_runtime_cucumber.log
@@ -41,3 +42,5 @@ features/cucumber-report/screenshot.png
 .env.development
 
 input-secrets.rb
+
+/app/assets/builds/*

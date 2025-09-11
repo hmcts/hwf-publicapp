@@ -1,5 +1,6 @@
 class MaritalStatusPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/marital_status'
 
   section :content, '#content' do

@@ -1,33 +1,17 @@
 Given(/^I am a single person on the savings and investments page$/) do
-  to_single_savings
+  to_savings('single')
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header
-  expect(savings_investment_page.content).to have_hint_text
-end
-
-Given(/^I am a single person on the savings and investments page ucd$/) do
-  to_single_savings_ucd
-  expect(savings_investment_page).to be_displayed
-  expect(savings_investment_page.content).to have_step_info
-  expect(savings_investment_page.content).to have_header_ucd
   expect(savings_investment_page.content).to have_single_reminder
 end
 
 Given(/^I am a married person on the savings and investments page$/) do
-  to_married_savings
+  to_savings('married')
   expect(savings_investment_page).to be_displayed
   expect(savings_investment_page.content).to have_step_info
   expect(savings_investment_page.content).to have_header
   expect(savings_investment_page.content).to have_hint_text_married
-end
-
-Given(/^I am a married person on the savings and investments page ucd$/) do
-  to_married_savings_ucd
-  expect(savings_investment_page).to be_displayed
-  expect(savings_investment_page.content).to have_step_info
-  expect(savings_investment_page.content).to have_header_ucd
-  expect(savings_investment_page.content).to have_married_reminder_ucd
 end
 
 When(/^I submit the form with less than £4,250 checked$/) do

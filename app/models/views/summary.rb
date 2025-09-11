@@ -3,6 +3,8 @@ module Views
     # TODO: Use a different way of including helpers
     include ActionView::Helpers::NumberHelper
 
+    delegate :form_name, to: :__getobj__
+
     def income_validation_fails?
       benefits.eql?(false) && income.nil? && income_text.nil?
     end
@@ -12,16 +14,8 @@ module Views
       "#{message}#{payment_date}"
     end
 
-    def form_name
-      __getobj__.form_name || '—'
-    end
-
-    def ucd_changes_apply?
-      FeatureSwitch::CALCULATION_SCHEMAS[1].to_s == online_application.calculation_scheme
-    end
-
     def savings
-      scope = ucd_changes_apply? ? 'questions.savings_and_investment_ucd' : 'questions.savings_and_investment'
+      scope = 'questions.savings_and_investment'
 
       if !online_application.min_threshold_exceeded?
         I18n.t('less', scope: scope)

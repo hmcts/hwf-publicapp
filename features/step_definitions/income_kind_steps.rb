@@ -1,31 +1,17 @@
 Given(/^I am a single person on kind of income page$/) do
-  to_income_kind_single
+  to_income_kind('single')
   expect(income_kind_page.content).to have_choose_income_single
+  expect(income_kind_page.content).to have_representative_hint_single
   # expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_single_header
 end
 
-Given(/^I am a single person on kind of income page ucd$/) do
-  to_income_kind_single_ucd
-  expect(income_kind_page.content).to have_choose_income_single_ucd
-  expect(income_kind_page.content).to have_representative_hint_single
-  # expect(income_kind_page.content).to have_step_info_ucd
-  expect(income_kind_page.content).to have_single_header_ucd
-end
-
 Given(/^I am a married person on kind of income page$/) do
-  to_income_kind_married
+  to_income_kind('married')
   expect(income_kind_page.content).to have_choose_income_married
+  expect(income_kind_page.content).to have_representative_hint_married
   # expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_married_header
-end
-
-Given(/^I am a married person on kind of income page ucd$/) do
-  to_income_kind_married_ucd
-  expect(income_kind_page.content).to have_choose_income_married_ucd
-  expect(income_kind_page.content).to have_representative_hint_married
-  # expect(income_kind_page.content).to have_step_info_ucd
-  expect(income_kind_page.content).to have_married_header_ucd
 end
 
 When(/^I submit the form with none of the above checked$/) do
@@ -53,12 +39,6 @@ end
 Then(/^I should see an income list for myself and my partner$/) do
   expect(income_kind_page.content).to have_your_income
   expect(income_kind_page.content).to have_partners_income
-  expect(income_kind_page.content.income_item.count).to eq 26
-end
-
-Then(/^I should see an income list for myself and my partner for ucd$/) do
-  expect(income_kind_page.content).to have_your_income
-  expect(income_kind_page.content).to have_partners_income
   expect(income_kind_page.content.income_item.count).to eq 34
 end
 
@@ -75,6 +55,20 @@ And(/^I slowly submit the form with wages checked$/) do
   income_kind_page.slowly_submit_single_income_wages_tax_credit
 end
 
-When('the ucd changes end') do
-  Timecop.return
+When(/^I submit the form with child benefit checked$/) do
+  income_kind_page.submit_child_benefit
+end
+
+When(/^I select no children as a married person$/) do
+  to_dependent_page('married')
+  dependent_page.submit_dependent_no
+end
+
+When(/^I select no children as a single person$/) do
+  to_dependent_page('single')
+  dependent_page.submit_dependent_no
+end
+
+Then(/^I should see the no child selected error message$/) do
+  expect(income_kind_page.content).to have_child_error_link
 end

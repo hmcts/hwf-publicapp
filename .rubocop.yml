@@ -1,6 +1,6 @@
 AllCops:
-  TargetRubyVersion: 3.3.5
-  TargetRailsVersion: 6.0
+  TargetRubyVersion: 3.4.5
+  TargetRailsVersion: 8.2
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
@@ -217,7 +217,7 @@ Metrics/ModuleLength:
   Exclude:
     - 'spec/support/feature_steps.rb'
 
-RSpec/Capybara/FeatureMethods:
+RSpec/Dialect:
   Enabled: false
 
 RSpec/NamedSubject:
@@ -588,7 +588,13 @@ Style/HashSyntax:
 Style/SpecialGlobalVars:
   Enabled: false
 
-require:
+Rails/StrongParametersExpect:
+  Enabled: false
+
+Naming/PredicateMethod:
+  Enabled: false
+
+plugins:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance

@@ -1,5 +1,6 @@
 class FormNamePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/form_name'
 
   section :content, '#content' do

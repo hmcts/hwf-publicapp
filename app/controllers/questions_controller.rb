@@ -45,9 +45,17 @@ class QuestionsController < ApplicationController
     @form ||= QuestionFormFactory.get_form(question, calculation_scheme)
   end
 
+  # rubocop:disable Metrics/AbcSize
   def form_params
-    params.require(@form.id).permit(*@form.permitted_attributes).to_h
+    if @form.id == "dependent"
+      params.require(@form.id).permit(*@form.permitted_attributes, children_bands: []).to_h
+    elsif @form.id == "income_kind"
+      params.require(@form.id).permit(*@form.permitted_attributes, :children).to_h
+    else
+      params.require(@form.id).permit(*@form.permitted_attributes).to_h
+    end
   end
+  # rubocop:enable Metrics/AbcSize
 
   def process_form_and_online_application
     old_online_application = online_application.dup

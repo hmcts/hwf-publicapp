@@ -23,15 +23,10 @@ module HwfPublicapp
 
     config.i18n.available_locales = %i[en cy]
 
-    if ENV['AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY'].present?
-      config.middleware.use(
-        ApplicationInsights::Rack::TrackRequest,
-        ENV['AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY']
-      )
-    end
     config.app_title = 'Help with fees - MoJ'
     config.proposition_title = 'Help with fees'
     config.product_type = 'service'
+    config.ucd_schema = :q4_23
 
     # The following values are required by the phase banner
     config.phase = 'beta'
@@ -49,8 +44,7 @@ module HwfPublicapp
     config.maintenance_end = ENV.fetch('MAINTENANCE_END', nil)
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
-
+    config.load_defaults 8.0
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.

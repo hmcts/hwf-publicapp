@@ -4,6 +4,9 @@ class SummaryPage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 24 of 25'
     element :header, 'h1', text: 'Check details'
+    element :representative_header, 'h1', text: 'Representative details'
+    element :personal_header, 'h1', text: 'Personal details'
+    element :application_header, 'h1', text: 'Application details'
     element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     element :probate, '.govuk-summary-list__row', text: 'Probate case No'
     element :declaration_of_truth, 'h2', text: 'Declaration and statement of truth'
@@ -12,14 +15,21 @@ class SummaryPage < BasePage
       element :action, 'a', text: 'Change'
     end
     element :submit_application_button, 'input[value="Get a reference number and continue"]'
-    element :error, '.govuk-error-message', text: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+    element :error, '.govuk-error-summary__body', text: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
   end
 
   def home_office_number
     to_fee_page
     fee_page.submit_fee_no
     form_name_page.submit_valid_form_number
-    national_insurance_presence_page.submit_no
+    national_insurance_page.submit_no
+  end
+
+  def ni_number
+    to_fee_page
+    fee_page.submit_fee_no
+    form_name_page.submit_valid_form_number
+    applying_on_behalf_page.submit_no
   end
 
   def benefits_change

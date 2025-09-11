@@ -1,5 +1,6 @@
 class ApplyingOnBehalfPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/applying_on_behalf'
 
   section :content, '#content' do

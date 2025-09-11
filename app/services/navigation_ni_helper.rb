@@ -1,25 +1,20 @@
 module NavigationNiHelper
   def no_ni_number_page
-    @online_application.ni_number_present == false ? :home_office : :national_insurance
-  end
-
-  def ucd_no_ni_number_page
     @online_application.ni_number_present == false ? :home_office : :marital_status
   end
 
-  def ucd_ni_next_question
-    if ucd_apply?(@online_application.calculation_scheme) && !@online_application.applying_on_behalf
-      :national_insurance
-    else
+  def ni_next_question
+    if @online_application.applying_on_behalf
       :legal_representative
+    else
+      :national_insurance
     end
   end
 
   def ni_related_question?
     next_pages = {
-      applying_on_behalf: ucd_ni_next_question,
-      national_insurance_presence: no_ni_number_page,
-      national_insurance: ucd_no_ni_number_page
+      applying_on_behalf: ni_next_question,
+      national_insurance: no_ni_number_page
     }
     @ni_next_page = next_pages[@current_question]
   end
@@ -27,7 +22,7 @@ module NavigationNiHelper
   def partner_ni_related_question?
     case @current_question
     when :marital_status
-      @partner_ni_next_page = if ucd_apply?(@online_application.calculation_scheme) && @online_application.married
+      @partner_ni_next_page = if @online_application.married && @online_application.ni_number_present?
                                 :partner_national_insurance
                               else
                                 :savings_and_investment

@@ -1,6 +1,6 @@
 {
   "name": "hwf-publicapp",
-  "version": "3.3.5",
+  "version": "3.4.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/ministryofjustice/hwf-publicapp"
@@ -8,9 +8,17 @@
   "engines": {
     "node": ">=0.18.x"
   },
-  "scripts": {},
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build": "webpack --config webpack.config.js"
+  },
   "engineStrict": true,
   "dependencies": {
-    "govuk-frontend": "^5.7.1"
+    "govuk-frontend": "^5.11.0",
+    "sass": "^1.88.0",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "rails-ujs": "^5.2.8-1",
+    "jquery": "^3.7.1"
   }
 }

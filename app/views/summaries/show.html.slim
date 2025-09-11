@@ -2,11 +2,11 @@
   = t('summary.labels.title')
   = ' - '
 
+- content_for :content_override
+  = render 'shared/error_block', form: @form if @form.errors.any?
+
 .govuk-caption-l
-  - if ucd_changes_apply?(@online_application.calculation_scheme)
-    = t('summary.breadcrumb_ucd')
-  - else
-    = t('summary.breadcrumb')
+  = t('summary.breadcrumb')
 
 
 h1.govuk-heading-l
@@ -17,14 +17,16 @@ p.govuk-body =t('summary.details')
 
 
 dl.govuk-summary-list
-  div.govuk-summary-list__row
-    dt.govuk-summary-list__key =t('form_name', scope: 'summary.labels')
-    dd.govuk-summary-list__value =@summary.form_name
-    dd.govuk-summary-list__actions
-      = link_to question_path(:form_name), onclick: "dataLayer.push({'sectionName': 'form_name', 'event': 'summary_page'});" do
-        =t('summary.change')
-        span.govuk-visually-hidden
-          =t('form_name', scope: 'summary.labels').downcase
+  - if @summary.form_name
+    div.govuk-summary-list__row
+      dt.govuk-summary-list__key =t('form_name', scope: 'summary.labels')
+      dd.govuk-summary-list__value =@summary.form_name
+      dd.govuk-summary-list__actions
+        = link_to question_path(:form_name), onclick: "dataLayer.push({'sectionName': 'form_name', 'event': 'summary_page'});" do
+          =t('summary.change')
+          span.govuk-visually-hidden
+            =t('form_name', scope: 'summary.labels').downcase
+
   div.govuk-summary-list__row
     dt.govuk-summary-list__key =t('fee', scope: 'summary.labels')
     dd.govuk-summary-list__value =@summary.refund_text
@@ -33,24 +35,31 @@ dl.govuk-summary-list
         =t('summary.change')
         span.govuk-visually-hidden
           =t('fee', scope: 'summary.labels').downcase
-  - if ucd_changes_apply?(@summary.calculation_scheme) && @summary.legal_representative
+  - if @summary.legal_representative
     =render('represented_by')
+
+  br
+  h1.govuk-heading-l
+    span.no-wrap =t('personal_title', scope: 'summary.labels')
+  - if @summary.legal_representative
+    div.govuk-summary-list__row
+      dt.govuk-summary-list__key = t('over_16', scope: 'summary.labels')
+      dd.govuk-summary-list__value = t("over_16_#{@summary.over_16}", scope: 'summary')
+      dd.govuk-summary-list__actions
+        = link_to question_path(:over_16), onclick: "dataLayer.push({'sectionName': 'over_16', 'event': 'summary_page'});" do
+          = t('summary.change')
+          span.govuk-visually-hidden
+            = t('over_16', scope: 'summary.labels').downcase
 
   - if @summary.display_ni?
     div.govuk-summary-list__row
       dt.govuk-summary-list__key =t('ni_number', scope: 'summary.labels')
       dd.govuk-summary-list__value =ni_number_value(@summary)
       dd.govuk-summary-list__actions
-        -if @summary.ni_number
-          = link_to question_path(:national_insurance), onclick: "dataLayer.push({'sectionName': 'national_insurance', 'event': 'summary_page'});" do
-            =t('summary.change')
-            span.govuk-visually-hidden
-              =t('ni_number', scope: 'summary.labels').downcase
-        -else
-          = link_to question_path(:national_insurance_presence), onclick: "dataLayer.push({'sectionName': 'national_insurance_presence', 'event': 'summary_page'});" do
-            =t('summary.change')
-            span.govuk-visually-hidden
-              =t('ni_number', scope: 'summary.labels').downcase
+        = link_to question_path(:national_insurance), onclick: "dataLayer.push({'sectionName': 'national_insurance', 'event': 'summary_page'});" do
+          = t('summary.change')
+          span.govuk-visually-hidden
+            = t('ni_number', scope: 'summary.labels').downcase
 
   - if @summary.ho_number.present?
     div.govuk-summary-list__row
@@ -71,7 +80,7 @@ dl.govuk-summary-list
         span.govuk-visually-hidden
           =t('married', scope: 'summary.labels').downcase
 
-  -unless @summary.partner_ni_number.nil?
+  - if @summary.partner_ni_number.present? && @summary.ni_number_present?
     div.govuk-summary-list__row
       dt.govuk-summary-list__key =t('partner_ni_number', scope: 'summary.labels')
       dd.govuk-summary-list__value =partner_ni_number_value(@summary)
@@ -176,7 +185,7 @@ dl.govuk-summary-list
           span.govuk-visually-hidden
             =t('date_of_birth', scope: 'summary.labels').downcase
 
-    - if @summary.married && ucd_changes_apply?(@summary.calculation_scheme)
+    - if @summary.married && @summary.ni_number_present?
       div.govuk-summary-list__row
         dt.govuk-summary-list__key =t('partner_date_of_birth', scope: 'summary.labels')
         dd.govuk-summary-list__value =date_formatter(@summary.partner_date_of_birth)
@@ -235,6 +244,9 @@ dl.govuk-summary-list
               =t('contact', scope: 'summary.labels').downcase
 
     -if @summary.applying_method
+      br
+      h1.govuk-heading-l
+        span.no-wrap = t('application_title', scope: 'summary.labels')
       div.govuk-summary-list__row
         dt.govuk-summary-list__key =t('apply_type', scope: 'summary.labels')
         dd.govuk-summary-list__value =t("applying_method_#{@summary.applying_method}", scope: 'summary')
@@ -245,17 +257,6 @@ dl.govuk-summary-list
               =t('apply_type', scope: 'summary.labels').downcase
 
 
-- if @summary.income_validation_fails?
-  .govuk-form-group
-    span.govuk-error-message =t('summary.invalid_footer')
-    p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
-- else
-  - if ucd_changes_apply?(@summary.calculation_scheme)
-    = render('declaration')
-  - else
-    h2.govuk-heading-m = t('heading', scope: 'summary.truth')
-    p.govuk-body = t('statement', scope: 'summary.truth')
-    = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
-      = submit_tag(t('button', scope: 'summary.truth'), class: 'govuk-button', role: 'button')
+= render('declaration')
 
 

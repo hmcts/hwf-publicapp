@@ -3,10 +3,6 @@ require 'rails_helper'
 RSpec.describe Forms::Dob do
   subject(:form_dob) { described_class.new }
 
-  before do
-    form_dob.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
-  end
-
   context 'partner' do
     describe 'validations' do
       before do
@@ -14,6 +10,7 @@ RSpec.describe Forms::Dob do
         form_dob.month = '01'
         form_dob.year = '1980'
         form_dob.is_married = true
+        form_dob.ni_number_present = true
       end
 
       it { expect(form_dob.valid?).to be false }
@@ -86,6 +83,22 @@ RSpec.describe Forms::Dob do
           form_dob.partner_day = '23'
           form_dob.partner_month = ''
           form_dob.partner_year = '1900'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'no NI present' do
+        before do
+          form_dob.ni_number_present = false
+        end
+
+        it { expect(form_dob.valid?).to be true }
+      end
+
+      context 'NI present with empty partner details' do
+        before do
+          form_dob.ni_number_present = true
         end
 
         it { expect(form_dob.valid?).to be false }
@@ -201,6 +214,7 @@ RSpec.describe Forms::Dob do
           form_dob.partner_year = '1999'
           form_dob.over_66 = over_66
           form_dob.is_married = is_married
+          form_dob.ni_number_present = true
         end
 
         context 'when is married' do
@@ -257,6 +271,72 @@ RSpec.describe Forms::Dob do
           let(:is_married) { false }
 
           it { expect(form_dob.valid?).to be true }
+        end
+      end
+
+      context 'when the over_66 is not checked and age is below 66' do
+        let(:over_66) { false }
+
+        before do
+          form_dob.day = '01'
+          form_dob.month = '01'
+          form_dob.year = '1999'
+          form_dob.partner_day = '01'
+          form_dob.partner_month = '01'
+          form_dob.partner_year = '1999'
+          form_dob.over_66 = over_66
+          form_dob.is_married = is_married
+          form_dob.ni_number_present = true
+        end
+
+        context 'when is married' do
+          let(:is_married) { true }
+
+          it { expect(form_dob.valid?).to be true }
+        end
+
+        context 'when is not married' do
+          let(:is_married) { false }
+
+          it { expect(form_dob.valid?).to be true }
+        end
+      end
+
+      context 'when the over_66 is not checked and age is above 66' do
+        let(:over_66) { false }
+
+        before do
+          form_dob.day = '01'
+          form_dob.month = '01'
+          form_dob.year = '1940'
+          form_dob.partner_day = '01'
+          form_dob.partner_month = '01'
+          form_dob.partner_year = '1940'
+          form_dob.over_66 = over_66
+          form_dob.is_married = is_married
+          form_dob.ni_number_present = true
+        end
+
+        context 'when is married' do
+          let(:is_married) { true }
+
+          it { expect(form_dob.valid?).not_to be true }
+
+          it 'returns an error message' do
+            form_dob.valid?
+            expect(form_dob.errors.messages[:date_of_birth]).to eq ['You have stated that you or your partner are not 66 years or older. Please change your response or check that these dates of birth are correct']
+          end
+        end
+
+        context 'when is not married' do
+          let(:is_married) { false }
+
+          it { expect(form_dob.valid?).not_to be true }
+
+          it 'returns an error message' do
+            form_dob.valid?
+            expect(form_dob.errors.messages[:date_of_birth]).to eq ['You have stated that you are not 66 years or older. Please change your response or check that this date of birth is correct']
+          end
         end
       end
 

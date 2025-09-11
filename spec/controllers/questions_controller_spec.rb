@@ -62,7 +62,7 @@ RSpec.describe QuestionsController do
         expect(storage).to have_received(:load_form).with(form)
       end
 
-      include_examples 'cache suppress headers'
+      it_behaves_like 'cache suppress headers'
 
       context 'when the storage is not started' do
         let(:storage_started) { false }

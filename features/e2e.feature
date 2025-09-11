@@ -9,7 +9,7 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
-  Scenario: End to end path one - married
+  Scenario: End to end path one - on_behalf? NO - married - savings_and_investments? between £4,250 and £15,999 - children? YES - probate? NO - case,_claim,_notice_to_pay_number? YES
     When I should be taken to fee page
     When I submit no to have you already paid the fee
     Then I submit the form with a help with fees form number 'XX10'
@@ -30,7 +30,6 @@ Feature: End to end tests
     Then I should be taken to benefits page
     When I submit the form with no I do not receive one of the benefits listed
     Then I should be taken to dependent page
-    When I select yes to do you have any children
     And I submit the form with four children
     Then I should be taken to kind of income page
     When I submit the married form with wages and working tax credit checked
@@ -111,7 +110,6 @@ Feature: End to end tests
     Then I should be taken to summary page
     And I should see my details:
       | scope                                                                                   |
-      | Form name or number — Change form name or number                                        |
       | Fee paid No Change fee paid                                                             |
       | National Insurance number No Change national insurance number                           |
       | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number |

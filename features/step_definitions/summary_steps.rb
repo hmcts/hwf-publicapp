@@ -1,22 +1,26 @@
 Given(/^I am '([^"]*)' and on the summary page with probate enabled$/) do |status|
   probate_enabled
-  status == 'married' ? to_summary_page_probate_enabled_married : to_summary_page_probate_enabled_single
+  status == 'married' ? to_summary_page_probate_enabled('married') : to_summary_page_probate_enabled('single')
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
+  expect(summary_page.content).to have_application_header
   expect(summary_page.content).to have_check_details_hint
 end
 
 Given(/^I am '([^"]*)' and on the summary page with probate enabled and paid a fee$/) do |status|
   probate_enabled
-  status == 'married' ? to_summary_page_probate_enabled_fee_paid_married : to_summary_page_probate_enabled_fee_paid_single
+  status == 'married' ? to_summary_page_probate_enabled_fee_paid('married') : to_summary_page_probate_enabled_fee_paid('single')
 end
 
 Given(/^I am '([^"]*)' and on the summary page with probate disabled$/) do |status|
   probate_disabled
-  status == 'married' ? to_summary_page_probate_disabled_married : to_summary_page_probate_disabled_single
+  status == 'married' ? to_summary_page_probate_disabled('married') : to_summary_page_probate_disabled('single')
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
+  expect(summary_page.content).to have_application_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -25,11 +29,24 @@ Given(/^I have a home office number but not a national insurance number$/) do
   summary_page.home_office_number
 end
 
+Given(/^I have an NI number$/) do
+  probate_disabled
+  summary_page.ni_number
+end
+
 Then(/^I am '([^"]*)' and on the summary page$/) do |status|
-  status == 'married' ? to_summary_page_with_ho_number_married : to_summary_page_with_ho_number_single
+  if status == 'married'
+    to_summary_page_with_ho_number('married')
+  elsif status == 'married with NI'
+    to_summary_page_with_ni_number
+  else
+    to_summary_page_with_ho_number('single')
+  end
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
+  expect(summary_page.content).to have_application_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -97,4 +114,5 @@ end
 
 Then(/^They are redirected to the summary page with error message\.$/) do
   expect(summary_page.content).to have_header
+  expect(summary_page.content).to have_personal_header
 end

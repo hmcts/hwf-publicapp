@@ -13,10 +13,10 @@ RSpec.describe Forms::PersonalDetail do
   let(:partner_last_name) { '' }
 
   describe 'validations' do
-    context 'ucd changes and married' do
+    context 'married & NI present' do
       before do
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form.is_married = true
+        form.ni_number_present = true
       end
 
       context 'when title is blank' do
@@ -40,6 +40,20 @@ RSpec.describe Forms::PersonalDetail do
         let(:partner_last_name) { 'LAST NAME' }
 
         it { is_expected.not_to be_valid }
+      end
+    end
+
+    context 'married & no NI present' do
+      before do
+        form.is_married = true
+        form.ni_number_present = false
+      end
+
+      context 'partner names blank' do
+        let(:partner_first_name) { '' }
+        let(:partner_last_name) { '' }
+
+        it { is_expected.to be_valid }
       end
     end
 
@@ -114,14 +128,13 @@ RSpec.describe Forms::PersonalDetail do
       expect(subject).to eql(title: title, first_name: trimmed_first_name, last_name: trimmed_last_name)
     end
 
-    context 'ucd changes and married' do
+    context 'married' do
       let(:partner_first_name) { " partner first name  " }
       let(:trimmed_partner_first_name) { "partner first name" }
       let(:partner_last_name) { "partner last name  " }
       let(:trimmed_partner_last_name) { "partner last name" }
 
       before do
-        form.calculation_scheme = FeatureSwitch::CALCULATION_SCHEMAS[1]
         form.is_married = true
       end
 

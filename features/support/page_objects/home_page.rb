@@ -11,5 +11,11 @@ class HomePage < BasePage
     element :other, 'h2', text: 'Other ways to apply'
     element :error, 'h2', text: 'There is a problem'
     element :start_button, 'a', text: 'Start now'
+    element :fees_link, 'a', text: 'Court and tribunal fees'
+    element :adjournment_link, 'a', text: 'adjournment fees for certain civil and family hearings'
+    element :welsh_guide_link, 'a', text: 'in Welsh (Cymraeg)'
+    element :eligible_link, 'a', text: 'Check if you\'re eligible'
+    element :paper_form_link, 'a', text: 'Fill in a paper form'
+    element :paper_form_link_2, 'a', text: 'filling in a paper form'
   end
 end

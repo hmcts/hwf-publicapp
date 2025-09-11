@@ -24,11 +24,17 @@ class ClearDownstreamQuestions
       clear_over_16_related_data(new_online_application)
     elsif married_changed?(new_online_application, old_online_application)
       clear_partner_data
+    elsif refund_change?(new_online_application)
+      @storage.clear_form(:apply_type)
     elsif !old_online_application.ni_number_present.nil?
       clear_ni_or_ho(old_online_application)
     end
   end
   # rubocop:enable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize
+
+  def refund_change?(new_online_application)
+    @question == :fee && new_online_application.refund == true
+  end
 
   def benefit_change?(new_online_application)
     @question == :benefit && new_online_application.benefits == true
@@ -54,9 +60,9 @@ class ClearDownstreamQuestions
   end
 
   def clear_ni_or_ho(old_online_application)
-    if old_online_application.ni_number_present == false && old_online_application.ni_number
+    if old_online_application.ni_number_present == false && old_online_application.ni_number.present?
       @storage.clear_form(:national_insurance)
-    elsif old_online_application.ni_number && old_online_application.ho_number
+    elsif old_online_application.ni_number.present? && old_online_application.ho_number
       @storage.clear_form(:home_office)
     end
   end

@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
 
   def start
     storage_with_clear.start
-    redirect_to(question_path(QuestionFormFactory.page_list('').first))
+    redirect_to(question_path(QuestionFormFactory.page_list.first))
   end
 
   def finish
-    storage.clear
+    storage_with_clear
     redirect_path = Rails.application.config.finish_page_redirect_url || root_path
     redirect_to redirect_path, allow_other_host: true
   end

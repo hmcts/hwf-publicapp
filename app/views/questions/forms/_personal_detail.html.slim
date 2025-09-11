@@ -1,19 +1,13 @@
 = f.hidden_field :is_married, value: @online_application.married?
+= f.hidden_field :ni_number_present, value: @online_application.ni_number_present?
 
-- if ucd_changes_apply?(@online_application.calculation_scheme) && @online_application.married?
+- @online_application.married? && @online_application.ni_number_present?
   .govuk-form-group
     fieldset.govuk-fieldset
     legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
       = t('applicant', scope: @form.i18n_scope)
 
-- if !ucd_changes_apply?(@online_application.calculation_scheme)
-  .govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:title].any?)
-    = f.label :title, class: 'govuk-label'
-      = t('title', scope: @form.i18n_scope)
-      span.optional  = t('optional')
-    - if @form.errors[:title].any?
-      span.govuk-error-message#title = @form.errors[:title].join(' ')
-    = f.text_field :title, class: 'govuk-input govuk-!-width-one-quarter'
+
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:first_name].any?)
   = f.label :first_name, class: 'govuk-label'
   - if @form.errors[:first_name].any?
@@ -26,7 +20,7 @@
   = f.text_field :last_name, class: 'govuk-input govuk-!-width-one-half'
 
 
-- if ucd_changes_apply?(@online_application.calculation_scheme) && @online_application.married?
+- if @online_application.married? && @online_application.ni_number_present?
   .govuk-form-group
     fieldset.govuk-fieldset
     legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'

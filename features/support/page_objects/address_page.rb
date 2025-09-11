@@ -1,5 +1,6 @@
 class AddressPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
+
   set_url '/questions/applicant_address'
 
   section :content, '#content' do

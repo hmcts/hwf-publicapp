@@ -23,7 +23,7 @@ RSpec.describe Views::IncomeKinds do
         let(:applicant) { [:wage, :universal_credit, :none_of_the_above] }
 
         it 'returns list of translated kinds without "no income"' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Contribution-based Employment and Support Allowance (ESA)', 'Cash gifts'])
         end
       end
 
@@ -31,7 +31,7 @@ RSpec.describe Views::IncomeKinds do
         let(:applicant) { [:wage, :universal_credit] }
 
         it 'returns list of translated kinds' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Contribution-based Employment and Support Allowance (ESA)'])
         end
       end
     end
@@ -44,8 +44,8 @@ RSpec.describe Views::IncomeKinds do
         let(:partner) { [:wage, :maintenance_payments, :none_of_the_above] }
 
         it 'returns list of merged translated kinds without "no income"' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit',
-                                  'Maintenance payments'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off',
+                                  'Child Tax Credit', 'Contribution-based Employment and Support Allowance (ESA)', 'Cash gifts'])
         end
       end
 
@@ -54,8 +54,8 @@ RSpec.describe Views::IncomeKinds do
         let(:partner) { [:wage, :maintenance_payments] }
 
         it 'returns list of merged translated kinds' do
-          expect(subject).to eql(['Wages before tax and National Insurance are taken off', 'Universal Credit',
-                                  'Maintenance payments'])
+          expect(subject).to eql(['Wages before tax and National Insurance are taken off',
+                                  'Child Tax Credit', 'Contribution-based Employment and Support Allowance (ESA)'])
         end
       end
     end

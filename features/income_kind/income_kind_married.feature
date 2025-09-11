@@ -1,35 +1,32 @@
-Feature: Income kind page UCD
+Feature: Income kind page
 
-  Background: apply the ucd changes
-    And the ucd changes apply
+  Background: Navigating to the kind of income page as a married person
+    And I am a married person on kind of income page
 
   Scenario: Displays income lists for a couple
-    And I am a married person on kind of income page ucd
-    Then I should see an income list for myself and my partner for ucd
-    And the ucd changes end
+    Then I should see an income list for myself and my partner
 
   Scenario: No income - probate disabled
-    And I am a married person on kind of income page ucd
     When I submit the form with none of the above checked
     Then I should be taken to income period page
     When I submit the form with income '1000' and monthly
-    Then I should be taken to the claim page
-    And the ucd changes end
+    Then I should be taken to the probate page
 
   Scenario: Submit the page with wages
-    And I am a married person on kind of income page ucd
     When I submit the form with wages checked
     Then I should be taken to income period page
-    And the ucd changes end
 
   Scenario: Displays couple error message
-    And I am a married person on kind of income page ucd
     When I click continue
     Then I should see select your kinds of income error message
-    And the ucd changes end
+
+  Scenario: Displays child benefit error message
+    When I submit the form with child benefit checked
+    Then I should be taken to income period page
+    When I select no children as a married person
+    And I submit the form with child benefit checked
+    Then I should see the no child selected error message
 
   Scenario: Income kind page timeout (married wages option)
-    When I am a married person on kind of income page ucd
     And I slowly submit the form with wages checked
     Then I should see the home page
-    And the ucd changes end
