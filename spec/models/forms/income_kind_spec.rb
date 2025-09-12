@@ -29,13 +29,13 @@ RSpec.describe Forms::IncomeKind do
       end
 
       context 'when it has only values which are allowed' do
-        let(:applicant) { [:child_benefit, :maintenance_payments] }
+        let(:applicant) { [:wage, :maintenance_payments] }
 
         it { is_expected.to be_valid }
 
         context 'when partner is provided' do
           context 'when it has values which are not allowed' do
-            let(:partner) { [:child_benefit, :weird_value] }
+            let(:partner) { [:wage, :weird_value] }
 
             it { is_expected.not_to be_valid }
           end
@@ -47,7 +47,7 @@ RSpec.describe Forms::IncomeKind do
           end
 
           context 'when it has only values which are allowed' do
-            let(:partner) { [:child_benefit, :maintenance_payments] }
+            let(:partner) { [:wage, :maintenance_payments] }
 
             it { is_expected.to be_valid }
           end
@@ -113,10 +113,10 @@ RSpec.describe Forms::IncomeKind do
 
     it 'returns an array of indexes of allowed income kinds' do
       expect(subject).to eql([
-                               :wage, :child_benefit, :working_credit, :child_credit, :maintenance_payments, :jsa,
-                               :esa, :universal_credit, :pensions, :rent_from_cohabit, :rent_from_properties,
-                               :other_income, :none_of_the_above
-                             ]) # todo add all incomes
+                               :wage, :net_profit, :child_benefit, :working_credit, :child_credit, :maintenance_payments, :jsa, :esa,
+                               :universal_credit, :pensions, :rent_from_cohabit, :rent_from_properties, :cash_gifts, :financial_support,
+                               :loans, :other_income, :none_of_the_above
+                             ])
     end
   end
 
@@ -167,22 +167,21 @@ RSpec.describe Forms::IncomeKind do
           expect(subject[:income]).to be_nil
         end
 
-        it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["None of the above"], partner: ["Wages before tax and National Insurance are taken off"])
+        it 'returns hash with income_kind index value' do
+          expect(subject[:income_kind]).to eq(applicant: ["none_of_the_above"], partner: ["wage"])
         end
       end
 
       context 'when both applicant and partner has other sources than "no income"' do
         let(:applicant) { [:wage, :none_of_the_above] }
-        let(:partner) { [:child_tax, :none_of_the_above] } # todo check
+        let(:partner) { [:child_tax, :none_of_the_above] }
 
         it 'returns an empty hash' do
           expect(subject[:income]).to be_nil
         end
 
-        it 'returns hash with income_kind text value' do
-          expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
-                                                          "None of the above"], partner: ["Child Tax Credit", "None of the above"])
+        it 'returns hash with income_kind index value' do
+          expect(subject[:income_kind]).to eq(applicant: ["wage", "none_of_the_above"], partner: ["child_tax", "none_of_the_above"])
         end
       end
     end
@@ -210,8 +209,7 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind index value' do
-          expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
-                                                          "Child Tax Credit"], partner: [])
+          expect(subject[:income_kind]).to eq(applicant: ["wage", "maintenance_payments"], partner: [])
         end
       end
 
@@ -223,8 +221,7 @@ RSpec.describe Forms::IncomeKind do
         end
 
         it 'returns hash with income_kind index value' do
-          expect(subject[:income_kind]).to eq(applicant: ["Wages before tax and National Insurance are taken off",
-                                                          "None of the above"], partner: [])
+          expect(subject[:income_kind]).to eq(applicant: ["wage", "none_of_the_above"], partner: [])
         end
       end
     end
