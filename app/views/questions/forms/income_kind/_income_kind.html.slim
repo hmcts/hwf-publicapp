@@ -18,10 +18,10 @@
               = f.check_box :applicant, { multiple: true, class: 'govuk-checkboxes__input' }, kind, nil
               label.govuk-label.govuk-checkboxes__label for="income_kind_applicant_#{kind}"
                 = t(kind, scope: ["#{@form.i18n_scope}", 'kinds'])
-              - if [13, 14].include?(kind)
+              - if [:cash_gifts, :financial_support].include?(kind)
                 div.govuk-hint.govuk-checkboxes__hint id="income_kind_applicant_#{kind}-item-hint"
                   = t('one_off_hint', scope: "#{@form.i18n_scope}")
-              - elsif [16].include?(kind)
+              - elsif [:other_income].include?(kind)
                 div.govuk-hint.govuk-checkboxes__hint id="income_kind_applicant_#{kind}-item-hint"
                   = t('example_hint', scope: "#{@form.i18n_scope}")
 
@@ -39,10 +39,10 @@
                 = f.check_box :partner, { multiple: true, class: 'govuk-checkboxes__input' }, kind, nil
                 label.govuk-label.govuk-checkboxes__label for="income_kind_partner_#{kind}"
                   = t(kind, scope: ["#{@form.i18n_scope}", 'kinds'])
-                - if [13, 14].include?(kind)
+                - if [:cash_gifts, :financial_support].include?(kind)
                   div.govuk-hint.govuk-checkboxes__hint id="income_kind_partner_#{kind}-item-hint"
                     = t('one_off_hint', scope: "#{@form.i18n_scope}")
-                - elsif [16].include?(kind)
+                - elsif [:other_income].include?(kind)
                   div.govuk-hint.govuk-checkboxes__hint id="income_kind_partner_#{kind}-item-hint"
                     = t('example_hint', scope: "#{@form.i18n_scope}")
 

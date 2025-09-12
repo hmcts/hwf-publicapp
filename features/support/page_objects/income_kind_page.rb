@@ -16,7 +16,7 @@ class IncomeKindPage < BasePage
     element :wages, 'label', text: 'Wages'
     element :none_of_the_above, 'label', text: 'None of the above'
     element :child_benefit, 'label', text: 'Child Benefit'
-    element :none_of_the_above_partner, 'label[for="income_kind_partner_17"]'
+    element :none_of_the_above_partner, 'label[for="income_kind_partner_none_of_the_above"]'
     element :no_income, 'label', text: 'No income'
     element :working_tax_credit, 'label', text: 'Working Tax Credit'
     elements :income_item, '.govuk-checkboxes__item'
