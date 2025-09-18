@@ -32,15 +32,14 @@ div.govuk-summary-list__row
         span =t('income_type_me', scope: 'summary.labels')
 
       .govuk-details__text
-        p.govuk-body =@summary.income_kind[:applicant].join(', ')
-
+        p.govuk-body =@summary.income_kind[:applicant].map {|kind| I18n.t(kind, scope: ['questions.income_kind.kinds'])}.join(', ')
     - if @summary.income_kind.has_key?(:partner) && @summary.income_kind[:partner].present?
       details.govuk-details data-module="govuk-details"
         summary.govuk-details__summary
           span=t('income_type_my_partner', scope: 'summary.labels')
 
         .govuk-details__text
-          p.govuk-body =@summary.income_kind[:partner].join(', ')
+          p.govuk-body =@summary.income_kind[:partner].map {|kind| I18n.t(kind, scope: ['questions.income_kind.kinds'])}.join(', ')
 
 
   dd.govuk-summary-list__actions
