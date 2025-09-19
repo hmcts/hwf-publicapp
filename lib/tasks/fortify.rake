@@ -1,6 +1,6 @@
 namespace :fortify_scan do
   desc 'Fortify scan'
-  task :run do
+  task run: :environment do
     puts "Building project for Fortify analysis..."
     unless system("sourceanalyzer -b hwf-publicapp -clean")
       raise "Failed to run Fortify build"
