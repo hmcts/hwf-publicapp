@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 3.4.5
+  TargetRubyVersion: 3.4.6
   TargetRailsVersion: 8.2
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
