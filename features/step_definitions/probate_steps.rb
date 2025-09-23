@@ -20,7 +20,8 @@ end
 When(/^I select yes to are you paying a fee for a probate case$/) do
   probate_page.answer_probate_yes
   expect(probate_page.content).to have_date_of_death_legend
-  expect(probate_page.content).to have_date_of_death_example
+  probate_hint_text = probate_page.content.date_of_death_hint.text
+  expect(probate_hint_text).to eq probate_page.date_hint
   continue
 end
 
@@ -44,7 +45,8 @@ end
 When(/^I enter a invalid date of death$/) do
   probate_page.answer_probate_yes
   expect(probate_page.content).to have_date_of_death_legend
-  expect(probate_page.content).to have_date_of_death_example
+  expect(probate_page.content).to have_date_of_death_legend
+  probate_page.content.date_of_death_hint.text
   probate_page.deceased_name
   probate_page.invalid_date_of_death
 end
@@ -52,7 +54,8 @@ end
 When(/^I enter a future date of death$/) do
   probate_page.answer_probate_yes
   expect(probate_page.content).to have_date_of_death_legend
-  expect(probate_page.content).to have_date_of_death_example
+  expect(probate_page.content).to have_date_of_death_legend
+  probate_page.content.date_of_death_hint.text
   probate_page.deceased_name
   probate_page.future_date_of_death
 end

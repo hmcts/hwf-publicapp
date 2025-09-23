@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ClassLength
 class DobPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
@@ -7,7 +8,7 @@ class DobPage < BasePage
     element :step_info, '.govuk-caption-l', text: 'Step 19 of 25'
     element :header, 'h1', text: 'What is your date of birth?'
     element :header_partner, 'h1', text: 'What are you and your partner’s date of birth'
-    element :dob_hint, '.govuk-hint', text: 'For example, 04 10 1990'
+    element :dob_hint, '.govuk-hint'
     element :dob_day, '#dob_day'
     element :dob_month, '#dob_month'
     element :dob_year, '#dob_year'
@@ -17,6 +18,10 @@ class DobPage < BasePage
     element :blank_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'
     element :under_age_error_link, 'a', text: 'You must be over 15 to use this service'
     element :over_age_error_link, 'a', text: 'Check this date of birth is correct'
+  end
+
+  def date_hint
+    "For example, #{Time.current.strftime('%d %m %Y')}"
   end
 
   def valid_dob
@@ -112,3 +117,5 @@ class DobPage < BasePage
     end
   end
 end
+
+# rubocop:enable Metrics/ClassLength
