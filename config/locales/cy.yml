@@ -188,7 +188,7 @@ cy:
         forms/dob:
           attributes:
             date_of_birth:
-              not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
+              not_a_date: Rhowch y dyddiad yn y fformat hwn %{today_date}
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
@@ -199,7 +199,7 @@ cy:
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6)
               not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6)
             partner_date_of_birth:
-              not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
+              not_a_date: Rhowch y dyddiad yn y fformat hwn %{today_date}
               not_a_number: Rhowch ddyddiad dilys
               too_old: Gwiriwch fod y dyddiad geni hwn yn gywir
               too_young: Rhaid i chi fod dros %{minimum_age} i ddefnyddio'r gwasanaeth hwn
@@ -208,7 +208,7 @@ cy:
             date_paid:
               date_after_or_equal_to: Rhaid i’r dyddiad pan gafodd y ffi ei thalu fod o fewn y tri mis diwethaf
               date_before_or_equal_to: Ni all y dyddiad hwn fod yn y dyfodol
-              blank: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
+              blank: Rhowch y dyddiad yn y fformat hwn %{today_date}
               not_a_date: Nid yw'r dyddiad hwnnw wedi'i adnabod
             paid:
               inclusion: Dewiswch os ydych chi eisoes wedi talu'r ffi
@@ -310,7 +310,7 @@ cy:
               date_after_or_equal_to: Rhaid i'r dyddiad marwolaeth fod yn yr 20 mlynedd diwethaf
               date_before: Ni all y dyddiad hwn fod yn y dyfodol
               blank: Rhowch ddyddiad y farwolaeth
-              not_a_date: Rhowch y dyddiad yn y fformat hwn DD/MM/BBBB
+              not_a_date: Rhowch y dyddiad yn y fformat hwn %{today_date}
             deceased_name:
               blank: Rhowch enw'r ymadawedig
               too_long: Rhaid i'r enw fod yn llai na 100 o nodau
@@ -483,7 +483,7 @@ cy:
       date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: 'Nac ydw'
       fee_paid_true: 'Ydw'
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">%{today_date}</span>
       text: Ydych chi eisoes wedi talu ffi’r llys neu ffi’r tribiwnlys?
       title: Refund
     applying_on_behalf:
@@ -622,7 +622,7 @@ cy:
 
     dob:
       breadcrumb: Cam %{page_number} o 25
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">%{today_date}</span>
       text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
       applicant: Eich dyddiad geni chi
@@ -636,7 +636,7 @@ cy:
       date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: Naddo
       fee_paid_true: Do
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">%{today_date}</span>
       title: Ad-dalu
     form_name:
       breadcrumb: Cam %{page_number} o 25
@@ -856,7 +856,7 @@ cy:
     probate:
       breadcrumb: Cam %{page_number} o 25
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">%{today_date}</span>
       date_of_death: Dyddiad y farwolaeth
       probate_case_false: Nac ydw
       probate_case_true: Ydw

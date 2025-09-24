@@ -610,7 +610,7 @@ en:
         summary: Find a lost National Insurance number
     dob:
       breadcrumb: Step %{page_number} of 25
-      hint_html: For example, 04 10 1990
+      hint_html: For example, %{today_date}
       text: What is your date of birth?
       title: Date of birth
       applicant: Your date of birth
@@ -625,7 +625,7 @@ en:
       date_paid: Date fee paid
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
-      hint_html: For example, 04 10 2018
+      hint_html: For example, %{today_date}
       text: Have you already paid the court or tribunal fee?
       title: Refund
     form_name:
@@ -837,7 +837,7 @@ en:
     probate:
       breadcrumb: Step %{page_number} of 25
       details: These cases are usually about the property and belongings of someone who has died.
-      hint_html: For example, 04 10 2018
+      hint_html: For example, %{today_date}
       date_of_death: Date of death
       probate_case_false: 'No'
       probate_case_true: 'Yes'

@@ -21,7 +21,7 @@
             span.govuk-error-message = @form.errors[:date_paid].join(' ')
           legend.govuk-fieldset__legend = t('date_paid', scope: @form.i18n_scope)
 
-          div.govuk-hint = t('hint_html', scope: @form.i18n_scope)
+          div.govuk-hint = t('hint_html', scope: @form.i18n_scope, today_date: date_hint)
           .govuk-date-input class="#{'error_dates' if @form.errors[:date_paid].present?}"
             .govuk-date-input__item
               .govuk-form-group.govuk-form-group-day

@@ -30,4 +30,8 @@ module ApplicationHelper
   def show_organisation(online_application)
     online_application.legal_representative == 'legal_representative'
   end
+
+  def date_hint
+    Time.current.strftime("%d %m %Y")
+  end
 end

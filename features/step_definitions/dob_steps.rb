@@ -9,7 +9,8 @@ Given(/^I am married and on the date of birth page$/) do
   to_dob_page('married')
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_header_partner
-  expect(dob_page.content).to have_dob_hint
+  date_hint_text = dob_page.content.dob_hint.text
+  expect(date_hint_text).to eq dob_page.date_hint
 end
 
 When(/^I enter a valid date of birth$/) do

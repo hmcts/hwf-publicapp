@@ -14,7 +14,7 @@
         legend class= 'govuk-fieldset__legend govuk-!-font-weight-bold'
           = t('applicant', scope: @form.i18n_scope)
 
-    div.govuk-hint = t('hint_html', scope: @form.i18n_scope)
+    div.govuk-hint = t('hint_html', scope: @form.i18n_scope, today_date: date_hint)
     .govuk-date-input class="#{'error_dates' if @form.errors[:date_of_birth].present?}"
       .govuk-date-input__item
         .govuk-form-group.govuk-form-group-day
@@ -38,7 +38,7 @@
         - if @form.errors[:partner_date_of_birth].any?
           span.govuk-error-message#dob_partner_date_of_birth = @form.errors[:partner_date_of_birth].join(' ')
 
-      div.govuk-hint = t('hint_html', scope: @form.i18n_scope)
+      div.govuk-hint = t('hint_html', scope: @form.i18n_scope, today_date: date_hint)
       .govuk-date-input class="#{'error_dates' if @form.errors[:partner_date_of_birth].present?}"
         .govuk-date-input__item
           .govuk-form-group.govuk-form-group-day

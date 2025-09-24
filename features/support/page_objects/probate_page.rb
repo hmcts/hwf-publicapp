@@ -18,8 +18,12 @@ class ProbatePage < BasePage
     element :future_date_error_link, 'a', text: 'This date can\'t be in the future'
     element :expired_date_error_link, 'a', text: 'The date of death must have been in the last 20 years'
     element :invalid_date_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'
-    element :date_of_death_example, 'div.govuk-hint', text: 'For example, 04 10 2018'
+    element :date_of_death_hint, :xpath, ".//legend[@for='day_date_of_death']/following-sibling::div[contains(@class, 'govuk-hint')]"
     element :date_of_death_legend, '.govuk-fieldset__legend', text: 'Date of death'
+  end
+
+  def date_hint
+    "For example, #{Time.current.strftime('%d %m %Y')}"
   end
 
   def answer_probate_yes
