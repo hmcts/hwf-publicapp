@@ -2,6 +2,7 @@ namespace :fortify_scan do
   desc 'Fortify scan'
   task run: :environment do
     puts "Building project for Fortify analysis..."
+    Rake.application.options.trace = true
     unless system("sourceanalyzer -b hwf-publicapp -clean")
       raise "Failed to run Fortify build"
     end
