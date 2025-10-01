@@ -4,6 +4,7 @@ namespace :fortify_scan do
     puts "Building project for Fortify analysis..."
     Rake.application.options.trace = true
     unless system("sourceanalyzer -b hwf-publicapp -clean -verbose -debug")
+      puts "sourceanalyzer run failed"
       raise "Failed to run Fortify build"
     end
   end
