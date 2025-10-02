@@ -4,6 +4,10 @@ namespace :fortify_scan do
   task run: :environment do
     require 'fileutils'
 
+    puts "TEST ENV VALUES"
+    puts ENV
+    puts "END TEST ENV VALUES"
+
     # Check for Java and install if necessary
     puts "Checking for Java..."
     unless system("java -version > /dev/null 2>&1")
