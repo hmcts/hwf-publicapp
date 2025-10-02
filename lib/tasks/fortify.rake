@@ -5,7 +5,7 @@ namespace :fortify_scan do
     require 'fileutils'
 
     puts "TEST ENV VALUES"
-    puts ENV
+    puts ENV.to_h
     puts "END TEST ENV VALUES"
 
     # Check for Java and install if necessary
