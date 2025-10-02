@@ -14,9 +14,7 @@ withNightlyPipeline(type, product, component) {
   enableFortifyScan()
 
   def secrets = [
-    'hwf-publicapp-${env}': [
-      secret('fortify-username', 'FOD_USERNAME')
-    ]
+    [ secretType: 'Secret', name: "fortify-username", version: '', envVariable: 'FOD_USERNAME' ]
   ]
 
   loadVaultSecrets(secrets)
