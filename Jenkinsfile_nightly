@@ -38,15 +38,12 @@ withNightlyPipeline(type, product, component) {
 
   enableFortifyScan()
 
-  before('fortifyScan') {
+  echo "Fortify Environment Variables:"
+  echo "  FORTIFY_USER_NAME: ${env.FORTIFY_USER_NAME}"
+  echo "  FORTIFY_PASSWORD: ${env.FORTIFY_PASSWORD}"
+  echo "  FOD_USERNAME: ${env.FOD_USERNAME}"
+  echo "  FOD_TENANT: ${env.FOD_TENANT}"
 
-    echo "Fortify Environment Variables:"
-    echo "  FORTIFY_USER_NAME: ${env.FORTIFY_USER_NAME}"
-    echo "  FORTIFY_PASSWORD: ${env.FORTIFY_PASSWORD}"
-    echo "  FOD_USERNAME: ${env.FOD_USERNAME}"
-    echo "  FOD_TENANT: ${env.FOD_TENANT}"
-
-  }
 
 
   before('test') {
