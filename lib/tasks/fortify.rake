@@ -4,10 +4,6 @@ namespace :fortify_scan do
   task run: :environment do
     require 'fileutils'
 
-    puts "TEST ENV VALUES"
-    puts ENV.to_h
-    puts "END TEST ENV VALUES"
-
     # Check for Java and install if necessary
     puts "Checking for Java..."
     unless system("java -version > /dev/null 2>&1")
@@ -37,9 +33,9 @@ namespace :fortify_scan do
 
     puts "Uploading to Fortify on Demand..."
     fod_username = ENV['FOD_USERNAME'] || raise("FOD_USERNAME not set")
-    fod_pat = ENV['FOD_PAT'] || raise("FOD_PAT not set")
+    fod_pat = ENV['FORTIFY_PASSWORD'] || raise("FORTIFY_PASSWORD not set")
     fod_tenant = ENV['FOD_TENANT'] || raise("FOD_TENANT not set")
-    fod_release_id = ENV['FOD_RELEASE_ID'] || raise("FOD_RELEASE_ID not set")
+    fod_release_id = ENV['FORTIFY_USER_NAME'] || raise("FORTIFY_USER_NAME not set")
 
     upload_cmd = [
       "java -jar FodUpload.jar",
