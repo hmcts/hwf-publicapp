@@ -17,7 +17,7 @@ withNightlyPipeline(type, product, component) {
     [ secretType: 'Secret', name: "fortify-username", version: '', envVariable: 'FOD_USERNAME' ]
   ]
 
-  loadVaultSecrets(secrets)
+  // loadVaultSecrets(secrets)
 
   env.RAILS_ENV = 'test'
   env.RACK_ENV = 'test'
