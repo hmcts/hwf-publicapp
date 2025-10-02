@@ -20,6 +20,13 @@ withNightlyPipeline(type, product, component) {
     [$class: 'AzureKeyVaultSecret', secretType: 'Secret', name: 'fortify-tenant', version: '', envVariable: 'FOD_TENANT']
   ]
 
+  echo "Fortify Environment Variables:"
+  echo "  FORTIFY_USER_NAME: ${env.FORTIFY_USER_NAME}"
+  echo "  FORTIFY_PASSWORD: ${env.FORTIFY_PASSWORD}"
+  echo "  FOD_USERNAME: ${env.FOD_USERNAME}"
+  echo "  FOD_TENANT: ${env.FOD_TENANT}"
+
+
   env.RAILS_ENV = 'test'
   env.RACK_ENV = 'test'
   env.TEST_BROWSER = 'chrome_local'
