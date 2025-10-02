@@ -13,6 +13,14 @@ withNightlyPipeline(type, product, component) {
 
   enableFortifyScan()
 
+  def secrets = [
+    'hwf-publicapp-${env}': [
+      secret('fortify-username', 'FOD_USERNAME')
+    ]
+  ]
+
+  loadVaultSecrets(secrets)
+
   env.RAILS_ENV = 'test'
   env.RACK_ENV = 'test'
   env.TEST_BROWSER = 'chrome_local'
