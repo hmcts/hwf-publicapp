@@ -13,9 +13,9 @@ withNightlyPipeline(type, product, component) {
 
   enableFortifyScan()
 
-  def secrets = [
-    [ secretType: 'Secret', name: "fortify-username", version: '', envVariable: 'FOD_USERNAME' ]
-  ]
+  // def secrets = [
+  //   [ secretType: 'Secret', name: "fortify-username", version: '', envVariable: 'FOD_USERNAME' ]
+  // ]
 
   // loadVaultSecrets(secrets)
 
