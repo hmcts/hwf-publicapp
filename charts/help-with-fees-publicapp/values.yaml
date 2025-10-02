@@ -54,3 +54,11 @@ base:
           alias: MAINTENANCE_ALLOWED_IPS
         - name: hwf-staff-notify-api-key
           alias: GOVUK_NOTIFY_API_KEY
+        - name: fortify-username
+          alias: FOD_USERNAME
+        - name: fortify-tenant
+          alias: FOD_TENANT
+        - name: fortify-on-demand-username
+          alias: FOD_RELEASE_ID
+        - name: fortify-on-demand-password
+          alias: FOD_PAT
