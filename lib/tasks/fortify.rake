@@ -35,9 +35,9 @@ namespace :fortify_scan do
     system("zip -r source.zip . -x '*.git*' -x 'vendor/*' -x 'node_modules/*' -x '*.jar' -x 'tmp/*' -x 'log/*'") || raise("Failed to package source")
 
     puts "Uploading to Fortify on Demand..."
-    fod_username = ENV['FOD_USERNAME'] || raise("FOD_USERNAME not set")
+    fod_username = 'petr.zaparka@hmcts.net'
     fod_pat = ENV['FORTIFY_PASSWORD'] || raise("FORTIFY_PASSWORD not set")
-    fod_tenant = ENV['FOD_TENANT'] || raise("FOD_TENANT not set")
+    fod_tenant = 'mojuk'
     fod_release_id = ENV['FORTIFY_USER_NAME'] || raise("FORTIFY_USER_NAME not set")
 
     upload_cmd = [
