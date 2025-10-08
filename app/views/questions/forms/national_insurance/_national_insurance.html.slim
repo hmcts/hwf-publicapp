@@ -16,7 +16,7 @@
           .govuk-hint#number-hint
             = t('hint', scope: @form.i18n_scope)
 
-          = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+          = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope), pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
       .govuk-radios__item
         = f.radio_button :ni_number_present, 'false', class: 'govuk-radios__input'

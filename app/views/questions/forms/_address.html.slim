@@ -2,13 +2,13 @@
   = f.label :street, t('activemodel.attributes.forms/applicant_address.street'), class: 'govuk-label'
   - if @form.errors[:street].any?
     span.govuk-error-message#street = @form.errors[:street].join(' ')
-  = f.text_field :street, class: "govuk-input govuk-!-width-one-half street", autocomplete: "street-address"
+  = f.text_field :street, class: "govuk-input govuk-!-width-one-half street", autocomplete: "street-address", pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:town].any?)
   = f.label :town, t('activemodel.attributes.forms/applicant_address.town'), class: 'govuk-label'
   - if @form.errors[:town].any?
     span.govuk-error-message#town = @form.errors[:town].join(' ')
-  = f.text_field :town, class: "govuk-input govuk-!-width-one-half town", autocomplete: "address-level2"
+  = f.text_field :town, class: "govuk-input govuk-!-width-one-half town", autocomplete: "address-level2", pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
 .govuk-form-group class=('govuk-form-group--error' if @form.errors[:postcode].any?)
   = f.label :postcode, t('activemodel.attributes.forms/applicant_address.postcode'), class: 'govuk-label'

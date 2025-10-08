@@ -41,13 +41,13 @@
         = f.label :legal_representative_position, t('legal_representative_position', scope: @form.i18n_scope), class: 'govuk-label'
         - if @form.errors[:legal_representative_position].any?
           span.govuk-error-message#last_name = @form.errors[:legal_representative_position].join(' ')
-        = f.text_field :legal_representative_position, class: 'govuk-input govuk-!-width-one-half'
+        = f.text_field :legal_representative_position, class: 'govuk-input govuk-!-width-one-half', pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
       .govuk-form-group class=('govuk-form-group--error' if @form.errors[:legal_representative_organisation_name].any?)
         = f.label :legal_representative_organisation_name, t('legal_representative_organisation_name', scope: @form.i18n_scope), class: 'govuk-label'
         - if @form.errors[:legal_representative_organisation_name].any?
           span.govuk-error-message#last_name = @form.errors[:legal_representative_organisation_name].join(' ')
-        = f.text_field :legal_representative_organisation_name, class: 'govuk-input govuk-!-width-one-half'
+        = f.text_field :legal_representative_organisation_name, class: 'govuk-input govuk-!-width-one-half', pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
 
     - if address_lookup_access_token

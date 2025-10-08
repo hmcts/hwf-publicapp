@@ -8,7 +8,7 @@
 
     span.govuk-hint#number-hint = t('hint', scope: @form.i18n_scope)
     div#partner_national_insurance_number
-      = f.text_field :number, id: 'number_input', class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+      = f.text_field :number, id: 'number_input', class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope), pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
   div#partner_ni_checkbox_group
     .govuk-form-group

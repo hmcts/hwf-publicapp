@@ -3,7 +3,7 @@
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:ho_number].any?
       span.govuk-error-message#number = @form.errors[:ho_number].join(' ')
-  = f.text_field :ho_number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
+  = f.text_field :ho_number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope), pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
 p.govuk-body =t('paper_form', scope: "#{@form.i18n_scope}")
 

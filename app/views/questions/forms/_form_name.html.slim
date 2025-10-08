@@ -5,7 +5,7 @@
       span.govuk-error-message
         = f.label :identifier, @form.errors[:identifier].join(', '), class: 'error'
 
-    = f.text_field :identifier, { class: 'govuk-input govuk-!-width-one-half' }
+    = f.text_field :identifier, { class: 'govuk-input govuk-!-width-one-half', pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed' }
 
 
   .govuk-form-group

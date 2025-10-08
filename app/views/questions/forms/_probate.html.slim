@@ -19,7 +19,7 @@
       = f.label :deceased_name, class: 'govuk-label'
       - if @form.errors[:deceased_name].any?
         span.govuk-error-message#deceased_name = @form.errors[:deceased_name].join(' ')
-      = f.text_field :deceased_name, class: 'govuk-input govuk-!-width-one-quarter'
+      = f.text_field :deceased_name, class: 'govuk-input govuk-!-width-one-quarter', pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:date_of_death].any?)
       fieldset.govuk-fieldset
         legend.govuk-fieldset__legend for='day_date_of_death' class='govuk-!-margin-bottom-1'

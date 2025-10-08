@@ -19,7 +19,7 @@
           span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
         label.govuk-label(for='claim_default_identifier')
           = t('identifier', scope: @form.i18n_scope)
-        = f.text_field :identifier, class: 'govuk-input govuk-!-width-one-third'
+        = f.text_field :identifier, class: 'govuk-input govuk-!-width-one-third', pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
 
 details.govuk-details data-module="govuk-details"

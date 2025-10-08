@@ -2,7 +2,7 @@
   = f.label :identifier, class: 'govuk-label'
   - if @form.errors[:identifier].any?
     span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
-  = f.text_field :identifier, class: 'form-control'
+  = f.text_field :identifier, class: 'form-control', pattern: '[A-Za-z0-9 ]*', title: 'Only letters, numbers, and spaces are allowed'
 
 .govuk-form-group
   details
