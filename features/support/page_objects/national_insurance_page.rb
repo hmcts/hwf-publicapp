@@ -50,7 +50,7 @@ class NationalInsurancePage < BasePage
 
   def select_yes_and_enter_invalid_ni
     national_insurance_page.content.yes.click
-    national_insurance_page.content.national_insurance_number.set('01234%^&*')
+    national_insurance_page.content.national_insurance_number.set('0123454824')
     continue
   end
 end
