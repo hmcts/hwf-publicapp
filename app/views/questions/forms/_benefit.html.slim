@@ -13,12 +13,12 @@
         = f.radio_button :on_benefits, 'true', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
         = f.label :on_benefits, t('on_benefits_true', scope: @form.i18n_scope), for: 'benefit_on_benefits_true', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"
 
-/ .govuk-form-group
-/   .govuk-body
-/     h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
-/     p = t('details', scope: "#{@form.i18n_scope}.details.section_2")
-/
-/     h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
-/     p = t('details', scope: "#{@form.i18n_scope}.details.section_1")
+.govuk-form-group
+  .govuk-body
+    h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
+    p = t('details', scope: "#{@form.i18n_scope}.details.section_2")
+
+    h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
+    p = t('details', scope: "#{@form.i18n_scope}.details.section_1")
 
 
