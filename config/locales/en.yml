@@ -441,7 +441,7 @@ en:
       p_four: Please note, you can only apply for a refund within 3 months from the date you originally paid your fee (for example if you paid your fee on 16th September, you have until 15th December). This time limit includes the making of any replacement application if your original HWF application has been rejected.
       p_four_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
       p_five: The court or tribunal will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
-      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing
+      reference_confirm_checkbox: I confirm I will add the above reference number to my online court/tribunal application
       confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
   error_block:
     heading: There is a problem
