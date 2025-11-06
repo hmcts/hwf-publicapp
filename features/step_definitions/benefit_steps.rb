@@ -14,7 +14,7 @@ When(/^I submit the form with no I do not receive one of the benefits listed$/) 
 end
 
 Then(/^I should see the instruction bullet points:$/) do |benefits|
-  # expect(benefit_page.content).to have_benefits_text
+  expect(benefit_page.content).to have_benefits_text
   benefits.rows.each_with_index do |benefit, index|
     expect(benefit_page.content.li[index].text).to eq benefit[0]
   end

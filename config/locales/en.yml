@@ -351,14 +351,14 @@ en:
       sub_heading: You have one more step to take below
       h3_one: What happens next
       p_one: You have completed an application online for help paying a court or tribunal fee.
-      p_two: You now need to add this reference number to your online court/tribunal application and send the court or tribunal office evidence of any benefits if applicable.
+      p_two: You now need to add this reference number to your online court/tribunal application.
       p_three: You have 28 days to do this otherwise your application will be rejected and you will need to take a new Help With Fees application.
       p_four_html: "If you need to contact the court, please follow this link: <a class='external govuk-link' rel='external' href='https://www.gov.uk/find-court-tribunal'>https://www.gov.uk/find-court-tribunal</a> to find contact details."
       p_five: Once the court or tribunal have received your reference number they will process your help with fees application. They will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
       template:
         line_one: "Enter your reference above into the help with fees section of the online form. Your online court application form should look something like this:"
       contact_line: We will contact you if you need to provide more information or you need to pay towards your court or tribunal fee.
-      reference_confirm_checkbox: I confirm I will add the above reference number to my online court/tribunal application and send any evidence of benefits if applicable to the court/tribunal for processing
+      reference_confirm_checkbox: I confirm I will add the above reference number to my online court/tribunal application
       confirmation_error: "You must confirm you will add the above reference number to your online court/tribunal application"
     paper:
       heading: Your Help with Fees reference number is %{claim_number}
@@ -366,7 +366,7 @@ en:
       h3_one: Final step
       h3_two: What happens next
       p_one: You have completed an application online for help paying a court or tribunal fee and you have been provided with the above reference number for your application.
-      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee alongside evidence of any qualifying benefits (if applicable).
+      p_two: You now need to provide this reference number to the office, court or tribunal that will deal with the claim for which you want help with its fee.
       p_three: You have 28 days to do this otherwise your application will be rejected and you will need to make a new Help With Fees application.
       p_four: "You can do this by:"
       p_five_html: "You can find contact details for all courts and tribunals here: <a class='external govuk-link' rel='external' href='https://www.gov.uk/find-court-tribunal'>https://www.gov.uk/find-court-tribunal</a>"
@@ -374,12 +374,12 @@ en:
       instructions:
         line_one: Adding the reference number to the help with fees section of your main claim form
         line_two: If the form does not have a Help with Fees section, write the reference number at the top of the claim form
-        line_three: If you have already sent your claim form to the court/tribunal, you need to send your reference number to the court/tribunal either by email or post along with evidence of any benefits (if applicable)
+        line_three: If you have already sent your claim form to the court/tribunal, you need to send your reference number to the court/tribunal either by email or post
       template:
         reference: 'Reference: %{reference}'
         line_one: I have completed on online application for help with fees [insert application type and case number if you have one].
         line_two: Yours sincerely,
-      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
+      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing
       confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
     et:
       address:
@@ -436,12 +436,12 @@ en:
       sub_heading: You have one more step to take below
       h3_one: What happens next
       p_one: You have completed an application online for help paying a court or tribunal fee.
-      p_two: You now need to add this reference number to your online court/tribunal application and send the court or tribunal office evidence of any benefits if applicable.
+      p_two: You now need to add this reference number to your online court/tribunal application.
       p_three: You should send this to them within 28 days. If it is received later it will be rejected and you will need to make a new HWF application.
       p_four: Please note, you can only apply for a refund within 3 months from the date you originally paid your fee (for example if you paid your fee on 16th September, you have until 15th December). This time limit includes the making of any replacement application if your original HWF application has been rejected.
       p_four_html: If you need help trying to find the court email or postal address, please follow this link <a class="external govuk-link" rel="external" href="https://www.gov.uk/find-court-tribunal">https://www.gov.uk/find-court-tribunal</a> to find further contact details.
       p_five: The court or tribunal will then contact you to tell you if you need to provide more information or you need to pay towards your court or tribunal fee.
-      reference_confirm_checkbox: I confirm I will send the above reference number to court/tribunal for processing and the qualifying benefit evidence if applicable
+      reference_confirm_checkbox: I confirm I will add the above reference number to my online court/tribunal application
       confirmation_error: "You must confirm you will send the above reference number to court/tribunal for processing"
   error_block:
     heading: There is a problem
@@ -506,8 +506,6 @@ en:
       text: Do you receive any of the following benefits?
       text_refund: Did you receive any of the following benefits?
       title: Benefits
-      evidence: <strong>You need to provide evidence of your benefits</strong>
-      support: To support your claim, you must provide proof of your benefits. This includes a full breakdown letter from the Department for Work and Pensions, which should detail your assessment date and confirm the benefit you receive. Any documents submitted must clearly identify both you and your partner (if applicable), with evidence that you share the same address. You can send this information along with your Help with Fees reference number to the court or tribunal office via post or email (copies, scans or mobile screenshots).
     claim/default:
       breadcrumb: Step %{page_number} of 25
       details:
@@ -1227,9 +1225,8 @@ en:
       heading: 'Important: read before you start'
       sections:
         - parts:
-            - p: "If you're applying for help with court and tribunal fees and you're currently receiving qualifying benefits, you must send evidence alongside your completed application. This is because of a temporary technical problem we are experiencing."
             - p: 'You should use this online service when you are ready to make your court or tribunal application.'
-            - p: 'It will provide you with a Help with Fees reference number you should send to the court or tribunal as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new Help with Fees application. You must provide evidence of any qualifying benefits, please make sure you have this ready before applying.'
+            - p: 'It will provide you with a Help with Fees reference number you should send to the court or tribunal as part of your claim within 28 days. If it is received later, it may be rejected and you will need to make a new Help with Fees application.'
             - p: 'Refund applications must be submitted within 3 months of paying the fee. If your application is rejected as the Help with Fees reference number is more than 28 days old, this may affect the amount of time you have left to be eligible for a refund.'
             - p: 'If you are making a multiple claim or application, all applicants will usually need to make a separate Help with Fees application and submit those online reference numbers to the court.'
             - p: 'Staff will process the Help with Fees reference number and the court or tribunal application together and let you know if you need to pay towards the fee or if they require more information from you.'
@@ -1241,7 +1238,6 @@ en:
                 - li: your Home Office reference number - you may have a Home Office reference number if you are subject to immigration control
                 - li: the court or tribunal form number
                 - li: your case number, claim number or notice to pay - if you have one
-                - li: "<strong>If you're applying for benefits, you'll need to provide evidence from the Department for Work and Pensions (DWP) confirming that you're receiving one of the eligible benefits. This includes a full breakdown letter from the Department for Work and Pensions, which should detail your assessment date and confirm the benefit you receive. Any documents submitted must clearly identify both you and your partner (if applicable), with evidence that you share the same address. You can send this information along with your Help with Fees reference number to the court or tribunal office via post or email (copies, scans or mobile screenshots). You can request proof of your benefits through the DWP, which may include a letter of entitlement, a proof of benefit letter, or other official documentation</strong>"
         - title:
           parts:
             - p: "You'll also need details of your:"
