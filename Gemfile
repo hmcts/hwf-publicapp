@@ -14,6 +14,7 @@ gem 'rails', '~> 8.1', '>= 8.1.1'
 
 gem 'bootsnap', require: false
 gem 'config'
+gem 'connection_pool', '~> 2.4'
 gem 'date_validator'
 # gem "dartsass-sprockets", "~> 3.1"
 # gem 'jquery-rails'
