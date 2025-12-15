@@ -44,3 +44,6 @@ features/cucumber-report/screenshot.png
 input-secrets.rb
 
 /app/assets/builds/*
+
+/tmp/*
+.claude/**
