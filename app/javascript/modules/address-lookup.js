@@ -81,16 +81,17 @@ moj.Modules.addressLookup = {
     whenPostcodeValid: function(callback) {
         const self = this,
               $postcode = $(self.selectors.postcode),
+              sanitizedPostcode = $postcode.val().replace(/\s+/g, ''),
               $formGroup = $(self.selectors.formGroup),
               $bearer = $(self.selectors.bearer),
               $url = $(self.selectors.addressLookupUrl);
 
-        if (self.ukPostcodeRegEx.test($postcode.val())) {
+        if (self.ukPostcodeRegEx.test(sanitizedPostcode)) {
             self.govukErrorSummary.hide();
             $formGroup.removeClass(self.classes.formGroupError);
             $formGroup.find(self.selectors.postcode).removeClass(self.classes.inputError);
             $(self.selectors.errorSpan).hide();
-            callback($url.val(), $postcode.val(), $bearer.val());
+            callback($url.val(), sanitizedPostcode, $bearer.val());
         }
         else {
             self.govukErrorSummary.show();
