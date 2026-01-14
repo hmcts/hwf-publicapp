@@ -36,6 +36,7 @@ gem 'jsbundling-rails'
 # To fix ruby 3.3.3 gemsepec file issue with this gem
 gem 'net-pop', github: 'ruby/net-pop'
 
+gem 'cgi', '~> 0.5.1'
 gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
