@@ -38,7 +38,6 @@ gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
   gem "pry-rails"
-  gem 'letter_opener'
   gem 'rubocop', '~> 1.40', require: false
   gem 'rubocop-rails'
   gem 'rubocop-performance', require: false
