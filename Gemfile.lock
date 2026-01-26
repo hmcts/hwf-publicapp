@@ -5,13 +5,6 @@ GIT
   specs:
     azure_env_secrets (1.0.1)
 
-GIT
-  remote: https://github.com/ruby/net-pop.git
-  revision: 30d89b359c940610d84ecd1fed0dba4003508fde
-  specs:
-    net-pop (0.1.2)
-      net-protocol
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -101,7 +94,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     base64 (0.3.0)
     bigdecimal (4.0.1)
-    bindex (0.8.1)
     bootsnap (1.21.0)
       msgpack (~> 1.2)
     brakeman (7.1.2)
@@ -122,8 +114,6 @@ GEM
     cgi (0.5.1)
     childprocess (5.1.0)
       logger (~> 1.5)
-    codeclimate-test-reporter (1.0.7)
-      simplecov
     coderay (1.1.3)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -190,7 +180,6 @@ GEM
     factory_bot_rails (6.5.1)
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
-    ffi (1.17.3)
     ffi (1.17.3-arm64-darwin)
     globalid (1.3.0)
       activesupport (>= 6.1)
@@ -251,6 +240,8 @@ GEM
     mutex_m (0.3.0)
     net-imap (0.6.2)
       date
+      net-protocol
+    net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
@@ -445,7 +436,6 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 6.0, != 5.0.0)
-    spring (4.4.0)
     stringio (3.2.0)
     sys-uname (1.4.1)
       ffi (~> 1.1)
@@ -471,11 +461,6 @@ GEM
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
-    web-console (4.2.1)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
-      bindex (>= 0.4.0)
-      railties (>= 6.0.0)
     webmock (3.26.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -500,7 +485,6 @@ DEPENDENCIES
   bundler-audit
   capybara
   cgi (~> 0.5.1)
-  codeclimate-test-reporter
   config
   connection_pool (~> 2.4)
   cssbundling-rails
@@ -514,7 +498,6 @@ DEPENDENCIES
   letter_opener
   listen
   mutex_m
-  net-pop!
   nokogiri
   parallel_tests
   propshaft
@@ -543,12 +526,10 @@ DEPENDENCIES
   simplecov
   site_prism
   slim-rails
-  spring
   test-prof (~> 1.1)
   timecop
   uglifier
   virtus
-  web-console
   webmock
 
 RUBY VERSION

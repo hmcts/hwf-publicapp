@@ -33,9 +33,6 @@ gem 'propshaft'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
-# To fix ruby 3.3.3 gemsepec file issue with this gem
-gem 'net-pop', github: 'ruby/net-pop'
-
 gem 'cgi', '~> 0.5.1'
 gem 'rexml', '>= 3.3.9'
 
@@ -53,8 +50,6 @@ end
 group :development do
   gem 'launchy'
   gem 'listen'
-  gem 'spring'
-  gem 'web-console'
   gem 'mutex_m'
 end
 
@@ -62,7 +57,6 @@ group :test do
   gem 'apparition'
   gem 'brakeman'
   gem 'capybara'
-  gem 'codeclimate-test-reporter'
   gem 'cucumber-rails', require: false
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
