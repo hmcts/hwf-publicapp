@@ -32,9 +32,9 @@ RSpec.describe Forms::Probate do
         let(:year_date_of_death) { date_of_death.year }
 
         context 'time set to past' do
-          before { Timecop.freeze(Time.zone.parse("2016-11-01")) }
+          before { travel_to(Time.zone.parse("2016-11-01")) }
 
-          after { Timecop.return }
+          after { travel_back }
 
           let(:date_of_death) { 2.days.from_now }
           let(:day_date_of_death) { date_of_death.day }
@@ -45,9 +45,9 @@ RSpec.describe Forms::Probate do
         end
 
         context 'time limit probate' do
-          before { Timecop.freeze(Time.zone.parse("1940-01-01")) }
+          before { travel_to(Time.zone.parse("1940-01-01")) }
 
-          after { Timecop.return }
+          after { travel_back }
 
           it { is_expected.to be_valid }
         end

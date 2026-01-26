@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Storage do
   subject(:storage) { described_class.new(session, options) }
 
-  let(:current_time) { Time.zone.now }
+  let(:current_time) { Time.zone.now.change(usec: 0) }
   let(:options) { {} }
 
   let(:mock_session) do
@@ -14,7 +14,7 @@ RSpec.describe Storage do
 
   describe '#initialize' do
     subject(:frozen_storage) do
-      Timecop.freeze(current_time) do
+      travel_to(current_time) do
         storage
       end
     end
@@ -123,7 +123,7 @@ RSpec.describe Storage do
     let(:session) { {} }
 
     before do
-      Timecop.freeze(current_time) do
+      travel_to(current_time) do
         storage.start
       end
     end

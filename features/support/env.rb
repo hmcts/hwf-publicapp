@@ -11,6 +11,7 @@ require 'base64'
 require 'webmock'
 require 'selenium/webdriver'
 include WebMock::API
+include ActiveSupport::Testing::TimeHelpers
 
 Dir[File.dirname(__FILE__) + '/page_objects/**/*.rb'].each { |f| require f }
 
@@ -19,7 +20,7 @@ ActionController::Base.allow_rescue = false
 ENV['HOSTNAME'] = 'localhost'
 
 After do |scenario|
-  Timecop.return
+  travel_back
   Capybara.reset_sessions!
 end
 

@@ -8,11 +8,11 @@ RSpec.describe Forms::Cookie::SettingForm do
   let(:response) { nil }
 
   before do
-    Timecop.freeze(Time.zone.local(1990))
+    travel_to(Time.zone.local(1990))
   end
 
   after do
-    Timecop.return
+    travel_back
   end
 
   describe '.choices' do

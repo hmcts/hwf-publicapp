@@ -16,8 +16,7 @@ gem 'bootsnap', require: false
 gem 'config'
 gem 'connection_pool', '~> 2.4'
 gem 'date_validator'
-# gem "dartsass-sprockets", "~> 3.1"
-# gem 'jquery-rails'
+
 gem 'nokogiri'
 gem 'puma'
 gem 'rack', '~> 3.2', '>= 3.2.1'
@@ -71,6 +70,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'site_prism'
   gem "test-prof", "~> 1.1"
-  gem 'timecop'
   gem 'webmock'
 end
