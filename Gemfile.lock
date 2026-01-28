@@ -465,6 +465,7 @@ DEPENDENCIES
   nokogiri
   parallel_tests
   propshaft
+  pry
   pry-rails
   puma
   rack (~> 3.2, >= 3.2.1)

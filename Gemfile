@@ -40,6 +40,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'parallel_tests'
   gem 'bundler-audit'
+  gem 'pry'
 end
 
 group :development do
