@@ -35,8 +35,8 @@ module NullifyBlank
   def nullify_blanks(attributes)
     return {} if attributes.blank?
 
-    attributes.to_h.each_with_object({}) do |(key, value), hash|
-      hash[key] = value.is_a?(String) && value.blank? ? nil : value
+    attributes.to_h.transform_values do |value|
+      value.is_a?(String) && value.blank? ? nil : value
     end
   end
 end

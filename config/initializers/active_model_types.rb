@@ -13,9 +13,10 @@ class StrictIntegerType < ActiveModel::Type::Integer
   private
 
   def cast_value(value)
-    if value.is_a?(String)
-      return nil unless value.strip.match?(/\A-?\d+\z/)
+    if value.is_a?(String) && !value.strip.match?(/\A-?\d+\z/)
+      return nil
     end
+
     super
   end
 end

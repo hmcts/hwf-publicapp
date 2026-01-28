@@ -50,7 +50,7 @@ RSpec.describe Forms::IncomePeriod do
     subject { form.export }
 
     it 'returns income and income_period' do
-      is_expected.to eql(income: 500, income_period: 'weekly')
+      expect(subject).to eql(income: 500, income_period: 'weekly')
     end
   end
 end

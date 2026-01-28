@@ -15,7 +15,6 @@ gem 'rails', '~> 8.1', '>= 8.1.2'
 gem 'bootsnap', require: false
 gem 'config'
 gem 'connection_pool', '~> 2.4'
-gem 'date_validator'
 
 gem 'nokogiri'
 gem 'puma'

@@ -40,7 +40,7 @@ RSpec.describe Forms::Over16 do
       let(:over_16) { false }
 
       it 'returns over_16 false with overrides for married and ni_number_present' do
-        is_expected.to eql(over_16: false, married: false, ni_number_present: false)
+        expect(subject).to eql(over_16: false, married: false, ni_number_present: false)
       end
     end
   end
