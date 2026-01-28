@@ -30,7 +30,13 @@ RSpec.describe Forms::SavingsAndInvestmentExtra do
       end
 
       context 'when something else than true or false' do
-        let(:over_66) { 'something' }
+        let(:over_66) { 'test' }
+
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when nil' do
+        let(:over_66) { nil }
 
         it { is_expected.not_to be_valid }
       end

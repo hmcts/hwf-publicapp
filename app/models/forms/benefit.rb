@@ -1,6 +1,6 @@
 module Forms
   class Benefit < Base
-    attribute :on_benefits, Boolean
+    attribute :on_benefits, :boolean
 
     validates :on_benefits, inclusion: { in: [true, false] }
 

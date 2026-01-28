@@ -1,8 +1,8 @@
 module Forms
   class ApplicantAddress < Base
-    attribute :street, String
-    attribute :postcode, String
-    attribute :town, String
+    attribute :street, :string
+    attribute :postcode, :string
+    attribute :town, :string
 
     validates :street, presence: true, sensible_address: true, length: { maximum: 99 }
     validates :postcode, presence: true, sensible_address: true, length: { maximum: 8 }

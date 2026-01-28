@@ -2,10 +2,10 @@ module Forms
   class Dependent < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :children, Boolean
-    attribute :children_number, Integer
-    attribute :children_age_band, Hash
-    attribute :children_bands, [String]
+    attribute :children, :boolean
+    attribute :children_number, :strict_integer
+    attribute :children_age_band, :hash_value, default: -> { {} }
+    attribute :children_bands, :string_array, default: -> { [] }
 
     validates :children_number, numericality: { less_than: 100, greater_than: -1 }
     validate :validate_children_values, if: -> { children_number.to_i >= 1 }
@@ -27,15 +27,15 @@ module Forms
       return unless calculation_scheme == Rails.configuration.ucd_schema.to_s
 
       totals = children_bands.tally
-      @children_age_band = { one: totals.fetch('one', 0), two: totals.fetch('two', 0) }
-      @children_age_band = { one: nil, two: nil } if children_number.to_i.zero?
+      self.children_age_band = { one: totals.fetch('one', 0), two: totals.fetch('two', 0) }
+      self.children_age_band = { one: nil, two: nil } if children_number.to_i.zero?
     end
 
     def reset_children_fields
       return if children || children_number
 
-      @children_number = nil
-      @children_age_band = nil
+      self.children_number = nil
+      self.children_age_band = nil
     end
 
     def validate_children_values

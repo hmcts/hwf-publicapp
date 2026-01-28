@@ -1,7 +1,7 @@
 module Forms
   class Over16 < Base
-    attribute :over_16, Boolean
-    attribute :married, Boolean
+    attribute :over_16, :boolean
+    attribute :married, :boolean
 
     validates :over_16, inclusion: { in: [true, false] }
 

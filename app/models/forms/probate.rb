@@ -2,13 +2,13 @@ module Forms
   class Probate < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :kase, Boolean
-    attribute :deceased_name, String
+    attribute :kase, :boolean
+    attribute :deceased_name, :string
     attr_reader :date_of_death
 
-    attribute :day_date_of_death, Integer
-    attribute :month_date_of_death, Integer
-    attribute :year_date_of_death, Integer
+    attribute :day_date_of_death, :integer
+    attribute :month_date_of_death, :integer
+    attribute :year_date_of_death, :integer
 
     before_validation :date_of_death_dates
 

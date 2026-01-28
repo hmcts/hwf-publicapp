@@ -2,11 +2,11 @@ module Forms
   class Fee < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :paid, Boolean
-    attribute :date_paid, Date
-    attribute :day_date_paid, Integer
-    attribute :month_date_paid, Integer
-    attribute :year_date_paid, Integer
+    attribute :paid, :boolean
+    attribute :date_paid, :date
+    attribute :day_date_paid, :integer
+    attribute :month_date_paid, :integer
+    attribute :year_date_paid, :integer
 
     before_validation :fee_dates_paid
 
@@ -46,6 +46,7 @@ module Forms
       return if date_not_recognized? || blank_dates? || !paid?
 
       @date_paid ||= concat_dates_paid.to_date
+      self.date_paid = @date_paid if @date_paid.is_a?(Date)
     rescue ArgumentError
       errors.add(:date_paid, :not_a_date)
       @date_paid = concat_dates_paid

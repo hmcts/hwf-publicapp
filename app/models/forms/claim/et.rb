@@ -1,7 +1,7 @@
 module Forms
   module Claim
     class Et < Forms::Base
-      attribute :identifier, String
+      attribute :identifier, :string
 
       validates :identifier, presence: true, sensible_identifier: true, length: { maximum: 24 }
 

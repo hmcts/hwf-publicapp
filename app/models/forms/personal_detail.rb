@@ -1,12 +1,12 @@
 module Forms
   class PersonalDetail < Base
-    attribute :title, String
-    attribute :first_name, String
-    attribute :last_name, String
-    attribute :partner_first_name, String
-    attribute :partner_last_name, String
-    attribute :is_married, Boolean
-    attribute :ni_number_present, Boolean
+    attribute :title, :string
+    attribute :first_name, :string
+    attribute :last_name, :string
+    attribute :partner_first_name, :string
+    attribute :partner_last_name, :string
+    attribute :is_married, :boolean
+    attribute :ni_number_present, :boolean
 
     validates :title, length: { maximum: 9 }
     validates :first_name, presence: true, sensible_name: true, length: { maximum: 49 }

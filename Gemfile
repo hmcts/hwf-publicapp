@@ -25,7 +25,6 @@ gem 'rest-client'
 gem 'sentry-rails'
 gem 'slim-rails'
 gem 'uglifier'
-gem 'virtus'
 gem 'govuk_notify_rails'
 
 gem 'propshaft'

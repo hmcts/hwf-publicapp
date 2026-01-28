@@ -1,8 +1,8 @@
 module Forms
   module Claim
     class Default < Forms::Base
-      attribute :number, Boolean
-      attribute :identifier, String
+      attribute :number, :boolean
+      attribute :identifier, :string
 
       validates :number, inclusion: { in: [true, false] }
       validates :identifier, presence: true, sensible_identifier: true, length: { maximum: 24 }, if: :number?

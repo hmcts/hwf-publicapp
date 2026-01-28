@@ -1,9 +1,11 @@
 module Forms
   class Base
-    include Virtus.model(nullify_blank: true)
     include ActiveModel::Model
+    include ActiveModel::Attributes
+    include ActiveModel::Serializers::JSON
+    include NullifyBlank
 
-    attribute :calculation_scheme, String
+    attribute :calculation_scheme, :string
 
     def i18n_scope
       "questions.#{id}"
@@ -31,11 +33,12 @@ module Forms
     alias to_param id
 
     def update_attributes(attributes)
-      self.attributes = attributes
+      assign_attributes(attributes)
+      attributes
     end
 
     def permitted_attributes
-      self.class.attribute_set.map(&:name)
+      self.class.attribute_types.keys.map(&:to_sym)
     end
 
     def export

@@ -2,8 +2,8 @@ module Forms
   class Contact < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :email, String
-    attribute :feedback_opt_in, Boolean, default: false
+    attribute :email, :string
+    attribute :feedback_opt_in, :boolean, default: false
 
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     before_validation :trim_whitespace
@@ -34,7 +34,7 @@ module Forms
     end
 
     def trim_whitespace
-      @email = email.strip if email
+      self.email = email.strip if email
     end
   end
 end

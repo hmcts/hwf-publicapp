@@ -1,10 +1,10 @@
 module Forms
   class IncomeAmount < Base
-    attribute :amount, Integer
-    attribute :children, Integer
-    attribute :married, Boolean
-    attribute :min_threshold, Integer
-    attribute :max_threshold, Integer
+    attribute :amount, :integer
+    attribute :children, :integer
+    attribute :married, :boolean
+    attribute :min_threshold, :integer
+    attribute :max_threshold, :integer
 
     validates :amount,
               presence: true, numericality: {

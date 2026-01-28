@@ -1,6 +1,6 @@
 module Forms
   class MaritalStatus < Base
-    attribute :married, Boolean
+    attribute :married, :boolean
 
     validates :married, inclusion: { in: [true, false] }
 

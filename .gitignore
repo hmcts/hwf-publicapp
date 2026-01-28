@@ -47,3 +47,4 @@ input-secrets.rb
 
 /tmp/*
 .claude/**
+CLAUDE.md

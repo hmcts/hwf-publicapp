@@ -1,8 +1,8 @@
 module Forms
   class IncomeKind < Base
-    attribute :applicant, [String]
-    attribute :partner, [String]
-    attribute :children, Integer
+    attribute :applicant, :string_array, default: -> { [] }
+    attribute :partner, :string_array, default: -> { [] }
+    attribute :children, :integer
 
     validates_each :applicant do |record, attr, value|
       if value.blank?

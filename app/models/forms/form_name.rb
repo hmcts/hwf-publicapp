@@ -1,7 +1,7 @@
 module Forms
   class FormName < Base
-    attribute :identifier, String
-    attribute :unknown, Boolean
+    attribute :identifier, :string
+    attribute :unknown, :boolean
 
     validates :identifier, length: { maximum: 49 }
     validates :identifier, presence: true, unless: proc { |c| c.unknown }

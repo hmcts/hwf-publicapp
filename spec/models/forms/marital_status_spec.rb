@@ -18,7 +18,13 @@ RSpec.describe Forms::MaritalStatus do
       end
 
       context 'when not a boolean value' do
-        before { form_marital_status.married = 'string' }
+        before { form_marital_status.married = 'test' }
+
+        it { expect(form_marital_status.valid?).to be false }
+      end
+
+      context 'when nil' do
+        before { form_marital_status.married = nil }
 
         it { expect(form_marital_status.valid?).to be false }
       end

@@ -1,8 +1,8 @@
 module Forms
   class HelpRequest < Base
-    attribute :name, String
-    attribute :email, String
-    attribute :description, String
+    attribute :name, :string
+    attribute :email, :string
+    attribute :description, :string
 
     validates :name, :email, :description, presence: true
   end

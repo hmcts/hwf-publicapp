@@ -1,7 +1,7 @@
 module Forms
   class ApplyType < Base
     APPLY_TYPE = %w[paper online].freeze
-    attribute :applying_method, String
+    attribute :applying_method, :string
 
     validates :applying_method, inclusion: { in: %w[paper online] }
 
