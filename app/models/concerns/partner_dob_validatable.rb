@@ -17,12 +17,17 @@ module PartnerDobValidatable
   end
 
   def partner_dob_age_valid?
-    if errors.messages.key?(:partner_date_of_birth) || blank_partner_dates? || partner_dates_zeros?
+    return errors.add(:partner_date_of_birth, :not_a_date) if invalid_partner_date?
 
-      return errors.add(:partner_date_of_birth,
-                        :not_a_date)
-    end
+    errors.add(:partner_date_of_birth, :too_young, minimum_age: Forms::Dob::MINIMUM_AGE) if partner_too_young?
     errors.add(:partner_date_of_birth, :too_old) if partner_too_old?
+  end
+
+  def invalid_partner_date?
+    errors.messages.key?(:partner_date_of_birth) ||
+      blank_partner_dates? ||
+      partner_dates_zeros? ||
+      !partner_date_of_birth.is_a?(Date)
   end
 
   def partner_dates_zeros?
@@ -31,6 +36,10 @@ module PartnerDobValidatable
 
   def blank_partner_dates?
     partner_day.blank? || partner_month.blank? || partner_year.blank?
+  end
+
+  def partner_too_young?
+    partner_date_of_birth > minimum_date_of_birth
   end
 
   def partner_too_old?

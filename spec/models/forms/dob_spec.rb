@@ -88,6 +88,47 @@ RSpec.describe Forms::Dob do
         it { expect(form_dob.valid?).to be false }
       end
 
+      context 'incorrect dates dobs' do
+        before do
+          form_dob.partner_day = '30'
+          form_dob.partner_month = '50'
+          form_dob.partner_year = '1900'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'too young dobs' do
+        let(:today) { Time.zone.today }
+        let(:too_young_error) do
+          [I18n.t('activemodel.errors.models.forms/dob.attributes.partner_date_of_birth.too_young',
+                  minimum_age: Forms::Dob::MINIMUM_AGE)]
+        end
+
+        before do
+          form_dob.partner_day = today.day.to_s
+          form_dob.partner_month = today.month.to_s
+          form_dob.partner_year = (today.year - 10).to_s
+        end
+
+        it { expect(form_dob.valid?).to be false }
+
+        it 'returns the too young error message' do
+          form_dob.valid?
+          expect(form_dob.errors.messages[:partner_date_of_birth]).to eq too_young_error
+        end
+      end
+
+      context 'in the future dobs' do
+        before do
+          form_dob.partner_day = '23'
+          form_dob.partner_month = '1'
+          form_dob.partner_year = '2100'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
       context 'no NI present' do
         before do
           form_dob.ni_number_present = false

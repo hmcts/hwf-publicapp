@@ -30,6 +30,10 @@ module Forms
 
     private
 
+    def future_date_of_birth
+      Time.zone.today - MINIMUM_AGE.years
+    end
+
     def minimum_date_of_birth
       Time.zone.today - MINIMUM_AGE.years
     end
