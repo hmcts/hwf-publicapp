@@ -94,6 +94,29 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
         end
       end
     end
+
+    context 'when the downstream health check connection fails' do
+      let(:submit_application_available?) { true }
+
+      before do
+        stub_request(:get, "http://submit.to.this/healthcheck.json").to_raise(Errno::ECONNREFUSED)
+        allow(SubmitApplication).to receive(:new).and_return(submit_application)
+      end
+
+      it 'returns downstream_api_ok as false' do
+        expect(subject).to eql(
+          submission_api: {
+            description: 'Submission API',
+            ok: true
+          },
+          downstream_api_ok: {
+            description: 'Downstream API',
+            ok: false
+          },
+          ok: false
+        )
+      end
+    end
   end
 
   describe '#healthy?' do

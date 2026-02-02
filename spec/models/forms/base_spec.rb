@@ -2,8 +2,8 @@ require 'rails_helper'
 
 module Forms
   class SomeQuestion < Forms::Base
-    attribute :one, String
-    attribute :two, Boolean
+    attribute :one, :string
+    attribute :two, :boolean
   end
   RSpec.describe Base do
 

@@ -1,6 +1,6 @@
 module Forms
   class LegalRepresentative < Base
-    attribute :legal_representative, String
+    attribute :legal_representative, :string
 
     validates :legal_representative, inclusion: { in: %w[litigation_friend legal_representative] }
 

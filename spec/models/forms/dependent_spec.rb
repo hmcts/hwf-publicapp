@@ -20,8 +20,14 @@ RSpec.describe Forms::Dependent do
         it { is_expected.not_to be_valid }
       end
 
-      context 'when children_number is supplied as a word' do
-        let(:children_number) { 'three' }
+      context 'when children_number is supplied as a non-numeric string' do
+        let(:children_number) { 'test' }
+
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when children_number is nil' do
+        let(:children_number) { nil }
 
         it { is_expected.not_to be_valid }
       end

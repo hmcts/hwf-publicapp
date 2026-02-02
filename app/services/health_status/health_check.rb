@@ -35,7 +35,9 @@ module HealthStatus
     end
 
     def staff_app_health_check_result
-      json = JSON.parse(RestClient.get("#{Settings.submission.url}/healthcheck.json"))
+      uri = URI("#{Settings.submission.url}/healthcheck.json")
+      response = Net::HTTP.get_response(uri)
+      json = JSON.parse(response.body)
       json['ok']
     rescue StandardError
       false

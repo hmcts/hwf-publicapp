@@ -2,8 +2,8 @@ module Forms
   class NationalInsurance < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :number, String
-    attribute :ni_number_present, Boolean
+    attribute :number, :string
+    attribute :ni_number_present, :boolean
 
     NI_NUMBER_REGEXP = /\A(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]\z/
 

@@ -15,46 +15,37 @@ gem 'rails', '~> 8.1', '>= 8.1.2'
 gem 'bootsnap', require: false
 gem 'config'
 gem 'connection_pool', '~> 2.4'
-gem 'date_validator'
-# gem "dartsass-sprockets", "~> 3.1"
-# gem 'jquery-rails'
+
 gem 'nokogiri'
 gem 'puma'
 gem 'rack', '~> 3.2', '>= 3.2.1'
 gem 'redis'
-gem 'rest-client'
 gem 'sentry-rails'
 gem 'slim-rails'
 gem 'uglifier'
-gem 'virtus'
 gem 'govuk_notify_rails'
 
 gem 'propshaft'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
-# To fix ruby 3.3.3 gemsepec file issue with this gem
-gem 'net-pop', github: 'ruby/net-pop'
-
 gem 'cgi', '~> 0.5.1'
 gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
   gem "pry-rails"
-  gem 'letter_opener'
   gem 'rubocop', '~> 1.40', require: false
   gem 'rubocop-rails'
   gem 'rubocop-performance', require: false
   gem 'simplecov'
   gem 'parallel_tests'
   gem 'bundler-audit'
+  gem 'pry'
 end
 
 group :development do
   gem 'launchy'
   gem 'listen'
-  gem 'spring'
-  gem 'web-console'
   gem 'mutex_m'
 end
 
@@ -62,7 +53,6 @@ group :test do
   gem 'apparition'
   gem 'brakeman'
   gem 'capybara'
-  gem 'codeclimate-test-reporter'
   gem 'cucumber-rails', require: false
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
@@ -78,6 +68,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'site_prism'
   gem "test-prof", "~> 1.1"
-  gem 'timecop'
   gem 'webmock'
 end

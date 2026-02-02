@@ -18,7 +18,13 @@ RSpec.describe Forms::Benefit do
       end
 
       context 'when not a boolean value' do
-        before { form_benefit.on_benefits = 'string' }
+        before { form_benefit.on_benefits = 'test' }
+
+        it { expect(form_benefit.valid?).to be false }
+      end
+
+      context 'when nil' do
+        before { form_benefit.on_benefits = nil }
 
         it { expect(form_benefit.valid?).to be false }
       end

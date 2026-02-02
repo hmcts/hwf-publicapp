@@ -2,16 +2,16 @@ module Forms
   class LegalRepresentativeDetail < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :legal_representative_first_name, String
-    attribute :legal_representative_last_name, String
-    attribute :legal_representative_email, String
-    attribute :legal_representative_organisation_name, String
-    attribute :legal_representative_feedback_opt_in, Boolean
-    attribute :legal_representative_position, String
+    attribute :legal_representative_first_name, :string
+    attribute :legal_representative_last_name, :string
+    attribute :legal_representative_email, :string
+    attribute :legal_representative_organisation_name, :string
+    attribute :legal_representative_feedback_opt_in, :boolean
+    attribute :legal_representative_position, :string
 
-    attribute :street, String
-    attribute :postcode, String
-    attribute :town, String
+    attribute :street, :string
+    attribute :postcode, :string
+    attribute :town, :string
 
     before_validation :sanitize_email
 
@@ -55,7 +55,7 @@ module Forms
     def sanitize_email
       return if legal_representative_email.blank?
 
-      @legal_representative_email = legal_representative_email.strip
+      self.legal_representative_email = legal_representative_email.strip
     end
   end
 end

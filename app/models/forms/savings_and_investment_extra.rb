@@ -1,8 +1,8 @@
 module Forms
   class SavingsAndInvestmentExtra < Base
-    attribute :over_66, Boolean
-    attribute :over_16, Boolean
-    attribute :amount, Integer
+    attribute :over_66, :boolean
+    attribute :over_16, :boolean
+    attribute :amount, :integer
 
     validates :over_66, inclusion: { in: [true, false] }
     validates :amount,

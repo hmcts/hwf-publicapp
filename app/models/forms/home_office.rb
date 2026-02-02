@@ -2,8 +2,8 @@ module Forms
   class HomeOffice < Base
     include ActiveModel::Validations::Callbacks
 
-    attribute :ho_number, String
-    attribute :ni_number_present, Boolean
+    attribute :ho_number, :string
+    attribute :ni_number_present, :boolean
 
     HO_NUMBER_REGEXP = %r{\A([a-zA-Z]\d{7}|\d{4}-\d{4}-\d{4}-\d{4})(/\d{1,})?\z}
 

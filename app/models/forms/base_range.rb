@@ -1,6 +1,6 @@
 module Forms
   class BaseRange < Base
-    attribute :choice, Symbol
+    attribute :choice, :symbol
 
     validates :choice, inclusion: { in: %i[less between more] }
 

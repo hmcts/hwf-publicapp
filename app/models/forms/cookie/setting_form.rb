@@ -4,7 +4,7 @@ module Forms
       COOKIE_NAME = 'cookie_setting'.freeze
       COOKIES_VALUES = { yes: true, no: false }.freeze
 
-      attribute :cookie_setting, String
+      attribute :cookie_setting, :string
       attr_accessor :response, :request
 
       def self.choices

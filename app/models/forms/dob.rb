@@ -5,16 +5,16 @@ module Forms
 
     attr_reader :date_of_birth, :partner_date_of_birth
 
-    attribute :over_66, Boolean
-    attribute :is_married, Boolean
-    attribute :ni_number_present, Boolean
-    attribute :day, Integer
-    attribute :month, Integer
-    attribute :year, Integer
-    attribute :partner_day, Integer
-    attribute :partner_month, Integer
-    attribute :partner_year, Integer
-    attribute :over_16, Integer
+    attribute :over_66, :boolean
+    attribute :is_married, :boolean
+    attribute :ni_number_present, :boolean
+    attribute :day, :integer
+    attribute :month, :integer
+    attribute :year, :integer
+    attribute :partner_day, :integer
+    attribute :partner_month, :integer
+    attribute :partner_year, :integer
+    attribute :over_16, :string
 
     MINIMUM_AGE = 15
     MAXIMUM_AGE = 120
@@ -29,6 +29,10 @@ module Forms
     validate :partner_dob_age_valid?, if: -> { is_married? && ni_number_present? }
 
     private
+
+    def future_date_of_birth
+      Time.zone.today - MINIMUM_AGE.years
+    end
 
     def minimum_date_of_birth
       Time.zone.today - MINIMUM_AGE.years

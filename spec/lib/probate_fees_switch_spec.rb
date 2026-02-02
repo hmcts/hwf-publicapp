@@ -3,7 +3,7 @@ RSpec.describe ProbateFeesSwitch do
 
   describe '#disable_probate_fees?' do
     subject do
-      Timecop.freeze(current_time) do
+      travel_to(current_time) do
         described_class.disable_probate_fees?
       end
     end

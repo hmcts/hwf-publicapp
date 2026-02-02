@@ -1,6 +1,6 @@
 module Forms
   class ApplyingOnBehalf < Base
-    attribute :applying_on_behalf, Boolean
+    attribute :applying_on_behalf, :boolean
 
     validates :applying_on_behalf, inclusion: { in: [true, false] }
 

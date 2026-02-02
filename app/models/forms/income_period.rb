@@ -1,7 +1,7 @@
 module Forms
   class IncomePeriod < Base
-    attribute :amount, Integer
-    attribute :income_period, String
+    attribute :amount, :integer
+    attribute :income_period, :string
 
     validates :amount, presence: true, numericality: {
       allow_blank: true,
