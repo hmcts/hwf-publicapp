@@ -68,7 +68,7 @@ moj.Modules.addressLookup = {
             if ($tag.length == 0) {
                 $(
                     $(self.selectors.errorTemplate).html()
-                ).addClass('dynamic').insertBefore('form');
+                ).addClass('dynamic').insertBefore('form#new_applicant_address');
             }
         },
 
