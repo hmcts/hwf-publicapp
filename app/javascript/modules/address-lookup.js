@@ -53,7 +53,6 @@ moj.Modules.addressLookup = {
 
         $(self.selectors.manualLink).hide();
         $(self.selectors.manualAddress).removeClass('hide');
-        $(self.selectors.manualAddress).removeClass('hide');
     },
 
     govukErrorSummary: {
@@ -64,17 +63,18 @@ moj.Modules.addressLookup = {
 
         show : function() {
             const self = this,
-                  $tag = $(self.selectors.container + '.dynamic');
+                  $tag = $('.dynamic > ' + self.selectors.container);
+
             if ($tag.length == 0) {
                 $(
                     $(self.selectors.errorTemplate).html()
-                ).addClass('dynamic').insertBefore('form');
+                ).addClass('dynamic').insertBefore('form#new_applicant_address');
             }
         },
 
         hide: function() {
             const self = this;
-            $(self.selectors.container + '.dynamic').remove();
+            $('.dynamic > ' + self.selectors.container).remove();
         }
     },
 
