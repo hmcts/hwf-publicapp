@@ -84,13 +84,13 @@ Feature: Summary page
     Given I am 'married' and on the summary page with probate enabled
     Then I should see declaration of truth
 
-  @hwf_submit_application
+  @hwf_submit_application @zap
   Scenario: Continue button
     Given I am 'married' and on the summary page with probate enabled
     When I click submit application and continue
     Then I should be taken to confirmation page
 
-  @hwf_submit_application
+  @hwf_submit_application @zap
   Scenario: User details are not persisted
     Given I am 'married' and on the summary page with probate enabled
     When I click submit application and continue
