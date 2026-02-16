@@ -231,7 +231,7 @@ RSpec.describe Forms::IncomeKind do
     subject { form.permitted_attributes }
 
     it 'permits the applicant and partner attributes as an array' do
-      expect(subject).to eql([applicant: [], partner: [], children: []])
+      expect(subject).to eql([{ applicant: [], partner: [], children: [] }])
     end
   end
 

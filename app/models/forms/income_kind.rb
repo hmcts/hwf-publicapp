@@ -35,7 +35,7 @@ module Forms
     end
 
     def permitted_attributes
-      [applicant: [], partner: [], children: []]
+      [{ applicant: [], partner: [], children: [] }]
     end
 
     def update_attributes(attributes)
