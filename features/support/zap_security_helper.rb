@@ -7,6 +7,14 @@ def zap_api_url
   "http://#{host}:#{port}"
 end
 
+def zap_running?
+  uri = URI("#{zap_api_url}/JSON/core/view/version/")
+  Net::HTTP.get(uri)
+  true
+rescue Errno::ECONNREFUSED, Errno::ETIMEDOUT, SocketError
+  false
+end
+
 def zap_alerts
   uri = URI("#{zap_api_url}/JSON/core/view/alerts/")
   uri.query = URI.encode_www_form(zapapiformat: 'JSON', baseurl: Capybara.app_host)
