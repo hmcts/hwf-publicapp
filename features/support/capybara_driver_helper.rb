@@ -29,6 +29,18 @@ Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
+Capybara.register_driver :firefox_zap do |app|
+  proxy = Selenium::WebDriver::Proxy.new(
+    http: 'localhost:8080',
+    ssl: 'localhost:8080'
+  )
+  options = Selenium::WebDriver::Firefox::Options.new
+  options.args << '--headless'
+  options.args << '--disable-gpu'
+  options.proxy = proxy
+  Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
+end
+
 if ENV.key?('CIRCLE_ARTIFACTS')
   Capybara.save_and_open_page_path = ENV['CIRCLE_ARTIFACTS']
 end

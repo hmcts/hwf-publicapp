@@ -35,6 +35,15 @@ withNightlyPipeline(type, product, component) {
       sh script:"yarn install", label: 'Start test'
       rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
+
+      sh script: 'docker run -d --name zap -p 8080:8080 ghcr.io/zaproxy/zaproxy zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true', label: 'Start ZAP'
+      sh script: 'sleep 15', label: 'Wait for ZAP to start'
+      env.ZAP_SCAN = 'true'
+      env.SE_MANAGER_OFFLINE = 'true'
+  }
+
+  afterAlways('test') {
+      sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
   }
 
   // afterAlways('fortify-scan') {
