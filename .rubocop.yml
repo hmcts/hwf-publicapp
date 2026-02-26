@@ -588,6 +588,9 @@ Style/HashSyntax:
 Style/SpecialGlobalVars:
   Enabled: false
 
+Style/OneClassPerFile:
+  Enabled: false
+
 Rails/StrongParametersExpect:
   Enabled: false
 
