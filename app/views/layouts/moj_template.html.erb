@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" class="govuk-template--rebranded">
+<html lang="<%= I18n.locale %>" class="govuk-template">
 
 <head>
   <meta charset="utf-8" />
@@ -9,10 +9,10 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <link rel="icon" sizes="48x48" href="<%= asset_path "govuk-frontend/dist/govuk/assets/rebrand/images/favicon.ico" %>" />
-  <link rel="icon" sizes="any" href="<%= asset_path "govuk-frontend/dist/govuk/assets/rebrand/images/favicon.svg" %>" type="image/svg+xml">
-  <link rel="mask-icon" href="<%= asset_path "govuk-frontend/dist/govuk/assets/rebrand/images/govuk-icon-mask.svg" %>" color="#0b0c0c">
-  <link rel="apple-touch-icon" href="<%= asset_path "govuk-frontend/dist/govuk/assets/rebrand/images/govuk-icon-180.png" %>">
+  <link rel="icon" sizes="48x48" href="<%= asset_path "govuk-frontend/dist/govuk/assets/images/favicon.ico" %>" />
+  <link rel="icon" sizes="any" href="<%= asset_path "govuk-frontend/dist/govuk/assets/images/favicon.svg" %>" type="image/svg+xml">
+  <link rel="mask-icon" href="<%= asset_path "govuk-frontend/dist/govuk/assets/images/govuk-icon-mask.svg" %>" color="#0b0c0c">
+  <link rel="apple-touch-icon" href="<%= asset_path "govuk-frontend/dist/govuk/assets/images/govuk-icon-180.png" %>">
 
 
   <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
   <%= yield :stylesheets %>
   <%= yield :head %>
 
-  <meta property="og:image" content="/assets/rebrand/images/govuk-opengraph-image.png">
+  <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 </head>
 
 <body class="govuk-template__body ">
@@ -38,7 +38,7 @@
   <header class="govuk-header " data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <a href="/" class="govuk-header__homepage-link">
           <span class="govuk-header__logotype">
             <svg
               focusable="false"
@@ -68,11 +68,18 @@
           </span>
         </a>
       </div>
-      <div class="govuk-header__content">
-        <%= link_to t('application.name'), root_path, class: 'govuk-header__link govuk-header__service-name' %>
-      </div>
     </div>
   </header>
+
+  <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+          <%= link_to t('application.name'), root_path, class: 'govuk-service-navigation__link' %>
+        </span>
+      </div>
+    </div>
+  </section>
 
   <!--[if lte IE 6]><script>document.body.className = document.body.className.replace('js-enabled','');</script><![endif]-->
   <%= yield :after_header %>
