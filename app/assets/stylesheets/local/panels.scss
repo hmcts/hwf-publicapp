@@ -1,7 +1,7 @@
 .steps-panel {
   max-width: 640px;
-  background-color: govuk-colour("light-grey");
-  border: 1px solid govuk-colour("mid-grey");
+  background-color: govuk-colour("black", $variant: "tint-95");
+  border: 1px solid govuk-colour("black", $variant: "tint-80");
   padding: 20px 10px;
   margin-bottom: 30px;
 
@@ -121,14 +121,14 @@
   }
 
   .email {
-    background-color: govuk-colour("light-grey");
+    background-color: govuk-colour("black", $variant: "tint-95");
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
   .inset-list {
     ul {
-      border-left: 2px solid govuk-colour("mid-grey");
+      border-left: 2px solid govuk-colour("black", $variant: "tint-80");
       padding-left: 10px;
     }
 
