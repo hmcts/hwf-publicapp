@@ -14,6 +14,7 @@ Feature: Summary page
     | Status Married or living with someone and sharing an income Change status |
     | Less than £4,250 Change savings and investments                           |
     | Benefits Receiving eligible benefits Change benefits                      |
+    | Probate case No Change probate case                                       |
     | Claim number No Change claim number                                       |
     | Date of birth 23/07/1980 Change date of birth                             |
     | Partner's date of birth 01/01/1981 Change partner's date of birth                             |
@@ -29,6 +30,7 @@ Feature: Summary page
     | marital_status         |
     | savings_and_investment |
     | benefit                |
+    | probate                |
     | claim                  |
     | dob                    |
     | dob                    |
@@ -36,7 +38,7 @@ Feature: Summary page
     | personal_detail        |
     | applicant_address      |
     | contact                |
-    And I should not see probate in the check details table
+    And I should see probate in the check details table
 
   Scenario: Displays home office number
     Given I have a home office number but not a national insurance number
@@ -52,6 +54,7 @@ Feature: Summary page
       | Children No Change children                                               |
       | Total income £0 Last calendar month Change income                                                   |
       | Income type Your income type Your partner's income type Change income                                |
+      | Probate case No Change probate case                                       |
       | Claim number No Change claim number                                       |
       | Date of birth 23/07/1980 Change date of birth                             |
       | Full name Sally Smith Change full name                                 |
@@ -72,6 +75,7 @@ Feature: Summary page
     | Children No Change children                                                   |
     | Total income £0 Last calendar month Change income                                |
     | Income type Your income type Your partner's income type Change income type                                       |
+    | Probate case No Change probate case                                       |
     | Claim number No Change claim number                             |
     | Date of birth 23/07/1980 Change date of birth           |
     | Partner's date of birth 01/01/1981 Change partner's date of birth                                 |

@@ -14,6 +14,7 @@ Feature: Summary page
       | Status Single Change status |
       | Less than £4,250 Change savings and investments                           |
       | Benefits Receiving eligible benefits Change benefits                      |
+      | Probate case No Change probate case                                       |
       | Claim number No Change claim number                                       |
       | Date of birth 23/07/1980 Change date of birth                                                 |
       | Full name Sally Smith Change full name                                           |
@@ -27,12 +28,13 @@ Feature: Summary page
       | marital_status         |
       | savings_and_investment |
       | benefit                |
+      | probate                |
       | claim                  |
       | dob                    |
       | personal_detail        |
       | applicant_address      |
       | contact                |
-    And I should not see probate in the check details table
+    And I should see probate in the check details table
 
   Scenario: Displays home office number
     Given I have a home office number but not a national insurance number
@@ -48,6 +50,7 @@ Feature: Summary page
       | Children No Change children                                               |
       | Total income £0 Last calendar month Change income                                                   |
       | Income type Your income type Change income                                |
+      | Probate case No Change probate case                                       |
       | Claim number No Change claim number                                       |
       | Date of birth 23/07/1980 Change date of birth                             |
       | Full name Sally Smith Change full name                                      |

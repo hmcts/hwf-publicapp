@@ -36,7 +36,7 @@ Feature: Benefit page
     Given probate is disabled
     And I am 'married' and on the benefit page
     When I submit the form with yes I am receiving one of the benefits listed
-    Then I should be taken to the claim page
+    Then I should be taken to the probate page
 
   Scenario: Displays error message
     Given probate is enabled
