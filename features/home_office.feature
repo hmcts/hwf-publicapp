@@ -1,7 +1,7 @@
 Feature: Home office page
 
   Background: Home office page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am on the home office page
 
   Scenario: Entering a valid home office number

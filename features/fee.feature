@@ -1,7 +1,7 @@
 Feature: Fee page
 
   Background: Navigating to the fee page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am on the fee page
 
   Scenario: Neither selecting yes or no

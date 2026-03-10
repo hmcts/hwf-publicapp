@@ -1,7 +1,7 @@
 Feature: Form name page
 
     Background: Navigating to the form name page
-      Given probate is enabled
+      Given address lookup is disabled
       And I am on the form number page
 
     Scenario: Entering valid form number

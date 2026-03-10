@@ -429,6 +429,7 @@ def to_summary_page_with_ni_number
   income_kind_page.submit_none_of_the_above_married
   income_period_page.submit_income(0)
   probate_page.submit_probate_no
+  claim_page.submit_claim_no
   dob_page.static_dobs
   personal_details_page.submit_full_names
   address_page.submit_full_address
@@ -452,6 +453,7 @@ def to_summary_page_with_ho_number(marital_status)
   end
   income_period_page.submit_income(0)
   probate_page.submit_probate_no
+  claim_page.submit_claim_no
   dob_page.static_dob
   personal_details_page.submit_full_name
   address_page.submit_full_address

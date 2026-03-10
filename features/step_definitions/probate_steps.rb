@@ -5,14 +5,6 @@ Given(/^I am '([^"]*)' and on the page for Are you paying a fee for a probate ca
   expect(probate_page.content).to have_probate_hint
 end
 
-And(/^probate is disabled$/) do
-  disable_address_lookup
-end
-
-And(/^probate is enabled$/) do
-  disable_address_lookup
-end
-
 When(/^I select no to are you paying a fee for a probate case$/) do
   probate_page.submit_probate_no
 end

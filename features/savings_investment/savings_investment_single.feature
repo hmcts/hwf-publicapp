@@ -1,7 +1,7 @@
 Feature: Savings and investment page refund
 
   Background: Navigating to the savings and investment page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am a single person on the savings and investments page
 
   Scenario: Selecting £0 to £4,250
