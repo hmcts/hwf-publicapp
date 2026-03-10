@@ -1,5 +1,5 @@
 Given(/^I am '([^"]*)' and on the paper confirmation page with probate enabled$/) do |status|
-  probate_enabled
+  disable_address_lookup
   status == 'married' ? to_confirmation_page('married') : to_confirmation_page('single')
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
@@ -9,7 +9,7 @@ Given(/^I am '([^"]*)' and on the paper confirmation page with probate enabled$/
 end
 
 Given(/^I am '([^"]*)' and on the online confirmation page with probate enabled$/) do |status|
-  probate_enabled
+  disable_address_lookup
   status == 'married' ? to_online_confirmation_page('married') : to_online_confirmation_page('single')
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info

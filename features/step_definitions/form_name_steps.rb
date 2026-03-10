@@ -7,16 +7,6 @@ Given(/^I am on the form number page$/) do
   expect(form_name_page.content).to have_enter_court_hint
 end
 
-Then(/^I should see probate applications not available warning message$/) do
-  expect(form_name_page.content).to have_probate_warning_message
-  expect(form_name_page.content).to have_probate_link
-end
-
-Then(/^I should not see probate applications not available warning message$/) do
-  expect(form_name_page.content).to have_no_probate_warning_message
-  expect(form_name_page.content).to have_no_probate_link
-end
-
 When(/^I submit the form with a valid form name$/) do
   submit_valid_form_name
 end

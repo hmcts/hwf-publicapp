@@ -633,7 +633,6 @@ en:
         summary: Applying for help with hearing fees
       et: I need help with an employment tribunal fee
       example: You'll find a number at the bottom of paper forms, for example C100 or ADM1A. If you are applying for an online service, they will advise you which form number to use.
-      probate_warning_html: Help with Fees is no longer available for probate applications. <a class="external govuk-link" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Find further details and apply for probate.</a>
       text: What number is on your court or tribunal form?
       title: Form number
       unknown: I don’t have a form

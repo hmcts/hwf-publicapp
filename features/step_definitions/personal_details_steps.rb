@@ -1,5 +1,5 @@
 Given(/^I am single and on the personal details page with probate enabled$/) do
-  probate_enabled
+  disable_address_lookup
   to_personal_details_page('single')
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info
@@ -7,7 +7,7 @@ Given(/^I am single and on the personal details page with probate enabled$/) do
 end
 
 Given(/^I am married and on the personal details page with probate enabled$/) do
-  probate_enabled
+  disable_address_lookup
   to_personal_details_page('married')
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info

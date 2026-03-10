@@ -6,11 +6,11 @@ Given(/^I am '([^"]*)' and on the page for Are you paying a fee for a probate ca
 end
 
 And(/^probate is disabled$/) do
-  probate_disabled
+  disable_address_lookup
 end
 
 And(/^probate is enabled$/) do
-  probate_enabled
+  disable_address_lookup
 end
 
 When(/^I select no to are you paying a fee for a probate case$/) do

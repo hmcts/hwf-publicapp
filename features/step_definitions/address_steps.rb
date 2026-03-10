@@ -1,5 +1,5 @@
 Given(/^I am '([^"]*)' and on the address page with probate enabled$/) do |status|
-  probate_enabled
+  disable_address_lookup
   status == 'married' ? to_address_page('married') : to_address_page('single')
   expect(address_page.content).to have_step_info
   expect(address_page.content).to have_header

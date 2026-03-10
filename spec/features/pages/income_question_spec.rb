@@ -32,7 +32,6 @@ RSpec.feature 'As a user' do
 
   context 'when accessing the "income_period" page for "Help with fees"' do
     before do
-      travel_to a_day_before_disable_probate_fees
       given_user_answers_questions_up_to(:income_kind)
     end
 

@@ -365,6 +365,7 @@ def to_summary_page_probate_disabled(marital_status)
     partner_national_insurance_page.submit_no_ni
     savings_investment_page.low_amount_checked
     benefit_page.submit_benefit_yes
+    probate_page.submit_probate_no
     claim_page.submit_claim_no
     dob_page.static_dobs
     personal_details_page.submit_full_names
@@ -372,6 +373,7 @@ def to_summary_page_probate_disabled(marital_status)
     marital_status_page.submit_single
     savings_investment_page.low_amount_checked
     benefit_page.submit_benefit_yes
+    probate_page.submit_probate_no
     claim_page.submit_claim_no
     dob_page.static_dob
     personal_details_page.submit_full_name
