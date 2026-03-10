@@ -19,7 +19,7 @@ Feature: Form name page
       Then I should see you entered the help with fees form number error message
 
     Scenario: Selecting I don't have a form
-      When I submit the form with I don't have a form checked
+      When I submit the form with I don’t have a form checked
       Then I should be taken to apply on behalf page
 
     Scenario: Applying for help with hearing fees
