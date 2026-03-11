@@ -1,7 +1,7 @@
 Feature: Applying on behalf page
 
   Background: Navigating to the applying on behalf page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am on the apply on behalf page
 
   Scenario: Selecting Yes

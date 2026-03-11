@@ -1,7 +1,7 @@
 Feature: Marital status page
 
   Background: Navigating to the marital status page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am on the marital status page
 
   Scenario: Selecting single

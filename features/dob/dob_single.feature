@@ -1,7 +1,7 @@
 Feature: Date of birth page
 
   Background: Navigating to the date of birth page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am single and on the date of birth page
 
   Scenario: Entering a valid date of birth

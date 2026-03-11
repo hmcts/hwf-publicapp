@@ -1,7 +1,7 @@
 Feature: Checklist page
 
   Background: Navigating to the checklist page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am on the checklist page
  
   Scenario: National insurance number or home office number

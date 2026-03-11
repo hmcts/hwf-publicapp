@@ -1,7 +1,7 @@
 Feature: Claim page
 
   Background: Navigating to the claim page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am 'married' and on the claim page
  
   Scenario: Selecting no to do you have a case, claim or notice to pay number

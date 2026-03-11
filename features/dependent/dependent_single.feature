@@ -1,7 +1,7 @@
 Feature: Dependent page
 
   Background: Navigating to the dependent page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am 'single' and on the dependent page
 
   Scenario: Yes to do you have any children

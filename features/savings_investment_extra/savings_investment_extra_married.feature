@@ -1,7 +1,7 @@
 Feature: Savings and investment extra page
 
   Background: Navigating to the savings and investment extra page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am married with £3,000 to £15,999 in savings
 
   Scenario: Selecting yes to are you 66 years old or over?

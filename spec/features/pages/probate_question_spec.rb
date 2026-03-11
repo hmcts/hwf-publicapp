@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'As a user' do
-  before { travel_to a_day_before_disable_probate_fees }
-
   context 'when accessing the "probate" page for "Help with fees"' do
     before { given_user_answers_questions_up_to(:probate) }
 
@@ -17,7 +15,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "claim" page' do
-        expect(page).to have_content 'Do you have a case, claim, appeal or ‘notice to pay’ number?'
+        expect(page).to have_content "Do you have a case, claim, appeal or \u2018notice to pay\u2019 number?"
       end
     end
 

@@ -1,7 +1,7 @@
 Feature: Personal details page
 
   Background: Navigating to the personal details page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am single and on the personal details page with probate enabled
   
   Scenario: Displays header

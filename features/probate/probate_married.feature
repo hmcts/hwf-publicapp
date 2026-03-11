@@ -1,7 +1,7 @@
 Feature: Probate page
 
   Background: Navigating to the probate page
-    Given probate is enabled
+    Given address lookup is disabled
     And I am 'married' and on the page for Are you paying a fee for a probate case?
 
   Scenario: Selecting no to are you paying a fee for a probate case

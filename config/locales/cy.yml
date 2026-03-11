@@ -643,7 +643,6 @@ cy:
         summary: Gwneud cais am gymorth gyda ffioedd gwrandawiad
       et: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
       example: Bydd rhif wedi’i nodi ar waelod y ffurflenni papur, er enghraifft C100 neu ADM1A. Os ydych yn gwneud cais am wasanaeth ar-lein, byddant yn eich cynghori pa rif i’w ddefnyddio.
-      probate_warning_html: Nid yw'r Gwasanaeth Help i Dalu Ffioedd ar gael i geisiadau am brofiant ddim mwy. <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Dod o hyd i fanylion pellach a gwneud cais am brofiant.</a>
       text: Pa rif sydd ar eich ffurflen llys neu dribiwnlys?
       title: Enw neu rif y ffurflen
       unknown: Nid oes gen i ffurflen

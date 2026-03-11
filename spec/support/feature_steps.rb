@@ -5,7 +5,6 @@ module FeatureSteps
     click_link_or_button 'Continue'
 
     QuestionFormFactory.page_list.take_while { |id| id != question }.each do |id|
-      next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
       next if skip_step(id)
 
       send(:"fill_#{id}")
@@ -38,7 +37,7 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_period
-    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
+    fill_probate
     fill_claim
     fill_dob
     fill_personal_detail
@@ -62,7 +61,7 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_period
-    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
+    fill_probate
     fill_claim
     fill_dob
     fill_personal_detail
@@ -84,7 +83,7 @@ module FeatureSteps
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit(true)
-    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
+    fill_probate
     fill_claim
     fill_dob
     fill_personal_detail
@@ -162,7 +161,7 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_period
-    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
+    fill_probate
   end
 
   def when_they_continue_from_step12_up_to_summary
