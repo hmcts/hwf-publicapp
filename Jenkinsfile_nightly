@@ -29,14 +29,7 @@ withNightlyPipeline(type, product, component) {
       """, label: 'Ruby version install'
   }
 
-  enableFortifyScan(
-    [
-      [$class: 'AzureKeyVaultSecret', secretType: 'Secret', name: 'fortify-on-demand-username', version: '', envVariable: 'FORTIFY_USER_NAME'],
-      [$class: 'AzureKeyVaultSecret', secretType: 'Secret', name: 'fortify-on-demand-password', version: '', envVariable: 'FORTIFY_PASSWORD'],
-      [$class: 'AzureKeyVaultSecret', secretType: 'Secret', name: 'fortify-username', version: '', envVariable: 'FOD_USERNAME'],
-      [$class: 'AzureKeyVaultSecret', secretType: 'Secret', name: 'fortify-tenant', version: '', envVariable: 'FOD_TENANT']
-    ]
-  )
+  enableFortifyScan()
 
 
 
