@@ -40,6 +40,11 @@ namespace :fortify_scan do
     fod_tenant = 'mojuk'
     fod_release_id = ENV['FORTIFY_USER_NAME'] || raise("FORTIFY_USER_NAME not set")
 
+    puts "DEBUG: FORTIFY_USER_NAME (release ID) loaded: #{fod_release_id[0..3]}... (length: #{fod_release_id.length})"
+    puts "DEBUG: FORTIFY_PASSWORD loaded: #{fod_pat[0..3]}... (length: #{fod_pat.length})"
+    puts "DEBUG: Username: #{fod_username}"
+    puts "DEBUG: Tenant: #{fod_tenant}"
+
     upload_cmd = [
       "java -jar FodUpload.jar",
       "-portalurl https://ams.fortify.com/",
