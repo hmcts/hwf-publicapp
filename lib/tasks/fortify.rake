@@ -47,8 +47,8 @@ namespace :fortify_scan do
 
     upload_cmd = [
       "java -jar FodUpload.jar",
-      "-portalurl https://ams.fortify.com/",
-      "-apiurl https://api.ams.fortify.com/",
+      "-portalurl https://emea.fortify.com/",
+      "-apiurl https://api.emea.fortify.com/",
       "-technologyStackId 17",
       "-uc #{fod_username} #{fod_pat}",
       "-tc #{fod_tenant}",
