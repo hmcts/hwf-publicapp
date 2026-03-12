@@ -50,7 +50,7 @@ namespace :fortify_scan do
       "-portalurl https://ams.fortify.com/",
       "-apiurl https://api.ams.fortify.com/",
       "-technologyStackId 17",
-      "-ac #{fod_username} #{fod_pat}",
+      "-uc #{fod_username} #{fod_pat}",
       "-tc #{fod_tenant}",
       "-rid #{fod_release_id}",
       "-z source.zip",
