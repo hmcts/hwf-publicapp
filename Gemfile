@@ -14,11 +14,11 @@ gem 'rails', '~> 8.1', '>= 8.1.2'
 
 gem 'bootsnap', require: false
 gem 'config'
-gem 'connection_pool', '~> 2.4'
+gem 'connection_pool'
 
 gem 'nokogiri'
 gem 'puma'
-gem 'rack', '~> 3.2', '>= 3.2.1'
+gem 'rack'
 gem 'redis'
 gem 'sentry-rails'
 gem 'slim-rails'
@@ -29,7 +29,7 @@ gem 'propshaft'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
-gem 'cgi', '~> 0.5.1'
+gem 'cgi'
 gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
