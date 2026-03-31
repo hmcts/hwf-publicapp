@@ -1,3 +1,5 @@
+require 'capybara/cuprite'
+
 Selenium::WebDriver.logger.level = :error
 
 Capybara.configure do |config|
@@ -8,6 +10,12 @@ Capybara.configure do |config|
   config.match = :prefer_exact
   config.exact = true
   config.visible_text_only = true
+end
+
+Capybara.register_driver :cuprite do |app|
+  Capybara::Cuprite::Driver.new(app, headless: true, window_size: [1280, 800],
+                                     process_timeout: 30,
+                                     browser_options: { 'no-sandbox': nil, 'disable-dev-shm-usage': nil })
 end
 
 Capybara.register_driver :firefox do |app|

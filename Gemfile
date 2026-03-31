@@ -64,6 +64,7 @@ group :test do
   gem 'rubocop-factory_bot'
   gem 'rubocop-rspec_rails'
   gem 'rubyzip'
+  gem 'cuprite'
   gem 'selenium-webdriver', '~> 4.14'
   gem 'shoulda-matchers'
   gem 'site_prism'
