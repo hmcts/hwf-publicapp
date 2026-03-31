@@ -17,7 +17,7 @@ Capybara.register_driver :firefox do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 Capybara.register_driver :headless do |app|
-  chrome_options = Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+  chrome_options = Selenium::WebDriver::Chrome::Options.new(args: %w[--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage --disable-search-engine-choice-screen])
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
 end
 
