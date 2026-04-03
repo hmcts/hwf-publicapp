@@ -169,6 +169,7 @@ GEM
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
     ffi (1.17.3-arm64-darwin)
+    ffi (1.17.3-x86_64-linux-gnu)
     globalid (1.3.0)
       activesupport (>= 6.1)
     govuk_notify_rails (3.0.0)
@@ -230,6 +231,8 @@ GEM
       net-protocol
     nio4r (2.7.5)
     nokogiri (1.19.2-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.2-x86_64-linux-gnu)
       racc (~> 1.4)
     notifications-ruby-client (6.3.0)
       jwt (>= 1.5, < 4)
@@ -419,7 +422,7 @@ GEM
       ffi (~> 1.1)
       memoist3 (~> 1.0.0)
     temple (0.10.4)
-    test-prof (1.6.0)
+    test-prof (1.6.1)
     thor (1.5.0)
     tilt (2.7.0)
     timeout (0.6.1)
@@ -448,6 +451,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-25
+  x86_64-linux
 
 DEPENDENCIES
   apparition
