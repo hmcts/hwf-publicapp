@@ -30,6 +30,7 @@ withPipeline(type, product, component) {
   }
 
    before('test') {
+      sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
       sh script:"yarn install", label: 'Start test'
       rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
@@ -42,6 +43,17 @@ withPipeline(type, product, component) {
 
   afterAlways('test') {
       sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
+
+      publishHTML(target: [
+        allowMissing: true,
+        alwaysLinkToLastBuild: true,
+        keepAll: true,
+        reportDir: 'features/cucumber-report',
+        reportFiles: 'cucumber_report.html',
+        reportName: 'Cucumber Report'
+      ])
+
+      archiveArtifacts artifacts: 'features/cucumber-report/**/*', allowEmptyArchive: true
   }
 }
 

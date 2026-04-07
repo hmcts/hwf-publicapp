@@ -14,7 +14,8 @@ end
 
 Capybara.register_driver :cuprite do |app|
   Capybara::Cuprite::Driver.new(app, headless: true, window_size: [1280, 800],
-                                     process_timeout: 30,
+                                     process_timeout: 30, timeout: 15,
+                                     slow_mo: ENV.fetch('CUPRITE_SLOW_MO', 0).to_f,
                                      browser_options: { 'no-sandbox': nil, 'disable-dev-shm-usage': nil })
 end
 

@@ -20,6 +20,15 @@ ActionController::Base.allow_rescue = false
 ENV['HOSTNAME'] = 'localhost'
 
 After do |scenario|
+  if scenario.failed?
+    begin
+      screenshot_path = "features/cucumber-report/screenshot_#{Time.now.to_i}.png"
+      Capybara.page.save_screenshot(screenshot_path, full: true)
+      attach(File.read(screenshot_path), 'image/png')
+    rescue StandardError => e
+      puts "Screenshot capture failed: #{e.message}"
+    end
+  end
   travel_back
   Capybara.reset_sessions!
 end
