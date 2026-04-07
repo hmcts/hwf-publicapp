@@ -3,9 +3,8 @@ rerun = File.file?('rerun.txt') ? IO.read('rerun.txt') : ""
 rerun_opts = rerun.to_s.strip.empty? ? "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} features" : "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} #{rerun}"
 std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict --tags 'not @cross-service or @wip'"
 create_json_opts = "--format json --out features/cucumber-report/cucumber_report.json"
-html_opts = "--format html --out features/cucumber-report/cucumber_report.html"
 %>
-default: <%= std_opts %> <%= html_opts %> features --tags 'not @wip'
+default: <%= std_opts %> <%= create_json_opts %> features --tags 'not @wip'
 wip: --tags @wip:3 --wip features
 rerun: <%= rerun_opts %> --format rerun --out rerun.txt --strict --tags 'not @cross-service or @wip'
-report: <%= std_opts %> <%= create_json_opts %> <%= html_opts %> features
+report: <%= std_opts %> <%= create_json_opts %> features

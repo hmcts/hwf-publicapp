@@ -20,13 +20,16 @@ ActionController::Base.allow_rescue = false
 ENV['HOSTNAME'] = 'localhost'
 
 After do |scenario|
-  if scenario.failed?
+  if scenario.failed? && Capybara.page.driver.respond_to?(:save_screenshot)
     begin
-      screenshot_path = "features/cucumber-report/screenshot_#{Time.now.to_i}.png"
+      report_dir = File.expand_path('../../cucumber-report', __FILE__)
+      FileUtils.mkdir_p(report_dir)
+      screenshot_path = File.join(report_dir, "screenshot_#{Time.now.to_i}.png")
       Capybara.page.save_screenshot(screenshot_path, full: true)
-      attach(File.read(screenshot_path), 'image/png')
+      # attach takes raw binary - the message formatter handles base64 encoding internally
+      attach(File.binread(screenshot_path), 'image/png')
     rescue StandardError => e
-      puts "Screenshot capture failed: #{e.message}"
+      $stderr.puts "Screenshot capture failed: #{e.message}"
     end
   end
   travel_back

@@ -18,6 +18,7 @@ withPipeline(type, product, component) {
   env.ENABLE_COVERAGE='true'
   // random free port should probably be used instead
   env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
+  env.CUCUMBER_PUBLISH_ENABLED = 'true'
 
 
   before('build') {
@@ -44,14 +45,7 @@ withPipeline(type, product, component) {
   afterAlways('test') {
       sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
 
-      publishHTML(target: [
-        allowMissing: true,
-        alwaysLinkToLastBuild: true,
-        keepAll: true,
-        reportDir: 'features/cucumber-report',
-        reportFiles: 'cucumber_report.html',
-        reportName: 'Cucumber Report'
-      ])
+      cucumber 'features/cucumber-report/cucumber_report.json'
 
       archiveArtifacts artifacts: 'features/cucumber-report/**/*', allowEmptyArchive: true
   }
