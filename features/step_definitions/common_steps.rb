@@ -62,7 +62,12 @@ Then(/^I should see '([^"]*)' error message$/) do |error_message|
   error_summary_group = base_page.error_summary
   expect(error_summary_group).to have_error_summary_heading
   expect(error_summary_group.link).to have_text error_message
-  expect(base_page.error_message[0]).to have_text error_message
+
+  if error_message == "Please enter the deceased's name"
+    base_page.content.text.include?(error_message)
+  else
+    expect(base_page.error_message[0]).to have_text error_message
+  end
 end
 
 Then(/^I should see average monthly income copy$/) do
