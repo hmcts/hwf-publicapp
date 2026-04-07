@@ -44,10 +44,6 @@ withPipeline(type, product, component) {
 
   afterAlways('test') {
       sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
-
-      cucumber 'features/cucumber-report/cucumber_report.json'
-
-      archiveArtifacts artifacts: 'features/cucumber-report/**/*', allowEmptyArchive: true
   }
 }
 
