@@ -1,3 +1,5 @@
+require 'capybara/cuprite'
+
 Selenium::WebDriver.logger.level = :error
 
 Capybara.configure do |config|
@@ -10,6 +12,13 @@ Capybara.configure do |config|
   config.visible_text_only = true
 end
 
+Capybara.register_driver :cuprite do |app|
+  Capybara::Cuprite::Driver.new(app, headless: true, window_size: [1280, 800],
+                                     process_timeout: 30, timeout: 15,
+                                     slow_mo: ENV.fetch('CUPRITE_SLOW_MO', 0).to_f,
+                                     browser_options: { 'no-sandbox': nil, 'disable-dev-shm-usage': nil })
+end
+
 Capybara.register_driver :firefox do |app|
   options = Selenium::WebDriver::Firefox::Options.new
   options.args << '--headless'
@@ -17,7 +26,7 @@ Capybara.register_driver :firefox do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 Capybara.register_driver :headless do |app|
-  chrome_options = Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+  chrome_options = Selenium::WebDriver::Chrome::Options.new(args: %w[--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage --disable-search-engine-choice-screen])
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
 end
 

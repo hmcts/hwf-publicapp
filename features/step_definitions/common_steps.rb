@@ -61,8 +61,8 @@ Then(/^I should see '([^"]*)' error message$/) do |error_message|
   expect(base_page.content.alert).to have_there_is_a_problem
   error_summary_group = base_page.error_summary
   expect(error_summary_group).to have_error_summary_heading
-  expect(error_summary_group.link.text).to have_content error_message
-  expect(base_page.error_message[0].text).to have_content error_message
+  expect(error_summary_group.link).to have_text error_message
+  expect(base_page.error_message[0]).to have_text error_message
 end
 
 Then(/^I should see average monthly income copy$/) do

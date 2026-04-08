@@ -13,10 +13,12 @@ withPipeline(type, product, component) {
   env.RAILS_ENV = 'test'
   env.RACK_ENV = 'test'
   env.TEST_BROWSER = 'chrome_local'
+  env.DRIVER = 'cuprite'
   env.NODE_OPTIONS='--openssl-legacy-provider'
   env.ENABLE_COVERAGE='true'
   // random free port should probably be used instead
   env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
+  env.CUCUMBER_PUBLISH_ENABLED = 'true'
 
 
   before('build') {
@@ -29,6 +31,7 @@ withPipeline(type, product, component) {
   }
 
    before('test') {
+      sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
       sh script:"yarn install", label: 'Start test'
       rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")

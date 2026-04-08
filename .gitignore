@@ -36,7 +36,8 @@ dump.rdb
 
 ## Ignore cucumber report results
 features/cucumber-report/cucumber_report.html
-features/cucumber-report/screenshot.png
+features/cucumber-report/cucumber_report.json
+features/cucumber-report/screenshot*.png
 
 # Ignore development env file
 .env.development

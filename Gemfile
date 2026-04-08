@@ -10,7 +10,7 @@ ruby '4.0.2'
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 8.1', '>= 8.1.2'
+gem 'rails', '~> 8.1', '>= 8.1.3'
 
 gem 'bootsnap', require: false
 gem 'config'
@@ -64,6 +64,7 @@ group :test do
   gem 'rubocop-factory_bot'
   gem 'rubocop-rspec_rails'
   gem 'rubyzip'
+  gem 'cuprite'
   gem 'selenium-webdriver', '~> 4.14'
   gem 'shoulda-matchers'
   gem 'site_prism'
