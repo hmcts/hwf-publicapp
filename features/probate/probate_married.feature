@@ -17,7 +17,7 @@ Feature: Probate page
   Scenario: Partially selecting yes to are you paying a fee for a probate case
     When I select yes to are you paying a fee for a probate case
     And I click continue
-    Then I should see 'Please enter the deceased's name' error message
+    Then I should see deceased error message
 
   Scenario: Displays date can't be in the future error message
     When I enter a future date of death
