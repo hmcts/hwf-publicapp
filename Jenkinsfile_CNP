@@ -25,8 +25,8 @@ withPipeline(type, product, component) {
     sh script:"""#!/bin/bash -l
       set +x
       source /usr/local/rvm/scripts/rvm
-      rvm install ruby-4.0.2
-      rvm use ruby-4.0.2 --default
+      rvm install ruby-4.0.3
+      rvm use ruby-4.0.3 --default
       """, label: 'Ruby version install'
   }
 
