@@ -12,7 +12,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "dob" page' do
-        expect(page).to have_content 'What is your date of birth?'
+        expect(page).to have_text 'What is your date of birth?'
       end
     end
 
@@ -21,7 +21,7 @@ RSpec.feature 'As a user' do
         before { click_button 'Continue' }
 
         scenario 'I expect to be shown the "claim" page with error block' do
-          expect(page).to have_content 'There is a problem'
+          expect(page).to have_text 'There is a problem'
         end
 
         scenario 'I expect the fields to have specific errors' do

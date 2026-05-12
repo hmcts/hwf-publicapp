@@ -53,13 +53,13 @@ Then(/^I should be taken to form number page$/) do
 end
 
 Then(/^I should see a list of seven links$/) do
-  expect(footer_page.content.footer_links.text).to have_content("Help")
-  expect(footer_page.content.footer_links.text).to have_content("Cookies")
-  expect(footer_page.content.footer_links.text).to have_content("Contact")
-  expect(footer_page.content.footer_links.text).to have_content("Privacy policy")
-  expect(footer_page.content.footer_links.text).to have_content("Terms and conditions")
-  expect(footer_page.content.footer_links.text).to have_content("Cymraeg")
-  expect(footer_page.content.footer_links.text).to have_content("Accessibility statement")
+  expect(footer_page.content.footer_links.text).to have_text("Help")
+  expect(footer_page.content.footer_links.text).to have_text("Cookies")
+  expect(footer_page.content.footer_links.text).to have_text("Contact")
+  expect(footer_page.content.footer_links.text).to have_text("Privacy policy")
+  expect(footer_page.content.footer_links.text).to have_text("Terms and conditions")
+  expect(footer_page.content.footer_links.text).to have_text("Cymraeg")
+  expect(footer_page.content.footer_links.text).to have_text("Accessibility statement")
 end
 
 Then(/^I see that I need to make sure I have details of my income and wages$/) do

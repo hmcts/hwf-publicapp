@@ -223,7 +223,7 @@ RSpec/Dialect:
 RSpec/NamedSubject:
   Enabled: false
 
-Capybara/CurrentPathExpectation:
+Capybara/RSpec/CurrentPathExpectation:
   Enabled: false
 
 RSpec/ContextWording:
@@ -452,13 +452,13 @@ RSpec/VerifiedDoubleReference: # new in 2.10.0
   Enabled: true
 RSpec/IndexedLet:
   Enabled: false
-Capybara/NegationMatcher: # new in 2.14
+Capybara/RSpec/NegationMatcher: # new in 2.14
   Enabled: true
 Capybara/SpecificActions: # new in 2.14
   Enabled: true
 Capybara/SpecificFinders: # new in 2.13
   Enabled: true
-Capybara/SpecificMatcher: # new in 2.12
+Capybara/RSpec/SpecificMatcher: # new in 2.12
   Enabled: true
 
 Capybara/ClickLinkOrButtonStyle:

@@ -13,12 +13,12 @@ When(/^I click continue$/) do
 end
 
 When(/^I click on '([^"]*)'$/) do |help|
-  expect(base_page.help_with.text).to have_content help
+  expect(base_page.help_with.text).to have_text help
   base_page.click_help_with
 end
 
 Then(/^I should see '([^"]*)' header$/) do |header|
-  expect(base_page.content.h1.text).to have_content header
+  expect(base_page.content.h1.text).to have_text header
 end
 
 Then(/^I am taken to the Help with Fees homepage$/) do
@@ -39,17 +39,17 @@ end
 
 Then(/^I should see hint '([^"]*)'$/) do |hint|
   hint_group = base_page.content.text.p[0]
-  expect(hint_group.text).to have_content hint
+  expect(hint_group.text).to have_text hint
 end
 
 Then(/^I should see single person hint '([^"]*)'$/) do |hint|
   hint_group = base_page.content.text.p[0]
-  expect(hint_group.text).to have_content hint
+  expect(hint_group.text).to have_text hint
 end
 
 Then(/^I should see married person hint '([^"]*)'$/) do |hint|
   hint_group = base_page.content.text.p[0]
-  expect(hint_group.text).to have_content hint
+  expect(hint_group.text).to have_text hint
 end
 
 Then(/^I should see save or print this page$/) do
@@ -67,7 +67,7 @@ end
 
 Then(/^I should see average monthly income copy$/) do
   average_income = base_page.content.text.p[1]
-  expect(average_income.text).to have_content 'work out an average monthly income'
+  expect(average_income.text).to have_text 'work out an average monthly income'
 end
 
 And(/^I click the '(.*)' link$/) do |string|
