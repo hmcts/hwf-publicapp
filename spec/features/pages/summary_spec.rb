@@ -52,9 +52,9 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to see my answers' do
-        expect(page).to have_no_content 'Probate case'
-        expect(page).to have_content 'Name of deceasedFooChange'
-        expect(page).to have_content "Date of death#{month_ago.strftime(Date::DATE_FORMATS[:default])}Change"
+        expect(page).to have_no_text 'Probate case'
+        expect(page).to have_text 'Name of deceasedFooChange'
+        expect(page).to have_text "Date of death#{month_ago.strftime(Date::DATE_FORMATS[:default])}Change"
       end
     end
 
@@ -67,9 +67,9 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I do not expect to see the probate sub headers' do
-        expect(page).to have_content 'Probate case'
-        expect(page).to have_no_content 'Name of deceased'
-        expect(page).to have_no_content 'Date of death'
+        expect(page).to have_text 'Probate case'
+        expect(page).to have_no_text 'Name of deceased'
+        expect(page).to have_no_text 'Date of death'
       end
     end
 
@@ -84,7 +84,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect confirmation' do
-        expect(page).to have_content 'Emailfoo@bar.com'
+        expect(page).to have_text 'Emailfoo@bar.com'
       end
     end
 
@@ -97,7 +97,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect confirmation' do
-        expect(page).to have_content 'ContactContact details not provided'
+        expect(page).to have_text 'ContactContact details not provided'
       end
     end
 

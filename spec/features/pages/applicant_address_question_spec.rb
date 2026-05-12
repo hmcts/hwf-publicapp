@@ -13,7 +13,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "contact" page' do
-        expect(page).to have_content "What's your email address?"
+        expect(page).to have_text "What's your email address?"
       end
     end
 
@@ -25,7 +25,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect to be shown the "applicant-address" page with error block' do
-          expect(page).to have_content 'There is a problem'
+          expect(page).to have_text 'There is a problem'
         end
 
         scenario 'I expect the fields to have specific errors' do
@@ -40,7 +40,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect to be shown the "applicant-address" page with error block' do
-          expect(page).to have_content 'There is a problem'
+          expect(page).to have_text 'There is a problem'
         end
 
         scenario 'I expect the fields to have specific errors' do

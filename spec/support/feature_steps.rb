@@ -190,17 +190,17 @@ module FeatureSteps
   end
 
   def then_they_cannot_procced
-    expect(page).to have_content 'Check details'
-    expect(page).to have_content 'Not receiving eligible benefits'
-    expect(page).to have_content 'IncomePlease answer questions about your income'
-    expect(page).to have_content 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+    expect(page).to have_text 'Check details'
+    expect(page).to have_text 'Not receiving eligible benefits'
+    expect(page).to have_text 'IncomePlease answer questions about your income'
+    expect(page).to have_text 'You’ve made changes. Please answer the highlighted questions to complete your application.'
   end
 
   def then_they_can_proceed
-    expect(page).to have_content 'Check details'
-    expect(page).to have_content 'Not receiving eligible benefits'
-    expect(page).to have_content 'IncomeLess than £1,170'
-    expect(page).to have_content 'Get a reference number and continue'
+    expect(page).to have_text 'Check details'
+    expect(page).to have_text 'Not receiving eligible benefits'
+    expect(page).to have_text 'IncomeLess than £1,170'
+    expect(page).to have_text 'Get a reference number and continue'
   end
 
   def fill_contact
