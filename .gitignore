@@ -49,3 +49,6 @@ input-secrets.rb
 /tmp/*
 .claude/**
 CLAUDE.md
+
+# Ignore Yarn local install state
+.yarn/install-state.gz
