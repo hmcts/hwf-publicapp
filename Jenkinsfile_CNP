@@ -32,7 +32,12 @@ withPipeline(type, product, component) {
 
    before('test') {
       sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
-      sh script:"yarn install", label: 'Start test'
+      sh script:"""
+        mkdir -p ~/.local/bin
+        corepack enable --install-directory ~/.local/bin
+        export PATH=~/.local/bin:\$PATH
+        yarn install
+      """, label: 'Start test'
       rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
 
