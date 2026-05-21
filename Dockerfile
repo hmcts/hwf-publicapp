@@ -15,7 +15,7 @@ ENV APP_BUILD_TAG=${APP_BUILD_TAG}
 
 RUN apk update && apk add --no-cache libc6-compat && \
     apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs npm tzdata shared-mime-info \
-    yaml-dev && \
+    yaml-dev libffi-dev && \
     npm install -g corepack && corepack enable
 
 ENV UNICORN_PORT=3000
