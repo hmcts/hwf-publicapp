@@ -32,7 +32,13 @@ withPipeline(type, product, component) {
 
    before('test') {
       sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
-      sh script:"yarn install", label: 'Start test'
+      sh script:"""
+        mkdir -p ~/.local/bin
+        corepack enable --install-directory ~/.local/bin
+        export PATH=~/.local/bin:\$PATH
+        env AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod az acr login --name hmctsprod --subscription DCD-CNP-PROD
+        yarn install
+      """, label: 'Start test'
       rubyBuilder.bundle("install")
       rubyBuilder.bundle("exec rails assets:precompile")
 
