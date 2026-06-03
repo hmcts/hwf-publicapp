@@ -26,11 +26,17 @@ Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 See the [feature testing README](https://github.com/hmcts/hwf-publicapp/blob/master/README.md).
 
 ## Frontend toolkit
+```
 yarn install
+```
+or
+```
+yarn set version latest
+```
 
 ## Update existing frontend libraries
 ```
-yarn upgrade --latest
+yarn up "*"
 ```
 
 ## CSS + JS updates
