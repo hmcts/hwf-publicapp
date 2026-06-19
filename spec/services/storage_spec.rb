@@ -170,6 +170,15 @@ RSpec.describe Storage do
         question = rails_store.read("questions-#{session.id}-#{form.id}")
         expect(question).to eql(json_data)
       end
+
+      it 'expires the cached answers after the session lifetime' do
+        allow(rails_store).to receive(:write).and_call_original
+        storage.save_form(form)
+        expect(rails_store).to have_received(:write).with(
+          "questions-#{session.id}-#{form.id}", json_data,
+          hash_including(expires_in: Settings.session.expires_in_minutes * 60)
+        )
+      end
     end
 
     describe '#load_form' do
@@ -255,6 +264,15 @@ RSpec.describe Storage do
       it 'store path' do
         storage.store_page_path('page_123', 'page1')
         expect(storage.store.read('page_path-123')).to eq [{ "page1" => "page_123" }]
+      end
+
+      it 'expires the page path after the session lifetime' do
+        allow(storage.store).to receive(:write).and_call_original
+        storage.store_page_path('page_123', 'page1')
+        expect(storage.store).to have_received(:write).with(
+          'page_path-123', anything,
+          hash_including(expires_in: Settings.session.expires_in_minutes * 60)
+        )
       end
     end
 
