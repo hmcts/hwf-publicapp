@@ -34,7 +34,9 @@ class Storage
   end
 
   def save_form(form)
-    rails_store.write("questions-#{@session.id}-#{form.id}", form.as_json)
+    # Expire cached answers after the session lifetime so abandoned sessions
+    # do not leave keys in Redis forever.
+    rails_store.write("questions-#{@session.id}-#{form.id}", form.as_json, expires_in: expires_in_seconds)
   end
 
   def load_form(form)
