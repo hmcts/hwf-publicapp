@@ -52,7 +52,7 @@ end
 
 Capybara.register_driver(:custom_playwright) do |app|
   Capybara::Playwright::Driver.new(app,
-    browser_type: :chromium, # :chromium (default) or :firefox, :webkit
+    browser_type: ENV['PLAYWRIGHT_BROWSER']&.to_sym || :chromium, # :chromium (default) or :firefox, :webkit
     headless: true,
     playwright_cli_executable_path: './node_modules/.bin/playwright',
   )
