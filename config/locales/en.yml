@@ -556,7 +556,7 @@ en:
       children_true: 'Yes'
       details:
         item_1: under 16 and living at home with you
-        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
+        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-benefit-16-19">gov.uk/child-benefit-16-19</a>
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
         section_1: You need to give details of any children you support financially.
         section_2: 'This includes children who are:'
@@ -577,7 +577,7 @@ en:
           - under 16 and living at home with you or
           - not living with you, but you pay regular maintenance for them or
           - between 16 and 19, living at home with you and in full-time education (not including studying for a degree or other higher education qualification).
-        list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-benefit-16-19">https://www.gov.uk/child-benefit-16-19</a>'
         children_age_band: Do you have any children living with you or that you support financially?
 
       married:
@@ -587,7 +587,7 @@ en:
           - under 16 and living at home with you or
           - not living with you, but you or your partner pay regular maintenance for them or
           - between 16 and 19, living at home with you and in full-time education (not including studying for a degree or other higher education qualification).
-        list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        list_link_html: ' See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-benefit-16-19">https://www.gov.uk/child-benefit-16-19</a>'
         children_age_band: Do you or your partner have any children living with you or that you support financially?
     partner_national_insurance:
       breadcrumb: Step %{page_number} of 25
