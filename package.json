@@ -25,5 +25,8 @@
     "fast-uri": "3.1.2",
     "picomatch": "4.0.4"
   },
-  "packageManager": "yarn@4.16.0"
+  "packageManager": "yarn@4.16.0",
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
 }
