@@ -52,10 +52,9 @@ end
 
 Capybara.register_driver(:custom_playwright) do |app|
   Capybara::Playwright::Driver.new(app,
-    browser_type: ENV['PLAYWRIGHT_BROWSER']&.to_sym || :chromium, # :chromium (default) or :firefox, :webkit
-    headless: true,
-    playwright_cli_executable_path: './node_modules/.bin/playwright',
-  )
+                                   browser_type: ENV['PLAYWRIGHT_BROWSER']&.to_sym || :chromium, # :chromium (default) or :firefox, :webkit
+                                   headless: true,
+                                   playwright_cli_executable_path: './node_modules/.bin/playwright')
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')
