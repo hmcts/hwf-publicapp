@@ -2,9 +2,24 @@ require 'capybara/cuprite'
 
 Selenium::WebDriver.logger.level = :error
 
+# Smoke/e2e runs drive a deployed app over CAPYBARA_APP_HOST (no in-process
+# server), so they need a real browser. Everything else runs in-process and
+# defaults to the rack_test driver - it has no browser and is much faster than
+# driving Firefox/Chrome. Scenarios that genuinely need a browser (native
+# <details> rendering, JS-revealed fields, etc.) are tagged @javascript and run
+# under cuprite headless Chrome instead (see Capybara.javascript_driver).
+remote_app_host = ENV.key?('CAPYBARA_APP_HOST') &&
+                  ENV['CAPYBARA_APP_HOST'].to_s.exclude?('localhost')
+
 Capybara.configure do |config|
-  driver = ENV['DRIVER']&.to_sym || :firefox
-  config.default_driver = driver
+  config.default_driver =
+    if ENV['DRIVER']
+      ENV['DRIVER'].to_sym
+    elsif remote_app_host
+      :firefox
+    else
+      :rack_test
+    end
   config.default_max_wait_time = 10
   config.default_normalize_ws = true
   config.match = :prefer_exact
@@ -55,7 +70,7 @@ if ENV.key?('CIRCLE_ARTIFACTS')
 end
 
 Capybara.always_include_port = true
-Capybara.javascript_driver = Capybara.default_driver
+Capybara.javascript_driver = :cuprite
 Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST', "http://#{ENV.fetch('HOSTNAME', 'localhost')}")
 Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST', ENV.fetch('HOSTNAME', 'localhost'))
 Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT', '3000') unless
