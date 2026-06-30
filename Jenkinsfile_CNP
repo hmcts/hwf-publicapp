@@ -13,7 +13,10 @@ withPipeline(type, product, component) {
   env.RAILS_ENV = 'test'
   env.RACK_ENV = 'test'
   env.TEST_BROWSER = 'chrome_local'
-  env.DRIVER = 'cuprite'
+  // Don't pin DRIVER: the suite defaults to the in-process rack_test driver
+  // (fast, no browser). Scenarios tagged @javascript run under cuprite and
+  // @zap scenarios under firefox via the ZAP proxy - see
+  // features/support/capybara_driver_helper.rb and features/support/hooks.rb.
   env.NODE_OPTIONS='--openssl-legacy-provider'
   env.ENABLE_COVERAGE='true'
   // random free port should probably be used instead
