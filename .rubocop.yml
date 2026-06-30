@@ -461,7 +461,7 @@ Capybara/SpecificFinders: # new in 2.13
 Capybara/RSpec/SpecificMatcher: # new in 2.12
   Enabled: true
 
-Capybara/ClickLinkOrButtonStyle:
+Capybara/FindAllFirst:
   Enabled: false
 
 FactoryBot/ConsistentParenthesesStyle: # new in 2.14
