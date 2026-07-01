@@ -33,6 +33,7 @@ namespace :test do
       puts "Running tests on #{browser}"
       env = {
         "DRIVER" => browser
+        "CAPYBARA_JAVASCRIPT_DRIVER" => browser
       }
       results[browser] = system(env, "bundle exec cucumber features/ --tags @javascript")
     end
