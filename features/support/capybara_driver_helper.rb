@@ -65,7 +65,7 @@ Capybara.register_driver :firefox_zap do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 
-Capybara.register_driver(:custom_playwright) do |app|
+Capybara.register_driver(:playwright_custom) do |app|
   Capybara::Playwright::Driver.new(app,
                                    browser_type: ENV['PLAYWRIGHT_BROWSER']&.to_sym || :chromium, # :chromium (default) or :firefox, :webkit
                                    headless: true,
@@ -77,7 +77,7 @@ if ENV.key?('CIRCLE_ARTIFACTS')
 end
 
 Capybara.always_include_port = true
-Capybara.javascript_driver = :cuprite
+Capybara.javascript_driver = ENV['CAPYBARA_JAVASCRIPT_DRIVER']&.to_sym || :cuprite
 Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST', "http://#{ENV.fetch('HOSTNAME', 'localhost')}")
 Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST', ENV.fetch('HOSTNAME', 'localhost'))
 Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT', '3000') unless
