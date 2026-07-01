@@ -14,7 +14,7 @@ class DependentPage < BasePage
     element :children_under, 'li', text: 'under 16 and living at home with you or'
     element :regular_maintenance, 'li', text: 'not living with you, but you pay regular maintenance for them or'
     element :children_between, 'li', text: 'between 16 and 19, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See '
-    element :child_tax_link, 'a', text: 'gov.uk/child-tax-credit-when-child-reaches-16'
+    element :child_tax_link, 'a', text: 'gov.uk/child-benefit-16-19'
     element :error_link, 'a', text: 'You need to say whether you have financially dependent children'
     element :number_error_link, 'a', text: 'Select the number of children that live with you or you\'re supporting financially'
     element :range_error_link, 'a', text: 'Select the child\'s age range'
