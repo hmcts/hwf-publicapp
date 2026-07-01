@@ -18,6 +18,7 @@ class DependentPage < BasePage
     element :error_link, 'a', text: 'You need to say whether you have financially dependent children'
     element :number_error_link, 'a', text: 'Select the number of children that live with you or you\'re supporting financially'
     element :range_error_link, 'a', text: 'Select the child\'s age range'
+    elements :child_bands, 'select[name="dependent[children_bands][]"]'
   end
 
   def submit_dependent_no
@@ -38,7 +39,7 @@ class DependentPage < BasePage
 
   def submit_dependent_3
     content.children_number.select 3
-    continue
+    # continue
   end
 
   def slow_submit_dependent_yes
@@ -49,7 +50,7 @@ class DependentPage < BasePage
   end
 
   def submit_child_bands
-    all('select', text: 'Select the child\'s age range').each do |child|
+    content.child_bands.each do |child|
       child.select '0-13 years'
     end
     continue
