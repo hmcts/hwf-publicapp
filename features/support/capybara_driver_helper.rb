@@ -65,12 +65,33 @@ Capybara.register_driver :firefox_zap do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 
+playwright_options = {
+  headless: true,
+  playwright_cli_executable_path: './node_modules/.bin/playwright'
+}
+
+Capybara.register_driver(:playwright_chrome) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, channel: 'chrome', **playwright_options)
+end
+
+Capybara.register_driver(:playwright_msedge) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, channel: 'msedge', **playwright_options)
+end
+
+Capybara.register_driver(:playwright_firefox) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :firefox, **playwright_options)
+end
+
+Capybara.register_driver(:playwright_webkit) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :webkit, **playwright_options)
+end
+
 if ENV.key?('CIRCLE_ARTIFACTS')
   Capybara.save_and_open_page_path = ENV['CIRCLE_ARTIFACTS']
 end
 
 Capybara.always_include_port = true
-Capybara.javascript_driver = :cuprite
+Capybara.javascript_driver = ENV.fetch('CAPYBARA_JAVASCRIPT_DRIVER', 'cuprite').to_sym
 Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST', "http://#{ENV.fetch('HOSTNAME', 'localhost')}")
 Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST', ENV.fetch('HOSTNAME', 'localhost'))
 Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT', '3000') unless
