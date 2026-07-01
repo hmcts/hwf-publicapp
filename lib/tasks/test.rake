@@ -32,7 +32,7 @@ namespace :test do
     browsers.each do |browser|
       puts "Running tests on #{browser}"
       env = {
-        "DRIVER" => browser,
+        "DRIVER" => browser
       }
       results[browser] = system(env, "bundle exec cucumber features/ --tags @javascript")
     end
