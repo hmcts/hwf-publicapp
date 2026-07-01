@@ -65,11 +65,25 @@ Capybara.register_driver :firefox_zap do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 
-Capybara.register_driver(:playwright_custom) do |app|
-  Capybara::Playwright::Driver.new(app,
-                                   browser_type: ENV['PLAYWRIGHT_BROWSER']&.to_sym || :chromium, # :chromium (default) or :firefox, :webkit
-                                   headless: true,
-                                   playwright_cli_executable_path: './node_modules/.bin/playwright')
+playwright_options = {
+  headless: true,
+  playwright_cli_executable_path: './node_modules/.bin/playwright'
+}
+
+Capybara.register_driver(:playwright_chrome) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, channel: 'chrome', **playwright_options)
+end
+
+Capybara.register_driver(:playwright_msedge) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, channel: 'msedge', **playwright_options)
+end
+
+Capybara.register_driver(:playwright_firefox) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :firefox, **playwright_options)
+end
+
+Capybara.register_driver(:playwright_webkit) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :webkit, **playwright_options)
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')
