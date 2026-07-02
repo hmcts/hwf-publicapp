@@ -25,8 +25,9 @@ namespace :test do
     end
   end
 
-  task :cross_browser_device do
-    browsers = %w[playwright_chrome playwright_msedge playwright_firefox playwright_webkit playwright_mobile_chrome playwright_mobile_webkit]
+  task cross_browser_device: :environment do
+    browsers = %w[playwright_chrome playwright_msedge playwright_firefox playwright_webkit playwright_mobile_chrome
+                  playwright_mobile_webkit]
     results = {}
 
     browsers.each do |browser|
