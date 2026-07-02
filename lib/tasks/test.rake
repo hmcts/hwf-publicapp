@@ -26,13 +26,13 @@ namespace :test do
   end
 
   task cross_browser_device: :environment do
-    browsers = %w[playwright_chrome playwright_msedge playwright_firefox playwright_webkit]
+    browsers = %w[playwright_chrome playwright_msedge playwright_firefox playwright_webkit playwright_mobile_chrome playwright_mobile_webkit]
     results = {}
 
     browsers.each do |browser|
       puts "Running tests on #{browser}"
       env = {
-        "DRIVER" => browser
+        "DRIVER" => browser,
         "CAPYBARA_JAVASCRIPT_DRIVER" => browser
       }
       results[browser] = system(env, "bundle exec cucumber features/ --tags @javascript")

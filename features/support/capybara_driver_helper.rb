@@ -66,9 +66,20 @@ Capybara.register_driver :firefox_zap do |app|
 end
 
 playwright_options = {
-  headless: true,
+  headless: false,
   playwright_cli_executable_path: './node_modules/.bin/playwright'
 }
+
+# Sourced from [https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json]
+mobile_options = {
+  viewport: { width: 393, height: 852 },
+  isMobile: true,
+  hasTouch: true,
+  deviceScaleFactor: 3,
+  userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1'
+}
+
+playwright_mobile_options = playwright_options.merge(mobile_options)
 
 Capybara.register_driver(:playwright_chrome) do |app|
   Capybara::Playwright::Driver.new(app, browser_type: :chromium, channel: 'chrome', **playwright_options)
@@ -84,6 +95,14 @@ end
 
 Capybara.register_driver(:playwright_webkit) do |app|
   Capybara::Playwright::Driver.new(app, browser_type: :webkit, **playwright_options)
+end
+
+Capybara.register_driver(:playwright_mobile_chrome) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, channel: 'chrome', **playwright_mobile_options)
+end
+
+Capybara.register_driver(:playwright_mobile_webkit) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :webkit, **playwright_mobile_options)
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')
