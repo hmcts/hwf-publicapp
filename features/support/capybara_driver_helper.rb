@@ -66,7 +66,7 @@ Capybara.register_driver :firefox_zap do |app|
 end
 
 playwright_options = {
-  headless: false,
+  headless: true,
   playwright_cli_executable_path: './node_modules/.bin/playwright'
 }
 
