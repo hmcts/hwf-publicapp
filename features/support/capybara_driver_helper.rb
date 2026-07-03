@@ -71,6 +71,7 @@ playwright_options = {
 }
 
 # Sourced from [https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json]
+# iPhone 15
 mobile_options = {
   viewport: { width: 393, height: 852 },
   screen: { width: 393, height: 852 },
