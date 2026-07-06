@@ -39,6 +39,21 @@ yarn set version latest
 yarn up "*"
 ```
 
+## Dependency resolutions (security pins)
+The `resolutions` block in `package.json` force-pins some deep transitive
+dependencies to patched versions so `yarn npm audit` stays clean:
+
+- `tar` and `undici` — pulled in only via `sass` → `@parcel/watcher` →
+  `node-gyp` (build/install-time native-addon tooling, never shipped to the
+  browser). Pinned to `tar@^7.5.19` / `undici@^6.27.0` to clear the node-gyp
+  advisories while still satisfying its version ranges.
+- `fast-uri` and `picomatch` — pinned to compatible patched versions.
+
+Run `yarn npm audit --all --recursive` to check for new advisories. If a pin is
+ever bumped, re-run `yarn install`, `yarn build:css` and `yarn build`, then the
+feature tests to confirm nothing broke. Drop a pin once the upstream dependency
+ships the fix on its own.
+
 ## CSS + JS updates
 We are now using propshaft, cssbundling-rails and jsbundling-rails. You will need to run
 ```
