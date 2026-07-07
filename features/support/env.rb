@@ -25,7 +25,7 @@ After do |scenario|
       report_dir = File.expand_path('../../cucumber-report', __FILE__)
       FileUtils.mkdir_p(report_dir)
       screenshot_path = File.join(report_dir, "screenshot_#{Time.now.to_i}.png")
-      Capybara.page.save_screenshot(screenshot_path, full: true)
+      Capybara.page.save_screenshot(screenshot_path)
       # attach takes raw binary - the message formatter handles base64 encoding internally
       attach(File.binread(screenshot_path), 'image/png')
     rescue StandardError => e
