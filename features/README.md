@@ -58,7 +58,25 @@ Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS not
 
 `$ bundle exec cucumber --tags @smoke`
 
-### Running cross browser and device tests
+### Running cross-browser and emulated device tests with 🎭 Playwright
+
+By default, only Rack and Selenium Chrome are used for the feature tests.
+
+Cross-browser and device feature testing can be performed locally using [Playwright](https://github.com/microsoft/playwright) and the [capybara-playwright-driver gem](https://github.com/YusukeIwaki/capybara-playwright-driver).
+
+To begin, install the required browsers:
+
+`$ yarn playwright install`
+
+Then run the test suite using the rack command:
+
+`$ bundle exec rack test:cross_browser_device`
+
+This will run `@javascript` tagged feature tests on Desktop Chrome, Desktop Edge, Desktop Firefox, Desktop WebKit, Mobile Chrome, and Mobile WebKit.
+
+To run one of the drivers individually, e.g. Desktop Webkit run:
+
+`$ DRIVER=playwright_webkit CAPYBARA_JAVASCRIPT_DRIVER=playwright_webkit bundle exec cucumber features/`
 
 ### Creating an HTML report
 
