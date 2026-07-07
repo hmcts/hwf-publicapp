@@ -58,38 +58,7 @@ Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS not
 
 `$ bundle exec cucumber --tags @smoke`
 
-### Running cross browser and device tests using Sauce Labs
-
-Replace 'SAUCE_USERNAME' and 'SAUCE_ACCESS_KEY' in hwf-publicapp/.env.test with your account details
-
-Run tunnel:
-Go to your terminal
-Example go to the path where you've downloaded Sauce connect
-
-Latest sauce version on Mac ->  sc-4.6.2-osx
-`$ cd Downloads/sc-4.6.2-osx`
-
-Run Below command 
-`$ sc-4.6.2-osx % bin/sc -u <SAUCE_USERNAME> -k  <SAUCE_ACCESS_KEY> --se-port 4449`
-
-Replace '<SAUCE_USERNAME>' and '<SAUCE_ACCESS_KEY>' with your account details
-
-Wait for 'Sauce Connect is up, you may start your tests.'
-
-[Add the tag '@saucelabs' to a scenario/s that you want to run.]
-
-To run Sauce Labs feature using specific browser:
-
-Open new session on terminal 
-
-Go to your hwf-publicapp folder path
-
-Run Below command
-`$ DRIVER=saucelabs SAUCELABS_BROWSER=chrome_mac_latest cucumber --tags @saucelabs`
-
-To run Sauce Labs feature on all devices and browsers:
-
-`$ bin/run_saucelabs`
+### Running cross browser and device tests
 
 ### Creating an HTML report
 
