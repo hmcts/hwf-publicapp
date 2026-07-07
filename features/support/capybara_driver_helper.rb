@@ -1,13 +1,26 @@
-require 'capybara/cuprite'
+require 'selenium/webdriver'
 
 Selenium::WebDriver.logger.level = :error
+
+# Chrome/CDP intermittently raises a generic UnknownError -
+# "Node with given id does not belong to the document" - when the
+# govuk-frontend JavaScript re-initialises the DOM at the moment Capybara
+# interacts with an element (e.g. clicking a radio label). Treat it as a
+# transient invalid-element error so Capybara re-finds the element and retries
+# within its normal wait window instead of failing the scenario outright.
+module SeleniumTransientNodeErrors
+  def invalid_element_errors
+    super + [::Selenium::WebDriver::Error::UnknownError]
+  end
+end
+Capybara::Selenium::Driver.prepend(SeleniumTransientNodeErrors)
 
 # Smoke/e2e runs drive a deployed app over CAPYBARA_APP_HOST (no in-process
 # server), so they need a real browser. Everything else runs in-process and
 # defaults to the rack_test driver - it has no browser and is much faster than
 # driving Firefox/Chrome. Scenarios that genuinely need a browser (native
 # <details> rendering, JS-revealed fields, etc.) are tagged @javascript and run
-# under cuprite headless Chrome instead (see Capybara.javascript_driver).
+# under selenium headless Chrome instead (see Capybara.javascript_driver).
 remote_app_host = ENV.key?('CAPYBARA_APP_HOST') &&
                   ENV['CAPYBARA_APP_HOST'].to_s.exclude?('localhost')
 
@@ -25,13 +38,6 @@ Capybara.configure do |config|
   config.match = :prefer_exact
   config.exact = true
   config.visible_text_only = true
-end
-
-Capybara.register_driver :cuprite do |app|
-  Capybara::Cuprite::Driver.new(app, headless: true, window_size: [1280, 800],
-                                     process_timeout: 30, timeout: 15,
-                                     slow_mo: ENV.fetch('CUPRITE_SLOW_MO', 0).to_f,
-                                     browser_options: { 'no-sandbox': nil, 'disable-dev-shm-usage': nil })
 end
 
 Capybara.register_driver :firefox do |app|
@@ -112,7 +118,7 @@ if ENV.key?('CIRCLE_ARTIFACTS')
 end
 
 Capybara.always_include_port = true
-Capybara.javascript_driver = ENV.fetch('CAPYBARA_JAVASCRIPT_DRIVER', 'cuprite').to_sym
+Capybara.javascript_driver = ENV.fetch('CAPYBARA_JAVASCRIPT_DRIVER', 'headless').to_sym
 Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST', "http://#{ENV.fetch('HOSTNAME', 'localhost')}")
 Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST', ENV.fetch('HOSTNAME', 'localhost'))
 Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT', '3000') unless
