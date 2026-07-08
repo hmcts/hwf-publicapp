@@ -23,7 +23,7 @@ Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 
 ## Feature tests
 
-See the [feature testing README](https://github.com/hmcts/hwf-publicapp/blob/master/README.md).
+See the [feature testing README](/features/README.md).
 
 ## Frontend toolkit
 ```
