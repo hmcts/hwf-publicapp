@@ -39,7 +39,6 @@ class DependentPage < BasePage
 
   def submit_dependent_3
     content.children_number.select 3
-    # continue
   end
 
   def slow_submit_dependent_yes

@@ -33,7 +33,7 @@ Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS not
 
 ## Smoke testing
 
-Smoke tests verify core functionalities before deeper, comprehensive testing
+Smoke tests verify core functionalities before comprehensive testing.
 
 To run the smoke tests, use:
 
