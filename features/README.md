@@ -26,9 +26,9 @@ To run a particular scenario using line number:
 
 To run in a specific browser:
 
-`$ bundle exec DRIVER=chrome cucumber`
+`$ DRIVER=chrome CAPYBARA_JS_DRIVER=chrome bundle exec cucumber`
 
-`$ bundle exec DRIVER=firefox cucumber`
+`$ DRIVER=firefox CAPYBARA_JS_DRIVER=firefox bundle exec cucumber`
 Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html)
 
 ## Smoke testing
@@ -41,13 +41,13 @@ To run the smoke tests, use:
 
 ## Cross-browser and device testing with 🎭 Playwright
 
-By default, only Rack and Selenium Chrome are used for the feature tests.
+By default, only Rack and Headless Selenium Chrome are used for the feature tests.
 
 For cross-browser and device feature testing we use [Playwright](https://github.com/microsoft/playwright) and the [capybara-playwright-driver gem](https://github.com/YusukeIwaki/capybara-playwright-driver).
 
 To begin, install the required browsers:
 
-`$ yarn playwright install`
+`$ yarn playwright install --with-deps`
 
 Then run the test suite using the rack command:
 
@@ -55,9 +55,13 @@ Then run the test suite using the rack command:
 
 This will run `@javascript` tagged feature tests on Desktop Chrome, Desktop Edge, Desktop Firefox, Desktop WebKit, Mobile Chrome, and Mobile WebKit.
 
+Mobile device emulation is based on an iPhone 15, configuration can be viewed at [/config/playwright.yml](/config/playwright.yml).
+
 To run one of the drivers individually, e.g. Desktop Webkit run:
 
-`$ DRIVER=playwright_webkit CAPYBARA_JAVASCRIPT_DRIVER=playwright_webkit bundle exec cucumber features/`
+`$ DRIVER=playwright_webkit CAPYBARA_JS_DRIVER=playwright_webkit bundle exec cucumber`
+
+All of the playwright drivers can be viewed in [support/playwright_driver_helper.rb](support/playwright_driver_helper.rb).
 
 ## Brakeman
 
