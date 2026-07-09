@@ -53,9 +53,9 @@ Then install the required browsers:
 
 `$ yarn playwright install --with-deps`
 
-Then run the test suite using the rack command:
+Then run the test suite using the rake command:
 
-`$ bundle exec rack test:cross_browser_device`
+`$ bundle exec rake test:cross_browser_device`
 
 This will run `@javascript` tagged feature tests on Desktop Chrome, Desktop Edge, Desktop Firefox, Desktop WebKit, Mobile Chrome, and Mobile WebKit.
 
