@@ -52,7 +52,8 @@ dependencies to patched versions so `yarn npm audit` stays clean:
 Run `yarn npm audit --all --recursive` to check for new advisories. If a pin is
 ever bumped, re-run `yarn install`, `yarn build:css` and `yarn build`, then the
 feature tests to confirm nothing broke. Drop a pin once the upstream dependency
-ships the fix on its own.
+ships the fix on its own. See [`FRONTEND_CHANGELOG.md`](FRONTEND_CHANGELOG.md)
+for the history of frontend dependency decisions.
 
 ## CSS + JS updates
 We are now using propshaft, cssbundling-rails and jsbundling-rails. You will need to run
