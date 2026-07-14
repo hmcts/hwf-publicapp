@@ -18,7 +18,8 @@ When(/^I select yes to have you already paid the fee$/) do
 end
 
 And(/^I submit the form with a date that is within the last three months$/) do
-  fee_page.valid_date
+  @date = fee_page.valid_date
+  puts @date
 end
 
 And(/^I submit the form with a date that exceeds three months$/) do
