@@ -19,7 +19,6 @@ end
 
 And(/^I submit the form with a date that is within the last three months$/) do
   @date = fee_page.valid_date
-  puts @date
 end
 
 And(/^I submit the form with a date that exceeds three months$/) do

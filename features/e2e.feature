@@ -9,6 +9,9 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
+  # Needs a real browser: the age-band selects for children 2-4 are created
+  # client-side by app/javascript/modules/select-children-show.js, so under
+  # rack_test only one child would be submitted.
   @javascript
   Scenario: End to end path one - on_behalf? NO - married - savings_and_investments? between £4,250 and £15,999 - children? YES - probate? NO - case,_claim,_notice_to_pay_number? YES
     When I should be taken to fee page
@@ -72,7 +75,6 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
-  @javascript
   Scenario: End to end path two - single
     Given I should be taken to fee page
     When I submit no to have you already paid the fee
@@ -128,7 +130,6 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                                 |
       | Email test@hmcts.net Change email                                                       |
 
-  @javascript
   Scenario: End to end path three - Fee paid - Represented - Over 16
     When I should be taken to fee page
     When I select yes to have you already paid the fee
@@ -196,7 +197,6 @@ Feature: End to end tests
       | Full name Sally Smith Change full name                                    |
       | Address 102 Petty France London SW1H 9AJ Change address                   |
 
-  @javascript
   Scenario: End to end path Four - Fee paid - Represented - under 16
     When I should be taken to fee page
     When I submit no to have you already paid the fee
