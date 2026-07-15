@@ -2,6 +2,9 @@
   "defaults": {
     "timeout": 30000,
     "standard": "WCAG2AA",
+    "runners": [
+      "axe"
+    ],
     "viewport": {
       "width": 600,
       "height": 500
