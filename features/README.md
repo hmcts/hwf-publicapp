@@ -24,11 +24,6 @@ To run a particular scenario using line number:
 
 `$ bundle exec cucumber cucumber features/summary.feature:10`
 
-To run in firefox:
-
-`$ DRIVER=firefox CAPYBARA_JS_DRIVER=firefox bundle exec cucumber`
-Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html)
-
 ## Smoke testing
 
 Smoke tests verify core functionalities before comprehensive testing.
@@ -47,9 +42,15 @@ To begin, install yarn:
 
 `$ yarn install`
 
-Then install the required browsers:
+Next, install playwright:
 
 `$ yarn playwright install --with-deps`
+
+Then, install the branded browsers:
+
+`$ yarn playwright install chrome`
+
+`$ yarn playwright install msedge`
 
 Then run the test suite using the rake command:
 
