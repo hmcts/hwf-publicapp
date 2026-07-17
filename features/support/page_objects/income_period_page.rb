@@ -16,11 +16,11 @@ class IncomePeriodPage < BasePage
 
   def submit_income(num, period = :month)
     content.income_amount.set(num)
-    period_element = {
-      month: :income_period_month,
-      average: :income_period_average
-    }.fetch(period)
-    content.public_send(period_element).click
+    if period == :month
+      content.income_period_month.click
+    else
+      content.income_period_average.click
+    end
     continue
   end
 end

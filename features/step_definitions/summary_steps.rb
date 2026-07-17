@@ -52,7 +52,7 @@ end
 
 Then(/^I should see my details:$/) do |scopes|
   scopes.rows.each_with_index do |scope, index|
-    expected_text = scope[0].gsub('<date>') { @date.strftime('%d/%m/%Y') }
+    expected_text = scope[0].gsub('<date_last_month>') { @date_last_month.strftime('%d/%m/%Y') }
     expect(summary_page.content.summary_row[index].text).to have_text(expected_text)
   end
 end

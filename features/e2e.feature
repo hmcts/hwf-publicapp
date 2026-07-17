@@ -175,7 +175,7 @@ Feature: End to end tests
     And I should see my details:
       | scope                                                                                            |
       | Form name or number XX10 Change form name or number                                              |
-      |Fee paid Yes, on <date> Change fee paid                                                       |
+      |Fee paid Yes, on <date_last_month> Change fee paid                                                       |
       |Applying on behalf of someone else Yes Change applying on behalf of someone else                  |
       |Legal representative or litigation friend Legal representative Change legal representative details|
       |Legal representative details                                                                      |
@@ -251,5 +251,3 @@ Feature: End to end tests
       | Date of birth 27/09/2024 Change date of birth                                                    |
       | Full name Sally Smith Change full name                                                           |
       | Address 102 Petty France London SW1H 9AJ Change address                                          |
-
-
