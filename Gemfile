@@ -50,6 +50,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara-playwright-driver'
   gem 'apparition'
   gem 'brakeman'
   gem 'capybara'

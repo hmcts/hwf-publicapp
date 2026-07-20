@@ -76,7 +76,7 @@ if ENV.key?('CIRCLE_ARTIFACTS')
 end
 
 Capybara.always_include_port = true
-Capybara.javascript_driver = :headless
+Capybara.javascript_driver = ENV.fetch('CAPYBARA_JS_DRIVER', 'headless').to_sym
 Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST', "http://#{ENV.fetch('HOSTNAME', 'localhost')}")
 Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST', ENV.fetch('HOSTNAME', 'localhost'))
 Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT', '3000') unless

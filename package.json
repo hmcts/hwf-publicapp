@@ -27,5 +27,8 @@
     "tar": "^7.5.19",
     "undici": "^6.27.0"
   },
-  "packageManager": "yarn@4.17.1"
+  "packageManager": "yarn@4.17.1",
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
 }

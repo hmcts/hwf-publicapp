@@ -55,5 +55,3 @@ withPipeline(type, product, component) {
       sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
   }
 }
-
-

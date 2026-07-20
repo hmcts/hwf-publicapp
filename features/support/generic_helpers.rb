@@ -102,10 +102,6 @@ def base_page
   @base_page ||= BasePage.new
 end
 
-def saucelabs_page
-  @saucelabs_page ||= SaucelabsPage.new
-end
-
 def footer_page
   @footer_page ||= FooterPage.new
 end
