@@ -19,5 +19,5 @@ When('I process the application') do
   fill_in('Year', with: Time.zone.now.year)
   click_button('Next')
   click_button('Complete processing')
-  expect(page).to have_content 'Application complete'
+  expect(page).to have_text 'Application complete'
 end

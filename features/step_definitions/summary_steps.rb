@@ -62,7 +62,7 @@ end
 
 Then(/^I should be able to go back and change my details:$/) do |urls|
   urls.rows.each_with_index do |url, index|
-    expect(summary_page.content.summary_row[index].action['href']).to have_content url[0]
+    expect(summary_page.content.summary_row[index].action['href']).to have_text url[0]
   end
 end
 

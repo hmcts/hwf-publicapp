@@ -23,15 +23,37 @@ Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 
 ## Feature tests
 
-See the [feature testing README](https://github.com/hmcts/hwf-publicapp/blob/master/README.md).
+See the [feature testing README](/features/README.md).
 
 ## Frontend toolkit
+```
 yarn install
+```
+or
+```
+yarn set version latest
+```
 
 ## Update existing frontend libraries
 ```
-yarn upgrade --latest
+yarn up "*"
 ```
+
+## Dependency resolutions (security pins)
+The `resolutions` block in `package.json` force-pins some deep transitive
+dependencies to patched versions so `yarn npm audit` stays clean:
+
+- `tar` and `undici` — pulled in only via `sass` → `@parcel/watcher` →
+  `node-gyp` (build/install-time native-addon tooling, never shipped to the
+  browser). Pinned to `tar@^7.5.19` / `undici@^6.27.0` to clear the node-gyp
+  advisories while still satisfying its version ranges.
+- `fast-uri` and `picomatch` — pinned to compatible patched versions.
+
+Run `yarn npm audit --all --recursive` to check for new advisories. If a pin is
+ever bumped, re-run `yarn install`, `yarn build:css` and `yarn build`, then the
+feature tests to confirm nothing broke. Drop a pin once the upstream dependency
+ships the fix on its own. See [`FRONTEND_CHANGELOG.md`](FRONTEND_CHANGELOG.md)
+for the history of frontend dependency decisions.
 
 ## CSS + JS updates
 We are now using propshaft, cssbundling-rails and jsbundling-rails. You will need to run

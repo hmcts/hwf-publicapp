@@ -1,43 +1,20 @@
 # Automated testing
 
-## Dependencies
+## Rubocop testing
 
-You need to install:
-
-Ruby
-
-[Bundler](http://bundler.io/)
-
-[PhantomJS](https://github.com/teampoltergeist/poltergeist#installing-phantomjs)
-
-To install all of the required gems:
-
-`$ bundle install`
-
-### Rubocop
-
-To assess Ruby code quality across the application we use:
-
-[Rubocop](https://github.com/bbatsov/rubocop)
+To assess Ruby code quality across the application we use [Rubocop](https://github.com/bbatsov/rubocop).
 
 To run the tool, use:
 
 `$ rubocop`
 
-### Running Cucumber scenarios
+## Cucumber feature testing
 
-For integration and UI testing, we use:
-
-[Cucumber](http://cukes.info/)
-
-[Capybara](https://github.com/jnicklas/capybara)
+For integration and UI testing, we use [Cucumber](https://cucumber.io/) and [Capybara](https://github.com/teamcapybara/capybara).
 
 To run the standard Cucumber test suite, use:
 
 `$ bundle exec cucumber features`
-
-## check your ENV['HOSTNAME'] if you have an issues with "Real HTTP connections are disabled. Unregistered request"
-## from webmock
 
 To run the all scenarios in a particular feature file:
 
@@ -47,74 +24,48 @@ To run a particular scenario using line number:
 
 `$ bundle exec cucumber cucumber features/summary.feature:10`
 
-To run in a browser:
+## Smoke testing
 
-`$ bundle exec DRIVER=chrome cucumber`
+Smoke tests verify core functionalities before comprehensive testing.
 
-`$ bundle exec DRIVER=firefox cucumber`
-Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html)
+To run the smoke tests, use:
 
-### Running smoke tests
+`$ bundle exec cucumber --tags @hwf_submit_application`
 
-`$ bundle exec cucumber --tags @smoke`
+## Cross-browser and device testing with 🎭 Playwright
 
-### Running cross browser and device tests using Sauce Labs
+By default, only Rack and Firefox are used for the feature tests.
 
-Replace 'SAUCE_USERNAME' and 'SAUCE_ACCESS_KEY' in hwf-publicapp/.env.test with your account details
+For cross-browser and device feature testing we use [Playwright](https://github.com/microsoft/playwright) and the [capybara-playwright-driver gem](https://github.com/YusukeIwaki/capybara-playwright-driver).
 
-Run tunnel:
-Go to your terminal
-Example go to the path where you've downloaded Sauce connect
+To begin, install yarn:
 
-Latest sauce version on Mac ->  sc-4.6.2-osx
-`$ cd Downloads/sc-4.6.2-osx`
+`$ yarn install`
 
-Run Below command 
-`$ sc-4.6.2-osx % bin/sc -u <SAUCE_USERNAME> -k  <SAUCE_ACCESS_KEY> --se-port 4449`
+Next, install playwright:
 
-Replace '<SAUCE_USERNAME>' and '<SAUCE_ACCESS_KEY>' with your account details
+`$ yarn playwright install --with-deps`
 
-Wait for 'Sauce Connect is up, you may start your tests.'
+Then, install the branded browsers:
 
-[Add the tag '@saucelabs' to a scenario/s that you want to run.]
+`$ yarn playwright install chrome`
 
-To run Sauce Labs feature using specific browser:
+`$ yarn playwright install msedge`
 
-Open new session on terminal 
+Then run the test suite using the rake command:
 
-Go to your hwf-publicapp folder path
+`$ bundle exec rake test:cross_browser_device`
 
-Run Below command
-`$ DRIVER=saucelabs SAUCELABS_BROWSER=chrome_mac_latest cucumber --tags @saucelabs`
+This will run `@javascript` tagged feature tests on Desktop Chrome, Desktop Edge, Desktop Firefox, Desktop WebKit, Mobile Chrome, and Mobile WebKit.
 
-To run Sauce Labs feature on all devices and browsers:
+Mobile device emulation is based on an iPhone 15, configuration can be viewed at [/config/playwright.yml](/config/playwright.yml).
 
-`$ bin/run_saucelabs`
+To run one of the drivers individually, e.g. Desktop Chrome run:
 
-### Creating an HTML report
+`$ DRIVER=playwright_chrome CAPYBARA_JS_DRIVER=playwright_chrome bundle exec cucumber`
 
-Creating an HTML report uses the report_builder gem so ensure that you have done a bundle install before continuing.
+All of the playwright drivers can be viewed in [support/playwright_driver_helper.rb](support/playwright_driver_helper.rb).
 
-To create a HTML report detailing the results of a cucumber test:
-
-Run the cucumber tests with the "report" profile:
-
-`$ cucumber -p report` or 
-
-`$ cucumber -p report features/address.feature` (eg for one feature)
-
-This will create a .json file in the ~/features/cucumber-report directory which details the results of the cucumber 
-tests. The file will be embedded with screenshots of any failed tests.
-
-To convert the .json into a .html file, execute:
-
-`$ ruby features/support/report_builder.rb`
-
-This will create the .html in the features/cucumber-report directory. Open in browser by right-clicking the file and 
-going to 'Open in Browser'. 
-
-Note that the .html and screenshot.png files are included in the .gitignore file.
-
-### Brakeman
+## Brakeman
 
 [Brakeman](https://github.com/presidentbeef/brakeman) is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.

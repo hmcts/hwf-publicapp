@@ -11,7 +11,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "dependent" page' do
-        expect(page).to have_content 'Children that live with you or you’re supporting financially'
+        expect(page).to have_text 'Children that live with you or you’re supporting financially'
       end
     end
 
@@ -21,7 +21,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "benefit" page with error block' do
-        expect(page).to have_content 'There is a problem'
+        expect(page).to have_text 'There is a problem'
       end
 
       scenario 'I expect the fields to have specific errors' do

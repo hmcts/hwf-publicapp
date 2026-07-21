@@ -57,6 +57,10 @@ Then(/^I should see error message this date can't be in the future$/) do
   expect(probate_page.content).to have_future_date_error_link
 end
 
+Then('I should see deceased error message') do
+  expect(probate_page.content.text).to include("Please enter the deceased's name")
+end
+
 Then(/^I should see error message the date of death must have been in the last 20 years$/) do
   expect(base_page.content.alert).to have_there_is_a_problem
   expect(probate_page.content).to have_expired_date_error_link

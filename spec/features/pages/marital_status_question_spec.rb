@@ -11,7 +11,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "savings-and-investment" page' do
-        expect(page).to have_content 'How much do you have in savings and investments?'
+        expect(page).to have_text 'How much do you have in savings and investments?'
       end
     end
 
@@ -21,7 +21,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "marital_status" page with error block' do
-        expect(page).to have_content 'There is a problem'
+        expect(page).to have_text 'There is a problem'
       end
 
       scenario 'I expect the fields to have specific errors' do

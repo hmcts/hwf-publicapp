@@ -40,6 +40,7 @@ Feature: Summary page
     | contact                |
     And I should see probate in the check details table
 
+  @javascript
   Scenario: Displays home office number
     Given I have a home office number but not a national insurance number
     And I am 'married' and on the summary page
@@ -61,6 +62,7 @@ Feature: Summary page
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
+  @javascript
   Scenario: Displays national insurance number
     Given I have an NI number
     And I am 'married with NI' and on the summary page

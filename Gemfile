@@ -5,20 +5,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '4.0.2'
+ruby '4.0.5'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'hmcts/azure_env_secrets', tag: 'v1.0.1'
 gem 'dotenv-rails', groups: %i[development test] # this has to be here because of load order
-gem 'rails', '~> 8.1', '>= 8.1.2'
+gem 'rails', '~> 8.1', '>= 8.1.3'
 
 gem 'bootsnap', require: false
 gem 'config'
-gem 'connection_pool', '~> 2.4'
+gem 'connection_pool'
 
 gem 'nokogiri'
 gem 'puma'
-gem 'rack', '~> 3.2', '>= 3.2.1'
+gem 'rack'
 gem 'redis'
 gem 'sentry-rails'
 gem 'slim-rails'
@@ -29,7 +29,7 @@ gem 'propshaft'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
-gem 'cgi', '~> 0.5.1'
+gem 'cgi'
 gem 'rexml', '>= 3.3.9'
 
 group :development, :test do
@@ -50,6 +50,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara-playwright-driver'
   gem 'apparition'
   gem 'brakeman'
   gem 'capybara'

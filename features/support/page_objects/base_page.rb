@@ -25,7 +25,7 @@ class BasePage < SitePrism::Page
     element :error_summary_heading, '.error-link'
     element :link, 'a'
   end
-  elements :error_message, '.govuk-error-message'
+  elements :error_message, '.govuk-error-message', visible: :all
   element :js_print, '.js-print'
 
   def click_help_with

@@ -18,6 +18,10 @@ module PageNavigation
     Rails.cache
   end
 
+  # Cache writes use #expires_in_seconds (the session lifetime, provided by the
+  # including Storage) so page-path keys expire with the session rather than
+  # lingering in Redis forever.
+
   private
 
   def session_id
@@ -37,19 +41,19 @@ module PageNavigation
   def page_path_pop
     list = page_path
     list.pop
-    store.write("page_path-#{session_id}", list)
+    store.write("page_path-#{session_id}", list, expires_in: expires_in_seconds)
   end
 
   def page_path_slice(from, to)
     list = page_path
     list.slice!(from, to)
-    store.write("page_path-#{session_id}", list)
+    store.write("page_path-#{session_id}", list, expires_in: expires_in_seconds)
   end
 
   def page_path_add(page_hash)
     list = page_path
     list << page_hash
-    store.write("page_path-#{session_id}", list)
+    store.write("page_path-#{session_id}", list, expires_in: expires_in_seconds)
   end
 
   def find_page_index(question)

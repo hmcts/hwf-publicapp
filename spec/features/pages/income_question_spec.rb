@@ -12,8 +12,8 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "income_kind" page with error block' do
-        expect(page).to have_content 'Types of income you and your partner have received'
-        expect(page).to have_content 'There is a problem'
+        expect(page).to have_text 'Types of income you and your partner have received'
+        expect(page).to have_text 'There is a problem'
         expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select your kinds of income')
       end
     end
@@ -24,8 +24,8 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "income_period" page' do
-        expect(page).to have_content 'How much income did you and your partner receive?'
-        expect(page).to have_content 'You need to include income you and your partner received in the last calendar month or provide a three month average from:'
+        expect(page).to have_text 'How much income did you and your partner receive?'
+        expect(page).to have_text 'You need to include income you and your partner received in the last calendar month or provide a three month average from:'
       end
     end
   end
@@ -42,7 +42,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "probate" page' do
-        expect(page).to have_content 'Are you paying a fee for a probate case?'
+        expect(page).to have_text 'Are you paying a fee for a probate case?'
       end
     end
 
@@ -53,8 +53,8 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "income_amount" page with error block' do
-        expect(page).to have_content 'How much income did you and your partner receive?'
-        expect(page).to have_content 'There is a problem'
+        expect(page).to have_text 'How much income did you and your partner receive?'
+        expect(page).to have_text 'There is a problem'
         expect(page).to have_xpath('//p[@class="govuk-error-message"]', text: 'Enter how much income do you receive')
       end
     end

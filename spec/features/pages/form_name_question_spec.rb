@@ -11,7 +11,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "Apply on behalf of" page' do
-        expect(page).to have_content 'Is the application on behalf of someone else?'
+        expect(page).to have_text 'Is the application on behalf of someone else?'
       end
     end
 
@@ -22,7 +22,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect the form_name field to have an error' do
-        expect(page).to have_content "Enter a valid form number or select 'I don't have a form'"
+        expect(page).to have_text "Enter a valid form number or select 'I don't have a form'"
       end
     end
   end

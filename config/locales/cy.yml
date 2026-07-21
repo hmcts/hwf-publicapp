@@ -585,7 +585,7 @@ cy:
       children_true: Oes
       details:
         item_1: o dan 16 oed ac yn byw gartref gyda chi
-        item_2: rhwng 16 – 19, sengl, yn byw gartref gyda chi ac mewn addysg amser llawn (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall). Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
+        item_2: rhwng 16 – 19, sengl, yn byw gartref gyda chi ac mewn addysg amser llawn (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall). Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-benefit-16-19">gov.uk/child-benefit-16-19</a>
         item_3: plentyn nad yw'n byw gyda chi, ond eich bod chi (neu'ch partner) yn gwneud taliadau cynhaliaeth rheolaidd ar ei gyfer
         section_1: Mae angen i chi roi manylion unrhyw blant rydych chi'n eu cynnal yn ariannol.
         section_2: 'Mae hyn yn cynnwys plant sydd:'
@@ -605,7 +605,7 @@ cy:
           - dan 16 oed ac yn byw gartref gyda chi, neu
           - ddim yn byw gyda chi, ond rydych chi’n talu cynhaliaeth amdanynt yn rheolaidd, neu
           - rhwng 16 a 19 oed, yn byw gartref gyda chi ac mewn addysg llawn amser (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall)
-        list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-benefit-16-19">https://www.gov.uk/child-benefit-16-19</a>'
         children_age_band: A oes gennych chi blant sy’n byw gyda chi, neu blant rydych chi’n eu cynnal yn ariannol?
 
       married:
@@ -615,7 +615,7 @@ cy:
           - dan 16 oed ac yn byw gartref gyda chi, neu
           - ddim yn byw gyda chi, ond rydych chi neu eich partner yn talu cynhaliaeth amdanynt yn rheolaidd, neu
           - rhwng 16 a 19 oed, yn byw gartref gyda chi ac mewn addysg llawn amser (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall)
-        list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">https://www.gov.uk/child-tax-credit-when-child-reaches-16</a>'
+        list_link_html: ' Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-benefit-16-19">https://www.gov.uk/child-benefit-16-19</a>'
         children_age_band: A oes gennych chi neu’ch partner blant sy’n byw gyda chi, neu blant rydych chi’n eu cynnal y ariannol?
 
     dob:

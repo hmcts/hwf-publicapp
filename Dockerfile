@@ -1,4 +1,4 @@
-FROM ruby:4.0.2-alpine3.23
+FROM hmctsprod.azurecr.io/imported/library/ruby:4.0.5-alpine3.23
 
 # Adding argument support for ping.json
 ARG APPVERSION=unknown
@@ -14,8 +14,9 @@ ENV APP_BUILD_TAG=${APP_BUILD_TAG}
 
 
 RUN apk update && apk add --no-cache libc6-compat && \
-    apk add --no-cache --virtual .build-tools git build-base curl-dev yarn tzdata shared-mime-info \
-    yaml-dev
+    apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs npm tzdata shared-mime-info \
+    yaml-dev libffi-dev && \
+    npm install -g corepack && corepack enable
 
 ENV UNICORN_PORT=3000
 EXPOSE $UNICORN_PORT
@@ -25,7 +26,7 @@ WORKDIR /home/app
 
 COPY Gemfile /home/app
 COPY Gemfile.lock /home/app
-RUN gem install bundler -v 4.0.3
+RUN gem install bundler -v 4.0.13
 
 RUN bundle config set --local without 'test development'
 RUN bundle config set force_ruby_platform true
@@ -35,7 +36,9 @@ RUN bundle install
 ENV PHUSION=true
 
 COPY . /home/app
-RUN yarn install --check-files
+ENV COREPACK_HOME=/home/app/.corepack
+ENV HOME=/home/app
+RUN corepack install && yarn install
 
 CMD ["sh", "-c", "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah && \
      sh ./run.sh"]

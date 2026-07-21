@@ -36,6 +36,7 @@ Feature: Summary page
       | contact                |
     And I should see probate in the check details table
 
+  @javascript
   Scenario: Displays home office number
     Given I have a home office number but not a national insurance number
     And I am 'single' and on the summary page
