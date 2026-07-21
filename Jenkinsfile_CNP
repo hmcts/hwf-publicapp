@@ -43,6 +43,9 @@ withPipeline(type, product, component) {
         yarn install
       """, label: 'Start test'
       rubyBuilder.bundle("install")
+      // Git-sourced gems leave read-only pack files in the bundler cache,
+      // which breaks workspace unstash (tar can't overwrite them on re-extract)
+      sh script: 'chmod -R u+w vendor/bundle || true', label: 'Make bundle cache writable for stash'
       rubyBuilder.bundle("exec rails assets:precompile")
 
       sh script: 'docker run -d --name zap -p 8080:8080 ghcr.io/zaproxy/zaproxy zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true', label: 'Start ZAP'
