@@ -10,19 +10,19 @@ end
 
 namespace :test do
   task smoke: :environment do
-    # if system "bundle exec cucumber features/  --tags @hwf_submit_application"
-    puts "Smoke test passed"
-    # else
-    #   raise "Smoke tests failed"
-    # end
+    if system "bundle exec cucumber features/  --tags @hwf_submit_application"
+      puts "Smoke test passed"
+    else
+      raise "Smoke tests failed"
+    end
   end
 
   task functional: :environment do
-    # if system "bundle exec cucumber features/"
-    puts "Functional test passed"
-    # else
-    #   raise "Functional tests failed"
-    # end
+    if system "bundle exec cucumber features/"
+      puts "Functional test passed"
+    else
+      raise "Functional tests failed"
+    end
   end
 
   task cross_browser_device: :environment do
