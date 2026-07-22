@@ -36,4 +36,8 @@ withNightlyPipeline(type, product, component) {
   }
 
   before('build') { installRuby() }
+
+  afterAlways('fortify-scan') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/Fortify Scan/**/*'
+  }
 }
