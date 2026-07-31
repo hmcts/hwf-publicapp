@@ -40,6 +40,32 @@ RSpec.describe Forms::HomeOffice do
         end
       end
 
+      describe 'Alternate HO format' do
+        before { form_ho.ho_number = 'GWF999999999' }
+
+        it { expect(form_ho.valid?).to be true }
+
+        context 'multiple applicants' do
+          before { form_ho.ho_number = 'GWF999999999/1' }
+
+          it { expect(form_ho.valid?).to be true }
+        end
+
+        context 'invalid' do
+          context 'not enought digits' do
+            before { form_ho.ho_number = 'GWF99999999' }
+
+            it { expect(form_ho.valid?).to be false }
+          end
+
+          context 'letters mixed in' do
+            before { form_ho.ho_number = 'GWF99999999A' }
+
+            it { expect(form_ho.valid?).to be false }
+          end
+        end
+      end
+
       context 'when NI not provided' do
         before { form_ho.ho_number = 'L1234567' }
 
