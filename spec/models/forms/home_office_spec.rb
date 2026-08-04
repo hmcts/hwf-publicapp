@@ -4,6 +4,13 @@ RSpec.describe Forms::HomeOffice do
   subject(:form_ho) { described_class.new }
 
   describe 'validations' do
+
+    describe 'regex' do
+      it "has the expected pattern" do
+        expect(described_class::HO_NUMBER_REGEXP).to eq(%r{\A([a-zA-Z]\d{7}|GWF\d{9}|\d{9}|\d{4}-\d{4}-\d{4}-\d{4})(/\d{1,})?\z})
+      end
+    end
+
     describe 'mandatory if no NI number' do
       context 'preformat the ho' do
         before {
