@@ -37,7 +37,8 @@ group :development, :test do
   gem 'rubocop', '~> 1.40', require: false
   gem 'rubocop-rails'
   gem 'rubocop-performance', require: false
-  gem 'simplecov'
+  # Pinned below 1.0: SonarQube cannot parse the SimpleCov 1.0 JSON report schema
+  gem 'simplecov', '~> 0.22.0'
   gem 'parallel_tests'
   gem 'bundler-audit'
   gem 'pry'
