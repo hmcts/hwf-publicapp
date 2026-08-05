@@ -11,9 +11,9 @@ RSpec.describe Forms::HomeOffice do
       end
 
       it "matches valid values" do
-        expect("L1234567").to match(described_class::HO_NUMBER_REGEXP)
-        expect("GWF123456789").to match(described_class::HO_NUMBER_REGEXP)
-        expect("1212-0001-0240-0490").to match(described_class::HO_NUMBER_REGEXP)
+        expect(described_class::HO_NUMBER_REGEXP.match?("L1234567")).to be(true)
+        expect(described_class::HO_NUMBER_REGEXP.match?("GWF123456789")).to be(true)
+        expect(described_class::HO_NUMBER_REGEXP.match?("1212-0001-0240-0490")).to be(true)
       end
     end
 
