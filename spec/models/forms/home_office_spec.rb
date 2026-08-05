@@ -9,6 +9,12 @@ RSpec.describe Forms::HomeOffice do
       it "has the expected pattern" do
         expect(described_class::HO_NUMBER_REGEXP).to eq(%r{\A([a-zA-Z]\d{7}|GWF\d{9}|\d{9}|\d{4}-\d{4}-\d{4}-\d{4})(/\d{1,})?\z})
       end
+
+      it "matches valid values" do
+        expect("L1234567").to match(described_class::HO_NUMBER_REGEXP)
+        expect("GWF123456789").to match(described_class::HO_NUMBER_REGEXP)
+        expect("1212-0001-0240-0490").to match(described_class::HO_NUMBER_REGEXP)
+      end
     end
 
     describe 'mandatory if no NI number' do
