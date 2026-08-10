@@ -5,3 +5,7 @@ end
 When(/^I submit the form with income '([^"]*)' and monthly$/) do |num|
   income_period_page.submit_income(num)
 end
+
+When(/^I submit the form with income '([^"]*)' and average '([^"]*)'$/) do |num, income_period|
+  income_period_page.submit_income(num, income_period.to_sym)
+end

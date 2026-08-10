@@ -25,3 +25,7 @@ end
 When('I answer no to over 16') do
   over_16_page.applicant_under_16
 end
+
+When('I answer litigation friend') do
+  legal_representative_page.litigation_friend
+end
