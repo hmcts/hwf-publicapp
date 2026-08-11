@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library("Infrastructure@2.5.0")
 
 def type = "ruby"
 def product = "help-with-fees"
@@ -24,7 +24,7 @@ withPipeline(type, product, component) {
   env.CUCUMBER_PUBLISH_ENABLED = 'true'
 
 
-  before('build') {
+  def installRuby = {
     sh script:"""#!/bin/bash -l
       set +x
       source /usr/local/rvm/scripts/rvm
@@ -33,16 +33,28 @@ withPipeline(type, product, component) {
       """, label: 'Ruby version install'
   }
 
+  before('build') { installRuby() }
+  // Smoke/functional tests run on a different agent from the build, so the
+  // build-stage install doesn't cover them
+  before('smoketest:preview') { installRuby() }
+  before('smoketest:aat') { installRuby() }
+  before('functionalTest:preview') { installRuby() }
+  before('functionalTest:aat') { installRuby() }
+
    before('test') {
       sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
       sh script:"""
         mkdir -p ~/.local/bin
         corepack enable --install-directory ~/.local/bin
         export PATH=~/.local/bin:\$PATH
+
         env AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod az acr login --name hmctsprod --subscription DCD-CNP-PROD
         yarn install
       """, label: 'Start test'
       rubyBuilder.bundle("install")
+      // Git-sourced gems leave read-only pack files in the bundler cache,
+      // which breaks workspace unstash (tar can't overwrite them on re-extract)
+      sh script: 'chmod -R u+w vendor/bundle || true', label: 'Make bundle cache writable for stash'
       rubyBuilder.bundle("exec rails assets:precompile")
 
       sh script: 'docker run -d --name zap -p 8080:8080 ghcr.io/zaproxy/zaproxy zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true', label: 'Start ZAP'
@@ -60,5 +72,3 @@ withPipeline(type, product, component) {
       junit testResults: 'tmp/test/cucumber-functional/*.xml', allowEmptyResults: true, skipPublishingChecks: false
   }
 }
-
-

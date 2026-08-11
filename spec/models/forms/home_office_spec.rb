@@ -4,6 +4,19 @@ RSpec.describe Forms::HomeOffice do
   subject(:form_ho) { described_class.new }
 
   describe 'validations' do
+
+    describe 'regex' do
+      it "has the expected pattern" do
+        expect(described_class::HO_NUMBER_REGEXP).to eq(%r{\A([a-zA-Z]\d{7}|GWF\d{9}|\d{9}|\d{4}-\d{4}-\d{4}-\d{4})(/\d{1,})?\z})
+      end
+
+      it "matches valid values" do
+        expect(described_class::HO_NUMBER_REGEXP.match?("L1234567")).to be(true)
+        expect(described_class::HO_NUMBER_REGEXP.match?("GWF123456789")).to be(true)
+        expect(described_class::HO_NUMBER_REGEXP.match?("1212-0001-0240-0490")).to be(true)
+      end
+    end
+
     describe 'mandatory if no NI number' do
       context 'preformat the ho' do
         before {
@@ -34,6 +47,32 @@ RSpec.describe Forms::HomeOffice do
 
           context 'letters mixed in' do
             before { form_ho.ho_number = '12s2-0001-0240-0490' }
+
+            it { expect(form_ho.valid?).to be false }
+          end
+        end
+      end
+
+      describe 'Alternate HO format' do
+        before { form_ho.ho_number = 'GWF999999999' }
+
+        it { expect(form_ho.valid?).to be true }
+
+        context 'multiple applicants' do
+          before { form_ho.ho_number = 'GWF999999999/1' }
+
+          it { expect(form_ho.valid?).to be true }
+        end
+
+        context 'invalid' do
+          context 'not enought digits' do
+            before { form_ho.ho_number = 'GWF99999999' }
+
+            it { expect(form_ho.valid?).to be false }
+          end
+
+          context 'letters mixed in' do
+            before { form_ho.ho_number = 'GWF99999999A' }
 
             it { expect(form_ho.valid?).to be false }
           end

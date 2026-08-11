@@ -45,6 +45,7 @@ class FeePage < BasePage
     content.fee_month_date_paid.set(date.month)
     content.fee_year_date_paid.set(date.year)
     continue
+    @date = date
   end
 
   def submit_fee_yes
@@ -72,9 +73,9 @@ class FeePage < BasePage
   end
 
   def invalid_date
-    content.fee_day_date_paid.set("ABC")
-    content.fee_month_date_paid.set("ABC")
-    content.fee_year_date_paid.set("ABC")
+    content.fee_day_date_paid.set(123456)
+    content.fee_month_date_paid.set(123456)
+    content.fee_year_date_paid.set(123456)
     continue
   end
 

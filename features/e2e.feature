@@ -9,6 +9,9 @@ Feature: End to end tests
     When I continue
     Then I am on the fee page
 
+  # Needs a real browser: the age-band selects for children 2-4 are created
+  # client-side by app/javascript/modules/select-children-show.js, so under
+  # rack_test only one child would be submitted.
   @javascript
   Scenario: End to end path one - on_behalf? NO - married - savings_and_investments? between £4,250 and £15,999 - children? YES - probate? NO - case,_claim,_notice_to_pay_number? YES
     When I should be taken to fee page
@@ -72,7 +75,6 @@ Feature: End to end tests
       | Address 102 Petty France London SW1H 9AJ Change address                   |
       | Email test@hmcts.net Change email                                         |
 
-  @javascript
   Scenario: End to end path two - single
     Given I should be taken to fee page
     When I submit no to have you already paid the fee
@@ -127,3 +129,125 @@ Feature: End to end tests
       | Full name Sally Smith Change full name                                               |
       | Address 102 Petty France London SW1H 9AJ Change address                                 |
       | Email test@hmcts.net Change email                                                       |
+
+  Scenario: End to end path three - Fee paid - Represented - Over 16
+    When I should be taken to fee page
+    When I select yes to have you already paid the fee
+    And I submit the form with a date that is within the last three months
+    Then I submit the form with a help with fees form number 'XX10'
+    Then I should be taken to apply on behalf page
+    When I select yes to are you applying on behalf of someone
+    And I answer legal representative
+    And I fill in all mandatory fields for legal representative
+    Then I should be on are you applying for over 16 page
+    When I answer yes to over 16
+    Then I should be taken to national insurance page
+    When I submit a valid national insurance number
+    Then I should be taken to marital status page
+    When I submit the form as single
+    Then I should be taken to savings and investments page
+    When I submit the form with between £4,250 and £15,999 checked
+    Then I should be taken to savings and investment extra page
+    When I submit yes I am 66 years old or over
+    And I click continue
+    Then I should be taken to benefits page
+    When I submit the form with no I do not receive one of the benefits listed
+    Then I should be taken to dependent page
+    And I submit the form with no I do not have any children
+    Then I should be taken to kind of income page
+    When I submit the form with wages checked
+    Then I should be taken to income period page
+    When I submit the form with income '8000' and average 'average'
+    Then I should be taken to the probate page
+    When I select no to are you paying a fee for a probate case
+    Then I should be taken to the claim page
+    When I select yes to do you have a case, claim or notice to pay number
+    And I enter a case, claim or notice to pay number
+    Then I should be taken to date of birth page
+    And I enter a date of birth "27/09/1950"
+    Then I should be taken to personal details page
+    When I enter my full name
+    Then I should be taken to address page
+    When I enter my address with postcode
+    Then I should be taken to apply type page
+    When I select I will be completing via online service
+    Then I should be taken to summary page
+    And I should see my details:
+      | scope                                                                                            |
+      | Form name or number XX10 Change form name or number                                              |
+      |Fee paid Yes, on <date_last_month> Change fee paid                                                       |
+      |Applying on behalf of someone else Yes Change applying on behalf of someone else                  |
+      |Legal representative or litigation friend Legal representative Change legal representative details|
+      |Legal representative details                                                                      |
+      |Full name Tom Jones Change legal representative details                                           |
+      |Email tom@jones.com Change legal representative details                                           |
+      |Position held at firm Change legal representative details                                         |
+      |Address London road Bath ABC132 Change legal representative details                               |
+      |Applicant over 16 Yes Change applicant over 16                                                    |
+      | National Insurance number JL806367D Change national insurance number      |
+      | Status Single Change status                                               |
+      | Savings and investments Between £4,250 and £15,999 Change savings and investments|
+      | Benefits Not receiving eligible benefits Change benefits                  |
+      | Children No Change children                                               |
+      | Total income £8,000 Average for the last three months Change income       |
+      | Income type Your income type Change income type                           |
+      | Probate case No Change probate case                                       |
+      | Claim number 012345678 Change claim number                                |
+      | Date of birth 27/09/1950 Change date of birth                             |
+      | Full name Sally Smith Change full name                                    |
+      | Address 102 Petty France London SW1H 9AJ Change address                   |
+
+  Scenario: End to end path Four - Fee paid - Represented - under 16
+    When I should be taken to fee page
+    When I submit no to have you already paid the fee
+    Then I submit the form with a help with fees form number 'XX10'
+    Then I should be taken to apply on behalf page
+    When I select yes to are you applying on behalf of someone
+    And I answer litigation friend
+    And I fill in all mandatory fields for legal representative
+    Then I should be on are you applying for over 16 page
+    When I answer no to over 16
+    Then I should be taken to savings and investments page
+    When I submit the form with £16,000 or more checked
+    And I click continue
+    Then I should be taken to dependent page
+    And I submit the form with no I do not have any children
+    Then I should be taken to kind of income page
+    When I submit the form with wages checked
+    Then I should be taken to income period page
+    When I submit the form with income '8000' and average 'average'
+    Then I should be taken to the probate page
+    When I select no to are you paying a fee for a probate case
+    Then I should be taken to the claim page
+    When I select yes to do you have a case, claim or notice to pay number
+    And I enter a case, claim or notice to pay number
+    Then I should be taken to date of birth page
+    And I enter a date of birth "27/09/2024"
+    Then I should be taken to personal details page
+    When I enter my full name
+    Then I should be taken to address page
+    When I enter my address with postcode
+    Then I should be taken to apply type page
+    When I select I will be completing via online service
+    Then I should be taken to summary page
+    And I should see my details:
+      | scope                                                                                            |
+      | Form name or number XX10 Change form name or number                                              |
+      |Fee paid No Change fee paid                                                                       |
+      |Applying on behalf of someone else Yes Change applying on behalf of someone else                  |
+      |Legal representative or litigation friend Litigation friend Change legal representative details   |
+      |Litigation friend details                                                                         |
+      |Full name Tom Jones Change legal representative details                                           |
+      |Email tom@jones.com Change legal representative details                                           |
+      |Address London road Bath ABC132 Change legal representative details                               |
+      |Applicant over 16 No Change applicant over 16                                                     |
+      | Status Single Change status                                                                      |
+      | Savings and investments £16,000 or more Change savings and investments                           |
+      | Children No Change children                                                                      |
+      | Total income £8,000 Average for the last three months Change income                              |
+      | Income type Your income type Change income type                                                  |
+      | Probate case No Change probate case                                                              |
+      | Claim number 012345678 Change claim number                                                       |
+      | Date of birth 27/09/2024 Change date of birth                                                    |
+      | Full name Sally Smith Change full name                                                           |
+      | Address 102 Petty France London SW1H 9AJ Change address                                          |

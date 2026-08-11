@@ -17,6 +17,18 @@
 #     rack_test has no text node for it so it runs together ("£0Last calendar
 #     month"). We emit a newline for it to match.
 #
+#  4. In a browser, a closed <details> element shows only its <summary> line -
+#     the body is hidden until the user expands it. rack_test includes the
+#     body anyway, so the income-type row on the summary page comes back as
+#     "Income type Your income type Wages before tax... Change income type"
+#     when a browser would just say "Income type Your income type Change
+#     income type". Oddly, Capybara does know this rule (a closed <details>
+#     counts as invisible in Capybara::Node::Simple::VISIBILITY_XPATH), but
+#     displayed_text only applies it to the element you call #text on - the
+#     children it recurses into are visited with check_ancestor: false, which
+#     skips the check. We close that gap by returning no text for anything
+#     inside a closed <details> other than its <summary>.
+#
 # Mirroring these here makes rack_test text match the browser so the same specs
 # pass under both drivers.
 module Capybara
@@ -31,12 +43,21 @@ module Capybara
 
       module VisuallyHiddenSpacing
         def displayed_text(check_ancestor: true)
+          return '' if hidden_by_closed_details?
+
           text = super
           return text unless native.element?
           return "\n" if tag_name == 'br'
           return text unless native[:class].to_s.split.include?('govuk-visually-hidden')
 
           "\n#{text}\n"
+        end
+
+        private
+
+        def hidden_by_closed_details?
+          native.element? && tag_name != 'summary' &&
+            native.parent&.name == 'details' && !native.parent.key?('open')
         end
       end
       prepend VisuallyHiddenSpacing

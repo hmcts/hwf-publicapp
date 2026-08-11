@@ -14,10 +14,13 @@ class IncomePeriodPage < BasePage
     content.income_amount.set(num)
   end
 
-  def submit_income(num)
+  def submit_income(num, period = :month)
     content.income_amount.set(num)
-    content.income_period_month.click
+    if period == :month
+      content.income_period_month.click
+    else
+      content.income_period_average.click
+    end
     continue
   end
-
 end
