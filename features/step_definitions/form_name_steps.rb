@@ -17,7 +17,7 @@ When(/^I submit the form with a valid form number$/) do
 end
 
 When(/^I submit the form with I don’t have a form checked$/) do
-#  form_name_page.no_form
+  #  form_name_page.no_form
   continue
 end
 
