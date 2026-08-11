@@ -1,6 +1,11 @@
 #!groovy
 
-@Library("Infrastructure")
+properties([
+    // H allow predefined but random minute see https://en.wikipedia.org/wiki/Cron#Non-standard_characters
+    pipelineTriggers([cron('H 7 * * 1-5')])
+])
+
+@Library("Infrastructure@2.4.8")
 
 def type = "ruby"
 def product = "help-with-fees"
@@ -10,9 +15,6 @@ def rubyBuilder = new uk.gov.hmcts.contino.RubyBuilder(this)
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
 withNightlyPipeline(type, product, component) {
-
-  enableFortifyScan()
-
   env.RAILS_ENV = 'test'
   env.RACK_ENV = 'test'
   env.TEST_BROWSER = 'chrome_local'
@@ -21,8 +23,10 @@ withNightlyPipeline(type, product, component) {
   // random free port should probably be used instead
   env.GOVUK_NOTIFY_API_KEY = 'mocked_in_tests'
 
+  enableSlackNotifications('#pet-nightly')
+  enableFortifyScan()
 
-  before('build') {
+  def installRuby = {
     sh script:"""#!/bin/bash -l
       set +x
       source /usr/local/rvm/scripts/rvm
@@ -31,27 +35,5 @@ withNightlyPipeline(type, product, component) {
       """, label: 'Ruby version install'
   }
 
-   before('test') {
-      sh script:"""
-        mkdir -p ~/.local/bin
-        corepack enable --install-directory ~/.local/bin
-        export PATH=~/.local/bin:\$PATH
-        yarn install
-      """, label: 'Start test'
-      rubyBuilder.bundle("install")
-      rubyBuilder.bundle("exec rails assets:precompile")
-
-      sh script: 'docker run -d --name zap -p 8080:8080 ghcr.io/zaproxy/zaproxy zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true', label: 'Start ZAP'
-      sh script: 'sleep 15', label: 'Wait for ZAP to start'
-      env.ZAP_SCAN = 'true'
-      env.SE_MANAGER_OFFLINE = 'true'
-  }
-
-  afterAlways('test') {
-      sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
-  }
-
-  // afterAlways('fortify-scan') {
-  //   steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/Fortify Scan/**/*'
-  // }
+  before('build') { installRuby() }
 }
