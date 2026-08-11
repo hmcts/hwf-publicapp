@@ -66,4 +66,8 @@ withPipeline(type, product, component) {
   afterAlways('test') {
       sh script: 'docker stop zap && docker rm zap || true', label: 'Stop ZAP'
   }
+
+  afterAlways('functionalTest:preview') {
+      junit testResults: 'tmp/test/cucumber-functional/*.xml', allowEmptyResults: true, skipPublishingChecks: false
+  }
 }
