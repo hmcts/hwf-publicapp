@@ -15,11 +15,21 @@ for the application to work correctly.
 
 More info: https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/
 
-## Docker
 
-Using this command `docker build hmcts/hwf-publicapp:vX.Y`
+### Docker image on local
 
-(Where `X` & `Y` are version numbers) 
+To be able to pull the image locally you either have to log in via
+```az acr login --name hmctsprod --subscription DCD-CNP-PROD```
+
+or you can just remove the path from the image line ie:
+
+```
+FROM hmctsprod.azurecr.io/imported/library/ruby:4.0.5-alpine3.23
+```
+to
+```
+FROM ruby:4.0.5-alpine3.23
+```
 
 ## Feature tests
 
@@ -76,4 +86,4 @@ Run the cucumber features in parallel
 ```
 CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
 ```
-Deployment versions trigger: 1
+Deployment versions trigger: 11
