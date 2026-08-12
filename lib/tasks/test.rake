@@ -18,7 +18,10 @@ namespace :test do
   end
 
   task functional: :environment do
-    if system "bundle exec cucumber features/"
+    if system "bundle exec cucumber features/ " \
+              "--format pretty " \
+              "--format junit " \
+              "--out tmp/test/cucumber-functional"
       puts "Functional test passed"
     else
       raise "Functional tests failed"
