@@ -10,6 +10,7 @@ require 'capybara/cucumber'
 require 'base64'
 require 'webmock'
 require 'selenium/webdriver'
+require 'axe-cucumber-steps'
 include WebMock::API
 include ActiveSupport::Testing::TimeHelpers
 
