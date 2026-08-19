@@ -1,7 +1,7 @@
 class ClaimPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/claim'
+  set_url '/applications/{app_id}/questions/claim'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 18 of 25'

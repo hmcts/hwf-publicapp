@@ -1,7 +1,7 @@
 class PartnerNationalInsurancePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/partner_national_insurance'
+  set_url '/applications/{app_id}/questions/partner_national_insurance'
 
   section :content, '#content' do
     element :header, 'h1', text: "Enter your partner's National Insurance number"

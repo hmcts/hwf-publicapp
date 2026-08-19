@@ -1,7 +1,7 @@
 class MaritalStatusPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/marital_status'
+  set_url '/applications/{app_id}/questions/marital_status'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 9 of 25'

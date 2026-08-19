@@ -1,5 +1,5 @@
 class PersonalDetailsPage < BasePage
-  set_url '/questions/personal_detail'
+  set_url '/applications/{app_id}/questions/personal_detail'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 20 of 25'

@@ -1,7 +1,7 @@
 class ContactPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/contact'
+  set_url '/applications/{app_id}/questions/contact'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 22 of 25'

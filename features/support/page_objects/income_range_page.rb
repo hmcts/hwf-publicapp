@@ -1,7 +1,7 @@
 class IncomeRangePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/income_range'
+  set_url '/applications/{app_id}/questions/income_range'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 12 of 22'
