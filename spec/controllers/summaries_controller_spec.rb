@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe SummariesController do
 
   describe 'GET #show' do
+    let(:app_id) { SecureRandom.uuid }
     let(:storage_started) { true }
     let(:storage) { instance_double(Storage, started?: storage_started) }
     let(:online_application) { build(:online_application) }
@@ -13,7 +14,7 @@ RSpec.describe SummariesController do
       allow(controller).to receive_messages(storage: storage, online_application: online_application)
       allow(Views::Summary).to receive(:new).with(online_application).and_return(summary_view)
 
-      get :show
+      get :show, params: { app_id: app_id }
     end
 
     it 'returns http success' do

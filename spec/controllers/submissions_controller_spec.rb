@@ -2,14 +2,16 @@ require 'rails_helper'
 
 RSpec.describe SubmissionsController do
   let(:session) { double }
-  let(:storage) { double }
+  let(:app_id) { SecureRandom.uuid }
+  let(:storage) { double(started?: storage_started) }
+  let(:storage_started) { true }
   let(:online_application) { build(:online_application, calculation_scheme: schema) }
   let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
   let(:schema) { 'scheme' }
 
   before do
     allow(controller).to receive(:session).and_return(session)
-    allow(Storage).to receive(:new).with(session).and_return(storage)
+    allow(Storage).to receive(:new).with(session, app_id).and_return(storage)
     allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
   end
 
@@ -24,7 +26,15 @@ RSpec.describe SubmissionsController do
       allow(storage).to receive(:submission_result=)
       allow(storage).to receive(:save_form)
 
-      post :create, params: { locale: 'cy' }
+      post :create, params: { locale: 'cy', app_id: app_id }
+    end
+
+    context 'when the storage is not started' do
+      let(:storage_started) { false }
+
+      it 'redirects to the home page' do
+        expect(response).to redirect_to(root_path)
+      end
     end
 
     context 'submit with correct params' do

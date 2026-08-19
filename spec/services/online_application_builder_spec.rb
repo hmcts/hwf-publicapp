@@ -6,34 +6,34 @@ RSpec.describe OnlineApplicationBuilder do
   let(:session_id) { 2 }
   let(:store_data) do
     rails_store = Rails.cache
-    rails_store.write("questions-#{session_id}-over16", { 'married' => false, 'over_16' => false }.as_json)
-    rails_store.write("questions-#{session_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
-    rails_store.write("questions-#{session_id}-savings_and_investment_extra", { 'over_66' => false, 'amount' => 6000 }.as_json)
-    rails_store.write("questions-#{session_id}-benefit", { 'on_benefits' => true }.as_json)
-    rails_store.write("questions-#{session_id}-dependent", { 'children' => true, 'children_number' => 2 }.as_json)
-    rails_store.write("questions-#{session_id}-fee", { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' }.as_json)
-    rails_store.write("questions-#{session_id}-income_period", { 'amount' => 550 }.as_json)
-    rails_store.write("questions-#{session_id}-probate", { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'day_date_of_death' => '01', 'month_date_of_death' => '08', 'year_date_of_death' => '2015' }.as_json)
-    rails_store.write("questions-#{session_id}-claim/default", { 'number' => true, 'identifier' => 'CL001' }.as_json)
-    rails_store.write("questions-#{session_id}-form_name", { 'identifier' => 'EX47' }.as_json)
-    rails_store.write("questions-#{session_id}-national_insurance", { 'number' => 'AA123456A' }.as_json)
-    rails_store.write("questions-#{session_id}-personal_detail", { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' }.as_json)
-    rails_store.write("questions-#{session_id}-dob", { 'day' => '10', 'month' => '03', 'year' => '1967' }.as_json)
-    rails_store.write("questions-#{session_id}-applicant_address", { 'street' => '1 Blue Fields', 'town' => 'Shine Town', 'postcode' => 'SH01 TW0' }.as_json)
-    rails_store.write("questions-#{session_id}-contact", { 'email' => 'mary@jones.com', 'feedback_opt_in' => true }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-over16", { 'married' => false, 'over_16' => false }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-savings_and_investment_extra", { 'over_66' => false, 'amount' => 6000 }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-benefit", { 'on_benefits' => true }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-dependent", { 'children' => true, 'children_number' => 2 }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-fee", { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-income_period", { 'amount' => 550 }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-probate", { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'day_date_of_death' => '01', 'month_date_of_death' => '08', 'year_date_of_death' => '2015' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-claim/default", { 'number' => true, 'identifier' => 'CL001' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-form_name", { 'identifier' => 'EX47' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-national_insurance", { 'number' => 'AA123456A' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-personal_detail", { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-dob", { 'day' => '10', 'month' => '03', 'year' => '1967' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-applicant_address", { 'street' => '1 Blue Fields', 'town' => 'Shine Town', 'postcode' => 'SH01 TW0' }.as_json)
+    rails_store.write("questions-#{session_id}-#{app_id}-contact", { 'email' => 'mary@jones.com', 'feedback_opt_in' => true }.as_json)
   end
 
-  let(:storage) { Storage.new(session) }
+  let(:storage) { Storage.new(session, app_id) }
+  let(:app_id) { SecureRandom.uuid }
   let(:session) { instance_double(ActionDispatch::Request::Session, id: session_id) }
 
   describe '#online_application' do
     subject(:online_application) { builder.online_application }
 
     before do
-      store_data
-      allow(session).to receive(:[]).with(:calculation_scheme).and_return Rails.configuration.ucd_schema.to_s
-      allow(session).to receive(:[]).with(:started_at).and_return ''
       allow(session).to receive(:[]=)
+      storage.save_calculation_scheme(Rails.configuration.ucd_schema.to_s)
+      store_data
     end
 
     it 'returns an online_application' do

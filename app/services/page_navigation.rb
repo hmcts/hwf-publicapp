@@ -24,8 +24,10 @@ module PageNavigation
 
   private
 
-  def session_id
-    @session['session_id']
+  # Scoped like every other Storage key, so each application keeps its own
+  # back-link history (@session and @app_id are provided by Storage).
+  def page_path_key
+    "page_path-#{@session.id}-#{@app_id}"
   end
 
   def back_link
@@ -35,25 +37,25 @@ module PageNavigation
   end
 
   def page_path
-    store.read("page_path-#{session_id}") || []
+    store.read(page_path_key) || []
   end
 
   def page_path_pop
     list = page_path
     list.pop
-    store.write("page_path-#{session_id}", list, expires_in: expires_in_seconds)
+    store.write(page_path_key, list, expires_in: expires_in_seconds)
   end
 
   def page_path_slice(from, to)
     list = page_path
     list.slice!(from, to)
-    store.write("page_path-#{session_id}", list, expires_in: expires_in_seconds)
+    store.write(page_path_key, list, expires_in: expires_in_seconds)
   end
 
   def page_path_add(page_hash)
     list = page_path
     list << page_hash
-    store.write("page_path-#{session_id}", list, expires_in: expires_in_seconds)
+    store.write(page_path_key, list, expires_in: expires_in_seconds)
   end
 
   def find_page_index(question)
