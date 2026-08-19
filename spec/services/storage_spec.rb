@@ -238,14 +238,17 @@ RSpec.describe Storage do
   end
 
   describe '#submission_result' do
-    let(:result) { { result: true } }
+    let(:result) { { result: true, message: 'HWF-010101' } }
 
     context 'when there is a submission_result stored' do
       before { storage.submission_result = result }
 
-      it 'returns it, also from a fresh instance for the same application' do
-        expect(storage.submission_result).to eql(result)
-        expect(described_class.new(session, app_id).submission_result).to eql(result)
+      it 'returns it with string keys, as the confirmation views expect' do
+        expect(storage.submission_result).to eql('result' => true, 'message' => 'HWF-010101')
+      end
+
+      it 'is readable from a fresh instance for the same application' do
+        expect(described_class.new(session, app_id).submission_result['message']).to eql('HWF-010101')
       end
     end
 

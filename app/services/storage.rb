@@ -60,7 +60,9 @@ class Storage
   end
 
   def submission_result=(result)
-    write_metadata(submission_result: result)
+    # Stored as_json (string keys), matching how the JSON cookie session used
+    # to serialise it — the confirmation views read @result['message'].
+    write_metadata(submission_result: result.as_json)
   end
 
   def submission_result
