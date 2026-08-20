@@ -83,8 +83,9 @@ Feature: Accessibility of public app pages
     When I enter my address with postcode
     Then I should be taken to contact page
     And the "22 - Contact" page should meet accessibility standards
+    And I enter an invalid email address
     And the "22 - Contact" error page should meet accessibility standards
-    When I enter a valid email address
+    When I enter a invalid email address
     Then I should be taken to apply type page
     And the "23 - Apply type" page should meet accessibility standards
     And the "23 - Apply type" error page should meet accessibility standards
