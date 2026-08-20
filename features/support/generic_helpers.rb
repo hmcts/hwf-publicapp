@@ -130,6 +130,10 @@ def income_period_page
   @income_period_page ||= IncomePeriodPage.new
 end
 
+def error_summary_page
+  @error_summary_page ||= ErrorSummaryPage.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end
