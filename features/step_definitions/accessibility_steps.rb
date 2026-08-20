@@ -27,7 +27,3 @@ And("the error summary on the {string} page should link to the fields in error")
     expect(page).to have_css("##{id}", visible: :all)
   end
 end
-
-And(/^I take a screenshot of the page$/) do
-  page.save_screenshot("../accessibility/screenshot-#{Time.now.to_i}.png")
-end
