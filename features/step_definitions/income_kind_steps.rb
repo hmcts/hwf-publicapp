@@ -72,7 +72,3 @@ end
 Then(/^I should see the no child selected error message$/) do
   expect(income_kind_page.content).to have_child_error_link
 end
-
-And(/^I take a screenshot of the page$/) do
-  page.save_screenshot("../accessibility/screenshot-#{Time.now.to_i}.png")
-end

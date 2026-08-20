@@ -3,7 +3,7 @@ require 'axe/matchers/be_axe_clean'
 # The Service Standard requires all services to meet level AA of the Web Content
 # Accessibility Guidelines 2.2 (WCAG 2.2)
 # [https://www.gov.uk/service-manual/helping-people-to-use-your-service/testing-for-accessibility]
-WCAG_22_AA = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'].freeze
+WCAG_22_AA = %w[wcag2a wcag2aa wcag21a wcag21aa wcag22aa].freeze
 
 def axe_clean_to_wcag_22_aa(exclude = nil)
   Axe::Matchers.be_axe_clean.according_to(WCAG_22_AA).excluding(*String(exclude).split(/,\s*/))
@@ -26,4 +26,8 @@ And("the error summary on the {string} page should link to the fields in error")
   field_ids.each do |id|
     expect(page).to have_css("##{id}", visible: :all)
   end
+end
+
+And(/^I take a screenshot of the page$/) do
+  page.save_screenshot("../accessibility/screenshot-#{Time.now.to_i}.png")
 end
