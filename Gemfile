@@ -51,7 +51,7 @@ group :development do
 end
 
 group :test do
-  gem 'axe-core-cucumber'
+  gem 'axe-core-api'
   gem 'capybara-playwright-driver'
   gem 'apparition'
   gem 'brakeman'

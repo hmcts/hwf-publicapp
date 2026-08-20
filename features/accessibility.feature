@@ -1,7 +1,7 @@
 @javascript @accessibility
-Feature: Accessibility
+Feature: Accessibility of public app pages
 
-  Background: Accessibility publicapp
+  Background: Complete the initial steps
     Given address lookup is disabled
     When I open the home page
     Then I should see the home page
@@ -13,69 +13,69 @@ Feature: Accessibility
   Scenario: Path one
     When I should be taken to fee page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit no to have you already paid the fee
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     Then I submit the form with a help with fees form number 'XX10'
     Then I should be taken to apply on behalf page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I select no to are you applying on behalf of someone
     Then I should be taken to national insurance page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit a valid national insurance number
     Then I should be taken to marital status page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit the form as married
     Then I should be taken to partner national insurance page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I select my partner does not have a national insurance number
     Then I should be taken to savings and investments page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit the form with between £4,250 and £15,999 checked
     Then I should be taken to savings and investment extra page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit no to are you 66 years old or over
     And I enter £5000 as our savings and investments
     And I click continue
     Then I should be taken to benefits page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit the form with no I do not receive one of the benefits listed
     Then I should be taken to dependent page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     And I submit the form with four children
     Then I should be taken to kind of income page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit the married form with wages and working tax credit checked
     Then I should be taken to income period page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I submit the form with income '5000' and monthly
     Then I should be taken to the probate page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I select no to are you paying a fee for a probate case
     Then I should be taken to the claim page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I select yes to do you have a case, claim or notice to pay number
     And I enter a case, claim or notice to pay number
     Then I should be taken to date of birth page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     And I enter a valid date of birth for me and my partner
     Then I should be taken to personal details page
     And I take a screenshot of the page
-    Then the page should be axe clean according to: wcag2aa
+    Then the "" page should meet accessibility standards
     When I enter mine and my partner's names
     Then I should be taken to address page
     When I enter my address with postcode

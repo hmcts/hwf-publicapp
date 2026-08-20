@@ -8,3 +8,4 @@ default: <%= std_opts %> <%= create_json_opts %> features --tags 'not @wip'
 wip: --tags @wip:3 --wip features
 rerun: <%= rerun_opts %> --format rerun --out rerun.txt --strict --tags 'not @cross-service or @wip'
 report: <%= std_opts %> <%= create_json_opts %> features
+accessibility: --format pretty --format html --out tmp/cucumber-report/accessibility.html --format json --out tmp/cucumber-report/accessibility.json --strict --tags @accessibility features
