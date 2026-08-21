@@ -1,17 +1,18 @@
 @javascript @accessibility
 Feature: Accessibility of public app pages
 
-  Background: Complete the initial steps
+  Background: Navigating to the home page
     Given address lookup is disabled
     When I open the home page
     Then I should see the home page
+
+  Scenario: Accessibility of public app pages
+    Then the "Home" page should meet accessibility standards
     When I click the start button
     Then I am on the checklist page
+    Then the "Checklist" page should meet accessibility standards
     When I continue
     Then I am on the fee page
-
-  Scenario: Path one
-    When I should be taken to fee page
     Then the "1 - Fee" page should meet accessibility standards
     And the "1 - Fee" error page should meet accessibility standards
     When I submit no to have you already paid the fee
@@ -85,7 +86,7 @@ Feature: Accessibility of public app pages
     And the "22 - Contact" page should meet accessibility standards
     And I enter an invalid email address
     And the "22 - Contact" error page should meet accessibility standards
-    When I enter a invalid email address
+    When I enter a valid email address
     Then I should be taken to apply type page
     And the "23 - Apply type" page should meet accessibility standards
     And the "23 - Apply type" error page should meet accessibility standards
@@ -94,8 +95,12 @@ Feature: Accessibility of public app pages
     And the "24 - Summary" page should meet accessibility standards
     And the "24 - Summary" error page should meet accessibility standards
 
-  Scenario: Path two
-    When I should be taken to fee page
+  Scenario: Accessibility of public app pages with representative
+    When I should see the home page
+    Then I click the start button
+    And I am on the checklist page
+    When I continue
+    Then I am on the fee page
     And I select yes to have you already paid the fee
     And I submit the form with a date that is within the last three months
     And I submit the form with a help with fees form number 'XX10'
@@ -115,3 +120,28 @@ Feature: Accessibility of public app pages
     Then I should be taken to the home office page
     And the "8 - Home office" page should meet accessibility standards
     And the "8 - Home office" error page should meet accessibility standards
+
+  Scenario: Cookies page
+    When I open the cookies page
+    Then I should be on the cookies page
+    Then the "Cookies" page should meet accessibility standards
+
+  Scenario: Privacy policy page
+    When I open the privacy policy page
+    Then I should be on the privacy policy page
+    Then the "Privacy policy" page should meet accessibility standards
+
+  Scenario: Terms and conditions page
+    When I open the terms and conditions page
+    Then I should be on the terms and conditions page
+    Then the "Terms and conditions" page should meet accessibility standards
+
+  Scenario: Accessibility statement page
+    When I open the accessibility statement page
+    Then I should be on the accessibility statement page
+    Then the "Accessibility statement" page should meet accessibility standards
+
+  Scenario: Technical help page
+    When I open the technical help page
+    Then I should be on the technical help page
+    Then the "Technical help" page should meet accessibility standards

@@ -134,6 +134,22 @@ def error_summary_page
   @error_summary_page ||= ErrorSummaryPage.new
 end
 
+def privacy_policy_page
+  @privacy_policy_page ||= PrivacyPolicyPage.new
+end
+
+def terms_and_conditions_page
+  @terms_and_conditions_page ||= TermsAndConditionsPage.new
+end
+
+def accessibility_statement_page
+  @accessibility_statement_page ||= AccessibilityStatementPage.new
+end
+
+def technical_help_page
+  @technical_help_page ||= TechnicalHelpPage.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end
