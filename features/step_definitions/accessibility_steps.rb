@@ -30,7 +30,7 @@ And("the error summary should link to the fields in error") do
   end
 end
 
-Then("the {string} error page should meet accessibility standards") do |page_name|
+Then("the {string} error page should meet accessibility standards") do |_page_name|
   # Click continue without completing to trigger the error summary
   continue
   expect(error_summary_page).to have_error_summary
