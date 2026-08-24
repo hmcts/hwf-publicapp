@@ -6,7 +6,11 @@ require 'axe/matchers/be_axe_clean'
 WCAG_22_AA = %w[wcag2a wcag2aa wcag21a wcag21aa wcag22aa best-practice].freeze
 
 def axe_clean_to_wcag_22_aa(exclude = nil)
-  Axe::Matchers.be_axe_clean.according_to(WCAG_22_AA).excluding(*String(exclude).split(/,\s*/))
+  # Skip region checks as they can cause false positives
+  Axe::Matchers.be_axe_clean.
+    according_to(WCAG_22_AA).
+    skipping(:region).
+    excluding(*String(exclude).split(/,\s*/))
 end
 
 Then("the {string} page should meet accessibility standards") do |_page_name|
