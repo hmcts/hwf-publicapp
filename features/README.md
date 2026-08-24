@@ -76,9 +76,7 @@ The automated accessibility tests can be run using the rake command:
 
 `$ bundle exec rake test:accessibility`
 
-The tests cover:
-
-- [features/accessibility.feature](accessibility.feature).
+The tests can be viewed in [features/accessibility.feature](accessibility.feature).
 
 The test configuration and step definitions can be viewed in [step_definitions/accessibility_steps.rb](step_definitions/accessibility_steps.rb).
 
