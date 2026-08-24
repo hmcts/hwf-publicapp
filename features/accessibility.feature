@@ -16,7 +16,8 @@ Feature: Accessibility of public app pages
     Then the "1 - Fee" page should meet accessibility standards
     And the "1 - Fee" error page should meet accessibility standards
     When I submit no to have you already paid the fee
-    Then the "2 - Form number" page should meet accessibility standards
+    Then I should be taken to form number page
+    And the "2 - Form number" page should meet accessibility standards
     And the "2 - Form number" error page should meet accessibility standards
     When I submit the form with a help with fees form number 'XX10'
     Then I should be taken to apply on behalf page
@@ -106,10 +107,12 @@ Feature: Accessibility of public app pages
     And I submit the form with a help with fees form number 'XX10'
     Then I should be taken to apply on behalf page
     When I select yes to are you applying on behalf of someone
-    Then the "4 - Legal representative or litigation friend" page should meet accessibility standards
+    Then I should be on are you legal representative page
+    And the "4 - Legal representative or litigation friend" page should meet accessibility standards
     And the "4 - Legal representative or litigation friend" error page should meet accessibility standards
     When I answer legal representative
-    Then the "5 - Legal representative details" page should meet accessibility standards
+    Then I should be on legal representative detail page
+    And the "5 - Legal representative details" page should meet accessibility standards
     And the "5 - Legal representative details" error page should meet accessibility standards
     When I fill in all mandatory fields for legal representative
     Then I should be on are you applying for over 16 page
