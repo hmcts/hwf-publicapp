@@ -1,7 +1,7 @@
 class HomeOfficePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/home_office?locale=en'
+  set_url '/applications/{app_id}/questions/home_office?locale=en'
 
   section :content, '#content' do
     element :header, 'h1', text: 'What is your Home Office reference number?'

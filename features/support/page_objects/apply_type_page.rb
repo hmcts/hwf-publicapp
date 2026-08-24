@@ -1,5 +1,5 @@
 class ApplyTypePage < BasePage
-  set_url '/questions/apply_type'
+  set_url '/applications/{app_id}/questions/apply_type'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 20 of 22'

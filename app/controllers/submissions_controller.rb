@@ -1,4 +1,7 @@
 class SubmissionsController < ApplicationController
+  before_action :validate_app_id
+  before_action :redirect_if_storage_unstarted
+
   def create
     statement_check
   end

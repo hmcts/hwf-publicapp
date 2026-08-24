@@ -1,4 +1,13 @@
 module FeatureSteps
+  # The application id minted by 'Start now', read back from the browser URL.
+  def current_app_id
+    page.current_url[%r{/applications/([0-9a-f-]{36})}, 1]
+  end
+
+  def visit_summary_page
+    visit summary_path(app_id: current_app_id)
+  end
+
   def given_user_answers_questions_up_to(question)
     visit '/'
     click_link_or_button 'Start now'

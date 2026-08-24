@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   include AddressLookup
 
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
+  before_action :validate_app_id
   before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
   before_action :address_lookup_access_token
@@ -19,7 +20,7 @@ class QuestionsController < ApplicationController
     if form.valid?
       track_step
       process_form_and_online_application
-      redirect_to(Navigation.new(online_application, question).next)
+      redirect_to(Navigation.new(online_application, question, current_app_id).next)
     else
       reload_edit_page
       render :edit
@@ -78,7 +79,7 @@ class QuestionsController < ApplicationController
   end
 
   def assign_page_number
-    @page_number = Navigation.new(online_application, question).page_number
+    @page_number = Navigation.new(online_application, question, current_app_id).page_number
   end
 
   def address_lookup_access_token

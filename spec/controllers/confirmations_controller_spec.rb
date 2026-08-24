@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ConfirmationsController do
   let(:session) { double }
+  let(:app_id) { SecureRandom.uuid }
   let(:online_application) { instance_double(OnlineApplication, benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }
   let(:storage_started) { true }
@@ -11,12 +12,12 @@ RSpec.describe ConfirmationsController do
   before do
     allow(controller).to receive(:session).and_return(session)
     allow(session).to receive(:clear)
-    allow(Storage).to receive(:new).with(session).and_return(storage)
+    allow(Storage).to receive(:new).with(session, app_id).and_return(storage)
     allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
   end
 
   describe 'POST #create' do
-    let(:params) { { forms_reference_confirm: { reference_confirm: 'true' } } }
+    let(:params) { { app_id: app_id, forms_reference_confirm: { reference_confirm: 'true' } } }
 
     context 'when the form is valid' do
       let(:form_instance) { instance_double(Forms::ReferenceConfirm, valid?: true) }
@@ -80,7 +81,7 @@ RSpec.describe ConfirmationsController do
       end
 
       it 'does not raise an error' do
-        post :create
+        post :create, params: { app_id: app_id }
         expect(response).to render_template(:show)
       end
     end
@@ -88,7 +89,7 @@ RSpec.describe ConfirmationsController do
   end
 
   describe 'GET #show' do
-    before { get :show }
+    before { get :show, params: { app_id: app_id } }
 
     it 'renders the show template' do
       expect(response).to render_template(:show)
@@ -119,7 +120,7 @@ RSpec.describe ConfirmationsController do
   end
 
   describe 'GET #refund' do
-    before { get :refund }
+    before { get :refund, params: { app_id: app_id } }
 
     it 'renders the refund template' do
       expect(response).to render_template(:refund)

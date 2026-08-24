@@ -34,7 +34,7 @@ Then(/^I should not see the cancel application options$/) do
 end
 
 Then(/^I should remain on the page$/) do
-  expect(current_path).to eq '/questions/form_name'
+  expect(current_path).to match %r{\A/applications/[0-9a-f-]{36}/questions/form_name\z}
 end
 
 Then(/^I should see hint '([^"]*)'$/) do |hint|

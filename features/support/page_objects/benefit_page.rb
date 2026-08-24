@@ -1,7 +1,7 @@
 class BenefitPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/benefit'
+  set_url '/applications/{app_id}/questions/benefit'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 13 of 25'

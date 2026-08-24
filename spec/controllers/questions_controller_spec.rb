@@ -7,6 +7,7 @@ RSpec.describe QuestionsController do
   let(:storage) { instance_double(Storage, load_form: nil, save_form: nil, started?: storage_started, load_step_back: step_back, store_page_path: true) }
   let(:valid_id) { :question }
   let(:invalid_id) { :invalid }
+  let(:app_id) { SecureRandom.uuid }
   let(:form) { double }
   let(:question_title_view) { double }
   let(:step_back) { 'path' }
@@ -16,7 +17,7 @@ RSpec.describe QuestionsController do
     allow(QuestionFormFactory).to receive(:get_form).with(valid_id, calculation_scheme).and_return(form)
     allow(QuestionFormFactory).to receive(:get_form).with(invalid_id, calculation_scheme).and_raise(QuestionFormFactory::QuestionDoesNotExist)
     allow(controller).to receive_messages(session: session, online_application: online_application)
-    allow(Storage).to receive(:new).with(session).and_return(storage)
+    allow(Storage).to receive(:new).with(session, app_id).and_return(storage)
     allow(Views::QuestionTitle).to receive(:new).with(form, online_application).and_return(question_title_view)
     allow(storage).to receive_messages(load_calculation_scheme: '', save_calculation_scheme: '')
   end
@@ -24,7 +25,7 @@ RSpec.describe QuestionsController do
   describe 'GET #edit' do
 
     before do
-      get :edit, params: { id: id }
+      get :edit, params: { app_id: app_id, id: id }
     end
 
     context 'when the question is a valid one' do
@@ -94,11 +95,11 @@ RSpec.describe QuestionsController do
     let(:dupped_online_application) { double }
 
     before do
-      allow(Navigation).to receive(:new).with(online_application, id).and_return(navigation)
+      allow(Navigation).to receive(:new).with(online_application, id, app_id).and_return(navigation)
       allow(ClearDownstreamQuestions).to receive(:new).with(storage, id).and_return(clear_service)
       allow(online_application).to receive(:dup).and_return(dupped_online_application)
 
-      put :update, params: { id: id, id => params }
+      put :update, params: { app_id: app_id, id: id, id => params }
     end
 
     context 'when the question is a valid one' do
@@ -152,6 +153,15 @@ RSpec.describe QuestionsController do
 
       it 'responds with 404' do
         expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
+
+  describe 'app id validation' do
+    context 'when the app_id is not a valid uuid' do
+      it 'redirects to the home page' do
+        get :edit, params: { app_id: 'not-a-uuid', id: valid_id }
+        expect(response).to redirect_to(root_path)
       end
     end
   end

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe SessionsController do
   let(:session) { double }
   let(:storage) { instance_double(Storage, start: nil, clear: nil) }
+  let(:app_id) { SecureRandom.uuid }
 
   before do
     allow(controller).to receive(:session).and_return(session)
@@ -10,7 +11,7 @@ RSpec.describe SessionsController do
 
   describe 'GET #start' do
     before do
-      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, kind_of(String)).and_return(storage)
 
       get :start
     end
@@ -19,8 +20,8 @@ RSpec.describe SessionsController do
       expect(storage).to have_received(:start)
     end
 
-    it 'redirects to the fee question' do
-      expect(response).to redirect_to(question_path(:fee))
+    it 'redirects to the fee question of a newly generated application' do
+      expect(response.location).to match(%r{/applications/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/questions/fee})
     end
   end
 
@@ -29,9 +30,9 @@ RSpec.describe SessionsController do
 
     before do
       allow(Rails.application.config).to receive(:finish_page_redirect_url).and_return(external_url)
-      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, app_id, clear: true).and_return(storage)
 
-      post :finish
+      post :finish, params: { app_id: app_id }
     end
 
     context 'when the done page external url is set' do
@@ -52,9 +53,9 @@ RSpec.describe SessionsController do
 
   describe 'DELETE #destroy' do
     before do
-      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, app_id, clear: true).and_return(storage)
 
-      delete :destroy
+      delete :destroy, params: { app_id: app_id }
     end
 
     it 'redirects to the start page' do
