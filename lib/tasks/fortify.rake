@@ -34,6 +34,8 @@ namespace :fortify_scan do
     # Exclude unnecessary files
     system("zip -r source.zip . -x '*.git*' -x 'vendor/*' -x 'node_modules/*' -x '*.jar' -x 'tmp/*' -x 'log/*'") || raise("Failed to package source")
 
+    puts "Checking secret"
+    puts ENV['FORTIFY_PASSWORD']
     puts "Uploading to Fortify on Demand..."
     fod_username = 'petr.zaparka@hmcts.net'
     fod_pat = ENV['FORTIFY_PASSWORD'] || raise("FORTIFY_PASSWORD not set")
