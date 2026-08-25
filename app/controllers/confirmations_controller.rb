@@ -1,4 +1,5 @@
 class ConfirmationsController < ApplicationController
+  before_action :validate_app_id
   before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
 

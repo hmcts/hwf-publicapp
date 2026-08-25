@@ -1,5 +1,5 @@
 class SummaryPage < BasePage
-  set_url '/summary'
+  set_url '/applications/{app_id}/summary'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 24 of 25'

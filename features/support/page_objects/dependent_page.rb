@@ -1,7 +1,7 @@
 class DependentPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/dependent'
+  set_url '/applications/{app_id}/questions/dependent'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 14 of 25'

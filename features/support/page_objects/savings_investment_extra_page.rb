@@ -1,7 +1,7 @@
 class SavingsInvestmentExtraPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/savings_and_investment_extra'
+  set_url '/applications/{app_id}/questions/savings_and_investment_extra'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 8 of 22'

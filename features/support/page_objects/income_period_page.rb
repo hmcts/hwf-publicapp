@@ -1,5 +1,5 @@
 class IncomePeriodPage < BasePage
-  set_url '/questions/income_period'
+  set_url '/applications/{app_id}/questions/income_period'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 13 of 22'

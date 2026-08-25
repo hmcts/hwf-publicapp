@@ -1,7 +1,7 @@
 class AddressPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/applicant_address'
+  set_url '/applications/{app_id}/questions/applicant_address'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 21 of 25'

@@ -3,10 +3,12 @@ class SessionsController < ApplicationController
   # the page with the Start button that page will be managed by GOV.UK, so
   # we can't make it POST because of XSS restriction
   skip_before_action :verify_authenticity_token, only: :finish
+  before_action :validate_app_id, only: [:destroy, :finish]
 
   def start
-    storage_with_clear.start
-    redirect_to(question_path(QuestionFormFactory.page_list.first))
+    app_id = SecureRandom.uuid
+    Storage.new(session, app_id).start
+    redirect_to(question_path(QuestionFormFactory.page_list.first, app_id: app_id))
   end
 
   def finish
@@ -23,6 +25,6 @@ class SessionsController < ApplicationController
   private
 
   def storage_with_clear
-    Storage.new(session, clear: true)
+    Storage.new(session, current_app_id, clear: true)
   end
 end

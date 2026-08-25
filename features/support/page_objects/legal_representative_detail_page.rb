@@ -1,5 +1,5 @@
 class LegalRepresentativeDetailPage < BasePage
-  set_url '/questions/legal_representative_detail'
+  set_url '/applications/{app_id}/questions/legal_representative_detail'
 
   section :content, '#content' do
     element :header, 'h1', text: 'Enter the legal representative details'

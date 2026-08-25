@@ -2,7 +2,7 @@
 class DobPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/dob'
+  set_url '/applications/{app_id}/questions/dob'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 19 of 25'

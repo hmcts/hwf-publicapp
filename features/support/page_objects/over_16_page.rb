@@ -1,5 +1,5 @@
 class Over16Page < BasePage
-  set_url '/questions/over_16'
+  set_url '/applications/{app_id}/questions/over_16'
 
   section :content, '#content' do
     element :header, 'h1', text: 'Is the person you are applying for over 16?'

@@ -1,16 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Storage do
-  subject(:storage) { described_class.new(session, options) }
+  subject(:storage) { described_class.new(session, app_id, options) }
 
   let(:current_time) { Time.zone.now.change(usec: 0) }
   let(:options) { {} }
-
+  let(:app_id) { SecureRandom.uuid }
+  let(:session_id) { SecureRandom.uuid }
+  let(:session) { mock_session.new.tap { |s| s.id = session_id } }
   let(:mock_session) do
     Class.new(Hash) do
+      attr_accessor :id
+
       def destroy; end
     end
   end
+  let(:rails_store) { Rails.cache }
+  let(:metadata_key) { "metadata-#{session_id}-#{app_id}" }
 
   describe '#initialize' do
     subject(:frozen_storage) do
@@ -19,20 +25,19 @@ RSpec.describe Storage do
       end
     end
 
-    let(:session) { mock_session[used_at: used_at.to_s, started_at: started_at.to_s] }
+    before do
+      rails_store.write(metadata_key, { started_at: started_at, used_at: used_at })
+    end
 
     context 'when the storage is requested to be cleared' do
       let(:started_at) { current_time - 5.minutes }
       let(:used_at) { current_time - 1.minute }
       let(:options) { { clear: true } }
 
-      before do
-        allow(session).to receive(:destroy)
-        frozen_storage
-      end
+      before { frozen_storage }
 
-      it 'clears the session' do
-        expect(session).to have_received(:destroy)
+      it 'clears the application metadata from redis' do
+        expect(frozen_storage.started?).to be false
       end
 
       it 'stores the current time to the session, as time of last used' do
@@ -47,10 +52,9 @@ RSpec.describe Storage do
         context 'when it was used more than 60 minutes ago' do
           let(:used_at) { current_time - 61.minutes }
 
-          before { allow(session).to receive(:destroy) }
-
-          it 'raises an error and clears the session' do
+          it 'raises an error and clears the application metadata' do
             expect { frozen_storage }.to raise_error(Storage::Expired)
+            expect(rails_store.read(metadata_key)).to be_nil
           end
         end
 
@@ -59,17 +63,8 @@ RSpec.describe Storage do
 
           before { frozen_storage }
 
-          it 'stores the current time to the session, as time of last used' do
-            expect(session[:used_at]).to eql(current_time)
-          end
-        end
-
-        context 'when the storage was just initialised for the first time' do
-          let(:session) { {} }
-
-          before { frozen_storage }
-
-          it 'stores the current time to the session, as time of last used' do
+          it 'stores the current time as time of last used' do
+            expect(rails_store.read(metadata_key)[:used_at]).to eql(current_time)
             expect(session[:used_at]).to eql(current_time)
           end
         end
@@ -81,125 +76,140 @@ RSpec.describe Storage do
 
         before { frozen_storage }
 
-        it 'stores the current time to the session, as time of last used' do
+        it 'does not raise and stores the current time to the session' do
           expect(session[:used_at]).to eql(current_time)
         end
       end
     end
   end
 
-  describe '#clear' do
-    let(:session) { instance_double(ActionDispatch::Request::Session, id: session_id, destroy: true) }
-    let(:rails_store) { Rails.cache }
-    let(:session_id) { 2 }
-    let(:session_two_id) { 3 }
-    let(:store_data) {
-      rails_store.write("questions-#{session_id}-over_16", { 'married' => false, 'over_16' => false }.as_json)
-      rails_store.write("questions-#{session_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
-      rails_store.write("questions-#{session_two_id}-over_16", { 'married' => false, 'over_16' => false }.as_json)
-      rails_store.write("questions-#{session_two_id}-savings_and_investment", { 'choice' => 'between' }.as_json)
-    }
-
-    before do
-      store_data
-
-      allow(session).to receive(:[]).with(:calculation_scheme).and_return Rails.configuration.ucd_schema.to_s
-      allow(session).to receive(:[]).with(:started_at).and_return ''
-      allow(session).to receive(:[]=)
-
-      storage.clear
-    end
-
-    it 'clears forms only for the session' do
-      expect(rails_store.read("questions-#{session_id}-over_16")).to be_nil
-      expect(rails_store.read("questions-#{session_id}-savings_and_investment")).to be_nil
-
-      expect(rails_store.read("questions-#{session_two_id}-over_16")).to eq({ "married" => false, "over_16" => false })
-      expect(rails_store.read("questions-#{session_two_id}-savings_and_investment")).to eq({ "choice" => "between" })
-    end
-  end
-
   describe '#start' do
-    let(:session) { {} }
-
     before do
       travel_to(current_time) do
         storage.start
       end
     end
 
-    it 'sets started_at to the session as the current time' do
-      expect(session).to include(started_at: current_time)
+    it 'sets started_at in the application metadata as the current time' do
+      expect(rails_store.read(metadata_key)[:started_at]).to eql(current_time)
+    end
+
+    it 'keeps the metadata for twice the session lifetime, for the expiry message' do
+      allow(rails_store).to receive(:write).and_call_original
+      storage.start
+      expect(rails_store).to have_received(:write).with(
+        metadata_key, hash_including(:started_at),
+        hash_including(expires_in: Settings.session.expires_in_minutes * 60 * 2)
+      )
     end
   end
 
   describe '#started?' do
     subject { storage.started? }
 
-    context 'when the session has started_at timestamp setup' do
-      let(:session) { { started_at: current_time } }
+    context 'when the application has been started' do
+      before { described_class.new(session, app_id).start }
 
       it { is_expected.to be true }
     end
 
-    context 'when there started_at timestamp on the session' do
-      let(:session) { { another: 'key' } }
+    context 'when there is no metadata stored for the application id' do
+      it { is_expected.to be false }
+    end
+
+    context 'when the same application id was started under another session' do
+      before do
+        other_session = mock_session.new.tap { |s| s.id = SecureRandom.uuid }
+        described_class.new(other_session, app_id).start
+      end
 
       it { is_expected.to be false }
     end
   end
 
-  context 'questions' do
-    let(:id) { 'ID' }
-    let(:rails_store) { Rails.cache }
-    let(:session) { instance_double(ActionDispatch::Request::Session, id: id) }
+  describe 'application isolation within one session' do
+    let(:other_app_id) { SecureRandom.uuid }
+    let(:other_storage) { described_class.new(session, other_app_id) }
+    let(:form) { instance_double(Forms::Benefit, id: 'benefit', as_json: { 'benefit' => true }) }
 
     before do
-      allow(session).to receive(:[]).with(:started_at).and_return ''
-      allow(session).to receive(:[]=)
+      storage.start
       storage.save_form(form)
+      other_storage.start
     end
 
+    it 'scopes forms to their own application' do
+      loaded = instance_double(Forms::Benefit, id: 'benefit', update_attributes: nil)
+      other_storage.load_form(loaded)
+      expect(loaded).to have_received(:update_attributes).with({})
+    end
+
+    it 'clearing one application leaves the other untouched' do
+      other_storage.clear
+      expect(other_storage.started?).to be false
+      expect(storage.started?).to be true
+      expect(rails_store.read("questions-#{session_id}-#{app_id}-benefit")).to eql('benefit' => true)
+    end
+  end
+
+  describe '#clear' do
+    let(:other_app_key) { "questions-#{session_id}-#{SecureRandom.uuid}-over_16" }
+
+    before do
+      storage.save_calculation_scheme(Rails.configuration.ucd_schema.to_s)
+      rails_store.write("questions-#{session_id}-#{app_id}-over_16", { 'over_16' => false }.as_json)
+      rails_store.write(other_app_key, { 'over_16' => true }.as_json)
+
+      storage.clear
+    end
+
+    it 'clears forms only for this application' do
+      expect(rails_store.read("questions-#{session_id}-#{app_id}-over_16")).to be_nil
+      expect(rails_store.read(other_app_key)).to eq('over_16' => true)
+    end
+  end
+
+  context 'questions' do
+    let(:form_id) { 'benefit' }
+    let(:form_key) { "questions-#{session_id}-#{app_id}-#{form_id}" }
+    let(:json_data) { { some: 'data' } }
+
     describe '#save_form' do
-      let(:json_data) { { some: 'data' } }
-      let(:form) { instance_double(Forms::Benefit, id: id, as_json: json_data) }
+      let(:form) { instance_double(Forms::Benefit, id: form_id, as_json: json_data) }
 
       before { storage.save_form(form) }
 
-      it 'sets the json data to the session' do
-        question = rails_store.read("questions-#{session.id}-#{form.id}")
-        expect(question).to eql(json_data)
+      it 'stores the json data under the session and application scoped key' do
+        expect(rails_store.read(form_key)).to eql(json_data)
       end
 
       it 'expires the cached answers after the session lifetime' do
         allow(rails_store).to receive(:write).and_call_original
         storage.save_form(form)
         expect(rails_store).to have_received(:write).with(
-          "questions-#{session.id}-#{form.id}", json_data,
+          form_key, json_data,
           hash_including(expires_in: Settings.session.expires_in_minutes * 60)
         )
       end
     end
 
     describe '#load_form' do
-      let(:json_data) { { some: 'data' } }
-
-      let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
+      let(:form) { instance_double(Forms::Benefit, id: form_id, update_attributes: nil) }
 
       before do
-        rails_store.write("questions-#{id}-#{form.id}", json_data)
+        rails_store.write(form_key, json_data)
       end
 
-      context 'when the data with the form id is in the session' do
+      context 'when the data with the form id is stored' do
         it 'updates the form with the data' do
           storage.load_form(form)
           expect(form).to have_received(:update_attributes).with(json_data)
         end
       end
 
-      context 'when there is no data with the form id in the session' do
+      context 'when there is no data with the form id' do
         it 'updates the form with an empty hash' do
-          form_2 = instance_double(Forms::Benefit, id: 1, update_attributes: nil)
+          form_2 = instance_double(Forms::Benefit, id: 'other', update_attributes: nil)
           storage.load_form(form_2)
           expect(form_2).to have_received(:update_attributes).with({})
         end
@@ -207,72 +217,71 @@ RSpec.describe Storage do
     end
 
     describe '#clear_form' do
-      let(:json_data) { { some: 'data' } }
-      let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
+      let(:form) { instance_double(Forms::Benefit, id: form_id) }
 
       before do
-        rails_store.write("questions-#{id}-#{form.id}", json_data)
+        rails_store.write(form_key, json_data)
         storage.clear_form(form.id)
       end
 
-      context 'when there is a question stored with that id' do
-        it 'removes the question from the session' do
-          question = rails_store.read("questions-#{id}-#{form.id}")
-          expect(question).to be_nil
-        end
+      it 'removes the stored form' do
+        expect(rails_store.read(form_key)).to be_nil
       end
     end
   end
 
-  describe '#submission_result=' do
-    let(:result) { double }
-    let(:session) { {} }
-
-    before do
-      storage.submission_result = result
-    end
-
-    it 'stores the submission_result in the session' do
-      expect(session[:submission_result]).to eql(result)
+  describe 'calculation scheme' do
+    it 'persists the scheme in the application metadata' do
+      storage.save_calculation_scheme('scheme')
+      expect(described_class.new(session, app_id).load_calculation_scheme).to eql('scheme')
     end
   end
 
   describe '#submission_result' do
-    subject { storage.submission_result }
+    let(:result) { { result: true, message: 'HWF-010101' } }
 
-    let(:result) { double }
+    context 'when there is a submission_result stored' do
+      before { storage.submission_result = result }
 
-    context 'when there is a submission_result stored in the session' do
-      let(:session) { { submission_result: result } }
+      it 'returns it with string keys, as the confirmation views expect' do
+        expect(storage.submission_result).to eql('result' => true, 'message' => 'HWF-010101')
+      end
 
-      it { is_expected.to eql(result) }
+      it 'is readable from a fresh instance for the same application' do
+        expect(described_class.new(session, app_id).submission_result['message']).to eql('HWF-010101')
+      end
     end
 
-    context 'when there is no submission_result stored in the session' do
-      let(:session) { {} }
-
-      it { is_expected.to be_nil }
+    context 'when there is no submission_result stored' do
+      it { expect(storage.submission_result).to be_nil }
     end
   end
 
   describe 'page_path' do
-    let(:session) { { 'session_id' => 123 } }
-
-    before { storage.store.write('page_path-123', []) }
+    let(:page_path_key) { "page_path-#{session_id}-#{app_id}" }
 
     context 'store page' do
-      it 'store path' do
+      it 'store path under the session and application scoped key' do
         storage.store_page_path('page_123', 'page1')
-        expect(storage.store.read('page_path-123')).to eq [{ "page1" => "page_123" }]
+        expect(storage.store.read(page_path_key)).to eq [{ "page1" => "page_123" }]
       end
 
       it 'expires the page path after the session lifetime' do
         allow(storage.store).to receive(:write).and_call_original
         storage.store_page_path('page_123', 'page1')
         expect(storage.store).to have_received(:write).with(
-          'page_path-123', anything,
+          page_path_key, anything,
           hash_including(expires_in: Settings.session.expires_in_minutes * 60)
         )
+      end
+
+      it 'keeps a separate history per application' do
+        other_storage = described_class.new(session, SecureRandom.uuid)
+        storage.store_page_path('page_1_url', 'page1')
+        other_storage.store_page_path('other_page_url', 'other_page')
+
+        expect(storage.store.read(page_path_key)).to eq [{ "page1" => "page_1_url" }]
+        expect(storage.load_step_back('page1')).to be_nil
       end
     end
 

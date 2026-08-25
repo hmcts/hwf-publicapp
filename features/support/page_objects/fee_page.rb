@@ -1,7 +1,7 @@
 class FeePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/fee'
+  set_url '/applications/{app_id}/questions/fee'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 1 of 25'

@@ -4,9 +4,10 @@ RSpec.describe Navigation do
   include Rails.application.routes.url_helpers
 
   let(:online_application) { build(:online_application) }
+  let(:app_id) { SecureRandom.uuid }
 
   describe '#next' do
-    subject { described_class.new(online_application, current_question).next }
+    subject { described_class.new(online_application, current_question, app_id).next }
 
     {
       fee: :form_name,
@@ -28,7 +29,7 @@ RSpec.describe Navigation do
         let(:current_question) { current_question }
 
         it "routes to #{next_question} question" do
-          expect(subject).to eql(question_path(next_question, locale: :en))
+          expect(subject).to eql(question_path(next_question, locale: :en, app_id: app_id))
         end
       end
     end
@@ -42,7 +43,7 @@ RSpec.describe Navigation do
         let(:benefits) { true }
 
         it 'routes to the probate question (skips dependent and income)' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          expect(subject).to eql(question_path(:probate, locale: :en, app_id: app_id))
         end
       end
 
@@ -50,7 +51,7 @@ RSpec.describe Navigation do
         let(:benefits) { false }
 
         it 'routes to the dependent question' do
-          expect(subject).to eql(question_path(:dependent, locale: :en))
+          expect(subject).to eql(question_path(:dependent, locale: :en, app_id: app_id))
         end
       end
     end
@@ -62,7 +63,7 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, :extra_savings_question_required) }
 
         it 'routes to the extra question' do
-          expect(subject).to eql(question_path(:savings_and_investment_extra, locale: :en))
+          expect(subject).to eql(question_path(:savings_and_investment_extra, locale: :en, app_id: app_id))
         end
       end
 
@@ -70,7 +71,7 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, ho_number: nil) }
 
         it 'routes to the benefit question' do
-          expect(subject).to eql(question_path(:benefit, locale: :en))
+          expect(subject).to eql(question_path(:benefit, locale: :en, app_id: app_id))
         end
       end
     end
@@ -79,7 +80,7 @@ RSpec.describe Navigation do
       let(:current_question) { :contact }
 
       it 'routes to the summary page' do
-        expect(subject).to eql(question_path(:apply_type, locale: :en))
+        expect(subject).to eql(question_path(:apply_type, locale: :en, app_id: app_id))
       end
     end
 
@@ -88,7 +89,7 @@ RSpec.describe Navigation do
       let(:current_question) { :contact }
 
       it 'routes to the summary page' do
-        expect(subject).to eql(summary_path(locale: :en))
+        expect(subject).to eql(summary_path(locale: :en, app_id: app_id))
       end
     end
 
@@ -96,7 +97,7 @@ RSpec.describe Navigation do
       let(:current_question) { :apply_type }
 
       it 'routes to the summary page' do
-        expect(subject).to eql(summary_path(locale: :en))
+        expect(subject).to eql(summary_path(locale: :en, app_id: app_id))
       end
     end
 
@@ -107,13 +108,13 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, :no_income) }
 
         it 'routes to the probate question' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          expect(subject).to eql(question_path(:probate, locale: :en, app_id: app_id))
         end
       end
 
       context 'when the application is not 0 income - some income sources selected' do
         it 'routes to the income_period question' do
-          expect(subject).to eql(question_path(:income_period, locale: :en))
+          expect(subject).to eql(question_path(:income_period, locale: :en, app_id: app_id))
         end
       end
 
@@ -125,7 +126,7 @@ RSpec.describe Navigation do
         end
 
         it 'routes to the probate question' do
-          expect(subject).to eql(question_path(:income_period, locale: :en))
+          expect(subject).to eql(question_path(:income_period, locale: :en, app_id: app_id))
         end
       end
     end
@@ -137,7 +138,7 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, :income_between_thresholds) }
 
         it 'routes to the probate question' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          expect(subject).to eql(question_path(:probate, locale: :en, app_id: app_id))
         end
       end
 
@@ -145,7 +146,7 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, :income_below_thresholds) }
 
         it 'routes to the probate question' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          expect(subject).to eql(question_path(:probate, locale: :en, app_id: app_id))
         end
       end
 
@@ -153,7 +154,7 @@ RSpec.describe Navigation do
         let(:online_application) { build(:online_application, :income_above_thresholds) }
 
         it 'routes to the probate question' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          expect(subject).to eql(question_path(:probate, locale: :en, app_id: app_id))
         end
       end
     end
@@ -163,7 +164,7 @@ RSpec.describe Navigation do
       let(:online_application) { build(:online_application, ni_number_present: false) }
 
       it 'routes to the home office question' do
-        expect(subject).to eql(question_path(:home_office, locale: :en))
+        expect(subject).to eql(question_path(:home_office, locale: :en, app_id: app_id))
       end
     end
 
@@ -172,7 +173,7 @@ RSpec.describe Navigation do
       let(:online_application) { build(:online_application, ni_number_present: true) }
 
       it 'routes to the marital_status question' do
-        expect(subject).to eql(question_path(:marital_status, locale: :en))
+        expect(subject).to eql(question_path(:marital_status, locale: :en, app_id: app_id))
       end
     end
 
@@ -181,7 +182,7 @@ RSpec.describe Navigation do
       let(:online_application) { build(:online_application) }
 
       it 'routes to the marital_status question' do
-        expect(subject).to eql(question_path(:marital_status, locale: :en))
+        expect(subject).to eql(question_path(:marital_status, locale: :en, app_id: app_id))
       end
     end
 
@@ -190,7 +191,7 @@ RSpec.describe Navigation do
       let(:current_question) { :savings_and_investment_extra }
 
       it 'skips the benefit question' do
-        expect(subject).to eql(question_path(:dependent, locale: :en))
+        expect(subject).to eql(question_path(:dependent, locale: :en, app_id: app_id))
       end
     end
 
@@ -201,7 +202,7 @@ RSpec.describe Navigation do
 
         it 'skips to ni number' do
           online_application.calculation_scheme = Rails.configuration.ucd_schema
-          expect(subject).to eql(question_path(:national_insurance, locale: :en))
+          expect(subject).to eql(question_path(:national_insurance, locale: :en, app_id: app_id))
         end
       end
 
@@ -211,7 +212,7 @@ RSpec.describe Navigation do
 
         it 'skips to legal_representative' do
           online_application.calculation_scheme = Rails.configuration.ucd_schema
-          expect(subject).to eql(question_path(:legal_representative, locale: :en))
+          expect(subject).to eql(question_path(:legal_representative, locale: :en, app_id: app_id))
         end
       end
 
@@ -220,7 +221,7 @@ RSpec.describe Navigation do
         let(:current_question) { :over_16 }
 
         it 'skips to savings_and_investment' do
-          expect(subject).to eql(question_path(:savings_and_investment, locale: :en))
+          expect(subject).to eql(question_path(:savings_and_investment, locale: :en, app_id: app_id))
         end
       end
     end

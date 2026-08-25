@@ -1,7 +1,7 @@
 class ProbatePage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/questions/probate'
+  set_url '/applications/{app_id}/questions/probate'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 17 of 25'

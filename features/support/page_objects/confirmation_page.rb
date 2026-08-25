@@ -1,7 +1,7 @@
 class ConfirmationPage < BasePage
   include ActiveSupport::Testing::TimeHelpers
 
-  set_url '/confirmation'
+  set_url '/applications/{app_id}/confirmation'
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 25 of 25'

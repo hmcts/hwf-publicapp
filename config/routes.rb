@@ -13,20 +13,27 @@ Rails.application.routes.draw do
   get 'cookies' => 'home#cookies'
   put :cookies, to: 'home#update', as: :set_cookie_preference
 
-  resources :questions, only: [:edit, :update], path_names: { edit: '' }
+  # Each in-progress application lives under its own URL so several can run
+  # side by side in one browser (e.g. in separate tabs).
+  scope 'applications/:app_id' do
+    resources :questions, only: [:edit, :update], path_names: { edit: '' }
 
-  resource :summary, only: :show
+    resource :summary, only: :show
 
-  resource :submission, only: :create
+    resource :submission, only: :create
 
-  resource :confirmation, only: :show do
-    post :create
-    get :refund
+    resource :confirmation, only: :show do
+      post :create
+      get :refund
+    end
+
+    resource :session, only: :destroy do
+      get :finish
+    end
   end
 
-  resource :session, only: :destroy do
+  resource :session, only: [] do
     get :start
-    get :finish
   end
 
   resource :help_request, only: %i[new create], path: 'ask-for-help'
