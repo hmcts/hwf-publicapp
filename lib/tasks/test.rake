@@ -51,7 +51,7 @@ namespace :test do
   end
 
   task accessibility: :environment do
-    if system "bundle exec cucumber features/ -p accessibility"
+    if system "bundle exec cucumber accessibility/ -p accessibility"
       puts "Accessibility test passed"
     else
       raise "Accessibility tests failed"
