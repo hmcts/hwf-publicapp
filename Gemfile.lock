@@ -88,6 +88,8 @@ GEM
       capybara (~> 3.13, < 4)
       websocket-driver (>= 0.6.5)
     ast (2.4.3)
+    axe-core-api (4.13.0)
+      dumb_delegator
     base64 (0.3.0)
     bigdecimal (4.1.2)
     bootsnap (1.25.0)
@@ -164,6 +166,7 @@ GEM
       dotenv (= 3.2.0)
       railties (>= 6.1)
     drb (2.2.3)
+    dumb_delegator (1.1.0)
     erb (6.0.7)
     erubi (1.13.1)
     execjs (2.10.2)
@@ -469,6 +472,7 @@ PLATFORMS
 
 DEPENDENCIES
   apparition
+  axe-core-api
   azure_env_secrets!
   bootsnap
   brakeman
