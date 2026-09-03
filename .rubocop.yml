@@ -597,6 +597,10 @@ Rails/StrongParametersExpect:
 Naming/PredicateMethod:
   Enabled: false
 
+# Keep the existing disable/enable directive pairs rather than disable-next.
+Style/DirectiveScope:
+  Enabled: false
+
 plugins:
   - rubocop-rspec
   - rubocop-rails
