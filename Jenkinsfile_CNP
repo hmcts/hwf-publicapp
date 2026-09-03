@@ -34,12 +34,19 @@ withPipeline(type, product, component) {
   }
 
   before('build') { installRuby() }
-  // Smoke/functional tests run on a different agent from the build, so the
-  // build-stage install doesn't cover them
-  before('smoketest:preview') { installRuby() }
-  before('smoketest:aat') { installRuby() }
-  before('functionalTest:preview') { installRuby() }
-  before('functionalTest:aat') { installRuby() }
+  // Smoke/functional tests run on a fresh agent, separate from the build, so
+  // neither the Ruby install nor the vendor/bundle gem install from the build
+  // stage is present there. Install both, otherwise `bundle exec` fails with
+  // "azure_env_secrets ... is not yet checked out. Run `bundle install` first."
+  def installRubyAndGems = {
+    installRuby()
+    rubyBuilder.bundle("config set path 'vendor/bundle'")
+    rubyBuilder.bundle("install --jobs=4 --retry=3")
+  }
+  before('smoketest:preview') { installRubyAndGems() }
+  before('smoketest:aat') { installRubyAndGems() }
+  before('functionalTest:preview') { installRubyAndGems() }
+  before('functionalTest:aat') { installRubyAndGems() }
 
    before('test') {
       sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
