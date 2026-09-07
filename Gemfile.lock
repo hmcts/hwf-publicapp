@@ -90,7 +90,7 @@ GEM
     ast (2.4.3)
     base64 (0.3.0)
     bigdecimal (4.1.2)
-    bootsnap (1.25.0)
+    bootsnap (1.26.0)
       msgpack (~> 1.5)
     brakeman (8.0.6)
       racc
@@ -245,7 +245,7 @@ GEM
     notifications-ruby-client (6.4.0)
       jwt (>= 1.5, < 4)
     ostruct (0.6.3)
-    parallel (2.1.0)
+    parallel (2.2.0)
     parallel_tests (5.7.0)
       parallel
     parser (3.3.12.0)
@@ -395,7 +395,7 @@ GEM
       rubocop (~> 1.72, >= 1.72.1)
       rubocop-rspec (~> 3.5)
     ruby-progressbar (1.13.0)
-    rubyzip (3.4.1)
+    rubyzip (3.6.0)
     securerandom (0.4.1)
     selenium-webdriver (4.48.0)
       base64 (~> 0.2)
