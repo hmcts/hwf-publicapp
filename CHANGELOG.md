@@ -18,7 +18,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - json held at 2.21.2 — 3.0.0 is a major release published 2026-09-07, deferred
   until it has settled.
-- simplecov held at ~> 0.22.0 — 1.x emits a JSON report format SonarQube cannot parse.
+- Updated simplecov 0.22.0 → 1.2.0 — pin lifted; SonarCloud's Ruby analyzer (sonar-ruby
+  1.25.0, RUBY-188) now reads the 1.x JSON report format. simplecov_json_formatter and
+  docile are gone from the lockfile as simplecov 1.x bundles its own JSON formatter.
 - cucumber-* / diff-lcs / multi_test / marcel major versions unavailable — pinned by
   cucumber 11.1.1 (latest), rspec-expectations (< 2.0) and activestorage (~> 1.0);
   they will arrive with their parents' future releases.
