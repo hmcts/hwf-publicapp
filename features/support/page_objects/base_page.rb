@@ -15,7 +15,7 @@ class BasePage < SitePrism::Page
     end
     element :step_number, '.govuk-caption-l'
     element :checklist_continue_button, '.govuk-button', text: 'Continue'
-    element :continue_button, 'input[value="Continue"]'
+    element :continue_button, 'input[type="submit"]'
   end
   element :help_with, 'details > summary'
 

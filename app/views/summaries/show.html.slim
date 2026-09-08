@@ -38,9 +38,11 @@ dl.govuk-summary-list
   - if @summary.legal_representative
     =render('represented_by')
 
-  br
-  h1.govuk-heading-l
-    span.no-wrap =t('personal_title', scope: 'summary.labels')
+br
+h1.govuk-heading-l
+  span.no-wrap =t('personal_title', scope: 'summary.labels')
+
+dl.govuk-summary-list
   - if @summary.legal_representative
     div.govuk-summary-list__row
       dt.govuk-summary-list__key = t('over_16', scope: 'summary.labels')
@@ -242,18 +244,20 @@ dl.govuk-summary-list
             span.govuk-visually-hidden
               =t('contact', scope: 'summary.labels').downcase
 
-    -if @summary.applying_method
-      br
-      h1.govuk-heading-l
-        span.no-wrap = t('application_title', scope: 'summary.labels')
-      div.govuk-summary-list__row
-        dt.govuk-summary-list__key =t('apply_type', scope: 'summary.labels')
-        dd.govuk-summary-list__value =t("applying_method_#{@summary.applying_method}", scope: 'summary')
-        dd.govuk-summary-list__actions
-          = link_to question_path(:apply_type), onclick: "dataLayer.push({'sectionName': 'apply_type', 'event': 'summary_page'});" do
-            =t('summary.change')
-            span.govuk-visually-hidden
-              =t('apply_type', scope: 'summary.labels').downcase
+-if @summary.applying_method
+  br
+  h1.govuk-heading-l
+    span.no-wrap = t('application_title', scope: 'summary.labels')
+
+  dl.govuk-summary-list
+    div.govuk-summary-list__row
+      dt.govuk-summary-list__key =t('apply_type', scope: 'summary.labels')
+      dd.govuk-summary-list__value =t("applying_method_#{@summary.applying_method}", scope: 'summary')
+      dd.govuk-summary-list__actions
+        = link_to question_path(:apply_type), onclick: "dataLayer.push({'sectionName': 'apply_type', 'event': 'summary_page'});" do
+          =t('summary.change')
+          span.govuk-visually-hidden
+            =t('apply_type', scope: 'summary.labels').downcase
 
 
 = render('declaration')

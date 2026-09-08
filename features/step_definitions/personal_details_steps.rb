@@ -52,5 +52,4 @@ end
 
 When(/^I enter mine and my partner's names$/) do
   personal_details_page.submit_full_names
-  continue
 end

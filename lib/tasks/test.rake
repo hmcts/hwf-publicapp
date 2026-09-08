@@ -19,6 +19,7 @@ namespace :test do
 
   task functional: :environment do
     if system "bundle exec cucumber features/ " \
+              "--tags 'not @accessibility' " \
               "--format pretty " \
               "--format junit " \
               "--out tmp/test/cucumber-functional"
@@ -39,13 +40,21 @@ namespace :test do
         "DRIVER" => browser,
         "CAPYBARA_JS_DRIVER" => browser
       }
-      results[browser] = system(env, "bundle exec cucumber features/ --tags @javascript")
+      results[browser] = system(env, "bundle exec cucumber features/ --tags '@javascript and not @accessibility'")
     end
 
     puts "\n\n"
     puts "=== Playwright Results ==="
     results.each do |browser, result|
       puts "#{browser}: #{result ? 'Passed' : 'Failed'}"
+    end
+  end
+
+  task accessibility: :environment do
+    if system "bundle exec cucumber accessibility/ -p accessibility"
+      puts "Accessibility test passed"
+    else
+      raise "Accessibility tests failed"
     end
   end
 end

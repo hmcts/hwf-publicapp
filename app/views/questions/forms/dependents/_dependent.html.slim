@@ -18,16 +18,15 @@ ul{class="govuk-list govuk-list--bullet"}
 
 br
 
-  .govuk-form-group
-    fieldset.govuk-fieldset
-      legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("children_number_title", scope: @form.i18n_scope)
-      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:children_number].any?)
-        - if @form.errors[:children_number].present?
-          span.govuk-error-message
-            = f.label :children_number, @form.errors[:children_number].join(', '), class: 'error'
-        = f.collection_select :children_number, 0..99, :to_i, :to_s, {prompt: t('children_number_blank', scope: @form.i18n_scope)},{ class: 'govuk-select', 'data-target': 'dependent-children-age-panel'}
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:children_number].any?)
+    = f.label :children_number, t("children_number_title", scope: @form.i18n_scope), class: "govuk-label govuk-!-font-weight-bold"
+    - if @form.errors[:children_number].present?
+      p.govuk-error-message id="children-number-error"
+        span.govuk-visually-hidden Error: 
+        = @form.errors[:children_number].join(', ')
+    = f.collection_select :children_number, 0..99, :to_i, :to_s, {prompt: t('children_number_blank', scope: @form.i18n_scope)}, { class: "govuk-select #{'govuk-select--error' if @form.errors[:children_number].any?}", 'data-target': 'dependent-children-age-panel', 'aria-describedby': ('children-number-error' if @form.errors[:children_number].present?) }
 
-  .govuk-form-group id='dependent-children-age-panel'
+  fieldset.govuk-fieldset id='dependent-children-age-panel'
     legend.govuk-fieldset__legend{ class="govuk-!-font-weight-bold" } = t("children_age_range", scope: @form.i18n_scope)
     .govuk-form-group.children_age_select class=('govuk-form-group--error' if @form.errors["children_bands[0]"].any?)
       label.govuk-label for="children_bands" = t('child_age_range', scope: @form.i18n_scope, child_number: 1)
