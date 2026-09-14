@@ -66,6 +66,14 @@ To run one of the drivers individually, e.g. Desktop Chrome run:
 
 All of the playwright drivers can be viewed in [support/playwright_driver_helper.rb](support/playwright_driver_helper.rb).
 
+## Broken link checking with Lychee
+
+To identify broken links we use [Lychee](https://lychee.cli.rs/) and the Lychee [command-line utility](https://github.com/lycheeverse/lychee).
+
+To begin, install Lychee. For this example we are using [Homebrew](https://brew.sh/) - see [other installation methods](https://github.com/lycheeverse/lychee#installation).
+
+`$ brew install lychee`
+
 ## Brakeman
 
 [Brakeman](https://github.com/presidentbeef/brakeman) is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.

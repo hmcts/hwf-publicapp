@@ -50,6 +50,14 @@ namespace :test do
     end
   end
 
+  task links: :environment do
+    unless system("lychee --config lychee.toml --root-dir #{Rails.public_path} " \
+                  "'app/views/**/*' 'app/helpers/**/*.rb' " \
+                  "'config/locales/**/*.yml' 'public/*.html'")
+      abort "External links check failed"
+    end
+  end
+
   task accessibility: :environment do
     if system "bundle exec cucumber accessibility/ -p accessibility"
       puts "Accessibility test passed"
