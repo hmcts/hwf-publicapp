@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-16
+
+### Changed
+
+- Updated bigdecimal 4.1.2 → 4.1.3
+- Updated govuk-frontend 6.5.0 → 6.5.1
+- Updated io-console 0.9.2 → 0.9.3
+- Updated jwt 3.2.0 → 3.3.0
+- Updated msgpack 1.8.4 → 1.8.5
+- Updated net-imap 0.6.6 → 0.6.7
+- Updated notifications-ruby-client 6.4.0 → 6.5.1
+- Updated parallel_tests 5.7.0 → 5.8.0
+- Updated playwright-ruby-client 1.62.0 → 1.63.0
+- Updated rubocop 1.90.0 → 1.91.0
+- Updated sass 1.104.0 → 1.104.1
+- Updated selenium-webdriver 4.48.0 → 4.49.0
+- Updated simplecov 1.2.0 → 1.3.0
+- Updated webpack 5.110.3 → 5.111.0
+
+### Known issues
+
+- json held at 2.21.2 — 3.0.2 was tried and reverted: ActiveSupport 8.1.3.1 calls
+  `JSON.parse(json, options)` with a positional options hash, which json 3.0 rejects
+  (`ArgumentError: wrong number of arguments (given 2, expected 1)`), breaking every
+  cookie/session decode in the feature specs. Retry once Rails ships json 3 support.
+- cucumber-* / diff-lcs / multi_test / marcel major versions still unavailable — pinned by
+  cucumber 11.1.1 (latest), rspec-expectations (< 2.0) and activestorage (~> 1.0).
+
 ## 2026-09-07
 
 ### Changed
