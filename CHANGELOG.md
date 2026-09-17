@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-17
+
+### Changed
+
+- Updated Ruby 4.0.6 → 4.0.7 (Gemfile, .ruby-version, Dockerfile, Jenkinsfiles and README).
+  Routine bugfix release, no security advisories. The Dockerfile pulls from the HMCTS
+  ACR mirror; confirm `imported/library/ruby:4.0.7-alpine3.23` has been imported before
+  merging.
+
 ## 2026-09-16
 
 ### Changed
