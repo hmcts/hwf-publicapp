@@ -74,6 +74,16 @@ To begin, install Lychee. For this example we are using [Homebrew](https://brew.
 
 `$ brew install lychee`
 
+Then run the checks using the rake command:
+
+`$ bundle exec rake test:links`
+
+This checks external links in `app/views/**/*`, `app/helpers/**/*.rb`, `config/locales/**/*.yml`, and `public/*.html`.
+
+Internal, Intranet, and SharePoint links are excluded.
+
+The scanned directories can be configured in [/lib/tasks/test.rake](../lib/tasks/test.rake). Lychee can be configured in [lychee.toml](../lychee.toml)
+
 ## Brakeman
 
 [Brakeman](https://github.com/presidentbeef/brakeman) is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.

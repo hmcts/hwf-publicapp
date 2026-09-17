@@ -8,10 +8,11 @@ scheme = ["https", "http"]
 max_concurrency = 8
 timeout = 20
 max_retries = 2
+max_redirects = 0
 # Accept 429 rate limited - not broken
 accept = ["200..=299", "429"]
 
-base_url = "https://www.helpwithcourtfees.service.gov.uk/s"
+base_url = "https://www.helpwithcourtfees.service.gov.uk/"
 
 exclude = [
   '^https://www\.helpwithcourtfees\.service\.gov\.uk/',
