@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-28 (gem-updates-v70)
+
+### Changed
+
+- Updated rails 8.1.3.1 → 8.1.4
+- Updated io-console 0.9.3 → 0.9.4
+- Updated net-protocol 0.3.0 → 0.4.0
+- Updated regexp_parser 2.12.0 → 2.13.0
+- Updated rubocop-rails 2.37.0 → 2.38.0 (no new offences)
+- Updated rubyzip 3.6.0 → 3.7.0
+- Updated simplecov 1.3.0 → 1.3.1
+- Updated slim-rails 4.0.0 → 4.0.1
+- Updated unicode-display_width 3.2.0 → 3.3.0 and unicode-emoji 4.2.0 → 4.3.0 (transitive)
+- Updated sass 1.104.1 → 1.105.0
+- Updated webpack 5.111.0 → 5.111.1
+
+### Known issues
+
+- json held at 2.21.2 — Rails 8.1.4 makes `ActiveSupport::JSON.decode` json 3 compatible,
+  so 3.0.2 can be retried next run.
+- mime-types-data 3.2026.0922 held — published 6 days before this run.
+- cucumber-* / diff-lcs / multi_test / marcel majors still constrained by their parent gems.
+
 ## 2026-09-17
 
 ### Changed

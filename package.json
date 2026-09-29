@@ -17,8 +17,8 @@
     "govuk-frontend": "^6.5.1",
     "jquery": "^4.0.0",
     "rails-ujs": "5.2.8-1",
-    "sass": "^1.104.1",
-    "webpack": "^5.111.0",
+    "sass": "^1.105.0",
+    "webpack": "^5.111.1",
     "webpack-cli": "^7.2.3"
   },
   "resolutions": {
