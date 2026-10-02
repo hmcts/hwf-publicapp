@@ -1,7 +1,14 @@
 # Help with fees - public facing app
-[![Code Climate](https://codeclimate.com/github/ministryofjustice/hwf-publicapp/badges/gpa.svg)](https://codeclimate.com/github/ministryofjustice/hwf-publicapp) [![Test Coverage](https://codeclimate.com/github/ministryofjustice/hwf-publicapp/badges/coverage.svg)](https://codeclimate.com/github/ministryofjustice/hwf-publicapp)
+[![Build Status](https://img.shields.io/github/checks-status/hmcts/hwf-publicapp/master?label=build)](https://github.com/hmcts/hwf-publicapp/commits/master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hwf-publicapp&metric=alert_status)](https://sonarcloud.io/project/overview?id=hwf-publicapp)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=hwf-publicapp&metric=coverage)](https://sonarcloud.io/project/overview?id=hwf-publicapp)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hwf-publicapp&metric=sqale_rating)](https://sonarcloud.io/project/overview?id=hwf-publicapp)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=hwf-publicapp&metric=security_rating)](https://sonarcloud.io/project/overview?id=hwf-publicapp)
 
-[![Build Status](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_apis/build/status/Help%20with%20Fees/hwf-publicapp?branchName=develop)](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_build/latest?definitionId=25&branchName=develop)
+[![Ruby](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhmcts%2Fhwf-publicapp%2Fmaster%2F.ruby-version&search=%28%3F%3Aruby-%29%3F%28%5Cd%2B%5C.%5Cd%2B%5C.%5Cd%2B%29&replace=%241&label=ruby&color=CC342D&logo=ruby&logoColor=white)](.ruby-version)
+[![Rails](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhmcts%2Fhwf-publicapp%2Fmaster%2FGemfile.lock&search=%5Cn%20%20%20%20rails%20%5C%28%28%5B%5Cw.-%5D%2B%29%5C%29&replace=%241&label=rails&color=CC0000&logo=rubyonrails&logoColor=white)](Gemfile.lock)
+[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen?logo=renovatebot)](renovate.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Help with fees app for public.
 
