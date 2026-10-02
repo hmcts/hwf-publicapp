@@ -1,10 +1,7 @@
 .git*
 log/*
 tmp/*
-.travis.yml
 Dockerfile
-azure-pipelines.yaml
-pipeline-steps/*
 
 # Don't copy host/agent-built gems or JS deps into the image —
 # they're compiled for a different platform and shadow the image's own gems.
