@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-06 (gem-updates-v71)
+
+### Changed
+
+- Updated capybara-playwright-driver 0.5.10 → 0.5.12
+- Updated rdoc 8.0.0 → 8.1.0
+- Updated regexp_parser 2.13.0 → 2.13.1
+- Updated sentry-rails and sentry-ruby 7.0.0 → 7.1.0 (7.1.0 turns Rails structured logging
+  off by default; this app never enabled it, so no config change)
+- Updated net-smtp 0.5.1 → 0.5.2
+- Updated mime-types-data 3.2026.0701 → 3.2026.0929
+- Updated brakeman 8.0.6 → 8.1.0 (no new warnings)
+- Updated selenium-webdriver 4.49.0 → 4.50.0
+- Updated simplecov 1.3.1 → 1.3.2
+- Updated listen 3.10.0 → 3.10.1
+- Updated parallel 2.2.0 → 2.3.0
+- Updated sass 1.105.0 → 1.105.1
+
+Everything from sentry down was published less than 7 days before this run and was
+applied on explicit approval rather than held.
+
+### Known issues
+
+- json held at 2.21.2 — 3.0.2 is a major bump. The rspec suite passed against 3.0.2
+  during this run, so it is a candidate for the next one.
+- redis-client 0.31.0 not available — redis 6.0.0 pins `redis-client = 0.30.1`.
+- cucumber-* / diff-lcs / multi_test / marcel majors still constrained by their parent gems.
+
 ## 2026-09-28 (gem-updates-v70)
 
 ### Changed
