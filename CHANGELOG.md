@@ -4,6 +4,47 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-12 (gem-updates-v71)
+
+### Changed
+
+Second pass, 12 Oct:
+
+- Updated json 2.21.2 → 3.0.2 (major; held last pass, full suite green on it twice)
+- Updated date 3.5.1 → 3.6.0, uri 1.1.1 → 1.1.2, prettyprint 0.2.0 → 0.2.1
+- Updated mime-types-data 3.2026.0929 → 3.2026.1006
+- Updated rubocop 1.91.0 → 1.92.0 and rubocop-rspec_rails 2.32.0 → 2.33.0 (no new offences)
+- Updated selenium-webdriver 4.50.0 → 4.51.0
+- Updated test-prof 1.6.3 → 1.6.4
+- Updated webmock 3.26.4 → 3.29.0
+- Updated playwright (npm) and playwright-ruby-client 1.63.0 → 1.64.0, kept in step
+
+All of these were published less than 7 days before the run and applied on explicit approval.
+
+First pass, 6 Oct:
+
+- Updated capybara-playwright-driver 0.5.10 → 0.5.12
+- Updated rdoc 8.0.0 → 8.1.0
+- Updated regexp_parser 2.13.0 → 2.13.1
+- Updated sentry-rails and sentry-ruby 7.0.0 → 7.1.0 (7.1.0 turns Rails structured logging
+  off by default; this app never enabled it, so no config change)
+- Updated net-smtp 0.5.1 → 0.5.2
+- Updated mime-types-data 3.2026.0701 → 3.2026.0929
+- Updated brakeman 8.0.6 → 8.1.0 (no new warnings)
+- Updated selenium-webdriver 4.49.0 → 4.50.0
+- Updated simplecov 1.3.1 → 1.3.2
+- Updated listen 3.10.0 → 3.10.1
+- Updated parallel 2.2.0 → 2.3.0
+- Updated sass 1.105.0 → 1.105.1
+
+Everything from sentry down was published less than 7 days before this run and was
+applied on explicit approval rather than held.
+
+### Known issues
+
+- redis-client 0.31.0 not available — redis 6.0.0 pins `redis-client = 0.30.1`.
+- cucumber-* / diff-lcs / multi_test / marcel majors still constrained by their parent gems.
+
 ## 2026-09-28 (gem-updates-v70)
 
 ### Changed
