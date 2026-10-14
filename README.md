@@ -1,4 +1,4 @@
-# Help with fees - public facing app
+# Help with Fees - public facing app
 [![Build Status](https://img.shields.io/github/checks-status/hmcts/hwf-publicapp/master?label=build)](https://github.com/hmcts/hwf-publicapp/commits/master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hwf-publicapp&metric=alert_status)](https://sonarcloud.io/project/overview?id=hwf-publicapp)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=hwf-publicapp&metric=coverage)](https://sonarcloud.io/project/overview?id=hwf-publicapp)
