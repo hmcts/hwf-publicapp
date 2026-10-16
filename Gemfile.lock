@@ -88,7 +88,7 @@ GEM
       capybara (~> 3.13, < 4)
       websocket-driver (>= 0.6.5)
     ast (2.4.3)
-    axe-core-api (4.13.0)
+    axe-core-api (4.14.0)
       dumb_delegator
     base64 (0.3.0)
     bigdecimal (4.1.3)
