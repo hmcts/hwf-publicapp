@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-20 (gem-updates-v72)
+
+### Changed
+
+- Routine gem and npm bumps, no open advisories; the fresh (< 7 day old) releases were
+  applied on explicit approval. Versions are in the lockfile diff.
+- rubocop-capybara 3.1.0 added `Capybara/VisibilityOption`: the one `visible: false` in
+  the cucumber steps became the equivalent `visible: :all`.
+- govuk-frontend 6.6.0 deprecates the character count `maxwords` option; unused here.
+- Yarn 4.18.0 → 4.18.1 via `packageManager`; the Dockerfile's `corepack install` picks it up.
+
+### Known issues
+
+- redis-client 0.31.0 blocked by redis 6.0.0 (`= 0.30.1`); cucumber 12 and the other
+  transitive majors still constrained by their parents.
+
 ## 2026-10-12 (gem-updates-v71)
 
 ### Changed

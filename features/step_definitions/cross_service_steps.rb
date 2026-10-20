@@ -13,7 +13,7 @@ When('I process the application') do
   fill_in('Reference', with: @ref_number)
   click_button('Look up')
   fill_in('How much is the court or tribunal fee?', with: "200")
-  choose('County', visible: false, allow_label_click: true)
+  choose('County', visible: :all, allow_label_click: true)
   fill_in('Day', with: Time.zone.now.day)
   fill_in('Month', with: Time.zone.now.month)
   fill_in('Year', with: Time.zone.now.year)
