@@ -9,16 +9,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Changed
 
 - Updated README.md with status shields including SonarCloud 
-- Removed old shields (package.json)
-- Removed redundant sauacelabs and azure-pipelines.yml environment variables (.env.test, .dockerignore)
-- Removed redundant saucelabs config (config/cucumber.yml)
-- Removed redundant codeclimate block (spec/rails_helper.rb)
+- Removed redundant codeclimate comment (spec/rails_helper.rb)
 - Removed redundant cucumber execution scripts and tasks (script/cucumber, lib/tasks/cucumber.rake)
-- Removed outdated polyfill (vendor/assets/javascripts/details.polyfill.js)
+- Removed codeclimate.com exclude from webmock (spec/support/webmock.rb)
+- Removed outdated polyfill (vendor/assets/javascripts/is-nan.polyfill.js)
 - Removed redundant CodeClimate configuration (.codeclimate.yml)
-- Removed outdated ESLint configurations (.eslintignore, .eslintrc)
-- Removed redundant RuboCop TODO list (.rubocop_todo.yml)
-- Updated RuboCop ruby version and removed redundant excludes (.rubocop.yml)
+- Removed redundant travis configuration (.travis.yml)
+- Removed redundant excludes (.rubocop.yml)
 
 ## 2026-10-20 (gem-updates-v72)
 
