@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## 2026-10-22
 
-## Changed
+### Changed
 
 - Updated README.md with status shields including SonarCloud 
 - Removed redundant codeclimate comment (spec/rails_helper.rb)
