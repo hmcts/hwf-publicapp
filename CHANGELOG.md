@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-22
+
+### Changed
+
+- Updated README.md with status shields including SonarCloud 
+- Removed redundant codeclimate comment (spec/rails_helper.rb)
+- Removed redundant cucumber execution scripts and tasks (script/cucumber, lib/tasks/cucumber.rake)
+- Removed codeclimate.com exclude from webmock (spec/support/webmock.rb)
+- Removed outdated polyfill (vendor/assets/javascripts/is-nan.polyfill.js)
+- Removed redundant CodeClimate configuration (.codeclimate.yml)
+- Removed redundant travis configuration (.travis.yml)
+- Removed redundant excludes (.rubocop.yml)
+
 ## 2026-10-20 (gem-updates-v72)
 
 ### Changed
