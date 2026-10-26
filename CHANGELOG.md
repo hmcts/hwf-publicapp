@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-26 (ruby-update)
+
+### Security
+
+- crass 1.0.7 → 1.0.8 — fixes GHSA-pq4g-8rxf-4g29 (CSS sanitizer bypass).
+
+### Changed
+
+- Routine gem and npm bumps, no open advisories; fresh releases applied on explicit approval.
+
+## 2026-10-26 (infra-update)
+
+### Changed
+
+- Updated Ruby 4.0.7 → 4.0.9 (security release; Regexp CVE fixes).
+- Jenkins `installRuby` now uses `rvm install --binary --autolibs=read-only`.
+  Why: the new ubuntu-preview agents cannot run `apt-get update`, and the
+  Travis binary mirror only carries 4.0.9 for Ubuntu 24.04.
+
 ## 2026-10-20 (gem-updates-v72)
 
 ### Changed
