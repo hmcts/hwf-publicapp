@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-26 (ruby-update)
+
+### Security
+
+- crass 1.0.7 → 1.0.8 — fixes GHSA-pq4g-8rxf-4g29 (CSS sanitizer bypass).
+
+### Changed
+
+- Routine gem and npm bumps, no open advisories; fresh releases applied on explicit approval.
+
 ## 2026-10-26 (infra-update)
 
 ### Changed
