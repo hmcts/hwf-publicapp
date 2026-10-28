@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Home cucumber feature follows the new headings and links.
 - Sidebar holds only "Related content"; "Explore the topic" moved below the body, both styled
   like GOV.UK's related navigation.
+- Adding Welsh version too
 
 ## 2026-10-26 (ruby-update)
 
