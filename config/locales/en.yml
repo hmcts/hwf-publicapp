@@ -1014,6 +1014,11 @@ en:
     missing_answer:
       dependents: 'Please give details of children or dependents'
       income: 'Please answer questions about your income'
+      ho_number: 'Please give your Home Office reference number'
+      benefits: 'Please answer the question about benefits'
+      partner_ni_number: 'Please answer the question about your partner’s National Insurance number'
+      partner_date_of_birth: 'Please give your partner’s date of birth'
+      partner_name: 'Please give your partner’s full name'
     probate_case_: ''
     probate_case_false: 'No'
     probate_case_true: 'Yes'

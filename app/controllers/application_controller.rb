@@ -45,6 +45,10 @@ class ApplicationController < ActionController::Base
     @online_application ||= builder.online_application
   end
 
+  def summary
+    @summary ||= Views::Summary.new(online_application, benefit_answered: storage.form_saved?(:benefit))
+  end
+
   def builder
     @builder ||= OnlineApplicationBuilder.new(storage)
   end

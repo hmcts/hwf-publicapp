@@ -1036,6 +1036,11 @@ cy:
     missing_answer:
       dependents: "Rhowch fanylion unrhyw blant neu ddibynyddion"
       income: "Atebwch gwestiynau am eich incwm"
+      ho_number: "Rhowch eich cyfeirnod y Swyddfa Gartref"
+      benefits: "Atebwch y cwestiwn am fudd-daliadau"
+      partner_ni_number: "Atebwch y cwestiwn am rif Yswiriant Gwladol eich partner"
+      partner_date_of_birth: "Rhowch ddyddiad geni eich partner"
+      partner_name: "Rhowch enw llawn eich partner"
     probate_case_: ''
     probate_case_false: Nac ydw
     probate_case_true: Ydw
