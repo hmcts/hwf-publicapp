@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-28 (rst-8618-landing-page)
+
+### Changed
+
+- Landing page copy now matches gov.uk/get-help-with-court-fees, which is what production
+  redirects to. Old thresholds and the COVID-19 adjournment notice are gone.
+- Home cucumber feature follows the new headings and links.
+- Sidebar holds only "Related content"; "Explore the topic" moved below the body, both styled
+  like GOV.UK's related navigation.
+- Adding Welsh version too
+
 ## 2026-10-26 (ruby-update)
 
 ### Security
