@@ -6,42 +6,105 @@
       .inner
         .get-started-intro
           .gem-c-govspeak.govuk-govspeak
-            p.govuk-body-small You might be able to get money off your #{link_to 'court or tribunal fee', 'https://www.gov.uk/court-fees-what-they-are', class: 'external', rel: 'external'} if you have little or no savings, are on certain benefits or have a low income.
-            .application-notice.govuk-details__text
-              p.govuk-body-small If you already have a hearing date and you need to postpone (‘adjourn’) because of coronavirus (COVID-19), you might not have to pay the application fee. Find out more about #{link_to 'adjournment fees for certain civil and family hearings', 'https://www.gov.uk/guidance/applications-to-adjourn-civil-and-family-hearings-because-of-coronavirus-covid-19', class: 'external', rel: 'external'}.
-            br
-            p.govuk-body-small There are different rules in #{link_to 'Northern Ireland', 'http://www.courtsni.gov.uk/en-GB/Services/CourtFees/Pages/CourtFees.aspx', class: 'external', rel: 'external'} and #{link_to 'Scotland', 'http://www.scotcourts.gov.uk/taking-action/court-fees', class: 'external', rel: 'external'}
+            p.govuk-body-small You can apply for money off a #{link_to 'court or tribunal fee', 'https://www.gov.uk/court-fees-what-they-are', class: 'external', rel: 'external'}. You can do this before or after you pay the fee.
+            p.govuk-body-small If you’ve already paid the fee, you can apply to get money back if both of the following apply:
+            ul.govuk-list.govuk-list--bullet
+              li you paid the fee in the last 3 months
+              li you were eligible for help when you paid it
+            p.govuk-body-small There are different rules in #{link_to 'Northern Ireland', 'https://www.justice-ni.gov.uk/articles/court-fees-0', class: 'external', rel: 'external'} and #{link_to 'in Scotland', 'http://www.scotcourts.gov.uk/taking-action/court-fees', class: 'external', rel: 'external'}.
             .govuk-details__text
-              p.govuk-body-small This guide is also available #{link_to 'in Welsh (Cymraeg)', 'https://www.gov.uk/help-i-dalu-ffioedd-llysoedd-a-thribiwnlysoedd ', class: 'external', rel: 'external'}.
+              p.govuk-body-small This guide is also available #{link_to 'in Welsh (Cymraeg)', root_path(locale: :cy), lang: 'cy'}.
             br
             h2.govuk-heading-m Eligibility
-            p.govuk-body-small Whether you’re eligible depends on what savings you have, what benefits you’re on and your income.
-            h3.govuk-heading-s Savings
-            p.govuk-body-small You usually need to have less than £3,000 in savings and investments if you’re under 66.
-            p.govuk-body-small You can have up to £16,000 in savings if your fee is between £1,000 and £10,000, or if you or your partner are 66 and over.
-            h3.govuk-heading-s Benefits
-            p.govuk-body-small You need to be on a low income, or on one of the following benefits:
+            p.govuk-body-small Whether you’re eligible depends on:
+            ul.govuk-list.govuk-list--bullet
+              li how much money you have in savings
+              li which benefits you get
+              li your income
+            h3.govuk-heading-s Your savings
+            p.govuk-body-small You must have less than the maximum amount of savings to be eligible. If you have a partner, you must include their savings too.
+            p.govuk-body-small If you and your partner are 65 or younger, the maximum amount of savings you can have depends on how much the court or tribunal fee is.
+            p.govuk-body-small For example, you can have:
+            ul.govuk-list.govuk-list--bullet
+              li up to £4,250 in savings if your fee is £1,420 or less
+              li up to £16,000 in savings if your fee is over £7,000
+            p.govuk-body-small Most court and tribunal fees are less than £1,420.
+            p.govuk-body-small If you or your partner are 66 or older, you can have up to £16,000 in savings, whatever your fee is.
+            p.govuk-body-small #{link_to 'Read further guidance', 'https://www.gov.uk/government/publications/how-to-apply-for-help-with-a-court-or-tribunal-fee-ex160a', class: 'external', rel: 'external'} about how to check the amount of savings you can have.
+            h3.govuk-heading-s Benefits you get
+            p.govuk-body-small You can get money off your fee if you claim one of the following benefits:
             ul.govuk-list.govuk-list--bullet
               li income-based Jobseeker’s Allowance (JSA)
               li income-related Employment and Support Allowance (ESA)
               li Income Support
               li Universal Credit (and you earn less than £6,000 a year)
               li Pension Credit (Guarantee Credit)
-            h3.govuk-heading-s Income
-            p.govuk-body-small If you're not on any of those benefits, you usually need to earn £1,170 or less a month before tax if you're single. Or £1,345 or less if you have a partner.
-            p.govuk-body-small You can earn an extra £265 on top of that for each child you have.
-            p.govuk-body-small For example, if you have a partner and 2 children you have to earn £1,875 or less to be eligible for full help with court fees.
-            p.govuk-body-small You may still be able to get help if your income is higher. This depends on the size of the fee. #{link_to "Check if you're eligible", 'http://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees#details', class: 'external', rel: 'external'} before you apply.
-            h2.govuk-heading-m Apply online
-            p.govuk-body-small If you need help with fees for the Court of Protection, you cannot use this service. #{link_to "Fill in a paper form", 'https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees', class: 'external', rel: 'external'} instead.
+            p.govuk-body-small You must also have less than the maximum amount of money in savings. This is usually up to £4,250.
+            h3.govuk-heading-s Your income
+            p.govuk-body-small Your income includes anything you earn before tax and any other payments you receive.
+            p.govuk-body-small When you apply, you must report either:
+            ul.govuk-list.govuk-list--bullet
+              li your income in the last calendar month – for example, if you apply in January, you report your income in December
+              li your average income over the last 3 calendar months - for example, if you apply in April, you report your average income between January, February and March
+            p.govuk-body-small Report whichever income is lower.
+            p.govuk-body-small You can get money off your fee if your reported income is:
+            ul.govuk-list.govuk-list--bullet
+              li £1,420 or less, if you’re single
+              li £2,130 or less, if you have a partner
+            p.govuk-body-small For each child you have, your reported income can be:
+            ul.govuk-list.govuk-list--bullet
+              li £425 more for children aged 0 to 13
+              li £710 more for children aged 14 and over
+            p.govuk-body-small For example, if you have a partner and two children aged 7 and 5, your reported income can be up to £2,980.
+            p.govuk-body-small You must also have less than the maximum amount of money in savings. This is usually up to £4,250.
+            .govuk-inset-text
+              p.govuk-body-small If you earn more, you may be able to get some money off your fee. This depends on how much your court fee is.
+            p.govuk-body-small #{link_to 'Read further guidance', 'https://www.gov.uk/government/publications/how-to-apply-for-help-with-a-court-or-tribunal-fee-ex160a', class: 'external', rel: 'external'} about how to check your income.
+            h2.govuk-heading-m How to apply
+            p.govuk-body-small If you have more than one fee to pay, you must apply for help with each fee separately.
+            p.govuk-body-small If you need help with fees for the Court of Protection, you cannot use this service. Fill in #{link_to 'form COP44A', 'https://www.gov.uk/government/publications/apply-for-help-with-court-of-protection-fees-form-cop44a', class: 'external', rel: 'external'} instead and submit it with your court application.
+            h3.govuk-heading-s Apply online
+            p.govuk-body-small Apply for help with fees when you make your court application.
             = link_to checklist_path, role: :button, class: 'govuk-button govuk-button--start', 'data-module': "govuk-button" do
               = t('start_application')
               svg.govuk-button__start-icon xmlns= "http://www.w3.org/2000/svg"  width= "17.5" height= "19" viewBox= "0 0 33 40" aria-hidden= "true" focusable= "false"
                 path fill= "currentColor" d="M0 0h13l20 20-20 20H0l20-20z"
-            h2.govuk-heading-m Other ways to apply
-            p.govuk-body-small You can apply by #{link_to "filling in a paper form", 'http://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees', class: 'external', rel: 'external'} instead.
+            h3.govuk-heading-s Apply by post
+            p.govuk-body-small Download and complete #{link_to 'form EX160', 'https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees', class: 'external', rel: 'external'} for help with court and tribunal fees.
+            p.govuk-body-small You can also request a paper copy of the form from #{link_to 'your nearest court', 'https://www.gov.uk/find-court-tribunal', class: 'external', rel: 'external'}.
+            p.govuk-body-small Submit your help with fees application at the same time as your court application. Send both forms to the address on the court application.
+            p.govuk-body-small If you’re applying for money off a fee you’ve already paid, send your help with fees application to the court or tribunal you paid your fee to.
+            h2.govuk-heading-m If you need help applying
+            h3.govuk-heading-s Get help with your application
+            p.govuk-body-small Who you contact depends on which court or tribunal office you’re applying to. For example, if you’re applying for a divorce you can contact the #{link_to 'Court and Tribunal Service Centre', 'https://www.gov.uk/divorce/file-for-divorce', class: 'external', rel: 'external'} to find out about getting help to pay for your divorce application. #{link_to 'Find which court or tribunal office to contact', 'https://www.gov.uk/find-court-tribunal', class: 'external', rel: 'external'}.
+            h3.govuk-heading-s Get help applying online
+            p.govuk-body-small Contact We Are Group if you want to apply but do not have access to the internet or do not feel confident using it.
+            .govuk-inset-text
+              p.govuk-body-small
+                | We Are Group
+                br
+                = mail_to 'support@wearegroup.com'
+                br
+                | Telephone: 03300 160 051
+                br
+                | Monday to Friday, 9am to 5pm
+                br
+                | Closed on bank holidays
+                br
+                | Text FORM to 60777 and someone will call you back
+                br
+                = link_to 'Find out about call charges', 'https://www.gov.uk/call-charges', class: 'external', rel: 'external'
   aside.govuk-grid-column-one-third
     .related-content
-      h2.govuk-heading-s Related content
-      p.govuk-body-small #{link_to "Court and tribunal fees", 'https://www.gov.uk/court-fees-what-they-are', class: 'external', rel: 'external'}
-      p.govuk-body-small #{link_to "Pay a court fine", 'https://www.gov.uk/pay-court-fine-online', class: 'external', rel: 'external'}
+      h2.related-content__heading#related-content-heading Related content
+      nav aria-labelledby="related-content-heading"
+        ul.related-content__list
+          li = link_to "Court and tribunal fees", 'https://www.gov.uk/court-fees-what-they-are', class: 'govuk-link external', rel: 'external'
+          li = link_to "Pay a court fine", 'https://www.gov.uk/pay-court-fine-online', class: 'govuk-link external', rel: 'external'
+.govuk-grid-row
+  .govuk-grid-column-two-thirds
+    .related-content.related-content--footer
+      nav aria-labelledby="explore-topic-heading"
+        h2.related-content__sub-heading#explore-topic-heading Explore the topic
+        ul.related-content__list
+          li = link_to "Courts, tribunals and appeals", 'https://www.gov.uk/browse/justice/courts-sentencing-tribunals', class: 'govuk-link external', rel: 'external'
