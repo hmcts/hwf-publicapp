@@ -49,6 +49,10 @@ class Storage
     form.update_attributes(params)
   end
 
+  def form_saved?(form_id)
+    rails_store.exist?(form_key(form_id))
+  end
+
   def clear_form(form_id)
     rails_store.delete(form_key(form_id))
   end

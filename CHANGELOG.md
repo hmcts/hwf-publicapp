@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-28 (rst-8524-summary-page-data)
+
+### Fixed
+
+- Answering "yes" to the NI question now clears the Home Office number straight away, and
+  "no" clears the partner answers. The old clean-up read the previous answers, so a change
+  made from the summary left the HO number in place.
+- The summary flags answers that a changed answer made necessary but the user skipped
+  (HO number, benefits, partner NI number, date of birth and name), and submission is blocked
+  until they are given. Benefits is checked against storage because the benefit form reports
+  "no benefits" when it was never answered.
+- Welsh missing-answer messages are drafts and need a translator check.
+
 ## 2026-10-26 (ruby-update)
 
 ### Security
