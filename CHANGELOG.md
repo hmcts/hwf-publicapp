@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-02 (gem-updates-v73)
+
+### Security
+
+- rack 3.2.7 → 3.2.8 — fixes 4 advisories incl. GHSA-5v64-555j-wjxm (High).
+- addressable 2.9.0 → 2.9.2 — fixes 7 advisories.
+- loofah 2.25.2 → 2.25.3 — fixes GHSA-p9wj-w8xq-vjx6; pulls nokogiri to 1.19.6.
+
+### Changed
+
+- Routine gem and npm bumps; fresh releases applied on explicit approval.
+
+### Known issues
+
+- redis-client held at 0.30.1 by redis 6.0.0's exact pin.
+- Held as too fresh: rails-html-sanitizer, sentry, msgpack, mime-types-data, io-console.
+
 ## 2026-10-28 (rst-8524-summary-page-data)
 
 ### Fixed
