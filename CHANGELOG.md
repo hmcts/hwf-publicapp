@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-03 (gem-updates-v74)
+
+### Security
+
+- rails-html-sanitizer 1.7.1 → 1.7.2 (GHSA-h7wh-q2qr-458c, GHSA-cpgf-5mjf-73p7).
+
 ## 2026-11-02 (gem-updates-v73)
 
 ### Security
