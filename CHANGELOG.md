@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-04 (rst-8784-tidy-up)
+
+### Removed
+
+- `config/secrets.yml`, the `SecretToken` initializer and the `SECRET_TOKEN` Key Vault alias.
+  Rails 7.2+ ignores secrets.yml and reads `SECRET_KEY_BASE` straight from the environment.
+  The Dockerfile precompile uses `SECRET_KEY_BASE_DUMMY` instead of a fake `SECRET_TOKEN`.
+
 ## 2026-11-03 (gem-updates-v74)
 
 ### Security
