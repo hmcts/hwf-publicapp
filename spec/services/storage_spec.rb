@@ -216,6 +216,17 @@ RSpec.describe Storage do
       end
     end
 
+    describe '#form_saved?' do
+      it 'is false before the form is saved' do
+        expect(storage.form_saved?(form_id)).to be false
+      end
+
+      it 'is true once the form is saved' do
+        rails_store.write(form_key, json_data)
+        expect(storage.form_saved?(form_id)).to be true
+      end
+    end
+
     describe '#clear_form' do
       let(:form) { instance_double(Forms::Benefit, id: form_id) }
 

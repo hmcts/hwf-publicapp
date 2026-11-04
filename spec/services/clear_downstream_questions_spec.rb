@@ -116,6 +116,29 @@ RSpec.describe ClearDownstreamQuestions do
       end
     end
 
+    context 'when the national insurance answer changes' do
+      let(:question) { :national_insurance }
+
+      context 'from no NI number to an NI number' do
+        let(:old_online_application) { build(:online_application, ni_number_present: false, ni_number: nil, ho_number: 'L1234567') }
+        let(:new_online_application) { build(:online_application, ni_number_present: true, ni_number: 'AB123456A', ho_number: 'L1234567') }
+
+        it 'clears the home office question' do
+          expect(storage).to have_received(:clear_form).with(:home_office)
+        end
+      end
+
+      context 'from an NI number to no NI number' do
+        let(:old_online_application) { build(:online_application, ni_number_present: true, ni_number: 'AB123456A') }
+        let(:new_online_application) { build(:online_application, ni_number_present: false, ni_number: nil) }
+
+        it 'clears the partner answers' do
+          expect(storage).to have_received(:save_form).with(an_instance_of(Forms::PartnerNationalInsurance))
+          expect(storage).not_to have_received(:clear_form).with(:home_office)
+        end
+      end
+    end
+
     context 'when the legal representation is present' do
       let(:question) { :legal_representative }
       let(:old_online_application) { build(:online_application, legal_representative: 'litigation_friend') }

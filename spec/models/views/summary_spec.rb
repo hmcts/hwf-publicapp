@@ -270,4 +270,65 @@ RSpec.describe Views::Summary do
       it { expect(summary.display_ni?).to be true }
     end
   end
+
+  describe '#missing_answers' do
+    subject(:summary) { described_class.new(online_application, benefit_answered: benefit_answered) }
+
+    let(:benefit_answered) { true }
+    let(:partner) do
+      { partner_ni_number: 'AB123456B', partner_date_of_birth: Date.new(1980, 1, 1),
+        partner_first_name: 'Sally', partner_last_name: 'Test' }
+    end
+
+    context 'when a single applicant has answered everything' do
+      let(:online_application) { build(:online_application) }
+
+      it { expect(summary.missing_answers).to be_empty }
+      it { expect(summary.incomplete?).to be false }
+    end
+
+    context 'when a married applicant with an NI number has no partner answers' do
+      let(:online_application) { build(:online_application, married: true) }
+
+      it 'lists every partner answer' do
+        expect(summary.missing_answers).to eql([:partner_ni_number, :partner_date_of_birth, :partner_name])
+      end
+
+      it { expect(summary.incomplete?).to be true }
+    end
+
+    context 'when the partner said they have no NI number' do
+      let(:online_application) { build(:online_application, married: true, **partner, partner_ni_number: nil, partner_ni_number_blank: true) }
+
+      it { expect(summary.missing_answers).to be_empty }
+    end
+
+    context 'when a married applicant has no NI number' do
+      let(:online_application) { build(:online_application, married: true, ni_number_present: false, ni_number: nil, ho_number: 'L1234567') }
+
+      it 'does not ask for partner answers' do
+        expect(summary.missing_answers).to be_empty
+      end
+    end
+
+    context 'when the applicant has no NI number and no HO number' do
+      let(:online_application) { build(:online_application, ni_number_present: false, ni_number: nil, ho_number: nil) }
+
+      it { expect(summary.missing_answers).to eql([:ho_number]) }
+    end
+
+    context 'when the benefit question was never answered' do
+      let(:benefit_answered) { false }
+      let(:online_application) { build(:online_application) }
+
+      it { expect(summary.missing_answers).to eql([:benefits]) }
+    end
+
+    context 'when the benefit question does not apply because of an HO number' do
+      let(:benefit_answered) { false }
+      let(:online_application) { build(:online_application, ni_number_present: false, ni_number: nil, ho_number: 'L1234567') }
+
+      it { expect(summary.missing_answers).to be_empty }
+    end
+  end
 end

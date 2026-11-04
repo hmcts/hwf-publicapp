@@ -40,6 +40,12 @@ class SubmissionsController < ApplicationController
   end
 
   def statement_check
+    return redirect_incomplete if summary.incomplete?
+
+    check_statement_and_submit
+  end
+
+  def check_statement_and_submit
     @form = Forms::Statement.new
 
     @form.update_attributes(statement_params)
@@ -51,6 +57,11 @@ class SubmissionsController < ApplicationController
       flash[:statement_blank] = true
       redirect_to(summary_path)
     end
+  end
+
+  def redirect_incomplete
+    flash[:error] = I18n.t('.summary.invalid_footer')
+    redirect_to(summary_path)
   end
 
   def save_statement_form

@@ -4,6 +4,71 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-03 (gem-updates-v74)
+
+### Security
+
+- rails-html-sanitizer 1.7.1 → 1.7.2 (GHSA-h7wh-q2qr-458c, GHSA-cpgf-5mjf-73p7).
+
+## 2026-11-02 (gem-updates-v73)
+
+### Security
+
+- rack 3.2.7 → 3.2.8 — fixes 4 advisories incl. GHSA-5v64-555j-wjxm (High).
+- addressable 2.9.0 → 2.9.2 — fixes 7 advisories.
+- loofah 2.25.2 → 2.25.3 — fixes GHSA-p9wj-w8xq-vjx6; pulls nokogiri to 1.19.6.
+
+### Changed
+
+- Routine gem and npm bumps; fresh releases applied on explicit approval.
+
+### Known issues
+
+- redis-client held at 0.30.1 by redis 6.0.0's exact pin.
+- Held as too fresh: rails-html-sanitizer, sentry, msgpack, mime-types-data, io-console.
+
+## 2026-10-28 (rst-8524-summary-page-data)
+
+### Fixed
+
+- Answering "yes" to the NI question now clears the Home Office number straight away, and
+  "no" clears the partner answers. The old clean-up read the previous answers, so a change
+  made from the summary left the HO number in place.
+- The summary flags answers that a changed answer made necessary but the user skipped
+  (HO number, benefits, partner NI number, date of birth and name), and submission is blocked
+  until they are given. Benefits is checked against storage because the benefit form reports
+  "no benefits" when it was never answered.
+- Welsh missing-answer messages are drafts and need a translator check.
+## 2026-10-28 (rst-8618-landing-page)
+
+### Changed
+
+- Landing page copy now matches gov.uk/get-help-with-court-fees, which is what production
+  redirects to. Old thresholds and the COVID-19 adjournment notice are gone.
+- Home cucumber feature follows the new headings and links.
+- Sidebar holds only "Related content"; "Explore the topic" moved below the body, both styled
+  like GOV.UK's related navigation.
+- Adding Welsh version too
+
+## 2026-10-26 (ruby-update)
+
+### Security
+
+- crass 1.0.7 → 1.0.8 — fixes GHSA-pq4g-8rxf-4g29 (CSS sanitizer bypass).
+
+### Changed
+
+- Routine gem and npm bumps, no open advisories; fresh releases applied on explicit approval.
+
+## 2026-10-26 (infra-update)
+
+### Changed
+
+- Updated Ruby 4.0.7 → 4.0.9 (security release; Regexp CVE fixes).
+- Jenkins `installRuby` now uses `rvm install --binary --autolibs=read-only`.
+  Why: the new ubuntu-preview agents cannot run `apt-get update`, and the
+  Travis binary mirror only carries 4.0.9 for Ubuntu 24.04.
+
 ## 2026-10-22
 
 ### Changed

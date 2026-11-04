@@ -140,8 +140,29 @@
 }
 
 .related-content {
-  border-top: 2px solid #1d70b8;
-  padding-top: govuk-spacing(2);
-  margin-top: 30px;
+  border-top: 2px solid $govuk-brand-colour;
+  margin-bottom: govuk-spacing(8);
+
+  &__heading,
+  &__sub-heading {
+    @include govuk-font($size: 19, $weight: bold);
+    margin: govuk-spacing(3) 0 govuk-spacing(2);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 16px;
+      line-height: 1.28;
+      margin-top: govuk-spacing(3);
+    }
+  }
+
+  &--footer &__list a {
+    font-weight: bold;
+  }
 }
 

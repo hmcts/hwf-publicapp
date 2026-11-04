@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SubmissionsController do
   let(:session) { double }
   let(:app_id) { SecureRandom.uuid }
-  let(:storage) { double(started?: storage_started) }
+  let(:storage) { double(started?: storage_started, form_saved?: true) }
   let(:storage_started) { true }
   let(:online_application) { build(:online_application, calculation_scheme: schema) }
   let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
@@ -27,6 +27,23 @@ RSpec.describe SubmissionsController do
       allow(storage).to receive(:save_form)
 
       post :create, params: { locale: 'cy', app_id: app_id }
+    end
+
+    context 'when answers the summary flags as missing are not given' do
+      let(:online_application) { build(:online_application, married: true, partner_date_of_birth: nil) }
+      let(:response) { { result: true } }
+
+      it 'does not submit the application' do
+        expect(SubmitApplication).not_to have_received(:new)
+      end
+
+      it 'redirects to the summary page' do
+        expect(response).to redirect_to(summary_path)
+      end
+
+      it 'sets an flash error message' do
+        expect(flash[:error]).to eql(I18n.t('.summary.invalid_footer'))
+      end
     end
 
     context 'when the storage is not started' do

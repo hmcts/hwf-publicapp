@@ -11,7 +11,7 @@ class SummariesController < ApplicationController
   private
 
   def check_submission_form_error
-    @summary = Views::Summary.new(online_application)
+    @summary = summary
     income_validation_check
 
     return unless flash['statement_blank']
@@ -21,7 +21,7 @@ class SummariesController < ApplicationController
   end
 
   def income_validation_check
-    return unless @summary.income_validation_fails?
+    return unless @summary.incomplete?
 
     flash.now[:error] = I18n.t('.summary.invalid_footer')
   end

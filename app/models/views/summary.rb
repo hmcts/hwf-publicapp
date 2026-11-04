@@ -2,8 +2,16 @@ module Views
   class Summary < SimpleDelegator
     # TODO: Use a different way of including helpers
     include ActionView::Helpers::NumberHelper
+    include MissingAnswers
 
     delegate :form_name, to: :__getobj__
+
+    # The benefit form exports false when it was never answered, so whether it was
+    # answered has to come from storage.
+    def initialize(online_application, benefit_answered: true)
+      super(online_application)
+      @benefit_answered = benefit_answered
+    end
 
     def income_validation_fails?
       benefits.eql?(false) && income.nil? && income_text.nil?

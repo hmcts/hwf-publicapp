@@ -26,6 +26,8 @@ class ClearDownstreamQuestions
       clear_partner_data
     elsif refund_change?(new_online_application)
       @storage.clear_form(:apply_type)
+    elsif ni_number_present_changed?(new_online_application, old_online_application)
+      clear_ni_alternative(new_online_application)
     elsif !old_online_application.ni_number_present.nil?
       clear_ni_or_ho(old_online_application)
     end
@@ -57,6 +59,21 @@ class ClearDownstreamQuestions
   def dependent_change?(new_online_application, old_online_application)
     @question == :dependent &&
       old_online_application.children != new_online_application.children
+  end
+
+  def ni_number_present_changed?(new_online_application, old_online_application)
+    return false if @question != :national_insurance || old_online_application.ni_number_present.nil?
+
+    new_online_application.ni_number_present != old_online_application.ni_number_present
+  end
+
+  # A Home Office number only applies without an NI number, partner details only with one.
+  def clear_ni_alternative(new_online_application)
+    if new_online_application.ni_number_present
+      @storage.clear_form(:home_office)
+    else
+      clear_partner_data
+    end
   end
 
   def clear_ni_or_ho(old_online_application)
