@@ -11,8 +11,6 @@ global.jQuery = global.$;
 
 // import 'jquery3'
 // import 'jquery_ujs'
-//
-// import 'is-nan.polyfill'
 
 import './modules/module_loader'
 import './modules/form-name'
