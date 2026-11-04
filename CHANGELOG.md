@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-04 (gem-updates-v75)
+
+### Security
+
+- rails 8.1.4 → 8.1.4.1 (21 advisories incl. GHSA-f3w6-w445-fwh9).
+
+### Changed
+
+- Routine gem bumps.
+
 ## 2026-11-04
 
 ### Changed
