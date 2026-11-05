@@ -14,8 +14,6 @@
 // = require jquery3
 // = require jquery_ujs
 
-// = require is-nan.polyfill
-
 // = require ./modules/module_loader
 // = require ./modules/form-name
 // = require ./modules/income-sources

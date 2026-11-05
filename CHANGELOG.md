@@ -11,6 +11,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `config/secrets.yml`, the `SecretToken` initializer and the `SECRET_TOKEN` Key Vault alias.
   Rails 7.2+ ignores secrets.yml and reads `SECRET_KEY_BASE` straight from the environment.
   The Dockerfile precompile uses `SECRET_KEY_BASE_DUMMY` instead of a fake `SECRET_TOKEN`.
+## 2026-11-04 (gem-updates-v75)
+
+### Security
+
+- rails 8.1.4 → 8.1.4.1 (21 advisories incl. GHSA-f3w6-w445-fwh9).
+
+### Changed
+
+- Routine gem bumps.
+
+## 2026-11-04
+
+### Changed
+
+- Updated README.md with status shields including SonarCloud 
+- Removed redundant codeclimate comment (spec/rails_helper.rb)
+- Removed redundant cucumber execution scripts and tasks (script/cucumber, lib/tasks/cucumber.rake)
+- Removed codeclimate.com exclude from webmock (spec/support/webmock.rb)
+- Removed outdated polyfill (vendor/assets/javascripts/is-nan.polyfill.js)
+- Removed redundant CodeClimate configuration (.codeclimate.yml)
+- Removed redundant travis configuration (.travis.yml)
+- Removed redundant excludes (.rubocop.yml)
 
 ## 2026-11-03 (gem-updates-v74)
 
