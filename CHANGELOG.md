@@ -4,11 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## 2026-11-09 (gem-updates-v76)
+## 2026-11-16 (gem-updates-v77)
+
+### Security
+
+- puma 8.0.2 → 8.0.3 (7 GHSA advisories).
 
 ### Changed
 
-- Routine gem bumps.
+- Routine gem and npm bumps.
 
 ## 2026-11-04 (rst-8784-tidy-up)
 
