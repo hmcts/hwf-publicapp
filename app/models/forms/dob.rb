@@ -56,11 +56,21 @@ module Forms
     end
 
     def validate_dob_ranges
+      return in_the_future_error if in_the_future?
+
       over_16_answer_match_dob?
       too_young_error if too_young? && over_16 != 'true'
       too_old_error if too_old?
       not_over_66_error if not_over_66?
       not_under_66_error if not_under_66?
+    end
+
+    def in_the_future?
+      date_of_birth > Time.zone.today
+    end
+
+    def in_the_future_error
+      errors.add(:date_of_birth, :in_the_future)
     end
 
     def too_young?

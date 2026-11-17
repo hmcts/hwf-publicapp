@@ -145,6 +145,7 @@ en:
               not_under_66_married: You have stated that you or your partner are not 66 years or older. Please change your response or check that these dates of birth are correct
               not_over_16: Enter date of birth for age above 16 (as stated in step 6)
               not_under_16: Enter date of birth for age under 16 (as stated in step 6)
+              in_the_future: This date can't be in the future
             partner_date_of_birth:
               not_a_date: Enter the date in this format DD/MM/YYYY
               not_a_number: Enter a valid date
