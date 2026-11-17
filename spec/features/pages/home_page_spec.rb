@@ -13,4 +13,9 @@ RSpec.feature 'Landing page languages' do
     click_link 'yn Saesneg (English)'
     expect(page).to have_css('h1', text: 'Get help paying court and tribunal fees')
   end
+
+  scenario 'the GOV.UK header logo links to the GOV.UK homepage' do
+    visit root_path(locale: :en)
+    expect(page).to have_link(class: 'govuk-header__homepage-link', href: 'https://www.gov.uk/')
+  end
 end
