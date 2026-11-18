@@ -433,6 +433,48 @@ RSpec.describe Forms::Dob do
         end
 
       end
+
+      context 'when the over_16 is false and the date is in the future' do
+        before do
+          form_dob.day = 1
+          form_dob.month = 1
+          form_dob.year = 3100
+          form_dob.over_16 = 'false'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+
+        it 'returns the in the future error message' do
+          form_dob.valid?
+          expect(form_dob.errors.messages[:date_of_birth]).to eq ["This date can't be in the future"]
+        end
+      end
+
+      context 'when the over_16 is false and the date is tomorrow' do
+        let(:tomorrow) { Time.zone.tomorrow }
+
+        before do
+          form_dob.day = tomorrow.day
+          form_dob.month = tomorrow.month
+          form_dob.year = tomorrow.year
+          form_dob.over_16 = 'false'
+        end
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'when the over_16 is false and the date is today' do
+        let(:today) { Time.zone.today }
+
+        before do
+          form_dob.day = today.day
+          form_dob.month = today.month
+          form_dob.year = today.year
+          form_dob.over_16 = 'false'
+        end
+
+        it { expect(form_dob.valid?).to be true }
+      end
     end
   end
 

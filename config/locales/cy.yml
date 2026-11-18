@@ -198,6 +198,7 @@ cy:
               not_under_66_married: Rydych wedi nodi nad ydych chi neu'ch partner yn 66 oed neu'n hŷn. Newidiwch eich ymateb neu gwiriwch fod y dyddiadau geni hyn yn gywir
               not_over_16: Rhowch ddyddiad geni ar gyfer oed hŷn na 16 (fel a nodir yng ngham 6)
               not_under_16: Rhowch ddyddiad geni ar gyfer oedran iau nag 16 (fel y nodir yng ngham 6)
+              in_the_future: Ni all y dyddiad hwn fod yn y dyfodol
             partner_date_of_birth:
               not_a_date: Rhowch y dyddiad yn y fformat hwn %{today_date}
               not_a_number: Rhowch ddyddiad dilys

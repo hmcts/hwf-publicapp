@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-17 (rst-8748-age-validation)
+
+### Fixed
+
+- Applicant date of birth now rejects future dates (e.g. 1/1/3100). When the person was marked as under 16 the minimum-age check was skipped, so nothing caught them.
 ## 2026-11-17 (rst-8781-header-link)
 
 ### Changed
