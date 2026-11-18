@@ -1201,7 +1201,7 @@ en:
       - p: "If you would like to talk to someone directly on the phone or in person, either:"
       - ul:
         - li: speak to a member of court or tribunal staff while you are in the building. They are best placed to help you
-        - li: <a href="https://courttribunalfinder.service.gov.uk/search/" class="govuk-link">contact the court or tribunal</a> directly by email, phone or letter
+        - li: <a href="https://www.gov.uk/find-court-tribunal" class="govuk-link">contact the court or tribunal</a> directly by email, phone or letter
       sections:
         - title: Reporting accessibility problems
           parts:
