@@ -1222,7 +1222,7 @@ cy:
       - p: "Os hoffech chi siarad â rhywun yn uniongyrchol ar y ffôn neu'n bersonol, gallwch:"
       - ul:
         - li: siarad ag aelod o staff llys neu dribiwnlys tra byddwch chi yn yr adeilad. Nhw sydd yn y lle gorau i'ch helpu chi
-        - li: <a href="https://courttribunalfinder.service.gov.uk/search/" class="govuk-link">cysylltu â’r llys neu’r tribiwnlys</a> yn uniongyrchol trwy e-bost, ffôn neu lythyr
+        - li: <a href="https://www.gov.uk/find-court-tribunal" class="govuk-link">cysylltu â’r llys neu’r tribiwnlys</a> yn uniongyrchol trwy e-bost, ffôn neu lythyr
       sections:
         - title: Rhoi gwybod am broblemau hygyrchedd
           parts:
@@ -1371,7 +1371,7 @@ cy:
                   - td: Fe'i defnyddir i reoli'r gyfradd y gwnaed ceisiadau i ymweld â thudalennau.
                   - td: 10 munud
               - p: Gweler [cookies] am ragor o wybodaeth am sut rydym yn casglu data defnydd ar gyfer safleoedd penodol.
-              - p: Byddwn yn gofyn am eich caniatâd i ddefnyddio eich cyfeiriad e-bost i anfon negeseuon e-bost atoch gan <a href="https://ssl.microsofttranslator.com/bv.aspx?ref=TVert&from=&to=cy&a=GOV.UK" class="govuk-link" target="_blank">GOV.UK</a> Notify. Mae'r system hon yn prosesu negeseuon e-bost o fewn yr Ardal Economaidd Ewropeaidd yn unig hyd nes y caiff negeseuon e-bost eu trosglwyddo i'r darparwr e-bost a ddefnyddiwch.
+              - p: Byddwn yn gofyn am eich caniatâd i ddefnyddio eich cyfeiriad e-bost i anfon negeseuon e-bost atoch gan GOV.UK Notify. Mae'r system hon yn prosesu negeseuon e-bost o fewn yr Ardal Economaidd Ewropeaidd yn unig hyd nes y caiff negeseuon e-bost eu trosglwyddo i'r darparwr e-bost a ddefnyddiwch.
       accept_cookies: A ydych eisiau derbyn cwcis dadansoddol?
       accept_cookies_true: 'Ydw'
       accept_cookies_false: 'Nac ydw'

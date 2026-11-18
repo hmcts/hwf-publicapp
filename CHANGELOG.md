@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - Applicant date of birth now rejects future dates (e.g. 1/1/3100). When the person was marked as under 16 the minimum-age check was skipped, so nothing caught them.
+## 2026-11-17 (rst-8781-header-link)
+
+### Changed
+
+- GOV.UK header logo link now points to https://www.gov.uk/ instead of the app root, per GOV.UK header guidance.
+- "Contact the court or tribunal" link now points to https://www.gov.uk/find-court-tribunal (courttribunalfinder.service.gov.uk no longer resolves).
+- Removed the dead Microsoft Translator link around "GOV.UK" in the Welsh privacy text.
 
 ## 2026-11-16 (gem-updates-v77)
 
