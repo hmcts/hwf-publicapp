@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-11-19 (chrome-158-capybara-reset)
+
+### Fixed
+
+- Cucumber: Chrome 158 rejects Capybara 3.40.0's reset call (origin `'*'`), so it now clears cookies with `Network.clearBrowserCookies`; remove once Capybara fixes it. Same fix as hwf-staffapp #2708.
+
 ## 2026-11-17 (rst-8748-age-validation)
 
 ### Fixed
