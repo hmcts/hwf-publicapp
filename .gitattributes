@@ -1,0 +1,2 @@
+# Keep both sides when branches add CHANGELOG entries at the same spot; see CHANGELOG.md
+CHANGELOG.md merge=union
