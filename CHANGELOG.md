@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 
+## 2026-11-20 (changelog-union-merge)
+
+### Changed
+
+- `CHANGELOG.md` now uses Git's built-in `union` merge driver (`.gitattributes`). Every branch adds its entry at the top, so merges used to conflict each time; union keeps both blocks. Order between same-day entries isn't guaranteed, and edits to the same existing entry can interleave, so glance at the file after a merge.
+
 ## 2026-11-20 (ruby-4.0.10)
 
 ### Security
