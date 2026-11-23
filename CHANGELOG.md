@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 
+## 2026-11-23 (gem-updates-v79)
+
+### Security
+
+- puma 8.0.3 → 8.0.4 (GHSA-4v6q-hvv7-49h9, GHSA-rhww-p99c-hgj9).
+- rack 3.2.8 → 3.2.9 (GHSA-r243-pfwh-7rpx, GHSA-58mf-c3jj-277p, GHSA-mhj6-xc86-54m8, GHSA-frgv-948x-h96g, GHSA-f7cc-57h7-qrcg).
+- addressable 2.9.2 → 2.10.0, test-only (15 GHSAs, see its 2.10.0 changelog).
+
+### Changed
+
+- Routine npm bumps.
+
 ## 2026-11-20 (ruby-4.0.10)
 
 ### Security
