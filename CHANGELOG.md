@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 
+## 2026-11-24 (sentry-release-revision)
+
+- Sentry events carry the git commit as release (`publicapp@<sha>`, from a `REVISION` file the pipeline writes before the image build), replacing the never-set `APPVERSION` that left every release "unknown".
+
 ## 2026-11-23 (gem-updates-v79)
 
 ### Security
