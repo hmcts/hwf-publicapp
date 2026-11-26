@@ -52,3 +52,5 @@ CLAUDE.md
 
 # Ignore Yarn local install state
 .yarn/install-state.gz
+# Sentry release, written by Jenkinsfile_CNP at build time
+/REVISION

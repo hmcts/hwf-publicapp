@@ -48,7 +48,11 @@ withPipeline(type, product, component) {
     rubyBuilder.bundle("exec rails assets:precompile")
   }
 
-  before('build') { installRuby() }
+  before('build') {
+    installRuby()
+    // Baked into the image as the Sentry release; see CHANGELOG.md
+    sh script: 'git rev-parse HEAD > REVISION', label: 'Write REVISION for Sentry'
+  }
   // Smoke/functional tests run on a fresh agent, separate from the build, so
   // neither the Ruby install, the vendor/bundle gems nor the compiled assets
   // from the build stage are present there. Install all three, otherwise
@@ -68,7 +72,8 @@ withPipeline(type, product, component) {
    before('test') {
       sh script:"mkdir -p features/cucumber-report", label: 'Create report directory'
       sh script:"env AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod az acr login --name hmctsprod --subscription DCD-CNP-PROD", label: 'ACR login'
-      rubyBuilder.bundle("install")
+      // check first: a full install races the parallel Docker Build on vendor/bundle; see CHANGELOG.md
+      rubyBuilder.bundle("check || bundle install")
       // Git-sourced gems leave read-only pack files in the bundler cache,
       // which breaks workspace unstash (tar can't overwrite them on re-extract)
       sh script: 'chmod -R u+w vendor/bundle || true', label: 'Make bundle cache writable for stash'
