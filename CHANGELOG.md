@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Changed
 
 - `CHANGELOG.md` now uses Git's built-in `union` merge driver (`.gitattributes`). Every branch adds its entry at the top, so merges used to conflict each time; union keeps both blocks. Order between same-day entries isn't guaranteed, and edits to the same existing entry can interleave, so glance at the file after a merge.
+## 2026-11-24 (sentry-release-revision)
+
+- Sentry events carry the git commit as release (`publicapp@<sha>`, from a `REVISION` file the pipeline writes before the image build), replacing the never-set `APPVERSION` that left every release "unknown"; the CI test hook now runs `bundle check` first, because its `bundle install` raced the parallel image build over `vendor/bundle/.../bundler.lock`.
+
 ## 2026-11-23 (gem-updates-v79)
 
 ### Security
