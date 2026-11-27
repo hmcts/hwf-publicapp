@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 
+## 2026-11-27 (rst-8816-links)
+
+- Static error pages (400/404/422/500) link the EX160 form to its GOV.UK publication page instead of the retired S3 PDF.
+
 ## 2026-11-24 (sentry-release-revision)
 
 - Sentry events carry the git commit as release (`publicapp@<sha>`, from a `REVISION` file the pipeline writes before the image build), replacing the never-set `APPVERSION` that left every release "unknown"; the CI test hook now runs `bundle check` first, because its `bundle install` raced the parallel image build over `vendor/bundle/.../bundler.lock`.
